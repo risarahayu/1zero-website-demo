@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #060606;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #171717;
+      border: 2px solid #060606;
+      border-radius: 9999px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #10b981;
+    }
+  }
+
+  body {
+    background-color: #030303;
+    color: #e5e5e5;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom aurora glow grids & glassmorphism details */
+.aurora-blur-1 {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.aurora-blur-2 {
+  background: radial-gradient(circle, rgba(5, 150, 105, 0.08) 0%, rgba(0, 0, 0, 0) 60%);
+}
+
+.glow-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-card:hover {
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.08);
+}
+
+/* Elegant curve mask */
+.curved-edge {
+  clip-path: ellipse(115% 100% at 50% 0%);
+}
+
+@keyframes slow-pan {
+  0% {
+    transform: translate(0% , 0%);
+  }
+  50% {
+    transform: translate(3%, 3%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+.animate-slow-pan {
+  animation: slow-pan 12s infinite alternate ease-in-out;
+}
+
+/* Infinite marquee / logo ticker */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Fade mask on left & right edges */
+.logo-tape-mask {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+}
+
+/* Animated gradient for hero title */
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-text {
+  background-size: 300% 300%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+/* Narrative scroll fade-up for workflow steps */
+@keyframes fade-up-in {
+  0%   { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.workflow-step {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.workflow-step.is-visible {
+  animation: fade-up-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
