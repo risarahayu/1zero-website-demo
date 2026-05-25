@@ -89,20 +89,7 @@ export default function Products({ onOpenBooking }: ProductsProps) {
           ))}
         </div>
 
-        {/* Bottom Interactive Segment */}
-        <div className="p-6 rounded-2xl border border-neutral-800/80 bg-[#09090b]/80 flex flex-col md:flex-row justify-between items-center gap-6 backdrop-blur-sm shadow-xl">
-          <div className="space-y-2 text-center md:text-left">
-            <h4 className="font-display font-bold text-sm text-white">Need a dynamic, fully tailored custom setup?</h4>
-            <p className="font-sans text-xs text-neutral-400">Our senior engineering unit builds completely modular platforms matching custom operational boundaries.</p>
-          </div>
-          <button
-            id="services-tailored-btn"
-            onClick={onOpenBooking}
-            className="p-3 px-6 rounded-xl bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-xs font-display font-bold text-emerald-400 tracking-wide transition-all cursor-pointer whitespace-nowrap"
-          >
-            Request Custom Setup &rarr;
-          </button>
-        </div>
+        
       </div>
     </section>
   );
