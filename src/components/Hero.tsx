@@ -46,7 +46,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="max-w-2xl mx-auto font-sans text-neutral-400 text-sm sm:text-base leading-relaxed"
           >
-            1ZERO engineers digital foundations that connect, scale seamlessly, and make history. We craft modern, resilient systems that optimize human activity to measure double real-world impact.
+            1zero engineers digital foundations that connect, scale seamlessly, and make history. We craft modern, resilient systems that optimize human activity to measure double real-world impact.
           </motion.p>
         </div>
 
