@@ -125,20 +125,20 @@ export const workflowSteps: WorkflowStep[] = [
 
 export const whyUsPoints = [
   {
-    title: "We solve strong problems.",
-    descr: "With rugged, bulletproof codebases, clear schemas, and interactive layouts aligned to concrete daily operations."
+    title: "We don't bring one-size-fits-all answers.",
+    // descr: "We don't bring one-size-fits-all answers."
   },
   {
-    title: "We scale with your team.",
-    descr: "A custom-fit system engineered for high concurrency, low latency, and zero licensing overhead lock-in."
+    title: "We listen, adapt, and co-design alongside your team to make sure what we build fits your reality.",
+    // descr: "A custom-fit system engineered for high concurrency, low latency, and zero licensing overhead lock-in."
   },
   {
-    title: "Direct Engineering Access.",
-    descr: "No account managers in the middle. You exchange ideas and review iterations directly with elite builders."
+    title: "When you work with 1zero, you collaborate directly with the people designing and building your system.",
+    // descr: "No account managers in the middle. You exchange ideas and review iterations directly with elite builders."
   },
   {
-    title: "Real-world impact first.",
-    descr: "We care deeply about visual layout balance and actual practical metrics, never bloated vanity metrics."
+    title: "We care about what works in practice, not what looks good in a slide deck.",
+    // descr: "We care deeply about visual layout balance and actual practical metrics, never bloated vanity metrics."
   }
 ];
 

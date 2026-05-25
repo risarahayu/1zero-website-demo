@@ -84,6 +84,16 @@
   will-change: transform;
 }
 
+@keyframes marquee-text {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-text {
+  animation: marquee-text 10s linear infinite;
+  will-change: transform;
+}
+
 .animate-marquee:hover {
   animation-play-state: paused;
 }

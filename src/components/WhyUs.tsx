@@ -44,7 +44,7 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
         {/* Title Area */}
         <div className="space-y-4">
           <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-[10px] font-mono uppercase tracking-widest text-[#a3e635] bg-[#a3e635]/5 shadow-[0_0_12px_rgba(163,230,53,0.1)]">
-            Our Purpose
+            Why 1zero
           </span>
           <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white max-w-2xl">
             A team built around people, <br />not rigid platforms.
@@ -62,45 +62,35 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
             {/* Header bar */}
             <div className="flex items-center justify-between pb-3 border-b border-neutral-900 text-xs font-mono text-neutral-400">
               <div className="flex items-center gap-2">
-                <div className="h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
-                <span className="text-white font-medium">LIVE CONSULTATION BRIEF</span>
+                <span className="text-white font-medium">Meet Our Team</span>
               </div>
               <div className="flex items-center gap-1.5 bg-neutral-900 px-2 py-0.5 rounded text-[10px]">
                 <Video className="h-3 w-3 text-emerald-400" />
-                <span>MEETING LIVE</span>
               </div>
             </div>
-
-            <p className="font-sans text-[11px] text-neutral-400 px-1 leading-relaxed">
-              We collaborate in tight, real-time cycles. Click on any specialist below to switch the simulated presenting speaker spotlight:
-            </p>
 
             {/* Video participants grid */}
             <div className="grid grid-cols-2 gap-3 flex-1">
               {teamMembers.map((member) => {
-                const isSpeaking = activeSpeakerId === member.id;
-                const isMuted = mutedStates[member.id];
+
                 
                 return (
                   <div
                     key={member.id}
                     onClick={() => setActiveSpeakerId(member.id)}
-                    className={`relative aspect-square rounded-2xl overflow-hidden border transition-all duration-300 cursor-pointer flex flex-col justify-between p-3 ${
-                      isSpeaking 
-                        ? "border-emerald-500 bg-neutral-900/60 shadow-[0_0_20px_rgba(16,185,129,0.1)] scale-[1.01]" 
-                        : "border-neutral-900 bg-[#0c0c0e] hover:border-neutral-800"
-                    }`}
+                    className="relative aspect-square rounded-2xl overflow-hidden border transition-all duration-300 cursor-pointer flex flex-col justify-between p-3 "
                   >
-                    {/* User Avatar with quality parameters */}
-                    <div className="relative h-12 w-12 rounded-xl overflow-hidden border border-neutral-800 shrink-0 self-start">
-                      <img
-                        src={member.avatarUrl}
-                        alt={member.name}
-                        referrerPolicy="no-referrer"
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-
+                   
+                      <div className="absolute inset-0 rounded-xl border border-emerald-500/40 shadow-[0_0_20px_rgba(16,185,129,0.12)] animate-pulse pointer-events-none" />
+                      <div className="relative h-1/2 w-1/2 rounded-xl overflow-hidden border border-neutral-800 self-center">
+                        <img
+                          src={member.avatarUrl}
+                          alt={member.name}
+                          referrerPolicy="no-referrer"
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                  
                     {/* Indicators */}
                     <div className="space-y-1.5 mt-auto z-10 pt-2 bg-gradient-to-t from-black via-black/80 to-transparent">
                       <div className="flex items-center justify-between">
@@ -112,46 +102,23 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
                         <button
                           id={`toggle-mute-${member.id}`}
                           onClick={(e) => toggleMute(member.id, e)}
-                          className={`p-1 rounded-md transition-colors ${
-                            isMuted 
-                              ? "bg-rose-500/15 text-rose-400 hover:bg-rose-500/35" 
-                              : "bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20"
-                          }`}
+                          className="p-1 rounded-md transition-colors "
                         >
-                          {isMuted ? <MicOff className="h-2.5 w-2.5" /> : <Mic className="h-2.5 w-2.5" />}
                         </button>
                       </div>
                       
                       <div className="flex items-center justify-between font-mono text-[8px] text-neutral-500 uppercase">
                         <span>{member.role}</span>
-                        {isSpeaking && <span className="text-emerald-400 font-bold tracking-widest leading-none">SPEAKING</span>}
                       </div>
                     </div>
 
-                    {/* Presenting green boundary overlay */}
-                    {isSpeaking && (
-                      <div className="absolute top-2 right-2 flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-400">
-                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                      </div>
-                    )}
+                
                   </div>
                 );
               })}
             </div>
 
-            {/* Bottom active telemetry stats card */}
-            <div className="p-3.5 rounded-xl bg-neutral-900/80 border border-neutral-800 text-xs text-neutral-400 flex items-center justify-between">
-              <div className="space-y-0.5">
-                <span className="block text-[10px] text-neutral-500 font-mono">ACTIVE PRESENTER</span>
-                <span className="block text-white font-medium text-xs">
-                  {teamMembers.find(m => m.id === activeSpeakerId)?.name}
-                </span>
-              </div>
-              <div className="flex items-center gap-1 font-mono text-[9px] text-[#a3e635] bg-[#a3e635]/10 px-2 py-0.5 rounded border border-[#a3e635]/20">
-                <Laptop className="h-3 w-3" />
-                <span>FIBER LATENCY: 14MS</span>
-              </div>
-            </div>
+            
 
           </div>
 
@@ -167,12 +134,10 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
                     {getPillarIcon(index)}
                   </div>
                   <div className="space-y-1">
-                    <h3 className="font-display font-extrabold text-[#ede9fe] text-sm tracking-wide group-hover:text-emerald-400 transition-colors">
+                    <h3 className="font-display font-regular text-[#ede9fe] text-lg tracking-wide group-hover:text-emerald-400 transition-colors">
                       {point.title}
                     </h3>
-                    <p className="font-sans text-[11px] text-neutral-400 group-hover:text-neutral-300 leading-relaxed transition-colors">
-                      {point.descr}
-                    </p>
+                    
                   </div>
                 </div>
               ))}
