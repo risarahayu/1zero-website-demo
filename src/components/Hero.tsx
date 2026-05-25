@@ -148,31 +148,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           </div>
         </motion.div>
 
-        {/* Interactive Stats Grid showing visual telemetry */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-10">
-          {[
-            { label: "Systems Architecture", value: "99.99% Uptime", icon: Server },
-            { label: "Global Compliance", value: "ISO Ready", icon: Shield },
-            { label: "Query Optimization", value: "6.5x Response", icon: Database },
-            { label: "Continuous Delivery", value: "Zero Failover", icon: Cpu }
-          ].map((stat, i) => {
-            const Icon = stat.icon;
-            return (
-              <div 
-                key={i} 
-                className="p-4 rounded-xl border border-neutral-900 bg-[#070707]/60 text-left hover:border-neutral-800 transition-all flex items-start gap-3 group"
-              >
-                <div className="h-8 w-8 rounded-lg bg-emerald-500/5 border border-emerald-500/10 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500/10 transition-colors shrink-0">
-                  <Icon className="h-4 w-4" />
-                </div>
-                <div>
-                  <p className="font-display font-bold text-xs text-neutral-300 group-hover:text-white transition-colors">{stat.value}</p>
-                  <p className="font-sans text-[10px] text-neutral-500 uppercase tracking-wider mt-0.5">{stat.label}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        
 
       </div>
     </section>
