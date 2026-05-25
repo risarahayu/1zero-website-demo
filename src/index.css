@@ -98,6 +98,56 @@
   animation-play-state: paused;
 }
 
+/* hero bg */
+.aurora-layer {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(110px);
+  opacity: .15;
+  mix-blend-mode: screen;
+  animation: auroraFloat 5s ease-in-out infinite alternate;
+}
+
+.aurora-1 {
+  width: 520px;
+  height: 520px;
+  top: 10%;
+  left: 15%;
+  background: #1D5745;
+}
+
+.aurora-2 {
+  width: 480px;
+  height: 480px;
+  top: 35%;
+  right: 10%;
+  background: #D6CAAD;
+  animation-duration: 26s;
+}
+
+.aurora-3 {
+  width: 420px;
+  height: 420px;
+  bottom: 5%;
+  left: 45%;
+  background: #7E8D74;
+  animation-duration: 32s;
+}
+
+@keyframes auroraFloat {
+  0% {
+    transform: translate(0,0) scale(1);
+  }
+
+  50% {
+    transform: translate(30px,-20px) scale(1.08);
+  }
+
+  100% {
+    transform: translate(-25px,20px) scale(0.96);
+  }
+}
+
 /* Fade mask on left & right edges */
 .logo-tape-mask {
   mask-image: linear-gradient(

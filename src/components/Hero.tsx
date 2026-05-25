@@ -10,8 +10,12 @@ export default function Hero({ onOpenBooking }: HeroProps) {
   return (
     <section id="home" className="relative pt-10 pb-20 overflow-hidden">
       {/* Aurora glow effect right behind hero heading */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -z-10 h-96 w-[90%] max-w-4xl rounded-full aurora-blur-1 blur-[110px]" />
-
+{/* Animated Aurora Background */}
+<div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none">
+  <div className="aurora-layer aurora-1" />
+  <div className="aurora-layer aurora-2" />
+  <div className="aurora-layer aurora-3" />
+</div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
         {/* Upper Micro Label */}
         <motion.div
