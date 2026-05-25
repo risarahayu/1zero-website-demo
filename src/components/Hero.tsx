@@ -59,19 +59,19 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         >
           {/* Rating box (Col-span 3) */}
           <div className="md:col-span-3 flex flex-col justify-center items-start text-left p-5 md:pl-6 space-y-2 border-b md:border-b-0 md:border-r border-neutral-800/80">
-            <div className="flex items-center gap-1">
+            {/* <div className="flex items-center gap-1">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="h-3.5 w-3.5 fill-emerald-500 text-emerald-500" />
               ))}
               <span className="font-mono text-xs text-white ml-1.5 font-bold">4.9★</span>
-            </div>
-            <p className="font-sans text-[11px] leading-relaxed text-neutral-300">
-              Double-impact standard of engineering with <strong>peace-of-mind</strong> digital outcomes & clear support.
+            </div> */}
+            <p className="font-sans text-base leading-relaxed text-neutral-300">
+              Book a Free 30-Minute Strategy Session with a CTO who brings 40+ years of IT experience
             </p>
-            <div className="flex items-center gap-1.5 font-mono text-[9px] text-neutral-500 uppercase tracking-wider">
+            {/* <div className="flex items-center gap-1.5 font-mono text-[9px] text-neutral-500 uppercase tracking-wider">
               <Users className="h-3 w-3 text-emerald-400" />
               <span>372+ Reviews from tech teams</span>
-            </div>
+            </div> */}
           </div>
 
           {/* Direct CTA button card (Col-span 2) */}
