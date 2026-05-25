@@ -130,6 +130,8 @@ export default function Cases({ onOpenBooking }: CasesProps) {
           </div>
         </div>
 
+        
+
         {/* Carousel Track */}
         <div
           className="relative"
@@ -223,6 +225,14 @@ export default function Cases({ onOpenBooking }: CasesProps) {
           </div>
         </div>
 
+        {/* Call to action marquee */}
+        <div className="overflow-hidden rounded-3xl border border-neutral-900 bg-neutral-950/30 p-4">
+          <div className="animate-marquee-text flex whitespace-nowrap gap-16 text-3xl sm:text-4xl font-display font-extrabold uppercase tracking-[0.18em] text-white">
+            <span>Now is your turn</span>
+            <span>Now is your turn</span>
+            <span>Now is your turn</span>
+          </div>
+        </div>
       </div>
     </section>
   );
