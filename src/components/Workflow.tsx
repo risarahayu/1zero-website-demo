@@ -320,12 +320,7 @@ export default function Workflow() {
         viewport={{ once: true, amount: 0.8 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="p-5 rounded-2xl border border-neutral-900 bg-neutral-950/40 text-center flex flex-col sm:flex-row items-center justify-center gap-3">
-          <span className="h-2 w-2 rounded-full bg-green-primary animate-pulse" />
-          <span className="font-sans text-base text-neutral-400">
-            Each phase produces a formal, version-controlled repository delivery. We build for handoff readiness.
-          </span>
-        </div>
+
       </motion.div>
 
     </section>

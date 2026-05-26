@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="lg:col-span-5 space-y-6">
             <h2 className="font-sans text-5xl sm:text-6xl font-extrabold tracking-tight text-white leading-none">
               Let's <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--ivory)] to-[var(--green-900)]">
+              <span className="animate-gradient-text text-gradient-impact text-transparent bg-clip-text bg-gradient-to-r from-[var(--ivory)] to-[var(--green-900)]">
                 Connect
               </span>
             </h2>
@@ -63,17 +63,17 @@ export default function Footer() {
                 <a
                   id="footer-email-link"
                   href="mailto:info@1zero.biz"
-                  className="flex items-center gap-2 hover:text-emerald-400 transition-colors font-sans"
+                  className="flex items-center gap-2 hover:text-brunswick-green-500 transition-colors font-sans"
                 >
-                  <Mail className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <Mail className="h-4 w-4 text-brunswick-green-500 shrink-0" />
                   <span>info@1zero.biz</span>
                 </a>
                 <a
                   id="footer-phone-link"
                   href="tel:+6285339396030"
-                  className="flex items-center gap-2 hover:text-emerald-400 transition-colors font-sans"
+                  className="flex items-center gap-2 hover:text-brunswick-green-500 transition-colors font-sans"
                 >
-                  <Phone className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <Phone className="h-4 w-4 text-brunswick-green-500 shrink-0" />
                   <span>+62-853-3939-6030</span>
                 </a>
               </div>
@@ -91,7 +91,7 @@ export default function Footer() {
                 Primary Laboratory
               </span>
               <div className="flex gap-2 text-base text-neutral-300 leading-relaxed font-sans">
-                <MapPin className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
+                <MapPin className="h-4 w-4 text-brunswick-green-500 shrink-0 mt-0.5" />
                 <div>
                   <strong className="text-white block font-sans text-base">Our Office Address</strong>
                   <span>Biliq Sunset Office Space,</span>

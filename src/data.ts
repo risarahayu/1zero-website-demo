@@ -41,11 +41,11 @@ export const products: ProductItem[] = [
     href: "#nextgen"
   },
   {
-    id: "prod-FCTO",
-    title: "FCTO",
+    id: "prod-fCTO",
+    title: "fCTO",
     description: "Enterprise-ready consultancies and systems auditing to align architectural compliance, audit cloud spend, and reinforce security defenses.",
-    linkText: "Read FCTO",
-    href: "#fcto"
+    linkText: "Read fCTO",
+    href: "#fCTO"
   }
 ];
 

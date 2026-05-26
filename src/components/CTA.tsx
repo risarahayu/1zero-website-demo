@@ -29,18 +29,21 @@ export default function CTA({ onOpenBooking }: CTAProps) {
             {/* Header label */}
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-900/20 px-4 py-1.5 text-base text-emerald-300 font-sans">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" />
-              <span>LIMITED WEEKLY OPENINGS</span>
+
+              <span className="overflow-hidden whitespace-nowrap border-r border-emerald-400 animate-typing">
+                LIMITED WEEKLY OPENINGS
+              </span>
             </div>
 
             <div className="space-y-4">
               <h2 className="font-sans text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-none">
-                Now is Your Minute. <br />
+                This is your sign<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-[#dcd8cc]">
                   Book a Free 30-Minute
                 </span> <br />
                 Strategy Session
               </h2>
-              <p className="max-w-xl mx-auto font-sans text-base sm:text-sm text-emerald-100/70 leading-relaxed pt-2">
+              <p className="max-w-xl mx-auto font-sans text-base sm:text-base text-sea-salt leading-relaxed pt-2">
                 No strings attached. We'll map out your operational schemas, uncover query performance bottlenecks, and design a custom architectural blueprint for your project.
               </p>
             </div>
@@ -50,30 +53,39 @@ export default function CTA({ onOpenBooking }: CTAProps) {
               <button
                 id="cta-booking-btn"
                 onClick={onOpenBooking}
-                className="group relative flex items-center justify-center gap-2 px-10 py-5 bg-[#dfd9c6] hover:bg-[#d2caba] text-neutral-950 font-sans font-extrabold text-sm sm:text-base rounded-2xl transition-all shadow-[0_10px_35px_rgba(223,217,198,0.25)] hover:shadow-[0_10px_45px_rgba(223,217,198,0.4)] cursor-pointer tracking-wide"
+                className="group relative flex items-center justify-center gap-2
+                px-10 py-5
+                bg-[linear-gradient(120deg,var(--color-sea-salt),var(--color-ivory),var(--color-dun),var(--color-sea-salt))]
+                bg-[length:300%_300%]
+                animate-gradient
+                text-neutral-950
+                font-sans font-extrabold
+                text-sm sm:text-base
+                rounded-2xl
+                transition-all
+                shadow-[0_10px_35px_rgba(223,217,198,0.25)]
+                hover:shadow-[0_10px_45px_rgba(223,217,198,0.4)]
+                cursor-pointer
+                tracking-wide"
               >
                 Book a Section
                 <PhoneCall className="h-4 w-4 text-neutral-900 group-hover:scale-110 transition-transform" />
               </button>
-
-              <span className="font-sans text-base text-emerald-500/80 uppercase tracking-widest block pt-1">
-                Instant confirmation • Available with Google Meet invites
-              </span>
             </div>
 
             {/* Telemetry checks under booking button */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-10 border-t border-emerald-500/10 text-left text-base text-emerald-100/60 font-sans max-w-2xl mx-auto">
               <div className="space-y-1">
                 <span className="block font-bold text-white">01. Dynamic Planning</span>
-                <span className="block text-[11px] text-emerald-200/50">Custom infrastructure diagrams prepared before our call.</span>
+                <span className="block text-base text-brunswick-green-500">Custom infrastructure diagrams prepared before our call.</span>
               </div>
               <div className="space-y-1">
                 <span className="block font-bold text-white">02. Direct Specialists</span>
-                <span className="block text-[11px] text-emerald-200/50">Collaborate with principal architects, not sales managers.</span>
+                <span className="block text-base text-brunswick-green-500">Collaborate with principal architects, not sales managers.</span>
               </div>
               <div className="space-y-1">
                 <span className="block font-bold text-white">03. Fixed Deliverables</span>
-                <span className="block text-[11px] text-emerald-200/50">You receive a written architecture spec summary in PDF.</span>
+                <span className="block text-base text-brunswick-green-500">You receive a written architecture spec summary in PDF.</span>
               </div>
             </div>
 

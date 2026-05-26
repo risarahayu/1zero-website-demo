@@ -43,13 +43,13 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Title Area */}
         <div className="space-y-4">
-          <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans  tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5 shadow-[0_0_12px_rgba(163,230,53,0.1)]">
+          <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans  tracking-widest text-brunswick-green-500 mb-[3rem] bg-brunswick-green-500">
             Why 1zero
           </span>
           <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white max-w-2xl">
             A team built around people, <br />not rigid platforms.
           </h2>
-          <p className="max-w-2xl font-sans text-base sm:text-sm text-neutral-400 leading-relaxed">
+          <p className="max-w-2xl font-sans text-base sm:text-base text-sea-salt leading-relaxed">
             We partner directly with founders and operations executives to craft high-concurrency systems, completely cutting out agency middle-men & communication bureaucracy.
           </p>
         </div>
@@ -81,7 +81,7 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
                     className="relative aspect-square rounded-2xl overflow-hidden border transition-all duration-300 cursor-pointer flex flex-col justify-between p-3 "
                   >
 
-                    <div className="absolute inset-0 rounded-xl border border-emerald-500/40 shadow-[0_0_20px_rgba(16,185,129,0.12)] animate-pulse pointer-events-none" />
+                    <div className="absolute inset-0 rounded-xl border border-brunswick-green-500 shadow-[0_0_20px_rgba(16,185,129,0.12)] animate-pulse pointer-events-none" />
                     <div className="relative h-1/2 w-1/2 rounded-xl overflow-hidden border border-neutral-800 self-center">
                       <img
                         src={member.avatarUrl}

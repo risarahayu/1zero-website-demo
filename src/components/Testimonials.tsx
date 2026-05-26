@@ -36,14 +36,14 @@ export default function Testimonials() {
             <button
               id="testimonial-prev-btn"
               onClick={handlePrev}
-              className="p-3.5 rounded-xl border border-neutral-800 bg-[#0c0c0e] text-neutral-400 hover:text-white hover:border-neutral-700 transition-colors"
+              className="p-3.5 rounded-xl border border-neutral-800 bg-[#0c0c0e] text-neutral-400 hover:text-white hover:border-brunswick-green-500 transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
             </button>
             <button
               id="testimonial-next-btn"
               onClick={handleNext}
-              className="p-3.5 rounded-xl border border-neutral-800 bg-[#0c0c0e] text-neutral-400 hover:text-white hover:border-neutral-700 transition-colors"
+              className="p-3.5 rounded-xl border border-neutral-800 bg-[#0c0c0e] text-neutral-400 hover:text-white hover:border-brunswick-green-500 transition-colors"
             >
               <ArrowRight className="h-4 w-4" />
             </button>
@@ -58,7 +58,7 @@ export default function Testimonials() {
               <div
                 key={t.id}
                 className={`group flex flex-col justify-between p-6 rounded-2xl border bg-neutral-950/40 p-6 transition-all duration-300 relative ${isActiveMobile
-                  ? "border-emerald-500/40 shadow-emerald-500/5 shadow-2xl scale-[1.01] block"
+                  ? "border-brunswick-green-500 shadow-emerald-500/5 shadow-2xl scale-[1.01] block"
                   : "border-neutral-900 group-hover:border-neutral-800 md:block hidden"
                   }`}
               >
@@ -71,7 +71,7 @@ export default function Testimonials() {
                   {/* Rating indicator */}
                   <div className="flex items-center gap-0.5">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-3 w-3 fill-emerald-500 text-emerald-500" />
+                      <Star key={i} className="h-3 w-3 fill-dun text-dun" />
                     ))}
                   </div>
 
@@ -92,7 +92,7 @@ export default function Testimonials() {
                     />
                   </div>
                   <div className="leading-tight">
-                    <span className="block font-sans text-base font-bold text-white group-hover:text-emerald-400 transition-colors">
+                    <span className="block font-sans text-base font-bold text-white group-hover:text-brunswick-green-500 transition-colors">
                       {t.name}
                     </span>
                     <span className="block font-sans text-base text-neutral-500">
