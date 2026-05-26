@@ -23,7 +23,7 @@ export default function Testimonials() {
         {/* Title Area */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
           <div className="space-y-3 text-left">
-            <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-mono uppercase tracking-widest text-green-500 bg-[#a3e635]/5">
+            <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-mono uppercase tracking-widest text-brunswick-green-500 bg-[#a3e635]/5">
               Testimonials
             </span>
             <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-none">

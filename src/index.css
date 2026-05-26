@@ -51,7 +51,7 @@
   }
 }
 
-.bg-green-primary {
+.bg-brunswick-green-primary {
   background-color: var(--green-900);
   color: var(--sea-salt);
 }
@@ -68,35 +68,35 @@
   color: var(--dun);
 }
 
-.text-green-500 {
+.text-brunswick-green-500 {
   color: var(--green-500);
 }
 
-.text-green-600 {
+.text-brunswick-green-600 {
   color: var(--green-600);
 }
 
-.text-green-800 {
+.text-brunswick-green-800 {
   color: var(--green-800);
 }
 
-.text-green-900 {
+.text-brunswick-green-900 {
   color: var(--green-900);
 }
 
-.border-green-500 {
+.border-brunswick-green-500 {
   border-color: var(--green-500);
 }
 
-.border-green-600 {
+.border-brunswick-green-600 {
   border-color: var(--green-600);
 }
 
-.border-green-800 {
+.border-brunswick-green-800 {
   border-color: var(--green-800);
 }
 
-.border-green-900 {
+.border-brunswick-green-900 {
   border-color: var(--green-900);
 }
 

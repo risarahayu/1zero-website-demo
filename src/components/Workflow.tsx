@@ -39,7 +39,7 @@ function TimelineFill({ scrollYProgress }: { scrollYProgress: MotionValue<number
         className="absolute top-0 left-0 right-0 rounded-full origin-top"
         style={{
           scaleY,
-          background: 'linear-gradient(to bottom, #3b82f6, #8b5cf6, #10b981)',
+          background: 'linear-gradient(to bottom, #85DFC3, #65BDA2, #307962)',
           boxShadow: '0 0 8px rgba(139,92,246,0.5)',
           height: '100%',
         }}
@@ -49,9 +49,9 @@ function TimelineFill({ scrollYProgress }: { scrollYProgress: MotionValue<number
 }
 
 const PANEL_CONFIG = [
-  { bg: "bg-[#03060f]", glow: "rgba(59,130,246,0.06)", accent: "#85DFC3", accentText: "text-green-500", border: "border-green-500" },
-  { bg: "bg-[#06030f]", glow: "rgba(139,92,246,0.06)", accent: "#65BDA2", accentText: "text-green-600", border: "border-green-600" },
-  { bg: "bg-[#030a04]", glow: "rgba(16,185,129,0.06)", accent: "#307962", accentText: "text-green-800", border: "border-green-800" },
+  { bg: "bg-[#030a04]", glow: "rgba(29, 87, 69, 0.19)", accent: "#85DFC3", accentText: "text-brunswick-green-500", border: "border-brunswick-green-500" },
+  { bg: "bg-[#030a04]", glow: "rgba(29, 87, 69, 0.29)", accent: "#65BDA2", accentText: "text-brunswick-green-600", border: "border-brunswick-green-600" },
+  { bg: "bg-[#030a04]", glow: "rgba(29, 87, 69, 0.59)", accent: "#307962", accentText: "text-brunswick-green-800", border: "border-brunswick-green-800" },
 ];
 
 function getIcon(number: string) {
@@ -153,10 +153,10 @@ function Panel({
         <div className="flex-1 w-[2px] bg-white/5" />
       </div>
 
-      {/* ── Step label beside bullet ── */}
+      {/* ── Step label beside bullet ──
       <div className="absolute left-[72px] lg:left-[88px] top-1/2 -translate-y-1/2 z-20 pointer-events-none">
         <p className="font-mono text-base uppercase tracking-widest text-neutral-600">STG-0{index + 1}</p>
-      </div>
+      </div> */}
 
       {/* Main content */}
       <motion.div
@@ -176,7 +176,7 @@ function Panel({
                 <span className={cfg.accentText}>{getIcon(step.number)}</span>
               </div>
               <div>
-                <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-neutral-600">Phase</p>
+                <p className="font-mono text-base uppercase tracking-[0.2em] text-sea-salt">Phase</p>
                 <p className={`font-mono text-base font-bold tracking-wider uppercase ${cfg.accentText}`}>
                   {step.number}
                 </p>
@@ -188,7 +188,7 @@ function Panel({
               <h3 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.1]">
                 {step.title}
               </h3>
-              <p className="font-sans text-sm text-neutral-400 leading-relaxed max-w-md">
+              <p className="font-sans text-base text-sea-salt leading-relaxed max-w-md">
                 {step.subtext}
               </p>
             </div>
@@ -209,7 +209,7 @@ function Panel({
             </div>
 
             {/* Step counter */}
-            <p className="font-mono text-[11px] text-neutral-700 tracking-widest uppercase">
+            <p className="font-mono text-base text-ivory tracking-widest uppercase">
               {String(index + 1).padStart(2, "0")} of {String(N).padStart(2, "0")} phases
             </p>
           </div>
@@ -264,7 +264,7 @@ export default function Workflow() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="space-y-4"
         >
-          <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-mono mb-[3rem] tracking-widest text-green-500 bg-[#a3e635]/5">
+          <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-mono mb-[3rem] tracking-widest text-brunswick-green-500 bg-[#a3e635]/5">
             Our Timeline
           </span>
           <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white max-w-3xl mx-auto leading-tight">

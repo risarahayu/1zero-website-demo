@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Linkedin, Github, MessageCircle, Twitter, Cpu } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Github, MessageCircle, Twitter, Cpu, Instagram } from "lucide-react";
 import Logo1Zero from "./Logo1Zero";
 
 export default function Footer() {
@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="lg:col-span-5 space-y-6">
             <h2 className="font-display text-5xl sm:text-6xl font-extrabold tracking-tight text-white leading-none">
               Let's <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-[#ede9fe]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--ivory)] to-[var(--green-900)]">
                 Connect
               </span>
             </h2>
@@ -29,10 +29,10 @@ export default function Footer() {
             {/* Social handles */}
             <div className="flex items-center gap-3 pt-2">
               {[
-                { icon: Twitter, href: "https://twitter.com", id: "twitter-link" },
-                { icon: Linkedin, href: "https://linkedin.com", id: "linkedin-link" },
-                { icon: Github, href: "https://github.com", id: "github-link" },
-                { icon: MessageCircle, href: "https://whatsapp.com", id: "whatsapp-link" }
+                { icon: Instagram, href: "https://www.instagram.com/1zero.solutions/", id: "Instagram-link" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/mark-treleaven", id: "linkedin-link" },
+                { icon: MessageCircle, href: "https://api.whatsapp.com/send/?phone=6285339396030&text&type=phone_number&app_absent=0", id: "whatsapp-link" },
+                // { icon: MessageCircle, href: "https://whatsapp.com", id: "whatsapp-link" }
               ].map((social, i) => {
                 const Icon = social.icon;
                 return (
@@ -62,26 +62,26 @@ export default function Footer() {
               <div className="space-y-3 text-base sm:text-sm text-neutral-300">
                 <a
                   id="footer-email-link"
-                  href="mailto:partner@1zero.biz"
+                  href="mailto:info@1zero.biz"
                   className="flex items-center gap-2 hover:text-emerald-400 transition-colors font-mono"
                 >
                   <Mail className="h-4 w-4 text-emerald-400 shrink-0" />
-                  <span>partner@1zero.biz</span>
+                  <span>info@1zero.biz</span>
                 </a>
                 <a
                   id="footer-phone-link"
-                  href="tel:+6231998522"
+                  href="tel:+6285339396030"
                   className="flex items-center gap-2 hover:text-emerald-400 transition-colors font-mono"
                 >
                   <Phone className="h-4 w-4 text-emerald-400 shrink-0" />
-                  <span>+62-31-998-5221</span>
+                  <span>+62-853-3939-6030</span>
                 </a>
               </div>
 
               {/* Quick links tag lines */}
               <div className="pt-4 border-t border-neutral-900 space-y-1 text-[11px] text-neutral-500">
-                <span className="block">WIB working hours: 09:00 - 18:00 WIB</span>
-                <span className="block">Engineers responsive via Slack/Teams logs.</span>
+                <span className="block">WITA working hours: 09:00 - 16:00 WIB</span>
+                {/* <span className="block">Engineers responsive via Slack/Teams logs.</span> */}
               </div>
             </div>
 
@@ -93,11 +93,12 @@ export default function Footer() {
               <div className="flex gap-2 text-base text-neutral-300 leading-relaxed font-mono">
                 <MapPin className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block font-sans text-base">Pakuwon Tower Surabaya</strong>
-                  <span>12th Floor, Corner Unit, Tunjungan Plaza 6</span>
-                  <span className="block">Jl. Embong Malang No. 4</span>
-                  <span className="block">Surabaya, Jawa Timur 60261</span>
-                  <span className="block text-neutral-500">Indonesia</span>
+                  <strong className="text-white block font-sans text-base">Our Office Address</strong>
+                  <span>Biliq Sunset Office Space,</span>
+                  <span className="block">Jalan Sunset Road 819,</span>
+                  <span className="block">Bali Ruko Sunset Indah II No. 10, Kuta,</span>
+                  <span className="block">Bali, Indonesia,</span>
+                  <span className="block text-neutral-500">80361</span>
                 </div>
               </div>
             </div>
@@ -116,7 +117,7 @@ export default function Footer() {
           <div className="flex items-center gap-4 text-base uppercase">
             <a href="#home" className="hover:text-emerald-400 hover:underline transition-colors">BACK TO TOP ↑</a>
             <span>•</span>
-            <span className="text-green-500">MADE FOR DOUBLE IMPACT</span>
+            <span className="text-brunswick-green-500">MADE FOR DOUBLE IMPACT</span>
           </div>
         </div>
 

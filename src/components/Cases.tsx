@@ -98,7 +98,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end pb-8 border-b border-neutral-900">
           <div className="lg:col-span-8 space-y-3">
-            <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-mono uppercase tracking-widest text-green-500 mb-[3rem] bg-[#a3e635]/5 shadow-[0_0_12px_rgba(163,230,53,0.1)]">
+            <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-mono uppercase tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5 shadow-[0_0_12px_rgba(163,230,53,0.1)]">
               Recent Conversations
             </span>
             <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-none">
@@ -113,7 +113,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
             <div className="flex items-center gap-3">
               <button
                 onClick={handlePrev}
-                className="h-9 w-9 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-green-500  hover:border-[#a3e635] flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className="h-9 w-9 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-brunswick-green-500  hover:border-[#a3e635] flex items-center justify-center transition-all duration-300 cursor-pointer"
               >
                 <ArrowLeft className="h-3.5 w-3.5" />
               </button>
@@ -122,7 +122,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
               </span>
               <button
                 onClick={handleNext}
-                className="h-9 w-9 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-green-500 hover:border-[#a3e635] flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className="h-9 w-9 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-brunswick-green-500 hover:border-[#a3e635] flex items-center justify-center transition-all duration-300 cursor-pointer"
               >
                 <ArrowRight className="h-3.5 w-3.5" />
               </button>

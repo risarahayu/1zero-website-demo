@@ -56,7 +56,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
       id: "blackstump",
       title: "Blackstump Technologies Website Replatform",
       description: "Full website replatform for Blackstump Technologies — modernizing architecture, design system, and digital presence from the ground up.",
-      bgClass: "bg-[#0d1a0d] border-green-500/10",
+      bgClass: "bg-[#0d1a0d] border-brunswick-green-500/10",
       mockupType: "blackstump",
       imageUrl: "/portofolio image/kup (7).png"
     }
@@ -173,7 +173,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
                 type="button"
                 onClick={handlePrev}
                 aria-label="Previous portfolio"
-                className="h-11 w-11 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-green-500 hover:border-[#a3e635] flex items-center justify-center transition-all duration-300 transform active:scale-95 cursor-pointer shadow-lg"
+                className="h-11 w-11 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-brunswick-green-500 hover:border-[#a3e635] flex items-center justify-center transition-all duration-300 transform active:scale-95 cursor-pointer shadow-lg"
               >
                 <ArrowLeft className="h-4 w-4" />
               </button>
@@ -181,12 +181,12 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
                 type="button"
                 onClick={handleNext}
                 aria-label="Next portfolio"
-                className="h-11 w-11 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-green-500 hover:border-[#a3e635] flex items-center justify-center transition-all duration-300 transform active:scale-95 cursor-pointer shadow-lg"
+                className="h-11 w-11 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-brunswick-green-500 hover:border-[#a3e635] flex items-center justify-center transition-all duration-300 transform active:scale-95 cursor-pointer shadow-lg"
               >
                 <ArrowRight className="h-4 w-4" />
               </button>
 
-              <span className="font-mono text-[11px] text-neutral-600 tracking-wider font-semibold ml-2 select-none uppercase font-bold text-green-500">
+              <span className="font-mono text-[11px] text-neutral-600 tracking-wider font-semibold ml-2 select-none uppercase font-bold text-brunswick-green-500">
                 {String(currentDisplayIndex + 1).padStart(2, '0')} / {String(customProjects.length).padStart(2, '0')}
               </span>
             </div>
@@ -229,7 +229,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
 
                     {/* Left corner identifier and Content text */}
                     <div className="pt-3 space-y-2">
-                      <h3 className="font-display text-lg sm:text-xl font-bold text-white tracking-tight group-hover:text-green-500 transition-colors">
+                      <h3 className="font-display text-lg sm:text-xl font-bold text-white tracking-tight group-hover:text-brunswick-green-600 transition-colors">
                         {project.title}
                       </h3>
 
@@ -262,7 +262,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
           <button
             id="portfolio-review-btn"
             onClick={onOpenBooking}
-            className="inline-flex items-center gap-2 p-3.5 px-8 rounded-full bg-green-primary hover:bg-emerald-600 text-black font-display font-extrabold text-base transition-all uppercase tracking-wider cursor-pointer shadow-[0_4px_20px_rgba(16,185,129,0.2)] hover:shadow-[0_4px_25px_rgba(16,185,129,0.3)] transform hover:scale-[1.01]"
+            className="inline-flex items-center gap-2 p-3.5 px-8 rounded-full bg-brunswick-green-primary hover:bg-emerald-600 text-black font-display font-extrabold text-base transition-all uppercase tracking-wider cursor-pointer shadow-[0_4px_20px_rgba(16,185,129,0.2)] hover:shadow-[0_4px_25px_rgba(16,185,129,0.3)] transform hover:scale-[1.01]"
           >
             Schedule Architecture Session
           </button>
