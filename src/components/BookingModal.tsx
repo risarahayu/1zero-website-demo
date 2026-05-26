@@ -117,8 +117,8 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 <Sparkles className="h-4 w-4" />
               </div>
               <div>
-                <h3 className="font-display text-lg font-bold text-white">Strategy Session</h3>
-                <p className="font-mono text-base uppercase tracking-wider text-neutral-400">30-Min Consultation</p>
+                <h3 className="font-sans text-lg font-bold text-white">Strategy Session</h3>
+                <p className="font-sans text-base uppercase tracking-wider text-neutral-400">30-Min Consultation</p>
               </div>
             </div>
             <button
@@ -170,7 +170,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                           }`}
                       >
                         <span className="font-sans text-[11px] font-medium tracking-wide text-neutral-400">{day.dayName}</span>
-                        <span className="font-display text-lg font-bold mt-1">{day.dayNum}</span>
+                        <span className="font-sans text-lg font-bold mt-1">{day.dayNum}</span>
                         <span className="font-sans text-base text-neutral-500 mt-0.5">{day.month}</span>
                       </button>
                     );
@@ -192,7 +192,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                           setSelectedTime(time);
                           setErrorStatus("");
                         }}
-                        className={`flex items-center justify-center gap-1.5 p-2.5 rounded-xl border font-mono text-base transition-all ${isSelected
+                        className={`flex items-center justify-center gap-1.5 p-2.5 rounded-xl border font-sans text-base transition-all ${isSelected
                           ? "border-emerald-500 bg-green-primary/10 text-white shadow-[0_0_15px_rgba(16,185,129,0.15)] font-semibold"
                           : "border-neutral-800 bg-[#111] hover:border-neutral-700 text-neutral-300 hover:text-white"
                           }`}
@@ -209,7 +209,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               <div className="flex items-center gap-2 rounded-xl bg-neutral-900/60 p-3 border border-neutral-800/80">
                 <Globe className="h-4 w-4 text-neutral-400" />
                 <div className="flex-1">
-                  <span className="block text-base text-neutral-500 font-mono">TIMEZONE</span>
+                  <span className="block text-base text-neutral-500 font-sans">TIMEZONE</span>
                   <select
                     id="timezone-select"
                     value={timezone}
@@ -230,7 +230,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 id="modal-next-step-btn"
                 type="button"
                 onClick={handleNextStep}
-                className="flex items-center justify-center gap-2 w-full p-3.5 rounded-xl bg-green-primary hover:bg-emerald-600 text-black font-display font-bold text-sm tracking-wide transition-all shadow-[0_4px_20px_rgba(16,185,129,0.2)] cursor-pointer"
+                className="flex items-center justify-center gap-2 w-full p-3.5 rounded-xl bg-green-primary hover:bg-emerald-600 text-black font-sans font-bold text-sm tracking-wide transition-all shadow-[0_4px_20px_rgba(16,185,129,0.2)] cursor-pointer"
               >
                 Continue Booking Details
                 <ChevronRight className="h-4 w-4" />
@@ -251,7 +251,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   <span>Time:</span>
                   <strong className="text-white font-medium">{selectedTime}</strong>
                 </p>
-                <p className="mt-1 text-[11px] text-neutral-500 font-mono">({timezone})</p>
+                <p className="mt-1 text-[11px] text-neutral-500 font-sans">({timezone})</p>
               </div>
 
               <div className="space-y-1">
@@ -318,14 +318,14 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   id="modal-back-btn"
                   type="button"
                   onClick={() => setStep(1)}
-                  className="w-1/3 p-3 rounded-xl border border-neutral-800 bg-[#111] hover:bg-neutral-900 text-neutral-300 font-display text-sm tracking-wide transition-colors cursor-pointer"
+                  className="w-1/3 p-3 rounded-xl border border-neutral-800 bg-[#111] hover:bg-neutral-900 text-neutral-300 font-sans text-sm tracking-wide transition-colors cursor-pointer"
                 >
                   Back
                 </button>
                 <button
                   id="modal-submit-btn"
                   type="submit"
-                  className="flex-1 p-3 rounded-xl bg-green-primary hover:bg-emerald-600 text-black font-display font-medium text-sm tracking-wide transition-all shadow-[0_4px_20px_rgba(16,185,129,0.2)] cursor-pointer"
+                  className="flex-1 p-3 rounded-xl bg-green-primary hover:bg-emerald-600 text-black font-sans font-medium text-sm tracking-wide transition-all shadow-[0_4px_20px_rgba(16,185,129,0.2)] cursor-pointer"
                 >
                   Schedule Free Consultation
                 </button>
@@ -341,7 +341,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               </div>
 
               <div className="space-y-2">
-                <h4 className="font-display text-xl font-bold text-white">Your session is secured!</h4>
+                <h4 className="font-sans text-xl font-bold text-white">Your session is secured!</h4>
                 <p className="text-base text-neutral-400 max-w-md mx-auto">
                   A calendar invitation with the Google Meet link has been sent to <span className="text-white hover:underline">{email}</span>. We're excited to collaborate!
                 </p>
@@ -349,8 +349,8 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
               <div className="max-w-md mx-auto rounded-xl bg-neutral-900/60 p-4 border border-emerald-500/10 space-y-3 divide-y divide-neutral-800 text-left">
                 <div className="pb-3 text-base">
-                  <p className="font-mono text-base text-emerald-400 tracking-wider">EVENT SUMMARY</p>
-                  <p className="font-display font-semibold text-sm text-white mt-1">1ZERO Systems Blueprint Call</p>
+                  <p className="font-sans text-base text-emerald-400 tracking-wider">EVENT SUMMARY</p>
+                  <p className="font-sans font-semibold text-sm text-white mt-1">1ZERO Systems Blueprint Call</p>
                   <p className="text-neutral-400 mt-0.5">30-Minute Architecture Strategy Review</p>
                 </div>
                 <div className="py-2.5 pt-3 flex items-center gap-3 text-base text-neutral-300">
@@ -363,7 +363,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 </div>
                 <div className="pt-3 flex items-center gap-3 text-base text-neutral-300">
                   <Video className="h-4 w-4 text-emerald-400 shrink-0" />
-                  <span className="font-mono text-[11px] text-emerald-300 select-all underline cursor-pointer">meet.google.com/ico-nics-blue</span>
+                  <span className="font-sans text-[11px] text-emerald-300 select-all underline cursor-pointer">meet.google.com/ico-nics-blue</span>
                 </div>
               </div>
 
@@ -372,7 +372,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   id="modal-finish-btn"
                   type="button"
                   onClick={cleanClose}
-                  className="px-8 p-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white font-display text-sm tracking-wide transition-colors cursor-pointer border border-neutral-800"
+                  className="px-8 p-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white font-sans text-sm tracking-wide transition-colors cursor-pointer border border-neutral-800"
                 >
                   Back to Website
                 </button>

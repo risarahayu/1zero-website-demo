@@ -21,7 +21,7 @@ function ScrollHint({ scrollYProgress }: { scrollYProgress: MotionValue<number> 
   const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
   return (
     <motion.div style={{ opacity }} className="absolute bottom-8 right-8 z-50 flex flex-col items-center gap-2 text-neutral-600">
-      <span className="font-mono text-[9px] uppercase tracking-widest">Scroll</span>
+      <span className="font-sans text-[9px] uppercase tracking-widest">Scroll</span>
       <div className="h-8 w-[1px] bg-gradient-to-b from-neutral-600 to-transparent" />
     </motion.div>
   );
@@ -129,7 +129,7 @@ function Panel({
 
       {/* Giant decorative step number */}
       <div className="absolute right-4 sm:right-12 top-1/2 -translate-y-1/2 select-none pointer-events-none" aria-hidden>
-        <span className="font-display font-black leading-none text-white/[0.025]" style={{ fontSize: "clamp(8rem,22vw,18rem)" }}>
+        <span className="font-sans font-black leading-none text-white/[0.025]" style={{ fontSize: "clamp(8rem,22vw,18rem)" }}>
           0{index + 1}
         </span>
       </div>
@@ -155,7 +155,7 @@ function Panel({
 
       {/* ── Step label beside bullet ──
       <div className="absolute left-[72px] lg:left-[88px] top-1/2 -translate-y-1/2 z-20 pointer-events-none">
-        <p className="font-mono text-base uppercase tracking-widest text-neutral-600">STG-0{index + 1}</p>
+        <p className="font-sans text-base uppercase tracking-widest text-neutral-600">STG-0{index + 1}</p>
       </div> */}
 
       {/* Main content */}
@@ -176,8 +176,8 @@ function Panel({
                 <span className={cfg.accentText}>{getIcon(step.number)}</span>
               </div>
               <div>
-                <p className="font-mono text-base uppercase tracking-[0.2em] text-sea-salt">Phase</p>
-                <p className={`font-mono text-base font-bold tracking-wider uppercase ${cfg.accentText}`}>
+                <p className="font-sans text-base uppercase tracking-[0.2em] text-sea-salt">Phase</p>
+                <p className={`font-sans text-base font-bold tracking-wider uppercase ${cfg.accentText}`}>
                   {step.number}
                 </p>
               </div>
@@ -185,7 +185,7 @@ function Panel({
 
             {/* Title */}
             <div className="space-y-4">
-              <h3 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.1]">
+              <h3 className="font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.1]">
                 {step.title}
               </h3>
               <p className="font-sans text-base text-sea-salt leading-relaxed max-w-md">
@@ -209,7 +209,7 @@ function Panel({
             </div>
 
             {/* Step counter */}
-            <p className="font-mono text-base text-ivory tracking-widest uppercase">
+            <p className="font-sans text-base text-ivory tracking-widest uppercase">
               {String(index + 1).padStart(2, "0")} of {String(N).padStart(2, "0")} phases
             </p>
           </div>
@@ -218,7 +218,7 @@ function Panel({
           <div className="hidden lg:flex flex-col justify-center items-start">
             <div className={`w-full max-w-sm p-7 rounded-2xl border ${cfg.border} backdrop-blur-sm`}
               style={{ background: `${cfg.accent}08` }}>
-              <p className={`font-mono text-[9px] uppercase tracking-widest font-bold mb-3 ${cfg.accentText}`}>
+              <p className={`font-sans text-[9px] uppercase tracking-widest font-bold mb-3 ${cfg.accentText}`}>
                 COMMIT STATUS
               </p>
               <p className="font-sans text-sm text-neutral-400 leading-relaxed">
@@ -231,7 +231,7 @@ function Panel({
                   className="h-2 w-2 rounded-full animate-pulse"
                   style={{ backgroundColor: cfg.accent, boxShadow: `0 0 8px ${cfg.accent}` }}
                 />
-                <span className="font-mono text-base text-neutral-500 uppercase tracking-widest">
+                <span className="font-sans text-base text-neutral-500 uppercase tracking-widest">
                   Release Ready
                 </span>
               </div>
@@ -264,10 +264,10 @@ export default function Workflow() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="space-y-4"
         >
-          <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-mono mb-[3rem] tracking-widest text-brunswick-green-500 bg-[#a3e635]/5">
+          <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans mb-[3rem] tracking-widest text-brunswick-green-500 bg-[#a3e635]/5">
             Our Timeline
           </span>
-          <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white max-w-3xl mx-auto leading-tight">
+          <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white max-w-3xl mx-auto leading-tight">
             A collaborative process that builds the right systems for your mission
           </h2>
           <p className="max-w-xl mx-auto font-sans text-base sm:text-sm text-neutral-400">

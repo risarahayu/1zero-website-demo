@@ -55,10 +55,10 @@ export default function Products({ onOpenBooking }: ProductsProps) {
           <div className="relative space-y-12 px-6 py-12 sm:px-10 sm:py-14">
             {/* Head Area */}
             <div className="text-center space-y-4">
-              <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-mono  tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5 shadow-[0_0_12px_rgba(163,230,53,0.1)]">
+              <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans  tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5 shadow-[0_0_12px_rgba(163,230,53,0.1)]">
                 Our Product
               </span>
-              <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+              <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
                 Core Technical Ecosystems
               </h2>
               <p className="max-w-xl mx-auto font-sans text-base sm:text-sm text-neutral-400">
@@ -81,13 +81,13 @@ export default function Products({ onOpenBooking }: ProductsProps) {
                       <div className="h-12 w-12 rounded-xl bg-neutral-900 border border-neutral-800/80 flex items-center justify-center group-hover:bg-brunswick-green-primary/10 group-hover:border-brunswick-green-500 transition-colors">
                         {getIcon(p.id)}
                       </div>
-                      <span className="font-mono text-[9px] uppercase text-neutral-600 bg-neutral-900/40 px-2 py-0.5 rounded-md">
+                      <span className="font-sans text-[9px] uppercase text-neutral-600 bg-neutral-900/40 px-2 py-0.5 rounded-md">
                         MODULE 0{index + 1}
                       </span>
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="font-display text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">
+                      <h3 className="font-sans text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">
                         {p.title}
                       </h3>
                       <p className="font-sans text-base text-neutral-400 group-hover:text-neutral-300 transition-colors leading-relaxed">

@@ -16,7 +16,7 @@ export default function Footer() {
 
           {/* LEFT COLUMN: BIG GREETING */}
           <div className="lg:col-span-5 space-y-6">
-            <h2 className="font-display text-5xl sm:text-6xl font-extrabold tracking-tight text-white leading-none">
+            <h2 className="font-sans text-5xl sm:text-6xl font-extrabold tracking-tight text-white leading-none">
               Let's <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--ivory)] to-[var(--green-900)]">
                 Connect
@@ -56,14 +56,14 @@ export default function Footer() {
 
             {/* Email & Contact */}
             <div className="space-y-4">
-              <span className="block font-mono text-base text-neutral-500 uppercase tracking-widest font-bold">
+              <span className="block font-sans text-base text-neutral-500 uppercase tracking-widest font-bold">
                 Direct Inquiries
               </span>
               <div className="space-y-3 text-base sm:text-sm text-neutral-300">
                 <a
                   id="footer-email-link"
                   href="mailto:info@1zero.biz"
-                  className="flex items-center gap-2 hover:text-emerald-400 transition-colors font-mono"
+                  className="flex items-center gap-2 hover:text-emerald-400 transition-colors font-sans"
                 >
                   <Mail className="h-4 w-4 text-emerald-400 shrink-0" />
                   <span>info@1zero.biz</span>
@@ -71,7 +71,7 @@ export default function Footer() {
                 <a
                   id="footer-phone-link"
                   href="tel:+6285339396030"
-                  className="flex items-center gap-2 hover:text-emerald-400 transition-colors font-mono"
+                  className="flex items-center gap-2 hover:text-emerald-400 transition-colors font-sans"
                 >
                   <Phone className="h-4 w-4 text-emerald-400 shrink-0" />
                   <span>+62-853-3939-6030</span>
@@ -87,10 +87,10 @@ export default function Footer() {
 
             {/* Address */}
             <div className="space-y-4">
-              <span className="block font-mono text-base text-neutral-500 uppercase tracking-widest font-bold">
+              <span className="block font-sans text-base text-neutral-500 uppercase tracking-widest font-bold">
                 Primary Laboratory
               </span>
-              <div className="flex gap-2 text-base text-neutral-300 leading-relaxed font-mono">
+              <div className="flex gap-2 text-base text-neutral-300 leading-relaxed font-sans">
                 <MapPin className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
                 <div>
                   <strong className="text-white block font-sans text-base">Our Office Address</strong>
@@ -108,7 +108,7 @@ export default function Footer() {
         </div>
 
         {/* Lower copyright bar */}
-        <div className="pt-8 border-t border-neutral-900 text-base font-mono text-neutral-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="pt-8 border-t border-neutral-900 text-base font-sans text-neutral-500 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <Logo1Zero className="h-4 text-neutral-400 opacity-60 hover:opacity-100 transition-opacity" glow={false} />
             <span>© {currentYear} 1ZERO AGENCY. ALL ARCHITECTURAL PLANS SECURED.</span>

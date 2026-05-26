@@ -150,14 +150,14 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
             <div className="inline-flex">
               <div className="relative px-5 py-2.5 rounded-full border border-neutral-800/80 bg-neutral-950/60 shadow-[0_0_15px_rgba(255,255,255,0.02)]">
                 {/* Visual outline and text */}
-                <span className="font-display text-base s:text-sm font-semibold text-white tracking-wide">
+                <span className="font-sans text-base s:text-sm font-semibold text-white tracking-wide">
                   Our Portfolios
                 </span>
               </div>
             </div>
 
             {/* Elegant Main Title */}
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.1]">
+            <h2 className="font-sans text-4xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.1]">
               Where Ideas <br />
               Become Reality
             </h2>
@@ -186,7 +186,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
                 <ArrowRight className="h-4 w-4" />
               </button>
 
-              <span className="font-mono text-[11px] text-neutral-600 tracking-wider font-semibold ml-2 select-none uppercase font-bold text-brunswick-green-500">
+              <span className="font-sans text-[11px] text-neutral-600 tracking-wider font-semibold ml-2 select-none uppercase font-bold text-brunswick-green-500">
                 {String(currentDisplayIndex + 1).padStart(2, '0')} / {String(customProjects.length).padStart(2, '0')}
               </span>
             </div>
@@ -229,7 +229,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
 
                     {/* Left corner identifier and Content text */}
                     <div className="pt-3 space-y-2">
-                      <h3 className="font-display text-lg sm:text-xl font-bold text-white tracking-tight group-hover:text-brunswick-green-600 transition-colors">
+                      <h3 className="font-sans text-lg sm:text-xl font-bold text-white tracking-tight group-hover:text-brunswick-green-600 transition-colors">
                         {project.title}
                       </h3>
 
@@ -256,13 +256,13 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
 
         {/* Global CTA Banner under */}
         <div className="text-center pt-20 max-w-2xl mx-auto space-y-4">
-          <p className="font-mono text-base text-neutral-500 uppercase tracking-widest">
+          <p className="font-sans text-base text-neutral-500 uppercase tracking-widest">
             Ready to review full modular system blueprints?
           </p>
           <button
             id="portfolio-review-btn"
             onClick={onOpenBooking}
-            className="inline-flex items-center gap-2 p-3.5 px-8 rounded-full bg-brunswick-green-primary hover:bg-brunswick-green-700 hover:text-black text-sea-salt font-display font-extrabold text-base transition-all uppercase tracking-wider cursor-pointer shadow-[0_4px_20px_rgba(16,185,129,0.2)] hover:shadow-[0_4px_25px_rgba(16,185,129,0.3)] transform hover:scale-[1.01]"
+            className="inline-flex items-center gap-2 p-3.5 px-8 rounded-full bg-brunswick-green-primary hover:bg-brunswick-green-700 hover:text-black text-sea-salt font-sans font-extrabold text-base transition-all uppercase tracking-wider cursor-pointer shadow-[0_4px_20px_rgba(16,185,129,0.2)] hover:shadow-[0_4px_25px_rgba(16,185,129,0.3)] transform hover:scale-[1.01]"
           >
             Schedule Architecture Session
           </button>

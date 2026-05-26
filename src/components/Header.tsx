@@ -23,7 +23,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
   return (
     <header className="relative w-full z-40">
       {/* Top micro-banner */}
-      <div className="w-full bg-[#070707] border-b border-neutral-900 py-2 px-4 text-center text-[11px] font-mono tracking-wider text-neutral-400">
+      <div className="w-full bg-[#070707] border-b border-neutral-900 py-2 px-4 text-center text-[11px] font-sans tracking-wider text-neutral-400">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-1.5">
           <span className="inline-flex items-center gap-1 text-emerald-400 font-medium">
             <Sparkles className="h-3 w-3 animate-pulse" />
@@ -55,7 +55,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               }`}>
               {/* Left empty block or indicator */}
               <div
-                className={`sm:flex items-center gap-1.5 font-mono text-[9px] text-neutral-500 transition-all duration-300 ${isScrolled
+                className={`sm:flex items-center gap-1.5 font-sans text-[9px] text-neutral-500 transition-all duration-300 ${isScrolled
                   ? "opacity-0 scale-90 w-0 overflow-hidden"
                   : "opacity-100 scale-100"
                   }`}
@@ -89,7 +89,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               <button
                 id="header-booking-btn"
                 onClick={onOpenBooking}
-                className="flex items-center gap-1 p-1 px-3.5 bg-green-primary/10 hover:bg-brunswick-green-primary hover:text-sea-salt border border-brunswick-green-500 text-brunswick-green-500  hover:text-brunswick-green-800 font-display font-semibold text-base rounded-full transition-all cursor-pointer shadow-sm hover:shadow-md hover:shadow-emerald-500/10"
+                className="flex items-center gap-1 p-1 px-3.5 bg-green-primary/10 hover:bg-brunswick-green-primary hover:text-sea-salt border border-brunswick-green-500 text-brunswick-green-500  hover:text-brunswick-green-800 font-sans font-semibold text-base rounded-full transition-all cursor-pointer shadow-sm hover:shadow-md hover:shadow-emerald-500/10"
               >
                 Book Us
                 <ArrowUpRight className="h-3 w-3 shrink-0" />
@@ -116,7 +116,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="font-display text-sm font-semibold text-neutral-300 hover:text-emerald-400 tracking-wide transition-colors py-2 border-b border-neutral-900/60"
+                  className="font-sans text-sm font-semibold text-neutral-300 hover:text-emerald-400 tracking-wide transition-colors py-2 border-b border-neutral-900/60"
                 >
                   {link.label}
                 </a>
@@ -128,7 +128,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                     setIsMobileMenuOpen(false);
                     onOpenBooking();
                   }}
-                  className="w-full text-center p-3 rounded-xl bg-green-primary text-black font-display font-extrabold text-base tracking-wider uppercase transition-colors hover:bg-emerald-600 block cursor-pointer"
+                  className="w-full text-center p-3 rounded-xl bg-green-primary text-black font-sans font-extrabold text-base tracking-wider uppercase transition-colors hover:bg-emerald-600 block cursor-pointer"
                 >
                   Free Strategy Session
                 </button>

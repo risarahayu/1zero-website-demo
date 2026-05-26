@@ -98,10 +98,10 @@ export default function Cases({ onOpenBooking }: CasesProps) {
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end pb-8 border-b border-neutral-900">
           <div className="lg:col-span-8 space-y-3">
-            <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-mono uppercase tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5 shadow-[0_0_12px_rgba(163,230,53,0.1)]">
+            <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans uppercase tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5 shadow-[0_0_12px_rgba(163,230,53,0.1)]">
               Recent Conversations
             </span>
-            <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-none">
+            <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-none">
               Others Already <br />Took the First Step
             </h2>
           </div>
@@ -117,7 +117,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
               >
                 <ArrowLeft className="h-3.5 w-3.5" />
               </button>
-              <span className="font-mono text-base text-neutral-500 tracking-wider">
+              <span className="font-sans text-base text-neutral-500 tracking-wider">
                 {String(activeIndex + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
               </span>
               <button
@@ -167,7 +167,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
                       {/* Animated pulse dot */}
                       <div className="absolute top-4 left-4 flex items-center gap-1.5">
                         <span className={`h-1.5 w-1.5 rounded-full ${item.accentColor.replace("text-", "bg-")} animate-pulse`} />
-                        <span className="font-mono text-[9px] text-neutral-400 uppercase tracking-widest">Live Case</span>
+                        <span className="font-sans text-[9px] text-neutral-400 uppercase tracking-widest">Live Case</span>
                       </div>
 
                       {/* Top-right icon */}
@@ -176,15 +176,15 @@ export default function Cases({ onOpenBooking }: CasesProps) {
                       </div>
 
                       {/* Tag chip */}
-                      <span className={`relative z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[9px] font-mono uppercase tracking-wider border border-neutral-700/60 bg-neutral-950/70 ${item.accentColor}`}>
+                      <span className={`relative z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[9px] font-sans uppercase tracking-wider border border-neutral-700/60 bg-neutral-950/70 ${item.accentColor}`}>
                         <Clock className="h-2.5 w-2.5" />
                         {item.tag}
                       </span>
                     </div>
 
                     <div className="space-y-1 pb-2">
-                      <p className="font-mono text-[9px] uppercase tracking-widest text-neutral-500">{item.label}</p>
-                      <h3 className={`font-display text-lg font-bold text-white transition-colors ${isCenter ? "group-hover:" + item.accentColor.replace("text-", "group-hover:text-") : ""}`}>
+                      <p className="font-sans text-[9px] uppercase tracking-widest text-neutral-500">{item.label}</p>
+                      <h3 className={`font-sans text-lg font-bold text-white transition-colors ${isCenter ? "group-hover:" + item.accentColor.replace("text-", "group-hover:text-") : ""}`}>
                         {item.title}
                       </h3>
                       <p className="font-sans text-base text-neutral-400 leading-relaxed line-clamp-2">
@@ -194,7 +194,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
                   </div>
 
                   {/* Footer row */}
-                  <div className="flex items-center justify-between pt-4 border-t border-neutral-900 text-base font-mono">
+                  <div className="flex items-center justify-between pt-4 border-t border-neutral-900 text-base font-sans">
                     <div className="flex items-center gap-1.5 text-neutral-500">
                       <MessageSquare className="h-3.5 w-3.5" />
                       <span>DISCUSSION COMPLETED</span>
@@ -226,7 +226,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
 
         {/* Call to action marquee */}
         <div className="overflow-hidden rounded-3xl border border-neutral-900 bg-neutral-950/30 p-4">
-          <div className="animate-marquee-text flex whitespace-nowrap gap-16 text-3xl sm:text-4xl font-display font-extrabold uppercase tracking-[0.18em] text-white">
+          <div className="animate-marquee-text flex whitespace-nowrap gap-16 text-3xl sm:text-4xl font-sans font-extrabold uppercase tracking-[0.18em] text-white">
             <span>Now is your turn</span>
             <span>Now is your turn</span>
             <span>Now is your turn</span>

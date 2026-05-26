@@ -36,7 +36,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-display text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1]"
+            className="font-sans text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1]"
           >
             Simplify Systems <br />
             <span className="animate-gradient-text text-gradient-impact">
@@ -48,7 +48,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-2xl mx-auto font-sans text-neutral-400 text-sm sm:text-base leading-relaxed"
+            className="max-w-2xl mx-auto font-sans text-sea-salt text-sm sm:text-base leading-relaxed"
           >
             1zero engineers digital foundations that connect, scale seamlessly, and make history. We craft modern, resilient systems that optimize human activity to measure double real-world impact.
           </motion.p>
@@ -59,7 +59,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="max-w-xl mx-auto grid grid-cols-1 md:grid-cols-5 items-stretch rounded-2xl border border-neutral-800/80 bg-[#09090b]/80 p-1 backdrop-blur-md shadow-2xl"
+          className="max-w-xl mx-auto grid grid-cols-1 md:grid-cols-5 items-stretch rounded-2xl border border-color-sea-salt bg-[#09090b]/80 p-1 backdrop-blur-md shadow-2xl"
         >
           {/* Rating box (Col-span 3) */}
           <div className="md:col-span-3 flex flex-col justify-center items-start text-left p-5 md:pl-6 space-y-2 border-b md:border-b-0 md:border-r border-neutral-800/80">
@@ -67,12 +67,12 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="h-3.5 w-3.5 fill-emerald-500 text-emerald-500" />
               ))}
-              <span className="font-mono text-base text-white ml-1.5 font-bold">4.9★</span>
+              <span className="font-sans text-base text-white ml-1.5 font-bold">4.9★</span>
             </div> */}
             <p className="font-sans text-base leading-relaxed text-neutral-300">
               Book a Free 30-Minutes Strategy Session with a CTO who brings 40+ years of IT experience
             </p>
-            {/* <div className="flex items-center gap-1.5 font-mono text-[9px] text-neutral-500 uppercase tracking-wider">
+            {/* <div className="flex items-center gap-1.5 font-sans text-[9px] text-neutral-500 uppercase tracking-wider">
               <Users className="h-3 w-3 text-emerald-400" />
               <span>372+ Reviews from tech teams</span>
             </div> */}
@@ -82,13 +82,13 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           <button
             id="hero-book-call-card"
             onClick={onOpenBooking}
-            className="md:col-span-2 group flex flex-col justify-center items-center gap-2 p-3 rounded-xl bg-brunswick-green-primary hover:bg-brunswick-green-700 hover:text-black text-sea-salt text-center transition-all cursor-pointer font-display font-black text-sm relative overflow-hidden"
+            className="md:col-span-2 group flex flex-col justify-center items-center gap-2 p-3 rounded-xl bg-brunswick-green-primary hover:bg-brunswick-green-700 hover:text-black text-sea-salt text-center transition-all cursor-pointer font-sans font-black text-sm relative overflow-hidden"
           >
             {/* Soft inner glow */}
             <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             <PhoneCall className="h-5 w-5 animate-bounce shrink-0" />
-            <span className="tracking-wider uppercase">Book Call Us</span>
-            <span className="flex items-center gap-1 font-mono text-base  font-medium">
+            <span className="tracking-wider uppercase">Book a Section</span>
+            <span className="flex items-center gap-1 font-sans text-base  font-medium">
               Free 30mins Session
               <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
             </span>
@@ -102,7 +102,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           transition={{ duration: 1, delay: 0.4 }}
           className="pt-6"
         >
-          <span className="font-mono text-base uppercase tracking-[0.2em] text-neutral-500 select-none">
+          <span className="font-sans text-base uppercase tracking-[0.2em] text-sea-salt select-none">
             delivering robust, high-performing product systems
           </span>
         </motion.div>
@@ -114,8 +114,8 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="pt-6 border-t border-neutral-900"
         >
-          <p className="font-sans text-[11px] text-neutral-500 uppercase tracking-widest mb-6">
-            Trusted by organizations navigating technical complexities
+          <p className="font-sans text-sm text-sea-salt  tracking-widest mb-6">
+            Trusted By
           </p>
 
           {/* Infinite marquee carousel — duplicated for seamless loop */}

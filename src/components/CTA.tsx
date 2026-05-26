@@ -27,13 +27,13 @@ export default function CTA({ onOpenBooking }: CTAProps) {
 
           <div className="max-w-3xl mx-auto space-y-8">
             {/* Header label */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-900/20 px-4 py-1.5 text-base text-emerald-300 font-mono">
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-900/20 px-4 py-1.5 text-base text-emerald-300 font-sans">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" />
               <span>LIMITED WEEKLY OPENINGS</span>
             </div>
 
             <div className="space-y-4">
-              <h2 className="font-display text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-none">
+              <h2 className="font-sans text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-none">
                 Now is Your Minute. <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-[#dcd8cc]">
                   Book a Free 30-Minute
@@ -50,13 +50,13 @@ export default function CTA({ onOpenBooking }: CTAProps) {
               <button
                 id="cta-booking-btn"
                 onClick={onOpenBooking}
-                className="group relative flex items-center justify-center gap-2 px-10 py-5 bg-[#dfd9c6] hover:bg-[#d2caba] text-neutral-950 font-display font-extrabold text-sm sm:text-base rounded-2xl transition-all shadow-[0_10px_35px_rgba(223,217,198,0.25)] hover:shadow-[0_10px_45px_rgba(223,217,198,0.4)] cursor-pointer tracking-wide"
+                className="group relative flex items-center justify-center gap-2 px-10 py-5 bg-[#dfd9c6] hover:bg-[#d2caba] text-neutral-950 font-sans font-extrabold text-sm sm:text-base rounded-2xl transition-all shadow-[0_10px_35px_rgba(223,217,198,0.25)] hover:shadow-[0_10px_45px_rgba(223,217,198,0.4)] cursor-pointer tracking-wide"
               >
-                Book Call Us
+                Book a Section
                 <PhoneCall className="h-4 w-4 text-neutral-900 group-hover:scale-110 transition-transform" />
               </button>
 
-              <span className="font-mono text-base text-emerald-500/80 uppercase tracking-widest block pt-1">
+              <span className="font-sans text-base text-emerald-500/80 uppercase tracking-widest block pt-1">
                 Instant confirmation • Available with Google Meet invites
               </span>
             </div>
