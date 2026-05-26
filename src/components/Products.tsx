@@ -71,14 +71,14 @@ export default function Products({ onOpenBooking }: ProductsProps) {
               {products.map((p, index) => (
                 <div
                   key={p.id}
-                  className="group relative flex flex-col justify-between p-6 rounded-3xl border border-neutral-900 bg-neutral-950/60 hover:bg-neutral-950/90 transition-all duration-300 shadow-2xl overflow-hidden cursor-pointer hover:border-emerald-500/30"
+                  className="group relative flex flex-col justify-between p-6 rounded-3xl border border-neutral-900 bg-neutral-950/60 hover:bg-neutral-950/90 transition-all duration-300 shadow-2xl overflow-hidden cursor-pointer hover:border-brunswick-green-500"
                   onClick={onOpenBooking}
                 >
                   <div className="absolute top-0 right-0 h-20 w-20 bg-gradient-to-bl from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <div className="h-12 w-12 rounded-xl bg-neutral-900 border border-neutral-800/80 flex items-center justify-center group-hover:bg-green-primary/10 group-hover:border-emerald-500/20 transition-colors">
+                      <div className="h-12 w-12 rounded-xl bg-neutral-900 border border-neutral-800/80 flex items-center justify-center group-hover:bg-brunswick-green-primary/10 group-hover:border-brunswick-green-500 transition-colors">
                         {getIcon(p.id)}
                       </div>
                       <span className="font-mono text-[9px] uppercase text-neutral-600 bg-neutral-900/40 px-2 py-0.5 rounded-md">

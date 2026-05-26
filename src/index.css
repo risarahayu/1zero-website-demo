@@ -2,9 +2,20 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brunswick-green-500: var(--green-500);
+  --color-brunswick-green-600: var(--green-600);
+  --color-brunswick-green-700: var(--green-700);
+  --color-brunswick-green-800: var(--green-800);
+  --color-brunswick-green-900: var(--green-900);
+  --color-brunswick-green-primary: var(--green-900);
+  
+  --color-sea-salt: var(--sea-salt);
+  --color-ivory: var(--ivory);
+  --color-dun: var(--dun);
 }
 
 :root {
@@ -51,54 +62,6 @@
   }
 }
 
-.bg-brunswick-green-primary {
-  background-color: var(--green-900);
-  color: var(--sea-salt);
-}
-
-.text-sea-salt {
-  color: var(--sea-salt);
-}
-
-.text-ivory {
-  color: var(--ivory);
-}
-
-.text-dun {
-  color: var(--dun);
-}
-
-.text-brunswick-green-500 {
-  color: var(--green-500);
-}
-
-.text-brunswick-green-600 {
-  color: var(--green-600);
-}
-
-.text-brunswick-green-800 {
-  color: var(--green-800);
-}
-
-.text-brunswick-green-900 {
-  color: var(--green-900);
-}
-
-.border-brunswick-green-500 {
-  border-color: var(--green-500);
-}
-
-.border-brunswick-green-600 {
-  border-color: var(--green-600);
-}
-
-.border-brunswick-green-800 {
-  border-color: var(--green-800);
-}
-
-.border-brunswick-green-900 {
-  border-color: var(--green-900);
-}
 
 /* Custom aurora glow grids & glassmorphism details */
 .aurora-blur-1 {

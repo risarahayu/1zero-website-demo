@@ -128,13 +128,13 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
               {whyUsPoints.map((point, index) => (
                 <div
                   key={index}
-                  className="group p-5 rounded-2xl border border-neutral-900 bg-neutral-950/20 hover:bg-neutral-950/80 hover:border-emerald-500/10 transition-all duration-300 space-y-3 cursor-default"
+                  className="group p-5 rounded-2xl border border-neutral-900 bg-neutral-950/20 hover:bg-neutral-950/80 hover:border-brunswick-green-900 transition-all duration-300 space-y-3 cursor-default"
                 >
-                  <div className="h-10 w-10 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center group-hover:bg-green-primary/10 group-hover:border-emerald-500/20 transition-all shadow-md">
+                  <div className="h-10 w-10 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center group-hover:bg-brunswick-green-primary group-hover:border-brunswick-green-900 transition-all shadow-md">
                     {getPillarIcon(index)}
                   </div>
                   <div className="space-y-1">
-                    <h3 className="font-display font-regular text-[#ede9fe] text-lg tracking-wide group-hover:text-emerald-400 transition-colors">
+                    <h3 className="font-display font-regular text-[#ede9fe] text-lg tracking-wide group-hover:text-brunswick-green-600 transition-colors">
                       {point.title}
                     </h3>
 

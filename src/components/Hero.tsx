@@ -25,7 +25,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           className="inline-flex items-center gap-2 rounded-full border border-neutral-800/80 bg-neutral-900/60 p-1 px-4 text-base backdrop-blur-sm shadow-md"
         >
           <span className="h-2 w-2 rounded-full bg-green-primary animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.9)]" />
-          <span className="font-sans text-[11px] font-medium text-neutral-300">
+          <span className="font-sans text-sm font-medium text-neutral-300">
             Performance on any scale. We craft software with precision.
           </span>
         </motion.div>
@@ -70,7 +70,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               <span className="font-mono text-base text-white ml-1.5 font-bold">4.9★</span>
             </div> */}
             <p className="font-sans text-base leading-relaxed text-neutral-300">
-              Book a Free 30-Minute Strategy Session with a CTO who brings 40+ years of IT experience
+              Book a Free 30-Minutes Strategy Session with a CTO who brings 40+ years of IT experience
             </p>
             {/* <div className="flex items-center gap-1.5 font-mono text-[9px] text-neutral-500 uppercase tracking-wider">
               <Users className="h-3 w-3 text-emerald-400" />
@@ -82,14 +82,14 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           <button
             id="hero-book-call-card"
             onClick={onOpenBooking}
-            className="md:col-span-2 group flex flex-col justify-center items-center gap-2 p-6 rounded-xl bg-green-primary hover:bg-emerald-600 text-[#040c08] text-center transition-all cursor-pointer font-display font-black text-sm relative overflow-hidden"
+            className="md:col-span-2 group flex flex-col justify-center items-center gap-2 p-3 rounded-xl bg-brunswick-green-primary hover:bg-brunswick-green-700 hover:text-black text-sea-salt text-center transition-all cursor-pointer font-display font-black text-sm relative overflow-hidden"
           >
             {/* Soft inner glow */}
             <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             <PhoneCall className="h-5 w-5 animate-bounce shrink-0" />
             <span className="tracking-wider uppercase">Book Call Us</span>
             <span className="flex items-center gap-1 font-mono text-base  font-medium">
-              Free 30m Session
+              Free 30mins Session
               <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
             </span>
           </button>

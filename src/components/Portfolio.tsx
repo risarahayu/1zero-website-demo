@@ -262,7 +262,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
           <button
             id="portfolio-review-btn"
             onClick={onOpenBooking}
-            className="inline-flex items-center gap-2 p-3.5 px-8 rounded-full bg-brunswick-green-primary hover:bg-emerald-600 text-black font-display font-extrabold text-base transition-all uppercase tracking-wider cursor-pointer shadow-[0_4px_20px_rgba(16,185,129,0.2)] hover:shadow-[0_4px_25px_rgba(16,185,129,0.3)] transform hover:scale-[1.01]"
+            className="inline-flex items-center gap-2 p-3.5 px-8 rounded-full bg-brunswick-green-primary hover:bg-brunswick-green-700 hover:text-black text-sea-salt font-display font-extrabold text-base transition-all uppercase tracking-wider cursor-pointer shadow-[0_4px_20px_rgba(16,185,129,0.2)] hover:shadow-[0_4px_25px_rgba(16,185,129,0.3)] transform hover:scale-[1.01]"
           >
             Schedule Architecture Session
           </button>

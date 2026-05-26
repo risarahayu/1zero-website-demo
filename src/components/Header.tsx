@@ -89,7 +89,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               <button
                 id="header-booking-btn"
                 onClick={onOpenBooking}
-                className="flex items-center gap-1 p-1 px-3.5 bg-green-primary/10 hover:bg-green-primary border border-brunswick-green-500 text-brunswick-green-500  hover:text-black font-display font-semibold text-base rounded-full transition-all cursor-pointer shadow-sm hover:shadow-md hover:shadow-emerald-500/10"
+                className="flex items-center gap-1 p-1 px-3.5 bg-green-primary/10 hover:bg-brunswick-green-primary hover:text-sea-salt border border-brunswick-green-500 text-brunswick-green-500  hover:text-brunswick-green-800 font-display font-semibold text-base rounded-full transition-all cursor-pointer shadow-sm hover:shadow-md hover:shadow-emerald-500/10"
               >
                 Book Us
                 <ArrowUpRight className="h-3 w-3 shrink-0" />
