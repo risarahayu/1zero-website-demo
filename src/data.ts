@@ -9,13 +9,13 @@ export const navLinks: NavLink[] = [
 ];
 
 export const clientLogos = [
-  { name: "BWT", logoImg: "/Partner logo white/BWT.png" },
-  { name: "DARE", logoImg: "/Partner logo white/DARE.png" },
-  { name: "Ferrum", logoImg: "/Partner logo white/Ferrum.png" },
-  { name: "PWC", logoImg: "/Partner logo white/PWC.png" },
-  { name: "UNHCR", logoImg: "/Partner logo white/UNHCR.png" },
-  { name: "Energaia", logoImg: "/Partner logo white/energaia.png" },
-  { name: "PLC", logoImg: "/Partner logo white/plc-logo-scaled.png" },
+  { name: "BWT", logoImg: import.meta.env.BASE_URL + "Partner logo white/BWT.png" },
+  { name: "DARE", logoImg: import.meta.env.BASE_URL + "Partner logo white/DARE.png" },
+  { name: "Ferrum", logoImg: import.meta.env.BASE_URL + "Partner logo white/Ferrum.png" },
+  { name: "PWC", logoImg: import.meta.env.BASE_URL + "Partner logo white/PWC.png" },
+  { name: "UNHCR", logoImg: import.meta.env.BASE_URL + "Partner logo white/UNHCR.png" },
+  { name: "Energaia", logoImg: import.meta.env.BASE_URL + "Partner logo white/energaia.png" },
+  { name: "PLC", logoImg: import.meta.env.BASE_URL + "Partner logo white/plc-logo-scaled.png" },
 ];
 
 export const products: ProductItem[] = [

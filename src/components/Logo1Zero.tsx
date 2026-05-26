@@ -14,7 +14,7 @@ export default function Logo1Zero({ className = "h-5", glow = true }: LogoProps)
       )}
 
       <img
-        src="/Logo 1zero white.svg"
+        src={`${import.meta.env.BASE_URL}Logo 1zero white.svg`}
         alt="1ZERO Logo"
         className={`${className} transition-all duration-300 transform group-hover:scale-[1.02] filter group-hover:drop-shadow-[0_0_8px_rgba(163,230,53,0.3)]`}
       />

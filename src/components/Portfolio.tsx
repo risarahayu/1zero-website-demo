@@ -26,7 +26,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
       description: "A curated selection of modern art pieces from various contemporary artists.",
       bgClass: "bg-[#112240] border-blue-500/10",
       mockupType: "impact",
-      imageUrl: "/portofolio image/Desktop - 62 (2).png"
+      imageUrl: `${import.meta.env.BASE_URL}portofolio image/Desktop - 62 (2).png`
     },
     {
       id: "baliteak",
@@ -34,7 +34,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
       description: "A portfolio showcasing stunning custom teakwood designs and artisanal furniture catalog.",
       bgClass: "bg-[#45301F] border-amber-500/10",
       mockupType: "baliteak",
-      imageUrl: "/portofolio image/kup (3).png"
+      imageUrl: `${import.meta.env.BASE_URL}portofolio image/kup (3).png`
     },
     {
       id: "TDD",
@@ -42,7 +42,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
       description: "Healthcare portal integrating real-time translating, audio diagnosis, and clinical records.",
       bgClass: "bg-[#092218] border-emerald-500/10",
       mockupType: "tdd",
-      imageUrl: "/portofolio image/kup (5).png"
+      imageUrl: `${import.meta.env.BASE_URL}portofolio image/kup (5).png`
     },
     {
       id: "nexus",
@@ -50,7 +50,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
       description: "Professional company website built for PT Phoenix, featuring a modern design system and seamless user experience.",
       bgClass: "bg-[#16122d] border-purple-500/10",
       mockupType: "nexus",
-      imageUrl: "/portofolio image/kup (6).png"
+      imageUrl: `${import.meta.env.BASE_URL}portofolio image/kup (6).png`
     },
     {
       id: "blackstump",
@@ -58,7 +58,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
       description: "Full website replatform for Blackstump Technologies — modernizing architecture, design system, and digital presence from the ground up.",
       bgClass: "bg-[#0d1a0d] border-brunswick-green-500/10",
       mockupType: "blackstump",
-      imageUrl: "/portofolio image/kup (7).png"
+      imageUrl: `${import.meta.env.BASE_URL}portofolio image/kup (7).png`
     }
   ];
 
