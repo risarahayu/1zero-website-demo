@@ -15,7 +15,7 @@ const caseItems = [
     gradient: "from-emerald-900/80 via-neutral-950 to-neutral-950",
     accentColor: "text-emerald-400",
     borderColor: "border-emerald-500/20",
-    iconBg: "bg-emerald-500/10",
+    iconBg: "bg-green-primary/10",
   },
   {
     id: "case-02",
@@ -24,7 +24,7 @@ const caseItems = [
     desc: "Rebuilding a legacy LMS into a cloud-native, multi-tenant platform serving 80,000 active learners with zero downtime migration.",
     tag: "Cloud Migration",
     gradient: "from-blue-900/80 via-neutral-950 to-neutral-950",
-    accentColor: "text-blue-400",
+    accentColor: ".text-blue-400",
     borderColor: "border-blue-500/20",
     iconBg: "bg-blue-500/10",
   },
@@ -90,7 +90,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
 
   return (
     <section className="relative py-20 bg-[#060606] overflow-hidden">
-      <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-emerald-500/[0.03] blur-[110px]" />
+      <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-green-primary/[0.03] blur-[110px]" />
       <div className="absolute top-0 right-0 h-64 w-64 rounded-full bg-blue-500/[0.03] blur-[100px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
@@ -98,7 +98,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end pb-8 border-b border-neutral-900">
           <div className="lg:col-span-8 space-y-3">
-            <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-[10px] font-mono uppercase tracking-widest text-[#a3e635] bg-[#a3e635]/5 shadow-[0_0_12px_rgba(163,230,53,0.1)]">
+            <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-mono uppercase tracking-widest text-green-500 mb-[3rem] bg-[#a3e635]/5 shadow-[0_0_12px_rgba(163,230,53,0.1)]">
               Recent Conversations
             </span>
             <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-none">
@@ -106,23 +106,23 @@ export default function Cases({ onOpenBooking }: CasesProps) {
             </h2>
           </div>
           <div className="lg:col-span-4 flex flex-col gap-4 items-start lg:items-end">
-            <p className="font-sans text-xs sm:text-sm text-neutral-400 leading-relaxed max-w-sm lg:text-right">
+            <p className="font-sans text-base sm:text-sm text-neutral-400 leading-relaxed max-w-sm lg:text-right">
               Teams are already turning ideas into premium, resilient system software. What high-performance framework are we building next together?
             </p>
             {/* Navigation */}
             <div className="flex items-center gap-3">
               <button
                 onClick={handlePrev}
-                className="h-9 w-9 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-[#a3e635] hover:border-[#a3e635] flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className="h-9 w-9 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-green-500  hover:border-[#a3e635] flex items-center justify-center transition-all duration-300 cursor-pointer"
               >
                 <ArrowLeft className="h-3.5 w-3.5" />
               </button>
-              <span className="font-mono text-[10px] text-neutral-500 tracking-wider">
+              <span className="font-mono text-base text-neutral-500 tracking-wider">
                 {String(activeIndex + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
               </span>
               <button
                 onClick={handleNext}
-                className="h-9 w-9 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-[#a3e635] hover:border-[#a3e635] flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className="h-9 w-9 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-green-500 hover:border-[#a3e635] flex items-center justify-center transition-all duration-300 cursor-pointer"
               >
                 <ArrowRight className="h-3.5 w-3.5" />
               </button>
@@ -130,7 +130,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
           </div>
         </div>
 
-        
+
 
         {/* Carousel Track */}
         <div
@@ -187,19 +187,19 @@ export default function Cases({ onOpenBooking }: CasesProps) {
                       <h3 className={`font-display text-lg font-bold text-white transition-colors ${isCenter ? "group-hover:" + item.accentColor.replace("text-", "group-hover:text-") : ""}`}>
                         {item.title}
                       </h3>
-                      <p className="font-sans text-xs text-neutral-400 leading-relaxed line-clamp-2">
+                      <p className="font-sans text-base text-neutral-400 leading-relaxed line-clamp-2">
                         {item.desc}
                       </p>
                     </div>
                   </div>
 
                   {/* Footer row */}
-                  <div className="flex items-center justify-between pt-4 border-t border-neutral-900 text-xs font-mono">
+                  <div className="flex items-center justify-between pt-4 border-t border-neutral-900 text-base font-mono">
                     <div className="flex items-center gap-1.5 text-neutral-500">
                       <MessageSquare className="h-3.5 w-3.5" />
                       <span>DISCUSSION COMPLETED</span>
                     </div>
-                    <span className={`font-sans text-xs ${item.accentColor} flex items-center gap-1 group-hover:opacity-80 transition-opacity`}>
+                    <span className={`font-sans text-base ${item.accentColor} flex items-center gap-1 group-hover:opacity-80 transition-opacity`}>
                       Discuss Strategy
                       <ArrowUpRight className="h-3.5 w-3.5" />
                     </span>
@@ -215,11 +215,10 @@ export default function Cases({ onOpenBooking }: CasesProps) {
               <button
                 key={i}
                 onClick={() => setActiveIndex(i)}
-                className={`transition-all duration-300 rounded-full ${
-                  i === activeIndex
-                    ? "w-6 h-1.5 bg-[#a3e635]"
-                    : "w-1.5 h-1.5 bg-neutral-700 hover:bg-neutral-500"
-                }`}
+                className={`transition-all duration-300 rounded-full ${i === activeIndex
+                  ? "w-6 h-1.5 bg-[#a3e635]"
+                  : "w-1.5 h-1.5 bg-neutral-700 hover:bg-neutral-500"
+                  }`}
               />
             ))}
           </div>

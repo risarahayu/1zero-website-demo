@@ -49,17 +49,17 @@ function TimelineFill({ scrollYProgress }: { scrollYProgress: MotionValue<number
 }
 
 const PANEL_CONFIG = [
-  { bg: "bg-[#03060f]", glow: "rgba(59,130,246,0.06)", accent: "#3b82f6", accentText: "text-blue-400", border: "border-blue-500/20" },
-  { bg: "bg-[#06030f]", glow: "rgba(139,92,246,0.06)", accent: "#8b5cf6", accentText: "text-purple-400", border: "border-purple-500/20" },
-  { bg: "bg-[#030a04]", glow: "rgba(16,185,129,0.06)", accent: "#10b981", accentText: "text-emerald-400", border: "border-emerald-500/20" },
+  { bg: "bg-[#03060f]", glow: "rgba(59,130,246,0.06)", accent: "#85DFC3", accentText: "text-green-500", border: "border-green-500" },
+  { bg: "bg-[#06030f]", glow: "rgba(139,92,246,0.06)", accent: "#65BDA2", accentText: "text-green-600", border: "border-green-600" },
+  { bg: "bg-[#030a04]", glow: "rgba(16,185,129,0.06)", accent: "#307962", accentText: "text-green-800", border: "border-green-800" },
 ];
 
 function getIcon(number: string) {
   switch (number.toLowerCase()) {
-    case "discovery":        return <Search className="h-6 w-6" />;
-    case "blueprint":        return <Sliders className="h-6 w-6" />;
+    case "discovery": return <Search className="h-6 w-6" />;
+    case "blueprint": return <Sliders className="h-6 w-6" />;
     case "build and enable": return <Rocket className="h-6 w-6" />;
-    default:                 return <CheckCircle2 className="h-6 w-6" />;
+    default: return <CheckCircle2 className="h-6 w-6" />;
   }
 }
 
@@ -155,7 +155,7 @@ function Panel({
 
       {/* ── Step label beside bullet ── */}
       <div className="absolute left-[72px] lg:left-[88px] top-1/2 -translate-y-1/2 z-20 pointer-events-none">
-        <p className="font-mono text-[8px] uppercase tracking-widest text-neutral-600">STG-0{index + 1}</p>
+        <p className="font-mono text-base uppercase tracking-widest text-neutral-600">STG-0{index + 1}</p>
       </div>
 
       {/* Main content */}
@@ -177,7 +177,7 @@ function Panel({
               </div>
               <div>
                 <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-neutral-600">Phase</p>
-                <p className={`font-mono text-xs font-bold tracking-wider uppercase ${cfg.accentText}`}>
+                <p className={`font-mono text-base font-bold tracking-wider uppercase ${cfg.accentText}`}>
                   {step.number}
                 </p>
               </div>
@@ -231,7 +231,7 @@ function Panel({
                   className="h-2 w-2 rounded-full animate-pulse"
                   style={{ backgroundColor: cfg.accent, boxShadow: `0 0 8px ${cfg.accent}` }}
                 />
-                <span className="font-mono text-[10px] text-neutral-500 uppercase tracking-widest">
+                <span className="font-mono text-base text-neutral-500 uppercase tracking-widest">
                   Release Ready
                 </span>
               </div>
@@ -264,13 +264,13 @@ export default function Workflow() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="space-y-4"
         >
-          <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-[10px] font-mono uppercase tracking-widest text-[#a3e635] bg-[#a3e635]/5">
+          <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-mono mb-[3rem] tracking-widest text-green-500 bg-[#a3e635]/5">
             Our Timeline
           </span>
           <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white max-w-3xl mx-auto leading-tight">
             A collaborative process that builds the right systems for your mission
           </h2>
-          <p className="max-w-xl mx-auto font-sans text-xs sm:text-sm text-neutral-400">
+          <p className="max-w-xl mx-auto font-sans text-base sm:text-sm text-neutral-400">
             Precision counts. We build customized software workflows step-by-step, ensuring structural safety and elite handoff readiness.
           </p>
         </motion.div>
@@ -321,8 +321,8 @@ export default function Workflow() {
         transition={{ duration: 0.6 }}
       >
         <div className="p-5 rounded-2xl border border-neutral-900 bg-neutral-950/40 text-center flex flex-col sm:flex-row items-center justify-center gap-3">
-          <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-          <span className="font-sans text-xs text-neutral-400">
+          <span className="h-2 w-2 rounded-full bg-green-primary animate-pulse" />
+          <span className="font-sans text-base text-neutral-400">
             Each phase produces a formal, version-controlled repository delivery. We build for handoff readiness.
           </span>
         </div>

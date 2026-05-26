@@ -16,21 +16,21 @@ export default function Testimonials() {
   return (
     <section className="relative py-20 bg-neutral-950/20">
       {/* Soft auroral glow in corner */}
-      <div className="absolute top-1/2 right-10 -z-10 h-72 w-72 rounded-full bg-emerald-500/[0.03] blur-[110px]" />
+      <div className="absolute top-1/2 right-10 -z-10 h-72 w-72 rounded-full bg-green-primary/[0.03] blur-[110px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        
+
         {/* Title Area */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
           <div className="space-y-3 text-left">
-            <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-[10px] font-mono uppercase tracking-widest text-[#a3e635] bg-[#a3e635]/5">
+            <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-mono uppercase tracking-widest text-green-500 bg-[#a3e635]/5">
               Testimonials
             </span>
             <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-none">
               Our happy clients <br />say about us
             </h2>
           </div>
-          
+
           {/* Slider Controllers on desktop */}
           <div className="hidden md:flex items-center gap-2">
             <button
@@ -57,11 +57,10 @@ export default function Testimonials() {
             return (
               <div
                 key={t.id}
-                className={`group flex flex-col justify-between p-6 rounded-2xl border bg-neutral-950/40 p-6 transition-all duration-300 relative ${
-                  isActiveMobile 
-                    ? "border-emerald-500/40 shadow-emerald-500/5 shadow-2xl scale-[1.01] block" 
-                    : "border-neutral-900 group-hover:border-neutral-800 md:block hidden"
-                }`}
+                className={`group flex flex-col justify-between p-6 rounded-2xl border bg-neutral-950/40 p-6 transition-all duration-300 relative ${isActiveMobile
+                  ? "border-emerald-500/40 shadow-emerald-500/5 shadow-2xl scale-[1.01] block"
+                  : "border-neutral-900 group-hover:border-neutral-800 md:block hidden"
+                  }`}
               >
                 {/* Quotation icon accent */}
                 <div className="absolute top-6 right-6 text-neutral-800/80 group-hover:text-emerald-500/10 transition-colors">
@@ -77,7 +76,7 @@ export default function Testimonials() {
                   </div>
 
                   {/* Absolute quote */}
-                  <p className="font-sans text-xs sm:text-sm text-neutral-300 italic leading-relaxed group-hover:text-white transition-colors">
+                  <p className="font-sans text-base sm:text-sm text-neutral-300 italic leading-relaxed group-hover:text-white transition-colors">
                     "{t.quote}"
                   </p>
                 </div>
@@ -93,10 +92,10 @@ export default function Testimonials() {
                     />
                   </div>
                   <div className="leading-tight">
-                    <span className="block font-display text-xs font-bold text-white group-hover:text-emerald-400 transition-colors">
+                    <span className="block font-display text-base font-bold text-white group-hover:text-emerald-400 transition-colors">
                       {t.name}
                     </span>
-                    <span className="block font-sans text-[10px] text-neutral-500">
+                    <span className="block font-sans text-base text-neutral-500">
                       {t.role}, <strong className="text-neutral-400 font-normal">{t.company}</strong>
                     </span>
                   </div>
@@ -117,9 +116,9 @@ export default function Testimonials() {
           </button>
           <div className="flex items-center gap-1.5">
             {testimonials.map((_, idx) => (
-              <div 
-                key={idx} 
-                className={`h-1.5 rounded-full transition-all duration-300 ${activeSlide === idx ? "w-6 bg-emerald-500" : "w-1.5 bg-neutral-800"}`} 
+              <div
+                key={idx}
+                className={`h-1.5 rounded-full transition-all duration-300 ${activeSlide === idx ? "w-6 bg-green-primary" : "w-1.5 bg-neutral-800"}`}
               />
             ))}
           </div>

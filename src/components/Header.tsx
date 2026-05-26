@@ -30,9 +30,9 @@ export default function Header({ onOpenBooking }: HeaderProps) {
             LIVE STATUS:
           </span>
           <span>We're currently scaling architectures with modern UI setups.</span>
-          <button 
+          <button
             id="header-promo-cta"
-            onClick={onOpenBooking} 
+            onClick={onOpenBooking}
             className="text-neutral-200 underline hover:text-emerald-300 font-medium cursor-pointer transition-colors"
           >
             Schedule Strategy Session &rarr;
@@ -42,28 +42,25 @@ export default function Header({ onOpenBooking }: HeaderProps) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
         <div className="flex flex-col items-center">
-          {/* Logo Brand Title */}
-          <div className="text-center py-2 h-16 flex items-center justify-center">
-            <a href="#home" className="inline-block" aria-label="1ZERO Home">
-              <Logo1Zero className="h-8 md:h-10 text-white" />
-            </a>
-          </div>
+
 
           {/* Navigation Pill Container */}
-          <div 
-            className={`w-full max-w-xl transition-all duration-300 mt-4 ${
-              isScrolled 
-                ? "fixed top-4 left-1/2 -translate-x-1/2 z-50 max-w-lg px-2" 
-                : "relative"
-            }`}
+          <div
+            className={`w-full max-w-3xl transition-all duration-300 mt-4 ${isScrolled
+              ? "fixed top-4 left-1/2 -translate-x-1/2 z-50 max-w-xl px-2"
+              : "relative"
+              }`}
           >
-            <div className={`flex items-center justify-between mx-auto bg-[#0a0a0aba]/90 border border-neutral-800/80 backdrop-blur-md rounded-full px-5 py-2.5 shadow-xl transition-all ${
-              isScrolled ? "scale-95 shadow-emerald-500/5 shadow-2xl" : ""
-            }`}>
+            <div className={`flex items-center justify-between mx-auto bg-[#0a0a0aba]/90 border border-neutral-800/80 backdrop-blur-md rounded-full px-5 py-2.5 shadow-xl transition-all ${isScrolled ? "scale-95 shadow-emerald-500/5 shadow-2xl" : ""
+              }`}>
               {/* Left empty block or indicator */}
-              <div className="hidden sm:flex items-center gap-1.5 font-mono text-[9px] text-neutral-500">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-ping" />
-                <span>AGENCY</span>
+              <div
+                className={`sm:flex items-center gap-1.5 font-mono text-[9px] text-neutral-500 transition-all duration-300 ${isScrolled
+                  ? "opacity-0 scale-90 w-0 overflow-hidden"
+                  : "opacity-100 scale-100"
+                  }`}
+              >
+                <Logo1Zero />
               </div>
 
               {/* Navigation Items */}
@@ -72,7 +69,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                   <a
                     key={link.href}
                     href={link.href}
-                    className="font-sans text-xs font-semibold text-neutral-400 hover:text-white hover:underline transition-all tracking-wide"
+                    className="font-sans text-base font-semibold text-neutral-400 hover:text-white hover:underline transition-all tracking-wide"
                   >
                     {link.label}
                   </a>
@@ -83,7 +80,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               <button
                 id="mobile-menu-trigger"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-1 px-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-full sm:hidden transition-all text-xs"
+                className="p-1 px-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-full sm:hidden transition-all text-base"
               >
                 {isMobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
               </button>
@@ -92,7 +89,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               <button
                 id="header-booking-btn"
                 onClick={onOpenBooking}
-                className="flex items-center gap-1 p-1 px-3.5 bg-emerald-500/10 hover:bg-emerald-500 border border-emerald-500/30 text-emerald-300 hover:text-black font-display font-semibold text-[11px] rounded-full transition-all cursor-pointer shadow-sm hover:shadow-md hover:shadow-emerald-500/10"
+                className="flex items-center gap-1 p-1 px-3.5 bg-green-primary/10 hover:bg-green-primary border border-green-500 text-green-500  hover:text-black font-display font-semibold text-base rounded-full transition-all cursor-pointer shadow-sm hover:shadow-md hover:shadow-emerald-500/10"
               >
                 Book Us
                 <ArrowUpRight className="h-3 w-3 shrink-0" />
@@ -131,7 +128,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                     setIsMobileMenuOpen(false);
                     onOpenBooking();
                   }}
-                  className="w-full text-center p-3 rounded-xl bg-emerald-500 text-black font-display font-extrabold text-xs tracking-wider uppercase transition-colors hover:bg-emerald-600 block cursor-pointer"
+                  className="w-full text-center p-3 rounded-xl bg-green-primary text-black font-display font-extrabold text-base tracking-wider uppercase transition-colors hover:bg-emerald-600 block cursor-pointer"
                 >
                   Free Strategy Session
                 </button>

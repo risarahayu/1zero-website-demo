@@ -7,13 +7,13 @@ export default function Footer() {
   return (
     <footer id="contact" className="relative bg-[#050505] pt-20 pb-12 border-t border-neutral-900 overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-emerald-500/[0.02] blur-[120px]" />
+      <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-green-primary/[0.02] blur-[120px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        
+
         {/* Main interactive row */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
+
           {/* LEFT COLUMN: BIG GREETING */}
           <div className="lg:col-span-5 space-y-6">
             <h2 className="font-display text-5xl sm:text-6xl font-extrabold tracking-tight text-white leading-none">
@@ -22,10 +22,10 @@ export default function Footer() {
                 Connect
               </span>
             </h2>
-            <p className="font-sans text-xs text-neutral-400 leading-relaxed max-w-sm">
+            <p className="font-sans text-base text-neutral-400 leading-relaxed max-w-sm">
               We look forward to translating your mission operations into pristine, indestructible, & lightning-fast system systems. Let's make digital history together.
             </p>
-            
+
             {/* Social handles */}
             <div className="flex items-center gap-3 pt-2">
               {[
@@ -53,24 +53,24 @@ export default function Footer() {
 
           {/* RIGHT COLUMN: DETAILED ADDRESS AND COMMUNICATIONS SUMMARY */}
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8 font-sans">
-            
+
             {/* Email & Contact */}
             <div className="space-y-4">
-              <span className="block font-mono text-[10px] text-neutral-500 uppercase tracking-widest font-bold">
+              <span className="block font-mono text-base text-neutral-500 uppercase tracking-widest font-bold">
                 Direct Inquiries
               </span>
-              <div className="space-y-3 text-xs sm:text-sm text-neutral-300">
-                <a 
+              <div className="space-y-3 text-base sm:text-sm text-neutral-300">
+                <a
                   id="footer-email-link"
-                  href="mailto:partner@1zero.biz" 
+                  href="mailto:partner@1zero.biz"
                   className="flex items-center gap-2 hover:text-emerald-400 transition-colors font-mono"
                 >
                   <Mail className="h-4 w-4 text-emerald-400 shrink-0" />
                   <span>partner@1zero.biz</span>
                 </a>
-                <a 
+                <a
                   id="footer-phone-link"
-                  href="tel:+6231998522" 
+                  href="tel:+6231998522"
                   className="flex items-center gap-2 hover:text-emerald-400 transition-colors font-mono"
                 >
                   <Phone className="h-4 w-4 text-emerald-400 shrink-0" />
@@ -87,13 +87,13 @@ export default function Footer() {
 
             {/* Address */}
             <div className="space-y-4">
-              <span className="block font-mono text-[10px] text-neutral-500 uppercase tracking-widest font-bold">
+              <span className="block font-mono text-base text-neutral-500 uppercase tracking-widest font-bold">
                 Primary Laboratory
               </span>
-              <div className="flex gap-2 text-xs text-neutral-300 leading-relaxed font-mono">
+              <div className="flex gap-2 text-base text-neutral-300 leading-relaxed font-mono">
                 <MapPin className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block font-sans text-xs">Pakuwon Tower Surabaya</strong>
+                  <strong className="text-white block font-sans text-base">Pakuwon Tower Surabaya</strong>
                   <span>12th Floor, Corner Unit, Tunjungan Plaza 6</span>
                   <span className="block">Jl. Embong Malang No. 4</span>
                   <span className="block">Surabaya, Jawa Timur 60261</span>
@@ -107,16 +107,16 @@ export default function Footer() {
         </div>
 
         {/* Lower copyright bar */}
-        <div className="pt-8 border-t border-neutral-900 text-xs font-mono text-neutral-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="pt-8 border-t border-neutral-900 text-base font-mono text-neutral-500 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <Logo1Zero className="h-4 text-neutral-400 opacity-60 hover:opacity-100 transition-opacity" glow={false} />
             <span>© {currentYear} 1ZERO AGENCY. ALL ARCHITECTURAL PLANS SECURED.</span>
           </div>
-          
-          <div className="flex items-center gap-4 text-[10px] uppercase">
+
+          <div className="flex items-center gap-4 text-base uppercase">
             <a href="#home" className="hover:text-emerald-400 hover:underline transition-colors">BACK TO TOP ↑</a>
             <span>•</span>
-            <span className="text-[#a3e635]">MADE FOR DOUBLE IMPACT</span>
+            <span className="text-green-500">MADE FOR DOUBLE IMPACT</span>
           </div>
         </div>
 

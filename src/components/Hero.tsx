@@ -10,21 +10,21 @@ export default function Hero({ onOpenBooking }: HeroProps) {
   return (
     <section id="home" className="relative pt-10 pb-20 overflow-hidden">
       {/* Aurora glow effect right behind hero heading */}
-{/* Animated Aurora Background */}
-<div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none">
-  <div className="aurora-layer aurora-1" />
-  <div className="aurora-layer aurora-2" />
-  <div className="aurora-layer aurora-3" />
-</div>
+      {/* Animated Aurora Background */}
+      <div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none">
+        <div className="aurora-layer aurora-1" />
+        <div className="aurora-layer aurora-2" />
+        <div className="aurora-layer aurora-3" />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
         {/* Upper Micro Label */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 rounded-full border border-neutral-800/80 bg-neutral-900/60 p-1 px-4 text-xs backdrop-blur-sm shadow-md"
+          className="inline-flex items-center gap-2 rounded-full border border-neutral-800/80 bg-neutral-900/60 p-1 px-4 text-base backdrop-blur-sm shadow-md"
         >
-          <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.9)]" />
+          <span className="h-2 w-2 rounded-full bg-green-primary animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.9)]" />
           <span className="font-sans text-[11px] font-medium text-neutral-300">
             Performance on any scale. We craft software with precision.
           </span>
@@ -67,7 +67,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="h-3.5 w-3.5 fill-emerald-500 text-emerald-500" />
               ))}
-              <span className="font-mono text-xs text-white ml-1.5 font-bold">4.9★</span>
+              <span className="font-mono text-base text-white ml-1.5 font-bold">4.9★</span>
             </div> */}
             <p className="font-sans text-base leading-relaxed text-neutral-300">
               Book a Free 30-Minute Strategy Session with a CTO who brings 40+ years of IT experience
@@ -82,13 +82,13 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           <button
             id="hero-book-call-card"
             onClick={onOpenBooking}
-            className="md:col-span-2 group flex flex-col justify-center items-center gap-2 p-6 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-[#040c08] text-center transition-all cursor-pointer font-display font-black text-sm relative overflow-hidden"
+            className="md:col-span-2 group flex flex-col justify-center items-center gap-2 p-6 rounded-xl bg-green-primary hover:bg-emerald-600 text-[#040c08] text-center transition-all cursor-pointer font-display font-black text-sm relative overflow-hidden"
           >
             {/* Soft inner glow */}
             <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             <PhoneCall className="h-5 w-5 animate-bounce shrink-0" />
             <span className="tracking-wider uppercase">Book Call Us</span>
-            <span className="flex items-center gap-1 font-mono text-[10px] text-emerald-950 font-medium">
+            <span className="flex items-center gap-1 font-mono text-base  font-medium">
               Free 30m Session
               <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
             </span>
@@ -102,7 +102,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           transition={{ duration: 1, delay: 0.4 }}
           className="pt-6"
         >
-          <span className="font-mono text-xs uppercase tracking-[0.2em] text-neutral-500 select-none">
+          <span className="font-mono text-base uppercase tracking-[0.2em] text-neutral-500 select-none">
             delivering robust, high-performing product systems
           </span>
         </motion.div>
@@ -117,7 +117,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           <p className="font-sans text-[11px] text-neutral-500 uppercase tracking-widest mb-6">
             Trusted by organizations navigating technical complexities
           </p>
-          
+
           {/* Infinite marquee carousel — duplicated for seamless loop */}
           <div className="relative overflow-hidden logo-tape-mask">
             <div className="flex animate-marquee gap-8 w-max">
@@ -152,7 +152,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           </div>
         </motion.div>
 
-        
+
 
       </div>
     </section>
