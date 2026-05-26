@@ -130,7 +130,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                   <img
                     src={client.logoImg}
                     alt={client.name}
-                    className="h-8 md:h-9 w-auto object-contain opacity-40 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+                    className="h-8 md:h-9 w-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-300"
                   />
                 </div>
               ))}
@@ -144,7 +144,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
                   <img
                     src={client.logoImg}
                     alt=""
-                    className="h-8 md:h-9 w-auto object-contain opacity-40 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+                    className="h-8 md:h-9 w-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-300"
                   />
                 </div>
               ))}
