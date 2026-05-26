@@ -43,7 +43,7 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Title Area */}
         <div className="space-y-4">
-          <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans  tracking-widest text-brunswick-green-500 mb-[3rem] bg-brunswick-green-500">
+          <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans  tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5">
             Why 1zero
           </span>
           <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white max-w-2xl">
