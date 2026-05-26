@@ -270,7 +270,7 @@ export default function Workflow() {
           <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white max-w-3xl mx-auto leading-tight">
             A collaborative process that builds the right systems for your mission
           </h2>
-          <p className="max-w-xl mx-auto font-sans text-base sm:text-sm text-neutral-400">
+          <p className="max-w-xl mx-auto font-sans text-base sm:text-base text-neutral-400">
             Precision counts. We build customized software workflows step-by-step, ensuring structural safety and elite handoff readiness.
           </p>
         </motion.div>

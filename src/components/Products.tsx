@@ -61,7 +61,7 @@ export default function Products({ onOpenBooking }: ProductsProps) {
               <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
                 Core Technical Ecosystems
               </h2>
-              <p className="max-w-xl mx-auto font-sans text-base sm:text-sm text-neutral-400">
+              <p className="max-w-xl mx-auto font-sans text-base sm:text-base text-neutral-400">
                 Highly optimized, production-hardened models designed to deploy smoothly or integrate instantly with your organization's digital workflow.
               </p>
             </div>
