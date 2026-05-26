@@ -22,31 +22,13 @@ export default function Header({ onOpenBooking }: HeaderProps) {
 
   return (
     <header className="relative w-full z-40">
-      {/* Top micro-banner */}
-      <div className="w-full bg-[#070707] border-b border-neutral-900 py-2 px-4 text-center text-[11px] font-sans tracking-wider text-neutral-400">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-1.5">
-          <span className="inline-flex items-center gap-1 text-emerald-400 font-medium">
-            <Sparkles className="h-3 w-3 animate-pulse" />
-            LIVE STATUS:
-          </span>
-          <span>We're currently scaling architectures with modern UI setups.</span>
-          <button
-            id="header-promo-cta"
-            onClick={onOpenBooking}
-            className="text-neutral-200 underline hover:text-emerald-300 font-medium cursor-pointer transition-colors"
-          >
-            Schedule Strategy Session &rarr;
-          </button>
-        </div>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
         <div className="flex flex-col items-center">
 
 
           {/* Navigation Pill Container */}
           <div
-            className={`w-full max-w-3xl transition-all duration-300 mt-4 ${isScrolled
+            className={`w-full max-w-3xl  mt-4 ${isScrolled
               ? "fixed top-4 left-1/2 -translate-x-1/2 z-50 max-w-xl px-2"
               : "relative"
               }`}

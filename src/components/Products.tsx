@@ -61,7 +61,7 @@ export default function Products({ onOpenBooking }: ProductsProps) {
               <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
                 Core Technical Ecosystems
               </h2>
-              <p className="max-w-xl mx-auto font-sans text-base sm:text-base text-neutral-400">
+              <p className="max-w-xl mx-auto font-sans text-base sm:text-base text-sea-salt">
                 Highly optimized, production-hardened models designed to deploy smoothly or integrate instantly with your organization's digital workflow.
               </p>
             </div>
@@ -81,23 +81,21 @@ export default function Products({ onOpenBooking }: ProductsProps) {
                       <div className="h-12 w-12 rounded-xl bg-neutral-900 border border-neutral-800/80 flex items-center justify-center group-hover:bg-brunswick-green-primary/10 group-hover:border-brunswick-green-500 transition-colors">
                         {getIcon(p.id)}
                       </div>
-                      <span className="font-sans text-[9px] uppercase text-neutral-600 bg-neutral-900/40 px-2 py-0.5 rounded-md">
-                        MODULE 0{index + 1}
-                      </span>
+
                     </div>
 
                     <div className="space-y-2">
                       <h3 className="font-sans text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">
                         {p.title}
                       </h3>
-                      <p className="font-sans text-base text-neutral-400 group-hover:text-neutral-300 transition-colors leading-relaxed">
+                      <p className="font-sans text-base text-neutral-400 group-hover:text-sea-salt transition-colors leading-relaxed">
                         {p.description}
                       </p>
                     </div>
                   </div>
 
                   <div className="pt-6 border-t border-neutral-950/80 mt-6 flex items-center justify-between">
-                    <span className="font-sans text-base font-semibold text-neutral-300 group-hover:text-white transition-colors">
+                    <span className="font-sans text-base font-semibold text-sea-salt group-hover:text-white transition-colors">
                       {p.linkText}
                     </span>
                     <div className="flex h-7 w-7 items-center justify-center rounded-full bg-neutral-900 text-neutral-500 group-hover:bg-green-primary group-hover:text-black transition-all">

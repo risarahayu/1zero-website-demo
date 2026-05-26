@@ -62,7 +62,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           className="max-w-xl mx-auto grid grid-cols-1 md:grid-cols-5 items-stretch rounded-2xl border border-color-sea-salt bg-[#09090b]/80 p-1 backdrop-blur-md shadow-2xl"
         >
           {/* Rating box (Col-span 3) */}
-          <div className="md:col-span-3 flex flex-col justify-center items-start text-left p-5 md:pl-6 space-y-2 border-b md:border-b-0 md:border-r border-neutral-800/80">
+          <div className="md:col-span-3 flex flex-col justify-center items-start text-left p-5 md:pl-6 space-y-2 border-b md:border-b-0  border-neutral-800/80">
             {/* <div className="flex items-center gap-1">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="h-3.5 w-3.5 fill-emerald-500 text-emerald-500" />
@@ -82,10 +82,10 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           <button
             id="hero-book-call-card"
             onClick={onOpenBooking}
-            className="md:col-span-2 group flex flex-col justify-center items-center gap-2 p-3 rounded-xl bg-brunswick-green-primary hover:bg-brunswick-green-700 hover:text-black text-sea-salt text-center transition-all cursor-pointer font-sans font-black text-sm relative overflow-hidden"
+            className="md:col-span-2 group flex flex-col justify-center items-center gap-2 p-3 rounded-xl bg-brunswick-green-primary hover:bg-brunswick-green-700 hover:text-white text-sea-salt text-center transition-all cursor-pointer font-sans font-black text-sm relative overflow-hidden"
           >
             {/* Soft inner glow */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:bg-brunswick-green-700 transition-opacity" />
             <PhoneCall className="h-5 w-5 animate-bounce shrink-0" />
             <span className="tracking-wider uppercase">Book a Section</span>
             <span className="flex items-center gap-1 font-sans text-base  font-medium">

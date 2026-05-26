@@ -150,7 +150,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
             <div className="inline-flex">
               <div className="relative px-5 py-2.5 rounded-full border border-neutral-800/80 bg-neutral-950/60 shadow-[0_0_15px_rgba(255,255,255,0.02)]">
                 {/* Visual outline and text */}
-                <span className="font-sans text-base s:text-sm font-semibold text-white tracking-wide">
+                <span className="font-sans text-base sm:text-base font-semibold text-brunswick-green-500  tracking-wide">
                   Our Portfolios
                 </span>
               </div>
@@ -163,7 +163,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
             </h2>
 
             {/* Description Text */}
-            <p className="font-sans text-base sm:text-sm text-neutral-400 max-w-sm leading-relaxed">
+            <p className="font-sans text-base sm:text-base text-sea-salt max-w-sm leading-relaxed">
               This portfolio showcases work from concept to execution.
             </p>
 
@@ -173,7 +173,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
                 type="button"
                 onClick={handlePrev}
                 aria-label="Previous portfolio"
-                className="h-11 w-11 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-brunswick-green-500 hover:border-[#a3e635] flex items-center justify-center transition-all duration-300 transform active:scale-95 cursor-pointer shadow-lg"
+                className="h-11 w-11 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-brunswick-green-500 hover:border-brunswick-green-500 flex items-center justify-center transition-all duration-300 transform active:scale-95 cursor-pointer shadow-lg"
               >
                 <ArrowLeft className="h-4 w-4" />
               </button>
@@ -181,7 +181,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
                 type="button"
                 onClick={handleNext}
                 aria-label="Next portfolio"
-                className="h-11 w-11 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-brunswick-green-500 hover:border-[#a3e635] flex items-center justify-center transition-all duration-300 transform active:scale-95 cursor-pointer shadow-lg"
+                className="h-11 w-11 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-brunswick-green-500 hover:border-brunswick-green-500 flex items-center justify-center transition-all duration-300 transform active:scale-95 cursor-pointer shadow-lg"
               >
                 <ArrowRight className="h-4 w-4" />
               </button>
@@ -241,7 +241,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
                       <button
                         type="button"
                         onClick={onOpenBooking}
-                        className="inline-flex items-center justify-center font-sans font-semibold text-neutral-300 hover:text-white bg-[#1a1a1c] hover:bg-[#252528] border border-neutral-800/80 px-4 py-1.5 rounded-full text-base transition-colors cursor-pointer self-start"
+                        className="inline-flex items-center justify-center font-sans font-semibold text-neutral-300 hover:text-brunswick-green-500 bg-[#1a1a1c] hover:bg-[#252528] border border-neutral-800/80 px-4 py-1.5 rounded-full text-base transition-colors cursor-pointer self-start"
                       >
                         Read More
                       </button>
@@ -262,7 +262,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
           <button
             id="portfolio-review-btn"
             onClick={onOpenBooking}
-            className="inline-flex items-center gap-2 p-3.5 px-8 rounded-full bg-brunswick-green-primary hover:bg-brunswick-green-700 hover:text-black text-sea-salt font-sans font-extrabold text-base transition-all uppercase tracking-wider cursor-pointer shadow-[0_4px_20px_rgba(16,185,129,0.2)] hover:shadow-[0_4px_25px_rgba(16,185,129,0.3)] transform hover:scale-[1.01]"
+            className="inline-flex items-center gap-2 p-3.5 px-8 rounded-full bg-brunswick-green-primary hover:bg-brunswick-green-700  text-sea-salt font-sans font-extrabold text-base transition-all uppercase tracking-wider cursor-pointer shadow-[0_4px_20px_rgba(16,185,129,0.2)] hover:shadow-[0_4px_25px_rgba(16,185,129,0.3)] transform hover:scale-[1.01]"
           >
             Schedule Architecture Session
           </button>
