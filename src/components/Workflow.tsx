@@ -98,9 +98,9 @@ function TimelineFill({ scrollYProgress }: { scrollYProgress: MotionValue<number
 }
 
 const PANEL_CONFIG = [
-  { bg: "bg-[#030a04]", glow: "rgba(29, 87, 69, 0.19)", accent: "var(--green-700)", accentText: "text-brunswick-green-700", border: "border-brunswick-green-700" },
-  { bg: "bg-[#030a04]", glow: "rgba(29, 87, 69, 0.29)", accent: "var(--green-800)", accentText: "text-brunswick-green-800", border: "border-brunswick-green-800" },
-  { bg: "bg-[#030a04]", glow: "rgba(29, 87, 69, 0.59)", accent: "var(--green-900)", accentText: "text-brunswick-green-900", border: "border-brunswick-green-900" },
+  { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.19)", accent: "var(--green-700)", accentText: "text-brunswick-green-700", border: "border-brunswick-green-700" },
+  { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.29)", accent: "var(--green-800)", accentText: "text-brunswick-green-800", border: "border-brunswick-green-800" },
+  { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.59)", accent: "var(--green-900)", accentText: "text-brunswick-green-900", border: "border-brunswick-green-900" },
 ];
 
 function getIcon(number: string) {
