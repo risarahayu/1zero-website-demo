@@ -43,7 +43,7 @@ function SidebarIcons({ scrollYProgress, onIconClick }: { scrollYProgress: Motio
 
   return (
     <div className="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-4 space-y-4  z-[60]">
-      <div className="relative flex flex-col items-center">
+      <div className="relative flex flex-col items-center hidden md:block">
         {/* Vertical line behind icons */}
         <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-white/5 " />
         {workflowSteps.map((step, i) => {
