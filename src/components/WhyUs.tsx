@@ -149,13 +149,13 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
                 <span className="block text-base font-semibold text-white">We operate with pristine engineering guidelines.</span>
                 <span className="block text-base text-neutral-500 uppercase tracking-widest font-sans">No subcontracting • No technical jargon hiding</span>
               </div>
-              <button
+              {/* <button
                 id="why-us-booking-btn"
                 onClick={onOpenBooking}
                 className="p-3 px-6 rounded-xl bg-green-primary hover:bg-emerald-600 text-black font-sans font-medium text-base transition-colors cursor-pointer block text-center shadow-lg"
               >
                 Hire Our Unit &rarr;
-              </button>
+              </button> */}
             </div>
           </div>
 
