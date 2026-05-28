@@ -55,7 +55,7 @@ export default function CTA({ onOpenBooking }: CTAProps) {
                 onClick={onOpenBooking}
                 className="group relative flex items-center justify-center gap-2
                 px-10 py-5
-                bg-[linear-gradient(120deg,var(--color-sea-salt),var(--color-dun),var(--color-green-500),var(--color-sea-salt))]
+                bg-[linear-gradient(120deg,var(--color-sea-salt),var(--color-ivory),var(--color-dun),var(--color-green-500))]
                 bg-[length:300%_300%]
                 animate-gradient
                 text-neutral-950
