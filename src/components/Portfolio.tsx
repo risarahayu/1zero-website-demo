@@ -136,7 +136,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
   return (
     <section id="portfolio" className="relative py-24 bg-[#0a0a0c] overflow-hidden">
       {/* Background radial soft light blur */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 -z-10 h-[450px] w-[450px] rounded-full bg-green-primary/[0.03] blur-[150px]" />
+      <div className="absolute top-1/2 left-0 -translate-x-1/4 md:-translate-x-0 md:left-1/4 -translate-y-1/2 -z-10 h-[250px] w-[250px] md:h-[450px] md:w-[450px] rounded-full bg-green-primary/[0.05] md:bg-green-primary/[0.03] blur-[80px] md:blur-[150px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
