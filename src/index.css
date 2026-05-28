@@ -162,21 +162,22 @@
 }
 
 .aurora-2 {
-  width: 480px;
-  height: 480px;
-  top: 35%;
-  right: 10%;
-  background: #D6CAAD;
-  animation-duration: 26s;
+  width: 420px;
+  height: 420px;
+  bottom: 37%;
+  left: 35%;
+  background: #7E8D74;
+  animation-duration: 32s;
 }
 
 .aurora-3 {
-  width: 420px;
-  height: 420px;
-  bottom: 5%;
-  left: 45%;
-  background: #7E8D74;
-  animation-duration: 32s;
+  width: 480px;
+  height: 480px;
+  top: 6%;
+  right: 29%;
+  background: #D6CAAD;
+  opacity: 0.05;
+  animation-duration: 26s;
 }
 
 @keyframes auroraFloat {

@@ -100,7 +100,7 @@ function TimelineFill({ scrollYProgress }: { scrollYProgress: MotionValue<number
 const PANEL_CONFIG = [
   { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.19)", accent: "var(--green-700)", accentText: "text-brunswick-green-700", border: "border-brunswick-green-700" },
   { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.29)", accent: "var(--green-800)", accentText: "text-brunswick-green-800", border: "border-brunswick-green-800" },
-  { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.59)", accent: "var(--green-900)", accentText: "text-brunswick-green-900", border: "border-brunswick-green-900" },
+  { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.51)", accent: "var(--green-900)", accentText: "text-brunswick-green-900", border: "border-brunswick-green-900" },
 ];
 
 function getIcon(number: string) {
@@ -169,7 +169,7 @@ function Panel({
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: `radial-gradient(ellipse 70% 60% at 30% 50%, ${cfg.glow}, transparent 70%)`,
+          background: `radial-gradient(ellipse 70% 60% at 20% 50%, ${cfg.glow}, transparent 80%)`,
         }}
       />
 

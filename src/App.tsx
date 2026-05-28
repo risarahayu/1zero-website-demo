@@ -25,8 +25,8 @@ export default function App() {
   return (
     <div className="relative min-h-screen selection:bg-green-primary selection:text-neutral-950">
       {/* Background Decorative Mesh Grids */}
-      <div className="absolute top-10 -right-10 md:top-0 md:right-1/4 -z-20 h-[150px] w-[150px] md:h-[600px] md:w-[500px] rounded-full aurora-blur-1 blur-[50px] md:blur-[130px] opacity-60 md:opacity-40 animate-slow-pan" />
-      <div className="absolute top-1/3 -left-10 md:bottom-1/3 md:left-1/4 -z-20 h-[150px] w-[150px] md:h-[600px] md:w-[500px] rounded-full aurora-blur-2 blur-[50px] md:blur-[130px] opacity-50 md:opacity-20 animate-slow-pan" />
+      {/* <div className="absolute top-10 -right-10 md:top-0 md:right-1/4 -z-20 h-[150px] w-[150px] md:h-[600px] md:w-[500px] rounded-full aurora-blur-1 blur-[50px] md:blur-[130px] opacity-60 md:opacity-40 animate-slow-pan" />
+      <div className="absolute top-1/3 -left-10 md:bottom-1/3 md:left-1/4 -z-20 h-[150px] w-[150px] md:h-[600px] md:w-[500px] rounded-full aurora-blur-2 blur-[50px] md:blur-[130px] opacity-50 md:opacity-20 animate-slow-pan" /> */}
 
       {/* Primary Header/Nav bar */}
       <Header onOpenBooking={handleOpenBooking} />
