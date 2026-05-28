@@ -109,9 +109,9 @@ export default function Footer() {
 
         {/* Lower copyright bar */}
         <div className="pt-8 border-t border-neutral-900 text-base font-sans text-neutral-500 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-col items-start sm:flex-row">
             <Logo1Zero className="h-4 text-neutral-400 opacity-60 hover:opacity-100 transition-opacity" glow={false} />
-            <span>© {currentYear} 1ZERO AGENCY. ALL ARCHITECTURAL PLANS SECURED.</span>
+            <span>© {currentYear} 1zero AGENCY. ALL ARCHITECTURAL PLANS SECURED.</span>
           </div>
 
           <div className="flex items-center gap-4 text-base uppercase">
