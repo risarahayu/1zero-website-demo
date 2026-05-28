@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import React from "react";
 import { motion, useScroll, useTransform, MotionValue } from "motion/react";
 import { workflowSteps } from "../data";
@@ -32,6 +32,15 @@ function ScrollHint({ scrollYProgress }: { scrollYProgress: MotionValue<number> 
 // Sidebar icons showing active step
 function SidebarIcons({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) {
   const seg = 1 / N;
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  // Update activeIdx based on scroll progress
+  useEffect(() => {
+    return scrollYProgress.on('change', (latest) => {
+      setActiveIdx(Math.floor(latest * N));
+    });
+  }, [scrollYProgress]);
+
   return (
     <div className="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-4 space-y-4 pointer-events-none z-[60]">
       <div className="relative flex flex-col items-center">
@@ -42,16 +51,17 @@ function SidebarIcons({ scrollYProgress }: { scrollYProgress: MotionValue<number
           const mid = (i + 0.5) * seg;
           const lo = Math.max(0, mid - seg * 0.4);
           const hi = Math.min(1, mid + seg * 0.4);
-          const scale = useTransform(scrollYProgress, [lo, mid, hi], [0.8, 1.1, 0.8]);
-          // Border becomes sea‑salt when the icon is highlighted (mid point)
-          const border = useTransform(scrollYProgress, [lo, mid, hi], ["transparent", "var(--sea-salt)", "transparent"]);
+          const animScale = useTransform(scrollYProgress, [lo, mid, hi], [0.8, 1.1, 0.8]);
+          const isActive = i === activeIdx;
+          const scale = isActive ? 1 : animScale;
+          const borderColor = isActive ? 'var(--sea-salt)' : 'transparent';
           return (
             <motion.div
               key={step.number}
               style={{
                 scale,
                 background: cfg.accent,
-                borderColor: border,
+                borderColor,
                 boxShadow: `0 0 12px ${cfg.accent}60`,
               }}
               className="flex items-center justify-center w-12 h-12 rounded-full border-2"
@@ -64,6 +74,7 @@ function SidebarIcons({ scrollYProgress }: { scrollYProgress: MotionValue<number
     </div>
   );
 }
+
 
 // Global timeline line that sits on top of all stacked panels
 function TimelineFill({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) {
