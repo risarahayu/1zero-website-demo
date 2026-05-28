@@ -62,7 +62,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               <button
                 id="mobile-menu-trigger"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-1 px-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-full sm:hidden transition-all text-base"
+                className={`p-1 px-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-full sm:hidden transition-all text-base ${isScrolled ? "mr-auto" : ""}`}
               >
                 {isMobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
               </button>

@@ -81,7 +81,7 @@ function SidebarIcons({ scrollYProgress, onIconClick }: { scrollYProgress: Motio
 function TimelineFill({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) {
   const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
   return (
-    <div className="absolute left-6 lg:left-10 top-0 bottom-0 z-50 flex flex-col items-center " style={{ width: '2px' }}>
+    <div className="absolute left-10 lg:left-10 top-0 bottom-0 z-50 flex flex-col items-center " style={{ width: '2px' }}>
       {/* Track */}
       <div className="absolute inset-0 bg-white/5 rounded-full" />
       {/* Animated fill */}
