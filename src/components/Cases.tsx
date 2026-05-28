@@ -98,7 +98,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end pb-8 border-b border-neutral-900">
           <div className="lg:col-span-8 space-y-3">
-            <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans uppercase tracking-widest text-brunswick-green-500 mb-[3rem] bg-brunswick-green-500">
+            <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans uppercase tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5">
               Recent client
             </span>
             <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-none">
