@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { ArrowUpRight, MessageSquare, Activity, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 
 interface CasesProps {
@@ -24,7 +24,7 @@ const caseItems = [
     desc: "Rebuilding a legacy LMS into a cloud-native, multi-tenant platform serving 80,000 active learners with zero downtime migration.",
     tag: "Cloud Migration",
     gradient: "from-blue-900/80 via-neutral-950 to-neutral-950",
-    accentColor: ".text-blue-400",
+    accentColor: "text-blue-400",
     borderColor: "border-blue-500/20",
     iconBg: "bg-blue-500/10",
   },
@@ -63,30 +63,193 @@ const caseItems = [
   },
 ];
 
+// ─── Shared card renderer ────────────────────────────────────────────────────
+function CaseCard({
+  item,
+  isCenter,
+  onOpenBooking,
+}: {
+  item: (typeof caseItems)[0];
+  isCenter: boolean;
+  onOpenBooking: () => void;
+}) {
+  return (
+    <div
+      onClick={onOpenBooking}
+      className={`
+        group relative rounded-3xl border bg-neutral-950/25 p-5
+        flex flex-col justify-between cursor-pointer overflow-hidden
+        transition-all duration-500 hover:bg-neutral-950/80
+        ${item.borderColor}
+        ${isCenter ? "opacity-100 scale-100" : "opacity-55 scale-[0.97] hover:opacity-75"}
+      `}
+    >
+      {/* Gradient image area */}
+      <div className="space-y-4">
+        <div
+          className={`relative h-[180px] w-full overflow-hidden rounded-2xl bg-gradient-to-br ${item.gradient} border border-neutral-800/60 flex items-end p-4`}
+        >
+          {/* Decorative grid */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:24px_24px]" />
+
+          {/* Animated pulse dot */}
+          <div className="absolute top-4 left-4 flex items-center gap-1.5">
+            <span
+              className={`h-1.5 w-1.5 rounded-full ${item.accentColor.replace("text-", "bg-")} animate-pulse`}
+            />
+            <span className="font-sans text-[9px] text-neutral-400 uppercase tracking-widest">
+              Live Case
+            </span>
+          </div>
+
+          {/* Top-right icon */}
+          <div
+            className={`absolute top-4 right-4 h-8 w-8 rounded-full ${item.iconBg} border border-neutral-800/80 backdrop-blur-md flex items-center justify-center ${item.accentColor}`}
+          >
+            <Activity className="h-3.5 w-3.5 animate-pulse" />
+          </div>
+
+          {/* Tag chip */}
+          <span
+            className={`relative z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[9px] font-sans uppercase tracking-wider border border-neutral-700/60 bg-neutral-950/70 ${item.accentColor}`}
+          >
+            <Clock className="h-2.5 w-2.5" />
+            {item.tag}
+          </span>
+        </div>
+
+        <div className="space-y-1 pb-2">
+          <p className="font-sans text-[9px] uppercase tracking-widest text-neutral-500">
+            {item.label}
+          </p>
+          <h3 className="font-sans text-lg font-bold text-white">{item.title}</h3>
+          <p className="font-sans text-base text-neutral-400 leading-relaxed line-clamp-2">
+            {item.desc}
+          </p>
+        </div>
+      </div>
+
+      {/* Footer row */}
+      <div className="flex items-center justify-between pt-4 border-t border-neutral-900 text-base font-sans">
+        <div className="flex items-center gap-1.5 text-neutral-500">
+          <MessageSquare className="h-3.5 w-3.5" />
+          <span>DISCUSSION COMPLETED</span>
+        </div>
+        <span
+          className={`font-sans text-base ${item.accentColor} flex items-center gap-1 group-hover:opacity-80 transition-opacity`}
+        >
+          Discuss Strategy
+          <ArrowUpRight className="h-3.5 w-3.5" />
+        </span>
+      </div>
+    </div>
+  );
+}
+
+// ─── Main Component ──────────────────────────────────────────────────────────
 export default function Cases({ onOpenBooking }: CasesProps) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const total = caseItems.length;
 
-  const handleNext = () => setActiveIndex((prev) => (prev + 1) % total);
-  const handlePrev = () => setActiveIndex((prev) => (prev - 1 + total) % total);
+  // ── Shared index state ──────────────────────────────────────────
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  // Autoplay
+  // ── Mobile/tablet slider (like Portfolio) ───────────────────────
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 1200
+  );
+  const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
+  // Virtual index for infinite-loop mobile slider (tripled array, start at middle set)
+  const [virtualIndex, setVirtualIndex] = useState(total); // index 'total' = first item in Set B
+  const [containerWidth, setContainerWidth] = useState(0);
+  const sliderContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const onResize = () => {
+      setWindowWidth(window.innerWidth);
+      if (sliderContainerRef.current) {
+        setContainerWidth(sliderContainerRef.current.clientWidth);
+      }
+    };
+    window.addEventListener("resize", onResize);
+    // Measure on mount
+    if (sliderContainerRef.current) {
+      setContainerWidth(sliderContainerRef.current.clientWidth);
+    }
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  const isDesktop = windowWidth >= 1024;
+
+  // Mobile card width = full container width (1 card per view)
+  const mobileCardWidth = containerWidth > 0 ? containerWidth : windowWidth - 32;
+  const mobileGap = 0;
+
+  const mobileTranslateX = (idx: number) => idx * (mobileCardWidth + mobileGap);
+
+  // Tripled array for infinite-loop mobile slider
+  const tripled = [
+    ...caseItems.map((p, i) => ({ ...p, uniqueId: `${p.id}-set0-${i}` })),
+    ...caseItems.map((p, i) => ({ ...p, uniqueId: `${p.id}-set1-${i}` })),
+    ...caseItems.map((p, i) => ({ ...p, uniqueId: `${p.id}-set2-${i}` })),
+  ];
+
+  const handleMobileNext = () => {
+    if (!isTransitionEnabled) return;
+    setVirtualIndex((prev) => prev + 1);
+  };
+
+  const handleMobilePrev = () => {
+    if (!isTransitionEnabled) return;
+    setVirtualIndex((prev) => prev - 1);
+  };
+
+  // Reset snap for infinite loop on mobile
+  useEffect(() => {
+    if (isDesktop) return;
+    let id: ReturnType<typeof setTimeout>;
+    if (virtualIndex >= total * 2) {
+      id = setTimeout(() => {
+        setIsTransitionEnabled(false);
+        setVirtualIndex(total);
+        setTimeout(() => setIsTransitionEnabled(true), 50);
+      }, 500);
+    } else if (virtualIndex < total) {
+      id = setTimeout(() => {
+        setIsTransitionEnabled(false);
+        setVirtualIndex(total * 2 - 1);
+        setTimeout(() => setIsTransitionEnabled(true), 50);
+      }, 500);
+    }
+    return () => clearTimeout(id);
+  }, [virtualIndex, isDesktop]);
+
+  // Display index for dots / counter
+  const mobileDisplayIndex = ((virtualIndex % total) + total) % total;
+
+  // ── Desktop visible indices (4 at once) ────────────────────────
+  const getDesktopIndices = () => [
+    (activeIndex - 1 + total) % total,
+    activeIndex,
+    (activeIndex + 1) % total,
+    (activeIndex + 2) % total,
+  ];
+
+  const handleDesktopNext = () => setActiveIndex((prev) => (prev + 1) % total);
+  const handleDesktopPrev = () => setActiveIndex((prev) => (prev - 1 + total) % total);
+
+  // ── Autoplay ────────────────────────────────────────────────────
   useEffect(() => {
     if (isPaused) return;
-    const id = setInterval(handleNext, 4000);
-    return () => clearInterval(id);
-  }, [isPaused, activeIndex]);
-
-  // Build visible cards: show 3 at a time (center + adjacent) on desktop
-  const getVisibleIndices = () => {
-    return [
-      (activeIndex - 1 + total) % total,
-      activeIndex,
-      (activeIndex + 1) % total,
-      (activeIndex + 2) % total,
-    ];
-  };
+    if (isDesktop) {
+      const id = setInterval(handleDesktopNext, 4000);
+      return () => clearInterval(id);
+    } else {
+      if (!isTransitionEnabled) return;
+      const id = setInterval(handleMobileNext, 4000);
+      return () => clearInterval(id);
+    }
+  }, [isPaused, activeIndex, virtualIndex, isDesktop, isTransitionEnabled]);
 
   return (
     <section className="relative py-20 bg-[#060606] overflow-hidden">
@@ -112,16 +275,17 @@ export default function Cases({ onOpenBooking }: CasesProps) {
             {/* Navigation */}
             <div className="flex items-center gap-3">
               <button
-                onClick={handlePrev}
-                className="h-9 w-9 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-brunswick-green-500  hover:border-brunswick-green-500 flex items-center justify-center transition-all duration-300 cursor-pointer"
+                onClick={isDesktop ? handleDesktopPrev : handleMobilePrev}
+                className="h-9 w-9 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-brunswick-green-500 hover:border-brunswick-green-500 flex items-center justify-center transition-all duration-300 cursor-pointer"
               >
                 <ArrowLeft className="h-3.5 w-3.5" />
               </button>
               <span className="font-sans text-base text-neutral-500 tracking-wider">
-                {String(activeIndex + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+                {String((isDesktop ? activeIndex : mobileDisplayIndex) + 1).padStart(2, "0")} /{" "}
+                {String(total).padStart(2, "0")}
               </span>
               <button
-                onClick={handleNext}
+                onClick={isDesktop ? handleDesktopNext : handleMobileNext}
                 className="h-9 w-9 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-brunswick-green-500 hover:border-brunswick-green-500 flex items-center justify-center transition-all duration-300 cursor-pointer"
               >
                 <ArrowRight className="h-3.5 w-3.5" />
@@ -130,99 +294,90 @@ export default function Cases({ onOpenBooking }: CasesProps) {
           </div>
         </div>
 
-
-
-        {/* Carousel Track */}
-        <div
-          className="relative"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          <div className="flex gap-5 transition-all duration-500">
-            {getVisibleIndices().map((itemIndex, pos) => {
-              const item = caseItems[itemIndex];
-              const isCenter = pos === 1;
-              return (
-                <div
-                  key={`${item.id}-${pos}`}
-                  onClick={onOpenBooking}
-                  className={`
-                    group relative rounded-3xl border bg-neutral-950/25 p-5
-                    flex flex-col justify-between cursor-pointer overflow-hidden
-                    transition-all duration-500
-                    ${item.borderColor}
-                    ${isCenter
-                      ? "flex-[1.4] opacity-100 scale-100"
-                      : "flex-1 opacity-50 scale-[0.97] hover:opacity-70"
-                    }
-                    hover:bg-neutral-950/80
-                  `}
-                >
-                  {/* Gradient image area */}
-                  <div className="space-y-4">
-                    <div className={`relative h-[180px] w-full overflow-hidden rounded-2xl bg-gradient-to-br ${item.gradient} border border-neutral-800/60 flex items-end p-4`}>
-                      {/* Decorative grid */}
-                      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:24px_24px]" />
-
-                      {/* Animated pulse dot */}
-                      <div className="absolute top-4 left-4 flex items-center gap-1.5">
-                        <span className={`h-1.5 w-1.5 rounded-full ${item.accentColor.replace("text-", "bg-")} animate-pulse`} />
-                        <span className="font-sans text-[9px] text-neutral-400 uppercase tracking-widest">Live Case</span>
-                      </div>
-
-                      {/* Top-right icon */}
-                      <div className={`absolute top-4 right-4 h-8 w-8 rounded-full ${item.iconBg} border border-neutral-800/80 backdrop-blur-md flex items-center justify-center ${item.accentColor}`}>
-                        <Activity className="h-3.5 w-3.5 animate-pulse" />
-                      </div>
-
-                      {/* Tag chip */}
-                      <span className={`relative z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[9px] font-sans uppercase tracking-wider border border-neutral-700/60 bg-neutral-950/70 ${item.accentColor}`}>
-                        <Clock className="h-2.5 w-2.5" />
-                        {item.tag}
-                      </span>
-                    </div>
-
-                    <div className="space-y-1 pb-2">
-                      <p className="font-sans text-[9px] uppercase tracking-widest text-neutral-500">{item.label}</p>
-                      <h3 className={`font-sans text-lg font-bold text-white transition-colors ${isCenter ? "group-hover:" + item.accentColor.replace("text-", "group-hover:text-") : ""}`}>
-                        {item.title}
-                      </h3>
-                      <p className="font-sans text-base text-neutral-400 leading-relaxed line-clamp-2">
-                        {item.desc}
-                      </p>
-                    </div>
+        {/* ── DESKTOP Carousel (4 cards side-by-side) ────────────── */}
+        {isDesktop && (
+          <div
+            className="relative"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            <div className="flex gap-5 transition-all duration-500">
+              {getDesktopIndices().map((itemIndex, pos) => {
+                const item = caseItems[itemIndex];
+                const isCenter = pos === 1;
+                return (
+                  <div
+                    key={`${item.id}-${pos}`}
+                    className={`${isCenter ? "flex-[1.4]" : "flex-1"}`}
+                  >
+                    <CaseCard item={item} isCenter={isCenter} onOpenBooking={onOpenBooking} />
                   </div>
+                );
+              })}
+            </div>
 
-                  {/* Footer row */}
-                  <div className="flex items-center justify-between pt-4 border-t border-neutral-900 text-base font-sans">
-                    <div className="flex items-center gap-1.5 text-neutral-500">
-                      <MessageSquare className="h-3.5 w-3.5" />
-                      <span>DISCUSSION COMPLETED</span>
-                    </div>
-                    <span className={`font-sans text-base ${item.accentColor} flex items-center gap-1 group-hover:opacity-80 transition-opacity`}>
-                      Discuss Strategy
-                      <ArrowUpRight className="h-3.5 w-3.5" />
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Dot indicators */}
-          <div className="flex items-center justify-center gap-2 mt-6">
-            {caseItems.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveIndex(i)}
-                className={`transition-all duration-300 rounded-full ${i === activeIndex
-                  ? "w-6 h-1.5 bg-brunswick-green-500"
-                  : "w-1.5 h-1.5 bg-neutral-700 hover:bg-neutral-500"
+            {/* Dot indicators */}
+            <div className="flex items-center justify-center gap-2 mt-6">
+              {caseItems.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveIndex(i)}
+                  className={`transition-all duration-300 rounded-full ${
+                    i === activeIndex
+                      ? "w-6 h-1.5 bg-brunswick-green-500"
+                      : "w-1.5 h-1.5 bg-neutral-700 hover:bg-neutral-500"
                   }`}
-              />
-            ))}
+                />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
+
+        {/* ── MOBILE / TABLET Slider (like Portfolio.tsx) ─────────── */}
+        {!isDesktop && (
+          <div
+            ref={sliderContainerRef}
+            className="overflow-hidden"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            <div
+              className={`flex ${isTransitionEnabled ? "transition-transform duration-500 ease-out" : ""}`}
+              style={{ transform: `translateX(-${mobileTranslateX(virtualIndex)}px)` }}
+            >
+              {tripled.map((item, index) => (
+                <div
+                  key={item.uniqueId}
+                  style={{ width: mobileCardWidth, flexShrink: 0 }}
+                >
+                  <CaseCard
+                    item={item}
+                    isCenter={index === virtualIndex}
+                    onOpenBooking={onOpenBooking}
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Dot indicators */}
+            <div className="flex items-center justify-center gap-2 mt-6">
+              {caseItems.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => {
+                    const diff = i - mobileDisplayIndex;
+                    setVirtualIndex((prev) => prev + diff);
+                  }}
+                  className={`transition-all duration-300 rounded-full ${
+                    i === mobileDisplayIndex
+                      ? "w-6 h-1.5 bg-brunswick-green-500"
+                      : "w-1.5 h-1.5 bg-neutral-700 hover:bg-neutral-500"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Call to action marquee */}
         <div className="overflow-hidden rounded-3xl border border-neutral-900 bg-neutral-950/30 p-4">
