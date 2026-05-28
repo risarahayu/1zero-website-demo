@@ -30,7 +30,7 @@ function ScrollHint({ scrollYProgress }: { scrollYProgress: MotionValue<number> 
 // Global timeline line that sits on top of all stacked panels
 
 // Sidebar icons showing active step
-function SidebarIcons({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) {
+function SidebarIcons({ scrollYProgress, onIconClick }: { scrollYProgress: MotionValue<number>, onIconClick: (index: number) => void }) {
   const seg = 1 / N;
   const [activeIdx, setActiveIdx] = useState(0);
 
@@ -42,10 +42,10 @@ function SidebarIcons({ scrollYProgress }: { scrollYProgress: MotionValue<number
   }, [scrollYProgress]);
 
   return (
-    <div className="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-4 space-y-4 pointer-events-none z-[60]">
+    <div className="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-4 space-y-4  z-[60]">
       <div className="relative flex flex-col items-center">
         {/* Vertical line behind icons */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-white/5 pointer-events-none" />
+        <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-white/5 " />
         {workflowSteps.map((step, i) => {
           const cfg = PANEL_CONFIG[i % PANEL_CONFIG.length];
           const mid = (i + 0.5) * seg;
@@ -58,13 +58,14 @@ function SidebarIcons({ scrollYProgress }: { scrollYProgress: MotionValue<number
           return (
             <motion.div
               key={step.number}
+              onClick={() => onIconClick(i)}
               style={{
                 scale,
                 background: cfg.accent,
                 borderColor,
                 boxShadow: `0 0 12px ${cfg.accent}60`,
               }}
-              className="flex items-center justify-center w-12 h-12 rounded-full border-2"
+              className="flex items-center justify-center w-12 h-12 rounded-full border-2 cursor-pointer transition-transform hover:scale-110"
             >
               <span className="text-white">{getIcon(step.number)}</span>
             </motion.div>
@@ -80,7 +81,7 @@ function SidebarIcons({ scrollYProgress }: { scrollYProgress: MotionValue<number
 function TimelineFill({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) {
   const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
   return (
-    <div className="absolute left-6 lg:left-10 top-0 bottom-0 z-50 flex flex-col items-center pointer-events-none" style={{ width: '2px' }}>
+    <div className="absolute left-6 lg:left-10 top-0 bottom-0 z-50 flex flex-col items-center " style={{ width: '2px' }}>
       {/* Track */}
       <div className="absolute inset-0 bg-white/5 rounded-full" />
       {/* Animated fill */}
@@ -167,17 +168,17 @@ function Panel({
     >
       {/* Radial ambient glow */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 "
         style={{
           background: `radial-gradient(ellipse 70% 60% at 20% 50%, ${cfg.glow}, transparent 80%)`,
         }}
       />
 
       {/* Subtle grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:36px_36px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:36px_36px] " />
 
       {/* Giant decorative step number */}
-      <div className="absolute right-4 sm:right-12 top-1/2 -translate-y-1/2 select-none pointer-events-none" aria-hidden>
+      <div className="absolute right-4 sm:right-12 top-1/2 -translate-y-1/2 select-none " aria-hidden>
         <span className="font-sans font-black leading-none text-white/[0.025]" style={{ fontSize: "clamp(8rem,22vw,18rem)" }}>
           0{index + 1}
         </span>
@@ -278,6 +279,23 @@ export default function Workflow() {
     offset: ["start start", "end end"],
   });
 
+  const handleScrollToStep = (index: number) => {
+    if (!containerRef.current) return;
+
+    // Cari tahu posisi container utamanya dari atas halaman
+    const containerTop = containerRef.current.offsetTop;
+
+    // Hitung posisi target: Posisi Container + (Index * Tinggi Layar HP/Laptop)
+    // Ditambah sedikit offset (misal 10px) agar pergerakannya pas masuk ke area deteksi Framer Motion
+    const targetY = containerTop + (index * window.innerHeight) + 10;
+
+    // Perintahkan browser untuk meluncur ke posisi tersebut
+    window.scrollTo({
+      top: targetY,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <section className="bg-[#040404]">
 
@@ -312,7 +330,10 @@ export default function Workflow() {
         <div className="sticky top-0 h-screen overflow-hidden">
 
           {/* Global timeline fill line — renders above all panels */}
-          <SidebarIcons scrollYProgress={scrollYProgress} />
+          <SidebarIcons
+            scrollYProgress={scrollYProgress}
+            onIconClick={handleScrollToStep}
+          />
           <TimelineFill scrollYProgress={scrollYProgress} />
 
           {/* Stacked panels */}
