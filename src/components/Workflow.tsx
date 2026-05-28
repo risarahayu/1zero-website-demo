@@ -28,6 +28,42 @@ function ScrollHint({ scrollYProgress }: { scrollYProgress: MotionValue<number> 
 }
 
 // Global timeline line that sits on top of all stacked panels
+
+// Sidebar icons showing active step
+function SidebarIcons({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) {
+  const seg = 1 / N;
+  return (
+    <div className="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-4 space-y-4 pointer-events-none z-[60]">
+      <div className="relative flex flex-col items-center">
+        {/* Vertical line behind icons */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-white/5 pointer-events-none" />
+        {workflowSteps.map((step, i) => {
+          const cfg = PANEL_CONFIG[i % PANEL_CONFIG.length];
+          const mid = (i + 0.5) * seg;
+          const lo = Math.max(0, mid - seg * 0.4);
+          const hi = Math.min(1, mid + seg * 0.4);
+          const scale = useTransform(scrollYProgress, [lo, mid, hi], [0.8, 1.5, 0.8]);
+          return (
+            <motion.div
+              key={step.number}
+              style={{
+                scale,
+                background: cfg.accent,
+                borderColor: cfg.accent,
+                boxShadow: `0 0 12px ${cfg.accent}60`,
+              }}
+              className="flex items-center justify-center w-12 h-12 rounded-full border-2"
+            >
+              <span className="text-white">{getIcon(step.number)}</span>
+            </motion.div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// Global timeline line that sits on top of all stacked panels
 function TimelineFill({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) {
   const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
   return (
@@ -134,29 +170,6 @@ function Panel({
         </span>
       </div>
 
-      {/* ── Vertical timeline track (left edge) ── */}
-      <div className="absolute left-6 lg:left-10 top-0 bottom-0 flex flex-col items-center z-20 pointer-events-none">
-        {/* Track line */}
-        <div className="flex-1 w-[2px] bg-white/5" />
-        {/* Active bullet */}
-        <div
-          className="h-12 w-12 rounded-full flex items-center justify-center border-2 shrink-0 my-3"
-          style={{
-            background: `${cfg.accent}18`,
-            borderColor: cfg.accent,
-            boxShadow: `0 0 18px ${cfg.accent}60`,
-          }}
-        >
-          <span className={cfg.accentText}>{getIcon(step.number)}</span>
-        </div>
-        {/* Track line */}
-        <div className="flex-1 w-[2px] bg-white/5" />
-      </div>
-
-      {/* ── Step label beside bullet ──
-      <div className="absolute left-[72px] lg:left-[88px] top-1/2 -translate-y-1/2 z-20 pointer-events-none">
-        <p className="font-sans text-base uppercase tracking-widest text-neutral-600">STG-0{index + 1}</p>
-      </div> */}
 
       {/* Main content */}
       <motion.div
@@ -286,6 +299,7 @@ export default function Workflow() {
         <div className="sticky top-0 h-screen overflow-hidden">
 
           {/* Global timeline fill line — renders above all panels */}
+          <SidebarIcons scrollYProgress={scrollYProgress} />
           <TimelineFill scrollYProgress={scrollYProgress} />
 
           {/* Stacked panels */}
