@@ -42,14 +42,16 @@ function SidebarIcons({ scrollYProgress }: { scrollYProgress: MotionValue<number
           const mid = (i + 0.5) * seg;
           const lo = Math.max(0, mid - seg * 0.4);
           const hi = Math.min(1, mid + seg * 0.4);
-          const scale = useTransform(scrollYProgress, [lo, mid, hi], [0.8, 1.5, 0.8]);
+          const scale = useTransform(scrollYProgress, [lo, mid, hi], [0.8, 1.1, 0.8]);
+          // Border becomes sea‑salt when the icon is highlighted (mid point)
+          const border = useTransform(scrollYProgress, [lo, mid, hi], ["transparent", "var(--sea-salt)", "transparent"]);
           return (
             <motion.div
               key={step.number}
               style={{
                 scale,
                 background: cfg.accent,
-                borderColor: cfg.accent,
+                borderColor: border,
                 boxShadow: `0 0 12px ${cfg.accent}60`,
               }}
               className="flex items-center justify-center w-12 h-12 rounded-full border-2"
@@ -75,7 +77,7 @@ function TimelineFill({ scrollYProgress }: { scrollYProgress: MotionValue<number
         className="absolute top-0 left-0 right-0 rounded-full origin-top"
         style={{
           scaleY,
-          background: 'linear-gradient(to bottom, #85DFC3, #65BDA2, #307962)',
+          background: 'linear-gradient(to bottom, var(--green-700), var(--green-800), var(--green-900))',
           boxShadow: '0 0 8px rgba(139,92,246,0.5)',
           height: '100%',
         }}
@@ -85,9 +87,9 @@ function TimelineFill({ scrollYProgress }: { scrollYProgress: MotionValue<number
 }
 
 const PANEL_CONFIG = [
-  { bg: "bg-[#030a04]", glow: "rgba(29, 87, 69, 0.19)", accent: "#85DFC3", accentText: "text-brunswick-green-500", border: "border-brunswick-green-500" },
-  { bg: "bg-[#030a04]", glow: "rgba(29, 87, 69, 0.29)", accent: "#65BDA2", accentText: "text-brunswick-green-600", border: "border-brunswick-green-600" },
-  { bg: "bg-[#030a04]", glow: "rgba(29, 87, 69, 0.59)", accent: "#307962", accentText: "text-brunswick-green-800", border: "border-brunswick-green-800" },
+  { bg: "bg-[#030a04]", glow: "rgba(29, 87, 69, 0.19)", accent: "var(--green-700)", accentText: "text-brunswick-green-700", border: "border-brunswick-green-700" },
+  { bg: "bg-[#030a04]", glow: "rgba(29, 87, 69, 0.29)", accent: "var(--green-800)", accentText: "text-brunswick-green-800", border: "border-brunswick-green-800" },
+  { bg: "bg-[#030a04]", glow: "rgba(29, 87, 69, 0.59)", accent: "var(--green-900)", accentText: "text-brunswick-green-900", border: "border-brunswick-green-900" },
 ];
 
 function getIcon(number: string) {
