@@ -68,13 +68,14 @@
 
 
 /* Custom aurora glow grids & glassmorphism details */
-.aurora-blur-1 {
+/* not use  */
+/* .aurora-blur-1 {
   background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
 }
 
 .aurora-blur-2 {
   background: radial-gradient(circle, rgba(5, 150, 105, 0.08) 0%, rgba(0, 0, 0, 0) 60%);
-}
+} */
 
 .glow-card {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);

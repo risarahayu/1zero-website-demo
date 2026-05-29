@@ -88,10 +88,10 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
 
             <header className="max-w-7xl mx-auto px-10 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <span className="text-indigo-400 font-semibold tracking-widest text-sm uppercase mb-4 block">
+                    <span className="text-brunswick-green-500 font-semibold tracking-widest text-sm uppercase mb-4 block">
                         {t.sub}
                     </span>
-                    <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6">
+                    <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6 animate-gradient-text text-gradient-impact">
                         {t.title}
                     </h1>
                     <p className="text-gray-400 text-lg mb-8 max-w-md">
@@ -100,8 +100,8 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                 </div>
 
                 <div className="relative group">
-                    <div 
-                        ref={carouselRef} 
+                    <div
+                        ref={carouselRef}
                         onScroll={handleScroll}
                         className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-6 pb-10"
                     >
@@ -142,9 +142,8 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                             <button
                                 key={idx}
                                 onClick={() => scrollToCard(idx)}
-                                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                                    activeIndex === idx ? 'bg-indigo-500 w-6' : 'bg-white/20 hover:bg-white/40 w-2'
-                                }`}
+                                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${activeIndex === idx ? 'bg-brunswick-green-500 w-6' : 'bg-white/20 hover:bg-white/40 w-2'
+                                    }`}
                                 aria-label={`Go to slide ${idx + 1}`}
                             />
                         ))}

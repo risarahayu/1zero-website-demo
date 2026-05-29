@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
+@import "./index.css";
 
 
-.about-aurora {
+.aurora {
     position: fixed;
     top: 0;
     left: 0;
@@ -23,7 +24,7 @@
 .b1 {
     width: 600px;
     height: 600px;
-    background: #4338ca;
+    background: var(--color-brunswick-green-500);
     top: -10%;
     left: -10%;
 }
@@ -31,7 +32,7 @@
 .b2 {
     width: 500px;
     height: 500px;
-    background: #7e22ce;
+    background: var(--color-brunswick-green-900);
     bottom: -10%;
     right: -10%;
 }

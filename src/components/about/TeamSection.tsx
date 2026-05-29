@@ -82,12 +82,18 @@ const TeamSection: React.FC<TeamSectionProps> = ({ lang }) => {
                     overlayPositionClass="right-full mr-4 top-1/2 -translate-y-1/2"
                 />
 
-                {/* Member 5 (Gelembung Kecil Tanpa Pop-up) */}
-                <div className="bubble-member absolute top-[40%] right-[5%] group" style={{ animationDelay: '-4s' }}>
-                    <div className="w-16 h-16 rounded-full border-2 border-cyan-400/30 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=200" className="w-full h-full object-cover" alt="Member 5" />
-                    </div>
-                </div>
+                <TeamBubble
+                    name="Linda Wijaya"
+                    role="People & Culture Manager"
+                    quote="Empowering our humans."
+                    image="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=300"
+                    positionClass="bottom-[-20%] right-[20%]"
+                    delayClass="-1.5s"
+                    borderColorClass="border-pink-500/30"
+                    overlayPositionClass="right-full mr-4 top-1/2 -translate-y-1/2"
+                />
+
+
 
             </div>
         </section>
