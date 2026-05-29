@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+
+.about-aurora {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: index 0;
+    filter: blur(120px);
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    animation: move 20s infinite alternate;
+}
+
+.b1 {
+    width: 600px;
+    height: 600px;
+    background: #4338ca;
+    top: -10%;
+    left: -10%;
+}
+
+.b2 {
+    width: 500px;
+    height: 500px;
+    background: #7e22ce;
+    bottom: -10%;
+    right: -10%;
+}
+
+
+@keyframes move {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(100px, 100px);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(2deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+.bubble-member {
+    animation: float 6s ease-in-out infinite;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bubble-member:hover {
+    z-index: 50;
+    transform: scale(1.1);
+}
+
+.chat-overlay {
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.bubble-member:hover .chat-overlay {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}

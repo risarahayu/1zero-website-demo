@@ -2,7 +2,7 @@ import { NavLink, ProductItem, PortfolioItem, TestimonialItem, WorkflowStep, Tea
 
 export const navLinks: NavLink[] = [
   { label: "Home", href: "#home" },
-  { label: "About", href: "#why-us" },
+  { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Contact", href: "#contact" }
