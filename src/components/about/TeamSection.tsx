@@ -204,8 +204,9 @@ const TeamSection: React.FC = () => {
     }, [isPaused]);
 
     // DESKTOP CLICK LOCK (highlight stay beberapa detik)
-    const handleDesktopClick = (idx: number) => {
+    const handleDesktopClick = (idx: number, member: TeamMember) => {
         setActiveIdx(idx);
+        setSelectedMember(member);
 
         // pause auto rotate sementara
         setIsPaused(true);
@@ -235,7 +236,7 @@ const TeamSection: React.FC = () => {
                             onMouseEnter={() => setActiveIdx(idx)}
                             onClick={() => {
                                 if (!isDesktop) return;
-                                handleDesktopClick(idx);
+                                handleDesktopClick(idx, member);
                             }}
                         >
                             <img
