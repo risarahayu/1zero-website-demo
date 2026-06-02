@@ -40,22 +40,45 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
     // Mengubah active index berdasarkan posisi scroll manual/otomatis
     const handleScroll = () => {
         const carousel = carouselRef.current;
+
         if (!carousel) return;
-        const cardWidth = 300 + 24; // min-w-[300px] + gap-6 (24px)
-        const index = Math.round(carousel.scrollLeft / cardWidth);
-        setActiveIndex(Math.min(Math.max(index, 0), 2));
+
+        const cards = Array.from(carousel.children) as HTMLElement[];
+
+        const center =
+            carousel.scrollLeft + carousel.offsetWidth / 2;
+
+        let nearest = 0;
+        let minDistance = Infinity;
+
+        cards.forEach((card, idx) => {
+            const cardCenter =
+                card.offsetLeft + card.offsetWidth / 2;
+
+            const distance = Math.abs(center - cardCenter);
+
+            if (distance < minDistance) {
+                minDistance = distance;
+                nearest = idx;
+            }
+        });
+
+        setActiveIndex(nearest);
     };
 
     // Fungsi klik dot untuk scroll ke card tertentu
     const scrollToCard = (index: number) => {
         const carousel = carouselRef.current;
+
         if (!carousel) return;
-        const cardWidth = 300 + 24;
-        carousel.scrollTo({
-            left: index * cardWidth,
-            behavior: 'smooth'
+
+        const card = carousel.children[index] as HTMLElement;
+
+        card?.scrollIntoView({
+            behavior: "smooth",
+            inline: "center",
+            block: "nearest",
         });
-        setActiveIndex(index);
     };
 
     // Logic untuk Auto-Scroll Carousel
@@ -88,7 +111,7 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
 
             <header className="max-w-7xl mx-auto px-10 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <span className="text-brunswick-green-500 font-semibold tracking-widest text-sm uppercase mb-4 block">
+                    <span className="text-sea-salt font-semibold tracking-widest text-sm uppercase mb-4 block">
                         {t.sub}
                     </span>
                     <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6 animate-gradient-text text-gradient-impact">
@@ -103,7 +126,7 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                     <div
                         ref={carouselRef}
                         onScroll={handleScroll}
-                        className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-6 pb-10"
+                        className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-6 pb-10 px-[20%]"
                     >
                         {/* Value Card 1 */}
                         <div className="min-w-[300px] snap-center glass p-8 rounded-[2rem] relative overflow-hidden flex flex-col items-start">
