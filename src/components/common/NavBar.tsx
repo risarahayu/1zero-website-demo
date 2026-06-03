@@ -16,7 +16,7 @@ const NavBar: React.FC<NavBarProps> = ({ lang, setLang }) => {
       <div className="flex items-center gap-8 glass px-6 py-2.5 rounded-full text-sm font-semibold border border-white/10 shadow-lg">
         <a href="#home" className="text-gray-400 hover:text-white transition tracking-wide">Home</a>
         <a href="#about" className="text-indigo-400 font-bold transition tracking-wide">About</a>
-        <a href="#services" className="text-gray-400 hover:text-white transition tracking-wide">Services</a>
+        <a href="#products" className="text-gray-400 hover:text-white transition tracking-wide">Products</a>
         <a href="#portfolio" className="text-gray-400 hover:text-white transition tracking-wide">Portfolio</a>
         <a href="#contact" className="text-gray-400 hover:text-white transition tracking-wide">Contact</a>
       </div>

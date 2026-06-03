@@ -20,34 +20,134 @@ export const clientLogos = [
 
 export const products: ProductItem[] = [
   {
-    id: "prod-devpod",
-    title: "DevPod",
-    description: "Instant high-performance developer workspaces. Pre-configured, containerized environments designed to eliminate onboarding bottlenecks & accelerate deployment.",
-    linkText: "Read DevPod",
-    href: "#devpod"
+    id: "geo",
+    service: "GEO",
+    description:
+      "Your visibility layer in the AI-search era. We help your existing website get discovered, understood, and recommended by AI systems.",
+
+    symptoms: [
+      "Your website gets traffic, but it doesn't turn into meaningful results",
+      "AI systems rarely surface your content",
+      "People don’t immediately understand your value",
+      "Visibility feels unstable",
+    ],
+
+    futureState: [
+      "Be consistently discovered in AI-generated answers",
+      "Attract high-intent visitors",
+      "Make your value instantly clear",
+      "Build durable visibility beyond SEO",
+    ],
+
+    image: "/illustrations/geo.png",
+    href: "#geo",
+    cta: "Explore GEO",
+    problemTitle: "Growth & Visibility",
+
+    mood: {
+      bg: "from-blue-950 via-black to-black",
+      glow: "rgba(59,130,246,0.25)",
+      accent: "rgb(59,130,246)",
+    },
   },
+
   {
-    id: "prod-geo",
-    title: "GEO",
-    description: "Our proprietary growth system custom-engineered to optimize user conversions, map dropoffs, and scale traffic streams to maximize product revenue.",
-    linkText: "Explore GEO",
-    href: "#geo"
+    id: "nextgen",
+    service: "NextGen Platform",
+    description:
+      "A modern cloud-native foundation built to scale performance, UX, and system reliability.",
+
+    symptoms: [
+      "Website features is getting slower",
+      "System becomes harder to maintain",
+      "Performance degrades as users grow",
+      "UI consistency breaks over time",
+    ],
+
+    futureState: [
+      "Ship features faster",
+      "Maintain scalable architecture",
+      "Keep performance stable at scale",
+      "Improve product experience consistency",
+    ],
+
+    image: "/illustrations/nextgen.png",
+    href: "#nextgen",
+    cta: "Explore NextGen",
+    problemTitle: "System Performance",
+
+    mood: {
+      bg: "from-emerald-950 via-black to-black",
+      glow: "rgba(16,185,129,0.25)",
+      accent: "rgb(16,185,129)",
+    },
   },
+
   {
-    id: "prod-nextgen",
-    title: "NextGen Platform",
-    description: "Cloud-native infrastructure serving auto-scaling microservices, built-in system telemetry, and self-healing cluster algorithms to secure 99.99% uptime.",
-    linkText: "Explore Platform",
-    href: "#nextgen"
+    id: "devpod",
+    service: "DevPod",
+    description:
+      "Instant, consistent development environments for teams that need speed and stability.",
+
+    symptoms: [
+      "Environment setup slows developers down",
+      "Machines behave inconsistently",
+      "Onboarding takes too long",
+      "Team velocity is unpredictable",
+    ],
+
+    futureState: [
+      "Instant developer onboarding",
+      "Identical environments everywhere",
+      "No setup friction",
+      "Consistent engineering speed",
+    ],
+
+    image: "/illustrations/devpod.png",
+    href: "#devpod",
+    cta: "Explore DevPod",
+    problemTitle: "Developer Experience",
+
+    mood: {
+      bg: "from-purple-950 via-black to-black",
+      glow: "rgba(168,85,247,0.25)",
+      accent: "rgb(168,85,247)",
+    },
   },
+
   {
-    id: "prod-fCTO",
-    title: "fCTO",
-    description: "Enterprise-ready consultancies and systems auditing to align architectural compliance, audit cloud spend, and reinforce security defenses.",
-    linkText: "Read fCTO",
-    href: "#fCTO"
-  }
+    id: "fcto",
+    service: "fCTO",
+    description:
+      "Strategic technical leadership for architecture, security, and long-term system governance.",
+
+    symptoms: [
+      "Decisions are reactive instead of strategic",
+      "No clear architecture ownership",
+      "Security and cost are not actively managed",
+      "Teams lack alignment",
+    ],
+
+    futureState: [
+      "Clear technical direction",
+      "Aligned architecture strategy",
+      "Better governance and control",
+      "Scalable engineering organization",
+    ],
+
+    image: "/illustrations/fcto.png",
+    href: "#fcto",
+    cta: "Read fCTO",
+    problemTitle: "Strategic Direction",
+
+    mood: {
+      bg: "from-red-950 via-black to-black",
+      glow: "rgba(239,68,68,0.25)",
+      accent: "rgb(239,68,68)",
+    },
+  },
 ];
+
 
 export const portfolioItems: PortfolioItem[] = [
   {

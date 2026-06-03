@@ -5,11 +5,32 @@ export interface NavLink {
 
 export interface ProductItem {
   id: string;
-  title: string;
+
+  service: string;
+
   description: string;
-  badge?: string;
-  linkText: string;
+
+  // what user is experiencing (symptoms of bottleneck)
+  symptoms: string[];
+
+  // what the system unlocks after intervention
+  futureState: string[];
+
+  image: string;
+
   href: string;
+
+  cta: string;
+
+  problemTitle: string;
+
+
+  // NEW: visual identity layer
+  mood: {
+    bg: string;
+    glow: string;
+    accent: string;
+  };
 }
 
 export interface PortfolioItem {
