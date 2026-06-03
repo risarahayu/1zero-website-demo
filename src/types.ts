@@ -11,12 +11,15 @@ export interface ProductItem {
   description: string;
 
   // what user is experiencing (symptoms of bottleneck)
-  symptoms: string[];
+  symptoms: {
+    text: string;
+    icon: React.ReactNode;
+  }[];
 
   // what the system unlocks after intervention
   futureState: string[];
 
-  image: string;
+  imageSolution: string;
 
   href: string;
 

@@ -1,4 +1,6 @@
 import { NavLink, ProductItem, PortfolioItem, TestimonialItem, WorkflowStep, TeamMemberCall } from "./types";
+import React from "react";
+import { MousePointerClick, SearchX, EyeOff, Activity, Timer, Wrench, TrendingDown, Layout, Rocket, Network, ShieldCheck, Sparkles, Blocks, Cpu, UserPlus, Gauge, Compass, Boxes, ShieldAlert, Split } from "lucide-react";
 
 export const navLinks: NavLink[] = [
   { label: "Home", href: "#home" },
@@ -21,15 +23,27 @@ export const clientLogos = [
 export const products: ProductItem[] = [
   {
     id: "geo",
-    service: "GEO",
+    service: "Generative Engine Optimization",
     description:
       "Your visibility layer in the AI-search era. We help your existing website get discovered, understood, and recommended by AI systems.",
 
     symptoms: [
-      "Your website gets traffic, but it doesn't turn into meaningful results",
-      "AI systems rarely surface your content",
-      "People don’t immediately understand your value",
-      "Visibility feels unstable",
+      {
+        text: "Your website gets traffic, but it doesn't turn into meaningful results",
+        icon: MousePointerClick
+      },
+      {
+        text: "AI systems rarely surface your content",
+        icon: SearchX
+      },
+      {
+        text: "People don’t immediately understand your value",
+        icon: EyeOff
+      },
+      {
+        text: "Visibility feels unstable",
+        icon: Activity
+      },
     ],
 
     futureState: [
@@ -39,7 +53,8 @@ export const products: ProductItem[] = [
       "Build durable visibility beyond SEO",
     ],
 
-    image: "/illustrations/geo.png",
+    imageProblem: "./illustration/undraw_website_27ju 1.svg",
+    imageSolution: "./illustration/geo-solution.png",
     href: "#geo",
     cta: "Explore GEO",
     problemTitle: "Growth & Visibility",
@@ -58,10 +73,26 @@ export const products: ProductItem[] = [
       "A modern cloud-native foundation built to scale performance, UX, and system reliability.",
 
     symptoms: [
-      "Website features is getting slower",
-      "System becomes harder to maintain",
-      "Performance degrades as users grow",
-      "UI consistency breaks over time",
+      {
+        text: "Website features is getting slower",
+        // Ikon timer merepresentasikan waktu tunggu atau kelambatan
+        icon: Timer
+      },
+      {
+        text: "System becomes harder to maintain",
+        // Ikon kunci pas (wrench) merepresentasikan perbaikan dan maintenance
+        icon: Wrench
+      },
+      {
+        text: "Performance degrades as users grow",
+        // Ikon grafik menurun merepresentasikan performa yang drop
+        icon: TrendingDown
+      },
+      {
+        text: "UI consistency breaks over time",
+        // Ikon layout merepresentasikan struktur UI/desain
+        icon: Layout
+      },
     ],
 
     futureState: [
@@ -71,7 +102,8 @@ export const products: ProductItem[] = [
       "Improve product experience consistency",
     ],
 
-    image: "/illustrations/nextgen.png",
+    imageProblem: "/illustrations/nextgen-problem.png",
+    imageSolution: "/illustrations/nextgen-solution.png",
     href: "#nextgen",
     cta: "Explore NextGen",
     problemTitle: "System Performance",
@@ -90,10 +122,26 @@ export const products: ProductItem[] = [
       "Instant, consistent development environments for teams that need speed and stability.",
 
     symptoms: [
-      "Environment setup slows developers down",
-      "Machines behave inconsistently",
-      "Onboarding takes too long",
-      "Team velocity is unpredictable",
+      {
+        text: "Environment setup slows developers down",
+        // Ikon Blocks (balok) merepresentasikan environment/container (seperti Docker) yang sedang disusun
+        icon: Blocks
+      },
+      {
+        text: "Machines behave inconsistently",
+        // Ikon Cpu atau mesin merepresentasikan hardware/sistem lokal yang tidak stabil
+        icon: Cpu
+      },
+      {
+        text: "Onboarding takes too long",
+        // Ikon UserPlus merepresentasikan proses penambahan/onboarding anggota tim baru
+        icon: UserPlus
+      },
+      {
+        text: "Team velocity is unpredictable",
+        // Ikon Gauge (speedometer) merepresentasikan kecepatan atau velocity tim yang fluktuatif
+        icon: Gauge
+      },
     ],
 
     futureState: [
@@ -103,7 +151,8 @@ export const products: ProductItem[] = [
       "Consistent engineering speed",
     ],
 
-    image: "/illustrations/devpod.png",
+    imageProblem: "/illustrations/devpod-problem.png",
+    imageSolution: "/illustrations/devpod-solution.png",
     href: "#devpod",
     cta: "Explore DevPod",
     problemTitle: "Developer Experience",
@@ -122,10 +171,26 @@ export const products: ProductItem[] = [
       "Strategic technical leadership for architecture, security, and long-term system governance.",
 
     symptoms: [
-      "Decisions are reactive instead of strategic",
-      "No clear architecture ownership",
-      "Security and cost are not actively managed",
-      "Teams lack alignment",
+      {
+        text: "Decisions are reactive instead of strategic",
+        // Ikon Compass (kompas) merepresentasikan arah atau strategi yang hilang
+        icon: Compass
+      },
+      {
+        text: "No clear architecture ownership",
+        // Ikon Boxes (tumpukan kotak) merepresentasikan arsitektur atau struktur sistem yang tidak ada pemilik pastinya
+        icon: Boxes
+      },
+      {
+        text: "Security and cost are not actively managed",
+        // Ikon ShieldAlert (perisai peringatan) sangat pas untuk risiko keamanan dan kebocoran biaya
+        icon: ShieldAlert
+      },
+      {
+        text: "Teams lack alignment",
+        // Ikon Split (panah berpisah) merepresentasikan tim yang berjalan ke arah yang berbeda atau tidak sejalan
+        icon: Split
+      },
     ],
 
     futureState: [
@@ -135,7 +200,8 @@ export const products: ProductItem[] = [
       "Scalable engineering organization",
     ],
 
-    image: "/illustrations/fcto.png",
+    imageProblem: "/illustrations/fcto-problem.png",
+    imageSolution: "/illustrations/fcto-solution.png",
     href: "#fcto",
     cta: "Read fCTO",
     problemTitle: "Strategic Direction",
