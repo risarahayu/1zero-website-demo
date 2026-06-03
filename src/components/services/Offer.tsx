@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import { products } from "../../data";
+import "../../css/services.css";
 
 export default function DiagnosisPanel() {
     // Menyimpan index yang sedang terbuka. Default 0 agar yang pertama terbuka.
@@ -29,7 +30,7 @@ export default function DiagnosisPanel() {
 
                 {/* 3. KONTEN UTAMA */}
                 <div className="relative z-20 max-w-3xl mx-auto text-center px-6 py-20">
-                    <h2 className="text-3xl md:text-4xl font-bold leading-snug text-white">
+                    <h2 className="text-xl  md:text-4xl font-bold leading-snug text-white">
                         We know you didn’t come here without a problem.
                         <br />
                         Something in your system isn’t working — and you can feel it.
@@ -144,10 +145,10 @@ export default function DiagnosisPanel() {
                                                             Our Service
                                                         </p>
                                                         <div className="flex flex-col gap-4">
-                                                            <div className="text-white text-3xl font-bold uppercase animate-gradient-text text-gradient-impact">
+                                                            <div className="text-2xl md:text-3xl font-bold uppercase animate-gradient-text text-gradient-services">
                                                                 {item.service}
                                                             </div>
-                                                            <p className="text-white/70 text-lg leading-relaxed">
+                                                            <p className="text-white/70 text-base leading-relaxed">
                                                                 {item.description}
                                                             </p>
 
