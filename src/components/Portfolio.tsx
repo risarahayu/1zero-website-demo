@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ArrowLeft, ArrowRight, CheckCircle2, Monitor, Smile, Phone, Calendar, Star } from "lucide-react";
+import { customProjects } from "../data";
 
 interface PortfolioProps {
   onOpenBooking: () => void;
@@ -18,49 +19,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const customProjects = [
-    {
-      id: "impact",
-      title: "Impact Portal",
-      subtitle: "Enterprise Data Dashboard",
-      description: "A curated selection of modern art pieces from various contemporary artists.",
-      bgClass: "bg-[#112240] border-blue-500/10",
-      mockupType: "impact",
-      imageUrl: `${import.meta.env.BASE_URL}portofolio image/Desktop - 62 (2).png`
-    },
-    {
-      id: "baliteak",
-      title: "Baliteak Redesign Website",
-      description: "A portfolio showcasing stunning custom teakwood designs and artisanal furniture catalog.",
-      bgClass: "bg-[#45301F] border-amber-500/10",
-      mockupType: "baliteak",
-      imageUrl: `${import.meta.env.BASE_URL}portofolio image/kup (3).png`
-    },
-    {
-      id: "TDD",
-      title: "The Donor Dashboard Landing Page",
-      description: "Healthcare portal integrating real-time translating, audio diagnosis, and clinical records.",
-      bgClass: "bg-[#092218] border-emerald-500/10",
-      mockupType: "tdd",
-      imageUrl: `${import.meta.env.BASE_URL}portofolio image/kup (5).png`
-    },
-    {
-      id: "nexus",
-      title: "PT Phoenix Website",
-      description: "Professional company website built for PT Phoenix, featuring a modern design system and seamless user experience.",
-      bgClass: "bg-[#16122d] border-purple-500/10",
-      mockupType: "nexus",
-      imageUrl: `${import.meta.env.BASE_URL}portofolio image/kup (6).png`
-    },
-    {
-      id: "blackstump",
-      title: "Blackstump Technologies Website Replatform",
-      description: "Full website replatform for Blackstump Technologies — modernizing architecture, design system, and digital presence from the ground up.",
-      bgClass: "bg-[#0d1a0d] border-brunswick-green-500/10",
-      mockupType: "blackstump",
-      imageUrl: `${import.meta.env.BASE_URL}portofolio image/kup (7).png`
-    }
-  ];
+
 
   // Tripled carousel sets for seamless infinite track wrapping
   const carouselItems = [
