@@ -11,6 +11,7 @@ import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import BookingModal from "./components/BookingModal";
 import Header from "./components/Header";
+import ContactPage from "./pages/ContactUs";
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -41,9 +42,11 @@ export default function App() {
       <Header onOpenBooking={handleOpenBooking} />
 
       <main>
-        {/* Render Services page when hash is #services */}
+        {/* Route handling based on hash */}
         {currentPage === "services" ? (
           <Services onOpenBooking={handleOpenBooking} />
+        ) : currentPage === "contact" ? (
+          <ContactPage />
         ) : (
           <>
             {/* Hero Section */}
