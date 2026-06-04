@@ -1,9 +1,17 @@
 import React, { useMemo, useState } from "react";
 import { customProjects } from "../data";
 import PortfolioCard from "../components/PortfolioCard";
+import { PhoneCall } from "lucide-react";
 
 export default function PortfolioPage() {
     const [activeTab, setActiveTab] = useState("All");
+    const [isBookingOpen, setIsBookingOpen] = useState(false);
+
+    const onOpenBooking = () => {
+        // Here you could open a modal or navigate to a booking page.
+        // For now we simply toggle a boolean to demonstrate functionality.
+        setIsBookingOpen(true);
+    };
 
     // ambil semua service unik
     const services = useMemo(() => {
@@ -70,6 +78,62 @@ export default function PortfolioPage() {
                     />
                 ))}
             </div>
+
+            <div className="mt-32 mb-12 relative w-full max-w-7xl mx-auto rounded-[2.5rem] border border-brunswick-green-500/40 bg-brunswick-green-900/20 shadow-[0_0_50px_rgba(29,87,69,0.4)] backdrop-blur-xl overflow-hidden py-20 px-6 flex flex-col items-center justify-center group transition-all duration-700 hover:border-brunswick-green-500/60 hover:shadow-[0_0_80px_rgba(29,87,69,0.6)]">
+
+                {/* Aurora / Glow effects */}
+                <div className="absolute inset-0 -z-10 pointer-events-none">
+                    <div className="absolute top-1/2 left-1/3 w-72 h-72 bg-brunswick-green-500/30 rounded-full blur-[90px] -translate-y-1/2 -translate-x-1/2 mix-blend-screen animate-pulse" />
+                    <div className="absolute top-1/2 right-1/3 w-72 h-72 bg-[#a3e635]/20 rounded-full blur-[90px] -translate-y-1/2 translate-x-1/2 mix-blend-screen animate-pulse" style={{ animationDelay: '1s' }} />
+                </div>
+                <div className="space-y-12 justify-center items-center flex flex-col">
+
+                    <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-white tracking-tight z-10 drop-shadow-lg">
+                        Start Your Project With
+                    </p>
+                    <img
+                        src="Logo 1zero white.svg"
+                        className="h-[4rem] sm:h-[5rem] md:h-[6rem] z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-transform duration-500 group-hover:scale-105"
+                        alt="1zero"
+                    />
+                    <button
+                        id="cta-booking-btn"
+                        onClick={onOpenBooking}
+                        className="group relative flex items-center justify-center gap-2
+                px-10 py-5
+                bg-[linear-gradient(120deg,var(--color-sea-salt),var(--color-ivory),var(--color-dun),var(--color-green-500))]
+                bg-[length:300%_300%]
+                animate-gradient
+                text-neutral-950
+                font-sans font-extrabold
+                text-sm sm:text-base
+                rounded-2xl
+                transition-all
+                shadow-[0_10px_35px_rgba(223,217,198,0.25)]
+                hover:shadow-[0_10px_45px_rgba(223,217,198,0.4)]
+                cursor-pointer
+                tracking-wide"
+                    >
+                        Book a Section
+                        <PhoneCall className="h-4 w-4 text-neutral-900 group-hover:scale-110 transition-transform" />
+                    </button>
+                </div>
+            </div>
+            {/* Booking Modal placeholder */}
+            {isBookingOpen && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">
+                    <div className="bg-white dark:bg-gray-800 rounded-xl p-8 max-w-md w-full shadow-lg">
+                        <h2 className="text-2xl font-bold mb-4">Book a Section</h2>
+                        <p className="mb-6">This is a placeholder for the booking modal. Implement your actual booking UI here.</p>
+                        <button
+                            className="px-4 py-2 bg-brunswick-green-500 text-white rounded hover:bg-brunswick-green-600"
+                            onClick={() => setIsBookingOpen(false)}
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
         </section>
     );
 }

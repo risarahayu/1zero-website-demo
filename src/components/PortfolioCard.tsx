@@ -1,10 +1,9 @@
 import React from "react";
 import { PortfolioCardProps, Project } from "../types";
 
-
 const getServiceColorClass = (service: string) => {
   const s = service.toLowerCase();
-  
+
   if (s.includes("devpod")) {
     return "border-ivory/20 bg-ivory/10 text-ivory";
   }
@@ -17,7 +16,7 @@ const getServiceColorClass = (service: string) => {
   if (s.includes("fcto")) {
     return "border-sea-salt/20 bg-sea-salt/10 text-sea-salt";
   }
-  
+
   // Default fallback
   return "border-white/10 bg-white/5 text-zinc-400";
 };
@@ -45,7 +44,7 @@ export default function PortfolioCard({ project, onReadMore, className = "", sho
       {/* Left corner identifier and Content text */}
       <div className="pt-3 space-y-2">
         <h3
-          className="font-sans text-lg sm:text-xl font-bold text-white tracking-tight transition-colors cursor-pointer hover:text-brunswick-green-500 group-hover:text-brunswick-green-600"
+          className="font-sans text-lg sm:text-xl font-bold text-white tracking-tight transition-colors cursor-pointer hover:text-brunswick-green-500 group-hover:text-brunswick-green-600 "
           onClick={onReadMore}
         >
           {project.title}
@@ -68,10 +67,11 @@ export default function PortfolioCard({ project, onReadMore, className = "", sho
           </div>
         )}
 
+        {/* Bagian Button yang sudah diperbarui borders-nya */}
         <button
           type="button"
           onClick={onReadMore}
-          className="inline-flex items-center justify-center font-sans font-semibold text-neutral-300 hover:text-brunswick-green-500 group-hover:text-brunswick-green-500 bg-[#1a1a1c] hover:bg-[#252528] group-hover:bg-[#252528] border border-neutral-800/80 px-4 py-1.5 rounded-full text-base transition-colors cursor-pointer self-start mt-2"
+          className="inline-flex items-center justify-center font-sans font-semibold text-neutral-300 group-hover:text-brunswick-green-500 bg-[#1a1a1c] hover:bg-[#252528] group-hover:bg-[#252528] border border-neutral-800/80 group-hover:border-brunswick-green-500 px-4 py-1.5 rounded-full text-base transition-colors cursor-pointer self-start mt-2 "
         >
           Read More
         </button>

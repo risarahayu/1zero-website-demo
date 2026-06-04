@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { PhoneCall, Calendar, HelpCircle, ArrowRight, ShieldAlert, Sparkles } from "lucide-react";
+import BookingButton from "./BookingButton";
 
 interface CTAProps {
   onOpenBooking: () => void;
@@ -50,27 +51,7 @@ export default function CTA({ onOpenBooking }: CTAProps) {
 
             {/* Sand/Beige Colored Call Action Button */}
             <div className="pt-4 flex flex-col items-center justify-center gap-3">
-              <button
-                id="cta-booking-btn"
-                onClick={onOpenBooking}
-                className="group relative flex items-center justify-center gap-2
-                px-10 py-5
-                bg-[linear-gradient(120deg,var(--color-sea-salt),var(--color-ivory),var(--color-dun),var(--color-green-500))]
-                bg-[length:300%_300%]
-                animate-gradient
-                text-neutral-950
-                font-sans font-extrabold
-                text-sm sm:text-base
-                rounded-2xl
-                transition-all
-                shadow-[0_10px_35px_rgba(223,217,198,0.25)]
-                hover:shadow-[0_10px_45px_rgba(223,217,198,0.4)]
-                cursor-pointer
-                tracking-wide"
-              >
-                Book a Section
-                <PhoneCall className="h-4 w-4 text-neutral-900 group-hover:scale-110 transition-transform" />
-              </button>
+              <BookingButton onClick={onOpenBooking} />
             </div>
 
             {/* Telemetry checks under booking button */}
