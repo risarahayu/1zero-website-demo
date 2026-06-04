@@ -8,7 +8,7 @@ interface HeroProps {
 
 export default function Hero({ onOpenBooking }: HeroProps) {
   return (
-    <section id="home" className="relative pt-10 pb-20 overflow-hidden">
+    <section id="home" className="relative  overflow-hidden">
       {/* Aurora glow effect right behind hero heading */}
       {/* Animated Aurora Background */}
       <div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none">
@@ -16,7 +16,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         <div className="aurora-layer aurora-2" />
         <div className="aurora-layer aurora-3" />
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12 pt-10 pb-10">
         {/* Upper Micro Label */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
@@ -29,6 +29,8 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             Performance on any scale. We craft software with precision.
           </span>
         </motion.div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
 
         {/* Master Copy */}
         <div className="space-y-6">

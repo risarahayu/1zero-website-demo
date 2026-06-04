@@ -56,7 +56,7 @@ export default function Products({ onOpenBooking }: ProductsProps) {
             {/* Head Area */}
             <div className="text-center space-y-4">
               <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans  tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5 shadow-[0_0_12px_rgba(163,230,53,0.1)]">
-                Our Product
+                Our Services
               </span>
               <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
                 Core Offer

@@ -5,6 +5,7 @@ import Offer from "../components/services/offer"; // DiagnosisPanel component
 import BookingModal from "../components/BookingModal";
 import Footer from "../components/Footer";
 import WhatYouGet from "../components/services/WhatYouGet";
+import Testimonials from "../components/Testimonials";
 
 const Services: React.FC = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -24,6 +25,7 @@ const Services: React.FC = () => {
         <ServicesHero />
         <Offer />
         <WhatYouGet />
+        <Testimonials />
         {/* <Footer /> */}
         <BookingModal isOpen={isBookingOpen} onClose={handleCloseBooking} />
       </div>
