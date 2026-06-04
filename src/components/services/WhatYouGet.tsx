@@ -61,7 +61,7 @@ export default function WhatYouGet() {
                     Working with 1zero
                 </p>
 
-                <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white animate-gradient-text text-gradient-services">
+                <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white animate-gradient-text text-gradient">
                     What You Gain
                 </h2>
 

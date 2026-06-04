@@ -61,7 +61,7 @@ export default function ContactPage() {
                         <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans  tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5 shadow-[0_0_12px_rgba(163,230,53,0.1)]">
                             Get In Touch
                         </span>
-                        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mt-3 text-gradient-services leading-tight">
+                        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mt-3 text-gradient leading-tight">
                             Let's Build the System.
                         </h1>
                         <p className="text-white/60 mt-4 text-base md:text-lg leading-relaxed">

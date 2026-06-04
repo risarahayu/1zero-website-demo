@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import BookingModal from "./components/BookingModal";
 import Header from "./components/Header";
 import ContactPage from "./pages/ContactUs";
+import Portfolios from "./pages/Portfolios";
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -47,6 +48,8 @@ export default function App() {
           <Services onOpenBooking={handleOpenBooking} />
         ) : currentPage === "contact" ? (
           <ContactPage />
+        ) : currentPage === "portfolio" || currentPage === "portfolios" ? (
+          <Portfolios />
         ) : (
           <>
             {/* Hero Section */}

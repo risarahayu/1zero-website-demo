@@ -72,3 +72,23 @@ export interface TeamMemberCall {
   isMuted: boolean;
   isLocal?: boolean;
 }
+
+
+export interface Project {
+  id: string;
+  title: string;
+  subtitle?: string;
+  description: string;
+  bgClass: string;
+  mockupType: string;
+  imageUrl: string;
+  service: string;
+  uniqueId?: string;
+}
+
+export interface PortfolioCardProps {
+  project: Project;
+  onReadMore?: () => void;
+  className?: string;
+  showService?: boolean;
+} 

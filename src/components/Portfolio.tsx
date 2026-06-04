@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ArrowLeft, ArrowRight, CheckCircle2, Monitor, Smile, Phone, Calendar, Star } from "lucide-react";
 import { customProjects } from "../data";
+import PortfolioCard from "./PortfolioCard";
 
 interface PortfolioProps {
   onOpenBooking: () => void;
@@ -165,47 +166,12 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
                 const isActive = virtualIndex === index;
 
                 return (
-                  <div
+                  <PortfolioCard
                     key={project.uniqueId}
-                    className="w-[280px] sm:w-[320px] md:w-[380px] shrink-0 group flex flex-col space-y-4"
-                  >
-                    {/* Visual Mockup Stage Box */}
-                    <div className={`relative h-[240px] sm:h-[260px] md:h-[285px] w-full rounded-[24px] border ${project.bgClass} flex items-center justify-center overflow-hidden shadow-2xl transition-all duration-500 group-hover:scale-[1.01] group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)]`}>
-
-                      {/* Subtly animated ambient grid lines */}
-                      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:20px_20px]" />
-
-                      {/* Real project screenshot */}
-                      <img
-                        src={project.imageUrl}
-                        alt={project.title}
-                        className="absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
-                      />
-                      {/* Gradient overlay for text readability */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                    </div>
-
-                    {/* Left corner identifier and Content text */}
-                    <div className="pt-3 space-y-2">
-                      <h3 className="font-sans text-lg sm:text-xl font-bold text-white tracking-tight group-hover:text-brunswick-green-600 transition-colors">
-                        {project.title}
-                      </h3>
-
-                      <p className="font-sans text-base text-neutral-400 leading-relaxed font-normal">
-                        {project.description}
-                      </p>
-
-                      {/* Read More button matches reference picture perfectly */}
-                      <button
-                        type="button"
-                        onClick={onOpenBooking}
-                        className="inline-flex items-center justify-center font-sans font-semibold text-neutral-300 hover:text-brunswick-green-500 bg-[#1a1a1c] hover:bg-[#252528] border border-neutral-800/80 px-4 py-1.5 rounded-full text-base transition-colors cursor-pointer self-start"
-                      >
-                        Read More
-                      </button>
-                    </div>
-                  </div>
+                    project={project}
+                    onReadMore={onOpenBooking}
+                    className="w-[280px] sm:w-[320px] md:w-[380px] shrink-0"
+                  />
                 );
               })}
             </div>

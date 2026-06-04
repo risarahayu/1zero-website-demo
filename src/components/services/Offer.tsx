@@ -145,7 +145,7 @@ export default function DiagnosisPanel() {
                                                             Our Service
                                                         </p>
                                                         <div className="flex flex-col gap-4">
-                                                            <div className="text-2xl md:text-5xl font-bold uppercase animate-gradient-text text-gradient-services">
+                                                            <div className="text-2xl md:text-5xl font-bold uppercase animate-gradient-text text-gradient">
                                                                 {item.service}
                                                             </div>
                                                             <p className="text-white/70 text-base leading-relaxed">

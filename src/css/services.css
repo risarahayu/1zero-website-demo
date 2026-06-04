@@ -113,49 +113,7 @@
     }
 }
 
-/* Animated gradient for hero title */
-.animate-gradient-text {
-    background-size: 300% 300%;
-}
 
-.text-gradient-services {
-    display: inline-block;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    line-height: 1.1;
-    padding-bottom: 0.15em;
-
-    background-image: linear-gradient(90deg,
-            #FAFAFA 0%,
-            #D6CAAD 25%,
-            var(--green-500) 60%,
-            #1D5745 100%);
-    background-size: 240% 240%;
-    background-position: 100% 50%;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-
-    animation: luxuryGradient 6s ease-in-out infinite;
-    will-change: background-position;
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
-}
-
-@keyframes luxuryGradient {
-    0% {
-        background-position: 100% 50%;
-    }
-
-    50% {
-        background-position: 0% 50%;
-    }
-
-    100% {
-        background-position: 100% 50%;
-    }
-}
 
 /* benefit */
 @keyframes float {

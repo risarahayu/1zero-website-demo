@@ -41,7 +41,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             className="font-sans text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1]"
           >
             Simplify Systems <br />
-            <span className="animate-gradient-text text-gradient-impact">
+            <span className="animate-gradient-text text-gradient ">
               Amplify Impact
             </span>
           </motion.h1>
