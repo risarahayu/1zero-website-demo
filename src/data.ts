@@ -1,6 +1,6 @@
 import { NavLink, ProductItem, PortfolioItem, TestimonialItem, WorkflowStep, TeamMemberCall } from "./types";
 import React from "react";
-import { MousePointerClick, SearchX, EyeOff, Activity, Timer, Wrench, TrendingDown, Layout, Rocket, Network, ShieldCheck, Sparkles, Blocks, Cpu, UserPlus, Gauge, Compass, Boxes, ShieldAlert, Split } from "lucide-react";
+import { MousePointerClick, SearchX, EyeOff, Activity, Timer, Wrench, TrendingDown, Layout, Rocket, Network, ShieldCheck, Sparkles, Blocks, Cpu, UserPlus, Gauge, Compass, Boxes, ShieldAlert, Split, FileText, FileSearch, Users, Eye, BookOpen } from "lucide-react";
 
 export const navLinks: NavLink[] = [
   { label: "Home", href: "#home" },
@@ -407,3 +407,77 @@ export const customProjects = [
   }
 ];
 
+export const benefits = [
+  {
+    title: "Meeting Summaries",
+    description:
+      "Clear documentation after every discussion, decision, and planning session.",
+    icon: FileText,
+    style: {
+      top: "10%",
+      left: "12%",
+    },
+  },
+  {
+    title: "Transparent Proposals",
+    description:
+      "Know exactly what we're building, why it matters, and what success looks like.",
+    icon: FileSearch,
+    style: {
+      top: "18%",
+      right: "10%",
+    },
+  },
+  {
+    title: "Strategic Direction",
+    description:
+      "Recommendations backed by experience, not guesswork.",
+    icon: Compass,
+    style: {
+      top: "5%",
+      left: "55%",
+    },
+  },
+  {
+    title: "Dedicated Experts",
+    description:
+      "Work directly with people who understand both business and technology.",
+    icon: Users,
+    style: {
+      top: "60%",
+      left: "8%",
+    },
+  },
+  {
+    title: "Project Visibility",
+    description:
+      "Stay informed with clear progress and next-step communication.",
+    icon: Eye,
+    style: {
+      top: "55%",
+      right: "5%",
+    },
+  },
+  {
+    title: "Documentation",
+    description:
+      "Knowledge stays with your team, not locked inside a project.",
+    icon: BookOpen,
+    style: {
+      bottom: "15%",
+      left: "20%",
+    },
+  },
+  {
+    title: "Scalable Foundations",
+    description:
+      "Built to support future growth without constant rebuilding.",
+    icon: Blocks,
+    style: {
+      bottom: "5%",
+      left: "50%",
+      transform: "translateX(-50%)",
+    },
+  },
+
+];
