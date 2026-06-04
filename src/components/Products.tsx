@@ -86,7 +86,7 @@ export default function Products({ onOpenBooking }: ProductsProps) {
 
                     <div className="space-y-2">
                       <h3 className="font-sans text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">
-                        {p.title}
+                        {p.service}
                       </h3>
                       <p className="font-sans text-base text-neutral-400 group-hover:text-sea-salt transition-colors leading-relaxed">
                         {p.description}
