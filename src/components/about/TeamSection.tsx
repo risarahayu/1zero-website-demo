@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
+
 import TeamBubble from './TeamBubble'; // optional, kept for potential reuse
+
+const basePath = import.meta.env.BASE_URL;
 
 interface TeamMember {
     name: string;
@@ -24,9 +27,9 @@ interface TeamMember {
 
 const members: TeamMember[] = [
     {
-        name: 'Aris Setiawan',
-        role: 'Frontend Developer',
-        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400',
+        name: 'Molly Sanders',
+        role: 'Founder',
+        image: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Molly.webp`,
 
         bio: "Passionate about crafting smooth and scalable UI experiences that feel human and intuitive.",
 
@@ -43,9 +46,9 @@ const members: TeamMember[] = [
     },
 
     {
-        name: 'Siti Sarah',
-        role: 'UI/UX Designer',
-        image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400',
+        name: 'Mark Treleaven',
+        role: 'Founder & CTO',
+        image: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Mark.webp`,
 
         bio: "Designing meaningful digital experiences that connect emotion, usability, and clarity.",
 
@@ -61,9 +64,9 @@ const members: TeamMember[] = [
     },
 
     {
-        name: 'Budi Hartono',
-        role: 'System Architect & Cloud Expert',
-        image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400',
+        name: 'Chandra Kusuma',
+        role: 'Project Manager',
+        image: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Chandra Kusuma.webp`,
 
         bio: "Building scalable distributed systems that stay reliable under millions of requests.",
 
@@ -80,9 +83,9 @@ const members: TeamMember[] = [
     },
 
     {
-        name: 'Linda Wijaya',
-        role: 'People & Culture Manager',
-        image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400',
+        name: 'Dharma Putra',
+        role: 'Solution Architect',
+        image: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Dharma Putra.webp`,
 
         bio: "Building healthy team culture where people grow, not just work.",
 
@@ -98,9 +101,9 @@ const members: TeamMember[] = [
     },
 
     {
-        name: 'Rudi Kurnia',
-        role: 'Backend Engineer',
-        image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400',
+        name: 'Mutia Rosa',
+        role: 'CRM',
+        image: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Mutia Rosa.webp`,
 
         bio: "Focused on building resilient APIs and backend systems that scale effortlessly.",
 
@@ -116,9 +119,9 @@ const members: TeamMember[] = [
     },
 
     {
-        name: 'Dewi Lestari',
-        role: 'Product Manager',
-        image: 'https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=400',
+        name: 'Risa Rahayu',
+        role: 'UI/UX Developer',
+        image: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Risa Rahayu.webp`,
 
         bio: "Turning ideas into impactful products that solve real human problems.",
 
@@ -134,9 +137,9 @@ const members: TeamMember[] = [
     },
 
     {
-        name: 'Andi Pratama',
-        role: 'DevOps Engineer',
-        image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400',
+        name: 'Krisna Suarendra',
+        role: 'Fullstack Developer',
+        image: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Krisna.webp`,
 
         bio: "Automating infrastructure so teams can focus on building, not fixing.",
 
@@ -152,9 +155,9 @@ const members: TeamMember[] = [
     },
 
     {
-        name: 'Maya Sari',
-        role: 'Marketing Lead',
-        image: 'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=400',
+        name: 'Kadek Gunawan',
+        role: 'Operasional',
+        image: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Kadek Gunawan.webp`,
 
         bio: "Connecting brand stories with people through meaningful digital narratives.",
 
