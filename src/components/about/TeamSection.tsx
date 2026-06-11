@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
 import TeamBubble from './TeamBubble'; // optional, kept for potential reuse
+import { Icon } from "@iconify/react";
+import { section } from 'motion/react-client';
+import CtaBanner from './CTA Banner';
 
 const basePath = import.meta.env.BASE_URL;
 
 interface TeamMember {
     name: string;
     role: string;
-    image: string;
 
     // 🧠 STORY / PERSONAL BIO
     bio: string;
@@ -18,18 +20,49 @@ interface TeamMember {
         logo?: string; // bisa pakai URL icon atau emoji fallback
     }[];
 
+    // IMAGE
+    images?: {
+        imageDisplay: string;
+        imageDisplayHover: string;
+        ImageDetail1: string;
+        ImageDetail2: string;
+    };
+
+    // Social Media
+
+    socialMediaAccounts: {
+        linkedin?: { name: string; url: string };
+        github?: { name: string; url: string };
+        dribble?: { name: string; url: string };
+    };
+
     // 🌍 UN SDGs (SUSTAINABILITY ALIGNMENT)
     sdgs: {
         id: number;
         title: string;
     }[];
+
 }
+
+
 
 const members: TeamMember[] = [
     {
         name: 'Molly Sanders',
         role: 'Founder',
-        image: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Molly.webp`,
+        socialMediaAccounts: {
+            linkedin: { name: "Molly Sanders", url: "" },
+            github: { name: "", url: "" },
+            dribble: { name: "", url: "" },
+        },
+
+        images:
+        {
+            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Molly.webp`,
+            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Molly.png`,
+            ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Molly.png`,
+            ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Molly.webp`,
+        },
 
         bio: "Passionate about crafting smooth and scalable UI experiences that feel human and intuitive.",
 
@@ -48,9 +81,21 @@ const members: TeamMember[] = [
     {
         name: 'Mark Treleaven',
         role: 'Founder & CTO',
-        image: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Mark.webp`,
+        socialMediaAccounts: {
+            linkedin: { name: "Mark Treleaven", url: "https://www.linkedin.com/in/mark-treleaven" },
+            github: { name: "", url: "" },
+            dribble: { name: "", url: "" },
+        },
 
-        bio: "Designing meaningful digital experiences that connect emotion, usability, and clarity.",
+        images:
+        {
+            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Mark.webp`,
+            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Mark.png`,
+            ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Mark.png`,
+            ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Mark.webp`,
+        },
+
+        bio: "CTO with an eagle eye for detail, dedicated to flawless code, seamless architecture, and driving technical excellence.",
 
         techStack: [
             { name: 'Figma', logo: '🎨' },
@@ -65,10 +110,22 @@ const members: TeamMember[] = [
 
     {
         name: 'Chandra Kusuma',
-        role: 'Project Manager',
-        image: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Chandra Kusuma.webp`,
+        role: 'Operational Manager',
+        socialMediaAccounts: {
+            linkedin: { name: "Chandra Kusuma", url: "https://www.linkedin.com/in/chandra-kusuma83/" },
+            github: { name: "", url: "" },
+            dribble: { name: "", url: "" },
+        },
 
-        bio: "Building scalable distributed systems that stay reliable under millions of requests.",
+        images:
+        {
+            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Chandra Kusuma.webp`,
+            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Chandra Kusuma.png`,
+            ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Chandra Kusuma.png`,
+            ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Chandra Kusuma.webp`,
+        },
+
+        bio: "Chandra is the operational backbone of 1zero, ensuring smooth project execution, efficient resources, and compliant, well-optimized daily operations so the team can focus on innovation.",
 
         techStack: [
             { name: 'AWS', logo: '☁️' },
@@ -77,15 +134,27 @@ const members: TeamMember[] = [
         ],
 
         sdgs: [
-            { id: 9, title: 'Industry, Innovation and Infrastructure' },
             { id: 13, title: 'Climate Action' },
+            { id: 14, title: 'Life Below Water' },
         ],
     },
 
     {
         name: 'Dharma Putra',
         role: 'Solution Architect',
-        image: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Dharma Putra.webp`,
+
+        images:
+        {
+            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Dharma Putra.webp`,
+            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Dharma Putra.png`,
+            ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Dharma Putra.png`,
+            ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Dharma Putra.webp`,
+        },
+        socialMediaAccounts: {
+            linkedin: { name: "Dharma Putra", url: "" },
+            github: { name: "", url: "" },
+            dribble: { name: "", url: "" },
+        },
 
         bio: "Building healthy team culture where people grow, not just work.",
 
@@ -95,17 +164,30 @@ const members: TeamMember[] = [
         ],
 
         sdgs: [
-            { id: 3, title: 'Good Health and Well-being' },
-            { id: 8, title: 'Decent Work and Economic Growth' },
+            { id: 4, title: 'Quality Education' },
+            { id: 13, title: 'Climate Action' },
         ],
     },
 
     {
         name: 'Mutia Rosa',
-        role: 'CRM',
-        image: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Mutia Rosa.webp`,
+        role: 'Executive Assistant',
 
-        bio: "Focused on building resilient APIs and backend systems that scale effortlessly.",
+        images:
+        {
+            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Mutia Rosa.webp`,
+            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Mutia Rosa.png`,
+            ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Mutia Rosa.png`,
+            ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Mutia Rosa.webp`,
+        },
+
+        socialMediaAccounts: {
+            linkedin: { name: "Mutia Rosa", url: "https://www.linkedin.com/in/mutia-rosa-73552133" },
+            github: { name: "", url: "" },
+            dribble: { name: "", url: "" },
+        },
+
+        bio: "As an Executive Assistant to the CTO, I’m the go-to person for managing sales data and keeping client communication smooth",
 
         techStack: [
             { name: 'Node.js', logo: '🟢' },
@@ -114,16 +196,29 @@ const members: TeamMember[] = [
         ],
 
         sdgs: [
-            { id: 9, title: 'Industry, Innovation and Infrastructure' },
+            { id: 4, title: 'Quality Education' },
+            { id: 12, title: 'Responsible Consumption and Production' },
         ],
     },
 
     {
         name: 'Risa Rahayu',
         role: 'UI/UX Developer',
-        image: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Risa Rahayu.webp`,
+        bio: 'UI/UX Developer who sees design as intention, not decoration',
 
-        bio: "Turning ideas into impactful products that solve real human problems.",
+        images:
+        {
+            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Risa Rahayu.webp`,
+            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Risa Rahayu.png`,
+            ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Risa Rahayu.png`,
+            ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Risa Rahayu.webp`,
+        },
+
+        socialMediaAccounts: {
+            linkedin: { name: "Risa Rahayu", url: "https://www.linkedin.com/in/risarahayu" },
+            github: { name: "risarahayu", url: "https://github.com/risarahayu" },
+            dribble: { name: "Risa Rahayu", url: "https://dribbble.com/risa2000" },
+        },
 
         techStack: [
             { name: 'Jira', logo: '📊' },
@@ -131,15 +226,28 @@ const members: TeamMember[] = [
         ],
 
         sdgs: [
-            { id: 8, title: 'Decent Work and Economic Growth' },
-            { id: 12, title: 'Responsible Consumption and Production' },
+            { id: 4, title: 'Quality Education' },
+            { id: 13, title: 'Climate Action' },
         ],
     },
 
     {
         name: 'Krisna Suarendra',
-        role: 'Fullstack Developer',
-        image: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Krisna.webp`,
+        role: 'Junior Fullstack Developer',
+
+        images:
+        {
+            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Krisna.webp`,
+            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Krisna.png`,
+            ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Krisna.png`,
+            ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Krisna.webp`,
+        },
+
+        socialMediaAccounts: {
+            linkedin: { name: "Krisna Suarendra", url: "http://www.linkedin.com/in/i-putu-krisna-suarendra-putra-548306270" },
+            github: { name: "", url: "" },
+            dribble: { name: "", url: "" },
+        },
 
         bio: "Automating infrastructure so teams can focus on building, not fixing.",
 
@@ -150,16 +258,33 @@ const members: TeamMember[] = [
         ],
 
         sdgs: [
+            { id: 4, title: 'Quality Education' },
             { id: 9, title: 'Industry, Innovation and Infrastructure' },
         ],
     },
 
     {
         name: 'Kadek Gunawan',
-        role: 'Operasional',
-        image: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Kadek Gunawan.webp`,
+        role: 'Operasional Management',
+        bio: 'Managing daily cash flow and office maintenance to keep our operations running smoothly every day',
 
-        bio: "Connecting brand stories with people through meaningful digital narratives.",
+        images:
+        {
+            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Kadek Gunawan.webp`,
+            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Kadek Gunawan.png`,
+            ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Kadek Gunawan.png`,
+            ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Kadek Gunawan.webp`,
+        },
+
+        socialMediaAccounts: {
+            linkedin: {
+                name: 'Kadek Gunawan',
+                url: "https://www.linkedin.com/in/gunawan-kadek-635353318",
+            },
+            github: { name: "", url: "" },
+            dribble: { name: "", url: "" },
+        },
+
 
         techStack: [
             { name: 'Google Ads', logo: '🔵' },
@@ -167,8 +292,8 @@ const members: TeamMember[] = [
         ],
 
         sdgs: [
-            { id: 4, title: 'Quality Education' },
-            { id: 17, title: 'Partnerships for the Goals' },
+            { id: 2, title: 'Zero Hunger' },
+            { id: 8, title: 'Decent Work and Economic Growth' },
         ],
     },
 ];
@@ -177,12 +302,18 @@ const TeamSection: React.FC = () => {
     const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
     const [isPaused, setIsPaused] = useState(false);
     const [activeIdx, setActiveIdx] = useState(0);
+    const [activeSlide, setActiveSlide] = useState(0);
 
     const isDesktop = typeof window !== "undefined" && window.innerWidth >= 1024;
 
     const topRow = members.slice(0, 4);
     const bottomRow = members.slice(4, 8);
     const activeMember = members[activeIdx];
+
+    const imageSlides = [
+        activeMember.images?.ImageDetail1,
+        activeMember.images?.ImageDetail2,
+    ].filter(Boolean);
 
     // AUTO ROTATE (desktop only + no pause)
     useEffect(() => {
@@ -228,7 +359,7 @@ const TeamSection: React.FC = () => {
                 </h2>
 
                 {/* DESKTOP GRID */}
-                <div className="hidden lg:grid grid-cols-4 gap-4 px-4 pb-4">
+                <div className="hidden lg:grid grid-cols-4 gap-4 pb-4">
                     {members.map((member, idx) => (
                         <div
                             key={idx}
@@ -236,16 +367,31 @@ const TeamSection: React.FC = () => {
                                 ? "bg-brunswick-green-900"
                                 : "bg-white/10"
                                 }`}
-                            onMouseEnter={() => setActiveIdx(idx)}
                             onClick={() => {
                                 if (!isDesktop) return;
                                 handleDesktopClick(idx, member);
                             }}
                         >
-                            <img
-                                src={member.image}
+                            {/* <img
+                                src={member.images.imageDisplay}
                                 className="w-full h-60 object-cover rounded-md mb-3"
-                            />
+                            /> */}
+
+                            <div className="relative w-full h-60 overflow-hidden rounded-md mb-3">
+                                {/* BLACK TOP IMAGE (default) */}
+                                <img
+                                    src={member.images.imageDisplay}
+                                    className="w-full h-full object-cover transition-opacity duration-300"
+                                />
+
+                                {/* WHITE TOP IMAGE (hover/click) */}
+                                {member.images.imageDisplayHover && (
+                                    <img
+                                        src={member.images.imageDisplayHover}
+                                        className="absolute inset-0 w-full h-full object-cover bg-sea-salt transition-opacity duration-300 opacity-0 hover:opacity-100"
+                                    />
+                                )}
+                            </div>
                             <h3 className="text-lg font-semibold text-white">
                                 {member.name}
                             </h3>
@@ -330,79 +476,135 @@ const TeamSection: React.FC = () => {
                     </div>
                 </div>
 
+
+
                 {/* DESKTOP PREVIEW */}
-                <div className="hidden lg:block">
-                    {activeMember && (
-                        <div className="mt-10 mx-auto">
-                            <div className="group relative overflow-hidden rounded-[14px] border border-brunswick-green-900 bg-zinc-950">
+                <div className="relative overflow-hidden border border-white/10 rounded-2xl">
 
-                                <div className="absolute inset-0 bg-gradient-to-r from-brunswick-green-900 via-transparent to-transparent" />
+                    {/* AURORA BACKGROUND */}
+                    <div className="aurora">
+                        <div className="aurora-core" />
+                        {/* <div className="blob b1" /> */}
+                        {/* <div className="blob b2" /> */}
+                    </div>
 
-                                <div className="grid md:grid-cols-[280px_1fr] relative">
+                    {/* CONTENT */}
+                    <div className="grid lg:grid-cols-[280px_1fr_320px] relative z-10 pt-4">
 
-                                    <div className="relative">
-                                        <img
-                                            src={activeMember.image}
-                                            className="h-full w-full object-cover"
-                                        />
-                                    </div>
+                        {/* LEFT */}
+                        <div className="flex flex-col justify-between">
+                            <div className="p-8 flex flex-col justify-center">
+                                <span className="text-xs uppercase tracking-[0.25em] text-brunswick-green-500">
+                                    Team Member
+                                </span>
 
-                                    <div className="p-8 md:p-10 flex flex-col justify-center space-y-5">
+                                <h3 className="mt-3 text-3xl font-bold text-white">
+                                    {activeMember.name}
+                                </h3>
 
-                                        {/* Label */}
-                                        <div>
-                                            <span className="text-xs uppercase tracking-[0.25em] text-brunswick-green-500">
-                                                Team Member
-                                            </span>
+                                <p className="mt-2 text-zinc-400">
+                                    {activeMember.role}
+                                </p>
+                            </div>
+                            <div className="p-8 flex flex-col justify-center">
+                                <p className="text-zinc-300">{activeMember.bio}</p>
+                            </div>
 
-                                            <h3 className="mt-3 text-3xl md:text-4xl font-bold text-white">
-                                                {activeMember.name}
-                                            </h3>
+                        </div>
 
-                                            <p className="mt-2 text-zinc-400 text-sm md:text-base">
-                                                {activeMember.role}
-                                            </p>
-                                        </div>
+                        {/* CENTER IMAGE */}
+                        <div className="relative">
+                            {activeMember.images?.ImageDetail1 && (
+                                <img
+                                    src={activeMember.images.ImageDetail1}
+                                    alt={activeMember.name}
+                                    className="w-full h-[400px] object-contain object-bottom"
+                                />
+                            )}
+                        </div>
 
-                                        {/* Story / Bio */}
-                                        <div className="text-sm text-zinc-300 leading-relaxed">
-                                            <p>
-                                                {activeMember.bio}
-                                            </p>
-                                        </div>
+                        {/* RIGHT */}
+                        <div className="p-8 flex flex-col justify-between">
 
-                                        {/* Tech stack / logo */}
-                                        <div className="flex items-center gap-3">
-                                            <span className="text-xs text-zinc-500">Tech:</span>
+                            {/* Social */}
+                            <div>
+                                <h4 className="text-sm font-semibold text-white mb-4">
+                                    Social Media
+                                </h4>
 
-                                            {activeMember.techStack.map((tech) => (
-                                                <div
-                                                    key={tech.name}
-                                                    className="flex items-center gap-1 px-2 py-1 rounded-md bg-white/5 border border-white/10 text-sm text-zinc-300"
-                                                >
-                                                    <span>{tech.logo}</span>
-                                                    <span>{tech.name}</span>
+                                <div className="space-y-2">
+
+                                    {activeMember.socialMediaAccounts.linkedin.name && (
+                                        <a
+                                            href={activeMember.socialMediaAccounts.linkedin.url}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="block text-zinc-300 hover:text-white"
+                                        >
+                                            <div className="flex group">
+                                                <div className="flex items-center gap-2 group-hover:text-brunswick-green-500">
+                                                    <Icon icon="mdi:linkedin" width="20" />
+                                                    <p>LinkedIn</p>
                                                 </div>
-                                            ))}
-                                        </div>
+                                            </div>
+                                        </a>
+                                    )}
 
-                                        {/* SDG badges */}
-                                        <div className="flex flex-wrap gap-2 pt-1">
-                                            {activeMember.sdgs.map((sdg) => (
-                                                <span
-                                                    key={sdg.id}
-                                                    className="px-3 py-1 text-xs rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20"
-                                                >
-                                                    SDG {sdg.id} • {sdg.title}
-                                                </span>
-                                            ))}
-                                        </div>
+                                    {activeMember.socialMediaAccounts.github?.name && (
+                                        <a
+                                            href={activeMember.socialMediaAccounts.github.url}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="block text-zinc-300 hover:text-white"
+                                        >
+                                            <div className="flex group">
+                                                <div className="flex items-center gap-2 group-hover:text-brunswick-green-500">
+                                                    <Icon icon="mdi:github" width="20" />
+                                                    <p>GitHub</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    )}
 
-                                    </div>
+                                    {activeMember.socialMediaAccounts.dribble?.name && (
+                                        <a
+                                            href={activeMember.socialMediaAccounts.dribble.url}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="block text-zinc-300 hover:text-white"
+                                        >
+                                            <div className="flex group">
+                                                <div className="flex items-center gap-2 group-hover:text-brunswick-green-500">
+                                                    <Icon icon="mdi:dribbble" width="20" />
+                                                    <p>Dribbbe</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    )}
                                 </div>
                             </div>
+
+                            {/* SDG */}
+                            <div>
+                                <h4 className="text-sm font-semibold text-white mb-4">
+                                    Sustainable Development Goals
+                                </h4>
+
+                                <div className="flex flex-wrap gap-2">
+                                    {activeMember.sdgs.map((sdg) => (
+                                        <span
+                                            key={sdg.id}
+                                            className="px-3 py-1 text-xs rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20"
+                                        >
+                                            SDG {sdg.id} • {sdg.title}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+
                         </div>
-                    )}
+
+                    </div>
                 </div>
 
                 {/* MODAL ONLY MOBILE + TABLET */}
@@ -493,6 +695,9 @@ const TeamSection: React.FC = () => {
                     </div>
                 )}
 
+                <CtaBanner />
+
+
             </div>
         </section>
     );
@@ -501,7 +706,5 @@ const TeamSection: React.FC = () => {
 export default TeamSection;
 
 interface TeamMember {
-    name: string;
-    role: string;
-    image: string;
+    image?: string;
 }

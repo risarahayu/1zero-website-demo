@@ -4,28 +4,41 @@
 
 
 .aurora {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: index 0;
-    filter: blur(120px);
-    opacity: 0.4;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
     pointer-events: none;
 }
 
+/* CORE GLOW (FOKUS DI TENGAH IMAGE) */
+.aurora-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle at center,
+            var(--color-brunswick-green-900) 0%,
+            rgba(15, 70, 50, 0.35) 35%,
+            transparent 70%);
+    filter: blur(40px);
+    opacity: 0.9;
+}
+
+/* SIDE BLOBS (lebih subtle) */
 .blob {
     position: absolute;
     border-radius: 50%;
-    animation: move 20s infinite alternate;
+    animation: move 18s infinite alternate ease-in-out;
+    opacity: 0.4;
 }
 
 .b1 {
     width: 600px;
     height: 600px;
-    background: var(--color-brunswick-green-500);
-    top: -10%;
+    background: var(--color-brunswick-green-700);
+    top: -15%;
     left: -10%;
 }
 
@@ -33,10 +46,9 @@
     width: 500px;
     height: 500px;
     background: var(--color-brunswick-green-900);
-    bottom: -10%;
+    bottom: -15%;
     right: -10%;
 }
-
 
 @keyframes move {
     from {
@@ -44,7 +56,7 @@
     }
 
     to {
-        transform: translate(100px, 100px);
+        transform: translate(80px, 60px);
     }
 }
 
