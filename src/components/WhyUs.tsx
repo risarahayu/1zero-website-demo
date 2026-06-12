@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { teamMembers, whyUsPoints } from "../data";
+import { whyUsPoints } from "../data";
+import { members as teamMembers } from "./about/TeamSection";
 import { Mic, MicOff, Users, CheckCircle, Flame, Target, Infinity, Video, Laptop, RefreshCw } from "lucide-react";
 
 interface WhyUsProps {
@@ -8,13 +9,7 @@ interface WhyUsProps {
 
 export default function WhyUs({ onOpenBooking }: WhyUsProps) {
   // Simple interactive features for the mock video call panel
-  const [activeSpeakerId, setActiveSpeakerId] = useState<string>("tm-1");
-  const [mutedStates, setMutedStates] = useState<Record<string, boolean>>({
-    "tm-1": false,
-    "tm-2": true,
-    "tm-3": false,
-    "tm-4": false
-  });
+  const [mutedStates, setMutedStates] = useState<Record<string, boolean>>({});
 
   const toggleMute = (id: string, e: React.MouseEvent) => {
     e.stopPropagation();
@@ -69,22 +64,18 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
               </div>
             </div>
 
-            {/* Video participants grid */}
-            <div className="grid grid-cols-2 gap-3 flex-1">
-              {teamMembers.map((member) => {
-
-
-                return (
+            {/* Video participants marquee */}
+            <div className="flex flex-col gap-3 flex-1 overflow-hidden relative w-full pb-2">
+              {/* Row 1: Right to Left */}
+              <div className="flex gap-3 animate-marquee w-max">
+                {[...teamMembers.slice(0, 4), ...teamMembers.slice(0, 4)].map((member, idx) => (
                   <div
-                    key={member.id}
-                    onClick={() => setActiveSpeakerId(member.id)}
-                    className="relative aspect-square rounded-2xl overflow-hidden border transition-all duration-300 cursor-pointer flex flex-col justify-between p-3 "
+                    key={`row1-${idx}`}
+                    className="relative w-40 h-40 shrink-0 rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-neutral-800 bg-neutral-900/40"
                   >
-
-                    <div className="absolute inset-0 rounded-xl border border-brunswick-green-500 shadow-[0_0_20px_rgba(16,185,129,0.12)] animate-pulse pointer-events-none" />
                     <div className="relative h-1/2 w-1/2 rounded-xl overflow-hidden border border-neutral-800 self-center">
                       <img
-                        src={member.avatarUrl}
+                        src={member.images?.imageDisplay}
                         alt={member.name}
                         referrerPolicy="no-referrer"
                         className="h-full w-full object-cover"
@@ -94,29 +85,71 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
                     {/* Indicators */}
                     <div className="space-y-1.5 mt-auto z-10 pt-2 bg-gradient-to-t from-black via-black/80 to-transparent">
                       <div className="flex items-center justify-between">
-                        <span className="block font-sans text-base font-bold text-white leading-none tracking-wide truncate">
+                        <span className="block font-sans text-sm font-bold text-white leading-none tracking-wide truncate">
                           {member.name}
                         </span>
 
                         {/* Audio Mute controller */}
                         <button
-                          id={`toggle-mute-${member.id}`}
-                          onClick={(e) => toggleMute(member.id, e)}
-                          className="p-1 rounded-md transition-colors "
+                          id={`toggle-mute-r1-${idx}`}
+                          onClick={(e) => toggleMute(member.name, e)}
+                          className="p-1 rounded-md transition-colors"
                         >
                         </button>
                       </div>
 
-                      <div className="flex items-center justify-between font-sans text-base text-neutral-500 uppercase">
+                      <div className="flex items-center justify-between font-sans text-xs text-neutral-500 uppercase truncate">
                         <span>{member.role}</span>
                       </div>
                     </div>
-
-
                   </div>
-                );
-              })}
+                ))}
+              </div>
+
+              {/* Row 2: Left to Right */}
+              <div className="flex gap-3 animate-marquee-reverse w-max">
+                {[...teamMembers.slice(4, 8), ...teamMembers.slice(4, 8)].map((member, idx) => (
+                  <div
+                    key={`row2-${idx}`}
+                    className="relative w-40 h-40 shrink-0 rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-neutral-800 bg-neutral-900/40"
+                  >
+                    <div className="relative h-1/2 w-1/2 rounded-xl overflow-hidden border border-neutral-800 self-center">
+                      <img
+                        src={member.images?.imageDisplay}
+                        alt={member.name}
+                        referrerPolicy="no-referrer"
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+
+                    {/* Indicators */}
+                    <div className="space-y-1.5 mt-auto z-10 pt-2 bg-gradient-to-t from-black via-black/80 to-transparent">
+                      <div className="flex items-center justify-between">
+                        <span className="block font-sans text-sm font-bold text-white leading-none tracking-wide truncate">
+                          {member.name}
+                        </span>
+
+                        {/* Audio Mute controller */}
+                        <button
+                          id={`toggle-mute-r2-${idx}`}
+                          onClick={(e) => toggleMute(member.name, e)}
+                          className="p-1 rounded-md transition-colors"
+                        >
+                        </button>
+                      </div>
+
+                      <div className="flex items-center justify-between font-sans text-xs text-neutral-500 uppercase truncate">
+                        <span>{member.role}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
+
+            <a href={`${import.meta.env.BASE_URL}#about`}>
+              <p className="font-sans text-[11px] text-neutral-600 tracking-wider font-semibold ml-2 select-none uppercase font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">See All Team Members</p>
+            </a>
 
 
 

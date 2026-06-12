@@ -7,7 +7,7 @@ import CtaBanner from './CTA Banner';
 
 const basePath = import.meta.env.BASE_URL;
 
-interface TeamMember {
+export interface TeamMember {
     name: string;
     role: string;
 
@@ -46,7 +46,7 @@ interface TeamMember {
 
 
 
-const members: TeamMember[] = [
+export const members: TeamMember[] = [
     {
         name: 'Molly Sanders',
         role: 'Founder',
