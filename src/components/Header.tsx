@@ -90,7 +90,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="sm:hidden absolute top-full left-0 w-full bg-[#0a0a0c] border-b border-neutral-800 backdrop-blur-lg mt-2 overflow-hidden z-20 shadow-2xl"
+            className="sm:hidden fixed top-[90px] left-0 w-full bg-[#0a0a0c] border-b border-neutral-800 backdrop-blur-lg overflow-y-auto z-50 shadow-2xl"
           >
             <div className="p-5 flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -103,7 +103,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                   {link.label}
                 </a>
               ))}
-              <div className="pt-3 flex flex-col gap-2">
+              {/* <div className="pt-3 flex flex-col gap-2">
                 <button
                   id="mobile-drawer-book-btn"
                   onClick={() => {
@@ -114,7 +114,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                 >
                   Free Strategy Session
                 </button>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         )}
