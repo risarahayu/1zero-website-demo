@@ -5,6 +5,8 @@ export interface NavLink {
 
 export interface ProductItem {
   id: string;
+  fileEng: string;
+  fileIndo: string;
 
   service: string;
 

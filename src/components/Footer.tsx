@@ -29,7 +29,7 @@ export default function Footer() {
             {/* Social handles */}
             <div className="flex items-center gap-3 pt-2">
               {[
-                { icon: Instagram, href: "https://www.instagram.com/1zero.solutions/", id: "Instagram-link" },
+                { icon: Instagram, href: "https://www.instagram.com/1zero.biz/", id: "Instagram-link" },
                 { icon: Linkedin, href: "https://www.linkedin.com/in/mark-treleaven", id: "linkedin-link" },
                 { icon: MessageCircle, href: "https://api.whatsapp.com/send/?phone=6285339396030&text&type=phone_number&app_absent=0", id: "whatsapp-link" },
                 // { icon: MessageCircle, href: "https://whatsapp.com", id: "whatsapp-link" }
@@ -59,7 +59,7 @@ export default function Footer() {
               <span className="block font-sans text-base text-neutral-500 uppercase tracking-widest font-bold">
                 Direct Inquiries
               </span>
-              <div className="space-y-3 text-base sm:text-sm text-neutral-300">
+              <div className="space-y-3 text-base  text-neutral-300">
                 <a
                   id="footer-email-link"
                   href="mailto:info@1zero.biz"
@@ -79,8 +79,8 @@ export default function Footer() {
               </div>
 
               {/* Quick links tag lines */}
-              <div className="pt-4 border-t border-neutral-900 space-y-1 text-[11px] text-neutral-500">
-                <span className="block">WITA working hours: 09:00 - 16:00 WIB</span>
+              <div className="pt-4 border-t border-neutral-900 space-y-1 text-[11px] text-neutral-500 ">
+                <span className="block text-base">WITA working hours: 09:00 - 16:00 </span>
                 {/* <span className="block">Engineers responsive via Slack/Teams logs.</span> */}
               </div>
             </div>

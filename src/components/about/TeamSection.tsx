@@ -423,7 +423,7 @@ const TeamSection: React.FC = () => {
                             >
                                 {/* Image */}
                                 <img
-                                    src={member.image}
+                                    src={member.images?.imageDisplay}
                                     className="w-full h-32 object-cover rounded-md mb-2"
                                 />
 
@@ -458,7 +458,7 @@ const TeamSection: React.FC = () => {
                             >
                                 {/* Image */}
                                 <img
-                                    src={member.image}
+                                    src={member.images?.imageDisplay}
                                     className="w-full h-32 object-cover rounded-md mb-2"
                                 />
 
@@ -479,7 +479,7 @@ const TeamSection: React.FC = () => {
 
 
                 {/* DESKTOP PREVIEW */}
-                <div className="relative overflow-hidden border border-white/10 rounded-2xl">
+                <div className="relative mt-5 overflow-hidden border border-white/10 rounded-2xl hidden lg:block">
 
                     {/* AURORA BACKGROUND */}
                     <div className="aurora">
@@ -630,7 +630,7 @@ const TeamSection: React.FC = () => {
                                 {/* Image */}
                                 <div className="relative h-64 md:h-full">
                                     <img
-                                        src={selectedMember.image}
+                                        src={selectedMember.images?.imageDisplay}
                                         className="w-full h-full object-cover"
                                     />
 

@@ -26,7 +26,8 @@ export const products: ProductItem[] = [
     service: "Generative Engine Optimization",
     description:
       "Your visibility layer in the AI-search era. We help your existing website get discovered, understood, and recommended by AI systems.",
-
+    fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/GEO Product Sheet - Eng.pdf`,
+    fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/GEO Product Sheet - Indo.pdf`,
     symptoms: [
       {
         text: "Your website gets traffic, but it doesn't turn into meaningful results",
@@ -68,10 +69,11 @@ export const products: ProductItem[] = [
 
   {
     id: "nextgen",
-    service: "NextGen Platform",
+    service: "NextGen Platforms",
     description:
       "A modern cloud-native foundation built to scale performance, UX, and system reliability.",
-
+    fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/NextGen Platforms Product Sheet - Eng.pdf`,
+    fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/NextGen Platforms Product Sheet - Indo.pdf`,
     symptoms: [
       {
         text: "Website features is getting slower",
@@ -120,7 +122,8 @@ export const products: ProductItem[] = [
     service: "DevPod",
     description:
       "Instant, consistent development environments for teams that need speed and stability.",
-
+    fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/DevPod Product Sheet - Eng.pdf`,
+    fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/DevPod Product Sheet - Indo.pdf`,
     symptoms: [
       {
         text: "Environment setup slows developers down",
@@ -169,7 +172,8 @@ export const products: ProductItem[] = [
     service: "fCTO",
     description:
       "Strategic technical leadership for architecture, security, and long-term system governance.",
-
+    fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/fCTO Product Sheet - Eng.pdf`,
+    fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/fCTO Product Sheet - Indo.pdf`,
     symptoms: [
       {
         text: "Decisions are reactive instead of strategic",
