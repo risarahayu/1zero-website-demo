@@ -149,6 +149,10 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
               <span className="font-sans text-[11px] text-neutral-600 tracking-wider font-semibold ml-2 select-none uppercase font-bold text-brunswick-green-500">
                 {String(currentDisplayIndex + 1).padStart(2, '0')} / {String(customProjects.length).padStart(2, '0')}
               </span>
+
+              <a href={`${import.meta.env.BASE_URL}#portfolio`}>
+                <p className="font-sans text-[11px] text-neutral-600 tracking-wider font-semibold ml-2 select-none uppercase font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">See All Projects</p>
+              </a>
             </div>
           </div>
 
