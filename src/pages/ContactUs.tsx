@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { Mail, MapPin, Phone, Send, CheckCircle, AlertCircle } from "lucide-react";
+import emailjs from '@emailjs/browser';
+import { Turnstile } from '@marsidev/react-turnstile';
 
 export default function ContactPage() {
     // 1. State Management untuk form dan interaksinya
     const [formData, setFormData] = useState({ name: "", email: "", message: "" });
     const [errors, setErrors] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [formError, setFormError] = useState(""); // State for global form error
+    const [honeypot, setHoneypot] = useState(""); // State for honeypot
+    const [turnstileToken, setTurnstileToken] = useState(""); // State for Turnstile token
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -15,9 +21,10 @@ export default function ContactPage() {
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         let newErrors = {};
+        setFormError("");
 
         // Validasi Sederhana
         if (!formData.name) newErrors.name = "Name is required";
@@ -28,14 +35,55 @@ export default function ContactPage() {
         }
         if (!formData.message) newErrors.message = "Message cannot be empty";
 
+        // Honeypot protection: If the hidden field is filled, it's likely a bot.
+        // We prevent submission by returning early.
+        if (honeypot) {
+            return;
+        }
+
+        // Turnstile verification: Ensure the user completed the challenge
+        if (!turnstileToken) {
+            setFormError("Please complete the security check.");
+            return;
+        }
+
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
             setIsSubmitted(false);
         } else {
             setErrors({});
-            setIsSubmitted(true);
-            // Reset form jika sukses
-            setFormData({ name: "", email: "", message: "" });
+            setIsSubmitting(true);
+
+            try {
+                // EmailJS submission flow
+                const templateParams = {
+                    first_name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                };
+
+                const response = await emailjs.send(
+                    import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                    import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                    templateParams,
+                    import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+                );
+
+                if (response.status === 200) {
+                    setIsSubmitted(true);
+                    // Reset form jika sukses
+                    setFormData({ name: "", email: "", message: "" });
+                    setTurnstileToken(""); // Optionally reset turnstile token
+                } else {
+                    console.error("Form submission failed.", response);
+                    setFormError("Failed to send message. Please try again later.");
+                }
+            } catch (error) {
+                console.error("Error submitting form:", error);
+                setFormError("An error occurred. Please try again later.");
+            } finally {
+                setIsSubmitting(false);
+            }
         }
     };
 
@@ -132,12 +180,34 @@ export default function ContactPage() {
                                 <CheckCircle className="w-5 h-5 text-brunswick-green-900 flex-shrink-0 mt-0.5" />
                                 <div>
                                     <h4 className="text-brunswick-green-900 font-semibold text-sm">Transmission Successful</h4>
-                                    <p className="text-white/60 text-xs mt-1">Diagnosis request received. Our core tech unit will reach out within 12 hours.</p>
+                                    <p className="text-white/60 text-xs mt-1">Thank you for contacting us. We will respond as soon as possible.</p>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* VALIDASI KONDISI: ERROR STATE BLOCK */}
+                        {formError && (
+                            <div className="mb-8 p-4 rounded-xl border border-red-500/30 bg-red-500/5 flex items-start gap-3 shadow-[0_0_15px_rgba(239,68,68,0.1)] transition-all duration-300">
+                                <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                                <div>
+                                    <h4 className="text-red-500 font-semibold text-sm">Transmission Failed</h4>
+                                    <p className="text-white/60 text-xs mt-1">{formError}</p>
                                 </div>
                             </div>
                         )}
 
                         <form onSubmit={handleSubmit} className="space-y-6">
+
+                            {/* Honeypot field (Anti-spam): Hidden from real users */}
+                            <input
+                                type="text"
+                                name="website"
+                                style={{ display: "none" }}
+                                value={honeypot}
+                                onChange={(e) => setHoneypot(e.target.value)}
+                                tabIndex={-1}
+                                autoComplete="off"
+                            />
 
                             {/* FIELD 1: NAME (Kondisi Default / Error) */}
                             <div className="space-y-2">
@@ -208,15 +278,27 @@ export default function ContactPage() {
                                 )}
                             </div>
 
+                            {/* Cloudflare Turnstile (Bot protection) */}
+                            <div className="pt-2">
+                                <Turnstile
+                                    siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"}
+                                    onSuccess={(token) => setTurnstileToken(token)}
+                                    options={{
+                                        theme: "dark",
+                                    }}
+                                />
+                            </div>
+
                             {/* PRIMARY CTA: SUBMIT BUTTON (Glow Animation) */}
                             <button
                                 type="submit"
-                                className="w-full mt-2 relative overflow-hidden group cursor-pointer rounded-xl bg-brunswick-green-900 px-5 py-4 text-sm font-semibold tracking-wide text-sea-salt transition-all duration-300 shadow-[0_4px_20px_rgba(133,223,195,0.2)] hover:shadow-[0_0_30px_rgba(133,223,195,0.5)] hover:scale-[1.01]"
+                                disabled={isSubmitting}
+                                className={`w-full mt-2 relative overflow-hidden group rounded-xl bg-brunswick-green-900 px-5 py-4 text-sm font-semibold tracking-wide text-sea-salt transition-all duration-300  hover:bg-brunswick-green-700 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
                             >
 
 
                                 <span className="flex items-center justify-center gap-2 font-bold text-sea-salt uppercase tracking-wider">
-                                    Initiate Diagnosis <Send className="w-4 h-4" />
+                                    {isSubmitting ? "Sending..." : "Send Email"} {!isSubmitting && <Send className="w-4 h-4" />}
                                 </span>
                             </button>
 

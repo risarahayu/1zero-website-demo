@@ -20,6 +20,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
   const [notes, setNotes] = useState("");
 
   const [errorStatus, setErrorStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const timeSlots = [
     "09:00 AM", "10:00 AM", "11:30 AM", "01:30 PM", "03:00 PM", "04:30 PM"
@@ -59,14 +60,46 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
     }
   };
 
-  const handleBookSubmit = (e: React.FormEvent) => {
+  const handleBookSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !email.trim()) {
       setErrorStatus("Full name and email address are required.");
       return;
     }
     setErrorStatus("");
-    setStep(3); // Success step
+    setIsSubmitting(true);
+    
+    try {
+        const response = await fetch("https://formsubmit.co/ajax/rrahayu@1zero.biz", {
+            method: "POST",
+            headers: { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                company: company,
+                notes: notes,
+                date: selectedDate,
+                time: selectedTime,
+                timezone: timezone,
+                _subject: `New Strategy Session Booking from ${name}`
+            })
+        });
+
+        if (response.ok) {
+            setStep(3); // Success step
+        } else {
+            console.error("Booking submission failed.");
+            setErrorStatus("Failed to schedule booking. Please try again.");
+        }
+    } catch (error) {
+        console.error("Error submitting form:", error);
+        setErrorStatus("An error occurred. Please try again.");
+    } finally {
+        setIsSubmitting(false);
+    }
   };
 
   const resetState = () => {
@@ -325,9 +358,10 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 <button
                   id="modal-submit-btn"
                   type="submit"
-                  className="flex-1 p-3 rounded-xl bg-green-primary hover:bg-emerald-600 text-black font-sans font-medium text-sm tracking-wide transition-all shadow-[0_4px_20px_rgba(16,185,129,0.2)] cursor-pointer"
+                  disabled={isSubmitting}
+                  className={`flex-1 p-3 rounded-xl bg-green-primary hover:bg-emerald-600 text-black font-sans font-medium text-sm tracking-wide transition-all shadow-[0_4px_20px_rgba(16,185,129,0.2)] ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
                 >
-                  Schedule Free Consultation
+                  {isSubmitting ? "Scheduling..." : "Schedule Free Consultation"}
                 </button>
               </div>
             </form>
