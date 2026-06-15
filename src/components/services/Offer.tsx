@@ -154,7 +154,7 @@ export default function DiagnosisPanel() {
 
                                                             <div className="mt-4">
                                                                 <a href={item.href} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brunswick-green-900 text-white hover:bg-brunswick-green-700 transition-colors">
-                                                                    See More Details
+                                                                    Download PDF
                                                                     <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12l5-5-5-5" /></svg>
                                                                 </a>
                                                             </div>
