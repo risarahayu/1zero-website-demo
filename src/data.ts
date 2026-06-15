@@ -370,7 +370,7 @@ export const customProjects = [
     description: "A curated selection of modern art pieces from various contemporary artists.",
     bgClass: "bg-[#112240] border-blue-500/10",
     mockupType: "impact",
-    imageUrl: `${import.meta.env.BASE_URL}portofolio image/Desktop - 62 (2).png`,
+    imageUrl: `${import.meta.env.BASE_URL}portofolio image/4Ocean.jpg`,
     service: "Devpod"
   },
   {
@@ -379,7 +379,7 @@ export const customProjects = [
     description: "A portfolio showcasing stunning custom teakwood designs and artisanal furniture catalog.",
     bgClass: "bg-[#45301F] border-amber-500/10",
     mockupType: "baliteak",
-    imageUrl: `${import.meta.env.BASE_URL}portofolio image/kup (3).png`,
+    imageUrl: `${import.meta.env.BASE_URL}portofolio image/Baliteak.jpg`,
     service: "NextGen Platform"
   },
   {
@@ -388,16 +388,16 @@ export const customProjects = [
     description: "Healthcare portal integrating real-time translating, audio diagnosis, and clinical records.",
     bgClass: "bg-[#092218] border-emerald-500/10",
     mockupType: "tdd",
-    imageUrl: `${import.meta.env.BASE_URL}portofolio image/kup (5).png`,
+    imageUrl: `${import.meta.env.BASE_URL}portofolio image/TDD.jpg`,
     service: "Devpod",
   },
   {
-    id: "nexus",
+    id: "phoenix",
     title: "PT Phoenix Website",
     description: "Professional company website built for PT Phoenix, featuring a modern design system and seamless user experience.",
     bgClass: "bg-[#16122d] border-purple-500/10",
-    mockupType: "nexus",
-    imageUrl: `${import.meta.env.BASE_URL}portofolio image/kup (6).png`,
+    mockupType: "phoenix",
+    imageUrl: `${import.meta.env.BASE_URL}portofolio image/PT Phoenix.jpg`,
     service: "Devpod",
   },
   {
@@ -406,7 +406,7 @@ export const customProjects = [
     description: "Full website replatform for Blackstump Technologies — modernizing architecture, design system, and digital presence from the ground up.",
     bgClass: "bg-[#0d1a0d] border-brunswick-green-500/10",
     mockupType: "blackstump",
-    imageUrl: `${import.meta.env.BASE_URL}portofolio image/kup (7).png`,
+    imageUrl: `${import.meta.env.BASE_URL}portofolio image/BST.jpg`,
     service: "NextGen Platform",
   }
 ];
