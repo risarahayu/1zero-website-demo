@@ -249,7 +249,7 @@ export const testimonials: TestimonialItem[] = [
     role: "CEO & Co-Founder",
     company: "BWT Logistics",
     avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop",
-    quote: "Since partnering with 1ZERO, our active pipeline latency plummeted by 42%. The structural integrity of their systems is world-class, matched only by their incredible attention to design details."
+    quote: "Since partnering with 1zero, our active pipeline latency plummeted by 42%. The structural integrity of their systems is world-class, matched only by their incredible attention to design details."
   },
   {
     id: "test-02",
@@ -265,14 +265,14 @@ export const testimonials: TestimonialItem[] = [
     role: "Director of Product",
     company: "EduVibe Asia",
     avatarUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop",
-    quote: "What set 1ZERO apart was direct communication. We worked side-by-side with principal developers with zero agency overhead. The result was a highly scalable, gorgeous, responsive system."
+    quote: "What set 1zero apart was direct communication. We worked side-by-side with principal developers with zero agency overhead. The result was a highly scalable, gorgeous, responsive system."
   }
 ];
 
 export const workflowSteps: WorkflowStep[] = [
   {
     number: "Discovery",
-    title: "Discovery & Audio",
+    title: "Discovery",
     subtext: "We dissect first, map out exactly what happens behind your screens, identify logical bottlenecks, and plan architecture for your exact users.",
     bullet1: "Comprehensive System Mapping",
     bullet2: "Stakeholder & Operator Audits"

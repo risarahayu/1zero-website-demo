@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { whyUsPoints } from "../data";
 import { members as teamMembers } from "./about/TeamSection";
 import { Mic, MicOff, Users, CheckCircle, Flame, Target, Infinity, Video, Laptop, RefreshCw } from "lucide-react";
+import { whyUsCopy } from "../copy";
 
 interface WhyUsProps {
   onOpenBooking: () => void;
@@ -39,13 +40,13 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
         {/* Title Area */}
         <div className="space-y-4">
           <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans  tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5">
-            Why 1zero
+            {whyUsCopy.sectionTag}
           </span>
           <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white max-w-2xl">
-            A team built around people, <br />not rigid platforms.
+            {whyUsCopy.title}
           </h2>
           <p className="max-w-2xl font-sans text-base sm:text-base text-sea-salt leading-relaxed">
-            We partner directly with founders and operations executives to craft high-concurrency systems, completely cutting out agency middle-men & communication bureaucracy.
+            {whyUsCopy.description}
           </p>
         </div>
 
@@ -57,7 +58,7 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
             {/* Header bar */}
             <div className="flex items-center justify-between pb-3 border-b border-neutral-900 text-base font-sans text-neutral-400">
               <div className="flex items-center gap-2">
-                <span className="text-white font-medium">Meet Our Team</span>
+                <span className="text-white font-medium">{whyUsCopy.meetOurTeam}</span>
               </div>
               <div className="flex items-center gap-1.5 bg-neutral-900 px-2 py-0.5 rounded text-base">
                 <Video className="h-3 w-3 text-emerald-400" />
@@ -148,7 +149,7 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
             </div>
 
             <a href={`${import.meta.env.BASE_URL}#about`}>
-              <p className="font-sans text-[11px] text-neutral-600 tracking-wider font-semibold ml-2 select-none uppercase font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">See All Team Members</p>
+              <p className="font-sans text-[11px] text-neutral-600 tracking-wider font-semibold ml-2 select-none uppercase font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">{whyUsCopy.seeAllTeam}</p>
             </a>
 
 
@@ -179,8 +180,8 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
             {/* Visual reassurance */}
             <div className="pt-4 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-center sm:text-left space-y-0.5">
-                <span className="block text-base font-semibold text-white">We operate with pristine engineering guidelines.</span>
-                <span className="block text-base text-neutral-500 uppercase tracking-widest font-sans">No subcontracting • No technical jargon hiding</span>
+                <span className="block text-base font-semibold text-white">{whyUsCopy.reassuranceTitle}</span>
+                <span className="block text-base text-neutral-500 uppercase tracking-widest font-sans">{whyUsCopy.reassuranceSub}</span>
               </div>
               {/* <button
                 id="why-us-booking-btn"
