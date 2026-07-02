@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 
+import { aboutCopy } from '../../copy';
+
 interface HeroAboutProps {
     lang: 'id' | 'en';
 }
@@ -9,30 +11,7 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
     const carouselRef = useRef<HTMLDivElement>(null);
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const texts = {
-        id: {
-            sub: 'Melampaui Konvensional',
-            title: 'Membangun Masa Depan dengan Hati.',
-            desc: 'Tim remote asal Indonesia yang mendobrak batas tradisional melalui teknologi dan empati.',
-            v1t: 'Kultur Berbeda',
-            v1d: 'Bukan budaya "Asal Bapak Senang". Kami menghargai kejujuran dan struktur yang flat.',
-            v2t: '100% Remote',
-            v2d: 'Bekerja dari pantai atau gunung. Kami percaya pada integritas tim kami.',
-            v3t: 'Fokus SDG',
-            v3d: 'Setiap baris kode kami berkontribusi untuk dunia yang lebih berkelanjutan.',
-        },
-        en: {
-            sub: 'Beyond Conventional',
-            title: 'Crafting Future with Heart.',
-            desc: 'A remote team based in Indonesia, breaking traditional boundaries through technology and empathy.',
-            v1t: 'Indonesian Pride',
-            v1d: "No more 'Yes Men' culture. We value honesty and flat hierarchy.",
-            v2t: 'Remote 2.0',
-            v2d: 'Work from the beach or the mountains. We trust our people.',
-            v3t: 'Sustainability',
-            v3d: 'Every code we write contributes to a better sustainable world.',
-        }
-    };
+    const texts = aboutCopy;
 
     // carousel animation
     const t = texts[lang];

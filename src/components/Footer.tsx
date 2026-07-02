@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin, Linkedin, Github, MessageCircle, Twitter, Cpu, Instagram } from "lucide-react";
 import Logo1Zero from "./Logo1Zero";
+import { footerCopy } from "../copy";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -17,13 +18,13 @@ export default function Footer() {
           {/* LEFT COLUMN: BIG GREETING */}
           <div className="lg:col-span-5 space-y-6">
             <h2 className="font-sans text-5xl sm:text-6xl font-extrabold tracking-tight text-white leading-none">
-              Let's <br />
+              {footerCopy.connectTitle} <br />
               <span className="animate-gradient-text text-gradient-impact text-transparent bg-clip-text bg-gradient-to-r from-[var(--ivory)] to-[var(--green-900)]">
-                Connect
+                {footerCopy.connectGradient}
               </span>
             </h2>
             <p className="font-sans text-base text-neutral-400 leading-relaxed max-w-sm">
-              We look forward to translating your mission operations into pristine, indestructible, & lightning-fast system systems. Let's make digital history together.
+              {footerCopy.description}
             </p>
 
             {/* Social handles */}
@@ -57,7 +58,7 @@ export default function Footer() {
             {/* Email & Contact */}
             <div className="space-y-4">
               <span className="block font-sans text-base text-neutral-500 uppercase tracking-widest font-bold">
-                Direct Inquiries
+                {footerCopy.directInquiries}
               </span>
               <div className="space-y-3 text-base  text-neutral-300">
                 <a
@@ -80,7 +81,7 @@ export default function Footer() {
 
               {/* Quick links tag lines */}
               <div className="pt-4 border-t border-neutral-900 space-y-1 text-[11px] text-neutral-500 ">
-                <span className="block text-base">WITA working hours: 09:00 - 16:00 </span>
+                <span className="block text-base">{footerCopy.workingHours} </span>
                 {/* <span className="block">Engineers responsive via Slack/Teams logs.</span> */}
               </div>
             </div>
@@ -88,17 +89,13 @@ export default function Footer() {
             {/* Address */}
             <div className="space-y-4">
               <span className="block font-sans text-base text-neutral-500 uppercase tracking-widest font-bold">
-                Primary Laboratory
+                {footerCopy.primaryLaboratory}
               </span>
               <div className="flex gap-2 text-base text-neutral-300 leading-relaxed font-sans">
                 <MapPin className="h-4 w-4 text-brunswick-green-500 shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block font-sans text-base">Our Office Address</strong>
-                  <span>Biliq Sunset Office Space,</span>
-                  <span className="block">Jalan Sunset Road 819,</span>
-                  <span className="block">Bali Ruko Sunset Indah II No. 10, Kuta,</span>
-                  <span className="block">Bali, Indonesia,</span>
-                  <span className="block text-neutral-500">80361</span>
+                  <strong className="text-white block font-sans text-base">{footerCopy.officeTitle}</strong>
+                  <span>{footerCopy.officeAddress}</span>
                 </div>
               </div>
             </div>
@@ -111,13 +108,13 @@ export default function Footer() {
         <div className="pt-8 border-t border-neutral-900 text-base font-sans text-neutral-500 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3 flex-col items-start sm:flex-row">
             <Logo1Zero className="h-4 text-neutral-400 opacity-60 hover:opacity-100 transition-opacity" glow={false} />
-            <span>© {currentYear} 1zero AGENCY. ALL ARCHITECTURAL PLANS SECURED.</span>
+            <span>© {currentYear} {footerCopy.copyright}</span>
           </div>
 
           <div className="flex items-center gap-4 text-base uppercase">
-            <a href="#home" className="hover:text-emerald-400 hover:underline transition-colors">BACK TO TOP ↑</a>
+            <a href="#home" className="hover:text-emerald-400 hover:underline transition-colors">{footerCopy.backToTop}</a>
             <span>•</span>
-            <span className="text-brunswick-green-500">MADE FOR DOUBLE IMPACT</span>
+            <span className="text-brunswick-green-500">{footerCopy.madeForDoubleImpact}</span>
           </div>
         </div>
 

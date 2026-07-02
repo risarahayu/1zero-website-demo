@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Mail, MapPin, Phone, Send, CheckCircle, AlertCircle } from "lucide-react";
 import emailjs from '@emailjs/browser';
 import { Turnstile } from '@marsidev/react-turnstile';
+import { contactUsCopy } from '../copy'; // Adjust this path to wherever your copy file lives
 
 export default function ContactPage() {
     // 1. State Management untuk form dan interaksinya
@@ -107,13 +108,13 @@ export default function ContactPage() {
                 <div className="lg:col-span-5 flex flex-col justify-center space-y-8">
                     <div>
                         <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans  tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5 shadow-[0_0_12px_rgba(163,230,53,0.1)]">
-                            Get In Touch
+                            {contactUsCopy.badge}
                         </span>
                         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mt-3 text-gradient leading-tight">
-                            Let's Build the System.
+                            {contactUsCopy.title}
                         </h1>
                         <p className="text-white/60 mt-4 text-base md:text-lg leading-relaxed">
-                            Have a system bottleneck or ready to scale up? Reach out and we'll engineer a tailored blueprint for your tech layer.
+                            {contactUsCopy.description}
                         </p>
                     </div>
 
@@ -124,8 +125,8 @@ export default function ContactPage() {
                                 <Mail className="w-5 h-5" />
                             </div>
                             <div>
-                                <p className="text-xs text-white/40 font-medium uppercase tracking-wider">Email Us</p>
-                                <p className="text-white/80 font-medium text-sm md:text-base">info@1zero.biz</p>
+                                <p className="text-xs text-white/40 font-medium uppercase tracking-wider">{contactUsCopy.emailUsLabel}</p>
+                                <p className="text-white/80 font-medium text-sm md:text-base">{contactUsCopy.emailUsVal}</p>
                             </div>
                         </div>
 
@@ -134,8 +135,8 @@ export default function ContactPage() {
                                 <Phone className="w-5 h-5" />
                             </div>
                             <div>
-                                <p className="text-xs text-white/40 font-medium uppercase tracking-wider">Direct Call</p>
-                                <p className="text-white/80 font-medium text-sm md:text-base">(+62) 85339396030</p>
+                                <p className="text-xs text-white/40 font-medium uppercase tracking-wider">{contactUsCopy.callUsLabel}</p>
+                                <p className="text-white/80 font-medium text-sm md:text-base">{contactUsCopy.callUsVal}</p>
                             </div>
                         </div>
 
@@ -144,12 +145,9 @@ export default function ContactPage() {
                                 <MapPin className="w-5 h-5" />
                             </div>
                             <div>
-                                <p className="text-xs text-white/40 font-medium uppercase tracking-wider">HQ Location</p>
+                                <p className="text-xs text-white/40 font-medium uppercase tracking-wider">{contactUsCopy.locationLabel}</p>
                                 <p className="text-white/80 font-medium text-sm md:text-base">
-                                    Biliq Sunset Office Space,<br />
-                                    Jalan Sunset Road 819,<br />
-                                    Bali Ruko Sunset Indah II No. 10, Kuta,<br />
-                                    Bali, Indonesia, 80361
+                                    {contactUsCopy.locationVal}
                                 </p>
                             </div>
                         </div>
@@ -179,8 +177,8 @@ export default function ContactPage() {
                             <div className="mb-8 p-4 rounded-xl border border-green-500/30 bg-green-500/5 flex items-start gap-3 shadow-[0_0_15px_rgba(133,223,195,0.1)] transition-all duration-300">
                                 <CheckCircle className="w-5 h-5 text-brunswick-green-900 flex-shrink-0 mt-0.5" />
                                 <div>
-                                    <h4 className="text-brunswick-green-900 font-semibold text-sm">Transmission Successful</h4>
-                                    <p className="text-white/60 text-xs mt-1">Thank you for contacting us. We will respond as soon as possible.</p>
+                                    <h4 className="text-brunswick-green-900 font-semibold text-sm">{contactUsCopy.successTitle}</h4>
+                                    <p className="text-white/60 text-xs mt-1">{contactUsCopy.successDesc}</p>
                                 </div>
                             </div>
                         )}
@@ -190,7 +188,7 @@ export default function ContactPage() {
                             <div className="mb-8 p-4 rounded-xl border border-red-500/30 bg-red-500/5 flex items-start gap-3 shadow-[0_0_15px_rgba(239,68,68,0.1)] transition-all duration-300">
                                 <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                                 <div>
-                                    <h4 className="text-red-500 font-semibold text-sm">Transmission Failed</h4>
+                                    <h4 className="text-red-500 font-semibold text-sm">{contactUsCopy.failTitle}</h4>
                                     <p className="text-white/60 text-xs mt-1">{formError}</p>
                                 </div>
                             </div>
@@ -212,7 +210,7 @@ export default function ContactPage() {
                             {/* FIELD 1: NAME (Kondisi Default / Error) */}
                             <div className="space-y-2">
                                 <label className="text-xs font-semibold text-white/50 uppercase tracking-wider">
-                                    Full Name
+                                    {contactUsCopy.nameLabel}
                                 </label>
                                 <input
                                     type="text"
@@ -235,7 +233,7 @@ export default function ContactPage() {
                             {/* FIELD 2: EMAIL (Kondisi Default / Error) */}
                             <div className="space-y-2">
                                 <label className="text-xs font-semibold text-white/50 uppercase tracking-wider">
-                                    Corporate Email
+                                    {contactUsCopy.emailLabel}
                                 </label>
                                 <input
                                     type="email"
@@ -258,14 +256,14 @@ export default function ContactPage() {
                             {/* FIELD 3: MESSAGE (Kondisi Default / Error) */}
                             <div className="space-y-2">
                                 <label className="text-xs font-semibold text-white/50 uppercase tracking-wider">
-                                    System Diagnostics Notes / Brief Message
+                                    {contactUsCopy.messageLabel}
                                 </label>
                                 <textarea
                                     name="message"
                                     rows="4"
                                     value={formData.message}
                                     onChange={handleChange}
-                                    placeholder="Describe your current infrastructure scale or bottleneck..."
+                                    placeholder={contactUsCopy.messagePlaceholder}
                                     className={`w-full px-4 py-3.5 bg-white/[0.03] text-white text-sm rounded-xl border outline-none transition-all duration-300 resize-none focus:bg-white/[0.05] ${errors.message
                                         ? "border-red-500/40 focus:border-red-500 focus:shadow-[0_0_15px_rgba(239,68,68,0.25)]"
                                         : "border-brunswick-green-900/60 focus:shadow-[0_0_15px_rgba(133,223,195,0.2)]"
@@ -296,9 +294,8 @@ export default function ContactPage() {
                                 className={`w-full mt-2 relative overflow-hidden group rounded-xl bg-brunswick-green-900 px-5 py-4 text-sm font-semibold tracking-wide text-sea-salt transition-all duration-300  hover:bg-brunswick-green-700 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
                             >
 
-
                                 <span className="flex items-center justify-center gap-2 font-bold text-sea-salt uppercase tracking-wider">
-                                    {isSubmitting ? "Sending..." : "Send Email"} {!isSubmitting && <Send className="w-4 h-4" />}
+                                    {isSubmitting ? contactUsCopy.submittingText : contactUsCopy.submitBtnText} {!isSubmitting && <Send className="w-4 h-4" />}
                                 </span>
                             </button>
 

@@ -4,6 +4,7 @@ import TeamBubble from './TeamBubble'; // optional, kept for potential reuse
 import { Icon } from "@iconify/react";
 import { section } from 'motion/react-client';
 import CtaBanner from './CTA Banner';
+import { aboutCopy } from '../../copy'; // Injecting our new copy file
 
 const basePath = import.meta.env.BASE_URL;
 
@@ -43,8 +44,6 @@ export interface TeamMember {
     }[];
 
 }
-
-
 
 export const members: TeamMember[] = [
     {
@@ -355,7 +354,8 @@ const TeamSection: React.FC = () => {
             <div className="w-[75%] mx-auto">
 
                 <h2 className="text-4xl font-bold text-center mb-8">
-                    Our Team
+                    {/* Injecting the dynamic title here! */}
+                    {aboutCopy.en.teamTitle}
                 </h2>
 
                 {/* DESKTOP GRID */}
@@ -372,11 +372,6 @@ const TeamSection: React.FC = () => {
                                 handleDesktopClick(idx, member);
                             }}
                         >
-                            {/* <img
-                                src={member.images.imageDisplay}
-                                className="w-full h-60 object-cover rounded-md mb-3"
-                            /> */}
-
                             <div className="relative w-full h-60 overflow-hidden rounded-md mb-3">
                                 {/* BLACK TOP IMAGE (default) */}
                                 <img
@@ -484,8 +479,6 @@ const TeamSection: React.FC = () => {
                     {/* AURORA BACKGROUND */}
                     <div className="aurora">
                         <div className="aurora-core" />
-                        {/* <div className="blob b1" /> */}
-                        {/* <div className="blob b2" /> */}
                     </div>
 
                     {/* CONTENT */}

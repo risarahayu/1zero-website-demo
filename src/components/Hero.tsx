@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Sparkles, Star, Users, PhoneCall, ArrowRight, Server, Shield, Database, Cpu } from "lucide-react";
 import { clientLogos } from "../data";
+import { heroCopy } from "../copy";
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -26,7 +27,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         >
           <span className="h-2 w-2 rounded-full bg-green-primary animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.9)]" />
           <span className="font-sans text-sm font-medium text-neutral-300">
-            Performance on any scale. We craft software with precision.
+            {heroCopy.performanceLabel}
           </span>
         </motion.div>
       </div>
@@ -40,9 +41,9 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="font-sans text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1]"
           >
-            Simplify Systems <br />
+            {heroCopy.simplifyTitle} <br />
             <span className="animate-gradient-text text-gradient ">
-              Amplify Impact
+              {heroCopy.amplifyTitle}
             </span>
           </motion.h1>
 
@@ -52,7 +53,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="max-w-2xl mx-auto font-sans text-sea-salt text-sm sm:text-base leading-relaxed"
           >
-            1zero engineers digital foundations that connect, scale seamlessly, and make history. We craft modern, resilient systems that optimize human activity to measure double real-world impact.
+            {heroCopy.tagline}
           </motion.p>
         </div>
 
@@ -72,7 +73,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               <span className="font-sans text-base text-white ml-1.5 font-bold">4.9★</span>
             </div> */}
             <p className="font-sans text-base leading-relaxed text-neutral-300">
-              Book a Free 30-Minutes Strategy Session with a CTO who brings 40+ years of IT experience
+              {heroCopy.ctaText}
             </p>
             {/* <div className="flex items-center gap-1.5 font-sans text-[9px] text-neutral-500 uppercase tracking-wider">
               <Users className="h-3 w-3 text-emerald-400" />
@@ -89,9 +90,9 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             {/* Soft inner glow */}
             <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:bg-brunswick-green-700 transition-opacity" />
             <PhoneCall className="h-5 w-5 animate-bounce shrink-0" />
-            <span className="tracking-wider uppercase">Book a Section</span>
+            <span className="tracking-wider uppercase">{heroCopy.ctaButtonText}</span>
             <span className="flex items-center gap-1 font-sans text-base  font-medium">
-              Free 30mins Session
+              {heroCopy.ctaButtonSubtext}
               <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
             </span>
           </button>
@@ -105,7 +106,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           className="pt-6"
         >
           <span className="font-sans text-base uppercase tracking-[0.2em] text-sea-salt select-none">
-            delivering robust, high-performing product systems
+            {heroCopy.deliveringLabel}
           </span>
         </motion.div>
 
@@ -117,7 +118,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           className="pt-6 border-t border-neutral-900"
         >
           <p className="font-sans text-sm text-sea-salt  tracking-widest mb-6">
-            Trusted By
+            {heroCopy.trustedBy}
           </p>
 
           {/* Infinite marquee carousel — duplicated for seamless loop */}

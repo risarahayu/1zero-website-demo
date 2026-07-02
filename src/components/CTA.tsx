@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { PhoneCall, Calendar, HelpCircle, ArrowRight, ShieldAlert, Sparkles } from "lucide-react";
 import BookingButton from "./BookingButton";
+import { ctaCopy } from "../copy";
 
 interface CTAProps {
   onOpenBooking: () => void;
@@ -32,20 +33,20 @@ export default function CTA({ onOpenBooking }: CTAProps) {
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" />
 
               <span className="overflow-hidden whitespace-nowrap border-r border-emerald-400 animate-typing">
-                LIMITED WEEKLY OPENINGS
+                {ctaCopy.limitedWeekly}
               </span>
             </div>
 
             <div className="space-y-4">
               <h2 className="font-sans text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-none">
-                This is your sign<br />
+                {ctaCopy.titleLine1}<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-[#dcd8cc]">
-                  Book a Free 30-Minute
+                  {ctaCopy.titleGradient}
                 </span> <br />
-                Strategy Session
+                {ctaCopy.titleLine2}
               </h2>
               <p className="max-w-xl mx-auto font-sans text-base sm:text-base text-sea-salt leading-relaxed pt-2">
-                No strings attached. We'll map out your operational schemas, uncover query performance bottlenecks, and design a custom architectural blueprint for your project.
+                {ctaCopy.description}
               </p>
             </div>
 
@@ -57,16 +58,16 @@ export default function CTA({ onOpenBooking }: CTAProps) {
             {/* Telemetry checks under booking button */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-10 border-t border-emerald-500/10 text-left text-base text-emerald-100/60 font-sans max-w-2xl mx-auto">
               <div className="space-y-1">
-                <span className="block font-bold text-white">01. Dynamic Planning</span>
-                <span className="block text-base text-brunswick-green-500">Custom infrastructure diagrams prepared before our call.</span>
+                <span className="block font-bold text-white">{ctaCopy.benefit1Title}</span>
+                <span className="block text-base text-brunswick-green-500">{ctaCopy.benefit1Desc}</span>
               </div>
               <div className="space-y-1">
-                <span className="block font-bold text-white">02. Direct Specialists</span>
-                <span className="block text-base text-brunswick-green-500">Collaborate with principal architects, not sales managers.</span>
+                <span className="block font-bold text-white">{ctaCopy.benefit2Title}</span>
+                <span className="block text-base text-brunswick-green-500">{ctaCopy.benefit2Desc}</span>
               </div>
               <div className="space-y-1">
-                <span className="block font-bold text-white">03. Fixed Deliverables</span>
-                <span className="block text-base text-brunswick-green-500">You receive a written architecture spec summary in PDF.</span>
+                <span className="block font-bold text-white">{ctaCopy.benefit3Title}</span>
+                <span className="block text-base text-brunswick-green-500">{ctaCopy.benefit3Desc}</span>
               </div>
             </div>
 

@@ -1,0 +1,145 @@
+// src/copy.ts
+
+export const headerCopy = {
+  bookUsBtn: "Book Us"
+};
+
+export const heroCopy = {
+  performanceLabel: "Performance on any scale. We craft software with precision.",
+  simplifyTitle: "Simplify Systems",
+  amplifyTitle: "Amplify Impact",
+  tagline: "1zero engineers digital foundations that connect, scale seamlessly, and make history. We craft modern, resilient systems that optimize human activity to measure double real-world impact.",
+  ctaText: "Book a Free 30-Minutes Strategy Session with a CTO who brings 40+ years of IT experience",
+  ctaButtonText: "Book a Section",
+  ctaButtonSubtext: "Free 30mins Session",
+  trustedBy: "Trusted By",
+  deliveringLabel: "delivering robust, high-performing product systems"
+};
+
+export const ctaCopy = {
+  limitedWeekly: "LIMITED WEEKLY OPENINGS",
+  titleLine1: "This is your sign",
+  titleGradient: "Book a Free 30-Minute",
+  titleLine2: "Strategy Session",
+  description: "No strings attached. We'll map out your operational schemas, uncover query performance bottlenecks, and design a custom architectural blueprint for your project.",
+  benefit1Title: "01. Dynamic Planning",
+  benefit1Desc: "Custom infrastructure diagrams prepared before our call.",
+  benefit2Title: "02. Direct Specialists",
+  benefit2Desc: "Collaborate with principal architects, not sales managers.",
+  benefit3Title: "03. Fixed Deliverables",
+  benefit3Desc: "You receive a written architecture spec summary in PDF."
+};
+
+export const whyUsCopy = {
+  sectionTag: "Why 1zero",
+  title: "A team built around people, not rigid platforms.",
+  description: "We partner directly with founders and operations executives to craft high-concurrency systems, completely cutting out agency middle-men & communication bureaucracy.",
+  meetOurTeam: "Meet Our Team",
+  seeAllTeam: "See All Team Members",
+  reassuranceTitle: "We operate with pristine engineering guidelines.",
+  reassuranceSub: "No subcontracting • No technical jargon hiding"
+};
+
+export const bookingModalCopy = {
+  modalTitle: "Strategy Session",
+  modalSub: "30-Min Consultation",
+  dateLabel: "1. Select a Date",
+  slotsLabel: "2. Available Slots",
+  timezoneLabel: "TIMEZONE",
+  continueBtn: "Continue Booking Details",
+  selectedDateLabel: "Selected Date:",
+  selectedTimeLabel: "Time:",
+  fullNameLabel: "Full Name *",
+  fullNamePlaceholder: "e.g. John Doe",
+  emailLabel: "Business Email Address *",
+  emailPlaceholder: "e.g. john@yourcompany.com",
+  companyLabel: "Company Name (Optional)",
+  companyPlaceholder: "e.g. Acme Corporation",
+  notesLabel: "What are we building together? (Brief notes)",
+  notesPlaceholder: "e.g. Rebuilding our customer web-portal to handle massive growth spikes, need clean UX.",
+  backBtn: "Back",
+  submitBtnDefault: "Schedule Free Consultation",
+  submitBtnSubmitting: "Scheduling...",
+  successTitle: "Your session is secured!",
+  successDesc1: "A calendar invitation with the Google Meet link has been sent to",
+  successDesc2: ". We're excited to collaborate!",
+  eventSummary: "EVENT SUMMARY",
+  eventTitle: "1zero Systems Blueprint Call",
+  eventDesc: "30-Minute Architecture Strategy Review",
+  backToWebsiteBtn: "Back to Website"
+};
+
+export const footerCopy = {
+  connectTitle: "Let's",
+  connectGradient: "Connect",
+  description: "We look forward to translating your mission operations into pristine, indestructible, & lightning-fast system systems. Let's make digital history together.",
+  directInquiries: "Direct Inquiries",
+  workingHours: "WITA working hours: 09:00 - 16:00",
+  primaryLaboratory: "Primary Laboratory",
+  officeTitle: "Our Office Address",
+  officeAddress: "Biliq Sunset Office Space, Jalan Sunset Road 819, Bali Ruko Sunset Indah II No. 10, Kuta, Bali, Indonesia, 80361",
+  copyright: "1zero AGENCY. ALL ARCHITECTURAL PLANS SECURED.",
+  backToTop: "BACK TO TOP ↑",
+  madeForDoubleImpact: "MADE FOR DOUBLE IMPACT"
+};
+
+export const contactUsCopy = {
+  badge: "GET IN TOUCH",
+  title: "Connect with Our Architects.",
+  description: "Skip the sales pipeline. Collaborate directly with engineers who will dissect your system, align constraints, and construct high-performance pathways.",
+  emailUsLabel: "Email Us",
+  emailUsVal: "info@1zero.biz",
+  callUsLabel: "Direct Call",
+  callUsVal: "(+62) 85339396030",
+  locationLabel: "HQ Location",
+  locationVal: "Bali, Indonesia",
+  laboratoryTitle: "THE BALI LABORATORY",
+  labWorkingHours: "9AM - 4PM WITA • Slack/Teams Dedicated Channels",
+  successTitle: "Transmission Successful",
+  successDesc: "Thank you for contacting us. We will respond as soon as possible.",
+  failTitle: "Transmission Failed",
+  nameLabel: "Your Name",
+  emailLabel: "Work Email",
+  messageLabel: "Message / Project Constraints",
+  messagePlaceholder: "Outline your tech stack complexity, user load, and delivery milestones...",
+  submittingText: "Transmitting...",
+  submitBtnText: "Transmit Specs"
+};
+
+export const aboutCopy = {
+  id: {
+    sub: 'Melampaui Konvensional',
+    title: 'Membangun Masa Depan dengan Hati.',
+    desc: 'Tim remote asal Indonesia yang mendobrak batas tradisional melalui teknologi dan empati.',
+    v1t: 'Kultur Berbeda',
+    v1d: 'Bukan budaya "Asal Bapak Senang". Kami menghargai kejujuran dan struktur yang flat.',
+    v2t: '100% Remote',
+    v2d: 'Bekerja dari pantai atau gunung. Kami percaya pada integritas tim kami.',
+    v3t: 'Fokus SDG',
+    v3d: 'Setiap baris kode kami berkontribusi untuk dunia yang lebih berkelanjutan.',
+    teamTitle: "Our Team",
+    ctaTitle: "Let's Work Together"
+  },
+  en: {
+    sub: 'Beyond Conventional',
+    title: 'Crafting Future with Heart.',
+    desc: 'A remote team based in Indonesia, breaking traditional boundaries through technology and empathy.',
+    v1t: 'Indonesian Pride',
+    v1d: "No more 'Yes Men' culture. We value honesty and flat hierarchy.",
+    v2t: 'Remote 2.0',
+    v2d: 'Work from the beach or the mountains. We trust our people.',
+    v3t: 'Sustainability',
+    v3d: 'Every code we write contributes to a better sustainable world.',
+    teamTitle: "Our Team",
+    ctaTitle: "Let's Work Together"
+  }
+};
+
+export const servicesCopy = {
+  workingWithBadge: "Working with 1zero",
+  whatYouGain: "What You Gain",
+  description: "More than just project delivery. Every engagement is designed to provide clarity, momentum, and a foundation for growth.",
+  heroTextPrefix: "We help you",
+  heroTextSuffix: "modern digital systems.",
+  heroTagline: "Most teams don't need more tools. They need the right system at the right stage."
+};
