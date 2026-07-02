@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { servicesCopy } from "../../copy";
 
 export default function ServicesHero() {
     const data = [
@@ -75,19 +76,18 @@ export default function ServicesHero() {
                 {/* LEFT */}
                 <div>
                     <h1 className="text-4xl md:text-6xl font-semibold leading-tight text-white">
-                        We help you{" "}
+                        {servicesCopy.heroTextPrefix}{" "}
                         <br />
                         <span className={`font-bold ${active.color}`}>
                             {text}
                             <span className="animate-pulse">|</span>
                         </span>
                         <br />
-                        modern digital systems.
+                        {servicesCopy.heroTextSuffix}
                     </h1>
 
                     <p className="mt-6 text-neutral-400 max-w-2xl mx-auto">
-                        Most teams don't need more tools.<br />
-                        They need the right system at the right stage.
+                        {servicesCopy.heroTagline}
                     </p>
                 </div>
 

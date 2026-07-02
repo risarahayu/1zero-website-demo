@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { benefits } from "../../data";
+import { servicesCopy } from "../../copy";
 
 export default function WhatYouGet() {
     const carouselRef = useRef(null);
@@ -58,16 +59,15 @@ export default function WhatYouGet() {
             {/* CONTENT */}
             <div className="relative z-10 flex flex-col items-center text-center px-6 md:absolute md:inset-0 md:justify-center">
                 <p className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base tracking-widest text-brunswick-green-500 mb-8 bg-[#a3e635]/5 shadow-[0_0_12px_rgba(163,230,53,0.1)]">
-                    Working with 1zero
+                    {servicesCopy.workingWithBadge}
                 </p>
 
                 <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white animate-gradient-text text-gradient">
-                    What You Gain
+                    {servicesCopy.whatYouGain}
                 </h2>
 
                 <p className="max-w-xl mt-6 text-sm md:text-base text-zinc-400">
-                    More than just project delivery. Every engagement is designed
-                    to provide clarity, momentum, and a foundation for growth.
+                    {servicesCopy.description}
                 </p>
             </div>
 

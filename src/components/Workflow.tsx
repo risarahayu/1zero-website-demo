@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import React from "react";
 import { motion, useScroll, useTransform, MotionValue } from "motion/react";
 import { workflowSteps } from "../data";
+import { workflowCopy } from "../copy";
 import { CheckCircle2, Search, Sliders, Rocket } from "lucide-react";
 
 const N = workflowSteps.length;
@@ -21,7 +22,7 @@ function ScrollHint({ scrollYProgress }: { scrollYProgress: MotionValue<number> 
   const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
   return (
     <motion.div style={{ opacity }} className="absolute bottom-8 right-8 z-50 flex flex-col items-center gap-2 text-neutral-600">
-      <span className="font-sans text-[9px] uppercase tracking-widest">Scroll</span>
+      <span className="font-sans text-[9px] uppercase tracking-widest">{workflowCopy.scrollHint}</span>
       <div className="h-8 w-[1px] bg-gradient-to-b from-neutral-600 to-transparent" />
     </motion.div>
   );
@@ -203,7 +204,7 @@ function Panel({
                 <span className={cfg.accentText}>{getIcon(step.number)}</span>
               </div>
               <div>
-                <p className="font-sans text-base uppercase tracking-[0.2em] text-sea-salt">Phase</p>
+                <p className="font-sans text-base uppercase tracking-[0.2em] text-sea-salt">{workflowCopy.phaseLabel}</p>
                 <p className={`font-sans text-base font-bold tracking-wider uppercase ${cfg.accentText}`}>
                   {step.number}
                 </p>
@@ -237,7 +238,7 @@ function Panel({
 
             {/* Step counter */}
             <p className="font-sans text-base text-ivory tracking-widest uppercase">
-              {String(index + 1).padStart(2, "0")} of {String(N).padStart(2, "0")} phases
+              {String(index + 1).padStart(2, "0")} {workflowCopy.ofText} {String(N).padStart(2, "0")} {workflowCopy.phasesText}
             </p>
           </div>
 
@@ -246,12 +247,12 @@ function Panel({
             <div className={`w-full max-w-sm p-7 rounded-2xl border ${cfg.border} backdrop-blur-sm`}
               style={{ background: `${cfg.accent}08` }}>
               <p className={`font-sans text-[9px] uppercase tracking-widest font-bold mb-3 ${cfg.accentText}`}>
-                COMMIT STATUS
+                {workflowCopy.commitStatusLabel}
               </p>
               <p className="font-sans text-sm text-neutral-400 leading-relaxed">
-                Our engineering outputs for the{" "}
+                {workflowCopy.commitStatusDescStart}{" "}
                 <strong className="text-neutral-200 font-semibold">{step.number}</strong>{" "}
-                phase pass multiple lint audits and container optimization runs automatically.
+                {workflowCopy.commitStatusDescEnd}
               </p>
               <div className="flex items-center gap-2 mt-5 pt-4 border-t border-white/5">
                 <span
@@ -259,7 +260,7 @@ function Panel({
                   style={{ backgroundColor: cfg.accent, boxShadow: `0 0 8px ${cfg.accent}` }}
                 />
                 <span className="font-sans text-base text-neutral-500 uppercase tracking-widest">
-                  Release Ready
+                  {workflowCopy.releaseReady}
                 </span>
               </div>
             </div>
@@ -309,13 +310,13 @@ export default function Workflow() {
           className="space-y-4"
         >
           <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans mb-[3rem] tracking-widest text-brunswick-green-500 bg-[#a3e635]/5">
-            Our Timeline
+            {workflowCopy.badge}
           </span>
           <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white max-w-3xl mx-auto leading-tight">
-            A collaborative process that builds the right systems for your mission
+            {workflowCopy.title}
           </h2>
           <p className="max-w-xl mx-auto font-sans text-base sm:text-base text-sea-salt">
-            Precision counts. We build customized software workflows step-by-step, ensuring structural safety and elite handoff readiness.
+            {workflowCopy.description}
           </p>
         </motion.div>
       </div>

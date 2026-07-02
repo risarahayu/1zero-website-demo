@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { ArrowLeft, ArrowRight, CheckCircle2, Monitor, Smile, Phone, Calendar, Star } from "lucide-react";
 import { customProjects } from "../data";
 import PortfolioCard from "./PortfolioCard";
+import { portfolioCopy } from "../copy";
 
 interface PortfolioProps {
   onOpenBooking: () => void;
@@ -111,20 +112,20 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
               <div className="relative px-5 py-2.5 rounded-full border border-neutral-800/80 bg-neutral-950/60 shadow-[0_0_15px_rgba(255,255,255,0.02)]">
                 {/* Visual outline and text */}
                 <span className="font-sans text-base sm:text-base font-semibold text-brunswick-green-500  tracking-wide">
-                  Our Portfolios
+                  {portfolioCopy.badge}
                 </span>
               </div>
             </div>
 
             {/* Elegant Main Title */}
             <h2 className="font-sans text-4xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.1]">
-              Where Ideas <br />
-              Become Reality
+              {portfolioCopy.titleLine1} <br />
+              {portfolioCopy.titleLine2}
             </h2>
 
             {/* Description Text */}
             <p className="font-sans text-base sm:text-base text-sea-salt max-w-sm leading-relaxed">
-              This portfolio showcases work from concept to execution.
+              {portfolioCopy.description}
             </p>
 
             {/* Navigation slider buttons */}
@@ -151,7 +152,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
               </span>
 
               <a href={`${import.meta.env.BASE_URL}#portfolio`}>
-                <p className="font-sans text-[11px] text-neutral-600 tracking-wider font-semibold ml-2 select-none uppercase font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">See All Projects</p>
+                <p className="font-sans text-[11px] text-neutral-600 tracking-wider font-semibold ml-2 select-none uppercase font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">{portfolioCopy.seeAllText}</p>
               </a>
             </div>
           </div>
@@ -186,14 +187,14 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
         {/* Global CTA Banner under */}
         <div className="text-center pt-20 max-w-2xl mx-auto space-y-4">
           <p className="font-sans text-base text-neutral-500 uppercase tracking-widest">
-            Ready to review full modular system blueprints?
+            {portfolioCopy.ctaTopText}
           </p>
           <button
             id="portfolio-review-btn"
             onClick={onOpenBooking}
             className="inline-flex items-center gap-2 p-3.5 px-8 rounded-full bg-brunswick-green-primary hover:bg-brunswick-green-700  text-sea-salt font-sans font-extrabold text-base transition-all uppercase tracking-wider cursor-pointer shadow-[0_4px_20px_rgba(16,185,129,0.2)] hover:shadow-[0_4px_25px_rgba(16,185,129,0.3)] transform hover:scale-[1.01]"
           >
-            Schedule Architecture Session
+            {portfolioCopy.ctaButtonText}
           </button>
         </div>
 

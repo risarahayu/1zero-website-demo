@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { products } from "../data";
+import { productsCopy } from "../copy";
 import { Terminal, BrainCircuit, RefreshCw, Cpu, ArrowUpRight, Code, ShieldCheck, Download, PanelsTopLeft, Users, UserStar } from "lucide-react";
 
 interface ProductsProps {
@@ -56,13 +57,13 @@ export default function Products({ onOpenBooking }: ProductsProps) {
             {/* Head Area */}
             <div className="text-center space-y-4">
               <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans  tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5 shadow-[0_0_12px_rgba(163,230,53,0.1)]">
-                Our Services
+                {productsCopy.badge}
               </span>
               <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-                Core Services
+                {productsCopy.title}
               </h2>
               <p className="max-w-xl mx-auto font-sans text-base sm:text-base text-sea-salt">
-                Highly optimized, production-hardened models designed to deploy smoothly or integrate instantly with your organization's digital workflow.
+                {productsCopy.description}
               </p>
             </div>
 
