@@ -37,77 +37,66 @@ export default function Products({ onOpenBooking }: ProductsProps) {
   const sectionOpacity = useTransform(scrollYProgress, [0, 0.15, 0.6, 1], [0.82, 1, 1, 0.88]);
 
   return (
-    <section ref={sectionRef} id="services" className="relative -mt-28 pt-28 pb-28 bg-transparent overflow-hidden">
-      <motion.div
-        className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.18),_transparent_25%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.14),_transparent_30%)]"
-        style={{ y: ambientY, opacity: ambientOpacity }}
-      />
-      <div className="absolute inset-x-0 -top-24 h-28 bg-gradient-to-b from-neutral-950/95 to-transparent opacity-95" />
+    <section ref={sectionRef} id="services" className="relative  bg-transparent overflow-hidden pb-16">
+      <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 rounded-[2.5rem] border border-white/10 py-16 ">
 
-      <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-neutral-950/95 shadow-[0_50px_120px_rgba(0,0,0,0.35)] backdrop-blur-xl"
-          style={{ y: sectionY, opacity: sectionOpacity }}
-        >
-          <div className="absolute -top-12 left-1/2 h-24 w-72 -translate-x-1/2 rounded-full bg-green-primary/10 blur-3xl" />
-          <div className="absolute top-8 right-8 h-24 w-24 rounded-full bg-sky-500/10 blur-3xl" />
-          <div className="absolute bottom-10 left-10 h-24 w-24 rounded-full bg-violet-500/10 blur-3xl" />
 
-          <div className="relative space-y-12 px-6 py-12 sm:px-10 sm:py-14">
-            {/* Head Area */}
-            <div className="text-center space-y-4">
-              <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans  tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5 shadow-[0_0_12px_rgba(163,230,53,0.1)]">
-                {productsCopy.badge}
-              </span>
-              <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-                {productsCopy.title}
-              </h2>
-              <p className="max-w-xl mx-auto font-sans text-base sm:text-base text-sea-salt">
-                {productsCopy.description}
-              </p>
-            </div>
+        {/* <div className="relative space-y-10 px-6 py-16 sm:px-10 sm:py-16"> */}
+        {/* Head Area */}
+        <div className="text-center space-y-10">
+          <span className="inline-block px-3.5 py-2 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
+            {productsCopy.badge}
+          </span>
+          <div className="space-y-6">
+            <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-white">
+              {productsCopy.title}
+            </h2>
+            <p className="max-w-xl mx-auto font-sans text-lg sm:text-lg text-sea-salt">
+              {productsCopy.description}
+            </p>
+          </div>
+          {/* Bento Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+            {products.map((p, index) => (
+              <div
+                key={p.id}
+                className="text-start space-y-6 group relative flex flex-col justify-between p-6 rounded-3xl border border-neutral-900 bg-neutral-950/60 hover:bg-neutral-950/90 transition-all duration-300 shadow-2xl overflow-hidden cursor-pointer hover:border-brunswick-green-500"
 
-            {/* Bento Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-              {products.map((p, index) => (
-                <div
-                  key={p.id}
-                  className="group relative flex flex-col justify-between p-6 rounded-3xl border border-neutral-900 bg-neutral-950/60 hover:bg-neutral-950/90 transition-all duration-300 shadow-2xl overflow-hidden cursor-pointer hover:border-brunswick-green-500"
+              >
+                <div className="absolute top-0 right-0 h-20 w-20 bg-gradient-to-bl from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                >
-                  <div className="absolute top-0 right-0 h-20 w-20 bg-gradient-to-bl from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <div className="h-12 w-12 rounded-xl bg-neutral-900 border border-neutral-800/80 flex items-center justify-center group-hover:bg-brunswick-green-500/10 group-hover:border-brunswick-green-500 transition-colors">
-                        {getIcon(p.id)}
-                      </div>
-
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="h-12 w-12 rounded-xl bg-neutral-900 border border-neutral-800/80 flex items-center justify-center group-hover:bg-brunswick-green-500/10 group-hover:border-brunswick-green-500 transition-colors">
+                      {getIcon(p.id)}
                     </div>
 
-                    <div className="space-y-2">
-                      <h3 className="font-sans text-lg font-bold text-white group-hover:text-brunswick-green-500 transition-colors">
-                        {p.service}
-                      </h3>
-                      <p className="font-sans text-base text-neutral-400 group-hover:text-sea-salt transition-colors leading-relaxed">
-                        {p.description}
-                      </p>
-                    </div>
                   </div>
 
-                  <div className="pt-6 border-t border-neutral-950/80 mt-6 flex items-center justify-end  gap-5 ">
-                    <a href={p.fileEng} download className="flex h-7 w-7 items-center justify-center rounded-full bg-neutral-900 text-neutral-500 hover:bg-green-primary hover:text-brunswick-green-500 transition-all">
-                      <Download className="h-4 w-4 transform transition-transform" />
-                    </a>
-                    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-neutral-900 text-neutral-500 hover:bg-green-primary hover:text-brunswick-green-500 transition-all">
-                      <ArrowUpRight className="h-4 w-4 transform hover:rotate-45 transition-transform" />
-                    </div>
+                  <div className="space-y-2">
+                    <h3 className="font-sans text-xl md:text-2xl font-bold text-white group-hover:text-brunswick-green-500 transition-colors">
+                      {p.service}
+                    </h3>
+                    <p className="font-sans text-lg text-neutral-400 group-hover:text-sea-salt transition-colors leading-relaxed">
+                      {p.description}
+                    </p>
                   </div>
                 </div>
-              ))}
-            </div>
+
+                <div className="border-t border-neutral-950/80 flex items-center justify-end gap-6">
+                  <a href={p.fileEng} download className="flex h-7 w-7 items-center justify-center rounded-full bg-neutral-900 text-neutral-500 hover:bg-green-primary hover:text-brunswick-green-500 transition-all">
+                    <Download className="h-4 w-4 transform transition-transform" />
+                  </a>
+                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-neutral-900 text-neutral-500 hover:bg-green-primary hover:text-brunswick-green-500 transition-all">
+                    <ArrowUpRight className="h-4 w-4 transform hover:rotate-45 transition-transform" />
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        </motion.div>
+        </div>
+
+        {/* </div> */}
       </div>
     </section>
   );

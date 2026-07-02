@@ -19,15 +19,15 @@ export default function Testimonials() {
       {/* Soft auroral glow in corner */}
       <div className="absolute top-1/2 right-10 -z-10 h-72 w-72 rounded-full bg-green-primary/[0.03] blur-[110px]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
         {/* Title Area */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
           <div className="space-y-3 text-left">
-            <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans uppercase tracking-widest text-brunswick-green-500 bg-[#a3e635]/5">
+            <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500 bg-[#a3e635]/5">
               {testimonialsCopy.badge}
             </span>
-            <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-none">
+            <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-white leading-none">
               {testimonialsCopy.titleLine1} <br />{testimonialsCopy.titleLine2}
             </h2>
           </div>
@@ -77,7 +77,7 @@ export default function Testimonials() {
                   </div>
 
                   {/* Absolute quote */}
-                  <p className="font-sans text-base sm:text-base text-neutral-300 italic leading-relaxed group-hover:text-white transition-colors">
+                  <p className="font-sans text-lg sm:text-lg text-neutral-300 italic leading-relaxed group-hover:text-white transition-colors">
                     "{t.quote}"
                   </p>
                 </div>
@@ -93,10 +93,10 @@ export default function Testimonials() {
                     />
                   </div>
                   <div className="leading-tight">
-                    <span className="block font-sans text-base font-bold text-white group-hover:text-brunswick-green-500 transition-colors">
+                    <span className="block font-sans text-lg font-bold text-white group-hover:text-brunswick-green-500 transition-colors">
                       {t.name}
                     </span>
-                    <span className="block font-sans text-base text-neutral-500">
+                    <span className="block font-sans text-lg text-neutral-500">
                       {t.role}, <strong className="text-neutral-400 font-normal">{t.company}</strong>
                     </span>
                   </div>

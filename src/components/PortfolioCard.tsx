@@ -44,23 +44,23 @@ export default function PortfolioCard({ project, onReadMore, className = "", sho
       {/* Left corner identifier and Content text */}
       <div className="pt-3 space-y-2">
         <h3
-          className="font-sans text-lg sm:text-xl font-bold text-white tracking-tight transition-colors cursor-pointer hover:text-brunswick-green-500 group-hover:text-brunswick-green-600 "
+          className="font-sans text-lg font-bold text-white tracking-tight transition-colors cursor-pointer hover:text-brunswick-green-500 group-hover:text-brunswick-green-600 "
           onClick={onReadMore}
         >
           {project.title}
         </h3>
 
-        <p className="font-sans text-base text-neutral-400 leading-relaxed font-normal">
+        <p className="font-sans text-lg text-neutral-400 leading-relaxed font-normal max-w-sm overflow-hidden [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
           {project.description}
         </p>
 
         {showService && (
           <div className="pt-2 flex flex-col space-y-2">
-            <span className="text-[10px] sm:text-sm font-semibold text-zinc-500 uppercase tracking-widest">
+            <span className="text-lg font-semibold text-zinc-500 uppercase tracking-widest">
               Service:
             </span>
             <div className="flex">
-              <span className={`inline-block px-3 py-1 rounded-full border text-[10px] sm:text-sm uppercase tracking-widest font-medium ${getServiceColorClass(project.service)}`}>
+              <span className={`inline-block px-3 py-1 rounded-full border text-lg uppercase tracking-widest font-medium ${getServiceColorClass(project.service)}`}>
                 {project.service}
               </span>
             </div>
@@ -71,7 +71,7 @@ export default function PortfolioCard({ project, onReadMore, className = "", sho
         <button
           type="button"
           onClick={onReadMore}
-          className="inline-flex items-center justify-center font-sans font-semibold text-neutral-300 group-hover:text-brunswick-green-500 bg-[#1a1a1c] hover:bg-[#252528] group-hover:bg-[#252528] border border-neutral-800/80 group-hover:border-brunswick-green-500 px-4 py-1.5 rounded-full text-base transition-colors cursor-pointer self-start mt-2 "
+          className="inline-flex items-center justify-center font-sans font-semibold text-neutral-300 group-hover:text-brunswick-green-500 bg-[#1a1a1c] hover:bg-[#252528] group-hover:bg-[#252528] border border-neutral-800/80 group-hover:border-brunswick-green-500 px-4 py-1.5 rounded-full text-lg transition-colors cursor-pointer self-start mt-2 "
         >
           Read More
         </button>

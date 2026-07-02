@@ -8,7 +8,7 @@ Here is the code review for the CSS best practices, token usage, and class consi
 
 ### 📐 Font Sizes (Total: 12 Unique Sizes)
 The codebase uses a mixture of Tailwind typography utilities and raw CSS declarations:
-*   **Tailwind Font Sizes (10):** `text-xs`, `text-sm`, `text-base`, `text-lg`, `text-xl`, `text-2xl`, `text-3xl`, `text-4xl`, `text-5xl`, `text-6xl`.
+*   **Tailwind Font Sizes (10):** `text-xs`, `text-sm`, `text-lg`, `text-lg`, `text-xl`, `text-2xl`, `text-3xl`, `text-4xl`, `text-5xl`, `text-6xl`.
 *   **Raw CSS Font Sizes (2):** `14px`, `20px` (found in [services.css](file:///c:/Users/m_tre/Desktop/DEV_Work/1zero-website-demo/src/css/services.css#L78-L87)).
 
 > [!TIP]

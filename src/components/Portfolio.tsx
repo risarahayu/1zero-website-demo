@@ -95,7 +95,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
   const currentDisplayIndex = (virtualIndex % customProjects.length + customProjects.length) % customProjects.length;
 
   return (
-    <section id="portfolio" className="relative py-24 bg-[#0a0a0c] overflow-hidden">
+    <section id="portfolio" className="relative  bg-[#0a0a0c] overflow-hidden py-16">
       {/* Background radial soft light blur */}
       <div className="absolute top-1/2 left-0 -translate-x-1/4 md:-translate-x-0 md:left-1/4 -translate-y-1/2 -z-10 h-[250px] w-[250px] md:h-[450px] md:w-[450px] rounded-full bg-green-primary/[0.05] md:bg-green-primary/[0.03] blur-[80px] md:blur-[150px]" />
 
@@ -105,28 +105,27 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
           {/* LEFT PANEL: Static Text / Header (Matches reference image) */}
-          <div className="lg:col-span-4 space-y-6 sm:space-y-8">
+          <div className="lg:col-span-4 space-y-10 sm:space-y-8">
 
             {/* Custom rounded capsule badge */}
             <div className="inline-flex">
-              <div className="relative px-5 py-2.5 rounded-full border border-neutral-800/80 bg-neutral-950/60 shadow-[0_0_15px_rgba(255,255,255,0.02)]">
-                {/* Visual outline and text */}
-                <span className="font-sans text-base sm:text-base font-semibold text-brunswick-green-500  tracking-wide">
-                  {portfolioCopy.badge}
-                </span>
-              </div>
+              <span className="inline-block px-3.5 py-2 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
+                {portfolioCopy.badge}
+              </span>
             </div>
 
-            {/* Elegant Main Title */}
-            <h2 className="font-sans text-4xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.1]">
-              {portfolioCopy.titleLine1} <br />
-              {portfolioCopy.titleLine2}
-            </h2>
+            <div className="space-y-6">
+              {/* Elegant Main Title */}
+              <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-white leading-[1.1]">
+                {portfolioCopy.titleLine1} <br />
+                {portfolioCopy.titleLine2}
+              </h2>
 
-            {/* Description Text */}
-            <p className="font-sans text-base sm:text-base text-sea-salt max-w-sm leading-relaxed">
-              {portfolioCopy.description}
-            </p>
+              {/* Description Text */}
+              <p className="font-sans text-lg sm:text-lg text-sea-salt max-w-sm leading-relaxed ">
+                {portfolioCopy.description}
+              </p>
+            </div>
 
             {/* Navigation slider buttons */}
             <div className="flex items-center gap-4 pt-4">
@@ -147,19 +146,19 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
                 <ArrowRight className="h-4 w-4" />
               </button>
 
-              <span className="font-sans text-[11px] text-neutral-600 tracking-wider font-semibold ml-2 select-none uppercase font-bold text-brunswick-green-500">
+              <span className="font-sans text-lg text-neutral-400 tracking-widest uppercase font-semibold ml-2 select-none">
                 {String(currentDisplayIndex + 1).padStart(2, '0')} / {String(customProjects.length).padStart(2, '0')}
               </span>
 
               <a href={`${import.meta.env.BASE_URL}#portfolio`}>
-                <p className="font-sans text-[11px] text-neutral-600 tracking-wider font-semibold ml-2 select-none uppercase font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">{portfolioCopy.seeAllText}</p>
+                <p className="font-sans text-lg text-neutral-400 tracking-widest  font-semibold ml-2 select-none cursor-pointer hover:text-brunswick-green-500 hover:underline transition-all duration-300 transform active:scale-95">{portfolioCopy.seeAllText}</p>
               </a>
             </div>
           </div>
 
           {/* RIGHT PANEL: Horizontal Carousel Track */}
           <div
-            className="lg:col-span-8 overflow-hidden py-4 -mx-4 px-4 sm:mx-0 sm:px-0"
+            className="lg:col-span-8 overflow-hidden  -mx-4 px-4 sm:mx-0 sm:px-0"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
@@ -186,13 +185,13 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
 
         {/* Global CTA Banner under */}
         <div className="text-center pt-20 max-w-2xl mx-auto space-y-4">
-          <p className="font-sans text-base text-neutral-500 uppercase tracking-widest">
+          <p className="font-sans text-lg text-neutral-500 uppercase tracking-widest">
             {portfolioCopy.ctaTopText}
           </p>
           <button
             id="portfolio-review-btn"
             onClick={onOpenBooking}
-            className="inline-flex items-center gap-2 p-3.5 px-8 rounded-full bg-brunswick-green-primary hover:bg-brunswick-green-700  text-sea-salt font-sans font-extrabold text-base transition-all uppercase tracking-wider cursor-pointer shadow-[0_4px_20px_rgba(16,185,129,0.2)] hover:shadow-[0_4px_25px_rgba(16,185,129,0.3)] transform hover:scale-[1.01]"
+            className="inline-flex items-center gap-2 p-3.5 px-8 rounded-full bg-brunswick-green-primary hover:bg-brunswick-green-700  text-sea-salt font-sans font-extrabold text-lg transition-all uppercase tracking-wider cursor-pointer shadow-[0_4px_20px_rgba(16,185,129,0.2)] hover:shadow-[0_4px_25px_rgba(16,185,129,0.3)] transform hover:scale-[1.01]"
           >
             {portfolioCopy.ctaButtonText}
           </button>

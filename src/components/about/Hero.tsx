@@ -90,7 +90,7 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
 
             <header className="max-w-7xl mx-auto px-10 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <span className="text-sea-salt font-semibold tracking-widest text-base uppercase mb-4 block">
+                    <span className="text-sea-salt font-semibold tracking-widest text-lg uppercase mb-4 block">
                         {t.sub}
                     </span>
                     <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6 animate-gradient-text text-gradient-impact">
@@ -114,7 +114,7 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                                 <i className="fas fa-globe-asia"></i>
                             </div>
                             <h3 className="text-2xl font-bold mb-4">{t.v1t}</h3>
-                            <p className="text-gray-400 text-base leading-relaxed">{t.v1d}</p>
+                            <p className="text-gray-400 text-lg leading-relaxed">{t.v1d}</p>
                         </div>
 
                         {/* Value Card 2 */}
@@ -124,7 +124,7 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                                 <i className="fas fa-wifi"></i>
                             </div>
                             <h3 className="text-2xl font-bold mb-4">{t.v2t}</h3>
-                            <p className="text-gray-400 text-base leading-relaxed">{t.v2d}</p>
+                            <p className="text-gray-400 text-lg leading-relaxed">{t.v2d}</p>
                         </div>
 
                         {/* Value Card 3 */}
@@ -134,7 +134,7 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                                 <i className="fas fa-leaf"></i>
                             </div>
                             <h3 className="text-2xl font-bold mb-4">{t.v3t}</h3>
-                            <p className="text-gray-400 text-base leading-relaxed">{t.v3d}</p>
+                            <p className="text-gray-400 text-lg leading-relaxed">{t.v3d}</p>
                         </div>
                     </div>
 

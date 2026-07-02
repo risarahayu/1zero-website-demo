@@ -22,7 +22,7 @@ function ScrollHint({ scrollYProgress }: { scrollYProgress: MotionValue<number> 
   const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
   return (
     <motion.div style={{ opacity }} className="absolute bottom-8 right-8 z-50 flex flex-col items-center gap-2 text-neutral-600">
-      <span className="font-sans text-[9px] uppercase tracking-widest">{workflowCopy.scrollHint}</span>
+      <span className="font-sans text-lg uppercase tracking-widest text-neutral-600">{workflowCopy.scrollHint}</span>
       <div className="h-8 w-[1px] bg-gradient-to-b from-neutral-600 to-transparent" />
     </motion.div>
   );
@@ -204,8 +204,8 @@ function Panel({
                 <span className={cfg.accentText}>{getIcon(step.number)}</span>
               </div>
               <div>
-                <p className="font-sans text-base uppercase tracking-[0.2em] text-sea-salt">{workflowCopy.phaseLabel}</p>
-                <p className={`font-sans text-base font-bold tracking-wider uppercase ${cfg.accentText}`}>
+                <p className="font-sans text-lg uppercase tracking-[0.2em] text-sea-salt">{workflowCopy.phaseLabel}</p>
+                <p className={`font-sans text-lg font-bold tracking-wider uppercase ${cfg.accentText}`}>
                   {step.number}
                 </p>
               </div>
@@ -216,7 +216,7 @@ function Panel({
               <h3 className="font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.1]">
                 {step.title}
               </h3>
-              <p className="font-sans text-base text-sea-salt leading-relaxed max-w-md">
+              <p className="font-sans text-lg text-sea-salt leading-relaxed max-w-md">
                 {step.subtext}
               </p>
             </div>
@@ -231,13 +231,13 @@ function Panel({
                   >
                     <CheckCircle2 className={`h-3 w-3 ${cfg.accentText}`} />
                   </div>
-                  <span className="font-sans text-base text-neutral-300">{b}</span>
+                  <span className="font-sans text-lg text-neutral-300">{b}</span>
                 </div>
               ))}
             </div>
 
             {/* Step counter */}
-            <p className="font-sans text-base text-ivory tracking-widest uppercase">
+            <p className="font-sans text-lg text-ivory tracking-widest uppercase">
               {String(index + 1).padStart(2, "0")} {workflowCopy.ofText} {String(N).padStart(2, "0")} {workflowCopy.phasesText}
             </p>
           </div>
@@ -246,10 +246,10 @@ function Panel({
           <div className="hidden lg:flex flex-col justify-center items-start">
             <div className={`w-full max-w-sm p-7 rounded-2xl border ${cfg.border} backdrop-blur-sm`}
               style={{ background: `${cfg.accent}08` }}>
-              <p className={`font-sans text-[9px] uppercase tracking-widest font-bold mb-3 ${cfg.accentText}`}>
+              <p className={`font-sans text-lg uppercase tracking-widest font-bold mb-3 ${cfg.accentText}`}>
                 {workflowCopy.commitStatusLabel}
               </p>
-              <p className="font-sans text-base text-neutral-400 leading-relaxed">
+              <p className="font-sans text-lg text-neutral-400 leading-relaxed">
                 {workflowCopy.commitStatusDescStart}{" "}
                 <strong className="text-neutral-200 font-semibold">{step.number}</strong>{" "}
                 {workflowCopy.commitStatusDescEnd}
@@ -259,7 +259,7 @@ function Panel({
                   className="h-2 w-2 rounded-full animate-pulse"
                   style={{ backgroundColor: cfg.accent, boxShadow: `0 0 8px ${cfg.accent}` }}
                 />
-                <span className="font-sans text-base text-neutral-500 uppercase tracking-widest">
+                <span className="font-sans text-lg text-neutral-500 uppercase tracking-widest">
                   {workflowCopy.releaseReady}
                 </span>
               </div>
@@ -309,13 +309,13 @@ export default function Workflow() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="space-y-4"
         >
-          <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans mb-[3rem] tracking-widest text-brunswick-green-500 bg-[#a3e635]/5">
+          <span className="inline-block px-3.5 py-2 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
             {workflowCopy.badge}
           </span>
-          <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white max-w-3xl mx-auto leading-tight">
+          <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-white max-w-3xl mx-auto leading-tight">
             {workflowCopy.title}
           </h2>
-          <p className="max-w-xl mx-auto font-sans text-base sm:text-base text-sea-salt">
+          <p className="max-w-xl mx-auto font-sans text-lg sm:text-lg text-sea-salt">
             {workflowCopy.description}
           </p>
         </motion.div>

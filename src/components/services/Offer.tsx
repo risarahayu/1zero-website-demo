@@ -32,7 +32,7 @@ export default function DiagnosisPanel() {
 
                 {/* 3. KONTEN UTAMA */}
                 <div className="relative z-20 max-w-3xl mx-auto text-center px-6 py-20">
-                    <h2 className="text-xl  md:text-4xl font-bold leading-snug text-white">
+                    <h2 className="text-2xl  md:text-4xl font-bold leading-snug text-white">
                         {offerCopy.heroTitleLine1}
                         <br />
                         {offerCopy.heroTitleLine2}
@@ -112,7 +112,7 @@ export default function DiagnosisPanel() {
                                             {/* MAIN CARD INNER */}
                                             <div className="relative z-10 p-8 rounded-2xl ">
                                                 <div className="space-y-8">
-                                                    <p className="text-sea-salt text-base font-semibold">{offerCopy.conditionText}</p>
+                                                    <p className="text-sea-salt text-lg font-semibold">{offerCopy.conditionText}</p>
                                                     {/* 1. PROBLEM FIRST */}
                                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                                                         {item.symptoms?.map((symptom, i) => {
@@ -128,7 +128,7 @@ export default function DiagnosisPanel() {
                                                                     <Icon className="w-6 h-6 text-red-400 flex-shrink-0" />
 
                                                                     {/* Render teks */}
-                                                                    <span className="text-white/80 text-base md:text-base leading-relaxed">
+                                                                    <span className="text-white/80 text-lg md:text-lg leading-relaxed">
                                                                         {symptom.text}
                                                                     </span>
                                                                 </div>
@@ -143,14 +143,15 @@ export default function DiagnosisPanel() {
 
                                                     {/* 2. RECOMMENDED SERVICE */}
                                                     <div className="p-6 rounded-xl border border-white/10 bg-white/5 shadow-2xl">
-                                                        <p className="text-white/40 text-base font-medium uppercase tracking-wider mb-4">
+
+                                                        <p className="text-white/40 text-lg font-medium uppercase tracking-wider mb-4">
                                                             {offerCopy.ourServiceLabel}
                                                         </p>
                                                         <div className="flex flex-col gap-4">
                                                             <div className="text-2xl md:text-5xl font-bold uppercase animate-gradient-text text-gradient">
                                                                 {item.service}
                                                             </div>
-                                                            <p className="text-white/70 text-base leading-relaxed">
+                                                            <p className="text-white/70 text-lg leading-relaxed">
                                                                 {item.description}
                                                             </p>
 
@@ -171,12 +172,12 @@ export default function DiagnosisPanel() {
 
                                                     {/* 3. FUTURE STATE */}
                                                     <div className="p-6 rounded-xl border border-green-500/20 bg-green-500/5">
-                                                        <p className="text-brunswick-green-500 text-base font-semibold uppercase tracking-wider mb-4">
+                                                        <p className="text-brunswick-green-500 text-lg font-semibold uppercase tracking-wider mb-4">
                                                             {offerCopy.afterImplementationLabel}
                                                         </p>
                                                         <ul className="space-y-3">
                                                             {item.futureState?.map((f, i) => (
-                                                                <li key={i} className="text-white/80 text-base flex gap-3 items-start">
+                                                                <li key={i} className="text-white/80 text-lg flex gap-3 items-start">
                                                                     <span className="text-brunswick-green-500 mt-0.5">✓</span>
                                                                     <span>{f}</span>
                                                                 </li>

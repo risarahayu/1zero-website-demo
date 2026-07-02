@@ -30,7 +30,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
           {/* Navigation Pill Container */}
           <div
             className={`w-full max-w-3xl  mt-4 ${isScrolled
-              ? "fixed top-4 left-1/2 -translate-x-1/2 z-50 max-w-xl px-2"
+              ? "fixed top-4 left-1/2 -translate-x-1/2 z-50 max-w-2xl px-2"
               : "relative"
               }`}
           >
@@ -52,7 +52,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                   <a
                     key={link.href}
                     href={link.href}
-                    className="font-sans text-base font-semibold text-neutral-400 hover:text-white hover:underline transition-all tracking-wide"
+                    className="font-sans text-lg font-semibold text-neutral-400 hover:text-white hover:underline transition-all tracking-wide"
                   >
                     {link.label}
                   </a>
@@ -63,7 +63,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               <button
                 id="mobile-menu-trigger"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className={`p-1 px-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-full sm:hidden transition-all text-base ${isScrolled ? "mr-auto" : ""}`}
+                className={`p-1 px-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-full sm:hidden transition-all text-lg ${isScrolled ? "mr-auto" : ""}`}
               >
                 {isMobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
               </button>
@@ -72,7 +72,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               <button
                 id="header-booking-btn"
                 onClick={onOpenBooking}
-                className="flex items-center gap-1 p-1 px-3.5 bg-green-primary/10 hover:bg-brunswick-green-primary hover:text-sea-salt border border-brunswick-green-500 text-brunswick-green-500  hover:text-brunswick-green-800 font-sans font-semibold text-base rounded-full transition-all cursor-pointer shadow-sm hover:shadow-md hover:shadow-emerald-500/10"
+                className="flex items-center gap-1 p-1 px-3.5 bg-green-primary/10 hover:bg-brunswick-green-primary hover:text-sea-salt border border-brunswick-green-500 text-brunswick-green-500  hover:text-brunswick-green-800 font-sans font-semibold text-lg rounded-full transition-all cursor-pointer shadow-sm hover:shadow-md hover:shadow-emerald-500/10"
               >
                 {headerCopy.bookUsBtn}
                 <ArrowUpRight className="h-3 w-3 shrink-0" />
@@ -99,7 +99,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="font-sans text-base font-semibold text-neutral-300 hover:text-emerald-400 tracking-wide transition-colors py-2 border-b border-neutral-900/60"
+                  className="font-sans text-lg font-semibold text-neutral-300 hover:text-emerald-400 tracking-wide transition-colors py-2 border-b border-neutral-900/60"
                 >
                   {link.label}
                 </a>
@@ -111,7 +111,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                     setIsMobileMenuOpen(false);
                     onOpenBooking();
                   }}
-                  className="w-full text-center p-3 rounded-xl bg-green-primary text-black font-sans font-extrabold text-base tracking-wider uppercase transition-colors hover:bg-emerald-600 block cursor-pointer"
+                  className="w-full text-center p-3 rounded-xl bg-green-primary text-black font-sans font-extrabold text-lg tracking-wider uppercase transition-colors hover:bg-emerald-600 block cursor-pointer"
                 >
                   Free Strategy Session
                 </button>
