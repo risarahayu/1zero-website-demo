@@ -390,7 +390,7 @@ const TeamSection: React.FC = () => {
                             <h3 className="text-lg font-semibold text-white">
                                 {member.name}
                             </h3>
-                            <p className="text-sm text-gray-300">
+                            <p className="text-base text-gray-300">
                                 {member.role}
                             </p>
                         </div>
@@ -423,12 +423,12 @@ const TeamSection: React.FC = () => {
                                 />
 
                                 {/* Name */}
-                                <h3 className="text-sm font-semibold text-white leading-tight">
+                                <h3 className="text-base font-semibold text-white leading-tight">
                                     {member.name}
                                 </h3>
 
                                 {/* Role */}
-                                <p className="text-xs text-gray-300">
+                                <p className="text-sm text-gray-300">
                                     {member.role}
                                 </p>
                             </button>
@@ -458,12 +458,12 @@ const TeamSection: React.FC = () => {
                                 />
 
                                 {/* Name */}
-                                <h3 className="text-sm font-semibold text-white leading-tight">
+                                <h3 className="text-base font-semibold text-white leading-tight">
                                     {member.name}
                                 </h3>
 
                                 {/* Role */}
-                                <p className="text-xs text-gray-300">
+                                <p className="text-sm text-gray-300">
                                     {member.role}
                                 </p>
                             </button>
@@ -487,7 +487,7 @@ const TeamSection: React.FC = () => {
                         {/* LEFT */}
                         <div className="flex flex-col justify-between">
                             <div className="p-8 flex flex-col justify-center">
-                                <span className="text-xs uppercase tracking-[0.25em] text-brunswick-green-500">
+                                <span className="text-sm uppercase tracking-[0.25em] text-brunswick-green-500">
                                     Team Member
                                 </span>
 
@@ -521,7 +521,7 @@ const TeamSection: React.FC = () => {
 
                             {/* Social */}
                             <div>
-                                <h4 className="text-sm font-semibold text-white mb-4">
+                                <h4 className="text-base font-semibold text-white mb-4">
                                     Social Media
                                 </h4>
 
@@ -579,7 +579,7 @@ const TeamSection: React.FC = () => {
 
                             {/* SDG */}
                             <div>
-                                <h4 className="text-sm font-semibold text-white mb-4">
+                                <h4 className="text-base font-semibold text-white mb-4">
                                     Sustainable Development Goals
                                 </h4>
 
@@ -587,7 +587,7 @@ const TeamSection: React.FC = () => {
                                     {activeMember.sdgs.map((sdg) => (
                                         <span
                                             key={sdg.id}
-                                            className="px-3 py-1 text-xs rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20"
+                                            className="px-3 py-1 text-sm rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20"
                                         >
                                             SDG {sdg.id} • {sdg.title}
                                         </span>
@@ -636,7 +636,7 @@ const TeamSection: React.FC = () => {
 
                                     {/* Header */}
                                     <div>
-                                        <span className="text-xs uppercase tracking-[0.25em] text-brunswick-green-500">
+                                        <span className="text-sm uppercase tracking-[0.25em] text-brunswick-green-500">
                                             Team Member
                                         </span>
 
@@ -644,24 +644,24 @@ const TeamSection: React.FC = () => {
                                             {selectedMember.name}
                                         </h3>
 
-                                        <p className="mt-1 text-sm text-zinc-400">
+                                        <p className="mt-1 text-base text-zinc-400">
                                             {selectedMember.role}
                                         </p>
                                     </div>
 
                                     {/* Bio */}
-                                    <div className="text-sm text-zinc-300 leading-relaxed">
+                                    <div className="text-base text-zinc-300 leading-relaxed">
                                         <p>{selectedMember.bio}</p>
                                     </div>
 
                                     {/* Tech stack */}
                                     <div className="flex flex-wrap items-center gap-2">
-                                        <span className="text-xs text-zinc-500 mr-1">Tech:</span>
+                                        <span className="text-sm text-zinc-500 mr-1">Tech:</span>
 
                                         {selectedMember.techStack?.map((tech) => (
                                             <div
                                                 key={tech.name}
-                                                className="flex items-center gap-1 px-2 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-zinc-300"
+                                                className="flex items-center gap-1 px-2 py-1 rounded-md bg-white/5 border border-white/10 text-sm text-zinc-300"
                                             >
                                                 <span>{tech.logo}</span>
                                                 <span>{tech.name}</span>

@@ -81,11 +81,12 @@ export default function WhyUs(props: WhyUsProps) {
                     {/* Indicators */}
                     <div className="space-y-1.5 mt-auto z-10 pt-2 bg-gradient-to-t from-black via-black/80 to-transparent">
                       <div className="flex items-center justify-between">
-                        <span className="block font-sans text-sm font-bold text-white leading-none tracking-wide truncate">
+                        <span className="block font-sans text-base font-bold text-white leading-none tracking-wide truncate">
                           {member.name}
                         </span>
                       </div>
-                      <div className="flex items-center justify-between font-sans text-xs text-neutral-500 uppercase truncate">
+
+                      <div className="flex items-center justify-between font-sans text-sm text-neutral-500 uppercase truncate">
                         <span>{member.role}</span>
                       </div>
                     </div>
@@ -112,11 +113,12 @@ export default function WhyUs(props: WhyUsProps) {
                     {/* Indicators */}
                     <div className="space-y-1.5 mt-auto z-10 pt-2 bg-gradient-to-t from-black via-black/80 to-transparent">
                       <div className="flex items-center justify-between">
-                        <span className="block font-sans text-sm font-bold text-white leading-none tracking-wide truncate">
+                        <span className="block font-sans text-base font-bold text-white leading-none tracking-wide truncate">
                           {member.name}
                         </span>
                       </div>
-                      <div className="flex items-center justify-between font-sans text-xs text-neutral-500 uppercase truncate">
+
+                      <div className="flex items-center justify-between font-sans text-sm text-neutral-500 uppercase truncate">
                         <span>{member.role}</span>
                       </div>
                     </div>

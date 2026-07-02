@@ -128,7 +128,7 @@ export default function DiagnosisPanel() {
                                                                     <Icon className="w-6 h-6 text-red-400 flex-shrink-0" />
 
                                                                     {/* Render teks */}
-                                                                    <span className="text-white/80 text-sm md:text-base leading-relaxed">
+                                                                    <span className="text-white/80 text-base md:text-base leading-relaxed">
                                                                         {symptom.text}
                                                                     </span>
                                                                 </div>
@@ -143,7 +143,7 @@ export default function DiagnosisPanel() {
 
                                                     {/* 2. RECOMMENDED SERVICE */}
                                                     <div className="p-6 rounded-xl border border-white/10 bg-white/5 shadow-2xl">
-                                                        <p className="text-white/40 text-sm font-medium uppercase tracking-wider mb-4">
+                                                        <p className="text-white/40 text-base font-medium uppercase tracking-wider mb-4">
                                                             {offerCopy.ourServiceLabel}
                                                         </p>
                                                         <div className="flex flex-col gap-4">
@@ -171,7 +171,7 @@ export default function DiagnosisPanel() {
 
                                                     {/* 3. FUTURE STATE */}
                                                     <div className="p-6 rounded-xl border border-green-500/20 bg-green-500/5">
-                                                        <p className="text-brunswick-green-500 text-sm font-semibold uppercase tracking-wider mb-4">
+                                                        <p className="text-brunswick-green-500 text-base font-semibold uppercase tracking-wider mb-4">
                                                             {offerCopy.afterImplementationLabel}
                                                         </p>
                                                         <ul className="space-y-3">

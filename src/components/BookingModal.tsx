@@ -264,7 +264,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 id="modal-next-step-btn"
                 type="button"
                 onClick={handleNextStep}
-                className="flex items-center justify-center gap-2 w-full p-3.5 rounded-xl bg-green-primary hover:bg-emerald-600 text-black font-sans font-bold text-sm tracking-wide transition-all shadow-[0_4px_20px_rgba(16,185,129,0.2)] cursor-pointer"
+                className="flex items-center justify-center gap-2 w-full p-3.5 rounded-xl bg-green-primary hover:bg-emerald-600 text-black font-sans font-bold text-base tracking-wide transition-all shadow-[0_4px_20px_rgba(16,185,129,0.2)] cursor-pointer"
               >
                 {bookingModalCopy.continueBtn}
                 <ChevronRight className="h-4 w-4" />
@@ -299,7 +299,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                     placeholder={bookingModalCopy.fullNamePlaceholder}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full pl-10 pr-4 p-3.5 rounded-xl bg-neutral-900/60 border border-neutral-800 text-sm focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/40 text-white font-sans transition-all"
+                    className="w-full pl-10 pr-4 p-3.5 rounded-xl bg-neutral-900/60 border border-neutral-800 text-base focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/40 text-white font-sans transition-all"
                   />
                 </div>
               </div>
@@ -315,7 +315,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                     placeholder={bookingModalCopy.emailPlaceholder}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full pl-10 pr-4 p-3.5 rounded-xl bg-neutral-900/60 border border-neutral-800 text-sm focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/40 text-white font-sans transition-all"
+                    className="w-full pl-10 pr-4 p-3.5 rounded-xl bg-neutral-900/60 border border-neutral-800 text-base focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/40 text-white font-sans transition-all"
                   />
                 </div>
               </div>
@@ -330,7 +330,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                     placeholder={bookingModalCopy.companyPlaceholder}
                     value={company}
                     onChange={(e) => setCompany(e.target.value)}
-                    className="w-full pl-10 pr-4 p-3.5 rounded-xl bg-neutral-900/60 border border-neutral-800 text-sm focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/40 text-white font-sans transition-all"
+                    className="w-full pl-10 pr-4 p-3.5 rounded-xl bg-neutral-900/60 border border-neutral-800 text-base focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/40 text-white font-sans transition-all"
                   />
                 </div>
               </div>
@@ -352,7 +352,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   id="modal-back-btn"
                   type="button"
                   onClick={() => setStep(1)}
-                  className="w-1/3 p-3 rounded-xl border border-neutral-800 bg-[#111] hover:bg-neutral-900 text-neutral-300 font-sans text-sm tracking-wide transition-colors cursor-pointer"
+                  className="w-1/3 p-3 rounded-xl border border-neutral-800 bg-[#111] hover:bg-neutral-900 text-neutral-300 font-sans text-base tracking-wide transition-colors cursor-pointer"
                 >
                   {bookingModalCopy.backBtn}
                 </button>
@@ -360,7 +360,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   id="modal-submit-btn"
                   type="submit"
                   disabled={isSubmitting}
-                  className={`flex-1 p-3 rounded-xl bg-green-primary hover:bg-emerald-600 text-black font-sans font-medium text-sm tracking-wide transition-all shadow-[0_4px_20px_rgba(16,185,129,0.2)] ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
+                  className={`flex-1 p-3 rounded-xl bg-green-primary hover:bg-emerald-600 text-black font-sans font-medium text-base tracking-wide transition-all shadow-[0_4px_20px_rgba(16,185,129,0.2)] ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
                 >
                   {isSubmitting ? bookingModalCopy.submitBtnSubmitting : bookingModalCopy.submitBtnDefault}
                 </button>
@@ -385,7 +385,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               <div className="max-w-md mx-auto rounded-xl bg-neutral-900/60 p-4 border border-emerald-500/10 space-y-3 divide-y divide-neutral-800 text-left">
                 <div className="pb-3 text-base">
                   <p className="font-sans text-base text-emerald-400 tracking-wider">{bookingModalCopy.eventSummary}</p>
-                  <p className="font-sans font-semibold text-sm text-white mt-1">{bookingModalCopy.eventTitle}</p>
+                  <p className="font-sans font-semibold text-base text-white mt-1">{bookingModalCopy.eventTitle}</p>
                   <p className="text-neutral-400 mt-0.5">{bookingModalCopy.eventDesc}</p>
                 </div>
                 <div className="py-2.5 pt-3 flex items-center gap-3 text-base text-neutral-300">
@@ -407,7 +407,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   id="modal-finish-btn"
                   type="button"
                   onClick={cleanClose}
-                  className="px-8 p-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white font-sans text-sm tracking-wide transition-colors cursor-pointer border border-neutral-800"
+                  className="px-8 p-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white font-sans text-base tracking-wide transition-colors cursor-pointer border border-neutral-800"
                 >
                   {bookingModalCopy.backToWebsiteBtn}
                 </button>

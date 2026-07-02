@@ -99,7 +99,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="font-sans text-sm font-semibold text-neutral-300 hover:text-emerald-400 tracking-wide transition-colors py-2 border-b border-neutral-900/60"
+                  className="font-sans text-base font-semibold text-neutral-300 hover:text-emerald-400 tracking-wide transition-colors py-2 border-b border-neutral-900/60"
                 >
                   {link.label}
                 </a>

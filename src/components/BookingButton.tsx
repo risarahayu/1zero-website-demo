@@ -21,7 +21,7 @@ export default function BookingButton({ onClick, className = "" }: BookingButton
         animate-gradient
         text-neutral-950
         font-sans font-extrabold
-        text-sm sm:text-base
+        text-base sm:text-base
         rounded-2xl
         transition-all
         shadow-[0_10px_35px_rgba(223,217,198,0.25)]

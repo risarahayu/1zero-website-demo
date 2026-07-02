@@ -270,7 +270,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
             </h2>
           </div>
           <div className="lg:col-span-4 flex flex-col gap-4 items-start lg:items-end">
-            <p className="font-sans text-base sm:text-sm text-neutral-400 leading-relaxed max-w-sm lg:text-right">
+            <p className="font-sans text-base sm:text-base text-neutral-400 leading-relaxed max-w-sm lg:text-right">
               {casesCopy.description}
             </p>
             {/* Navigation */}

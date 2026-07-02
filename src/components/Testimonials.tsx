@@ -77,7 +77,7 @@ export default function Testimonials() {
                   </div>
 
                   {/* Absolute quote */}
-                  <p className="font-sans text-base sm:text-sm text-neutral-300 italic leading-relaxed group-hover:text-white transition-colors">
+                  <p className="font-sans text-base sm:text-base text-neutral-300 italic leading-relaxed group-hover:text-white transition-colors">
                     "{t.quote}"
                   </p>
                 </div>

@@ -57,7 +57,7 @@ export default function PortfolioPage() {
                         key={service}
                         onClick={() => setActiveTab(service)}
                         className={`
-                            px-4 py-2 rounded-full text-sm border transition-all duration-300
+                            px-4 py-2 rounded-full text-base border transition-all duration-300
                             ${activeTab === service
                                 ? "bg-brunswick-green-900 text-sea-salt border-white/10"
                                 : "bg-white/5 text-sea-salt border-white/10 hover:border-brunswick-green-500 hover:text-brunswick-green-500"
@@ -107,7 +107,7 @@ export default function PortfolioPage() {
                 animate-gradient
                 text-neutral-950
                 font-sans font-extrabold
-                text-sm sm:text-base
+                text-base sm:text-base
                 rounded-2xl
                 transition-all
                 shadow-[0_10px_35px_rgba(223,217,198,0.25)]

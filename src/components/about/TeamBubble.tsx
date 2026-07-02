@@ -30,7 +30,7 @@ const TeamBubble: React.FC<TeamBubbleProps> = ({
             </div>
             {/* detail - Selalu muncul dari awal (tanpa class chat-overlay) dan diposisikan tepat di sebelah gambar */}
             <div className={`absolute ${overlayPositionClass} w-48 glass p-4 rounded-2xl rounded-bl-none shadow-2xl border border-white/20 z-20`}>
-                <p className="font-bold text-xs mb-1">{name}</p>
+                <p className="font-bold text-sm mb-1">{name}</p>
                 <p className="text-[10px] text-gray-400 mb-2">{quote || role}</p>
                 <button className="text-[10px] bg-white text-black px-3 py-1 rounded-full font-bold hover:bg-indigo-400 hover:text-white transition">See Detail</button>
             </div>
