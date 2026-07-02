@@ -58,15 +58,15 @@ export default function WhatYouGet() {
 
             {/* CONTENT */}
             <div className="relative z-10 flex flex-col items-center text-center px-6 md:absolute md:inset-0 md:justify-center">
-                <p className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base tracking-widest text-brunswick-green-500 mb-8 bg-[#a3e635]/5 shadow-[0_0_12px_rgba(163,230,53,0.1)]">
+                <p className="inline-block px-3.5 py-2 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
                     {servicesCopy.workingWithBadge}
                 </p>
 
-                <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white animate-gradient-text text-gradient">
+                <h2 className="text-3xl  sm:text-4xl font-bold text-white animate-gradient-text text-gradient">
                     {servicesCopy.whatYouGain}
                 </h2>
 
-                <p className="max-w-xl mt-6 text-base md:text-base text-zinc-400">
+                <p className="max-w-xl mt-6 text-lg md:text-lg text-zinc-400">
                     {servicesCopy.description}
                 </p>
             </div>
@@ -155,7 +155,7 @@ export default function WhatYouGet() {
                                 {item.title}
                             </h3>
 
-                            <p className="text-base text-zinc-400">
+                            <p className="text-lg text-zinc-400">
                                 {item.description}
                             </p>
                         </div>
@@ -225,7 +225,7 @@ export default function WhatYouGet() {
                         {item.title}
                     </h3>
 
-                    <p className="text-base text-zinc-400 leading-relaxed">
+                    <p className="text-lg text-zinc-400 leading-relaxed">
                         {item.description}
                     </p>
                 </div>

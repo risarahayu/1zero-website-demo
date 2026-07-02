@@ -37,7 +37,7 @@ export default function PortfolioPage() {
 
             {/* HEADER */}
             <div className="relative z-10 text-center space-y-4">
-                <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans  tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5 shadow-[0_0_12px_rgba(163,230,53,0.1)]">
+                <span className="inline-block px-3.5 py-2 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
                     {portfoliosPageCopy.badge}
                 </span>
                 <br />
@@ -57,7 +57,7 @@ export default function PortfolioPage() {
                         key={service}
                         onClick={() => setActiveTab(service)}
                         className={`
-                            px-4 py-2 rounded-full text-base border transition-all duration-300
+                            px-4 py-2 rounded-full text-lg border transition-all duration-300
                             ${activeTab === service
                                 ? "bg-brunswick-green-900 text-sea-salt border-white/10"
                                 : "bg-white/5 text-sea-salt border-white/10 hover:border-brunswick-green-500 hover:text-brunswick-green-500"
@@ -87,7 +87,7 @@ export default function PortfolioPage() {
                     <div className="absolute top-1/2 left-1/3 w-72 h-72 bg-brunswick-green-500/30 rounded-full blur-[90px] -translate-y-1/2 -translate-x-1/2 mix-blend-screen animate-pulse" />
                     <div className="absolute top-1/2 right-1/3 w-72 h-72 bg-[#a3e635]/20 rounded-full blur-[90px] -translate-y-1/2 translate-x-1/2 mix-blend-screen animate-pulse" style={{ animationDelay: '1s' }} />
                 </div>
-                <div className="space-y-12 justify-center items-center flex flex-col">
+                <div className="space-y-10 justify-center items-center flex flex-col">
 
                     <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-white tracking-tight z-10 drop-shadow-lg">
                         {portfoliosPageCopy.ctaTitle}
@@ -107,7 +107,7 @@ export default function PortfolioPage() {
                 animate-gradient
                 text-neutral-950
                 font-sans font-extrabold
-                text-base sm:text-base
+                text-lg sm:text-lg
                 rounded-2xl
                 transition-all
                 shadow-[0_10px_35px_rgba(223,217,198,0.25)]
@@ -124,7 +124,7 @@ export default function PortfolioPage() {
             {isBookingOpen && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">
                     <div className="bg-white dark:bg-gray-800 rounded-xl p-8 max-w-md w-full shadow-lg">
-                        <h2 className="text-2xl font-bold mb-4">{portfoliosPageCopy.modalTitle}</h2>
+                        <h2 className="text-2xl md:text-4xl font-bold mb-4">{portfoliosPageCopy.modalTitle}</h2>
                         <p className="mb-6">{portfoliosPageCopy.modalDescription}</p>
                         <button
                             className="px-4 py-2 bg-brunswick-green-500 text-white rounded hover:bg-brunswick-green-600"

@@ -39,13 +39,13 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Title Area */}
         <div className="space-y-4">
-          <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans  tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5">
+          <span className="inline-block px-3.5 py-2 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
             {whyUsCopy.sectionTag}
           </span>
-          <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white max-w-2xl">
+          <h2 className="font-sans text-2xl sm:text-4xl font-extrabold tracking-tight text-white max-w-2xl">
             {whyUsCopy.title}
           </h2>
-          <p className="max-w-2xl font-sans text-base sm:text-base text-sea-salt leading-relaxed">
+          <p className="max-w-2xl font-sans text-lg sm:text-lg text-sea-salt leading-relaxed">
             {whyUsCopy.description}
           </p>
         </div>
@@ -56,11 +56,11 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
           {/* LEFT: THE INTERACTIVE VIDEO CALL MOCKUP */}
           <div className="lg:col-span-5 flex flex-col justify-between rounded-3xl border border-neutral-900 bg-black/60 p-5 shadow-2xl relative space-y-4">
             {/* Header bar */}
-            <div className="flex items-center justify-between pb-3 border-b border-neutral-900 text-base font-sans text-neutral-400">
+            <div className="flex items-center justify-between pb-3 border-b border-neutral-900 text-lg font-sans text-neutral-400">
               <div className="flex items-center gap-2">
                 <span className="text-white font-medium">{whyUsCopy.meetOurTeam}</span>
               </div>
-              <div className="flex items-center gap-1.5 bg-neutral-900 px-2 py-0.5 rounded text-base">
+              <div className="flex items-center gap-1.5 bg-neutral-900 px-2 py-0.5 rounded text-lg">
                 <Video className="h-3 w-3 text-emerald-400" />
               </div>
             </div>
@@ -86,7 +86,7 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
                     {/* Indicators */}
                     <div className="space-y-1.5 mt-auto z-10 pt-2 bg-gradient-to-t from-black via-black/80 to-transparent">
                       <div className="flex items-center justify-between">
-                        <span className="block font-sans text-base font-bold text-white leading-none tracking-wide truncate">
+                        <span className="block font-sans text-lg font-bold text-white leading-none tracking-wide truncate">
                           {member.name}
                         </span>
 
@@ -126,7 +126,7 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
                     {/* Indicators */}
                     <div className="space-y-1.5 mt-auto z-10 pt-2 bg-gradient-to-t from-black via-black/80 to-transparent">
                       <div className="flex items-center justify-between">
-                        <span className="block font-sans text-base font-bold text-white leading-none tracking-wide truncate">
+                        <span className="block font-sans text-lg font-bold text-white leading-none tracking-wide truncate">
                           {member.name}
                         </span>
 
@@ -180,13 +180,13 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
             {/* Visual reassurance */}
             <div className="pt-4 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-center sm:text-left space-y-0.5">
-                <span className="block text-base font-semibold text-white">{whyUsCopy.reassuranceTitle}</span>
-                <span className="block text-base text-neutral-500 uppercase tracking-widest font-sans">{whyUsCopy.reassuranceSub}</span>
+                <span className="block text-lg font-semibold text-white">{whyUsCopy.reassuranceTitle}</span>
+                <span className="block text-lg text-neutral-500 uppercase tracking-widest font-sans">{whyUsCopy.reassuranceSub}</span>
               </div>
               {/* <button
                 id="why-us-booking-btn"
                 onClick={onOpenBooking}
-                className="p-3 px-6 rounded-xl bg-green-primary hover:bg-emerald-600 text-black font-sans font-medium text-base transition-colors cursor-pointer block text-center shadow-lg"
+                className="p-3 px-6 rounded-xl bg-green-primary hover:bg-emerald-600 text-black font-sans font-medium text-lg transition-colors cursor-pointer block text-center shadow-lg"
               >
                 Hire Our Unit &rarr;
               </button> */}

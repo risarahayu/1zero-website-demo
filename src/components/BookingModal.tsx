@@ -152,7 +152,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               </div>
               <div>
                 <h3 className="font-sans text-lg font-bold text-white">{bookingModalCopy.modalTitle}</h3>
-                <p className="font-sans text-base uppercase tracking-wider text-neutral-400">{bookingModalCopy.modalSub}</p>
+                <p className="font-sans text-lg uppercase tracking-wider text-neutral-400">{bookingModalCopy.modalSub}</p>
               </div>
             </div>
             <button
@@ -175,7 +175,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
           {/* Error Banner */}
           {errorStatus && (
-            <div className="flex items-center gap-2 rounded-lg bg-rose-500/10 p-3 text-base text-rose-400 border border-rose-500/20 mb-4 animate-shake">
+            <div className="flex items-center gap-2 rounded-lg bg-rose-500/10 p-3 text-lg text-rose-400 border border-rose-500/20 mb-4 animate-shake">
               <AlertCircle className="h-4 w-4 shrink-0" />
               <span>{errorStatus}</span>
             </div>
@@ -185,7 +185,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           {step === 1 && (
             <div className="space-y-6 py-2">
               <div>
-                <label className="block font-sans text-base font-semibold text-neutral-400 mb-3">{bookingModalCopy.dateLabel}</label>
+                <label className="block font-sans text-lg font-semibold text-neutral-400 mb-3">{bookingModalCopy.dateLabel}</label>
                 <div className="grid grid-cols-5 gap-2">
                   {getUpcomingDays().map((day) => {
                     const isSelected = selectedDate === day.rawDate;
@@ -205,7 +205,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                       >
                         <span className="font-sans text-[11px] font-medium tracking-wide text-neutral-400">{day.dayName}</span>
                         <span className="font-sans text-lg font-bold mt-1">{day.dayNum}</span>
-                        <span className="font-sans text-base text-neutral-500 mt-0.5">{day.month}</span>
+                        <span className="font-sans text-lg text-neutral-500 mt-0.5">{day.month}</span>
                       </button>
                     );
                   })}
@@ -213,7 +213,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               </div>
 
               <div>
-                <label className="block font-sans text-base font-semibold text-neutral-400 mb-3">{bookingModalCopy.slotsLabel}</label>
+                <label className="block font-sans text-lg font-semibold text-neutral-400 mb-3">{bookingModalCopy.slotsLabel}</label>
                 <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                   {timeSlots.map((time) => {
                     const isSelected = selectedTime === time;
@@ -226,7 +226,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                           setSelectedTime(time);
                           setErrorStatus("");
                         }}
-                        className={`flex items-center justify-center gap-1.5 p-2.5 rounded-xl border font-sans text-base transition-all ${isSelected
+                        className={`flex items-center justify-center gap-1.5 p-2.5 rounded-xl border font-sans text-lg transition-all ${isSelected
                           ? "border-emerald-500 bg-green-primary/10 text-white shadow-[0_0_15px_rgba(16,185,129,0.15)] font-semibold"
                           : "border-neutral-800 bg-[#111] hover:border-neutral-700 text-neutral-300 hover:text-white"
                           }`}
@@ -243,12 +243,12 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               <div className="flex items-center gap-2 rounded-xl bg-neutral-900/60 p-3 border border-neutral-800/80">
                 <Globe className="h-4 w-4 text-neutral-400" />
                 <div className="flex-1">
-                  <span className="block text-base text-neutral-500 font-sans">{bookingModalCopy.timezoneLabel}</span>
+                  <span className="block text-lg text-neutral-500 font-sans">{bookingModalCopy.timezoneLabel}</span>
                   <select
                     id="timezone-select"
                     value={timezone}
                     onChange={(e) => setTimezone(e.target.value)}
-                    className="w-full bg-transparent text-base font-sans text-neutral-200 focus:outline-none cursor-pointer"
+                    className="w-full bg-transparent text-lg font-sans text-neutral-200 focus:outline-none cursor-pointer"
                   >
                     <option value="UTC+7 (Jakarta / Western Indonesia)" className="bg-[#111]">WIB - Jakarta (UTC+7)</option>
                     <option value="UTC+8 (Singapore / Bali)" className="bg-[#111]">WITA - Singapore, Bali (UTC+8)</option>
@@ -264,7 +264,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 id="modal-next-step-btn"
                 type="button"
                 onClick={handleNextStep}
-                className="flex items-center justify-center gap-2 w-full p-3.5 rounded-xl bg-green-primary hover:bg-emerald-600 text-black font-sans font-bold text-base tracking-wide transition-all shadow-[0_4px_20px_rgba(16,185,129,0.2)] cursor-pointer"
+                className="flex items-center justify-center gap-2 w-full p-3.5 rounded-xl bg-green-primary hover:bg-emerald-600 text-black font-sans font-bold text-lg tracking-wide transition-all shadow-[0_4px_20px_rgba(16,185,129,0.2)] cursor-pointer"
               >
                 {bookingModalCopy.continueBtn}
                 <ChevronRight className="h-4 w-4" />
@@ -275,7 +275,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           {/* STEP 2: USER DETAILS FORM */}
           {step === 2 && (
             <form onSubmit={handleBookSubmit} className="space-y-4 py-2">
-              <div className="text-neutral-400 bg-neutral-900/60 p-3 rounded-xl border border-neutral border-neutral-800/80 text-base mb-2">
+              <div className="text-neutral-400 bg-neutral-900/60 p-3 rounded-xl border border-neutral border-neutral-800/80 text-lg mb-2">
                 <p className="flex items-center gap-1.5">
                   <Calendar className="h-3.5 w-3.5 text-emerald-400" />
                   <span>{bookingModalCopy.selectedDateLabel}</span>
@@ -289,7 +289,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               </div>
 
               <div className="space-y-1">
-                <label className="block text-base font-semibold text-neutral-400">{bookingModalCopy.fullNameLabel}</label>
+                <label className="block text-lg font-semibold text-neutral-400">{bookingModalCopy.fullNameLabel}</label>
                 <div className="relative">
                   <User className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-500" />
                   <input
@@ -299,13 +299,13 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                     placeholder={bookingModalCopy.fullNamePlaceholder}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full pl-10 pr-4 p-3.5 rounded-xl bg-neutral-900/60 border border-neutral-800 text-base focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/40 text-white font-sans transition-all"
+                    className="w-full pl-10 pr-4 p-3.5 rounded-xl bg-neutral-900/60 border border-neutral-800 text-lg focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/40 text-white font-sans transition-all"
                   />
                 </div>
               </div>
 
               <div className="space-y-1">
-                <label className="block text-base font-semibold text-neutral-400">{bookingModalCopy.emailLabel}</label>
+                <label className="block text-lg font-semibold text-neutral-400">{bookingModalCopy.emailLabel}</label>
                 <div className="relative">
                   <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-500" />
                   <input
@@ -315,13 +315,13 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                     placeholder={bookingModalCopy.emailPlaceholder}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full pl-10 pr-4 p-3.5 rounded-xl bg-neutral-900/60 border border-neutral-800 text-base focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/40 text-white font-sans transition-all"
+                    className="w-full pl-10 pr-4 p-3.5 rounded-xl bg-neutral-900/60 border border-neutral-800 text-lg focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/40 text-white font-sans transition-all"
                   />
                 </div>
               </div>
 
               <div className="space-y-1">
-                <label className="block text-base font-semibold text-neutral-400">{bookingModalCopy.companyLabel}</label>
+                <label className="block text-lg font-semibold text-neutral-400">{bookingModalCopy.companyLabel}</label>
                 <div className="relative">
                   <Building className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-500" />
                   <input
@@ -330,29 +330,29 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                     placeholder={bookingModalCopy.companyPlaceholder}
                     value={company}
                     onChange={(e) => setCompany(e.target.value)}
-                    className="w-full pl-10 pr-4 p-3.5 rounded-xl bg-neutral-900/60 border border-neutral-800 text-base focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/40 text-white font-sans transition-all"
+                    className="w-full pl-10 pr-4 p-3.5 rounded-xl bg-neutral-900/60 border border-neutral-800 text-lg focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/40 text-white font-sans transition-all"
                   />
                 </div>
               </div>
 
               <div className="space-y-1">
-                <label className="block text-base font-semibold text-neutral-400">{bookingModalCopy.notesLabel}</label>
+                <label className="block text-lg font-semibold text-neutral-400">{bookingModalCopy.notesLabel}</label>
                 <textarea
                   id="input-booking-notes"
                   rows={2}
                   placeholder={bookingModalCopy.notesPlaceholder}
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  className="w-full p-3.5 rounded-xl bg-neutral-900/60 border border-neutral-800 text-base focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/40 text-white font-sans transition-all resize-none"
+                  className="w-full p-3.5 rounded-xl bg-neutral-900/60 border border-neutral-800 text-lg focus:outline-none focus:border-emerald-500/80 focus:ring-1 focus:ring-emerald-500/40 text-white font-sans transition-all resize-none"
                 />
               </div>
 
               <div className="flex gap-3 pt-2">
-                 <button
+                <button
                   id="modal-back-btn"
                   type="button"
                   onClick={() => setStep(1)}
-                  className="w-1/3 p-3 rounded-xl border border-neutral-800 bg-[#111] hover:bg-neutral-900 text-neutral-300 font-sans text-base tracking-wide transition-colors cursor-pointer"
+                  className="w-1/3 p-3 rounded-xl border border-neutral-800 bg-[#111] hover:bg-neutral-900 text-neutral-300 font-sans text-lg tracking-wide transition-colors cursor-pointer"
                 >
                   {bookingModalCopy.backBtn}
                 </button>
@@ -360,7 +360,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   id="modal-submit-btn"
                   type="submit"
                   disabled={isSubmitting}
-                  className={`flex-1 p-3 rounded-xl bg-green-primary hover:bg-emerald-600 text-black font-sans font-medium text-base tracking-wide transition-all shadow-[0_4px_20px_rgba(16,185,129,0.2)] ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
+                  className={`flex-1 p-3 rounded-xl bg-green-primary hover:bg-emerald-600 text-black font-sans font-medium text-lg tracking-wide transition-all shadow-[0_4px_20px_rgba(16,185,129,0.2)] ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
                 >
                   {isSubmitting ? bookingModalCopy.submitBtnSubmitting : bookingModalCopy.submitBtnDefault}
                 </button>
@@ -377,26 +377,26 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
               <div className="space-y-2">
                 <h4 className="font-sans text-xl font-bold text-white">{bookingModalCopy.successTitle}</h4>
-                <p className="text-base text-neutral-400 max-w-md mx-auto">
+                <p className="text-lg text-neutral-400 max-w-md mx-auto">
                   {bookingModalCopy.successDesc1} <span className="text-white hover:underline">{email}</span>{bookingModalCopy.successDesc2}
                 </p>
               </div>
 
               <div className="max-w-md mx-auto rounded-xl bg-neutral-900/60 p-4 border border-emerald-500/10 space-y-3 divide-y divide-neutral-800 text-left">
-                <div className="pb-3 text-base">
-                  <p className="font-sans text-base text-emerald-400 tracking-wider">{bookingModalCopy.eventSummary}</p>
-                  <p className="font-sans font-semibold text-base text-white mt-1">{bookingModalCopy.eventTitle}</p>
+                <div className="pb-3 text-lg">
+                  <p className="font-sans text-lg text-emerald-400 tracking-wider">{bookingModalCopy.eventSummary}</p>
+                  <p className="font-sans font-semibold text-lg text-white mt-1">{bookingModalCopy.eventTitle}</p>
                   <p className="text-neutral-400 mt-0.5">{bookingModalCopy.eventDesc}</p>
                 </div>
-                <div className="py-2.5 pt-3 flex items-center gap-3 text-base text-neutral-300">
+                <div className="py-2.5 pt-3 flex items-center gap-3 text-lg text-neutral-300">
                   <Calendar className="h-4 w-4 text-emerald-400 shrink-0" />
                   <span>{selectedDate}</span>
                 </div>
-                <div className="py-2.5 flex items-center gap-3 text-base text-neutral-300">
+                <div className="py-2.5 flex items-center gap-3 text-lg text-neutral-300">
                   <Clock className="h-4 w-4 text-emerald-400 shrink-0" />
                   <span>{selectedTime} ({timezone})</span>
                 </div>
-                <div className="pt-3 flex items-center gap-3 text-base text-neutral-300">
+                <div className="pt-3 flex items-center gap-3 text-lg text-neutral-300">
                   <Video className="h-4 w-4 text-emerald-400 shrink-0" />
                   <span className="font-sans text-[11px] text-emerald-300 select-all underline cursor-pointer">meet.google.com/ico-nics-blue</span>
                 </div>
@@ -407,7 +407,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   id="modal-finish-btn"
                   type="button"
                   onClick={cleanClose}
-                  className="px-8 p-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white font-sans text-base tracking-wide transition-colors cursor-pointer border border-neutral-800"
+                  className="px-8 p-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white font-sans text-lg tracking-wide transition-colors cursor-pointer border border-neutral-800"
                 >
                   {bookingModalCopy.backToWebsiteBtn}
                 </button>

@@ -29,7 +29,7 @@ export default function CTA({ onOpenBooking }: CTAProps) {
 
           <div className="max-w-3xl mx-auto space-y-8">
             {/* Header label */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-900/20 px-4 py-1.5 text-base text-emerald-300 font-sans">
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-900/20 px-4 py-1.5 text-lg text-emerald-300 font-sans">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" />
 
               <span className="overflow-hidden whitespace-nowrap border-r border-emerald-400 animate-typing">
@@ -38,14 +38,14 @@ export default function CTA({ onOpenBooking }: CTAProps) {
             </div>
 
             <div className="space-y-4">
-              <h2 className="font-sans text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-none">
+              <h2 className="font-sans text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-none">
                 {ctaCopy.titleLine1}<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-[#dcd8cc]">
                   {ctaCopy.titleGradient}
                 </span> <br />
                 {ctaCopy.titleLine2}
               </h2>
-              <p className="max-w-xl mx-auto font-sans text-base sm:text-base text-sea-salt leading-relaxed pt-2">
+              <p className="max-w-xl mx-auto font-sans text-lg sm:text-lg text-sea-salt leading-relaxed pt-2">
                 {ctaCopy.description}
               </p>
             </div>
@@ -56,18 +56,18 @@ export default function CTA({ onOpenBooking }: CTAProps) {
             </div>
 
             {/* Telemetry checks under booking button */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-10 border-t border-emerald-500/10 text-left text-base text-emerald-100/60 font-sans max-w-2xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-10 border-t border-emerald-500/10 text-left text-lg text-emerald-100/60 font-sans max-w-2xl mx-auto">
               <div className="space-y-1">
                 <span className="block font-bold text-white">{ctaCopy.benefit1Title}</span>
-                <span className="block text-base text-brunswick-green-500">{ctaCopy.benefit1Desc}</span>
+                <span className="block text-lg text-brunswick-green-500">{ctaCopy.benefit1Desc}</span>
               </div>
               <div className="space-y-1">
                 <span className="block font-bold text-white">{ctaCopy.benefit2Title}</span>
-                <span className="block text-base text-brunswick-green-500">{ctaCopy.benefit2Desc}</span>
+                <span className="block text-lg text-brunswick-green-500">{ctaCopy.benefit2Desc}</span>
               </div>
               <div className="space-y-1">
                 <span className="block font-bold text-white">{ctaCopy.benefit3Title}</span>
-                <span className="block text-base text-brunswick-green-500">{ctaCopy.benefit3Desc}</span>
+                <span className="block text-lg text-brunswick-green-500">{ctaCopy.benefit3Desc}</span>
               </div>
             </div>
 

@@ -9,7 +9,7 @@ interface HeroProps {
 
 export default function Hero({ onOpenBooking }: HeroProps) {
   return (
-    <section id="home" className="relative  overflow-hidden">
+    <section id="home" className="relative  overflow-hidden py-16 ">
       {/* Aurora glow effect right behind hero heading */}
       {/* Animated Aurora Background */}
       <div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none">
@@ -17,21 +17,21 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         <div className="aurora-layer aurora-2" />
         <div className="aurora-layer aurora-3" />
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12 pt-10 pb-10">
-        {/* Upper Micro Label */}
-        <motion.div
+      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10 pt-10 pb-10"> */}
+      {/* Upper Micro Label */}
+      {/* <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 rounded-full border border-neutral-800/80 bg-neutral-900/60 p-1 px-4 text-base backdrop-blur-sm shadow-md"
+          className="inline-flex items-center gap-2 rounded-full border border-neutral-800/80 bg-neutral-900/60 p-1 px-4 text-lg backdrop-blur-sm shadow-md"
         >
           <span className="h-2 w-2 rounded-full bg-green-primary animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.9)]" />
-          <span className="font-sans text-base font-medium text-neutral-300">
+          <span className="font-sans text-lg font-medium uppercase tracking-widest text-neutral-400">
             {heroCopy.performanceLabel}
           </span>
-        </motion.div>
-      </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
+        </motion.div> */}
+      {/* </div> */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10 border-b border-neutral-900">
 
         {/* Master Copy */}
         <div className="space-y-6">
@@ -39,7 +39,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-sans text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1]"
+            className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1]"
           >
             {heroCopy.simplifyTitle} <br />
             <span className="animate-gradient-text text-gradient ">
@@ -51,7 +51,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-2xl mx-auto font-sans text-sea-salt text-base sm:text-base leading-relaxed"
+            className="max-w-2xl mx-auto font-sans text-sea-salt text-lg sm:text-lg leading-relaxed"
           >
             {heroCopy.tagline}
           </motion.p>
@@ -70,9 +70,9 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="h-3.5 w-3.5 fill-emerald-500 text-emerald-500" />
               ))}
-              <span className="font-sans text-base text-white ml-1.5 font-bold">4.9★</span>
+              <span className="font-sans text-lg text-white ml-1.5 font-bold">4.9★</span>
             </div> */}
-            <p className="font-sans text-base leading-relaxed text-neutral-300">
+            <p className="font-sans text-lg leading-relaxed text-neutral-300">
               {heroCopy.ctaText}
             </p>
             {/* <div className="flex items-center gap-1.5 font-sans text-[9px] text-neutral-500 uppercase tracking-wider">
@@ -85,13 +85,13 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           <button
             id="hero-book-call-card"
             onClick={onOpenBooking}
-            className="md:col-span-2 group flex flex-col justify-center items-center gap-2 p-3 rounded-xl bg-brunswick-green-primary hover:bg-brunswick-green-700 hover:text-white text-sea-salt text-center transition-all cursor-pointer font-sans font-black text-base relative overflow-hidden"
+            className="md:col-span-2 group flex flex-col justify-center items-center gap-2 p-3 rounded-xl bg-brunswick-green-primary hover:bg-brunswick-green-700 hover:text-white text-sea-salt text-center transition-all cursor-pointer font-sans font-black text-lg relative overflow-hidden"
           >
             {/* Soft inner glow */}
             <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:bg-brunswick-green-700 transition-opacity" />
             <PhoneCall className="h-5 w-5 animate-bounce shrink-0" />
             <span className="tracking-wider uppercase">{heroCopy.ctaButtonText}</span>
-            <span className="flex items-center gap-1 font-sans text-base  font-medium">
+            <span className="flex items-center gap-1 font-sans text-lg  font-medium">
               {heroCopy.ctaButtonSubtext}
               <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
             </span>
@@ -103,9 +103,9 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="pt-6"
+          className=""
         >
-          <span className="font-sans text-base uppercase tracking-[0.2em] text-sea-salt select-none">
+          <span className="font-sans text-lg uppercase tracking-widest text-neutral-500 select-none">
             {heroCopy.deliveringLabel}
           </span>
         </motion.div>
@@ -115,9 +115,9 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="pt-6 border-t border-neutral-900"
+          className="pb-10 space-y-6 "
         >
-          <p className="font-sans text-base text-sea-salt  tracking-widest mb-6">
+          <p className="inline-block px-3.5 py-2 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
             {heroCopy.trustedBy}
           </p>
 

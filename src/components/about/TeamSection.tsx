@@ -350,10 +350,10 @@ const TeamSection: React.FC = () => {
     };
 
     return (
-        <section className="py-12 text-slate-50 relative">
+        <section className="py-16 text-slate-50 relative">
             <div className="w-[75%] mx-auto">
 
-                <h2 className="text-4xl font-bold text-center mb-8">
+                <h2 className="text-2xl sm:text-4xl font-bold text-center mb-8">
                     {/* Injecting the dynamic title here! */}
                     {aboutCopy.en.teamTitle}
                 </h2>
@@ -390,7 +390,7 @@ const TeamSection: React.FC = () => {
                             <h3 className="text-lg font-semibold text-white">
                                 {member.name}
                             </h3>
-                            <p className="text-base text-gray-300">
+                            <p className="text-lg text-gray-300">
                                 {member.role}
                             </p>
                         </div>
@@ -423,7 +423,7 @@ const TeamSection: React.FC = () => {
                                 />
 
                                 {/* Name */}
-                                <h3 className="text-base font-semibold text-white leading-tight">
+                                <h3 className="text-lg font-semibold text-white leading-tight">
                                     {member.name}
                                 </h3>
 
@@ -458,7 +458,7 @@ const TeamSection: React.FC = () => {
                                 />
 
                                 {/* Name */}
-                                <h3 className="text-base font-semibold text-white leading-tight">
+                                <h3 className="text-lg font-semibold text-white leading-tight">
                                     {member.name}
                                 </h3>
 
@@ -521,7 +521,7 @@ const TeamSection: React.FC = () => {
 
                             {/* Social */}
                             <div>
-                                <h4 className="text-base font-semibold text-white mb-4">
+                                <h4 className="text-lg font-semibold text-white mb-4">
                                     Social Media
                                 </h4>
 
@@ -579,7 +579,7 @@ const TeamSection: React.FC = () => {
 
                             {/* SDG */}
                             <div>
-                                <h4 className="text-base font-semibold text-white mb-4">
+                                <h4 className="text-lg font-semibold text-white mb-4">
                                     Sustainable Development Goals
                                 </h4>
 
@@ -644,13 +644,13 @@ const TeamSection: React.FC = () => {
                                             {selectedMember.name}
                                         </h3>
 
-                                        <p className="mt-1 text-base text-zinc-400">
+                                        <p className="mt-1 text-lg text-zinc-400">
                                             {selectedMember.role}
                                         </p>
                                     </div>
 
                                     {/* Bio */}
-                                    <div className="text-base text-zinc-300 leading-relaxed">
+                                    <div className="text-lg text-zinc-300 leading-relaxed">
                                         <p>{selectedMember.bio}</p>
                                     </div>
 

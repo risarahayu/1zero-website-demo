@@ -107,13 +107,13 @@ export default function ContactPage() {
                    ========================================== */}
                 <div className="lg:col-span-5 flex flex-col justify-center space-y-8">
                     <div>
-                        <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans  tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5 shadow-[0_0_12px_rgba(163,230,53,0.1)]">
+                        <span className="inline-block px-3.5 py-2 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
                             {contactUsCopy.badge}
                         </span>
                         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mt-3 text-gradient leading-tight">
                             {contactUsCopy.title}
                         </h1>
-                        <p className="text-white/60 mt-4 text-base md:text-lg leading-relaxed">
+                        <p className="text-white/60 mt-4 text-lg md:text-lg leading-relaxed">
                             {contactUsCopy.description}
                         </p>
                     </div>
@@ -126,7 +126,7 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <p className="text-sm text-white/40 font-medium uppercase tracking-wider">{contactUsCopy.emailUsLabel}</p>
-                                <p className="text-white/80 font-medium text-base md:text-base">{contactUsCopy.emailUsVal}</p>
+                                <p className="text-white/80 font-medium text-lg md:text-lg">{contactUsCopy.emailUsVal}</p>
                             </div>
                         </div>
 
@@ -136,7 +136,7 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <p className="text-sm text-white/40 font-medium uppercase tracking-wider">{contactUsCopy.callUsLabel}</p>
-                                <p className="text-white/80 font-medium text-base md:text-base">{contactUsCopy.callUsVal}</p>
+                                <p className="text-white/80 font-medium text-lg md:text-lg">{contactUsCopy.callUsVal}</p>
                             </div>
                         </div>
 
@@ -146,7 +146,7 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <p className="text-sm text-white/40 font-medium uppercase tracking-wider">{contactUsCopy.locationLabel}</p>
-                                <p className="text-white/80 font-medium text-base md:text-base">
+                                <p className="text-white/80 font-medium text-lg md:text-lg">
                                     {contactUsCopy.locationVal}
                                 </p>
                             </div>
@@ -177,7 +177,7 @@ export default function ContactPage() {
                             <div className="mb-8 p-4 rounded-xl border border-green-500/30 bg-green-500/5 flex items-start gap-3 shadow-[0_0_15px_rgba(133,223,195,0.1)] transition-all duration-300">
                                 <CheckCircle className="w-5 h-5 text-brunswick-green-900 flex-shrink-0 mt-0.5" />
                                 <div>
-                                    <h4 className="text-brunswick-green-900 font-semibold text-base">{contactUsCopy.successTitle}</h4>
+                                    <h4 className="text-brunswick-green-900 font-semibold text-lg">{contactUsCopy.successTitle}</h4>
                                     <p className="text-white/60 text-sm mt-1">{contactUsCopy.successDesc}</p>
                                 </div>
                             </div>
@@ -188,7 +188,7 @@ export default function ContactPage() {
                             <div className="mb-8 p-4 rounded-xl border border-red-500/30 bg-red-500/5 flex items-start gap-3 shadow-[0_0_15px_rgba(239,68,68,0.1)] transition-all duration-300">
                                 <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                                 <div>
-                                    <h4 className="text-red-500 font-semibold text-base">{contactUsCopy.failTitle}</h4>
+                                    <h4 className="text-red-500 font-semibold text-lg">{contactUsCopy.failTitle}</h4>
                                     <p className="text-white/60 text-sm mt-1">{formError}</p>
                                 </div>
                             </div>
@@ -218,7 +218,7 @@ export default function ContactPage() {
                                     value={formData.name}
                                     onChange={handleChange}
                                     placeholder="John Doe"
-                                    className={`w-full px-4 py-3.5 bg-white/[0.03] text-white text-base rounded-xl border outline-none transition-all duration-300 focus:bg-white/[0.05] ${errors.name
+                                    className={`w-full px-4 py-3.5 bg-white/[0.03] text-white text-lg rounded-xl border outline-none transition-all duration-300 focus:bg-white/[0.05] ${errors.name
                                         ? "border-red-500/40 focus:border-red-500 focus:shadow-[0_0_15px_rgba(239,68,68,0.25)]"
                                         : "border-white/10 focus:border-brunswick-green-900/60 focus:shadow-[0_0_15px_rgba(133,223,195,0.2)]"
                                         }`}
@@ -241,7 +241,7 @@ export default function ContactPage() {
                                     value={formData.email}
                                     onChange={handleChange}
                                     placeholder="john@company.com"
-                                    className={`w-full px-4 py-3.5 bg-white/[0.03] text-white text-base rounded-xl border outline-none transition-all duration-300 focus:bg-white/[0.05] ${errors.email
+                                    className={`w-full px-4 py-3.5 bg-white/[0.03] text-white text-lg rounded-xl border outline-none transition-all duration-300 focus:bg-white/[0.05] ${errors.email
                                         ? "border-red-500/40 focus:border-red-500 focus:shadow-[0_0_15px_rgba(239,68,68,0.25)]"
                                         : "border-white/10 border-brunswick-green-900/60 focus:shadow-[0_0_15px_rgba(133,223,195,0.2)]"
                                         }`}
@@ -264,7 +264,7 @@ export default function ContactPage() {
                                     value={formData.message}
                                     onChange={handleChange}
                                     placeholder={contactUsCopy.messagePlaceholder}
-                                    className={`w-full px-4 py-3.5 bg-white/[0.03] text-white text-base rounded-xl border outline-none transition-all duration-300 resize-none focus:bg-white/[0.05] ${errors.message
+                                    className={`w-full px-4 py-3.5 bg-white/[0.03] text-white text-lg rounded-xl border outline-none transition-all duration-300 resize-none focus:bg-white/[0.05] ${errors.message
                                         ? "border-red-500/40 focus:border-red-500 focus:shadow-[0_0_15px_rgba(239,68,68,0.25)]"
                                         : "border-brunswick-green-900/60 focus:shadow-[0_0_15px_rgba(133,223,195,0.2)]"
                                         }`}
@@ -291,7 +291,7 @@ export default function ContactPage() {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className={`w-full mt-2 relative overflow-hidden group rounded-xl bg-brunswick-green-900 px-5 py-4 text-base font-semibold tracking-wide text-sea-salt transition-all duration-300  hover:bg-brunswick-green-700 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
+                                className={`w-full mt-2 relative overflow-hidden group rounded-xl bg-brunswick-green-900 px-5 py-4 text-lg font-semibold tracking-wide text-sea-salt transition-all duration-300  hover:bg-brunswick-green-700 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
                             >
 
                                 <span className="flex items-center justify-center gap-2 font-bold text-sea-salt uppercase tracking-wider">

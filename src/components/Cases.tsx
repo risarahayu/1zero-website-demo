@@ -98,7 +98,7 @@ function CaseCard({
             <span
               className={`h-1.5 w-1.5 rounded-full ${item.accentColor.replace("text-", "bg-")} animate-pulse`}
             />
-            <span className="font-sans text-[9px] text-neutral-400 uppercase tracking-widest">
+            <span className="font-sans text-lg text-neutral-400 uppercase tracking-widest">
               {casesCopy.liveCase}
             </span>
           </div>
@@ -112,7 +112,7 @@ function CaseCard({
 
           {/* Tag chip */}
           <span
-            className={`relative z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[9px] font-sans uppercase tracking-wider border border-neutral-700/60 bg-neutral-950/70 ${item.accentColor}`}
+            className={`relative z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-lg font-sans uppercase tracking-wider border border-neutral-700/60 bg-neutral-950/70 ${item.accentColor}`}
           >
             <Clock className="h-2.5 w-2.5" />
             {item.tag}
@@ -120,24 +120,24 @@ function CaseCard({
         </div>
 
         <div className="space-y-1 pb-2">
-          <p className="font-sans text-[9px] uppercase tracking-widest text-neutral-500">
+          <p className="font-sans text-lg uppercase tracking-widest text-neutral-500">
             {item.label}
           </p>
           <h3 className="font-sans text-lg font-bold text-white">{item.title}</h3>
-          <p className="font-sans text-base text-neutral-400 leading-relaxed line-clamp-2">
+          <p className="font-sans text-lg text-neutral-400 leading-relaxed line-clamp-2">
             {item.desc}
           </p>
         </div>
       </div>
 
       {/* Footer row */}
-      <div className="flex items-center justify-between pt-4 border-t border-neutral-900 text-base font-sans">
+      <div className="flex items-center justify-between pt-4 border-t border-neutral-900 text-lg font-sans">
         <div className="flex items-center gap-1.5 text-neutral-500">
           <MessageSquare className="h-3.5 w-3.5" />
           <span>{casesCopy.discussionCompleted}</span>
         </div>
         <span
-          className={`font-sans text-base ${item.accentColor} flex items-center gap-1 group-hover:opacity-80 transition-opacity`}
+          className={`font-sans text-lg ${item.accentColor} flex items-center gap-1 group-hover:opacity-80 transition-opacity`}
         >
           {casesCopy.discussStrategy}
           <ArrowUpRight className="h-3.5 w-3.5" />
@@ -262,15 +262,15 @@ export default function Cases({ onOpenBooking }: CasesProps) {
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end pb-8 border-b border-neutral-900">
           <div className="lg:col-span-8 space-y-3">
-            <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans uppercase tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5">
+            <span className="inline-block px-3.5 py-2 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
               {casesCopy.badge}
             </span>
-            <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-none">
+            <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-white leading-none">
               {casesCopy.titleLine1} <br />{casesCopy.titleLine2}
             </h2>
           </div>
           <div className="lg:col-span-4 flex flex-col gap-4 items-start lg:items-end">
-            <p className="font-sans text-base sm:text-base text-neutral-400 leading-relaxed max-w-sm lg:text-right">
+            <p className="font-sans text-lg sm:text-lg text-neutral-400 leading-relaxed max-w-sm lg:text-right">
               {casesCopy.description}
             </p>
             {/* Navigation */}
@@ -281,7 +281,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
               >
                 <ArrowLeft className="h-3.5 w-3.5" />
               </button>
-              <span className="font-sans text-base text-neutral-500 tracking-wider">
+              <span className="font-sans text-lg text-neutral-500 tracking-wider">
                 {String((isDesktop ? activeIndex : mobileDisplayIndex) + 1).padStart(2, "0")} /{" "}
                 {String(total).padStart(2, "0")}
               </span>
@@ -323,11 +323,10 @@ export default function Cases({ onOpenBooking }: CasesProps) {
                 <button
                   key={i}
                   onClick={() => setActiveIndex(i)}
-                  className={`transition-all duration-300 rounded-full ${
-                    i === activeIndex
-                      ? "w-6 h-1.5 bg-brunswick-green-500"
-                      : "w-1.5 h-1.5 bg-neutral-700 hover:bg-neutral-500"
-                  }`}
+                  className={`transition-all duration-300 rounded-full ${i === activeIndex
+                    ? "w-6 h-1.5 bg-brunswick-green-500"
+                    : "w-1.5 h-1.5 bg-neutral-700 hover:bg-neutral-500"
+                    }`}
                 />
               ))}
             </div>
@@ -369,11 +368,10 @@ export default function Cases({ onOpenBooking }: CasesProps) {
                     const diff = i - mobileDisplayIndex;
                     setVirtualIndex((prev) => prev + diff);
                   }}
-                  className={`transition-all duration-300 rounded-full ${
-                    i === mobileDisplayIndex
-                      ? "w-6 h-1.5 bg-brunswick-green-500"
-                      : "w-1.5 h-1.5 bg-neutral-700 hover:bg-neutral-500"
-                  }`}
+                  className={`transition-all duration-300 rounded-full ${i === mobileDisplayIndex
+                    ? "w-6 h-1.5 bg-brunswick-green-500"
+                    : "w-1.5 h-1.5 bg-neutral-700 hover:bg-neutral-500"
+                    }`}
                 />
               ))}
             </div>
