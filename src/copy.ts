@@ -189,3 +189,26 @@ export const casesCopy = {
   description: "Teams are already turning ideas into premium, resilient system software. What high-performance framework are we building next together?",
   marqueeText: "Now is your turn"
 };
+
+export const offerCopy = {
+  heroTitleLine1: "We know you didn’t come here without a problem.",
+  heroTitleLine2: "Something in your system isn’t working — and you can feel it.",
+  heroSubtitle: "This isn’t a form. It’s a diagnosis of your growth system.",
+  accordionTitle: "Which area of your business is facing bottlenecks?",
+  accordionSubtitle: "Click to explore the diagnosis and solutions.",
+  conditionText: "If you’re experiencing this, or if this is happening in your system:",
+  ourServiceLabel: "Our Service",
+  downloadBtn: "Download PDF",
+  afterImplementationLabel: "After implementation"
+};
+
+export const portfoliosPageCopy = {
+  badge: "Our Portfolios",
+  title: "Ideas Turned Into Products",
+  description: "Selected projects grouped by service category.",
+  ctaTitle: "Start Your Project With",
+  bookButton: "Book a Section",
+  modalTitle: "Book a Section",
+  modalDescription: "This is a placeholder for the booking modal. Implement your actual booking UI here.",
+  modalCloseBtn: "Close"
+};
