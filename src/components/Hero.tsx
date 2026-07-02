@@ -26,7 +26,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           className="inline-flex items-center gap-2 rounded-full border border-neutral-800/80 bg-neutral-900/60 p-1 px-4 text-base backdrop-blur-sm shadow-md"
         >
           <span className="h-2 w-2 rounded-full bg-green-primary animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.9)]" />
-          <span className="font-sans text-sm font-medium text-neutral-300">
+          <span className="font-sans text-base font-medium text-neutral-300">
             {heroCopy.performanceLabel}
           </span>
         </motion.div>
@@ -51,7 +51,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-2xl mx-auto font-sans text-sea-salt text-sm sm:text-base leading-relaxed"
+            className="max-w-2xl mx-auto font-sans text-sea-salt text-base sm:text-base leading-relaxed"
           >
             {heroCopy.tagline}
           </motion.p>
@@ -85,7 +85,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           <button
             id="hero-book-call-card"
             onClick={onOpenBooking}
-            className="md:col-span-2 group flex flex-col justify-center items-center gap-2 p-3 rounded-xl bg-brunswick-green-primary hover:bg-brunswick-green-700 hover:text-white text-sea-salt text-center transition-all cursor-pointer font-sans font-black text-sm relative overflow-hidden"
+            className="md:col-span-2 group flex flex-col justify-center items-center gap-2 p-3 rounded-xl bg-brunswick-green-primary hover:bg-brunswick-green-700 hover:text-white text-sea-salt text-center transition-all cursor-pointer font-sans font-black text-base relative overflow-hidden"
           >
             {/* Soft inner glow */}
             <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:bg-brunswick-green-700 transition-opacity" />
@@ -117,7 +117,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="pt-6 border-t border-neutral-900"
         >
-          <p className="font-sans text-sm text-sea-salt  tracking-widest mb-6">
+          <p className="font-sans text-base text-sea-salt  tracking-widest mb-6">
             {heroCopy.trustedBy}
           </p>
 

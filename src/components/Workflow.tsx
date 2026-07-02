@@ -231,7 +231,7 @@ function Panel({
                   >
                     <CheckCircle2 className={`h-3 w-3 ${cfg.accentText}`} />
                   </div>
-                  <span className="font-sans text-sm text-neutral-300">{b}</span>
+                  <span className="font-sans text-base text-neutral-300">{b}</span>
                 </div>
               ))}
             </div>
@@ -249,7 +249,7 @@ function Panel({
               <p className={`font-sans text-[9px] uppercase tracking-widest font-bold mb-3 ${cfg.accentText}`}>
                 {workflowCopy.commitStatusLabel}
               </p>
-              <p className="font-sans text-sm text-neutral-400 leading-relaxed">
+              <p className="font-sans text-base text-neutral-400 leading-relaxed">
                 {workflowCopy.commitStatusDescStart}{" "}
                 <strong className="text-neutral-200 font-semibold">{step.number}</strong>{" "}
                 {workflowCopy.commitStatusDescEnd}

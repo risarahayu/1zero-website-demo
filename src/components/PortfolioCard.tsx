@@ -56,11 +56,11 @@ export default function PortfolioCard({ project, onReadMore, className = "", sho
 
         {showService && (
           <div className="pt-2 flex flex-col space-y-2">
-            <span className="text-[10px] sm:text-xs font-semibold text-zinc-500 uppercase tracking-widest">
+            <span className="text-[10px] sm:text-sm font-semibold text-zinc-500 uppercase tracking-widest">
               Service:
             </span>
             <div className="flex">
-              <span className={`inline-block px-3 py-1 rounded-full border text-[10px] sm:text-xs uppercase tracking-widest font-medium ${getServiceColorClass(project.service)}`}>
+              <span className={`inline-block px-3 py-1 rounded-full border text-[10px] sm:text-sm uppercase tracking-widest font-medium ${getServiceColorClass(project.service)}`}>
                 {project.service}
               </span>
             </div>

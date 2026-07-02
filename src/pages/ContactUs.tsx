@@ -125,8 +125,8 @@ export default function ContactPage() {
                                 <Mail className="w-5 h-5" />
                             </div>
                             <div>
-                                <p className="text-xs text-white/40 font-medium uppercase tracking-wider">{contactUsCopy.emailUsLabel}</p>
-                                <p className="text-white/80 font-medium text-sm md:text-base">{contactUsCopy.emailUsVal}</p>
+                                <p className="text-sm text-white/40 font-medium uppercase tracking-wider">{contactUsCopy.emailUsLabel}</p>
+                                <p className="text-white/80 font-medium text-base md:text-base">{contactUsCopy.emailUsVal}</p>
                             </div>
                         </div>
 
@@ -135,8 +135,8 @@ export default function ContactPage() {
                                 <Phone className="w-5 h-5" />
                             </div>
                             <div>
-                                <p className="text-xs text-white/40 font-medium uppercase tracking-wider">{contactUsCopy.callUsLabel}</p>
-                                <p className="text-white/80 font-medium text-sm md:text-base">{contactUsCopy.callUsVal}</p>
+                                <p className="text-sm text-white/40 font-medium uppercase tracking-wider">{contactUsCopy.callUsLabel}</p>
+                                <p className="text-white/80 font-medium text-base md:text-base">{contactUsCopy.callUsVal}</p>
                             </div>
                         </div>
 
@@ -145,8 +145,8 @@ export default function ContactPage() {
                                 <MapPin className="w-5 h-5" />
                             </div>
                             <div>
-                                <p className="text-xs text-white/40 font-medium uppercase tracking-wider">{contactUsCopy.locationLabel}</p>
-                                <p className="text-white/80 font-medium text-sm md:text-base">
+                                <p className="text-sm text-white/40 font-medium uppercase tracking-wider">{contactUsCopy.locationLabel}</p>
+                                <p className="text-white/80 font-medium text-base md:text-base">
                                     {contactUsCopy.locationVal}
                                 </p>
                             </div>
@@ -156,7 +156,7 @@ export default function ContactPage() {
                     {/* Placeholder Stylized Map Neon (Optional) */}
                     <div className="relative h-32 w-full rounded-xl border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent overflow-hidden flex items-center justify-center group border-dashed">
                         <div className="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:16px_16px]"></div>
-                        <span className="text-xs text-white/30 tracking-widest font-mono uppercase group-hover:text-green-500/50 transition-colors">
+                        <span className="text-sm text-white/30 tracking-widest font-mono uppercase group-hover:text-green-500/50 transition-colors">
                             [ System Grid Coordinates Active ]
                         </span>
                     </div>
@@ -177,8 +177,8 @@ export default function ContactPage() {
                             <div className="mb-8 p-4 rounded-xl border border-green-500/30 bg-green-500/5 flex items-start gap-3 shadow-[0_0_15px_rgba(133,223,195,0.1)] transition-all duration-300">
                                 <CheckCircle className="w-5 h-5 text-brunswick-green-900 flex-shrink-0 mt-0.5" />
                                 <div>
-                                    <h4 className="text-brunswick-green-900 font-semibold text-sm">{contactUsCopy.successTitle}</h4>
-                                    <p className="text-white/60 text-xs mt-1">{contactUsCopy.successDesc}</p>
+                                    <h4 className="text-brunswick-green-900 font-semibold text-base">{contactUsCopy.successTitle}</h4>
+                                    <p className="text-white/60 text-sm mt-1">{contactUsCopy.successDesc}</p>
                                 </div>
                             </div>
                         )}
@@ -188,8 +188,8 @@ export default function ContactPage() {
                             <div className="mb-8 p-4 rounded-xl border border-red-500/30 bg-red-500/5 flex items-start gap-3 shadow-[0_0_15px_rgba(239,68,68,0.1)] transition-all duration-300">
                                 <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                                 <div>
-                                    <h4 className="text-red-500 font-semibold text-sm">{contactUsCopy.failTitle}</h4>
-                                    <p className="text-white/60 text-xs mt-1">{formError}</p>
+                                    <h4 className="text-red-500 font-semibold text-base">{contactUsCopy.failTitle}</h4>
+                                    <p className="text-white/60 text-sm mt-1">{formError}</p>
                                 </div>
                             </div>
                         )}
@@ -209,7 +209,7 @@ export default function ContactPage() {
 
                             {/* FIELD 1: NAME (Kondisi Default / Error) */}
                             <div className="space-y-2">
-                                <label className="text-xs font-semibold text-white/50 uppercase tracking-wider">
+                                <label className="text-sm font-semibold text-white/50 uppercase tracking-wider">
                                     {contactUsCopy.nameLabel}
                                 </label>
                                 <input
@@ -218,13 +218,13 @@ export default function ContactPage() {
                                     value={formData.name}
                                     onChange={handleChange}
                                     placeholder="John Doe"
-                                    className={`w-full px-4 py-3.5 bg-white/[0.03] text-white text-sm rounded-xl border outline-none transition-all duration-300 focus:bg-white/[0.05] ${errors.name
+                                    className={`w-full px-4 py-3.5 bg-white/[0.03] text-white text-base rounded-xl border outline-none transition-all duration-300 focus:bg-white/[0.05] ${errors.name
                                         ? "border-red-500/40 focus:border-red-500 focus:shadow-[0_0_15px_rgba(239,68,68,0.25)]"
                                         : "border-white/10 focus:border-brunswick-green-900/60 focus:shadow-[0_0_15px_rgba(133,223,195,0.2)]"
                                         }`}
                                 />
                                 {errors.name && (
-                                    <p className="text-red-400 text-xs flex items-center gap-1.5 mt-1">
+                                    <p className="text-red-400 text-sm flex items-center gap-1.5 mt-1">
                                         <AlertCircle className="w-3.5 h-3.5" /> {errors.name}
                                     </p>
                                 )}
@@ -232,7 +232,7 @@ export default function ContactPage() {
 
                             {/* FIELD 2: EMAIL (Kondisi Default / Error) */}
                             <div className="space-y-2">
-                                <label className="text-xs font-semibold text-white/50 uppercase tracking-wider">
+                                <label className="text-sm font-semibold text-white/50 uppercase tracking-wider">
                                     {contactUsCopy.emailLabel}
                                 </label>
                                 <input
@@ -241,13 +241,13 @@ export default function ContactPage() {
                                     value={formData.email}
                                     onChange={handleChange}
                                     placeholder="john@company.com"
-                                    className={`w-full px-4 py-3.5 bg-white/[0.03] text-white text-sm rounded-xl border outline-none transition-all duration-300 focus:bg-white/[0.05] ${errors.email
+                                    className={`w-full px-4 py-3.5 bg-white/[0.03] text-white text-base rounded-xl border outline-none transition-all duration-300 focus:bg-white/[0.05] ${errors.email
                                         ? "border-red-500/40 focus:border-red-500 focus:shadow-[0_0_15px_rgba(239,68,68,0.25)]"
                                         : "border-white/10 border-brunswick-green-900/60 focus:shadow-[0_0_15px_rgba(133,223,195,0.2)]"
                                         }`}
                                 />
                                 {errors.email && (
-                                    <p className="text-red-400 text-xs flex items-center gap-1.5 mt-1">
+                                    <p className="text-red-400 text-sm flex items-center gap-1.5 mt-1">
                                         <AlertCircle className="w-3.5 h-3.5" /> {errors.email}
                                     </p>
                                 )}
@@ -255,7 +255,7 @@ export default function ContactPage() {
 
                             {/* FIELD 3: MESSAGE (Kondisi Default / Error) */}
                             <div className="space-y-2">
-                                <label className="text-xs font-semibold text-white/50 uppercase tracking-wider">
+                                <label className="text-sm font-semibold text-white/50 uppercase tracking-wider">
                                     {contactUsCopy.messageLabel}
                                 </label>
                                 <textarea
@@ -264,13 +264,13 @@ export default function ContactPage() {
                                     value={formData.message}
                                     onChange={handleChange}
                                     placeholder={contactUsCopy.messagePlaceholder}
-                                    className={`w-full px-4 py-3.5 bg-white/[0.03] text-white text-sm rounded-xl border outline-none transition-all duration-300 resize-none focus:bg-white/[0.05] ${errors.message
+                                    className={`w-full px-4 py-3.5 bg-white/[0.03] text-white text-base rounded-xl border outline-none transition-all duration-300 resize-none focus:bg-white/[0.05] ${errors.message
                                         ? "border-red-500/40 focus:border-red-500 focus:shadow-[0_0_15px_rgba(239,68,68,0.25)]"
                                         : "border-brunswick-green-900/60 focus:shadow-[0_0_15px_rgba(133,223,195,0.2)]"
                                         }`}
                                 />
                                 {errors.message && (
-                                    <p className="text-red-400 text-xs flex items-center gap-1.5 mt-1">
+                                    <p className="text-red-400 text-sm flex items-center gap-1.5 mt-1">
                                         <AlertCircle className="w-3.5 h-3.5" /> {errors.message}
                                     </p>
                                 )}
@@ -291,7 +291,7 @@ export default function ContactPage() {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className={`w-full mt-2 relative overflow-hidden group rounded-xl bg-brunswick-green-900 px-5 py-4 text-sm font-semibold tracking-wide text-sea-salt transition-all duration-300  hover:bg-brunswick-green-700 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
+                                className={`w-full mt-2 relative overflow-hidden group rounded-xl bg-brunswick-green-900 px-5 py-4 text-base font-semibold tracking-wide text-sea-salt transition-all duration-300  hover:bg-brunswick-green-700 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
                             >
 
                                 <span className="flex items-center justify-center gap-2 font-bold text-sea-salt uppercase tracking-wider">

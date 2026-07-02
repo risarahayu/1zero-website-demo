@@ -66,7 +66,7 @@ export default function WhatYouGet() {
                     {servicesCopy.whatYouGain}
                 </h2>
 
-                <p className="max-w-xl mt-6 text-sm md:text-base text-zinc-400">
+                <p className="max-w-xl mt-6 text-base md:text-base text-zinc-400">
                     {servicesCopy.description}
                 </p>
             </div>
@@ -155,7 +155,7 @@ export default function WhatYouGet() {
                                 {item.title}
                             </h3>
 
-                            <p className="text-sm text-zinc-400">
+                            <p className="text-base text-zinc-400">
                                 {item.description}
                             </p>
                         </div>
@@ -225,7 +225,7 @@ export default function WhatYouGet() {
                         {item.title}
                     </h3>
 
-                    <p className="text-sm text-zinc-400 leading-relaxed">
+                    <p className="text-base text-zinc-400 leading-relaxed">
                         {item.description}
                     </p>
                 </div>
