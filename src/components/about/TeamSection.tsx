@@ -238,7 +238,7 @@ export const members: TeamMember[] = [
         images:
         {
             imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Krisna.webp`,
-            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Krisna.  `,
+            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Krisna.webp`,
             ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Krisna.webp`,
             ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Krisna.webp`,
         },
