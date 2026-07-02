@@ -148,11 +148,12 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
               </div>
             </div>
 
-            <a href={`${import.meta.env.BASE_URL}#about`}>
-              <p className="font-sans text-[11px] text-neutral-600 tracking-wider font-semibold ml-2 select-none uppercase font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">{whyUsCopy.seeAllTeam}</p>
+            {/* FIXED ROUTING ANCHOR */}
+            <a href="#about" onClick={() => window.scrollTo(0, 0)}>
+              <p className="font-sans text-[11px] text-neutral-600 tracking-wider font-semibold ml-2 select-none uppercase text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">
+                {whyUsCopy.seeAllTeam}
+              </p>
             </a>
-
-
 
           </div>
 
@@ -171,7 +172,6 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
                     <h3 className="font-sans font-regular text-[#ede9fe] text-lg tracking-wide group-hover:text-brunswick-green-600 transition-colors">
                       {point.title}
                     </h3>
-
                   </div>
                 </div>
               ))}
@@ -183,13 +183,6 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
                 <span className="block text-base font-semibold text-white">{whyUsCopy.reassuranceTitle}</span>
                 <span className="block text-base text-neutral-500 uppercase tracking-widest font-sans">{whyUsCopy.reassuranceSub}</span>
               </div>
-              {/* <button
-                id="why-us-booking-btn"
-                onClick={onOpenBooking}
-                className="p-3 px-6 rounded-xl bg-green-primary hover:bg-emerald-600 text-black font-sans font-medium text-base transition-colors cursor-pointer block text-center shadow-lg"
-              >
-                Hire Our Unit &rarr;
-              </button> */}
             </div>
           </div>
 
