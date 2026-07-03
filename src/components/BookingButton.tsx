@@ -1,5 +1,6 @@
 import React from "react";
 import { PhoneCall } from "lucide-react";
+import { aboutCopy, headerCopy } from '../copy'; // Adjust path if needed
 
 interface BookingButtonProps {
   onClick?: () => void;
@@ -28,7 +29,8 @@ export default function BookingButton({ onClick, className = "" }: BookingButton
         cursor-pointer
         tracking-wide ${className}`}
     >
-      Book a Section
+      {aboutCopy.en.ctaTitle}
+
       <PhoneCall className="h-4 w-4 text-neutral-900 group-hover:scale-110 transition-transform" />
     </a>
   );
