@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { ArrowUpRight, MessageSquare, Activity, Clock, ArrowLeft, ArrowRight } from "lucide-react";
+import { Activity, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import { casesCopy } from "../copy";
 
 interface CasesProps {
@@ -8,59 +8,32 @@ interface CasesProps {
 
 const caseItems = [
   {
-    id: "case-01",
-    label: "30 Minutes With",
-    title: "Sinar Agritech",
-    desc: "How a regional agritech firm cut their data pipeline latency by 42% and launched a new operator dashboard in under 8 weeks.",
-    tag: "System Architecture",
-    gradient: "from-brunswick-green-600/80 via-sea-salt to-sea-salt",
-    accentColor: "text-brunswick-green-500",
-    borderColor: "border-brunswick-green-500/20",
-    iconBg: "bg-brunswick-green-900/10",
+    id: "activity-01",
+    photo: "LinkedIn Post",
+    title: "AusTrade Landing Pads & GSDC 22-25 June 2026",
+    desc: "A concise LinkedIn launch post spotlighting landing pad initiatives and global sustainability design challenge momentum.",
+    linkPost: "LinkedIn post",
   },
   {
-    id: "case-02",
-    label: "30 Minutes With",
-    title: "EduVibe Asia",
-    desc: "Rebuilding a legacy LMS into a cloud-native, multi-tenant platform serving 80,000 active learners with zero downtime migration.",
-    tag: "Cloud Migration",
-    gradient: "from-blue-900/80 via-sea-salt to-sea-salt",
-    accentColor: "text-blue-400",
-    borderColor: "border-blue-500/20",
-    iconBg: "bg-blue-500/10",
+    id: "activity-02",
+    photo: "Photo",
+    title: "EarthWise: Wisdom Shaping Sustainable Futures",
+    desc: "A simple visual story about stewardship and sustainable futures in a changing world.",
+    linkPost: "Photo asset",
   },
   {
-    id: "case-03",
-    label: "30 Minutes With",
-    title: "BWT Logistics",
-    desc: "Integrating real-time fleet telemetry and automated invoicing into a unified ops portal, reducing manual work by 70%.",
-    tag: "Enterprise Integration",
-    gradient: "from-amber-900/80 via-sea-salt to-sea-salt",
-    accentColor: "text-amber-400",
-    borderColor: "border-amber-500/20",
-    iconBg: "bg-amber-500/10",
+    id: "activity-03",
+    photo: "LinkedIn Post",
+    title: "Path to Sustainable Growth at Apurva Kempinski 24 June 2026",
+    desc: "A short post highlighting sustainable hospitality strategy and the path to growth for a luxury resort brand.",
+    linkPost: "LinkedIn post",
   },
   {
-    id: "case-04",
-    label: "30 Minutes With",
-    title: "MediCare Connect",
-    desc: "Designing a HIPAA-aligned patient engagement platform with real-time appointment scheduling and secure document sharing.",
-    tag: "Healthcare Tech",
-    gradient: "from-purple-900/80 via-sea-salt to-sea-salt",
-    accentColor: "text-purple-400",
-    borderColor: "border-purple-500/20",
-    iconBg: "bg-purple-500/10",
-  },
-  {
-    id: "case-05",
-    label: "30 Minutes With",
-    title: "RetailCore ID",
-    desc: "End-to-end POS modernization for a 200-branch retail chain — from fragmented spreadsheets to a unified real-time inventory system.",
-    tag: "Retail Systems",
-    gradient: "from-rose-900/80 via-sea-salt to-sea-salt",
-    accentColor: "text-rose-400",
-    borderColor: "border-rose-500/20",
-    iconBg: "bg-rose-500/10",
+    id: "activity-04",
+    photo: "LinkedIn Post",
+    title: "Visit PLN",
+    desc: "A short post highlighting sustainable hospitality strategy and the path to growth for a luxury resort brand.",
+    linkPost: "LinkedIn post",
   },
 ];
 
@@ -78,50 +51,22 @@ function CaseCard({
     <div
       onClick={onOpenBooking}
       className={`
-        group relative rounded-3xl border bg-sea-salt/6 p-5
+        group relative rounded-3xl border border-sea-salt/20 bg-sea-salt/6 p-5
         flex flex-col justify-between cursor-pointer overflow-hidden
         transition-all duration-500 hover:scale-[1.01]
-        ${item.borderColor}
         ${isCenter ? "opacity-100 scale-100" : "opacity-55 scale-[0.97] hover:opacity-75"}
       `}
     >
       {/* Gradient image area */}
       <div className="space-y-4">
-        <div
-          className={`relative h-[180px] w-full overflow-hidden rounded-2xl bg-gradient-to-br ${item.gradient} border border-sea-salt/60 flex items-end p-4`}
-        >
+        <div className="relative h-[180px] w-full overflow-hidden rounded-2xl bg-sea-salt/6 border border-sea-salt/60 flex items-end p-4">
           {/* Decorative grid */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:24px_24px]" />
-
-          {/* Animated pulse dot */}
-          <div className="absolute top-4 left-4 flex items-center gap-1.5">
-            <span
-              className={`h-1.5 w-1.5 rounded-full ${item.accentColor.replace("text-", "bg-")} animate-pulse`}
-            />
-            <span className="font-sans text-lg text-sea-salt uppercase tracking-widest">
-              {casesCopy.liveCase}
-            </span>
-          </div>
-
-          {/* Top-right icon */}
-          <div
-            className={`absolute top-4 right-4 h-8 w-8 rounded-full ${item.iconBg} border border-sea-salt/80 backdrop-blur-md flex items-center justify-center ${item.accentColor}`}
-          >
-            <Activity className="h-3.5 w-3.5 animate-pulse" />
-          </div>
-
-          {/* Tag chip */}
-          <span
-            className={`relative z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-lg font-sans uppercase tracking-wider border border-sea-salt/60 bg-sea-salt/70 ${item.accentColor}`}
-          >
-            <Clock className="h-2.5 w-2.5" />
-            {item.tag}
-          </span>
         </div>
 
         <div className="space-y-1 pb-2">
           <p className="font-sans text-base sm:text-lg uppercase tracking-widest text-sea-salt">
-            {item.label}
+            {item.linkPost}
           </p>
           <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt">{item.title}</h3>
           <p className="font-sans text-base sm:text-lg text-sea-salt  line-clamp-2">
@@ -130,18 +75,15 @@ function CaseCard({
         </div>
       </div>
 
-      {/* Footer row */}
-      <div className="flex items-center justify-between pt-4 border-t border-sea-salt text-lg font-sans">
-        <div className="flex items-center gap-1.5 text-sea-salt">
-          <MessageSquare className="h-3.5 w-3.5" />
-          <span>{casesCopy.discussionCompleted}</span>
-        </div>
-        <span
-          className={`font-sans text-lg ${item.accentColor} flex items-center gap-1 group-hover:opacity-80 transition-opacity`}
+      <div className="pt-4">
+        <a
+          href={item.linkPost}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center font-sans font-semibold text-sea-salt group-hover:text-brunswick-green-500 bg-raisin-black-800 hover:bg-brunswick-green-900 group-hover:bg-raisin-black-900 border border-sea-salt/20 hover:bg-brunswick-green-900 hover:text-sea-salt transition-all px-4 py-1.5 rounded-full text-lg transition-colors cursor-pointer self-start mt-auto"
         >
-          {casesCopy.discussStrategy}
-          <ArrowUpRight className="h-3.5 w-3.5" />
-        </span>
+          Read More
+        </a>
       </div>
     </div>
   );
@@ -261,7 +203,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
 
         {/* Header */}
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end pb-10 border-b border-sea-salt">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end pb-10 border-b border-sea-salt/20">
           <div className="lg:col-span-8 space-y-10">
             <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
               {casesCopy.badge}
