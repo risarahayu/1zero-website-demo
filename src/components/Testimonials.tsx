@@ -119,7 +119,7 @@ export default function Testimonials() {
             {testimonials.map((_, idx) => (
               <div
                 key={idx}
-                className={`h-1.5 rounded-full transition-all duration-300 ${activeSlide === idx ? "w-6 bg-brunswick-green-900" : "w-1.5 bg-sea-salt"}`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${activeSlide === idx ? "w-6 bg-brunswick-green-500" : "w-1.5 bg-sea-salt"}`}
               />
             ))}
           </div>

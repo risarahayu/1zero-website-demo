@@ -65,7 +65,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           className="max-w-xl mx-auto grid grid-cols-1 md:grid-cols-5 items-stretch rounded-2xl border border-color-sea-salt bg-raisin-black-800 p-1 backdrop-blur-md shadow-2xl"
         >
           {/* Rating box (Col-span 3) */}
-          <div className="md:col-span-3 flex flex-col justify-center items-start text-left p-5 md:pl-6 space-y-2 border-b md:border-b-0  border-sea-salt/80">
+          <div className="md:col-span-3 flex flex-col justify-center items-start text-left p-5 md:pl-6 space-y-2   ">
             {/* <div className="flex items-center gap-1">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="h-3.5 w-3.5 fill-brunswick-green-500 text-brunswick-green-500" />
