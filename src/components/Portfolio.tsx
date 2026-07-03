@@ -116,7 +116,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
 
             <div className="space-y-6">
               {/* Elegant Main Title */}
-              <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-sea-salt leading-[1.1]">
+              <h2 className="font-sans text-2xl sm:text-6xl font-bold tracking-tight text-sea-salt">
                 {portfolioCopy.titleLine1} <br />
                 {portfolioCopy.titleLine2}
               </h2>

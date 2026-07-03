@@ -314,7 +314,7 @@ export default function Workflow() {
             {workflowCopy.badge}
           </span>
           <div className="space-y-6">
-            <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-sea-salt max-w-3xl mx-auto leading-tight">
+            <h2 className="font-sans text-2xl sm:text-6xl font-bold tracking-tight text-sea-salt">
               {workflowCopy.title}
             </h2>
             <p className="max-w-xl mx-auto font-sans text-lg sm:text-lg text-sea-salt/90">

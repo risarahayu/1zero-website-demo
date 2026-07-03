@@ -29,29 +29,30 @@ export default function PortfolioPage() {
     }, [activeTab]);
 
     return (
-        <section className="relative min-h-screen bg-black text-sea-salt py-24 px-6">
+        <section className="relative min-h-screen bg-raisin-black text-sea-salt py-24 px-6">
             {/* glow background */}
             <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
                 <div className="w-[600px] h-[600px] bg-sea-salt/5 blur-[160px] rounded-full" />
             </div>
 
             {/* HEADER */}
-            <div className="relative z-10 text-center space-y-4">
+            <div className="relative z-10 text-center space-y-10">
                 <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
                     {portfoliosPageCopy.badge}
                 </span>
-                <br />
-                <h1 className="text-4xl md:text-6xl font-bold animate-gradient-text text-gradient">
-                    {portfoliosPageCopy.title}
-                </h1>
+                <div className="space-y-6">
+                    <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-sea-salt leading-[1.1]">
+                        {portfoliosPageCopy.title}
+                    </h1>
 
-                <p className="text-raisin-black-900-400 max-w-xl mx-auto">
-                    {portfoliosPageCopy.description}
-                </p>
+                    <p className="text-raisin-black-900-400 max-w-xl mx-auto">
+                        {portfoliosPageCopy.description}
+                    </p>
+                </div>
             </div>
 
             {/* TABS */}
-            <div className="relative z-10 flex flex-wrap justify-center gap-3 mt-10">
+            <div className="relative z-10 flex flex-wrap justify-center gap-4 mt-10">
                 {services.map((service) => (
                     <button
                         key={service}
@@ -60,7 +61,7 @@ export default function PortfolioPage() {
                             px-4 py-2 rounded-full text-lg border transition-all duration-300
                             ${activeTab === service
                                 ? "bg-brunswick-green-900 text-sea-salt border-sea-salt/10"
-                                : "bg-sea-salt/5 text-sea-salt border-sea-salt/10 hover:border-brunswick-green-500 hover:text-brunswick-green-500"
+                                : "bg-sea-salt/5 text-sea-salt border-sea-salt/20 hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt"
                             }
                         `}
                     >
@@ -122,9 +123,9 @@ export default function PortfolioPage() {
             </div>
             {/* Booking Modal placeholder */}
             {isBookingOpen && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">
+                <div className="fixed inset-0 flex items-center justify-center bg-raisin-black-900/60 backdrop-blur-sm z-50">
                     <div className="bg-sea-salt dark:bg-gray-800 rounded-xl p-8 max-w-md w-full shadow-lg">
-                        <h2 className="text-2xl md:text-4xl font-bold mb-4">{portfoliosPageCopy.modalTitle}</h2>
+                        <h2 className="font-sans text-2xl sm:text-6xl font-bold tracking-tight text-sea-salt mb-4">{portfoliosPageCopy.modalTitle}</h2>
                         <p className="mb-6">{portfoliosPageCopy.modalDescription}</p>
                         <button
                             className="px-4 py-2 bg-brunswick-green-500 text-sea-salt rounded hover:bg-brunswick-green-600"

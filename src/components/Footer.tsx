@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="relative bg-raisin-black-800/20 py-16 pb-12 border-t border-sea-salt/20 overflow-hidden">
+    <footer id="footer" className="relative bg-raisin-black-800/20 py-16 pb-12 border-t border-sea-salt/20 overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-brunswick-green-900/[0.02] blur-[120px]" />
 
@@ -80,7 +80,7 @@ export default function Footer() {
               </div>
 
               {/* Quick links tag lines */}
-              <div className="pt-4 border-t border-sea-salt text-lg text-sea-salt/90 ">
+              <div className="pt-4 border-t border-sea-salt/20 text-lg text-sea-salt/90 ">
                 <span className="block text-lg">{footerCopy.workingHours} </span>
                 {/* <span className="block">Engineers responsive via Slack/Teams logs.</span> */}
               </div>

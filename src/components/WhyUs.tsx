@@ -43,7 +43,7 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
             {whyUsCopy.sectionTag}
           </span>
           <div className="space-y-6">
-            <h2 className="font-sans text-2xl sm:text-4xl font-extrabold tracking-tight text-sea-salt max-w-2xl">
+            <h2 className="font-sans text-2xl sm:text-6xl font-bold tracking-tight text-sea-salt">
               {whyUsCopy.title}
             </h2>
             <p className="max-w-2xl font-sans text-lg sm:text-lg text-sea-salt/90 leading-relaxed">
@@ -56,7 +56,7 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
 
             {/* LEFT: THE INTERACTIVE VIDEO CALL MOCKUP */}
-            <div className="lg:col-span-5 flex flex-col justify-between rounded-3xl border border-sea-salt/20 bg-black/60 p-5 shadow-2xl relative space-y-4">
+            <div className="lg:col-span-5 flex flex-col justify-between rounded-3xl border border-sea-salt/20 bg-raisin-black-900/60 p-5 shadow-2xl relative space-y-4">
               {/* Header bar */}
               <div className="flex items-center justify-between pb-3 border-b border-sea-salt/20 text-lg font-sans text-sea-salt">
                 <div className="flex items-center gap-2">

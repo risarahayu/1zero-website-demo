@@ -24,10 +24,10 @@ export default function Testimonials() {
         {/* Title Area */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
           <div className="space-y-10 text-left">
-            <span className="inline-block px-3.5 py-1 rounded-full border border-sea-salt text-lg font-sans uppercase tracking-widest text-brunswick-green-500 bg-brunswick-green-500/5">
+            <span className="inline-block px-3.5 py-1 rounded-full border border-sea-salt/20 text-lg font-sans uppercase tracking-widest text-brunswick-green-500 bg-brunswick-green-500/5">
               {testimonialsCopy.badge}
             </span>
-            <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-sea-salt ">
+            <h2 className="font-sans text-2xl sm:text-6xl font-bold tracking-tight text-sea-salt">
               {testimonialsCopy.titleLine1} <br />{testimonialsCopy.titleLine2}
             </h2>
           </div>
@@ -58,9 +58,9 @@ export default function Testimonials() {
             return (
               <div
                 key={t.id}
-                className={`group flex flex-col justify-between p-6 rounded-2xl border  p-6 transition-all duration-300 relative ${isActiveMobile
+                className={`group flex flex-col justify-between p-6 rounded-2xl border border-sea-salt/20 p-6 transition-all duration-300 relative ${isActiveMobile
                   ? "border-brunswick-green-500 backdrop-blur bg-sea-salt/6 shadow-brunswick-green-500/5 shadow-2xl scale-[1.01] block"
-                  : "border-sea-salt group-hover:border-sea-salt md:block hidden"
+                  : "border-sea-salt/20 group-hover:border-brunswick-green-500/30 md:block hidden"
                   }`}
               >
                 {/* Quotation icon accent */}
@@ -83,8 +83,8 @@ export default function Testimonials() {
                 </div>
 
                 {/* Writer Portrait Avatar details */}
-                <div className="flex items-center gap-3 pt-6 border-t border-sea-salt mt-8">
-                  <div className="h-10 w-10 rounded-full overflow-hidden border border-sea-salt shrink-0">
+                <div className="flex items-center gap-3 pt-6 border-t border-sea-salt/20 mt-8">
+                  <div className="h-10 w-10 rounded-full overflow-hidden border border-sea-salt/20 shrink-0">
                     <img
                       src={t.avatarUrl}
                       alt={t.name}
@@ -111,7 +111,7 @@ export default function Testimonials() {
           <button
             id="testimonial-prev-mobile"
             onClick={handlePrev}
-            className="p-3 border border-sea-salt bg-raisin-black-900 rounded-xl text-sea-salt hover:text-dun"
+            className="p-3 border border-sea-salt/20 bg-raisin-black-900 rounded-xl text-sea-salt hover:text-dun"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
           </button>
@@ -126,7 +126,7 @@ export default function Testimonials() {
           <button
             id="testimonial-next-mobile"
             onClick={handleNext}
-            className="p-3 border border-sea-salt bg-raisin-black-900 rounded-xl text-sea-salt hover:text-dun"
+            className="p-3 border border-sea-salt/20 bg-raisin-black-900 rounded-xl text-sea-salt hover:text-dun"
           >
             <ArrowRight className="h-3.5 w-3.5" />
           </button>

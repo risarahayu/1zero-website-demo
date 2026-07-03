@@ -75,10 +75,10 @@ export default function ServicesHero() {
 
                 {/* LEFT */}
                 <div>
-                    <h1 className="text-4xl md:text-6xl font-semibold leading-tight text-sea-salt">
+                    <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-sea-salt leading-[1.1]">
                         {servicesCopy.heroTextPrefix}{" "}
                         <br />
-                        <span className={`font-bold ${active.color}`}>
+                        <span className={`font-extrabold ${active.color}`}>
                             {text}
                             <span className="animate-pulse">|</span>
                         </span>

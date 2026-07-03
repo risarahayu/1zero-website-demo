@@ -4,21 +4,30 @@ import BookingButton from "../BookingButton";
 
 const CtaBanner = () => {
     return (
-        <section className="relative mt-5 border border-brunswick-green-500/20 rounded-2xl overflow-hidden h-[200px] sm:h-[700px] bg-gradient-to-b from-brunswick-green-500 to-raisin-black">
+        <section className="relative mt-5 overflow-hidden rounded-2xl border border-brunswick-green-500/20 h-[200px] sm:h-[700px]">
+            {/* Background Image */}
             <img
                 src={`${import.meta.env.BASE_URL}Team Member Photo/1zero Teams.webp`}
-                alt=""
-                className="absolute inset-0 w-full h-full sm:object-cover hidden sm:block"
+                alt="1zero Team"
+                className="absolute inset-0 hidden h-full w-full object-cover sm:block"
             />
 
-            <div className="absolute inset-0 bg-black/50" />
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-transparent" />
 
-            <div className="relative z-10 flex flex-col gap-5 items-center justify-center h-full">
-                <h2 className="text-2xl sm:text-4xl font-bold [text-shadow:2px_2px_10px_rgba(0,0,0,0.6)]">
+            {/* Content */}
+            <div className="absolute inset-0 z-10 px-6 py-8 sm:px-12 sm:py-10 flex h-full flex-col justify-between items-center text-center">
+                <h2 className="font-sans text-3xl font-bold tracking-tight text-brunswick-green-900 sm:text-6xl max-w-2xl">
                     Let's Work Together
                 </h2>
-                <BookingButton />
+
+                <div className="w-full max-w-2xl">
+                    <div className="mx-auto inline-block">
+                        <BookingButton className=""/>
+                    </div>
+                </div>
             </div>
+
         </section>
 
     );

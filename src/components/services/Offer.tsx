@@ -32,11 +32,11 @@ export default function DiagnosisPanel() {
 
                 {/* 3. KONTEN UTAMA */}
                 <div className="relative z-20 max-w-3xl mx-auto text-center px-6 py-20">
-                    <h2 className="text-2xl  md:text-4xl font-bold leading-snug text-sea-salt">
+                    <p className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-sea-salt">
                         {offerCopy.heroTitleLine1}
                         <br />
                         {offerCopy.heroTitleLine2}
-                    </h2>
+                    </p>
                     <p className="text-sea-salt/50 mt-6">
                         {offerCopy.heroSubtitle}
                     </p>

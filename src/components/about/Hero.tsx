@@ -90,10 +90,10 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                         {t.sub}
                     </span>
                     <div className="space-y-6">
-                        <h1 className="text-5xl text-sea-salt lg:text-7xl font-bold leading-tight mb-6 animate-gradient-text text-gradient-impact">
+                        <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-sea-salt leading-[1.1]">
                             {t.title}
                         </h1>
-                        <p className="text-sea-salt/90 text-lg mb-8 max-w-md">
+                        <p className="text-sea-salt/90 text-lg max-w-md">
                             {t.desc}
                         </p>
                     </div>

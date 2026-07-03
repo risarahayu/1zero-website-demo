@@ -350,10 +350,10 @@ const TeamSection: React.FC = () => {
     };
 
     return (
-        <section className="py-16 text-slate-50 relative">
+        <section className="py-16 text-slate-50 relative" id="about">
             <div className="w-[75%] mx-auto space-y-10 text-center">
 
-                <h2 className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
+                <h2 className="font-sans text-2xl sm:text-6xl font-bold tracking-tight text-sea-salt">
                     {/* Injecting the dynamic title here! */}
                     {aboutCopy.en.teamTitle}
                 </h2>
@@ -365,7 +365,7 @@ const TeamSection: React.FC = () => {
                             key={idx}
                             className={`min-w-[200px] p-4 rounded-lg text-start cursor-pointer transition-all duration-300 ${idx === activeIdx
                                 ? "bg-brunswick-green-900"
-                                : "bg-sea-salt/10"
+                                : "bg-sea-salt/6  backdrop-blur border-sea-salt/20"
                                 }`}
                             onClick={() => {
                                 if (!isDesktop) return;
@@ -413,7 +413,7 @@ const TeamSection: React.FC = () => {
                                 className={`shrink-0 w-36 p-3 rounded-lg transition-all duration-300 text-left
         ${idx % topRow.length === activeIdx
                                         ? "bg-brunswick-green-900"
-                                        : "bg-sea-salt/10"
+                                        : "bg-sea-salt/6  backdrop-blur border-sea-salt/20"
                                     }`}
                             >
                                 {/* Image */}
@@ -448,7 +448,7 @@ const TeamSection: React.FC = () => {
                                 className={`shrink-0 w-36 p-3 rounded-lg transition-all duration-300 text-left
         ${((idx % bottomRow.length) + 4) === activeIdx
                                         ? "bg-brunswick-green-900"
-                                        : "bg-sea-salt/10"
+                                        : "bg-sea-salt/6  backdrop-blur border-sea-salt/20"
                                     }`}
                             >
                                 {/* Image */}
@@ -474,7 +474,7 @@ const TeamSection: React.FC = () => {
 
 
                 {/* DESKTOP PREVIEW */}
-                <div className="relative mt-5 overflow-hidden border border-sea-salt/10 rounded-2xl hidden lg:block">
+                <div className="relative mt-5 overflow-hidden border border-sea-salt/20 rounded-2xl hidden lg:block">
 
                     {/* AURORA BACKGROUND */}
                     <div className="aurora">
@@ -601,7 +601,7 @@ const TeamSection: React.FC = () => {
 
                 {/* MODAL ONLY MOBILE + TABLET */}
                 {selectedMember && !isDesktop && (
-                    <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/80 backdrop-blur-sm p-6">
+                    <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-raisin-black-900/80 backdrop-blur-sm p-6">
 
                         <div className="relative w-full max-w-2xl rounded-2xl overflow-hidden border border-brunswick-green-900 bg-raisin-black-900-950 shadow-2xl">
 
@@ -611,7 +611,7 @@ const TeamSection: React.FC = () => {
                                     setSelectedMember(null);
                                     setIsPaused(false);
                                 }}
-                                className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 text-sea-salt flex items-center justify-center transition"
+                                className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-raisin-black-900/60 hover:bg-raisin-black-900/60 text-sea-salt flex items-center justify-center transition"
                             >
                                 ✕
                             </button>

@@ -31,7 +31,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           </span>
         </motion.div> */}
       {/* </div> */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10 border-b border-sea-salt">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10 border-b border-sea-salt/20">
 
         {/* Master Copy */}
         <div className="space-y-6">

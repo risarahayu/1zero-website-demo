@@ -125,7 +125,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
     <AnimatePresence>
       <div
         id="booking-modal-overlay"
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-raisin-black-900/80 backdrop-blur-md"
         onClick={(e) => {
           if (e.target instanceof HTMLElement && e.target.id === "booking-modal-overlay") {
             cleanClose();

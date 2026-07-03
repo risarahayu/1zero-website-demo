@@ -266,7 +266,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
             <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
               {casesCopy.badge}
             </span>
-            <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-sea-salt ">
+            <h2 className="font-sans text-2xl sm:text-6xl font-bold tracking-tight text-sea-salt">
               {casesCopy.titleLine1} <br />{casesCopy.titleLine2}
             </h2>
           </div>
