@@ -50,7 +50,7 @@ export default function PortfolioCard({ project, onReadMore, className = "", sho
           {project.title}
         </h3>
 
-        <p className="font-sans text-lg text-neutral-400 leading-relaxed font-normal max-w-sm overflow-hidden [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
+        <p className="font-sans text-lg text-sea-salt leading-relaxed font-normal max-w-sm overflow-hidden [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
           {project.description}
         </p>
 
@@ -71,7 +71,7 @@ export default function PortfolioCard({ project, onReadMore, className = "", sho
         <button
           type="button"
           onClick={onReadMore}
-          className="inline-flex items-center justify-center font-sans font-semibold text-neutral-300 group-hover:text-brunswick-green-500 bg-[#1a1a1c] hover:bg-[#252528] group-hover:bg-[#252528] border border-neutral-800/80 group-hover:border-brunswick-green-500 px-4 py-1.5 rounded-full text-lg transition-colors cursor-pointer self-start mt-2 "
+          className="inline-flex items-center justify-center font-sans font-semibold text-neutral-300 group-hover:text-brunswick-green-500 bg-raisin-black-800 hover:bg-raisin-black-900 group-hover:bg-raisin-black-900 border border-neutral-800/80 group-hover:border-brunswick-green-500 px-4 py-1.5 rounded-full text-lg transition-colors cursor-pointer self-start mt-2 "
         >
           Read More
         </button>

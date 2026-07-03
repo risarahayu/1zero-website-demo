@@ -34,7 +34,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               : "relative"
               }`}
           >
-            <div className={`flex items-center justify-between mx-auto bg-[#0a0a0aba]/90 border border-neutral-800/80 backdrop-blur-md rounded-full px-5 py-2.5 shadow-xl transition-all ${isScrolled ? "scale-95 shadow-emerald-500/5 shadow-2xl" : ""
+            <div className={`flex items-center justify-between mx-auto bg-raisin-black-800/90 border border-neutral-800/80 backdrop-blur-md rounded-full px-5 py-2.5 shadow-xl transition-all ${isScrolled ? "scale-95 shadow-emerald-500/5 shadow-2xl" : ""
               }`}>
               {/* Left empty block or indicator */}
               <div
@@ -52,7 +52,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                   <a
                     key={link.href}
                     href={link.href}
-                    className="font-sans text-lg font-semibold text-neutral-400 hover:text-white hover:underline transition-all tracking-wide"
+                    className="font-sans text-lg font-semibold text-sea-salt hover:text-white hover:underline transition-all tracking-wide"
                   >
                     {link.label}
                   </a>
@@ -63,7 +63,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               <button
                 id="mobile-menu-trigger"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className={`p-1 px-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-full sm:hidden transition-all text-lg ${isScrolled ? "mr-auto" : ""}`}
+                className={`p-1 px-2 text-sea-salt hover:text-white hover:bg-neutral-900 rounded-full sm:hidden transition-all text-lg ${isScrolled ? "mr-auto" : ""}`}
               >
                 {isMobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
               </button>
@@ -91,7 +91,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="sm:hidden fixed top-[90px] left-0 w-full bg-[#0a0a0c] border-b border-neutral-800 backdrop-blur-lg overflow-y-auto z-50 shadow-2xl"
+            className="sm:hidden fixed top-[90px] left-0 w-full bg-raisin-black-800 border-b border-neutral-800 backdrop-blur-lg overflow-y-auto z-50 shadow-2xl"
           >
             <div className="p-5 flex flex-col gap-4">
               {navLinks.map((link) => (

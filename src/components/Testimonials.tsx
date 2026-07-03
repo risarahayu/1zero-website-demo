@@ -15,7 +15,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="relative py-20 bg-neutral-950/20">
+    <section className="relative py-16 bg-neutral-950/20">
       {/* Soft auroral glow in corner */}
       <div className="absolute top-1/2 right-10 -z-10 h-72 w-72 rounded-full bg-green-primary/[0.03] blur-[110px]" />
 
@@ -23,36 +23,36 @@ export default function Testimonials() {
 
         {/* Title Area */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-          <div className="space-y-3 text-left">
-            <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500 bg-[#a3e635]/5">
+          <div className="space-y-10 text-left">
+            <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500 bg-brunswick-green-500/5">
               {testimonialsCopy.badge}
             </span>
-            <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-white leading-none">
+            <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-white ">
               {testimonialsCopy.titleLine1} <br />{testimonialsCopy.titleLine2}
             </h2>
           </div>
-
           {/* Slider Controllers on desktop */}
           <div className="hidden md:flex items-center gap-2">
             <button
               id="testimonial-prev-btn"
               onClick={handlePrev}
-              className="p-3.5 rounded-xl border border-neutral-800 bg-[#0c0c0e] text-neutral-400 hover:text-white hover:border-brunswick-green-500 transition-colors"
+              className="h-11 w-11 rounded-full border border-neutral-800 bg-neutral-950/60 text-sea-salt hover:text-brunswick-green-500 hover:border-brunswick-green-500 flex items-center justify-center transition-all duration-300 transform active:scale-95 cursor-pointer shadow-lg"
             >
               <ArrowLeft className="h-4 w-4" />
             </button>
             <button
               id="testimonial-next-btn"
               onClick={handleNext}
-              className="p-3.5 rounded-xl border border-neutral-800 bg-[#0c0c0e] text-neutral-400 hover:text-white hover:border-brunswick-green-500 transition-colors"
+              className="h-11 w-11 rounded-full border border-neutral-800 bg-neutral-950/60 text-sea-salt hover:text-brunswick-green-500 hover:border-brunswick-green-500 flex items-center justify-center transition-all duration-300 transform active:scale-95 cursor-pointer shadow-lg"
             >
               <ArrowRight className="h-4 w-4" />
             </button>
           </div>
+
         </div>
 
         {/* Testimonials standard grid (responsive) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((t, index) => {
             const isActiveMobile = activeSlide === index;
             return (
@@ -97,7 +97,7 @@ export default function Testimonials() {
                       {t.name}
                     </span>
                     <span className="block font-sans text-lg text-neutral-500">
-                      {t.role}, <strong className="text-neutral-400 font-normal">{t.company}</strong>
+                      {t.role}, <strong className="text-sea-salt font-normal">{t.company}</strong>
                     </span>
                   </div>
                 </div>
@@ -111,7 +111,7 @@ export default function Testimonials() {
           <button
             id="testimonial-prev-mobile"
             onClick={handlePrev}
-            className="p-3 border border-neutral-800 bg-[#0c0c0e] rounded-xl text-neutral-400 hover:text-white"
+            className="p-3 border border-neutral-800 bg-raisin-black-900 rounded-xl text-sea-salt hover:text-dun"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
           </button>
@@ -126,7 +126,7 @@ export default function Testimonials() {
           <button
             id="testimonial-next-mobile"
             onClick={handleNext}
-            className="p-3 border border-neutral-800 bg-[#0c0c0e] rounded-xl text-neutral-400 hover:text-white"
+            className="p-3 border border-neutral-800 bg-raisin-black-900 rounded-xl text-sea-salt hover:text-dun"
           >
             <ArrowRight className="h-3.5 w-3.5" />
           </button>

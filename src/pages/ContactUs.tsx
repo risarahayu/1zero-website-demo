@@ -89,14 +89,14 @@ export default function ContactPage() {
     };
 
     return (
-        <section className="relative w-full min-h-screen bg-[#030303] text-white overflow-hidden py-24 px-6 flex items-center">
+        <section className="relative w-full min-h-screen bg-raisin-black text-white overflow-hidden py-24 px-6 flex items-center">
 
             {/* ==========================================
                BACKGROUND GLOWS (Efek Aurora Global)
                ========================================== */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div className="absolute top-[10%] left-[-10%] w-[500px] h-[500px] bg-[#1D5745] opacity-20 blur-[130px] rounded-full animate-slow-pan"></div>
-                <div className="absolute bottom-[15%] right-[-5%] w-[450px] h-[450px] bg-[#307962] opacity-15 blur-[120px] rounded-full animate-slow-pan" style={{ animationDelay: "-3s" }}></div>
+                <div className="absolute top-[10%] left-[-10%] w-[500px] h-[500px] bg-brunswick-green-900 opacity-20 blur-[130px] rounded-full animate-slow-pan"></div>
+                <div className="absolute bottom-[15%] right-[-5%] w-[450px] h-[450px] bg-raisin-black opacity-15 blur-[120px] rounded-full animate-slow-pan" style={{ animationDelay: "-3s" }}></div>
             </div>
 
             {/* Container Layout Utama */}

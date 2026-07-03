@@ -77,7 +77,7 @@ export default function Products({ onOpenBooking }: ProductsProps) {
                     <h3 className="font-sans text-xl md:text-2xl font-bold text-white group-hover:text-brunswick-green-500 transition-colors">
                       {p.service}
                     </h3>
-                    <p className="font-sans text-lg text-neutral-400 group-hover:text-sea-salt transition-colors leading-relaxed">
+                    <p className="font-sans text-lg text-sea-salt group-hover:text-sea-salt transition-colors leading-relaxed">
                       {p.description}
                     </p>
                   </div>

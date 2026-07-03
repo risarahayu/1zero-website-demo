@@ -10,12 +10,12 @@
   --color-brunswick-green-700: var(--green-700);
   --color-brunswick-green-800: var(--green-800);
   --color-brunswick-green-900: var(--green-900);
-  --color-brunswick-green-primary: var(--green-900);
 
   --color-sea-salt: var(--sea-salt);
   --color-ivory: var(--ivory);
   --color-dun: var(--dun);
-  --color-raisin-black: var(--raisin-black);
+  --color-raisin-black: var(--raisin-black-800);
+  --color-raisin-black: var(--raisin-black-900);
 }
 
 :root {
@@ -25,9 +25,12 @@
   --green-800: #307962;
   --green-900: #1D5745;
 
+
   --sea-salt: #fafafa;
   --ivory: #f3f5e9;
   --dun: #d6caad;
+  --raisin-black-800: #272727;
+  --raisin-black-900: #040404;
 
 }
 

@@ -152,13 +152,13 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               </div>
               <div>
                 <h3 className="font-sans text-lg font-bold text-white">{bookingModalCopy.modalTitle}</h3>
-                <p className="font-sans text-lg uppercase tracking-wider text-neutral-400">{bookingModalCopy.modalSub}</p>
+                <p className="font-sans text-lg uppercase tracking-wider text-sea-salt">{bookingModalCopy.modalSub}</p>
               </div>
             </div>
             <button
               id="close-modal-btn"
               onClick={cleanClose}
-              className="p-1 px-2 text-neutral-400 hover:text-white hover:bg-neutral-900 rounded-lg transition-colors"
+              className="p-1 px-2 text-sea-salt hover:text-white hover:bg-neutral-900 rounded-lg transition-colors"
             >
               <X className="h-5 w-5" />
             </button>
@@ -185,7 +185,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           {step === 1 && (
             <div className="space-y-6 py-2">
               <div>
-                <label className="block font-sans text-lg font-semibold text-neutral-400 mb-3">{bookingModalCopy.dateLabel}</label>
+                <label className="block font-sans text-lg font-semibold text-sea-salt mb-3">{bookingModalCopy.dateLabel}</label>
                 <div className="grid grid-cols-5 gap-2">
                   {getUpcomingDays().map((day) => {
                     const isSelected = selectedDate === day.rawDate;
@@ -203,7 +203,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                           : "border-neutral-800 bg-[#111] hover:border-neutral-700 text-neutral-300 hover:text-white"
                           }`}
                       >
-                        <span className="font-sans text-[11px] font-medium tracking-wide text-neutral-400">{day.dayName}</span>
+                        <span className="font-sans text-[11px] font-medium tracking-wide text-sea-salt">{day.dayName}</span>
                         <span className="font-sans text-lg font-bold mt-1">{day.dayNum}</span>
                         <span className="font-sans text-lg text-neutral-500 mt-0.5">{day.month}</span>
                       </button>
@@ -213,7 +213,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               </div>
 
               <div>
-                <label className="block font-sans text-lg font-semibold text-neutral-400 mb-3">{bookingModalCopy.slotsLabel}</label>
+                <label className="block font-sans text-lg font-semibold text-sea-salt mb-3">{bookingModalCopy.slotsLabel}</label>
                 <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                   {timeSlots.map((time) => {
                     const isSelected = selectedTime === time;
@@ -241,7 +241,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
               {/* Timezone */}
               <div className="flex items-center gap-2 rounded-xl bg-neutral-900/60 p-3 border border-neutral-800/80">
-                <Globe className="h-4 w-4 text-neutral-400" />
+                <Globe className="h-4 w-4 text-sea-salt" />
                 <div className="flex-1">
                   <span className="block text-lg text-neutral-500 font-sans">{bookingModalCopy.timezoneLabel}</span>
                   <select
@@ -275,7 +275,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           {/* STEP 2: USER DETAILS FORM */}
           {step === 2 && (
             <form onSubmit={handleBookSubmit} className="space-y-4 py-2">
-              <div className="text-neutral-400 bg-neutral-900/60 p-3 rounded-xl border border-neutral border-neutral-800/80 text-lg mb-2">
+              <div className="text-sea-salt bg-neutral-900/60 p-3 rounded-xl border border-neutral border-neutral-800/80 text-lg mb-2">
                 <p className="flex items-center gap-1.5">
                   <Calendar className="h-3.5 w-3.5 text-emerald-400" />
                   <span>{bookingModalCopy.selectedDateLabel}</span>
@@ -289,7 +289,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               </div>
 
               <div className="space-y-1">
-                <label className="block text-lg font-semibold text-neutral-400">{bookingModalCopy.fullNameLabel}</label>
+                <label className="block text-lg font-semibold text-sea-salt">{bookingModalCopy.fullNameLabel}</label>
                 <div className="relative">
                   <User className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-500" />
                   <input
@@ -305,7 +305,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               </div>
 
               <div className="space-y-1">
-                <label className="block text-lg font-semibold text-neutral-400">{bookingModalCopy.emailLabel}</label>
+                <label className="block text-lg font-semibold text-sea-salt">{bookingModalCopy.emailLabel}</label>
                 <div className="relative">
                   <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-500" />
                   <input
@@ -321,7 +321,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               </div>
 
               <div className="space-y-1">
-                <label className="block text-lg font-semibold text-neutral-400">{bookingModalCopy.companyLabel}</label>
+                <label className="block text-lg font-semibold text-sea-salt">{bookingModalCopy.companyLabel}</label>
                 <div className="relative">
                   <Building className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-500" />
                   <input
@@ -336,7 +336,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               </div>
 
               <div className="space-y-1">
-                <label className="block text-lg font-semibold text-neutral-400">{bookingModalCopy.notesLabel}</label>
+                <label className="block text-lg font-semibold text-sea-salt">{bookingModalCopy.notesLabel}</label>
                 <textarea
                   id="input-booking-notes"
                   rows={2}
@@ -377,7 +377,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
               <div className="space-y-2">
                 <h4 className="font-sans text-xl font-bold text-white">{bookingModalCopy.successTitle}</h4>
-                <p className="text-lg text-neutral-400 max-w-md mx-auto">
+                <p className="text-lg text-sea-salt max-w-md mx-auto">
                   {bookingModalCopy.successDesc1} <span className="text-white hover:underline">{email}</span>{bookingModalCopy.successDesc2}
                 </p>
               </div>
@@ -386,7 +386,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 <div className="pb-3 text-lg">
                   <p className="font-sans text-lg text-emerald-400 tracking-wider">{bookingModalCopy.eventSummary}</p>
                   <p className="font-sans font-semibold text-lg text-white mt-1">{bookingModalCopy.eventTitle}</p>
-                  <p className="text-neutral-400 mt-0.5">{bookingModalCopy.eventDesc}</p>
+                  <p className="text-sea-salt mt-0.5">{bookingModalCopy.eventDesc}</p>
                 </div>
                 <div className="py-2.5 pt-3 flex items-center gap-3 text-lg text-neutral-300">
                   <Calendar className="h-4 w-4 text-emerald-400 shrink-0" />

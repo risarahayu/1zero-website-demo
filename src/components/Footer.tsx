@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="relative bg-[#050505] pt-20 pb-12 border-t border-neutral-900 overflow-hidden">
+    <footer id="contact" className="relative bg-raisin-black-800 py-16 pb-12 border-t border-neutral-900 overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-green-primary/[0.02] blur-[120px]" />
 
@@ -17,13 +17,13 @@ export default function Footer() {
 
           {/* LEFT COLUMN: BIG GREETING */}
           <div className="lg:col-span-5 space-y-6">
-            <h2 className="font-sans text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-none">
+            <h2 className="font-sans text-4xl md:text-6xl font-extrabold tracking-tight text-white ">
               {footerCopy.connectTitle} <br />
               <span className="animate-gradient-text text-gradient-impact text-transparent bg-clip-text bg-gradient-to-r from-[var(--ivory)] to-[var(--green-900)]">
                 {footerCopy.connectGradient}
               </span>
             </h2>
-            <p className="font-sans text-lg text-neutral-400 leading-relaxed max-w-sm">
+            <p className="font-sans text-lg text-sea-salt leading-relaxed max-w-sm">
               {footerCopy.description}
             </p>
 
@@ -43,7 +43,7 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="no-referrer"
-                    className="h-9 w-9 rounded-xl border border-neutral-900 bg-[#0a0a0c] hover:bg-neutral-950 hover:border-emerald-500/30 hover:text-emerald-400 flex items-center justify-center text-neutral-400 transition-colors"
+                    className="h-9 w-9 rounded-xl border border-neutral-900 bg-raisin-black-800 hover:bg-neutral-950 hover:border-emerald-500/30 hover:text-emerald-400 flex items-center justify-center text-sea-salt transition-colors"
                   >
                     <Icon className="h-4 w-4" />
                   </a>
@@ -56,7 +56,7 @@ export default function Footer() {
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8 font-sans">
 
             {/* Email & Contact */}
-            <div className="space-y-4">
+            <div className="space-y-6">
               <span className="block font-sans text-lg text-neutral-500 uppercase tracking-widest font-bold">
                 {footerCopy.directInquiries}
               </span>
@@ -80,14 +80,14 @@ export default function Footer() {
               </div>
 
               {/* Quick links tag lines */}
-              <div className="pt-4 border-t border-neutral-900 space-y-1 text-[11px] text-neutral-500 ">
+              <div className="pt-4 border-t border-neutral-900 text-lg text-neutral-500 ">
                 <span className="block text-lg">{footerCopy.workingHours} </span>
                 {/* <span className="block">Engineers responsive via Slack/Teams logs.</span> */}
               </div>
             </div>
 
             {/* Address */}
-            <div className="space-y-4">
+            <div className="space-y-6">
               <span className="block font-sans text-lg text-neutral-500 uppercase tracking-widest font-bold">
                 {footerCopy.primaryLaboratory}
               </span>
@@ -107,7 +107,7 @@ export default function Footer() {
         {/* Lower copyright bar */}
         <div className="pt-8 border-t border-neutral-900 text-lg font-sans text-neutral-500 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3 flex-col items-start sm:flex-row">
-            <Logo1Zero className="h-4 text-neutral-400 opacity-60 hover:opacity-100 transition-opacity" glow={false} />
+            <Logo1Zero className="h-4 text-sea-salt opacity-60 hover:opacity-100 transition-opacity" glow={false} />
             <span>© {currentYear} {footerCopy.copyright}</span>
           </div>
 

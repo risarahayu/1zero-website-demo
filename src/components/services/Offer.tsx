@@ -27,8 +27,8 @@ export default function DiagnosisPanel() {
                 </div>
 
                 {/* 2. LAYER PENUTUP GRADASI */}
-                <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#030303] to-transparent pointer-events-none z-10"></div>
-                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#030303] to-transparent pointer-events-none z-10"></div>
+                <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-raisin-black to-transparent pointer-events-none z-10"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-raisin-black to-transparent pointer-events-none z-10"></div>
 
                 {/* 3. KONTEN UTAMA */}
                 <div className="relative z-20 max-w-3xl mx-auto text-center px-6 py-20">

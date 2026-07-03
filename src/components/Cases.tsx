@@ -98,7 +98,7 @@ function CaseCard({
             <span
               className={`h-1.5 w-1.5 rounded-full ${item.accentColor.replace("text-", "bg-")} animate-pulse`}
             />
-            <span className="font-sans text-lg text-neutral-400 uppercase tracking-widest">
+            <span className="font-sans text-lg text-sea-salt uppercase tracking-widest">
               {casesCopy.liveCase}
             </span>
           </div>
@@ -124,7 +124,7 @@ function CaseCard({
             {item.label}
           </p>
           <h3 className="font-sans text-lg font-bold text-white">{item.title}</h3>
-          <p className="font-sans text-lg text-neutral-400 leading-relaxed line-clamp-2">
+          <p className="font-sans text-lg text-sea-salt leading-relaxed line-clamp-2">
             {item.desc}
           </p>
         </div>
@@ -253,31 +253,31 @@ export default function Cases({ onOpenBooking }: CasesProps) {
   }, [isPaused, activeIndex, virtualIndex, isDesktop, isTransitionEnabled]);
 
   return (
-    <section className="relative py-20 bg-[#060606] overflow-hidden">
+    <section className="relative py-16 bg-[#060606] overflow-hidden">
       <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-green-primary/[0.03] blur-[110px]" />
       <div className="absolute top-0 right-0 h-64 w-64 rounded-full bg-blue-500/[0.03] blur-[100px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
         {/* Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end pb-8 border-b border-neutral-900">
-          <div className="lg:col-span-8 space-y-3">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end pb-10 border-b border-neutral-900">
+          <div className="lg:col-span-8 space-y-10">
             <span className="inline-block px-3.5 py-2 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
               {casesCopy.badge}
             </span>
-            <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-white leading-none">
+            <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-white ">
               {casesCopy.titleLine1} <br />{casesCopy.titleLine2}
             </h2>
           </div>
-          <div className="lg:col-span-4 flex flex-col gap-4 items-start lg:items-end">
-            <p className="font-sans text-lg sm:text-lg text-neutral-400 leading-relaxed max-w-sm lg:text-right">
+          <div className="lg:col-span-4 flex flex-col gap-6 items-start lg:items-end">
+            <p className="font-sans text-lg sm:text-lg text-sea-salt leading-relaxed max-w-sm lg:text-right">
               {casesCopy.description}
             </p>
             {/* Navigation */}
             <div className="flex items-center gap-3">
               <button
                 onClick={isDesktop ? handleDesktopPrev : handleMobilePrev}
-                className="h-9 w-9 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-brunswick-green-500 hover:border-brunswick-green-500 flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className="h-9 w-9 rounded-full border border-neutral-800 bg-neutral-950/60 text-sea-salt hover:text-brunswick-green-500 hover:border-brunswick-green-500 flex items-center justify-center transition-all duration-300 cursor-pointer"
               >
                 <ArrowLeft className="h-3.5 w-3.5" />
               </button>
@@ -287,7 +287,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
               </span>
               <button
                 onClick={isDesktop ? handleDesktopNext : handleMobileNext}
-                className="h-9 w-9 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-brunswick-green-500 hover:border-brunswick-green-500 flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className="h-9 w-9 rounded-full border border-neutral-800 bg-neutral-950/60 text-sea-salt hover:text-brunswick-green-500 hover:border-brunswick-green-500 flex items-center justify-center transition-all duration-300 cursor-pointer"
               >
                 <ArrowRight className="h-3.5 w-3.5" />
               </button>
@@ -318,7 +318,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
             </div>
 
             {/* Dot indicators */}
-            <div className="flex items-center justify-center gap-2 mt-6">
+            <div className="flex items-center justify-center gap-4 mt-6">
               {caseItems.map((_, i) => (
                 <button
                   key={i}

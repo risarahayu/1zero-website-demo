@@ -26,7 +26,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           className="inline-flex items-center gap-2 rounded-full border border-neutral-800/80 bg-neutral-900/60 p-1 px-4 text-lg backdrop-blur-sm shadow-md"
         >
           <span className="h-2 w-2 rounded-full bg-green-primary animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.9)]" />
-          <span className="font-sans text-lg font-medium uppercase tracking-widest text-neutral-400">
+          <span className="font-sans text-lg font-medium uppercase tracking-widest text-sea-salt">
             {heroCopy.performanceLabel}
           </span>
         </motion.div> */}
@@ -62,7 +62,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="max-w-xl mx-auto grid grid-cols-1 md:grid-cols-5 items-stretch rounded-2xl border border-color-sea-salt bg-[#09090b]/80 p-1 backdrop-blur-md shadow-2xl"
+          className="max-w-xl mx-auto grid grid-cols-1 md:grid-cols-5 items-stretch rounded-2xl border border-color-sea-salt bg-raisin-black-800 p-1 backdrop-blur-md shadow-2xl"
         >
           {/* Rating box (Col-span 3) */}
           <div className="md:col-span-3 flex flex-col justify-center items-start text-left p-5 md:pl-6 space-y-2 border-b md:border-b-0  border-neutral-800/80">
@@ -88,7 +88,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             className="md:col-span-2 group flex flex-col justify-center items-center gap-2 p-3 rounded-xl bg-brunswick-green-primary hover:bg-brunswick-green-700 hover:text-white text-sea-salt text-center transition-all cursor-pointer font-sans font-black text-lg relative overflow-hidden"
           >
             {/* Soft inner glow */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:bg-brunswick-green-700 transition-opacity" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent bg-brunswick-green-900 opacity-0 group-hover:bg-brunswick-green-700 transition-opacity" />
             <PhoneCall className="h-5 w-5 animate-bounce shrink-0" />
             <span className="tracking-wider uppercase">{heroCopy.ctaButtonText}</span>
             <span className="flex items-center gap-1 font-sans text-lg  font-medium">

@@ -85,7 +85,7 @@ export default function PortfolioPage() {
                 {/* Aurora / Glow effects */}
                 <div className="absolute inset-0 -z-10 pointer-events-none">
                     <div className="absolute top-1/2 left-1/3 w-72 h-72 bg-brunswick-green-500/30 rounded-full blur-[90px] -translate-y-1/2 -translate-x-1/2 mix-blend-screen animate-pulse" />
-                    <div className="absolute top-1/2 right-1/3 w-72 h-72 bg-[#a3e635]/20 rounded-full blur-[90px] -translate-y-1/2 translate-x-1/2 mix-blend-screen animate-pulse" style={{ animationDelay: '1s' }} />
+                    <div className="absolute top-1/2 right-1/3 w-72 h-72 bg-brunswick-green-500/20 rounded-full blur-[90px] -translate-y-1/2 translate-x-1/2 mix-blend-screen animate-pulse" style={{ animationDelay: '1s' }} />
                 </div>
                 <div className="space-y-10 justify-center items-center flex flex-col">
 
@@ -105,7 +105,7 @@ export default function PortfolioPage() {
                 bg-[linear-gradient(120deg,var(--color-sea-salt),var(--color-ivory),var(--color-dun),var(--color-green-500))]
                 bg-[length:300%_300%]
                 animate-gradient
-                text-neutral-950
+                text-seal-salt
                 font-sans font-extrabold
                 text-lg sm:text-lg
                 rounded-2xl

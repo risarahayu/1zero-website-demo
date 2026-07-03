@@ -4,7 +4,7 @@ import BookingButton from "../BookingButton";
 
 const CtaBanner = () => {
     return (
-        <section className="relative mt-5 border border-emerald-500/20 rounded-2xl overflow-hidden h-[200px] sm:h-[700px] bg-gradient-to-b from-[#062114] to-[#010a05]">
+        <section className="relative mt-5 border border-brunswick-green-500/20 rounded-2xl overflow-hidden h-[200px] sm:h-[700px] bg-gradient-to-b from-brunswick-green-500 to-raisin-black">
             <img
                 src={`${import.meta.env.BASE_URL}Team Member Photo/1zero Teams.webp`}
                 alt=""

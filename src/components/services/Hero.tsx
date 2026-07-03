@@ -86,7 +86,7 @@ export default function ServicesHero() {
                         {servicesCopy.heroTextSuffix}
                     </h1>
 
-                    <p className="mt-6 text-neutral-400 max-w-2xl mx-auto">
+                    <p className="mt-6 text-sea-salt max-w-2xl mx-auto">
                         {servicesCopy.heroTagline}
                     </p>
                 </div>
