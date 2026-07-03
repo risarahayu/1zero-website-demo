@@ -13,10 +13,10 @@ const caseItems = [
     title: "Sinar Agritech",
     desc: "How a regional agritech firm cut their data pipeline latency by 42% and launched a new operator dashboard in under 8 weeks.",
     tag: "System Architecture",
-    gradient: "from-emerald-900/80 via-neutral-950 to-neutral-950",
-    accentColor: "text-emerald-400",
-    borderColor: "border-emerald-500/20",
-    iconBg: "bg-green-primary/10",
+    gradient: "from-brunswick-green-600/80 via-sea-salt to-sea-salt",
+    accentColor: "text-brunswick-green-500",
+    borderColor: "border-brunswick-green-500/20",
+    iconBg: "bg-brunswick-green-900/10",
   },
   {
     id: "case-02",
@@ -24,7 +24,7 @@ const caseItems = [
     title: "EduVibe Asia",
     desc: "Rebuilding a legacy LMS into a cloud-native, multi-tenant platform serving 80,000 active learners with zero downtime migration.",
     tag: "Cloud Migration",
-    gradient: "from-blue-900/80 via-neutral-950 to-neutral-950",
+    gradient: "from-blue-900/80 via-sea-salt to-sea-salt",
     accentColor: "text-blue-400",
     borderColor: "border-blue-500/20",
     iconBg: "bg-blue-500/10",
@@ -35,7 +35,7 @@ const caseItems = [
     title: "BWT Logistics",
     desc: "Integrating real-time fleet telemetry and automated invoicing into a unified ops portal, reducing manual work by 70%.",
     tag: "Enterprise Integration",
-    gradient: "from-amber-900/80 via-neutral-950 to-neutral-950",
+    gradient: "from-amber-900/80 via-sea-salt to-sea-salt",
     accentColor: "text-amber-400",
     borderColor: "border-amber-500/20",
     iconBg: "bg-amber-500/10",
@@ -46,7 +46,7 @@ const caseItems = [
     title: "MediCare Connect",
     desc: "Designing a HIPAA-aligned patient engagement platform with real-time appointment scheduling and secure document sharing.",
     tag: "Healthcare Tech",
-    gradient: "from-purple-900/80 via-neutral-950 to-neutral-950",
+    gradient: "from-purple-900/80 via-sea-salt to-sea-salt",
     accentColor: "text-purple-400",
     borderColor: "border-purple-500/20",
     iconBg: "bg-purple-500/10",
@@ -57,7 +57,7 @@ const caseItems = [
     title: "RetailCore ID",
     desc: "End-to-end POS modernization for a 200-branch retail chain — from fragmented spreadsheets to a unified real-time inventory system.",
     tag: "Retail Systems",
-    gradient: "from-rose-900/80 via-neutral-950 to-neutral-950",
+    gradient: "from-rose-900/80 via-sea-salt to-sea-salt",
     accentColor: "text-rose-400",
     borderColor: "border-rose-500/20",
     iconBg: "bg-rose-500/10",
@@ -78,9 +78,9 @@ function CaseCard({
     <div
       onClick={onOpenBooking}
       className={`
-        group relative rounded-3xl border bg-neutral-950/25 p-5
+        group relative rounded-3xl border bg-sea-salt/6 p-5
         flex flex-col justify-between cursor-pointer overflow-hidden
-        transition-all duration-500 hover:bg-neutral-950/80
+        transition-all duration-500 hover:scale-[1.01]
         ${item.borderColor}
         ${isCenter ? "opacity-100 scale-100" : "opacity-55 scale-[0.97] hover:opacity-75"}
       `}
@@ -88,7 +88,7 @@ function CaseCard({
       {/* Gradient image area */}
       <div className="space-y-4">
         <div
-          className={`relative h-[180px] w-full overflow-hidden rounded-2xl bg-gradient-to-br ${item.gradient} border border-neutral-800/60 flex items-end p-4`}
+          className={`relative h-[180px] w-full overflow-hidden rounded-2xl bg-gradient-to-br ${item.gradient} border border-sea-salt/60 flex items-end p-4`}
         >
           {/* Decorative grid */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:24px_24px]" />
@@ -105,14 +105,14 @@ function CaseCard({
 
           {/* Top-right icon */}
           <div
-            className={`absolute top-4 right-4 h-8 w-8 rounded-full ${item.iconBg} border border-neutral-800/80 backdrop-blur-md flex items-center justify-center ${item.accentColor}`}
+            className={`absolute top-4 right-4 h-8 w-8 rounded-full ${item.iconBg} border border-sea-salt/80 backdrop-blur-md flex items-center justify-center ${item.accentColor}`}
           >
             <Activity className="h-3.5 w-3.5 animate-pulse" />
           </div>
 
           {/* Tag chip */}
           <span
-            className={`relative z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-lg font-sans uppercase tracking-wider border border-neutral-700/60 bg-neutral-950/70 ${item.accentColor}`}
+            className={`relative z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-lg font-sans uppercase tracking-wider border border-sea-salt/60 bg-sea-salt/70 ${item.accentColor}`}
           >
             <Clock className="h-2.5 w-2.5" />
             {item.tag}
@@ -120,10 +120,10 @@ function CaseCard({
         </div>
 
         <div className="space-y-1 pb-2">
-          <p className="font-sans text-lg uppercase tracking-widest text-neutral-500">
+          <p className="font-sans text-lg uppercase tracking-widest text-sea-salt">
             {item.label}
           </p>
-          <h3 className="font-sans text-lg font-bold text-white">{item.title}</h3>
+          <h3 className="font-sans text-lg font-bold text-sea-salt">{item.title}</h3>
           <p className="font-sans text-lg text-sea-salt leading-relaxed line-clamp-2">
             {item.desc}
           </p>
@@ -131,8 +131,8 @@ function CaseCard({
       </div>
 
       {/* Footer row */}
-      <div className="flex items-center justify-between pt-4 border-t border-neutral-900 text-lg font-sans">
-        <div className="flex items-center gap-1.5 text-neutral-500">
+      <div className="flex items-center justify-between pt-4 border-t border-sea-salt text-lg font-sans">
+        <div className="flex items-center gap-1.5 text-sea-salt">
           <MessageSquare className="h-3.5 w-3.5" />
           <span>{casesCopy.discussionCompleted}</span>
         </div>
@@ -253,41 +253,42 @@ export default function Cases({ onOpenBooking }: CasesProps) {
   }, [isPaused, activeIndex, virtualIndex, isDesktop, isTransitionEnabled]);
 
   return (
-    <section className="relative py-16 bg-[#060606] overflow-hidden">
-      <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-green-primary/[0.03] blur-[110px]" />
+    <section className="relative py-16 bg-raisin-black-800/20 overflow-hidden">
+      <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-brunswick-green-900/[0.03] blur-[110px]" />
       <div className="absolute top-0 right-0 h-64 w-64 rounded-full bg-blue-500/[0.03] blur-[100px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
         {/* Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end pb-10 border-b border-neutral-900">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end pb-10 border-b border-sea-salt">
           <div className="lg:col-span-8 space-y-10">
-            <span className="inline-block px-3.5 py-2 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
+            <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
               {casesCopy.badge}
             </span>
-            <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-white ">
+            <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-sea-salt ">
               {casesCopy.titleLine1} <br />{casesCopy.titleLine2}
             </h2>
           </div>
           <div className="lg:col-span-4 flex flex-col gap-6 items-start lg:items-end">
-            <p className="font-sans text-lg sm:text-lg text-sea-salt leading-relaxed max-w-sm lg:text-right">
+            <p className="font-sans text-lg sm:text-lg text-sea-salt/90 leading-relaxed max-w-sm lg:text-right">
               {casesCopy.description}
             </p>
             {/* Navigation */}
             <div className="flex items-center gap-3">
               <button
                 onClick={isDesktop ? handleDesktopPrev : handleMobilePrev}
-                className="h-9 w-9 rounded-full border border-neutral-800 bg-neutral-950/60 text-sea-salt hover:text-brunswick-green-500 hover:border-brunswick-green-500 flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
               >
                 <ArrowLeft className="h-3.5 w-3.5" />
               </button>
-              <span className="font-sans text-lg text-neutral-500 tracking-wider">
+              <span className="font-sans text-lg text-sea-salt tracking-wider">
                 {String((isDesktop ? activeIndex : mobileDisplayIndex) + 1).padStart(2, "0")} /{" "}
                 {String(total).padStart(2, "0")}
               </span>
               <button
                 onClick={isDesktop ? handleDesktopNext : handleMobileNext}
-                className="h-9 w-9 rounded-full border border-neutral-800 bg-neutral-950/60 text-sea-salt hover:text-brunswick-green-500 hover:border-brunswick-green-500 flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
               >
                 <ArrowRight className="h-3.5 w-3.5" />
               </button>
@@ -325,7 +326,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
                   onClick={() => setActiveIndex(i)}
                   className={`transition-all duration-300 rounded-full ${i === activeIndex
                     ? "w-6 h-1.5 bg-brunswick-green-500"
-                    : "w-1.5 h-1.5 bg-neutral-700 hover:bg-neutral-500"
+                    : "w-1.5 h-1.5 bg-sea-salt hover:bg-sea-salt"
                     }`}
                 />
               ))}
@@ -370,7 +371,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
                   }}
                   className={`transition-all duration-300 rounded-full ${i === mobileDisplayIndex
                     ? "w-6 h-1.5 bg-brunswick-green-500"
-                    : "w-1.5 h-1.5 bg-neutral-700 hover:bg-neutral-500"
+                    : "w-1.5 h-1.5 bg-sea-salt hover:bg-sea-salt"
                     }`}
                 />
               ))}
@@ -379,8 +380,8 @@ export default function Cases({ onOpenBooking }: CasesProps) {
         )}
 
         {/* Call to action marquee */}
-        <div className="overflow-hidden rounded-3xl border border-neutral-900 bg-neutral-950/30 p-4">
-          <div className="animate-marquee-text flex whitespace-nowrap gap-16 text-3xl sm:text-4xl font-sans font-extrabold uppercase tracking-[0.18em] text-white">
+        <div className="overflow-hidden rounded-3xl border border-sea-salt  p-4">
+          <div className="animate-marquee-text flex whitespace-nowrap gap-16 text-3xl sm:text-4xl font-sans font-extrabold uppercase tracking-[0.18em] text-sea-salt">
             <span>{casesCopy.marqueeText}</span>
             <span>{casesCopy.marqueeText}</span>
             <span>{casesCopy.marqueeText}</span>

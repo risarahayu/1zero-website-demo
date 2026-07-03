@@ -18,7 +18,7 @@ export default function BookingButton({ onClick, className = "" }: BookingButton
         bg-[linear-gradient(120deg,var(--color-sea-salt),var(--color-ivory),var(--color-dun),var(--color-green-500))]
         bg-[length:300%_300%]
         animate-gradient
-        text-neutral-950
+        text-raisin-black-800  font-sans text-lg  leading-relaxed max-w-sm00
         font-sans font-extrabold
         text-lg sm:text-lg
         rounded-2xl
@@ -29,7 +29,7 @@ export default function BookingButton({ onClick, className = "" }: BookingButton
         tracking-wide ${className}`}
     >
       Book a Section
-      <PhoneCall className="h-4 w-4 text-neutral-900 group-hover:scale-110 transition-transform" />
+      <PhoneCall className="h-4 w-4 text-raisin-black-800 group-hover:scale-110 transition-transform" />
     </a>
   );
 }

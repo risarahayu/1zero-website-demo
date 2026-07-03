@@ -1,23 +1,23 @@
 <svg viewBox="0 0 345 96" xmlns="http://www.w3.org/2000/svg" fill="none">
   <!-- CHARACTER 1: The '1' with top bevel shelf -->
-  <path d="M 4,28 L 31,0 V 96 H 18 V 23 L 4,23 Z" fill="white" />
+  <path d="M 4,28 L 31,0 V 96 H 18 V 23 L 4,23 Z" fill="sea-salt" />
 
   <!-- CHARACTER 2: The 'Z' with styled symmetric curves -->
-  <path d="M 43,21 C 43,15 48,12 65,12 H 105 V 24 H 65 C 54,24 49,23 43,21 Z" fill="white" />
-  <path d="M 105,24 L 43,84 M 105,12 L 43,72 L 95,24 H 105 Z" fill="white" />
-  <path d="M 105,87 C 105,93 100,96 83,96 H 43 V 84 H 83 C 94,84 100,85 105,87 Z" fill="white" />
+  <path d="M 43,21 C 43,15 48,12 65,12 H 105 V 24 H 65 C 54,24 49,23 43,21 Z" fill="sea-salt" />
+  <path d="M 105,24 L 43,84 M 105,12 L 43,72 L 95,24 H 105 Z" fill="sea-salt" />
+  <path d="M 105,87 C 105,93 100,96 83,96 H 43 V 84 H 83 C 94,84 100,85 105,87 Z" fill="sea-salt" />
 
   <!-- CHARACTER 3: The 'E' composed of 3 capsule horizontal bars -->
-  <path d="M 134,12 H 185 V 24 H 134 C 127,24 122,19 122,18 C 122,17 127,12 134,12 Z" fill="white" />
-  <path d="M 134,42 H 185 V 54 H 134 C 127,54 122,49 122,48 C 122,47 127,42 134,42 Z" fill="white" />
-  <path d="M 134,84 H 185 V 96 H 134 C 127,96 122,91 122,90 C 122,89 127,84 134,84 Z" fill="white" />
+  <path d="M 134,12 H 185 V 24 H 134 C 127,24 122,19 122,18 C 122,17 127,12 134,12 Z" fill="sea-salt" />
+  <path d="M 134,42 H 185 V 54 H 134 C 127,54 122,49 122,48 C 122,47 127,42 134,42 Z" fill="sea-salt" />
+  <path d="M 134,84 H 185 V 96 H 134 C 127,96 122,91 122,90 C 122,89 127,84 134,84 Z" fill="sea-salt" />
 
   <!-- CHARACTER 4: The 'R' with vertical stem, top-curved loop and bottom-right leg -->
-  <path d="M 197,12 H 210 V 96 H 197 Z" fill="white" />
-  <path d="M 210,12 H 250 C 263,12 268,20 268,30 C 268,40 263,48 250,48 H 210 V 36 H 250 C 255,36 257,34 257,30 C 257,26 255,24 250,24 H 210 Z" fill="white" />
-  <path d="M 226,48 L 268,96 H 252 L 210,48 Z" fill="white" />
+  <path d="M 197,12 H 210 V 96 H 197 Z" fill="sea-salt" />
+  <path d="M 210,12 H 250 C 263,12 268,20 268,30 C 268,40 263,48 250,48 H 210 V 36 H 250 C 255,36 257,34 257,30 C 257,26 255,24 250,24 H 210 Z" fill="sea-salt" />
+  <path d="M 226,48 L 268,96 H 252 L 210,48 Z" fill="sea-salt" />
 
   <!-- CHARACTER 5: The 'O' container with a tiny '1' sitting inside -->
-  <path fill-rule="evenodd" clip-rule="evenodd" d="M 280,12 H 341 V 81 C 341,90 333,96 324,96 H 297 C 288,96 280,90 280,81 V 12 Z M 293,24 V 81 C 293,82 294,84 297,84 H 324 C 327,84 328,82 328,81 V 24 H 293 Z" fill="white" />
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M 280,12 H 341 V 81 C 341,90 333,96 324,96 H 297 C 288,96 280,90 280,81 V 12 Z M 293,24 V 81 C 293,82 294,84 297,84 H 324 C 327,84 328,82 328,81 V 24 H 293 Z" fill="sea-salt" />
   <path d="M 306,44 L 314,34 V 78 H 309 V 41 L 306,41 Z" fill="#a3e635" />
 </svg>

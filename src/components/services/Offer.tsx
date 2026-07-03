@@ -32,12 +32,12 @@ export default function DiagnosisPanel() {
 
                 {/* 3. KONTEN UTAMA */}
                 <div className="relative z-20 max-w-3xl mx-auto text-center px-6 py-20">
-                    <h2 className="text-2xl  md:text-4xl font-bold leading-snug text-white">
+                    <h2 className="text-2xl  md:text-4xl font-bold leading-snug text-sea-salt">
                         {offerCopy.heroTitleLine1}
                         <br />
                         {offerCopy.heroTitleLine2}
                     </h2>
-                    <p className="text-white/50 mt-6">
+                    <p className="text-sea-salt/50 mt-6">
                         {offerCopy.heroSubtitle}
                     </p>
                 </div>
@@ -45,10 +45,10 @@ export default function DiagnosisPanel() {
 
             {/* ACCORDION HEADER */}
             <div className="mb-12 text-center max-w-3xl mx-auto">
-                <h3 className="text-3xl font-bold text-white">
+                <h3 className="text-3xl font-bold text-sea-salt">
                     {offerCopy.accordionTitle}
                 </h3>
-                <p className="text-white/60 mt-2">
+                <p className="text-sea-salt/60 mt-2">
                     {offerCopy.accordionSubtitle}
                 </p>
             </div>
@@ -61,7 +61,7 @@ export default function DiagnosisPanel() {
                     return (
                         <div
                             key={item.id}
-                            className={`border transition-all duration-300 rounded-2xl ${isActive ? "border-white/20 bg-white/5 shadow-lg" : "border-white/5 bg-transparent hover:border-white/10"
+                            className={`border transition-all duration-300 rounded-2xl ${isActive ? "border-sea-salt/20 bg-sea-salt/5 shadow-lg" : "border-sea-salt/5 bg-transparent hover:border-sea-salt/10"
                                 }`}
                         >
                             {/* DROPDOWN HEADER (Tombol Klik) */}
@@ -74,16 +74,16 @@ export default function DiagnosisPanel() {
                                     <div
                                         className={`flex-shrink-0 w-4 h-4 rounded-full transition-all duration-300 ${isActive
                                             ? "bg-green-400 scale-110 shadow-[0_0_12px_rgba(74,222,128,0.6)]"
-                                            : "bg-white/20 group-hover:bg-white/40"
+                                            : "bg-sea-salt/20 group-hover:bg-sea-salt/40"
                                             }`}
                                     />
-                                    <span className={`text-xl font-medium transition-colors duration-300 ${isActive ? "text-white" : "text-white/60 group-hover:text-white"}`}>
+                                    <span className={`text-xl font-medium transition-colors duration-300 ${isActive ? "text-sea-salt" : "text-sea-salt/60 group-hover:text-sea-salt"}`}>
                                         {item.problemTitle || "System Area"}
                                     </span>
                                 </div>
 
                                 {/* CHEVRON ICON */}
-                                <div className={`text-white/40 transition-transform duration-300 ${isActive ? "rotate-180" : "rotate-0"}`}>
+                                <div className={`text-sea-salt/40 transition-transform duration-300 ${isActive ? "rotate-180" : "rotate-0"}`}>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                         <polyline points="6 9 12 15 18 9"></polyline>
                                     </svg>
@@ -96,7 +96,7 @@ export default function DiagnosisPanel() {
                                     }`}
                             >
                                 <div className="overflow-hidden">
-                                    <div className="p-6 pt-0 border-t border-white/5 mt-4">
+                                    <div className="p-6 pt-0 border-t border-sea-salt/5 mt-4">
 
                                         {/* KONTEN DARI SEBELAH KANAN SEBELUMNYA */}
                                         <div className="relative w-full">
@@ -128,7 +128,7 @@ export default function DiagnosisPanel() {
                                                                     <Icon className="w-6 h-6 text-red-400 flex-shrink-0" />
 
                                                                     {/* Render teks */}
-                                                                    <span className="text-white/80 text-lg md:text-lg leading-relaxed">
+                                                                    <span className="text-sea-salt/80 text-lg md:text-lg leading-relaxed">
                                                                         {symptom.text}
                                                                     </span>
                                                                 </div>
@@ -138,25 +138,25 @@ export default function DiagnosisPanel() {
 
                                                     {/* ARROW DIVIDER */}
                                                     <div className="flex justify-center">
-                                                        <div className="w-px h-10 bg-gradient-to-b from-white/20 to-transparent" />
+                                                        <div className="w-px h-10 bg-gradient-to-b from-sea-salt/20 to-transparent" />
                                                     </div>
 
                                                     {/* 2. RECOMMENDED SERVICE */}
-                                                    <div className="p-6 rounded-xl border border-white/10 bg-white/5 shadow-2xl">
+                                                    <div className="p-6 rounded-xl border border-sea-salt/10 bg-sea-salt/5 shadow-2xl">
 
-                                                        <p className="text-white/40 text-lg font-medium uppercase tracking-wider mb-4">
+                                                        <p className="text-sea-salt/40 text-lg font-medium uppercase tracking-wider mb-4">
                                                             {offerCopy.ourServiceLabel}
                                                         </p>
                                                         <div className="flex flex-col gap-4">
                                                             <div className="text-2xl md:text-5xl font-bold uppercase animate-gradient-text text-gradient">
                                                                 {item.service}
                                                             </div>
-                                                            <p className="text-white/70 text-lg leading-relaxed">
+                                                            <p className="text-sea-salt/70 text-lg leading-relaxed">
                                                                 {item.description}
                                                             </p>
 
                                                             <div className="mt-4">
-                                                                <a href={item.href} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brunswick-green-900 text-white hover:bg-brunswick-green-700 transition-colors">
+                                                                <a href={item.href} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brunswick-green-900 text-sea-salt hover:bg-brunswick-green-700 transition-colors">
                                                                     {offerCopy.downloadBtn}
                                                                     <Download size={16} />
                                                                 </a>
@@ -167,7 +167,7 @@ export default function DiagnosisPanel() {
 
                                                     {/* ARROW DIVIDER */}
                                                     <div className="flex justify-center">
-                                                        <div className="w-px h-10 bg-gradient-to-b from-white/20 to-transparent" />
+                                                        <div className="w-px h-10 bg-gradient-to-b from-sea-salt/20 to-transparent" />
                                                     </div>
 
                                                     {/* 3. FUTURE STATE */}
@@ -177,7 +177,7 @@ export default function DiagnosisPanel() {
                                                         </p>
                                                         <ul className="space-y-3">
                                                             {item.futureState?.map((f, i) => (
-                                                                <li key={i} className="text-white/80 text-lg flex gap-3 items-start">
+                                                                <li key={i} className="text-sea-salt/80 text-lg flex gap-3 items-start">
                                                                     <span className="text-brunswick-green-500 mt-0.5">✓</span>
                                                                     <span>{f}</span>
                                                                 </li>

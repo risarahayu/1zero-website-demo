@@ -38,7 +38,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen selection:bg-green-primary selection:text-neutral-950">
+    <div className="relative min-h-screen selection:bg-brunswick-green-900 selection:text-sea-salt">
       {/* Primary Header/Nav bar */}
       <Header onOpenBooking={handleOpenBooking} />
 

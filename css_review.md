@@ -19,20 +19,20 @@ The codebase uses a mixture of Tailwind typography utilities and raw CSS declara
 ### 🎨 Colors & Palette Proliferation (Total: ~25+ Color Tokens/Varieties)
 There is significant visual fragmentation in how colors are applied:
 *   **Custom Brand Colors:** `--color-brunswick-green` (500 to 900), `sea-salt`, `ivory`, and `dun`.
-*   **Tailwind Grays (5 Different Scales):** The codebase concurrently uses `slate` (e.g. `text-slate-50`), `zinc` (e.g. `text-zinc-300`), `gray` (e.g. `text-gray-400`), `neutral` (e.g. `text-neutral-300`), and `white` with custom opacity filters (`text-white/60`, `text-white/80`).
+*   **Tailwind Grays (5 Different Scales):** The codebase concurrently uses `slate` (e.g. `text-slate-50`), `raisin-black-900` (e.g. `text-raisin-black-900-300`), `gray` (e.g. `text-gray-400`), `neutral` (e.g. `text-sea-salt`), and `sea-salt` with custom opacity filters (`text-sea-salt/60`, `text-sea-salt/80`).
 *   **Secondary/Accent Colors:**
     *   Mix of standard Tailwind `emerald` (400, 500, 600, 900) alongside custom brand `brunswick-green`.
     *   Various one-off colors like `rose`, `pink`, `violet`, `sky`, `blue`, and `indigo` (primarily used for gradients or hover states in bookings/modal states).
 
 > [!WARNING]
-> ### 🛑 Critical Bug: Undefined `--color-green-primary` Token
-> Multiple components (e.g. `App.tsx`, `WhyUs.tsx`, `Testimonials.tsx`, `Products.tsx`, etc.) apply the utility `bg-green-primary` or `bg-green-primary/10`.
+> ### 🛑 Critical Bug: Undefined `--color-brunswick-green-900` Token
+> Multiple components (e.g. `App.tsx`, `WhyUs.tsx`, `Testimonials.tsx`, `Products.tsx`, etc.) apply the utility `bg-brunswick-green-900` or `bg-brunswick-green-900/10`.
 >
-> However, **`green-primary` is never defined** under `@theme` in [index.css](file:///c:/Users/m_tre/Desktop/DEV_Work/1zero-website-demo/src/css/index.css#L4-L18). The actual defined theme token is:
+> However, **`brunswick-green-900` is never defined** under `@theme` in [index.css](file:///c:/Users/m_tre/Desktop/DEV_Work/1zero-website-demo/src/css/index.css#L4-L18). The actual defined theme token is:
 > ```css
-> --color-brunswick-green-primary: var(--green-900);
+> --color-brunswick-green-900: var(--green-900);
 > ```
-> Consequently, `bg-green-primary` translates to an empty background style in production, causing elements to render without background colors or with broken text selection/gradients.
+> Consequently, `bg-brunswick-green-900` translates to an empty background style in production, causing elements to render without background colors or with broken text selection/gradients.
 
 ---
 
@@ -44,17 +44,17 @@ There is significant visual fragmentation in how colors are applied:
 
 ## 2. Best Practice Recommendations
 
-### 1. Fix the `green-primary` Token Mapping
-Define `--color-green-primary` in your `@theme` inside `index.css`, or rename the JSX class calls to match the defined `brunswick-green-primary` token.
+### 1. Fix the `brunswick-green-900` Token Mapping
+Define `--color-brunswick-green-900` in your `@theme` inside `index.css`, or rename the JSX class calls to match the defined `brunswick-green-900` token.
 ```diff
  @theme {
-   --color-brunswick-green-primary: var(--green-900);
-+  --color-green-primary: var(--green-500); /* or whichever shade green-primary refers to */
+   --color-brunswick-green-900: var(--green-900);
++  --color-brunswick-green-900: var(--green-500); /* or whichever shade brunswick-green-900 refers to */
  }
 ```
 
 ### 2. Standardize Gray Scales
-Consolidate UI components to use a single grey scale family (e.g. standardizing on `zinc` or `neutral`) rather than combining `slate`, `zinc`, `gray`, and `neutral`. This will instantly make the design look more cohesive and deliberate.
+Consolidate UI components to use a single grey scale family (e.g. standardizing on `raisin-black-900` or `neutral`) rather than combining `slate`, `raisin-black-900`, `gray`, and `neutral`. This will instantly make the design look more cohesive and deliberate.
 
 ### 3. Move Custom CSS into Tailwind Components
 Files like `about.css` and `services.css` use raw media queries, manual absolute positioning, and specific animations. Consider consolidating these into Tailwind `@utility` classes or using Tailwind config styles directly to keep styles co-located in TSX files.

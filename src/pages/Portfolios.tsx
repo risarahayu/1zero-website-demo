@@ -29,15 +29,15 @@ export default function PortfolioPage() {
     }, [activeTab]);
 
     return (
-        <section className="relative min-h-screen bg-black text-white py-24 px-6">
+        <section className="relative min-h-screen bg-black text-sea-salt py-24 px-6">
             {/* glow background */}
             <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
-                <div className="w-[600px] h-[600px] bg-white/5 blur-[160px] rounded-full" />
+                <div className="w-[600px] h-[600px] bg-sea-salt/5 blur-[160px] rounded-full" />
             </div>
 
             {/* HEADER */}
             <div className="relative z-10 text-center space-y-4">
-                <span className="inline-block px-3.5 py-2 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
+                <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
                     {portfoliosPageCopy.badge}
                 </span>
                 <br />
@@ -45,7 +45,7 @@ export default function PortfolioPage() {
                     {portfoliosPageCopy.title}
                 </h1>
 
-                <p className="text-zinc-400 max-w-xl mx-auto">
+                <p className="text-raisin-black-900-400 max-w-xl mx-auto">
                     {portfoliosPageCopy.description}
                 </p>
             </div>
@@ -59,8 +59,8 @@ export default function PortfolioPage() {
                         className={`
                             px-4 py-2 rounded-full text-lg border transition-all duration-300
                             ${activeTab === service
-                                ? "bg-brunswick-green-900 text-sea-salt border-white/10"
-                                : "bg-white/5 text-sea-salt border-white/10 hover:border-brunswick-green-500 hover:text-brunswick-green-500"
+                                ? "bg-brunswick-green-900 text-sea-salt border-sea-salt/10"
+                                : "bg-sea-salt/5 text-sea-salt border-sea-salt/10 hover:border-brunswick-green-500 hover:text-brunswick-green-500"
                             }
                         `}
                     >
@@ -89,7 +89,7 @@ export default function PortfolioPage() {
                 </div>
                 <div className="space-y-10 justify-center items-center flex flex-col">
 
-                    <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-white tracking-tight z-10 drop-shadow-lg">
+                    <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-sea-salt tracking-tight z-10 drop-shadow-lg">
                         {portfoliosPageCopy.ctaTitle}
                     </p>
                     <img
@@ -116,18 +116,18 @@ export default function PortfolioPage() {
                 tracking-wide"
                     >
                         {portfoliosPageCopy.bookButton}
-                        <PhoneCall className="h-4 w-4 text-neutral-900 group-hover:scale-110 transition-transform" />
+                        <PhoneCall className="h-4 w-4 text-sea-salt group-hover:scale-110 transition-transform" />
                     </button>
                 </div>
             </div>
             {/* Booking Modal placeholder */}
             {isBookingOpen && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">
-                    <div className="bg-white dark:bg-gray-800 rounded-xl p-8 max-w-md w-full shadow-lg">
+                    <div className="bg-sea-salt dark:bg-gray-800 rounded-xl p-8 max-w-md w-full shadow-lg">
                         <h2 className="text-2xl md:text-4xl font-bold mb-4">{portfoliosPageCopy.modalTitle}</h2>
                         <p className="mb-6">{portfoliosPageCopy.modalDescription}</p>
                         <button
-                            className="px-4 py-2 bg-brunswick-green-500 text-white rounded hover:bg-brunswick-green-600"
+                            className="px-4 py-2 bg-brunswick-green-500 text-sea-salt rounded hover:bg-brunswick-green-600"
                             onClick={() => setIsBookingOpen(false)}
                         >
                             {portfoliosPageCopy.modalCloseBtn}

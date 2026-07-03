@@ -34,11 +34,11 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               : "relative"
               }`}
           >
-            <div className={`flex items-center justify-between mx-auto bg-raisin-black-800/90 border border-neutral-800/80 backdrop-blur-md rounded-full px-5 py-2.5 shadow-xl transition-all ${isScrolled ? "scale-95 shadow-emerald-500/5 shadow-2xl" : ""
+            <div className={`flex items-center justify-between mx-auto bg-raisin-black-800/40 border border-sea-salt/80 backdrop-blur-md rounded-full px-5 py-2.5 shadow-xl transition-all ${isScrolled ? "scale-95 shadow-brunswick-green-500/5 shadow-2xl" : ""
               }`}>
               {/* Left empty block or indicator */}
               <div
-                className={`sm:flex items-center gap-1.5 font-sans text-[9px] text-neutral-500 transition-all duration-300 ${isScrolled
+                className={`sm:flex items-center gap-1.5 font-sans text-[9px] text-sea-salt transition-all duration-300 ${isScrolled
                   ? "opacity-0 scale-90 w-0 overflow-hidden"
                   : "opacity-100 scale-100"
                   }`}
@@ -52,7 +52,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                   <a
                     key={link.href}
                     href={link.href}
-                    className="font-sans text-lg font-semibold text-sea-salt hover:text-white hover:underline transition-all tracking-wide"
+                    className="font-sans text-lg font-semibold text-sea-salt hover:text-sea-salt hover:underline transition-all tracking-wide"
                   >
                     {link.label}
                   </a>
@@ -63,7 +63,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               <button
                 id="mobile-menu-trigger"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className={`p-1 px-2 text-sea-salt hover:text-white hover:bg-neutral-900 rounded-full sm:hidden transition-all text-lg ${isScrolled ? "mr-auto" : ""}`}
+                className={`p-1 px-2 text-sea-salt hover:text-sea-salt hover:bg-sea-salt rounded-full sm:hidden transition-all text-lg ${isScrolled ? "mr-auto" : ""}`}
               >
                 {isMobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
               </button>
@@ -72,7 +72,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               <button
                 id="header-booking-btn"
                 onClick={onOpenBooking}
-                className="flex items-center gap-1 p-1 px-3.5 bg-green-primary/10 hover:bg-brunswick-green-primary hover:text-sea-salt border border-brunswick-green-500 text-brunswick-green-500  hover:text-brunswick-green-800 font-sans font-semibold text-lg rounded-full transition-all cursor-pointer shadow-sm hover:shadow-md hover:shadow-emerald-500/10"
+                className="flex items-center gap-1 p-1 px-3.5 bg-brunswick-green-900/10 hover:bg-brunswick-green-900 hover:text-sea-salt border border-brunswick-green-500 text-brunswick-green-500  hover:text-brunswick-green-800 font-sans font-semibold text-lg rounded-full transition-all cursor-pointer shadow-sm hover:shadow-md hover:shadow-brunswick-green-500/10"
               >
                 {headerCopy.bookUsBtn}
                 <ArrowUpRight className="h-3 w-3 shrink-0" />
@@ -91,7 +91,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="sm:hidden fixed top-[90px] left-0 w-full bg-raisin-black-800 border-b border-neutral-800 backdrop-blur-lg overflow-y-auto z-50 shadow-2xl"
+            className="sm:hidden fixed top-[90px] left-0 w-full bg-raisin-black-800 border-b border-sea-salt backdrop-blur-lg overflow-y-auto z-50 shadow-2xl"
           >
             <div className="p-5 flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -99,7 +99,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="font-sans text-lg font-semibold text-neutral-300 hover:text-emerald-400 tracking-wide transition-colors py-2 border-b border-neutral-900/60"
+                  className="font-sans text-lg font-semibold text-sea-salt hover:text-brunswick-green-500 tracking-wide transition-colors py-2 border-b border-sea-salt/60"
                 >
                   {link.label}
                 </a>
@@ -111,7 +111,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                     setIsMobileMenuOpen(false);
                     onOpenBooking();
                   }}
-                  className="w-full text-center p-3 rounded-xl bg-green-primary text-black font-sans font-extrabold text-lg tracking-wider uppercase transition-colors hover:bg-emerald-600 block cursor-pointer"
+                  className="w-full text-center p-3 rounded-xl bg-brunswick-green-900 text-black font-sans font-extrabold text-lg tracking-wider uppercase transition-colors hover:bg-brunswick-green-600 block cursor-pointer"
                 >
                   Free Strategy Session
                 </button>

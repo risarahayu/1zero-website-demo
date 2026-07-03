@@ -14,8 +14,9 @@
   --color-sea-salt: var(--sea-salt);
   --color-ivory: var(--ivory);
   --color-dun: var(--dun);
-  --color-raisin-black: var(--raisin-black-800);
-  --color-raisin-black: var(--raisin-black-900);
+
+  --color-raisin-black-800: var(--raisin-black-800);
+  --color-raisin-black-900: var(--raisin-black-900);
 }
 
 :root {
@@ -43,12 +44,12 @@
     }
 
     &::-webkit-scrollbar-track {
-      background: #060606;
+      background: var(--raisin-black-900);
     }
 
     &::-webkit-scrollbar-thumb {
-      background: #171717;
-      border: 2px solid #060606;
+      background: var(--raisin-black-900);
+      border: 2px solid var(--raisin-black-800);
       border-radius: 9999px;
     }
 
@@ -58,7 +59,7 @@
   }
 
   body {
-    background-color: #030303;
+    background-color: var(--raisin-black-900);
     color: #e5e5e5;
     font-family: var(--font-sans);
     overflow-x: hidden;
@@ -86,7 +87,7 @@
 }
 
 .glow-card:hover {
-  border-color: rgba(16, 185, 129, 0.4);
+  border-color: var(--green-500);
   box-shadow: 0 0 25px rgba(16, 185, 129, 0.08);
 }
 
@@ -163,7 +164,7 @@
   height: 520px;
   top: 10%;
   left: 15%;
-  background: #1D5745;
+  background: var(--green-900);
 }
 
 .aurora-2 {
@@ -171,7 +172,7 @@
   height: 420px;
   bottom: 37%;
   left: 35%;
-  background: #7E8D74;
+  background: var(--dun);
   animation-duration: 32s;
 }
 
@@ -180,7 +181,7 @@
   height: 480px;
   top: 6%;
   right: 29%;
-  background: #D6CAAD;
+  background: var(--ivory);
   opacity: 0.05;
   animation-duration: 26s;
 }
@@ -203,13 +204,13 @@
 .logo-tape-mask {
   mask-image: linear-gradient(to right,
       transparent 0%,
-      black 12%,
-      black 88%,
+      var(--raisin-black-900) 12%,
+      var(--raisin-black-800) 88%,
       transparent 100%);
   -webkit-mask-image: linear-gradient(to right,
       transparent 0%,
-      black 12%,
-      black 88%,
+      var(--raisin-black-900) 12%,
+      var(--raisin-black-800) 88%,
       transparent 100%);
 }
 
@@ -223,10 +224,10 @@
   padding-bottom: 0.15em;
 
   background-image: linear-gradient(90deg,
-      #FAFAFA 0%,
-      #D6CAAD 25%,
+      var(--sea-salt) 0%,
+      var(--dun) 25%,
       var(--green-500) 60%,
-      #1D5745 100%);
+      var(--green-900) 100%);
   background-size: 240% 240%;
   background-position: 100% 50%;
 

@@ -111,7 +111,7 @@ export const products: ProductItem[] = [
     problemTitle: "System Performance",
 
     mood: {
-      bg: "from-emerald-950 via-black to-black",
+      bg: "from-brunswick-green-600 via-black to-black",
       glow: "rgba(16,185,129,0.25)",
       accent: "rgb(16,185,129)",
     },
@@ -386,7 +386,7 @@ export const customProjects = [
     id: "TDD",
     title: "The Donor Dashboard Landing Page",
     description: "Healthcare portal integrating real-time translating, audio diagnosis, and clinical records.",
-    bgClass: "bg-[#092218] border-emerald-500/10",
+    bgClass: "bg-[#092218] border-brunswick-green-500/10",
     mockupType: "tdd",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/TDD.jpg`,
     service: "Devpod",

@@ -18,7 +18,7 @@ const getServiceColorClass = (service: string) => {
   }
 
   // Default fallback
-  return "border-white/10 bg-white/5 text-zinc-400";
+  return "border-sea-salt/10 bg-sea-salt/5 text-raisin-black-900-400";
 };
 
 export default function PortfolioCard({ project, onReadMore, className = "", showService = false }: PortfolioCardProps) {
@@ -44,19 +44,19 @@ export default function PortfolioCard({ project, onReadMore, className = "", sho
       {/* Left corner identifier and Content text */}
       <div className="pt-3 space-y-2">
         <h3
-          className="font-sans text-lg font-bold text-white tracking-tight transition-colors cursor-pointer hover:text-brunswick-green-500 group-hover:text-brunswick-green-600 "
+          className="font-sans text-lg font-bold text-sea-salt tracking-tight transition-colors cursor-pointer hover:text-brunswick-green-500 group-hover:text-brunswick-green-600 "
           onClick={onReadMore}
         >
           {project.title}
         </h3>
 
-        <p className="font-sans text-lg text-sea-salt leading-relaxed font-normal max-w-sm overflow-hidden [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
+        <p className="font-sans text-lg text-sea-salt/90 leading-relaxed font-normal max-w-sm overflow-hidden [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
           {project.description}
         </p>
 
         {showService && (
           <div className="pt-2 flex flex-col space-y-2">
-            <span className="text-lg font-semibold text-zinc-500 uppercase tracking-widest">
+            <span className="text-lg font-semibold text-raisin-black-900-500 uppercase tracking-widest">
               Service:
             </span>
             <div className="flex">
@@ -71,7 +71,7 @@ export default function PortfolioCard({ project, onReadMore, className = "", sho
         <button
           type="button"
           onClick={onReadMore}
-          className="inline-flex items-center justify-center font-sans font-semibold text-neutral-300 group-hover:text-brunswick-green-500 bg-raisin-black-800 hover:bg-raisin-black-900 group-hover:bg-raisin-black-900 border border-neutral-800/80 group-hover:border-brunswick-green-500 px-4 py-1.5 rounded-full text-lg transition-colors cursor-pointer self-start mt-2 "
+          className="inline-flex items-center justify-center font-sans font-semibold text-sea-salt group-hover:text-brunswick-green-500 bg-raisin-black-800 hover:bg-brunswick-green-900 group-hover:bg-raisin-black-900 border border-sea-salt/20 hover:bg-brunswick-green-900 hover:text-sea-salt transition-all px-4 py-1.5 rounded-full text-lg transition-colors cursor-pointer self-start mt-2 "
         >
           Read More
         </button>

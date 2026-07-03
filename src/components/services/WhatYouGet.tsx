@@ -53,20 +53,20 @@ export default function WhatYouGet() {
         <section className="relative overflow-hidden bg-black py-20 md:min-h-screen">
             {/* Glow */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="h-[500px] w-[500px] rounded-full bg-white/5 blur-[140px]" />
+                <div className="h-[500px] w-[500px] rounded-full bg-sea-salt/5 blur-[140px]" />
             </div>
 
             {/* CONTENT */}
             <div className="relative z-10 flex flex-col items-center text-center px-6 md:absolute md:inset-0 md:justify-center">
-                <p className="inline-block px-3.5 py-2 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
+                <p className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
                     {servicesCopy.workingWithBadge}
                 </p>
 
-                <h2 className="text-3xl  sm:text-4xl font-bold text-white animate-gradient-text text-gradient">
+                <h2 className="text-3xl  sm:text-4xl font-bold text-sea-salt animate-gradient-text text-gradient">
                     {servicesCopy.whatYouGain}
                 </h2>
 
-                <p className="max-w-xl mt-6 text-lg md:text-lg text-zinc-400">
+                <p className="max-w-xl mt-6 text-lg md:text-lg text-raisin-black-900-400">
                     {servicesCopy.description}
                 </p>
             </div>
@@ -83,11 +83,11 @@ export default function WhatYouGet() {
             w-10 h-10
             rounded-full
 
-            bg-white/10
+            bg-sea-salt/10
             backdrop-blur-xl
-            border border-white/10
+            border border-sea-salt/10
 
-            text-white
+            text-sea-salt
         "
                 >
                     ‹
@@ -102,11 +102,11 @@ export default function WhatYouGet() {
             w-10 h-10
             rounded-full
 
-            bg-white/10
+            bg-sea-salt/10
             backdrop-blur-xl
-            border border-white/10
+            border border-sea-salt/10
 
-            text-white
+            text-sea-salt
         "
                 >
                     ›
@@ -139,11 +139,11 @@ export default function WhatYouGet() {
                     p-6
                     rounded-3xl
 
-                    bg-white/5
+                    bg-sea-salt/5
                     backdrop-blur-xl
 
                     border
-                    border-zinc-700/50
+                    border-raisin-black-900-700/50
                 "
                         >
                             {item.icon && (
@@ -151,11 +151,11 @@ export default function WhatYouGet() {
                                     <item.icon className="w-6 h-6" />
                                 </div>
                             )}
-                            <h3 className="font-semibold text-white mb-3">
+                            <h3 className="font-semibold text-sea-salt mb-3">
                                 {item.title}
                             </h3>
 
-                            <p className="text-lg text-zinc-400">
+                            <p className="text-lg text-raisin-black-900-400">
                                 {item.description}
                             </p>
                         </div>
@@ -171,8 +171,8 @@ export default function WhatYouGet() {
                             className={`
                     w-2 h-2 rounded-full transition-all
                     ${i === activeIndex
-                                    ? "bg-white w-6"
-                                    : "bg-white/30"
+                                    ? "bg-sea-salt w-6"
+                                    : "bg-sea-salt/30"
                                 }
                 `}
                         />
@@ -196,19 +196,19 @@ export default function WhatYouGet() {
                         p-5
                         rounded-2xl
 
-                        bg-white/5
+                        bg-sea-salt/5
                         backdrop-blur-xl
 
                         border
-                        border-zinc-700/50
+                        border-raisin-black-900-700/50
 
                         shadow-lg
 
                         transition-all
                         duration-500
 
-                        hover:bg-white/10
-                        hover:border-zinc-500
+                        hover:bg-sea-salt/10
+                        hover:border-raisin-black-900-500
                         hover:scale-105
                     "
                     style={{
@@ -221,11 +221,11 @@ export default function WhatYouGet() {
                             <item.icon className="w-6 h-6" />
                         </div>
                     )}
-                    <h3 className="font-semibold text-white mb-2">
+                    <h3 className="font-semibold text-sea-salt mb-2">
                         {item.title}
                     </h3>
 
-                    <p className="text-lg text-zinc-400 leading-relaxed">
+                    <p className="text-lg text-raisin-black-900-400 leading-relaxed">
                         {item.description}
                     </p>
                 </div>

@@ -95,9 +95,9 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
   const currentDisplayIndex = (virtualIndex % customProjects.length + customProjects.length) % customProjects.length;
 
   return (
-    <section id="portfolio" className="relative  bg-raisin-black-800 overflow-hidden py-16">
+    <section id="portfolio" className="relative  bg-raisin-black-800/20 overflow-hidden py-16">
       {/* Background radial soft light blur */}
-      <div className="absolute top-1/2 left-0 -translate-x-1/4 md:-translate-x-0 md:left-1/4 -translate-y-1/2 -z-10 h-[250px] w-[250px] md:h-[450px] md:w-[450px] rounded-full bg-green-primary/[0.05] md:bg-green-primary/[0.03] blur-[80px] md:blur-[150px]" />
+      <div className="absolute top-1/2 left-0 -translate-x-1/4 md:-translate-x-0 md:left-1/4 -translate-y-1/2 -z-10 h-[250px] w-[250px] md:h-[450px] md:w-[450px] rounded-full bg-brunswick-green-900/[0.05] md:bg-brunswick-green-900/[0.03] blur-[80px] md:blur-[150px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -109,20 +109,20 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
 
             {/* Custom rounded capsule badge */}
             <div className="inline-flex">
-              <span className="inline-block px-3.5 py-2 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
+              <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
                 {portfolioCopy.badge}
               </span>
             </div>
 
             <div className="space-y-6">
               {/* Elegant Main Title */}
-              <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-white leading-[1.1]">
+              <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-sea-salt leading-[1.1]">
                 {portfolioCopy.titleLine1} <br />
                 {portfolioCopy.titleLine2}
               </h2>
 
               {/* Description Text */}
-              <p className="font-sans text-lg sm:text-lg text-sea-salt max-w-sm leading-relaxed ">
+              <p className="font-sans text-lg sm:text-lg text-sea-salt/90 max-w-sm leading-relaxed ">
                 {portfolioCopy.description}
               </p>
             </div>
@@ -133,7 +133,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
                 type="button"
                 onClick={handlePrev}
                 aria-label="Previous portfolio"
-                className="h-11 w-11 rounded-full border border-neutral-800 bg-neutral-950/60 text-sea-salt hover:text-brunswick-green-500 hover:border-brunswick-green-500 flex items-center justify-center transition-all duration-300 transform active:scale-95 cursor-pointer shadow-lg"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
               >
                 <ArrowLeft className="h-4 w-4" />
               </button>
@@ -141,7 +141,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
                 type="button"
                 onClick={handleNext}
                 aria-label="Next portfolio"
-                className="h-11 w-11 rounded-full border border-neutral-800 bg-neutral-950/60 text-sea-salt hover:text-brunswick-green-500 hover:border-brunswick-green-500 flex items-center justify-center transition-all duration-300 transform active:scale-95 cursor-pointer shadow-lg"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
               >
                 <ArrowRight className="h-4 w-4" />
               </button>
@@ -185,7 +185,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
 
         {/* Global CTA Banner under */}
         <div className="text-center pt-20 max-w-2xl mx-auto space-y-4">
-          <p className="font-sans text-lg text-neutral-500 uppercase tracking-widest">
+          <p className="font-sans text-lg text-sea-salt uppercase tracking-widest">
             {portfolioCopy.ctaTopText}
           </p>
           <button
