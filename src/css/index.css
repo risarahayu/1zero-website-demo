@@ -9,6 +9,7 @@
   --color-brunswick-green-600: var(--green-600);
   --color-brunswick-green-700: var(--green-700);
   --color-brunswick-green-800: var(--green-800);
+  --color-brunswick-green-800-rgb: 72 155 129;
   --color-brunswick-green-900: var(--green-900);
 
   --color-sea-salt: var(--sea-salt);
@@ -30,6 +31,7 @@
   --sea-salt: #fafafa;
   --ivory: #f3f5e9;
   --dun: #d6caad;
+  --raisin-black: 39 39 39;
   --raisin-black-800: #272727;
   --raisin-black-900: #040404;
 
@@ -88,7 +90,7 @@
 
 .glow-card:hover {
   border-color: var(--green-500);
-  box-shadow: 0 0 25px rgba(16, 185, 129, 0.08);
+  box-shadow: 0 0 25px rgb(var(--raisin-black) / 0.18);
 }
 
 /* Elegant curve mask */
@@ -238,7 +240,7 @@
 
   animation: luxuryGradient 6s ease-in-out infinite;
   will-change: background-position;
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
+  text-shadow: 0 0 12px rgb(var(--raisin-black) / 0.08);  
 }
 
 @keyframes luxuryGradient {
