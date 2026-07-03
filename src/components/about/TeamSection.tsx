@@ -585,7 +585,7 @@ const TeamSection: React.FC = () => {
                             {activeMember.sdgs.map((sdg) => (
                                 <img
                                     key={sdg.id}
-                                    src={`${import.meta.env.BASE_URL}SDG Icons/E-WEB-Goal-${String(sdg.id).padStart(2, "0")}.png`}
+                                    src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(sdg.id).padStart(2, "0")}.png`}
                                     alt={`SDG ${sdg.id}`}
                                     className="w-16 h-16 object-contain"
                                 />
