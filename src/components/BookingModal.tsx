@@ -151,7 +151,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 <Sparkles className="h-4 w-4" />
               </div>
               <div>
-                <h3 className="font-sans text-lg font-bold text-sea-salt">{bookingModalCopy.modalTitle}</h3>
+                <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt">{bookingModalCopy.modalTitle}</h3>
                 <p className="font-sans text-lg uppercase tracking-wider text-sea-salt">{bookingModalCopy.modalSub}</p>
               </div>
             </div>
@@ -203,7 +203,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                           : "border-sea-salt bg-[#111] hover:border-sea-salt text-sea-salt hover:text-sea-salt"
                           }`}
                       >
-                        <span className="font-sans text-[11px] font-medium tracking-wide text-sea-salt">{day.dayName}</span>
+                        <span className="font-sans text-base font-medium tracking-wide text-sea-salt">{day.dayName}</span>
                         <span className="font-sans text-lg font-bold mt-1">{day.dayNum}</span>
                         <span className="font-sans text-lg text-sea-salt mt-0.5">{day.month}</span>
                       </button>
@@ -285,7 +285,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   <span>{bookingModalCopy.selectedTimeLabel}</span>
                   <strong className="text-sea-salt font-medium">{selectedTime}</strong>
                 </p>
-                <p className="mt-1 text-[11px] text-sea-salt font-sans">({timezone})</p>
+                <p className="mt-1 text-base text-sea-salt font-sans">({timezone})</p>
               </div>
 
               <div className="space-y-1">
@@ -376,7 +376,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               </div>
 
               <div className="space-y-2">
-                <h4 className="font-sans text-xl font-bold text-sea-salt">{bookingModalCopy.successTitle}</h4>
+                <h4 className="font-sans text-xl sm:text-2xl font-bold text-sea-salt">{bookingModalCopy.successTitle}</h4>
                 <p className="text-lg text-sea-salt max-w-md mx-auto">
                   {bookingModalCopy.successDesc1} <span className="text-sea-salt hover:underline">{email}</span>{bookingModalCopy.successDesc2}
                 </p>
@@ -398,7 +398,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 </div>
                 <div className="pt-3 flex items-center gap-3 text-lg text-sea-salt">
                   <Video className="h-4 w-4 text-brunswick-green-500 shrink-0" />
-                  <span className="font-sans text-[11px] text-brunswick-green-500 select-all underline cursor-pointer">meet.google.com/ico-nics-blue</span>
+                  <span className="font-sans text-base text-brunswick-green-500 select-all underline cursor-pointer">meet.google.com/ico-nics-blue</span>
                 </div>
               </div>
 

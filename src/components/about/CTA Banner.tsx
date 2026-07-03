@@ -17,7 +17,7 @@ const CtaBanner = () => {
 
             {/* Content */}
             <div className="absolute inset-0 z-10 px-6 py-8 sm:px-12 sm:py-10 flex h-full flex-col justify-between items-center text-center">
-                <h2 className="font-sans text-3xl font-bold tracking-tight text-brunswick-green-900 sm:text-6xl max-w-2xl">
+                <h2 className="font-sans text-3xl sm:text-5xl font-bold text-brunswick-green-900 max-w-2xl">
                     Let's Work Together
                 </h2>
 

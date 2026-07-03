@@ -42,7 +42,7 @@ export default function PortfolioPage() {
                     {portfoliosPageCopy.badge}
                 </span>
                 <div className="space-y-6">
-                    <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-sea-salt leading-[1.1]">
+                    <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold text-sea-salt leading-[1.1]">
                         {portfoliosPageCopy.title}
                     </h1>
 
@@ -91,7 +91,7 @@ export default function PortfolioPage() {
                 </div>
                 <div className="space-y-10 justify-center items-center flex flex-col">
 
-                    <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-sea-salt tracking-tight z-10 drop-shadow-lg">
+                    <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-sea-salt  z-10 drop-shadow-lg">
                         {portfoliosPageCopy.ctaTitle}
                     </p>
                     <img

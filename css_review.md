@@ -19,7 +19,7 @@ The codebase uses a mixture of Tailwind typography utilities and raw CSS declara
 ### 🎨 Colors & Palette Proliferation (Total: ~25+ Color Tokens/Varieties)
 There is significant visual fragmentation in how colors are applied:
 *   **Custom Brand Colors:** `--color-brunswick-green` (500 to 900), `sea-salt`, `ivory`, and `dun`.
-*   **Tailwind Grays (5 Different Scales):** The codebase concurrently uses `slate` (e.g. `text-slate-50`), `raisin-black-900` (e.g. `text-raisin-black-900-300`), `gray` (e.g. `text-gray-400`), `neutral` (e.g. `text-sea-salt`), and `sea-salt` with custom opacity filters (`text-sea-salt/60`, `text-sea-salt/80`).
+*   **Tailwind Grays (5 Different Scales):** The codebase concurrently uses `slate` (e.g. `text-slate-50`), `raisin-black-900` (e.g. `text-raisin-black-900-300`), `gray` (e.g. `text-raisin-black-800`), `neutral` (e.g. `text-sea-salt`), and `sea-salt` with custom opacity filters (`text-sea-salt/60`, `text-sea-salt/80`).
 *   **Secondary/Accent Colors:**
     *   Mix of standard Tailwind `emerald` (400, 500, 600, 900) alongside custom brand `brunswick-green`.
     *   Various one-off colors like `rose`, `pink`, `violet`, `sky`, `blue`, and `indigo` (primarily used for gradients or hover states in bookings/modal states).

@@ -105,7 +105,7 @@ export default function WhatYouGet() {
                                 </div>
                             )}
 
-                            <h3 className="text-sea-salt font-semibold mb-2">
+<h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt mb-2">
                                 {item.title}
                             </h3>
 
@@ -146,11 +146,11 @@ export default function WhatYouGet() {
                             </div>
                         )}
 
-                        <h3 className="text-lg font-semibold text-sea-salt mb-3">
+                        <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt mb-3">
                             {item.title}
                         </h3>
 
-                        <p className="text-sea-salt/60 leading-relaxed">
+                        <p className="text-sea-salt/80 leading-relaxed">
                             {item.description}
                         </p>
                     </div>

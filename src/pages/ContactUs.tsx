@@ -112,7 +112,7 @@ export default function ContactPage() {
                         </span>
                     </div>
                     <div className="space-y-6">
-                        <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-sea-salt leading-[1.1]">
+                        <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold text-sea-salt leading-[1.1]">
                             {contactUsCopy.title}
                         </h1>
                         <p className="text-sea-salt/60 mt-4 text-lg md:text-lg leading-relaxed">
@@ -178,7 +178,7 @@ export default function ContactPage() {
                             <div className="mb-8 p-4 rounded-xl border border-green-500/30 bg-green-500/5 flex items-start gap-3 shadow-[0_0_15px_rgba(133,223,195,0.1)] transition-all duration-300">
                                 <CheckCircle className="w-5 h-5 text-brunswick-green-900 flex-shrink-0 mt-0.5" />
                                 <div>
-                                    <h4 className="text-brunswick-green-900 font-semibold text-lg">{contactUsCopy.successTitle}</h4>
+                                    <h4 className="font-sans text-xl sm:text-2xl font-bold text-brunswick-green-900">{contactUsCopy.successTitle}</h4>
                                     <p className="text-sea-salt/60 text-sm mt-1">{contactUsCopy.successDesc}</p>
                                 </div>
                             </div>
@@ -189,7 +189,7 @@ export default function ContactPage() {
                             <div className="mb-8 p-4 rounded-xl border border-red-500/30 bg-red-500/5 flex items-start gap-3 shadow-[0_0_15px_rgba(239,68,68,0.1)] transition-all duration-300">
                                 <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                                 <div>
-                                    <h4 className="text-red-500 font-semibold text-lg">{contactUsCopy.failTitle}</h4>
+                                    <h4 className="font-sans text-xl sm:text-2xl font-bold text-red-500">{contactUsCopy.failTitle}</h4>
                                     <p className="text-sea-salt/60 text-sm mt-1">{formError}</p>
                                 </div>
                             </div>

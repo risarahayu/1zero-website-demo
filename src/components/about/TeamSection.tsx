@@ -353,7 +353,7 @@ const TeamSection: React.FC = () => {
         <section className="py-16 text-slate-50 relative" id="about">
             <div className="w-[75%] mx-auto space-y-10 text-center">
 
-                <h2 className="font-sans text-2xl sm:text-6xl font-bold tracking-tight text-sea-salt">
+                <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
                     {/* Injecting the dynamic title here! */}
                     {aboutCopy.en.teamTitle}
                 </h2>
@@ -387,10 +387,10 @@ const TeamSection: React.FC = () => {
                                     />
                                 )}
                             </div>
-                            <h3 className="text-lg font-semibold text-sea-salt">
+                            <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt">
                                 {member.name}
                             </h3>
-                            <p className="text-lg text-gray-300">
+                            <p className="text-lg text-sea-salt/80">
                                 {member.role}
                             </p>
                         </div>
@@ -423,12 +423,12 @@ const TeamSection: React.FC = () => {
                                 />
 
                                 {/* Name */}
-                                <h3 className="text-lg font-semibold text-sea-salt leading-tight">
+                                <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt">
                                     {member.name}
                                 </h3>
 
                                 {/* Role */}
-                                <p className="text-base md:text-lg  text-gray-300">
+                                <p className="text-base md:text-lg  text-raisin-black-800">
                                     {member.role}
                                 </p>
                             </button>
@@ -458,12 +458,12 @@ const TeamSection: React.FC = () => {
                                 />
 
                                 {/* Name */}
-                                <h3 className="text-lg font-semibold text-sea-salt leading-tight">
+                                <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt leading-tight">
                                     {member.name}
                                 </h3>
 
                                 {/* Role */}
-                                <p className="text-base md:text-lg  text-gray-300">
+                                <p className="text-base md:text-lg  text-raisin-black-800">
                                     {member.role}
                                 </p>
                             </button>
@@ -502,7 +502,7 @@ const TeamSection: React.FC = () => {
 
                         {/* SOCIAL */}
                         <div className="space-y-6">
-                        <h4 className="text-lg font-semibold text-sea-salt mb-4 text-start">
+                        <h4 className="font-sans text-xl sm:text-2xl font-bold text-sea-salt mb-4 text-start">
                             Social Media
                         </h4>
 
@@ -565,7 +565,7 @@ const TeamSection: React.FC = () => {
 
                         {/* BIO */}
                         <div className="space-y-6 text-start">
-                        <h4 className="text-lg font-semibold text-sea-salt">
+                        <h4 className="font-sans text-xl sm:text-2xl font-bold text-sea-salt">
                             About
                         </h4>
 
@@ -577,7 +577,7 @@ const TeamSection: React.FC = () => {
                         {/* SDGs */}
                         <div className="space-y-6">
 
-                        <h4 className="text-lg font-semibold text-sea-salt text-start">
+                        <h4 className="font-sans text-xl sm:text-2xl font-bold text-sea-salt text-start">
                             Sustainable Development Goals
                         </h4>
 
@@ -639,7 +639,7 @@ const TeamSection: React.FC = () => {
                                             Team Member
                                         </span>
                                         <div className="space-y-6">
-                                            <h3 className="mt-3 text-2xl md:text-3xl font-bold text-sea-salt">
+                                            <h3 className="mt-3 font-sans text-xl sm:text-2xl font-bold text-sea-salt">
                                                 {selectedMember.name}
                                             </h3>
 
@@ -674,7 +674,7 @@ const TeamSection: React.FC = () => {
                                         {selectedMember.sdgs?.map((sdg) => (
                                             <span
                                                 key={sdg.id}
-                                                className="px-3 py-1 text-[11px] rounded-full bg-brunswick-green-500/10 text-brunswick-green-500 border border-brunswick-green-500/20"
+                                                className="px-3 py-1 text-base rounded-full bg-brunswick-green-500/10 text-brunswick-green-500 border border-brunswick-green-500/20"
                                             >
                                                 SDG {sdg.id} • {sdg.title}
                                             </span>

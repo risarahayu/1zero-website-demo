@@ -38,7 +38,7 @@ export default function CTA({ onOpenBooking }: CTAProps) {
             </div>
 
             <div className="space-y-6">
-              <h2 className="font-sans text-2xl sm:text-6xl font-bold tracking-tight text-sea-salt">
+              <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
                 {ctaCopy.titleLine1}<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brunswick-green-500 to-dun">
                   {ctaCopy.titleGradient}

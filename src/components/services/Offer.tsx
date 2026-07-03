@@ -32,7 +32,7 @@ export default function DiagnosisPanel() {
 
                 {/* 3. KONTEN UTAMA */}
                 <div className="relative z-20 max-w-3xl mx-auto text-center px-6 py-20">
-                    <p className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-sea-salt">
+                    <p className="font-sans text-2xl sm:text-4xl font-bold  text-sea-salt">
                         {offerCopy.heroTitleLine1}
                         <br />
                         {offerCopy.heroTitleLine2}
@@ -45,7 +45,7 @@ export default function DiagnosisPanel() {
 
             {/* ACCORDION HEADER */}
             <div className="mb-12 text-center max-w-3xl mx-auto">
-                <h3 className="text-3xl font-bold text-sea-salt">
+                <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt">
                     {offerCopy.accordionTitle}
                 </h3>
                 <p className="text-sea-salt/60 mt-2">

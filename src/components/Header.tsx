@@ -38,7 +38,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               }`}>
               {/* Left empty block or indicator */}
               <div
-                className={`sm:flex items-center gap-1.5 font-sans text-[9px] text-sea-salt transition-all duration-300 ${isScrolled
+                className={`sm:flex items-center gap-1.5 font-sans text-base text-sea-salt transition-all duration-300 ${isScrolled
                   ? "opacity-0 scale-90 w-0 overflow-hidden"
                   : "opacity-100 scale-100"
                   }`}

@@ -55,7 +55,7 @@ export default function PortfolioCard({ project, onReadMore, className = "", sho
       {/* Left corner identifier and Content text */}
       <div className="pt-3 space-y-2">
         <h3
-          className="font-sans text-xl font-bold text-sea-salt tracking-tight transition-colors cursor-pointer hover:text-brunswick-green-500 group-hover:text-brunswick-green-600 "
+          className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt  transition-colors cursor-pointer hover:text-brunswick-green-500 group-hover:text-brunswick-green-600 "
           onClick={onReadMore}
         >
           {project.title}

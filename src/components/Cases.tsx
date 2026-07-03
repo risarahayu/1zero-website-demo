@@ -123,7 +123,7 @@ function CaseCard({
           <p className="font-sans text-lg uppercase tracking-widest text-sea-salt">
             {item.label}
           </p>
-          <h3 className="font-sans text-lg font-bold text-sea-salt">{item.title}</h3>
+          <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt">{item.title}</h3>
           <p className="font-sans text-lg text-sea-salt leading-relaxed line-clamp-2">
             {item.desc}
           </p>
@@ -266,7 +266,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
             <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
               {casesCopy.badge}
             </span>
-            <h2 className="font-sans text-2xl sm:text-6xl font-bold tracking-tight text-sea-salt">
+            <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
               {casesCopy.titleLine1} <br />{casesCopy.titleLine2}
             </h2>
           </div>

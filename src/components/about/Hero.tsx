@@ -90,7 +90,7 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                         {t.sub}
                     </span>
                     <div className="space-y-6">
-                        <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-sea-salt leading-[1.1]">
+                        <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold text-sea-salt leading-[1.1]">
                             {t.title}
                         </h1>
                         <p className="text-sea-salt/90 text-lg max-w-md">
@@ -111,7 +111,7 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                             <div className="w-12 h-12 rounded-xl bg-sea-salt/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-xl mb-6 shadow-lg shadow-indigo-500/10">
                                 <i className="fas fa-globe-asia"></i>
                             </div>
-                            <h3 className="text-2xl font-bold mb-4">{t.v1t}</h3>
+                            <h3 className="font-sans text-2xl sm:text-3xl font-bold mb-4">{t.v1t}</h3>
                             <p className="text-sea-salt/90 text-lg leading-relaxed">{t.v1d}</p>
                         </div>
 
@@ -121,7 +121,7 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                             <div className="w-12 h-12 rounded-xl bg-sea-salt/20 border border-brunswick-green-500/30 flex items-center justify-center text-brunswick-green-500 text-xl mb-6 shadow-lg shadow-brunswick-green-500/10">
                                 <i className="fas fa-wifi"></i>
                             </div>
-                            <h3 className="text-2xl font-bold mb-4">{t.v2t}</h3>
+                            <h3 className="font-sans text-2xl sm:text-3xl font-bold mb-4">{t.v2t}</h3>
                             <p className="text-sea-salt/90 text-lg leading-relaxed">{t.v2d}</p>
                         </div>
 
@@ -131,7 +131,7 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                             <div className="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-pink-400 text-xl mb-6 shadow-lg shadow-pink-500/10">
                                 <i className="fas fa-leaf"></i>
                             </div>
-                            <h3 className="text-2xl font-bold mb-4">{t.v3t}</h3>
+                            <h3 className="font-sans text-2xl sm:text-3xl font-bold mb-4">{t.v3t}</h3>
                             <p className="text-sea-salt/90 text-lg leading-relaxed">{t.v3d}</p>
                         </div>
                     </div>

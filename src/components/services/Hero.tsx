@@ -75,7 +75,7 @@ export default function ServicesHero() {
 
                 {/* LEFT */}
                 <div>
-                    <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-sea-salt leading-[1.1]">
+                    <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold text-sea-salt leading-[1.1]">
                         {servicesCopy.heroTextPrefix}{" "}
                         <br />
                         <span className={`font-extrabold ${active.color}`}>

@@ -27,7 +27,7 @@ export default function Testimonials() {
             <span className="inline-block px-3.5 py-1 rounded-full border border-sea-salt/20 text-lg font-sans uppercase tracking-widest text-brunswick-green-500 bg-brunswick-green-500/5">
               {testimonialsCopy.badge}
             </span>
-            <h2 className="font-sans text-2xl sm:text-6xl font-bold tracking-tight text-sea-salt">
+            <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
               {testimonialsCopy.titleLine1} <br />{testimonialsCopy.titleLine2}
             </h2>
           </div>

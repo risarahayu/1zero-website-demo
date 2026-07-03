@@ -48,7 +48,7 @@ export default function Products({ onOpenBooking }: ProductsProps) {
             {productsCopy.badge}
           </span>
           <div className="space-y-6">
-            <h2 className="font-sans text-2xl sm:text-6xl font-bold tracking-tight text-sea-salt">
+            <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
               {productsCopy.title}
             </h2>
             <p className="max-w-xl mx-auto font-sans text-lg sm:text-lg text-sea-salt/90">
@@ -74,7 +74,7 @@ export default function Products({ onOpenBooking }: ProductsProps) {
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="font-sans text-xl md:text-2xl font-bold text-sea-salt group-hover:text-brunswick-green-500 transition-colors">
+                    <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt group-hover:text-brunswick-green-500 transition-colors">
                       {p.service}
                     </h3>
                     <p className="font-sans text-lg text-sea-salt group-hover:text-sea-salt/90 transition-colors leading-relaxed">

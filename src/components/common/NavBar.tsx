@@ -14,11 +14,11 @@ const NavBar: React.FC<NavBarProps> = ({ lang, setLang }) => {
 
       {/* Navigation Menu Items */}
       <div className="flex items-center gap-8 glass px-6 py-2.5 rounded-full text-lg font-semibold border border-sea-salt/10 shadow-lg">
-        <a href="#home" className="text-gray-400 hover:text-sea-salt transition tracking-wide">Home</a>
+        <a href="#home" className="text-raisin-black-800 hover:text-sea-salt transition tracking-wide">Home</a>
         <a href="#about" className="text-indigo-400 font-bold transition tracking-wide">About</a>
-        <a href="#products" className="text-gray-400 hover:text-sea-salt transition tracking-wide">Products</a>
-        <a href="#portfolio" className="text-gray-400 hover:text-sea-salt transition tracking-wide">Portfolio</a>
-        <a href="#contact" className="text-gray-400 hover:text-sea-salt transition tracking-wide">Contact</a>
+        <a href="#products" className="text-raisin-black-800 hover:text-sea-salt transition tracking-wide">Products</a>
+        <a href="#portfolio" className="text-raisin-black-800 hover:text-sea-salt transition tracking-wide">Portfolio</a>
+        <a href="#contact" className="text-raisin-black-800 hover:text-sea-salt transition tracking-wide">Contact</a>
       </div>
 
       <div className="flex items-center gap-4 glass p-1 rounded-full px-4 border border-sea-salt/10 shadow-lg">

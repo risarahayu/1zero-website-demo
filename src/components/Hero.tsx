@@ -39,7 +39,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-sea-salt leading-[1.1]"
+            className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold text-sea-salt leading-[1.1]"
           >
             {heroCopy.simplifyTitle} <br />
             <span className="animate-gradient-text text-gradient ">
@@ -51,7 +51,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-2xl mx-auto font-sans text-sea-salt text-lg sm:text-lg leading-relaxed"
+            className="max-w-2xl mx-auto font-sans text-sea-salt text-base sm:text-lg"
           >
             {heroCopy.tagline}
           </motion.p>
@@ -75,7 +75,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             <p className="font-sans text-lg leading-relaxed text-sea-salt">
               {heroCopy.ctaText}
             </p>
-            {/* <div className="flex items-center gap-1.5 font-sans text-[9px] text-sea-salt uppercase tracking-wider">
+            {/* <div className="flex items-center gap-1.5 font-sans text-base text-sea-salt uppercase tracking-wider">
               <Users className="h-3 w-3 text-brunswick-green-500" />
               <span>372+ Reviews from tech teams</span>
             </div> */}

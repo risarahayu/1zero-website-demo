@@ -43,7 +43,7 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
             {whyUsCopy.sectionTag}
           </span>
           <div className="space-y-6">
-            <h2 className="font-sans text-2xl sm:text-6xl font-bold tracking-tight text-sea-salt">
+            <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
               {whyUsCopy.title}
             </h2>
             <p className="max-w-2xl font-sans text-lg sm:text-lg text-sea-salt/90 leading-relaxed">
@@ -167,9 +167,9 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
                       {getPillarIcon(index)}
                     </div>
                     <div className="space-y-1">
-                      <h3 className="font-sans font-regular text-sea-salt text-lg tracking-wide group-hover:text-brunswick-green-600 transition-colors">
+                      <p className="font-sans text-base sm:text-lg text-sea-salt group-hover:text-brunswick-green-600 transition-colors">
                         {point.title}
-                      </h3>
+                      </p>
 
                     </div>
                   </div>

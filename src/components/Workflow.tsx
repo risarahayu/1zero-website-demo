@@ -214,7 +214,7 @@ function Panel({
 
             {/* Title */}
             <div className="space-y-6">
-              <h3 className="font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-sea-salt leading-[1.1]">
+              <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt leading-[1.1]">
                 {step.title}
               </h3>
               <p className="font-sans text-lg text-sea-salt leading-relaxed max-w-md">
@@ -314,7 +314,7 @@ export default function Workflow() {
             {workflowCopy.badge}
           </span>
           <div className="space-y-6">
-            <h2 className="font-sans text-2xl sm:text-6xl font-bold tracking-tight text-sea-salt">
+            <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
               {workflowCopy.title}
             </h2>
             <p className="max-w-xl mx-auto font-sans text-lg sm:text-lg text-sea-salt/90">
