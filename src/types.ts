@@ -85,6 +85,7 @@ export interface Project {
   mockupType: string;
   imageUrl: string;
   service: string;
+  url?: string;
   uniqueId?: string;
 }
 

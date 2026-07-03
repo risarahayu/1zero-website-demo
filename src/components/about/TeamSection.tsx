@@ -58,7 +58,7 @@ export const members: TeamMember[] = [
         images:
         {
             imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Molly.png`,
-            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/sea-salt top/Molly.png`,
+            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Molly.png`,
             ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Molly.png`,
             ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Molly.png`,
         },
@@ -89,7 +89,7 @@ export const members: TeamMember[] = [
         images:
         {
             imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Mark.webp`,
-            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/sea-salt top/Mark.webp`,
+            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Mark.webp`,
             ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Mark.webp`,
             ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Mark.webp`,
         },
@@ -119,7 +119,7 @@ export const members: TeamMember[] = [
         images:
         {
             imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Chandra Kusuma.webp`,
-            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/sea-salt top/Chandra Kusuma.webp`,
+            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Chandra Kusuma.webp`,
             ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Chandra Kusuma.webp`,
             ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Chandra Kusuma.webp`,
         },
@@ -145,7 +145,7 @@ export const members: TeamMember[] = [
         images:
         {
             imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Dharma Putra.webp`,
-            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/sea-salt top/Dharma Putra.webp`,
+            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Dharma Putra.webp`,
             ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Dharma Putra.webp`,
             ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Dharma Putra.webp`,
         },
@@ -175,7 +175,7 @@ export const members: TeamMember[] = [
         images:
         {
             imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Mutia Rosa.webp`,
-            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/sea-salt top/Mutia Rosa.webp`,
+            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Mutia Rosa.webp`,
             ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Mutia Rosa.webp`,
             ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Mutia Rosa.webp`,
         },
@@ -208,7 +208,7 @@ export const members: TeamMember[] = [
         images:
         {
             imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Risa Rahayu.webp`,
-            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/sea-salt top/Risa Rahayu.webp`,
+            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Risa Rahayu.webp`,
             ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Risa Rahayu.webp`,
             ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Risa Rahayu.webp`,
         },
@@ -237,7 +237,7 @@ export const members: TeamMember[] = [
         images:
         {
             imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Krisna.webp`,
-            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/sea-salt top/Krisna.webp`,
+            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Krisna.webp`,
             ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Krisna.webp`,
             ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Krisna.webp`,
         },
@@ -270,7 +270,7 @@ export const members: TeamMember[] = [
         images:
         {
             imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Kadek Gunawan.webp`,
-            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/sea-salt top/Kadek Gunawan.webp`,
+            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Kadek Gunawan.webp`,
             ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Kadek Gunawan.webp`,
             ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Kadek Gunawan.webp`,
         },
@@ -379,7 +379,7 @@ const TeamSection: React.FC = () => {
                                     className="w-full h-full object-cover transition-opacity duration-300"
                                 />
 
-                                {/* sea-salt TOP IMAGE (hover/click) */}
+                                {/* White TOP IMAGE (hover/click) */}
                                 {member.images.imageDisplayHover && (
                                     <img
                                         src={member.images.imageDisplayHover}

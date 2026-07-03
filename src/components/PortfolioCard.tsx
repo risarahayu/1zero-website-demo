@@ -22,6 +22,17 @@ const getServiceColorClass = (service: string) => {
 };
 
 export default function PortfolioCard({ project, onReadMore, className = "", showService = false }: PortfolioCardProps) {
+  const handleReadMore = () => {
+    if (project.url) {
+      window.open(project.url, "_blank", "noopener,noreferrer");
+      return;
+    }
+
+    if (onReadMore) {
+      onReadMore();
+    }
+  };
+
   return (
     <div className={`group flex flex-col space-y-4 ${className}`}>
       {/* Visual Mockup Stage Box */}
@@ -70,7 +81,7 @@ export default function PortfolioCard({ project, onReadMore, className = "", sho
         {/* Bagian Button yang sudah diperbarui borders-nya */}
         <button
           type="button"
-          onClick={onReadMore}
+          onClick={handleReadMore}
           className="inline-flex items-center justify-center font-sans font-semibold text-sea-salt group-hover:text-brunswick-green-500 bg-raisin-black-800 hover:bg-brunswick-green-900 group-hover:bg-raisin-black-900 border border-sea-salt/20 hover:bg-brunswick-green-900 hover:text-sea-salt transition-all px-4 py-1.5 rounded-full text-lg transition-colors cursor-pointer self-start mt-2 "
         >
           Read More

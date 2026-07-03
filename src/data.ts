@@ -371,7 +371,8 @@ export const customProjects = [
     bgClass: "bg-[#112240] border-blue-500/10",
     mockupType: "impact",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/4Ocean.jpg`,
-    service: "Devpod"
+    service: "Devpod",
+    url: `${import.meta.env.BASE_URL}Portfolio pdf/Impact Dashboard.pdf`
   },
   {
     id: "baliteak",
@@ -380,7 +381,8 @@ export const customProjects = [
     bgClass: "bg-[#45301F] border-amber-500/10",
     mockupType: "baliteak",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/Baliteak.jpg`,
-    service: "NextGen Platform"
+    service: "NextGen Platform",
+    url: `${import.meta.env.BASE_URL}Portfolio pdf/Bali Teak Redesign Website.pdf`
   },
   {
     id: "TDD",
@@ -390,6 +392,7 @@ export const customProjects = [
     mockupType: "tdd",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/TDD.jpg`,
     service: "Devpod",
+    url: "https://www.tirtamurninusantara.org/front?open=true"
   },
   {
     id: "phoenix",
@@ -399,6 +402,7 @@ export const customProjects = [
     mockupType: "phoenix",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/PT Phoenix.jpg`,
     service: "Devpod",
+    url: "https://www.phoenixjaya.com/"
   },
   {
     id: "blackstump",
@@ -408,6 +412,7 @@ export const customProjects = [
     mockupType: "blackstump",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/BST.jpg`,
     service: "NextGen Platform",
+    url: `${import.meta.env.BASE_URL}Portfolio pdf/Black Stump.pdf`
   }
 ];
 

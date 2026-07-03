@@ -89,7 +89,7 @@ export default function ContactPage() {
     };
 
     return (
-        <section className="relative w-full min-h-screen bg-raisin-black-900 text-sea-salt overflow-hidden py-16 px-6 flex items-center">
+        <section className="relative w-full min-h-screen bg-raisin-black-900 text-sea-salt overflow-hidden py-16 px-6 flex items-center" id="contact">
 
             {/* ==========================================
                BACKGROUND GLOWS (Efek Aurora Global)

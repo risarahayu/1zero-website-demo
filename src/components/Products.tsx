@@ -83,11 +83,11 @@ export default function Products({ onOpenBooking }: ProductsProps) {
                   </div>
                 </div>
 
-                <div className="border-t border-sea-salt/20 flex items-center justify-end gap-6 pt-6">
+                <div className="border-t border-sea-salt/20 flex items-center justify-end gap-4 pt-6">
                   <a href={p.fileEng} download className="flex h-7 w-7 items-center justify-center rounded-full border border-transparent  bg-sea-salt/20 text-sea-salt hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt transition-all">
                     <Download className="h-4 w-4 transform transition-transform" />
                   </a>
-                  <div className="flex h-7 w-7 items-center justify-center rounded-full 
+                  <a href="#services" className="flex h-7 w-7 items-center justify-center rounded-full 
                     border border-sea-salt/10 
                     bg-sea-salt/20 text-sea-salt 
                     hover:bg-brunswick-green-900 
@@ -95,7 +95,7 @@ export default function Products({ onOpenBooking }: ProductsProps) {
                     hover:text-sea-salt 
                     transition-al">
                     <ArrowUpRight className="h-4 w-4 transform hover:rotate-45 transition-transform" />
-                  </div>
+                  </a>
                 </div>
               </div>
             ))}

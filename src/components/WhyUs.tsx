@@ -151,7 +151,7 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
               </div>
 
               <a href={`${import.meta.env.BASE_URL}#about`}>
-                <p className="font-sans text-[11px] text-sea-salt tracking-wider font-semibold ml-2 select-none uppercase font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">{whyUsCopy.seeAllTeam}</p>
+                <p className="font-sans text-lg text-sea-salt/90 tracking-wider font-semibold ml-2 select-none uppercase font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">{whyUsCopy.seeAllTeam}</p>
               </a>
             </div>
 

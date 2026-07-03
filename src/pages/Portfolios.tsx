@@ -6,12 +6,13 @@ import { portfoliosPageCopy } from "../copy";
 
 export default function PortfolioPage() {
     const [activeTab, setActiveTab] = useState("All");
-    const [isBookingOpen, setIsBookingOpen] = useState(false);
 
     const onOpenBooking = () => {
-        // Here you could open a modal or navigate to a booking page.
-        // For now we simply toggle a boolean to demonstrate functionality.
-        setIsBookingOpen(true);
+        window.open(
+            "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3gWtjZcsb5BZb78RjU3eDJJcflGsC7oDWdx__RBcaDFHzZ1ivl2IZrigY4R9-r63sLfDdRjvmQ",
+            "_blank",
+            "noopener,noreferrer"
+        );
     };
 
     // ambil semua service unik
@@ -102,40 +103,25 @@ export default function PortfolioPage() {
                         id="cta-booking-btn"
                         onClick={onOpenBooking}
                         className="group relative flex items-center justify-center gap-2
-                px-10 py-5
-                bg-[linear-gradient(120deg,var(--color-sea-salt),var(--color-ivory),var(--color-dun),var(--color-green-500))]
-                bg-[length:300%_300%]
-                animate-gradient
-                text-seal-salt
-                font-sans font-extrabold
-                text-lg sm:text-lg
-                rounded-2xl
-                transition-all
-                shadow-[0_10px_35px_rgba(223,217,198,0.25)]
-                hover:shadow-[0_10px_45px_rgba(223,217,198,0.4)]
-                cursor-pointer
-                tracking-wide"
+                        px-10 py-5
+                        bg-[linear-gradient(120deg,var(--color-sea-salt),var(--color-ivory),var(--color-dun),var(--color-green-500))]
+                        bg-[length:300%_300%]
+                        animate-gradient
+                        text-raisin-black-800
+                        font-sans font-extrabold
+                        text-lg sm:text-lg
+                        rounded-2xl
+                        transition-all
+                        shadow-[0_10px_35px_rgba(223,217,198,0.25)]
+                        hover:shadow-[0_10px_45px_rgba(223,217,198,0.4)]
+                        cursor-pointer
+                        tracking-wide"
                     >
                         {portfoliosPageCopy.bookButton}
-                        <PhoneCall className="h-4 w-4 text-sea-salt group-hover:scale-110 transition-transform" />
+                        <PhoneCall className="h-4 w-4 text-raisin-black-800 group-hover:scale-110 transition-transform" />
                     </button>
                 </div>
             </div>
-            {/* Booking Modal placeholder */}
-            {isBookingOpen && (
-                <div className="fixed inset-0 flex items-center justify-center bg-raisin-black-900/60 backdrop-blur-sm z-50">
-                    <div className="bg-sea-salt dark:bg-gray-800 rounded-xl p-8 max-w-md w-full shadow-lg">
-                        <h2 className="font-sans text-2xl sm:text-6xl font-bold tracking-tight text-sea-salt mb-4">{portfoliosPageCopy.modalTitle}</h2>
-                        <p className="mb-6">{portfoliosPageCopy.modalDescription}</p>
-                        <button
-                            className="px-4 py-2 bg-brunswick-green-500 text-sea-salt rounded hover:bg-brunswick-green-600"
-                            onClick={() => setIsBookingOpen(false)}
-                        >
-                            {portfoliosPageCopy.modalCloseBtn}
-                        </button>
-                    </div>
-                </div>
-            )}
         </section>
     );
 }
