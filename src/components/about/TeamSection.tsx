@@ -698,6 +698,3 @@ const TeamSection: React.FC = () => {
 
 export default TeamSection;
 
-interface TeamMember {
-    image?: string;
-}

@@ -1,21 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { whyUsPoints } from "../data";
 import { members as teamMembers } from "./about/TeamSection";
-import { Mic, MicOff, Users, CheckCircle, Flame, Target, Infinity, Video, Laptop, RefreshCw } from "lucide-react";
+import { Users, CheckCircle, Flame, Target, Infinity, Video } from "lucide-react";
 import { whyUsCopy } from "../copy";
 
+// We keep onOpenBooking in the interface so App.tsx doesn't break, 
+// but we don't need to destructure it if we aren't using it here.
 interface WhyUsProps {
   onOpenBooking: () => void;
 }
 
-export default function WhyUs({ onOpenBooking }: WhyUsProps) {
-  // Simple interactive features for the mock video call panel
-  const [mutedStates, setMutedStates] = useState<Record<string, boolean>>({});
-
-  const toggleMute = (id: string, e: React.MouseEvent) => {
-    e.stopPropagation();
-    setMutedStates(prev => ({ ...prev, [id]: !prev[id] }));
-  };
+export default function WhyUs(props: WhyUsProps) {
 
   const getPillarIcon = (index: number) => {
     switch (index) {
@@ -39,7 +34,7 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Title Area */}
         <div className="space-y-4">
-          <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans  tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5">
+          <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5">
             {whyUsCopy.sectionTag}
           </span>
           <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white max-w-2xl">
@@ -89,16 +84,7 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
                         <span className="block font-sans text-sm font-bold text-white leading-none tracking-wide truncate">
                           {member.name}
                         </span>
-
-                        {/* Audio Mute controller */}
-                        <button
-                          id={`toggle-mute-r1-${idx}`}
-                          onClick={(e) => toggleMute(member.name, e)}
-                          className="p-1 rounded-md transition-colors"
-                        >
-                        </button>
                       </div>
-
                       <div className="flex items-center justify-between font-sans text-xs text-neutral-500 uppercase truncate">
                         <span>{member.role}</span>
                       </div>
@@ -129,16 +115,7 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
                         <span className="block font-sans text-sm font-bold text-white leading-none tracking-wide truncate">
                           {member.name}
                         </span>
-
-                        {/* Audio Mute controller */}
-                        <button
-                          id={`toggle-mute-r2-${idx}`}
-                          onClick={(e) => toggleMute(member.name, e)}
-                          className="p-1 rounded-md transition-colors"
-                        >
-                        </button>
                       </div>
-
                       <div className="flex items-center justify-between font-sans text-xs text-neutral-500 uppercase truncate">
                         <span>{member.role}</span>
                       </div>
@@ -148,11 +125,12 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
               </div>
             </div>
 
-            <a href={`${import.meta.env.BASE_URL}#about`}>
-              <p className="font-sans text-[11px] text-neutral-600 tracking-wider font-semibold ml-2 select-none uppercase font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">{whyUsCopy.seeAllTeam}</p>
+            {/* FIXED ROUTING ANCHOR */}
+            <a href="#about" onClick={() => window.scrollTo(0, 0)}>
+              <p className="font-sans text-[11px] text-neutral-600 tracking-wider font-semibold ml-2 select-none uppercase text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">
+                {whyUsCopy.seeAllTeam}
+              </p>
             </a>
-
-
 
           </div>
 
@@ -171,7 +149,6 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
                     <h3 className="font-sans font-regular text-[#ede9fe] text-lg tracking-wide group-hover:text-brunswick-green-600 transition-colors">
                       {point.title}
                     </h3>
-
                   </div>
                 </div>
               ))}
@@ -183,13 +160,6 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
                 <span className="block text-base font-semibold text-white">{whyUsCopy.reassuranceTitle}</span>
                 <span className="block text-base text-neutral-500 uppercase tracking-widest font-sans">{whyUsCopy.reassuranceSub}</span>
               </div>
-              {/* <button
-                id="why-us-booking-btn"
-                onClick={onOpenBooking}
-                className="p-3 px-6 rounded-xl bg-green-primary hover:bg-emerald-600 text-black font-sans font-medium text-base transition-colors cursor-pointer block text-center shadow-lg"
-              >
-                Hire Our Unit &rarr;
-              </button> */}
             </div>
           </div>
 

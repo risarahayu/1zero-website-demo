@@ -15,7 +15,7 @@ export interface ProductItem {
   // what user is experiencing (symptoms of bottleneck)
   symptoms: {
     text: string;
-    icon: React.ReactNode;
+    icon: React.ElementType
   }[];
 
   // what the system unlocks after intervention
