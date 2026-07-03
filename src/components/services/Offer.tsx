@@ -37,7 +37,7 @@ export default function DiagnosisPanel() {
                         <br />
                         {offerCopy.heroTitleLine2}
                     </p>
-                    <p className="text-sea-salt/50 mt-6">
+                    <p className="text-sea-salt/50 mt-6 text-base sm:text-lg">
                         {offerCopy.heroSubtitle}
                     </p>
                 </div>
@@ -48,7 +48,7 @@ export default function DiagnosisPanel() {
                 <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt">
                     {offerCopy.accordionTitle}
                 </h3>
-                <p className="text-sea-salt/60 mt-2">
+                <p className="text-sea-salt/60 mt-2 text-base sm:text-lg">
                     {offerCopy.accordionSubtitle}
                 </p>
             </div>
@@ -112,7 +112,7 @@ export default function DiagnosisPanel() {
                                             {/* MAIN CARD INNER */}
                                             <div className="relative z-10 p-8 rounded-2xl ">
                                                 <div className="space-y-8">
-                                                    <p className="text-sea-salt text-lg font-semibold">{offerCopy.conditionText}</p>
+                                                    <p className="text-sea-salt text-base sm:text-lg font-semibold">{offerCopy.conditionText}</p>
                                                     {/* 1. PROBLEM FIRST */}
                                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                                                         {item.symptoms?.map((symptom, i) => {
@@ -128,7 +128,7 @@ export default function DiagnosisPanel() {
                                                                     <Icon className="w-6 h-6 text-red-400 flex-shrink-0" />
 
                                                                     {/* Render teks */}
-                                                                    <span className="text-sea-salt/80 text-lg md:text-lg leading-relaxed">
+                                                                    <span className="text-sea-salt/80 text-lg md:text-lg ">
                                                                         {symptom.text}
                                                                     </span>
                                                                 </div>
@@ -144,14 +144,14 @@ export default function DiagnosisPanel() {
                                                     {/* 2. RECOMMENDED SERVICE */}
                                                     <div className="p-6 rounded-xl border border-sea-salt/10 bg-sea-salt/5 shadow-2xl">
 
-                                                        <p className="text-sea-salt/40 text-lg font-medium uppercase tracking-wider mb-4">
+                                                        <p className="text-sea-salt/40 text-base sm:text-lg font-medium uppercase tracking-wider mb-4">
                                                             {offerCopy.ourServiceLabel}
                                                         </p>
                                                         <div className="flex flex-col gap-4">
                                                             <div className="text-2xl md:text-5xl font-bold uppercase animate-gradient-text text-gradient">
                                                                 {item.service}
                                                             </div>
-                                                            <p className="text-sea-salt/70 text-lg leading-relaxed">
+                                                            <p className="text-sea-salt/70 text-base sm:text-lg ">
                                                                 {item.description}
                                                             </p>
 
@@ -172,7 +172,7 @@ export default function DiagnosisPanel() {
 
                                                     {/* 3. FUTURE STATE */}
                                                     <div className="p-6 rounded-xl border border-green-500/20 bg-green-500/5">
-                                                        <p className="text-brunswick-green-500 text-lg font-semibold uppercase tracking-wider mb-4">
+                                                        <p className="text-brunswick-green-500 text-base sm:text-lg font-semibold uppercase tracking-wider mb-4">
                                                             {offerCopy.afterImplementationLabel}
                                                         </p>
                                                         <ul className="space-y-3">

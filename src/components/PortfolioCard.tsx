@@ -5,16 +5,16 @@ const getServiceColorClass = (service: string) => {
   const s = service.toLowerCase();
 
   if (s.includes("devpod")) {
-    return "border-ivory/20 bg-ivory/10 text-ivory";
+    return "border-dun/20 bg-dun/10 text-dun";
   }
   if (s.includes("nextgen") || s.includes("next gen")) {
     return "border-dun/20 bg-dun/10 text-dun";
   }
   if (s.includes("geo") || s.includes("generative")) {
-    return "border-brunswick-green-500/30 bg-brunswick-green-500/10 text-brunswick-green-500";
+    return "border-dun/20 bg-dun/10 text-dun";
   }
   if (s.includes("fcto")) {
-    return "border-sea-salt/20 bg-sea-salt/10 text-sea-salt";
+    return "border-dun/20 bg-dun/10 text-dun";
   }
 
   // Default fallback
@@ -61,7 +61,7 @@ export default function PortfolioCard({ project, onReadMore, className = "", sho
           {project.title}
         </h3>
 
-        <p className="font-sans text-lg text-sea-salt/90 leading-relaxed font-normal max-w-sm overflow-hidden [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
+        <p className="font-sans text-base sm:text-lg text-sea-salt/90  font-normal max-w-sm overflow-hidden [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
           {project.description}
         </p>
 

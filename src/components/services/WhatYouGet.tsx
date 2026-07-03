@@ -66,7 +66,7 @@ export default function WhatYouGet() {
                     {servicesCopy.whatYouGain}
                 </h2>
 
-                <p className="text-lg text-sea-salt/70">
+                <p className="text-base sm:text-lg text-sea-salt/70">
                     {servicesCopy.description}
                 </p>
             </div>
@@ -109,7 +109,7 @@ export default function WhatYouGet() {
                                 {item.title}
                             </h3>
 
-                            <p className="text-sea-salt/60 text-lg leading-relaxed">
+                            <p className="text-sea-salt/60 text-base sm:text-lg ">
                                 {item.description}
                             </p>
                         </div>
@@ -150,7 +150,7 @@ export default function WhatYouGet() {
                             {item.title}
                         </h3>
 
-                        <p className="text-sea-salt/80 leading-relaxed">
+                        <p className="text-sea-salt/80 text-base sm:text-lg">
                             {item.description}
                         </p>
                     </div>

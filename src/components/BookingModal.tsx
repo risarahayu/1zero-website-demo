@@ -152,7 +152,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               </div>
               <div>
                 <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt">{bookingModalCopy.modalTitle}</h3>
-                <p className="font-sans text-lg uppercase tracking-wider text-sea-salt">{bookingModalCopy.modalSub}</p>
+                <p className="font-sans text-base sm:text-lg uppercase tracking-wider text-sea-salt">{bookingModalCopy.modalSub}</p>
               </div>
             </div>
             <button
@@ -276,7 +276,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           {step === 2 && (
             <form onSubmit={handleBookSubmit} className="space-y-4 py-2">
               <div className="text-sea-salt bg-sea-salt/60 p-3 rounded-xl border border-sea-salt border-sea-salt/80 text-lg mb-2">
-                <p className="flex items-center gap-1.5">
+                <p className="text-base sm:text-lg flex items-center gap-1.5">
                   <Calendar className="h-3.5 w-3.5 text-brunswick-green-500" />
                   <span>{bookingModalCopy.selectedDateLabel}</span>
                   <strong className="text-sea-salt font-medium">{selectedDate}</strong>
@@ -285,7 +285,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   <span>{bookingModalCopy.selectedTimeLabel}</span>
                   <strong className="text-sea-salt font-medium">{selectedTime}</strong>
                 </p>
-                <p className="mt-1 text-base text-sea-salt font-sans">({timezone})</p>
+                <p className="mt-1 text-base sm:text-lg text-sea-salt font-sans">({timezone})</p>
               </div>
 
               <div className="space-y-1">
@@ -377,16 +377,16 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
               <div className="space-y-2">
                 <h4 className="font-sans text-xl sm:text-2xl font-bold text-sea-salt">{bookingModalCopy.successTitle}</h4>
-                <p className="text-lg text-sea-salt max-w-md mx-auto">
+<p className="text-base sm:text-lg text-sea-salt max-w-md mx-auto">
                   {bookingModalCopy.successDesc1} <span className="text-sea-salt hover:underline">{email}</span>{bookingModalCopy.successDesc2}
                 </p>
               </div>
 
               <div className="max-w-md mx-auto rounded-xl bg-sea-salt/60 p-4 border border-brunswick-green-500/10 space-y-3 divide-y divide-sea-salt text-left">
                 <div className="pb-3 text-lg">
-                  <p className="font-sans text-lg text-brunswick-green-500 tracking-wider">{bookingModalCopy.eventSummary}</p>
-                  <p className="font-sans font-semibold text-lg text-sea-salt mt-1">{bookingModalCopy.eventTitle}</p>
-                  <p className="text-sea-salt mt-0.5">{bookingModalCopy.eventDesc}</p>
+                  <p className="font-sans text-base sm:text-lg text-brunswick-green-500 tracking-wider">{bookingModalCopy.eventSummary}</p>
+                  <p className="font-sans font-semibold text-base sm:text-lg text-sea-salt mt-1">{bookingModalCopy.eventTitle}</p>
+                  <p className="text-base sm:text-lg text-sea-salt mt-0.5">{bookingModalCopy.eventDesc}</p>
                 </div>
                 <div className="py-2.5 pt-3 flex items-center gap-3 text-lg text-sea-salt">
                   <Calendar className="h-4 w-4 text-brunswick-green-500 shrink-0" />

@@ -23,7 +23,7 @@ export default function Footer() {
                 {footerCopy.connectGradient}
               </span>
             </h2>
-            <p className="font-sans text-lg text-sea-salt leading-relaxed max-w-sm">
+            <p className="font-sans text-base sm:text-lg text-sea-salt  max-w-sm">
               {footerCopy.description}
             </p>
 
@@ -91,7 +91,7 @@ export default function Footer() {
               <span className="block font-sans text-lg text-sea-saltuppercase tracking-widest font-bold">
                 {footerCopy.primaryLaboratory}
               </span>
-              <div className="flex gap-2 text-lg text-sea-salt leading-relaxed font-sans">
+              <div className="flex gap-2 text-lg text-sea-salt  font-sans">
                 <MapPin className="h-4 w-4 text-brunswick-green-500 shrink-0 mt-0.5" />
                 <div>
                   <strong className="text-sea-salt block font-sans text-lg">{footerCopy.officeTitle}</strong>

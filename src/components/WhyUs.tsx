@@ -46,7 +46,7 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
             <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
               {whyUsCopy.title}
             </h2>
-            <p className="max-w-2xl font-sans text-lg sm:text-lg text-sea-salt/90 leading-relaxed">
+            <p className="max-w-2xl font-sans text-base sm:text-lg text-sea-salt/90 ">
               {whyUsCopy.description}
             </p>
           </div>
@@ -151,7 +151,7 @@ export default function WhyUs({ onOpenBooking }: WhyUsProps) {
               </div>
 
               <a href={`${import.meta.env.BASE_URL}#about`}>
-                <p className="font-sans text-lg text-sea-salt/90 tracking-wider font-semibold ml-2 select-none uppercase font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">{whyUsCopy.seeAllTeam}</p>
+                <p className="font-sans text-base sm:text-lg text-sea-salt/90 tracking-wider font-semibold ml-2 select-none uppercase font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">{whyUsCopy.seeAllTeam}</p>
               </a>
             </div>
 

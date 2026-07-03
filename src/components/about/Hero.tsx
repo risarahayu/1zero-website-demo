@@ -93,7 +93,7 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                         <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold text-sea-salt leading-[1.1]">
                             {t.title}
                         </h1>
-                        <p className="text-sea-salt/90 text-lg max-w-md">
+                        <p className="text-sea-salt/90 text-base sm:text-lg max-w-md">
                             {t.desc}
                         </p>
                     </div>
@@ -112,7 +112,7 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                                 <i className="fas fa-globe-asia"></i>
                             </div>
                             <h3 className="font-sans text-2xl sm:text-3xl font-bold mb-4">{t.v1t}</h3>
-                            <p className="text-sea-salt/90 text-lg leading-relaxed">{t.v1d}</p>
+                            <p className="text-sea-salt/90 text-base sm:text-lg ">{t.v1d}</p>
                         </div>
 
                         {/* Value Card 2 */}
@@ -122,7 +122,7 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                                 <i className="fas fa-wifi"></i>
                             </div>
                             <h3 className="font-sans text-2xl sm:text-3xl font-bold mb-4">{t.v2t}</h3>
-                            <p className="text-sea-salt/90 text-lg leading-relaxed">{t.v2d}</p>
+                            <p className="text-sea-salt/90 text-base sm:text-lg ">{t.v2d}</p>
                         </div>
 
                         {/* Value Card 3 */}
@@ -132,7 +132,7 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                                 <i className="fas fa-leaf"></i>
                             </div>
                             <h3 className="font-sans text-2xl sm:text-3xl font-bold mb-4">{t.v3t}</h3>
-                            <p className="text-sea-salt/90 text-lg leading-relaxed">{t.v3d}</p>
+                            <p className="text-sea-salt/90 text-base sm:text-lg ">{t.v3d}</p>
                         </div>
                     </div>
 

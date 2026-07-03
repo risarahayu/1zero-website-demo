@@ -115,7 +115,7 @@ export default function ContactPage() {
                         <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold text-sea-salt leading-[1.1]">
                             {contactUsCopy.title}
                         </h1>
-                        <p className="text-sea-salt/60 mt-4 text-lg md:text-lg leading-relaxed">
+                        <p className="text-sea-salt/60 mt-4 text-base sm:text-lg ">
                             {contactUsCopy.description}
                         </p>
                     </div>
@@ -127,7 +127,7 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <p className="text-sm text-sea-salt/40 font-medium uppercase tracking-wider">{contactUsCopy.emailUsLabel}</p>
-                                <p className="text-sea-salt/80 font-medium text-lg md:text-lg">{contactUsCopy.emailUsVal}</p>
+                                <p className="text-sea-salt/80 font-medium text-base sm:text-lg">{contactUsCopy.emailUsVal}</p>
                             </div>
                         </div>
 
@@ -137,7 +137,7 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <p className="text-sm text-sea-salt/40 font-medium uppercase tracking-wider">{contactUsCopy.callUsLabel}</p>
-                                <p className="text-sea-salt/80 font-medium text-lg md:text-lg">{contactUsCopy.callUsVal}</p>
+                                <p className="text-sea-salt/80 font-medium text-base sm:text-lg">{contactUsCopy.callUsVal}</p>
                             </div>
                         </div>
 
@@ -147,7 +147,7 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <p className="text-sm text-sea-salt/40 font-medium uppercase tracking-wider">{contactUsCopy.locationLabel}</p>
-                                <p className="text-sea-salt/80 font-medium text-lg md:text-lg">
+                                <p className="text-sea-salt/80 font-medium text-base sm:text-lg">
                                     {contactUsCopy.locationVal}
                                 </p>
                             </div>
@@ -179,7 +179,7 @@ export default function ContactPage() {
                                 <CheckCircle className="w-5 h-5 text-brunswick-green-900 flex-shrink-0 mt-0.5" />
                                 <div>
                                     <h4 className="font-sans text-xl sm:text-2xl font-bold text-brunswick-green-900">{contactUsCopy.successTitle}</h4>
-                                    <p className="text-sea-salt/60 text-sm mt-1">{contactUsCopy.successDesc}</p>
+                                    <p className="text-sea-salt/60 text-base sm:text-lg mt-1">{contactUsCopy.successDesc}</p>
                                 </div>
                             </div>
                         )}
@@ -190,7 +190,7 @@ export default function ContactPage() {
                                 <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                                 <div>
                                     <h4 className="font-sans text-xl sm:text-2xl font-bold text-red-500">{contactUsCopy.failTitle}</h4>
-                                    <p className="text-sea-salt/60 text-sm mt-1">{formError}</p>
+                                    <p className="text-sea-salt/60 text-base sm:text-lg mt-1">{formError}</p>
                                 </div>
                             </div>
                         )}

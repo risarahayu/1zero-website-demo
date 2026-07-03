@@ -390,7 +390,7 @@ const TeamSection: React.FC = () => {
                             <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt">
                                 {member.name}
                             </h3>
-                            <p className="text-lg text-sea-salt/80">
+                            <p className="text-base sm:text-lg text-sea-salt/80">
                                 {member.role}
                             </p>
                         </div>
@@ -428,7 +428,7 @@ const TeamSection: React.FC = () => {
                                 </h3>
 
                                 {/* Role */}
-                                <p className="text-base md:text-lg  text-raisin-black-800">
+                                <p className="text-base sm:text-lg text-raisin-black-800">
                                     {member.role}
                                 </p>
                             </button>
@@ -463,7 +463,7 @@ const TeamSection: React.FC = () => {
                                 </h3>
 
                                 {/* Role */}
-                                <p className="text-base md:text-lg  text-raisin-black-800">
+                                <p className="text-base sm:text-lg text-raisin-black-800">
                                     {member.role}
                                 </p>
                             </button>
@@ -494,7 +494,7 @@ const TeamSection: React.FC = () => {
                                 <h3 className="text-2xl text-start font-bold text-sea-salt">
                                     {activeMember.name}
                                 </h3>
-                                <p className="text-base md:text-lg text-start text-sea-salt/90">
+                                <p className="text-base sm:text-lg text-start text-sea-salt/90">
                                     {activeMember.role}
                                 </p>
                             </div>
@@ -569,7 +569,7 @@ const TeamSection: React.FC = () => {
                             About
                         </h4>
 
-                        <p className="text-base md:text-lg text-start text-sea-salt/90 leading-relaxed">
+                        <p className="text-base sm:text-lg text-start text-sea-salt/90 ">
                             {activeMember.bio}
                         </p>
                         </div>
@@ -643,15 +643,15 @@ const TeamSection: React.FC = () => {
                                                 {selectedMember.name}
                                             </h3>
 
-                                            <p className="mt-1 text-base md:text-lg text-start text-raisin-black-900-400">
+                                            <p className="mt-1 text-base sm:text-lg text-start text-raisin-black-900-400">
                                                 {selectedMember.role}
                                             </p>
                                         </div>
                                     </div>
 
                                     {/* Bio */}
-                                    <div className="text-lg text-sea-salt/90 leading-relaxed">
-                                        <p>{selectedMember.bio}</p>
+                                    <div className="text-sea-salt/90 ">
+                                        <p className="text-base sm:text-lg">{selectedMember.bio}</p>
                                     </div>
 
                                     {/* Tech stack */}

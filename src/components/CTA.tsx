@@ -45,7 +45,7 @@ export default function CTA({ onOpenBooking }: CTAProps) {
                 </span> <br />
                 {ctaCopy.titleLine2}
               </h2>
-              <p className="max-w-xl mx-auto font-sans text-lg sm:text-lg text-sea-salt/90">
+              <p className="max-w-xl mx-auto font-sans text-base sm:text-lg text-sea-salt/90">
                 {ctaCopy.description}
               </p>
             </div>

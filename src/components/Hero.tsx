@@ -72,7 +72,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               ))}
               <span className="font-sans text-lg text-sea-salt ml-1.5 font-bold">4.9★</span>
             </div> */}
-            <p className="font-sans text-lg leading-relaxed text-sea-salt">
+            <p className="font-sans text-base sm:text-lg  text-sea-salt">
               {heroCopy.ctaText}
             </p>
             {/* <div className="flex items-center gap-1.5 font-sans text-base text-sea-salt uppercase tracking-wider">

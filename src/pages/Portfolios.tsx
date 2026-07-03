@@ -46,7 +46,7 @@ export default function PortfolioPage() {
                         {portfoliosPageCopy.title}
                     </h1>
 
-                    <p className="text-raisin-black-900-400 max-w-xl mx-auto">
+                    <p className="text-raisin-black-900-400 text-base sm:text-lg max-w-xl mx-auto">
                         {portfoliosPageCopy.description}
                     </p>
                 </div>
@@ -91,7 +91,7 @@ export default function PortfolioPage() {
                 </div>
                 <div className="space-y-10 justify-center items-center flex flex-col">
 
-                    <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-sea-salt  z-10 drop-shadow-lg">
+                    <p className="text-base sm:text-lg text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-sea-salt  z-10 drop-shadow-lg">
                         {portfoliosPageCopy.ctaTitle}
                     </p>
                     <img

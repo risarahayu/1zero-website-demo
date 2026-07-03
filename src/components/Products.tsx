@@ -51,7 +51,7 @@ export default function Products({ onOpenBooking }: ProductsProps) {
             <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
               {productsCopy.title}
             </h2>
-            <p className="max-w-xl mx-auto font-sans text-lg sm:text-lg text-sea-salt/90">
+            <p className="max-w-xl mx-auto font-sans text-base sm:text-lg text-sea-salt/90">
               {productsCopy.description}
             </p>
           </div>
@@ -77,7 +77,7 @@ export default function Products({ onOpenBooking }: ProductsProps) {
                     <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt group-hover:text-brunswick-green-500 transition-colors">
                       {p.service}
                     </h3>
-                    <p className="font-sans text-lg text-sea-salt group-hover:text-sea-salt/90 transition-colors leading-relaxed">
+                    <p className="font-sans text-base sm:text-lg text-sea-salt group-hover:text-sea-salt/90 transition-colors ">
                       {p.description}
                     </p>
                   </div>

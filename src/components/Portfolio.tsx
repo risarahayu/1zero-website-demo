@@ -122,7 +122,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
               </h2>
 
               {/* Description Text */}
-              <p className="font-sans text-lg sm:text-lg text-sea-salt/90 max-w-sm leading-relaxed ">
+              <p className="font-sans text-base sm:text-lg text-sea-salt/90 max-w-sm  ">
                 {portfolioCopy.description}
               </p>
             </div>
@@ -151,7 +151,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
               </span>
 
               <a href={`${import.meta.env.BASE_URL}#portfolio`}>
-                <p className="font-sans text-lg text-sea-salt/80 tracking-widest  font-semibold ml-2 select-none cursor-pointer hover:text-brunswick-green-500 hover:underline transition-all duration-300 transform active:scale-95">{portfolioCopy.seeAllText}</p>
+                <p className="font-sans text-base sm:text-lg text-sea-salt/80 tracking-widest  font-semibold ml-2 select-none cursor-pointer hover:text-brunswick-green-500 hover:underline transition-all duration-300 transform active:scale-95">{portfolioCopy.seeAllText}</p>
               </a>
             </div>
           </div>
@@ -185,7 +185,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
 
         {/* Global CTA Banner under */}
         <div className="text-center pt-20 max-w-2xl mx-auto space-y-4">
-          <p className="font-sans text-lg text-sea-salt uppercase tracking-widest">
+          <p className="font-sans text-base sm:text-lg text-sea-salt uppercase tracking-widest">
             {portfolioCopy.ctaTopText}
           </p>
           <button

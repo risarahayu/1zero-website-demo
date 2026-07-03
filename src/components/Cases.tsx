@@ -120,11 +120,11 @@ function CaseCard({
         </div>
 
         <div className="space-y-1 pb-2">
-          <p className="font-sans text-lg uppercase tracking-widest text-sea-salt">
+          <p className="font-sans text-base sm:text-lg uppercase tracking-widest text-sea-salt">
             {item.label}
           </p>
           <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt">{item.title}</h3>
-          <p className="font-sans text-lg text-sea-salt leading-relaxed line-clamp-2">
+          <p className="font-sans text-base sm:text-lg text-sea-salt  line-clamp-2">
             {item.desc}
           </p>
         </div>
@@ -271,7 +271,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
             </h2>
           </div>
           <div className="lg:col-span-4 flex flex-col gap-6 items-start lg:items-end">
-            <p className="font-sans text-lg sm:text-lg text-sea-salt/90 leading-relaxed max-w-sm lg:text-right">
+            <p className="font-sans text-base sm:text-lg text-sea-salt/90  max-w-sm lg:text-right">
               {casesCopy.description}
             </p>
             {/* Navigation */}

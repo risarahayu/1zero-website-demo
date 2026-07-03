@@ -204,8 +204,8 @@ function Panel({
                 <span className={cfg.accentText}>{getIcon(step.number)}</span>
               </div>
               <div>
-                <p className="font-sans text-lg uppercase tracking-[0.2em] text-sea-salt">{workflowCopy.phaseLabel}</p>
-                <p className={`font-sans text-lg font-bold tracking-wider uppercase ${cfg.accentText}`}>
+                <p className="font-sans text-base sm:text-lg uppercase tracking-[0.2em] text-sea-salt">{workflowCopy.phaseLabel}</p>
+                <p className={`font-sans text-base sm:text-lg font-bold tracking-wider uppercase ${cfg.accentText}`}>
                   {step.number}
                 </p>
               </div>
@@ -217,7 +217,7 @@ function Panel({
               <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt leading-[1.1]">
                 {step.title}
               </h3>
-              <p className="font-sans text-lg text-sea-salt leading-relaxed max-w-md">
+              <p className="font-sans text-base sm:text-lg text-sea-salt  max-w-md">
                 {step.subtext}
               </p>
 
@@ -238,7 +238,7 @@ function Panel({
             </div>
 
             {/* Step counter */}
-            <p className="font-sans text-lg text-ivory tracking-widest uppercase">
+            <p className="font-sans text-base sm:text-lg text-ivory tracking-widest uppercase">
               {String(index + 1).padStart(2, "0")} {workflowCopy.ofText} {String(N).padStart(2, "0")} {workflowCopy.phasesText}
             </p>
           </div>
@@ -247,10 +247,10 @@ function Panel({
           <div className="hidden lg:flex flex-col justify-center items-start">
             <div className={`w-full max-w-sm p-7 rounded-2xl border ${cfg.border} backdrop-blur-sm`}
               style={{ background: `${cfg.accent}08` }}>
-              <p className={`font-sans text-lg uppercase tracking-widest font-bold mb-3 ${cfg.accentText}`}>
+              <p className={`font-sans text-base sm:text-lg uppercase tracking-widest font-bold mb-3 ${cfg.accentText}`}>
                 {workflowCopy.commitStatusLabel}
               </p>
-              <p className="font-sans text-lg text-sea-salt leading-relaxed">
+              <p className="font-sans text-base sm:text-lg text-sea-salt ">
                 {workflowCopy.commitStatusDescStart}{" "}
                 <strong className="text-sea-salt font-semibold">{step.number}</strong>{" "}
                 {workflowCopy.commitStatusDescEnd}
@@ -317,7 +317,7 @@ export default function Workflow() {
             <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
               {workflowCopy.title}
             </h2>
-            <p className="max-w-xl mx-auto font-sans text-lg sm:text-lg text-sea-salt/90">
+            <p className="max-w-xl mx-auto font-sans text-base sm:text-lg text-sea-salt/90">
               {workflowCopy.description}
             </p>
           </div>
