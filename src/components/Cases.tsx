@@ -1,10 +1,6 @@
 import { useEffect, useState, useRef } from "react";
-import { Activity, Clock, ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { casesCopy } from "../copy";
-
-interface CasesProps {
-  onOpenBooking: () => void;
-}
 
 const recentActivity = [
   {
@@ -41,20 +37,18 @@ const recentActivity = [
 function CaseCard({
   item,
   isCenter,
-  onOpenBooking,
 }: {
   item: (typeof recentActivity)[0];
   isCenter: boolean;
-  onOpenBooking: () => void;
 }) {
   return (
     <div
-      onClick={onOpenBooking}
+      onClick={() => window.open(item.linkPost, "_blank", "noopener,noreferrer")}
       className={`
-        group relative rounded-3xl border border-sea-salt/20 bg-sea-salt/6 p-5
+        group relative h-full min-h-[420px] rounded-3xl bg-sea-salt/6 p-5
         flex flex-col justify-between cursor-pointer overflow-hidden
         transition-all duration-500 hover:scale-[1.01]
-        ${isCenter ? "opacity-100 scale-100" : "opacity-55 scale-[0.97] hover:opacity-75"}
+        ${isCenter ? "opacity-100 border border-brunswick-green-500" : "opacity-55 hover:opacity-75 border border-sea-salt/20"}
       `}
     >
       {/* Gradient image area */}
@@ -68,7 +62,9 @@ function CaseCard({
           <p className="font-sans text-base sm:text-lg uppercase tracking-widest text-sea-salt">
             {item.linkPost}
           </p>
-          <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt">{item.title}</h3>
+          <h3 className={`font-sans text-2xl sm:text-3xl font-bold ${isCenter ? "text-brunswick-green-500" : "text-sea-salt"}`}>
+            {item.title}
+          </h3>
           <p className="font-sans text-base sm:text-lg text-sea-salt  line-clamp-2">
             {item.desc}
           </p>
@@ -80,7 +76,7 @@ function CaseCard({
           href={item.linkPost}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center font-sans font-semibold text-sea-salt group-hover:text-brunswick-green-500 bg-raisin-black-800 hover:bg-brunswick-green-900 group-hover:bg-raisin-black-900 border border-sea-salt/20 hover:bg-brunswick-green-900 hover:text-sea-salt transition-all px-4 py-1.5 rounded-full text-lg transition-colors cursor-pointer self-start mt-auto"
+          className={`inline-flex items-center justify-center font-sans font-semibold px-4 py-1.5 rounded-full text-lg cursor-pointer self-start mt-auto transition-all border ${isCenter ? "text-sea-salt border-brunswick-green-500 bg-brunswick-900" : "text-sea-salt border-sea-salt/20 bg-raisin-black-800"} hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt`}
         >
           Read More
         </a>
@@ -90,7 +86,7 @@ function CaseCard({
 }
 
 // ─── Main Component ──────────────────────────────────────────────────────────
-export default function Cases({ onOpenBooking }: CasesProps) {
+export default function Cases() {
   const total = recentActivity.length;
 
   // ── Shared index state ──────────────────────────────────────────
@@ -254,7 +250,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
                     key={`${item.id}-${pos}`}
                     className={`${isCenter ? "flex-[1.4]" : "flex-1"}`}
                   >
-                    <CaseCard item={item} isCenter={isCenter} onOpenBooking={onOpenBooking} />
+                    <CaseCard item={item} isCenter={isCenter} />
                   </div>
                 );
               })}
@@ -296,7 +292,6 @@ export default function Cases({ onOpenBooking }: CasesProps) {
                   <CaseCard
                     item={item}
                     isCenter={index === virtualIndex}
-                    onOpenBooking={onOpenBooking}
                   />
                 </div>
               ))}
@@ -304,7 +299,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
 
             {/* Dot indicators */}
             <div className="flex items-center justify-center gap-2 mt-6">
-              {caseItems.map((_, i) => (
+              {recentActivity.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => {

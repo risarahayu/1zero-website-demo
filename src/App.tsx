@@ -75,7 +75,7 @@ export default function App() {
             <Testimonials />
 
             {/* Case Studies grid */}
-            <Cases onOpenBooking={handleOpenBooking} />
+            <Cases />
 
             {/* Deep Green Curved CTA scheduling Section */}
             <CTA onOpenBooking={handleOpenBooking} />
