@@ -2,6 +2,7 @@ import React, { useMemo, useState } from "react";
 import { customProjects } from "../data";
 import PortfolioCard from "../components/PortfolioCard";
 import { PhoneCall } from "lucide-react";
+import { portfoliosPageCopy } from "../copy";
 
 export default function PortfolioPage() {
     const [activeTab, setActiveTab] = useState("All");
@@ -37,15 +38,15 @@ export default function PortfolioPage() {
             {/* HEADER */}
             <div className="relative z-10 text-center space-y-4">
                 <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans  tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5 shadow-[0_0_12px_rgba(163,230,53,0.1)]">
-                    Our Portfolios
+                    {portfoliosPageCopy.badge}
                 </span>
                 <br />
                 <h1 className="text-4xl md:text-6xl font-bold animate-gradient-text text-gradient">
-                    Ideas Turned Into Products
+                    {portfoliosPageCopy.title}
                 </h1>
 
                 <p className="text-zinc-400 max-w-xl mx-auto">
-                    Selected projects grouped by service category.
+                    {portfoliosPageCopy.description}
                 </p>
             </div>
 
@@ -89,7 +90,7 @@ export default function PortfolioPage() {
                 <div className="space-y-12 justify-center items-center flex flex-col">
 
                     <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-white tracking-tight z-10 drop-shadow-lg">
-                        Start Your Project With
+                        {portfoliosPageCopy.ctaTitle}
                     </p>
                     <img
                         src="Logo 1zero white.svg"
@@ -114,7 +115,7 @@ export default function PortfolioPage() {
                 cursor-pointer
                 tracking-wide"
                     >
-                        Book a Section
+                        {portfoliosPageCopy.bookButton}
                         <PhoneCall className="h-4 w-4 text-neutral-900 group-hover:scale-110 transition-transform" />
                     </button>
                 </div>
@@ -123,13 +124,13 @@ export default function PortfolioPage() {
             {isBookingOpen && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">
                     <div className="bg-white dark:bg-gray-800 rounded-xl p-8 max-w-md w-full shadow-lg">
-                        <h2 className="text-2xl font-bold mb-4">Book a Section</h2>
-                        <p className="mb-6">This is a placeholder for the booking modal. Implement your actual booking UI here.</p>
+                        <h2 className="text-2xl font-bold mb-4">{portfoliosPageCopy.modalTitle}</h2>
+                        <p className="mb-6">{portfoliosPageCopy.modalDescription}</p>
                         <button
                             className="px-4 py-2 bg-brunswick-green-500 text-white rounded hover:bg-brunswick-green-600"
                             onClick={() => setIsBookingOpen(false)}
                         >
-                            Close
+                            {portfoliosPageCopy.modalCloseBtn}
                         </button>
                     </div>
                 </div>

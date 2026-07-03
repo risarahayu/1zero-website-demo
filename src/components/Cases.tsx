@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { ArrowUpRight, MessageSquare, Activity, Clock, ArrowLeft, ArrowRight } from "lucide-react";
+import { casesCopy } from "../copy";
 
 interface CasesProps {
   onOpenBooking: () => void;
@@ -98,7 +99,7 @@ function CaseCard({
               className={`h-1.5 w-1.5 rounded-full ${item.accentColor.replace("text-", "bg-")} animate-pulse`}
             />
             <span className="font-sans text-[9px] text-neutral-400 uppercase tracking-widest">
-              Live Case
+              {casesCopy.liveCase}
             </span>
           </div>
 
@@ -133,12 +134,12 @@ function CaseCard({
       <div className="flex items-center justify-between pt-4 border-t border-neutral-900 text-base font-sans">
         <div className="flex items-center gap-1.5 text-neutral-500">
           <MessageSquare className="h-3.5 w-3.5" />
-          <span>DISCUSSION COMPLETED</span>
+          <span>{casesCopy.discussionCompleted}</span>
         </div>
         <span
           className={`font-sans text-base ${item.accentColor} flex items-center gap-1 group-hover:opacity-80 transition-opacity`}
         >
-          Discuss Strategy
+          {casesCopy.discussStrategy}
           <ArrowUpRight className="h-3.5 w-3.5" />
         </span>
       </div>
@@ -262,15 +263,15 @@ export default function Cases({ onOpenBooking }: CasesProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end pb-8 border-b border-neutral-900">
           <div className="lg:col-span-8 space-y-3">
             <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans uppercase tracking-widest text-brunswick-green-500 mb-[3rem] bg-[#a3e635]/5">
-              Recent client
+              {casesCopy.badge}
             </span>
             <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-none">
-              Others Already <br />Took the First Step
+              {casesCopy.titleLine1} <br />{casesCopy.titleLine2}
             </h2>
           </div>
           <div className="lg:col-span-4 flex flex-col gap-4 items-start lg:items-end">
             <p className="font-sans text-base sm:text-sm text-neutral-400 leading-relaxed max-w-sm lg:text-right">
-              Teams are already turning ideas into premium, resilient system software. What high-performance framework are we building next together?
+              {casesCopy.description}
             </p>
             {/* Navigation */}
             <div className="flex items-center gap-3">
@@ -382,9 +383,9 @@ export default function Cases({ onOpenBooking }: CasesProps) {
         {/* Call to action marquee */}
         <div className="overflow-hidden rounded-3xl border border-neutral-900 bg-neutral-950/30 p-4">
           <div className="animate-marquee-text flex whitespace-nowrap gap-16 text-3xl sm:text-4xl font-sans font-extrabold uppercase tracking-[0.18em] text-white">
-            <span>Now is your turn</span>
-            <span>Now is your turn</span>
-            <span>Now is your turn</span>
+            <span>{casesCopy.marqueeText}</span>
+            <span>{casesCopy.marqueeText}</span>
+            <span>{casesCopy.marqueeText}</span>
           </div>
         </div>
       </div>

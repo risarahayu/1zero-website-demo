@@ -142,3 +142,73 @@ export const servicesCopy = {
   heroTextSuffix: "AI-first digital systems.",
   heroTagline: "Mission-led teams don't need more messy middleware. They need agentic infrastructure to scale their impact."
 };
+
+export const productsCopy = {
+  badge: "Our Services",
+  title: "Core Services",
+  description: "Highly optimized, production-hardened models designed to deploy smoothly or integrate instantly with your organization's digital workflow."
+};
+
+export const portfolioCopy = {
+  badge: "Our Portfolios",
+  titleLine1: "Where Ideas",
+  titleLine2: "Become Reality",
+  description: "This portfolio showcases work from concept to execution.",
+  seeAllText: "See All Projects",
+  ctaTopText: "Ready to review full modular system blueprints?",
+  ctaButtonText: "Schedule Architecture Session"
+};
+
+export const workflowCopy = {
+  badge: "Our Timeline",
+  title: "A collaborative process that builds the right systems for your mission",
+  description: "Precision counts. We build customized software workflows step-by-step, ensuring structural safety and elite handoff readiness.",
+  scrollHint: "Scroll",
+  phaseLabel: "Phase",
+  ofText: "of",
+  phasesText: "phases",
+  commitStatusLabel: "COMMIT STATUS",
+  commitStatusDescStart: "Our engineering outputs for the",
+  commitStatusDescEnd: "phase pass multiple lint audits and container optimization runs automatically.",
+  releaseReady: "Release Ready"
+};
+
+export const testimonialsCopy = {
+  badge: "Testimonials",
+  titleLine1: "Our happy clients",
+  titleLine2: "say about us"
+};
+
+export const casesCopy = {
+  liveCase: "Live Case",
+  discussionCompleted: "DISCUSSION COMPLETED",
+  discussStrategy: "Discuss Strategy",
+  badge: "Recent client",
+  titleLine1: "Others Already",
+  titleLine2: "Took the First Step",
+  description: "Teams are already turning ideas into premium, resilient system software. What high-performance framework are we building next together?",
+  marqueeText: "Now is your turn"
+};
+
+export const offerCopy = {
+  heroTitleLine1: "We know you didn’t come here without a problem.",
+  heroTitleLine2: "Something in your system isn’t working — and you can feel it.",
+  heroSubtitle: "This isn’t a form. It’s a diagnosis of your growth system.",
+  accordionTitle: "Which area of your business is facing bottlenecks?",
+  accordionSubtitle: "Click to explore the diagnosis and solutions.",
+  conditionText: "If you’re experiencing this, or if this is happening in your system:",
+  ourServiceLabel: "Our Service",
+  downloadBtn: "Download PDF",
+  afterImplementationLabel: "After implementation"
+};
+
+export const portfoliosPageCopy = {
+  badge: "Our Portfolios",
+  title: "Ideas Turned Into Products",
+  description: "Selected projects grouped by service category.",
+  ctaTitle: "Start Your Project With",
+  bookButton: "Book a Section",
+  modalTitle: "Book a Section",
+  modalDescription: "This is a placeholder for the booking modal. Implement your actual booking UI here.",
+  modalCloseBtn: "Close"
+};

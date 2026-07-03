@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { servicesCopy } from "../../copy"; // Adjust path based on your folder structure
+import { servicesCopy } from "../../copy";
 
 export default function ServicesHero() {
     const data = [
