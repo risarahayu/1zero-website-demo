@@ -19,7 +19,11 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState<string>("home");
 
   const handleOpenBooking = () => {
-    setIsBookingOpen(true);
+    window.open(
+      "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3gWtjZcsb5BZb78RjU3eDJJcflGsC7oDWdx__RBcaDFHzZ1ivl2IZrigY4R9-r63sLfDdRjvmQ",
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   const handleCloseBooking = () => {

@@ -84,7 +84,7 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
         
       `}</style>
 
-            <header className="max-w-7xl mx-auto px-10 py-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <header className="max-w-7xl mx-auto px-10 py-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center" >
                 <div className="space-y-10 ">
                     <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
                         {t.sub}

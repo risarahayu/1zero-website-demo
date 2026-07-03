@@ -44,7 +44,7 @@ export default function PortfolioCard({ project, onReadMore, className = "", sho
       {/* Left corner identifier and Content text */}
       <div className="pt-3 space-y-2">
         <h3
-          className="font-sans text-lg font-bold text-sea-salt tracking-tight transition-colors cursor-pointer hover:text-brunswick-green-500 group-hover:text-brunswick-green-600 "
+          className="font-sans text-xl font-bold text-sea-salt tracking-tight transition-colors cursor-pointer hover:text-brunswick-green-500 group-hover:text-brunswick-green-600 "
           onClick={onReadMore}
         >
           {project.title}
@@ -56,11 +56,11 @@ export default function PortfolioCard({ project, onReadMore, className = "", sho
 
         {showService && (
           <div className="pt-2 flex flex-col space-y-2">
-            <span className="text-lg font-semibold text-raisin-black-900-500 uppercase tracking-widest">
+            {/* <span className="text-lg font-semibold text-raisin-black-900-500  tracking-widest">
               Service:
-            </span>
+            </span> */}
             <div className="flex">
-              <span className={`inline-block px-3 py-1 rounded-full border text-lg uppercase tracking-widest font-medium ${getServiceColorClass(project.service)}`}>
+              <span className={`inline-block px-2 py-1 rounded-full border text-sm  tracking-widest font-medium ${getServiceColorClass(project.service)}`}>
                 {project.service}
               </span>
             </div>
