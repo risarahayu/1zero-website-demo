@@ -6,7 +6,7 @@ interface CasesProps {
   onOpenBooking: () => void;
 }
 
-const caseItems = [
+const recentActivity = [
   {
     id: "activity-01",
     photo: "LinkedIn Post",
@@ -43,7 +43,7 @@ function CaseCard({
   isCenter,
   onOpenBooking,
 }: {
-  item: (typeof caseItems)[0];
+  item: (typeof recentActivity)[0];
   isCenter: boolean;
   onOpenBooking: () => void;
 }) {
@@ -91,7 +91,7 @@ function CaseCard({
 
 // ─── Main Component ──────────────────────────────────────────────────────────
 export default function Cases({ onOpenBooking }: CasesProps) {
-  const total = caseItems.length;
+  const total = recentActivity.length;
 
   // ── Shared index state ──────────────────────────────────────────
   const [activeIndex, setActiveIndex] = useState(0);
@@ -132,9 +132,9 @@ export default function Cases({ onOpenBooking }: CasesProps) {
 
   // Tripled array for infinite-loop mobile slider
   const tripled = [
-    ...caseItems.map((p, i) => ({ ...p, uniqueId: `${p.id}-set0-${i}` })),
-    ...caseItems.map((p, i) => ({ ...p, uniqueId: `${p.id}-set1-${i}` })),
-    ...caseItems.map((p, i) => ({ ...p, uniqueId: `${p.id}-set2-${i}` })),
+    ...recentActivity.map((p, i) => ({ ...p, uniqueId: `${p.id}-set0-${i}` })),
+    ...recentActivity.map((p, i) => ({ ...p, uniqueId: `${p.id}-set1-${i}` })),
+    ...recentActivity.map((p, i) => ({ ...p, uniqueId: `${p.id}-set2-${i}` })),
   ];
 
   const handleMobileNext = () => {
@@ -247,7 +247,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
           >
             <div className="flex gap-5 transition-all duration-500">
               {getDesktopIndices().map((itemIndex, pos) => {
-                const item = caseItems[itemIndex];
+                const item = recentActivity[itemIndex];
                 const isCenter = pos === 1;
                 return (
                   <div
@@ -262,7 +262,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
 
             {/* Dot indicators */}
             <div className="flex items-center justify-center gap-4 mt-6">
-              {caseItems.map((_, i) => (
+              {recentActivity.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setActiveIndex(i)}
