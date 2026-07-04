@@ -34,9 +34,9 @@ export default function PortfolioCard({ project, onReadMore, className = "", sho
   };
 
   return (
-    <div className={`group flex flex-col space-y-4 ${className} bg-sea-salt/6 backdrop-blur border border-sea-salt/6 rounded-3xl p-4`}>
+    <div className={`group flex flex-col  space-y-4 ${className} bg-sea-salt/6 backdrop-blur border  border-sea-salt/6 hover:border-brunswick-green-500 rounded-3xl p-4`}>
       {/* Visual Mockup Stage Box */}
-      <div className={`relative h-[200px] w-full rounded-[24px] border ${project.bgClass} flex items-center justify-center overflow-hidden shadow-2xl transition-all duration-500 group-hover:scale-[1.01] group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)]`}>
+      <div className={`relative h-[200px] w-full rounded-[24px] border  ${project.bgClass} flex items-center justify-center overflow-hidden shadow-2xl transition-all duration-500 group-hover:scale-[1.01] group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)]`}>
 
         {/* Subtly animated ambient grid lines */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:20px_20px]" />
@@ -77,7 +77,7 @@ export default function PortfolioCard({ project, onReadMore, className = "", sho
       <button
         type="button"
         onClick={handleReadMore}
-        className="inline-flex items-center justify-center font-sans font-semibold text-sea-salt group-hover:text-brunswick-green-500 bg-raisin-black-800 hover:bg-brunswick-green-900 group-hover:bg-raisin-black-900 border border-sea-salt/20 hover:bg-brunswick-green-900 hover:text-sea-salt transition-all px-4 py-1.5 rounded-full text-lg transition-colors cursor-pointer self-start"
+        className="inline-flex items-center justify-center font-sans font-semibold text-sea-salt  bg-raisin-black-800 hover:bg-brunswick-green-900  border border-sea-salt/20 hover:bg-brunswick-green-900 hover:text-sea-salt transition-all px-4 py-1.5 rounded-full text-lg transition-colors cursor-pointer self-start"
       >
         Read More
       </button>
