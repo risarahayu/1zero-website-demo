@@ -58,7 +58,7 @@ export default function Testimonials() {
             return (
               <div
                 key={t.id}
-                className={`group flex flex-col justify-between p-6 rounded-2xl border border-sea-salt/20 p-6 transition-all duration-300 relative ${isActiveMobile
+                className={`group flex flex-col justify-between p-6 rounded-2xl border  p-6 transition-all duration-300 relative ${isActiveMobile
                   ? "border-brunswick-green-500 backdrop-blur bg-sea-salt/6  shadow-brunswick-green-500/5 shadow-2xl scale-[1.01] block"
                   : "border-sea-salt/20 group-hover:border-brunswick-green-500/30 md:block hidden"
                   }`}
@@ -93,7 +93,13 @@ export default function Testimonials() {
                     />
                   </div>
                   <div className="leading-tight">
-                    <span className="block font-sans text-lg font-bold text-sea-salt  transition-colors">
+                    <span
+                      className={`block font-sans text-lg font-bold transition-colors ${
+                        isActiveMobile
+                          ? "text-brunswick-green-500"
+                          : "text-sea-salt"
+                      }`}
+                    >
                       {t.name}
                     </span>
                     <span className="block font-sans text-lg text-sea-salt/90">
