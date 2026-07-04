@@ -5,28 +5,28 @@ import { casesCopy } from "../copy";
 const recentActivity = [
   {
     id: "activity-01",
-    photo: "LinkedIn Post",
+    photo: `${import.meta.env.BASE_URL}Recent Activity/GSDC.jpg`,
     title: "AusTrade Landing Pads & GSDC 22-25 June 2026",
     desc: "A concise LinkedIn launch post spotlighting landing pad initiatives and global sustainability design challenge momentum.",
-    linkPost: "LinkedIn post",
+    linkPost: "https://www.linkedin.com/posts/1zero-biz_gsdc2026-austrade-sustainability-activity-7477617222861975553-5JVk?utm_source=share&utm_medium=member_desktop&rcm=ACoAACaiIoYBEEy2963FCH3xa3bmKTp3gODlKeY",
   },
   {
     id: "activity-02",
-    photo: "Photo",
+    photo: `${import.meta.env.BASE_URL}Recent Activity/Wisdom Shaping Sustainable Futures.png`,
     title: "EarthWise: Wisdom Shaping Sustainable Futures",
     desc: "A simple visual story about stewardship and sustainable futures in a changing world.",
-    linkPost: "Photo asset",
+    linkPost: "https://www.linkedin.com/posts/1zero-biz_pathtosustainablegrowth-ptsg2026-sustainability-activity-7477965017372475393-ikLe?utm_source=share&utm_medium=member_desktop&rcm=ACoAACaiIoYBEEy2963FCH3xa3bmKTp3gODlKeY",
   },
   {
     id: "activity-03",
-    photo: "LinkedIn Post",
+    photo: `${import.meta.env.BASE_URL}Recent Activity/Path to Sustainable Growth.jpg`,
     title: "Path to Sustainable Growth at Apurva Kempinski 24 June 2026",
     desc: "A short post highlighting sustainable hospitality strategy and the path to growth for a luxury resort brand.",
-    linkPost: "LinkedIn post",
+    linkPost: "https://www.linkedin.com/posts/wisdomcircle_curiositytalks-sustainability-wisdomcircle-activity-7472185820150407168-tDEh?utm_source=share&utm_medium=member_desktop&rcm=ACoAACaiIoYBEEy2963FCH3xa3bmKTp3gODlKeY",
   },
   {
     id: "activity-04",
-    photo: "LinkedIn Post",
+    photo: `${import.meta.env.BASE_URL}Recent Activity/Visit PLN.jpg`,
     title: "Visit PLN",
     desc: "A short post highlighting sustainable hospitality strategy and the path to growth for a luxury resort brand.",
     linkPost: "LinkedIn post",
@@ -52,35 +52,45 @@ function CaseCard({
       `}
     >
       {/* Gradient image area */}
-      <div className="space-y-4">
-        <div className="relative h-[180px] w-full overflow-hidden rounded-2xl bg-sea-salt/6 border border-sea-salt/60 flex items-end p-4">
-          {/* Decorative grid */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:24px_24px]" />
+      <div className="flex h-full flex-col">
+        <div className="space-y-4 flex-1">
+          <div className="relative h-[180px] w-full overflow-hidden rounded-2xl bg-sea-salt/6 border border-sea-salt/60 flex items-end p-4">
+            {item.photo ? (
+              <img
+                src={item.photo}
+                alt={item.title}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            ) : (
+              <>
+                {/* Decorative grid */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:24px_24px]" />
+              </>
+            )}
+          </div>
+
+          <div className="space-y-2">
+            <p className={`font-sans text-base sm:text-lg font-bold line-clamp-2 ${isCenter ? "text-brunswick-green-500" : "text-sea-salt"}`}>
+              {item.title}
+            </p>
+            <p className="font-sans text-base sm:text-lg text-sea-salt line-clamp-2">
+              {item.desc}
+            </p>
+          </div>
         </div>
 
-        <div className="space-y-1 pb-2">
-          <p className="font-sans text-base sm:text-lg uppercase tracking-widest text-sea-salt">
-            {item.linkPost}
-          </p>
-          <h3 className={`font-sans text-2xl sm:text-3xl font-bold ${isCenter ? "text-brunswick-green-500" : "text-sea-salt"}`}>
-            {item.title}
-          </h3>
-          <p className="font-sans text-base sm:text-lg text-sea-salt  line-clamp-2">
-            {item.desc}
-          </p>
+        <div className="mt-auto pt-4">
+          <a
+            href={item.linkPost}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`inline-flex items-center justify-center font-sans font-semibold px-4 py-1.5 rounded-full text-lg cursor-pointer self-start transition-all border ${isCenter ? "text-sea-salt border-brunswick-green-500 bg-brunswick-900" : "text-sea-salt border-sea-salt/20 bg-raisin-black-800"} hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt`}
+          >
+            Read More
+          </a>
         </div>
       </div>
 
-      <div className="pt-4">
-        <a
-          href={item.linkPost}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`inline-flex items-center justify-center font-sans font-semibold px-4 py-1.5 rounded-full text-lg cursor-pointer self-start mt-auto transition-all border ${isCenter ? "text-sea-salt border-brunswick-green-500 bg-brunswick-900" : "text-sea-salt border-sea-salt/20 bg-raisin-black-800"} hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt`}
-        >
-          Read More
-        </a>
-      </div>
     </div>
   );
 }
@@ -257,7 +267,7 @@ export default function Cases() {
             </div>
 
             {/* Dot indicators */}
-            <div className="flex items-center justify-center gap-4 mt-6">
+            <div className="flex items-center justify-center gap-6 mt-10">
               {recentActivity.map((_, i) => (
                 <button
                   key={i}
@@ -317,13 +327,13 @@ export default function Cases() {
         )}
 
         {/* Call to action marquee */}
-        <div className="overflow-hidden rounded-3xl border border-sea-salt  p-4">
+        {/* <div className="overflow-hidden rounded-3xl border border-sea-salt  p-4">
           <div className="animate-marquee-text flex whitespace-nowrap gap-16 text-3xl sm:text-4xl font-sans font-extrabold uppercase tracking-[0.18em] text-sea-salt">
             <span>{casesCopy.marqueeText}</span>
             <span>{casesCopy.marqueeText}</span>
             <span>{casesCopy.marqueeText}</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
