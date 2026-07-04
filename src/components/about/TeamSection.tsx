@@ -58,12 +58,12 @@ export const members: TeamMember[] = [
         images:
         {
             imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Molly.png`,
-            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Molly.png`,
+            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Molly.png`,
             ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Molly.png`,
             ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Molly.png`,
         },
 
-        bio: "Passionate about crafting smooth and scalable UI experiences that feel human and intuitive.",
+        bio: "Visionary leader focused on building innovative digital products and driving sustainable business growth.",
 
         techStack: [
             { name: 'React', logo: '⚛️' },
@@ -634,11 +634,11 @@ const TeamSection: React.FC = () => {
                                 <div className="p-6 md:p-8 flex flex-col space-y-5">
 
                                     {/* Header */}
-                                    <div className="space-y-10">
-                                        <span className="float-left text-base md:text-lg text-start uppercase tracking-[0.25em] text-brunswick-green-500">
+                                    <div className="space-y-10 flex flex-col text-start">
+                                        {/* <span className="float-left text-base md:text-lg text-start uppercase tracking-[0.25em] text-brunswick-green-500">
                                             Team Member
-                                        </span>
-                                        <div className="space-y-6">
+                                        </span> */}
+                                        <div className="space-y-2">
                                             <h3 className="mt-3 font-sans text-xl sm:text-2xl font-bold text-sea-salt">
                                                 {selectedMember.name}
                                             </h3>
@@ -650,12 +650,12 @@ const TeamSection: React.FC = () => {
                                     </div>
 
                                     {/* Bio */}
-                                    <div className="text-sea-salt/90 ">
+                                    <div className="text-sea-salt/90 text-start">
                                         <p className="text-base sm:text-lg">{selectedMember.bio}</p>
                                     </div>
 
                                     {/* Tech stack */}
-                                    <div className="flex flex-wrap items-center gap-2">
+                                    {/* <div className="flex flex-wrap items-center gap-2">
                                         <span className="text-base md:text-lg  text-raisin-black-900-500 mr-1">Tech:</span>
 
                                         {selectedMember.techStack?.map((tech) => (
@@ -667,18 +667,21 @@ const TeamSection: React.FC = () => {
                                                 <span>{tech.name}</span>
                                             </div>
                                         ))}
-                                    </div>
+                                    </div> */}
 
                                     {/* SDGs */}
-                                    <div className="flex flex-wrap gap-2">
-                                        {selectedMember.sdgs?.map((sdg) => (
-                                            <span
-                                                key={sdg.id}
-                                                className="px-3 py-1 text-base rounded-full bg-brunswick-green-500/10 text-brunswick-green-500 border border-brunswick-green-500/20"
-                                            >
-                                                SDG {sdg.id} • {sdg.title}
-                                            </span>
-                                        ))}
+                                    <div className="flex flex-wrap gap-2 flex-col text-start">
+                                        <p className="text-base md:text-lg  text-raisin-black-900-500 mr-1">SDG(s):</p>
+                                        <div className="flex gap-2">
+                                            {activeMember.sdgs.map((sdg) => (
+                                                <img
+                                                    key={sdg.id}
+                                                    src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(sdg.id).padStart(2, "0")}.png`}
+                                                    alt={`SDG ${sdg.id}`}
+                                                    className="w-16 h-16 object-contain"
+                                                />
+                                            ))}
+                                        </div>
                                     </div>
 
                                 </div>
