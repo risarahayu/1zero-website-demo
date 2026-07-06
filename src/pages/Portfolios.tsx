@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { customProjects } from "../data";
 import PortfolioCard from "../components/PortfolioCard";
 import { PhoneCall } from "lucide-react";
@@ -6,6 +6,10 @@ import { portfoliosPageCopy } from "../copy";
 
 export default function PortfolioPage() {
     const [activeTab, setActiveTab] = useState("All");
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const onOpenBooking = () => {
         window.open(

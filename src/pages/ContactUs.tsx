@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Mail, MapPin, Phone, Send, CheckCircle, AlertCircle } from "lucide-react";
 import emailjs from '@emailjs/browser';
 import { Turnstile } from '@marsidev/react-turnstile';
 import { contactUsCopy } from '../copy'; // Adjust this path to wherever your copy file lives
 
 export default function ContactPage() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     // 1. State Management untuk form dan interaksinya
     const [formData, setFormData] = useState({ name: "", email: "", message: "" });
     const [errors, setErrors] = useState({});

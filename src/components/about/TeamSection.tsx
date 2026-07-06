@@ -48,7 +48,7 @@ export interface TeamMember {
 export const members: TeamMember[] = [
     {
         name: 'Molly Sanders',
-        role: 'Founder and CEO',
+        role: 'Founder & CEO',
         socialMediaAccounts: {
             linkedin: { name: "Molly Sanders", url: "https://www.linkedin.com/in/mollysanders/" },
             github: { name: "", url: "" },
@@ -57,7 +57,7 @@ export const members: TeamMember[] = [
 
         images:
         {
-            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Molly.png`,
+            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Molly.webp`,
             imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Molly.webp`,
             ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Molly.webp`,
             ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Molly.webp`,
@@ -385,7 +385,7 @@ const TeamSection: React.FC = () => {
     }, [selectedIndex]);
 
     return (
-        <section className="py-16 text-slate-50 relative" id="about">
+        <section className="py-16 text-slate-50 relative">
             <div className="w-[75%] mx-auto space-y-10 text-center">
 
                 <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">

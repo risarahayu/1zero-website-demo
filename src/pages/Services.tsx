@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import ServicesHero from "../components/services/Hero";
 import Offer from "../components/services/offer"; // DiagnosisPanel component
@@ -8,6 +8,10 @@ import WhatYouGet from "../components/services/WhatYouGet";
 import Testimonials from "../components/Testimonials";
 
 const Services: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const handleOpenBooking = () => setIsBookingOpen(true);
   const handleCloseBooking = () => setIsBookingOpen(false);

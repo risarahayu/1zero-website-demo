@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import HeroAbout from '../components/about/Hero';
 import TeamSection from '../components/about/TeamSection';
 import Header from "../components/Header";
@@ -7,6 +7,10 @@ import BookingModal from '../components/BookingModal';
 import '../css/about.css';
 
 const AboutUs: React.FC = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     // State untuk bahasa (default 'id')
     const [lang, setLang] = useState<'id' | 'en'>('en');
     const [isBookingOpen, setIsBookingOpen] = useState(false);

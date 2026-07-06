@@ -12,13 +12,49 @@ interface HeaderProps {
 export default function Header({ onOpenBooking }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      const currentHash = window.location.hash.replace("#", "");
+      // If we are on a dedicated route page, lock the highlight to that page
+      if (["about", "services", "portfolio", "contact"].includes(currentHash)) {
+        setActiveSection(currentHash);
+        return;
+      }
+
+      // Determine active section based on scroll position for the home page
+      const sectionIds = navLinks.map((link) => link.href.substring(1));
+      let current = "";
+      // Loop backwards to prioritize sections that are lower on the page
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const id = sectionIds[i];
+        const element = document.getElementById(id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          // Trigger when section top is near the top of the viewport
+          if (rect.top <= 200) {
+            current = id;
+            break;
+          }
+        }
+      }
+      if (current) {
+        setActiveSection(current);
+      } else if (window.scrollY === 0) {
+        setActiveSection(sectionIds[0] || "");
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("hashchange", handleScroll);
+    handleScroll();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("hashchange", handleScroll);
+    };
   }, []);
 
   return (
@@ -48,15 +84,22 @@ export default function Header({ onOpenBooking }: HeaderProps) {
 
               {/* Navigation Items */}
               <nav className="hidden sm:flex items-center gap-5">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className="font-sans text-lg font-semibold text-sea-salt hover:text-sea-salt hover:underline transition-all tracking-wide"
-                  >
-                    {link.label}
-                  </a>
-                ))}
+                {navLinks.map((link) => {
+                  const isActive = activeSection === link.href.substring(1);
+                  return (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      className={`font-sans text-lg font-semibold transition-all tracking-wide hover:underline ${
+                        isActive
+                          ? "text-brunswick-green-500 drop-shadow-sm"
+                          : "text-sea-salt hover:text-sea-salt"
+                      }`}
+                    >
+                      {link.label}
+                    </a>
+                  );
+                })}
               </nav>
 
               {/* Mobile trigger */}
@@ -94,16 +137,23 @@ export default function Header({ onOpenBooking }: HeaderProps) {
             className="sm:hidden fixed top-[90px] left-0 w-full bg-raisin-black-800 border-b border-sea-salt backdrop-blur-lg overflow-y-auto z-50 shadow-2xl"
           >
             <div className="p-5 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="font-sans text-lg font-semibold text-sea-salt hover:text-brunswick-green-500 tracking-wide transition-colors py-2 border-b border-sea-salt/60"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.href.substring(1);
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`font-sans text-lg font-semibold tracking-wide transition-colors py-2 border-b border-sea-salt/60 ${
+                      isActive
+                        ? "text-brunswick-green-500"
+                        : "text-sea-salt hover:text-brunswick-green-500"
+                    }`}
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
               {/* <div className="pt-3 flex flex-col gap-2">
                 <button
                   id="mobile-drawer-book-btn"

@@ -45,7 +45,7 @@ export default function Footer() {
                     rel="no-referrer"
                     className="h-9 w-9 rounded-xl border border-brunswick-green-500 bg-raisin-black-800 hover:bg-brunswick-green-500/30 hover:border-brunswick-green-500/30 hover:text-brunswick-green-500 flex items-center justify-center text-brunswick-green-500 transition-colors"
                   >
-                    <Icon className="h-4 w-4" />
+                    <Icon className="h-6 w-6" />
                   </a>
                 );
               })}
