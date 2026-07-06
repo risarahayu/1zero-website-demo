@@ -88,7 +88,7 @@ export const contactUsCopy = {
   title: "Connect with Our Architects.",
   description: "Skip the sales pipeline. Collaborate directly with engineers who will dissect your system, align constraints, and construct high-performance pathways.",
   emailUsLabel: "Email Us",
-  emailUsVal: "mrosa@1zero.biz.biz",
+  emailUsVal: "mrosa@1zero.biz",
   callUsLabel: "Direct Call",
   callUsVal: "(+62) 85339396030",
   locationLabel: "HQ Location",

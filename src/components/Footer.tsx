@@ -66,11 +66,11 @@ export default function Footer() {
               <div className="space-y-3 text-lg  text-sea-salt">
                 <a
                   id="footer-email-link"
-                  href="mailto:mrosa@1zero.biz.biz"
+                  href="mailto:mrosa@1zero.biz"
                   className="flex items-center gap-2 hover:text-brunswick-green-500 transition-colors font-sans"
                 >
                   <Mail className="h-4 w-4 text-brunswick-green-500 shrink-0" />
-                  <span>mrosa@1zero.biz.biz</span>
+                  <span>mrosa@1zero.biz</span>
                 </a>
                 <a
                   id="footer-phone-link"
