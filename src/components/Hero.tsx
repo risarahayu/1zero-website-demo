@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Sparkles, Star, Users, PhoneCall, ArrowRight, Server, Shield, Database, Cpu } from "lucide-react";
 import { clientLogos } from "../data";
-import { heroCopy } from "../copy"; // Pulling in your new Architects of Impact copy
+import { heroCopy } from "../copy";
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -32,8 +32,6 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         </motion.div> */}
       {/* </div> */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10 border-b border-sea-salt/20">
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12 pt-10 pb-10">
 
         {/* Master Copy */}
         <div className="space-y-6">
@@ -66,11 +64,21 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="max-w-xl mx-auto grid grid-cols-1 md:grid-cols-5 items-stretch rounded-2xl border border-color-sea-salt bg-raisin-black-800 p-1 backdrop-blur-md shadow-2xl"
         >
-          {/* Text box (Col-span 3) */}
-          <div className="md:col-span-3 flex flex-col justify-center items-start text-left p-5 md:pl-6 space-y-2 border-b md:border-b-0  border-neutral-800/80">
-            <p className="font-sans text-base leading-relaxed text-neutral-300">
+          {/* Rating box (Col-span 3) */}
+          <div className="md:col-span-3 flex flex-col justify-center items-start text-left p-5 md:pl-6 space-y-2   ">
+            {/* <div className="flex items-center gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="h-3.5 w-3.5 fill-brunswick-green-500 text-brunswick-green-500" />
+              ))}
+              <span className="font-sans text-lg text-sea-salt ml-1.5 font-bold">4.9★</span>
+            </div> */}
+            <p className="font-sans text-base sm:text-lg  text-sea-salt">
               {heroCopy.ctaText}
             </p>
+            {/* <div className="flex items-center gap-1.5 font-sans text-base text-sea-salt uppercase tracking-wider">
+              <Users className="h-3 w-3 text-brunswick-green-500" />
+              <span>372+ Reviews from tech teams</span>
+            </div> */}
           </div>
 
           {/* Direct CTA button card (Col-span 2) */}
@@ -109,7 +117,10 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="pb-10 space-y-6 "
         >
-          <p className="inline-block px-3.5 py-2 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
+          {/* <p className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
+            {heroCopy.trustedBy}
+          </p> */}
+          <p className="text-sea-salt">
             {heroCopy.trustedBy}
           </p>
 
@@ -146,6 +157,8 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             </div>
           </div>
         </motion.div>
+
+
 
       </div>
     </section>
