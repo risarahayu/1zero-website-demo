@@ -109,7 +109,7 @@ export const members: TeamMember[] = [
 
     {
         name: 'Chandra Kusuma',
-        role: 'Operational Manager',
+        role: 'Operation Manager',
         socialMediaAccounts: {
             linkedin: { name: "Chandra Kusuma", url: "https://www.linkedin.com/in/chandra-kusuma83/" },
             github: { name: "", url: "" },
@@ -264,7 +264,7 @@ export const members: TeamMember[] = [
 
     {
         name: 'Kadek Gunawan',
-        role: 'Operasional Management',
+        role: 'Operasional Officer',
         bio: 'Managing daily cash flow and office maintenance to keep our operations running smoothly every day',
 
         images:
@@ -526,7 +526,7 @@ const TeamSection: React.FC = () => {
                                 Team Member
                             </span> */}
                                 <div className="space-y-6">
-                                    <h3 className="font-sans text-2xl sm:text-3xl font-bold text-brunswick-green-500">
+                                    <h3 className="font-sans text-2xl sm:text-3xl text-start font-bold text-brunswick-green-500">
                                         {activeMember.name}
                                     </h3>
                                     <p className="text-base sm:text-lg text-start text-sea-salt/90">
