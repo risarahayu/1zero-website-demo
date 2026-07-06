@@ -17,20 +17,6 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         <div className="aurora-layer aurora-2" />
         <div className="aurora-layer aurora-3" />
       </div>
-      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10 pt-10 pb-10"> */}
-      {/* Upper Micro Label */}
-      {/* <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 rounded-full border border-sea-salt/80 bg-sea-salt/60 p-1 px-4 text-lg backdrop-blur-sm shadow-md"
-        >
-          <span className="h-2 w-2 rounded-full bg-brunswick-green-900 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.9)]" />
-          <span className="font-sans text-lg font-medium uppercase tracking-widest text-sea-salt">
-            {heroCopy.performanceLabel}
-          </span>
-        </motion.div> */}
-      {/* </div> */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10 border-b border-sea-salt/20">
 
         {/* Master Copy */}
@@ -66,19 +52,9 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         >
           {/* Rating box (Col-span 3) */}
           <div className="md:col-span-3 flex flex-col justify-center items-start text-left p-5 md:pl-6 space-y-2   ">
-            {/* <div className="flex items-center gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-3.5 w-3.5 fill-brunswick-green-500 text-brunswick-green-500" />
-              ))}
-              <span className="font-sans text-lg text-sea-salt ml-1.5 font-bold">4.9★</span>
-            </div> */}
             <p className="font-sans text-base sm:text-lg  text-sea-salt">
               {heroCopy.ctaText}
             </p>
-            {/* <div className="flex items-center gap-1.5 font-sans text-base text-sea-salt uppercase tracking-wider">
-              <Users className="h-3 w-3 text-brunswick-green-500" />
-              <span>372+ Reviews from tech teams</span>
-            </div> */}
           </div>
 
           {/* Direct CTA button card (Col-span 2) */}
@@ -117,9 +93,6 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="pb-10 space-y-6 "
         >
-          {/* <p className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
-            {heroCopy.trustedBy}
-          </p> */}
           <p className="text-sea-salt">
             {heroCopy.trustedBy}
           </p>
@@ -157,9 +130,6 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             </div>
           </div>
         </motion.div>
-
-
-
       </div>
     </section>
   );
