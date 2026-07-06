@@ -30,10 +30,9 @@ export default function Footer() {
             {/* Social handles */}
             <div className="flex items-center gap-3 pt-2">
               {[
-                { icon: Instagram, href: "https://www.instagram.com/1zero.biz/", id: "Instagram-link" },
-                { icon: Linkedin, href: "https://www.linkedin.com/in/mark-treleaven", id: "linkedin-link" },
-                { icon: MessageCircle, href: "https://api.whatsapp.com/send/?phone=6285339396030&text&type=phone_number&app_absent=0", id: "whatsapp-link" },
-                // { icon: MessageCircle, href: "https://whatsapp.com", id: "whatsapp-link" }
+                { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/1zero.biz/", id: "Instagram-link" },
+                { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/company/1zero-biz/", id: "linkedin-link" },
+                { name: "WhatsApp", icon: MessageCircle, href: "https://api.whatsapp.com/send/?phone=6285339396030&text&type=phone_number&app_absent=0", id: "whatsapp-link" },
               ].map((social, i) => {
                 const Icon = social.icon;
                 return (
@@ -43,9 +42,13 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="no-referrer"
-                    className="h-9 w-9 rounded-xl border border-brunswick-green-500 bg-raisin-black-800 hover:bg-brunswick-green-500/30 hover:border-brunswick-green-500/30 hover:text-brunswick-green-500 flex items-center justify-center text-brunswick-green-500 transition-colors"
+                    className="group relative h-9 w-9 rounded-xl border border-brunswick-green-500 bg-raisin-black-800 hover:bg-brunswick-green-500/30 hover:border-brunswick-green-500/30 hover:text-brunswick-green-500 flex items-center justify-center text-brunswick-green-500 transition-colors"
                   >
                     <Icon className="h-6 w-6" />
+                    {/* Tooltip */}
+                    <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-raisin-black-800 border border-brunswick-green-500 text-sea-salt text-xs font-sans rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-lg z-10">
+                      {social.name}
+                    </span>
                   </a>
                 );
               })}
