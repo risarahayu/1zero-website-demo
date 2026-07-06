@@ -463,7 +463,7 @@ const TeamSection: React.FC = () => {
                                 </h3>
 
                                 {/* Role */}
-                                <p className="text-base sm:text-lg text-raisin-black-800">
+                                <p className="text-base sm:text-lg text-sea-salt/90">
                                     {member.role}
                                 </p>
                             </button>
@@ -498,7 +498,7 @@ const TeamSection: React.FC = () => {
                                 </h3>
 
                                 {/* Role */}
-                                <p className="text-base sm:text-lg text-raisin-black-800">
+                                <p className="text-base sm:text-lg text-sea-salt/90">
                                     {member.role}
                                 </p>
                             </button>
@@ -526,7 +526,7 @@ const TeamSection: React.FC = () => {
                                 Team Member
                             </span> */}
                                 <div className="space-y-6">
-                                    <h3 className="text-2xl text-start font-bold text-sea-salt">
+                                    <h3 className="font-sans text-2xl sm:text-3xl font-bold text-brunswick-green-500">
                                         {activeMember.name}
                                     </h3>
                                     <p className="text-base sm:text-lg text-start text-sea-salt/90">
@@ -716,7 +716,7 @@ const TeamSection: React.FC = () => {
                                             Team Member
                                         </span> */}
                                         <div className="space-y-2">
-                                            <h3 className="mt-3 font-sans text-xl sm:text-2xl font-bold text-sea-salt">
+                                            <h3 className="mt-3 font-sans  text-2xl sm:text-3xl font-bold text-sea-salt">
                                                 {selectedMember.name}
                                             </h3>
 

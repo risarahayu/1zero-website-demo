@@ -30,7 +30,7 @@ export const ctaCopy = {
 };
 
 export const whyUsCopy = {
-  sectionTag: "Why 1zero",
+  sectionTag: "Why ",
   titleLine1: "Engineering force multipliers ",
   titleLine2: "for mission-driven teams.",
   description: "We partner directly with founders and operations executives to craft high-concurrency, AI-first systems. Skip the agency bureaucracy and messy middleware; we architect the resilient digital infrastructure your mission needs to scale rapidly.",

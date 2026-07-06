@@ -95,7 +95,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
   const currentDisplayIndex = (virtualIndex % customProjects.length + customProjects.length) % customProjects.length;
 
   return (
-    <section id="portfolio" className="relative  bg-raisin-black-800/20 overflow-hidden py-16">
+    <section className="relative  bg-raisin-black-800/20 overflow-hidden py-16">
       {/* Background radial soft light blur */}
       <div className="absolute top-1/2 left-0 -translate-x-1/4 md:-translate-x-0 md:left-1/4 -translate-y-1/2 -z-10 h-[250px] w-[250px] md:h-[450px] md:w-[450px] rounded-full bg-brunswick-green-900/[0.05] md:bg-brunswick-green-900/[0.03] blur-[80px] md:blur-[150px]" />
 

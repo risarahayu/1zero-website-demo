@@ -34,8 +34,8 @@ export default function WhyUs(props: WhyUsProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Title Area */}
         <div className="space-y-10 text-center">
-          <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black ">
-            {whyUsCopy.sectionTag}
+          <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans  tracking-widest text-brunswick-green-500  bg-raisin-black ">
+            <span className="uppercase">{whyUsCopy.sectionTag}</span><span className="text-brunswick-green-500">1zero</span>
           </span>
           <div className="space-y-6 justify-self-center text-center">
             <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
