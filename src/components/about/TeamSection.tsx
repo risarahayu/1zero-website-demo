@@ -57,10 +57,10 @@ export const members: TeamMember[] = [
 
         images:
         {
-            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Molly.png`,
-            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Molly.png`,
-            ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Molly.png`,
-            ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Molly.png`,
+            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Molly.webp`,
+            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Molly.webp`,
+            ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Molly.webp`,
+            ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Molly.webp`,
         },
 
         bio: "Visionary leader focused on building innovative digital products and driving sustainable business growth.",

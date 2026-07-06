@@ -20,7 +20,7 @@
     height: 700px;
     background: radial-gradient(circle at center,
             var(--color-brunswick-green-900) 0%,
-            rgba(var(--color-brunswick-green-800-rgb), 0.35) 35%,
+            rgb(var(--color-brunswick-green-800-rgb) / 0.35) 35%,
             transparent 70%);
     filter: blur(40px);
     opacity: 0.9;
