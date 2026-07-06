@@ -25,39 +25,39 @@ export const products: ProductItem[] = [
     id: "geo",
     service: "Generative Engine Optimization",
     description:
-      "Your visibility layer in the AI-search era. We help your existing website get discovered, understood, and recommended by AI systems.",
+      "Your visibility layer in the AI-search era. We ensure your platform gets discovered, understood, and recommended by modern AI engines.",
     fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/GEO Product Sheet - Eng.pdf`,
     fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/GEO Product Sheet - Indo.pdf`,
     symptoms: [
       {
-        text: "Your website gets traffic, but it doesn't turn into meaningful results",
+        text: "You get traffic, but it doesn't convert to real impact",
         icon: MousePointerClick
       },
       {
-        text: "AI systems rarely surface your content",
+        text: "AI systems and LLMs completely ignore your content",
         icon: SearchX
       },
       {
-        text: "People don’t immediately understand your value",
+        text: "Users don’t immediately grasp your core value",
         icon: EyeOff
       },
       {
-        text: "Visibility feels unstable",
+        text: "Search visibility is volatile and unpredictable",
         icon: Activity
       },
     ],
 
     futureState: [
-      "Be consistently discovered in AI-generated answers",
-      "Attract high-intent visitors",
-      "Make your value instantly clear",
-      "Build durable visibility beyond SEO",
+      "Consistently surface in AI-generated answers",
+      "Attract high-intent, mission-aligned visitors",
+      "Make your value proposition instantly clear",
+      "Build resilient visibility that survives algorithm updates",
     ],
 
     imageProblem: "./illustration/undraw_website_27ju 1.svg",
     imageSolution: "./illustration/geo-solution.png",
     href: "#geo",
-    cta: "Explore GEO",
+    cta: "See GEO in Action",
     problemTitle: "Growth & Visibility",
 
  
@@ -67,43 +67,39 @@ export const products: ProductItem[] = [
     id: "nextgen",
     service: "NextGen Platforms",
     description:
-      "A modern cloud-native foundation built to scale performance, UX, and system reliability.",
+      "A resilient, cloud-native foundation built to scale your operations without fighting legacy codebase constraints.",
     fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/NextGen Platforms Product Sheet - Eng.pdf`,
     fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/NextGen Platforms Product Sheet - Indo.pdf`,
     symptoms: [
       {
-        text: "Website features is getting slower",
-        // Ikon timer merepresentasikan waktu tunggu atau kelambatan
+        text: "Core features are slowing down under load",
         icon: Timer
       },
       {
-        text: "System becomes harder to maintain",
-        // Ikon kunci pas (wrench) merepresentasikan perbaikan dan maintenance
+        text: "The system is becoming a nightmare to maintain",
         icon: Wrench
       },
       {
-        text: "Performance degrades as users grow",
-        // Ikon grafik menurun merepresentasikan performa yang drop
+        text: "Performance crashes during user traffic spikes",
         icon: TrendingDown
       },
       {
-        text: "UI consistency breaks over time",
-        // Ikon layout merepresentasikan struktur UI/desain
+        text: "UI and UX consistency breaks with every update",
         icon: Layout
       },
     ],
 
     futureState: [
-      "Ship features faster",
-      "Maintain scalable architecture",
-      "Keep performance stable at scale",
-      "Improve product experience consistency",
+      "Ship new features without breaking existing ones",
+      "Maintain a clean, scalable architectural baseline",
+      "Keep performance lightning-fast at any scale",
+      "Ensure a flawless, consistent product experience",
     ],
 
     imageProblem: "/illustrations/nextgen-problem.png",
     imageSolution: "/illustrations/nextgen-solution.png",
     href: "#nextgen",
-    cta: "Explore NextGen",
+    cta: "Review NextGen Architecture",
     problemTitle: "System Performance",
   },
 
@@ -111,43 +107,39 @@ export const products: ProductItem[] = [
     id: "devpods",
     service: "DevPods",
     description:
-      "Instant, consistent development environments for teams that need speed and stability.",
+      "Instant, identical development environments so your team can focus on shipping code, not fixing local setups.",
     fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/DevPod Product Sheet - Eng.pdf`,
     fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/DevPod Product Sheet - Indo.pdf`,
     symptoms: [
       {
-        text: "Environment setup slows developers down",
-        // Ikon Blocks (balok) merepresentasikan environment/container (seperti Docker) yang sedang disusun
+        text: "Local environment setups block developer momentum",
         icon: Blocks
       },
       {
-        text: "Machines behave inconsistently",
-        // Ikon Cpu atau mesin merepresentasikan hardware/sistem lokal yang tidak stabil
+        text: "The classic 'it works on my machine' paradox",
         icon: Cpu
       },
       {
-        text: "Onboarding takes too long",
-        // Ikon UserPlus merepresentasikan proses penambahan/onboarding anggota tim baru
+        text: "Onboarding new engineers takes weeks, not days",
         icon: UserPlus
       },
       {
-        text: "Team velocity is unpredictable",
-        // Ikon Gauge (speedometer) merepresentasikan kecepatan atau velocity tim yang fluktuatif
+        text: "Team velocity and sprint deliveries are unpredictable",
         icon: Gauge
       },
     ],
 
     futureState: [
-      "Instant developer onboarding",
-      "Identical environments everywhere",
-      "No setup friction",
-      "Consistent engineering speed",
+      "Onboard developers instantly with one click",
+      "Guarantee identical environments across the team",
+      "Eliminate local setup friction and dependencies",
+      "Maintain a rapid, consistent engineering velocity",
     ],
 
     imageProblem: "/illustrations/devpod-problem.png",
     imageSolution: "/illustrations/devpod-solution.png",
-    href: "#devpods",
-    cta: "Explore DevPods",
+    href: "#devpod",
+    cta: "Deploy with DevPod",
     problemTitle: "Developer Experience",
   },
 
@@ -155,43 +147,39 @@ export const products: ProductItem[] = [
     id: "fcto",
     service: "fCTO",
     description:
-      "Strategic technical leadership for architecture, security, and long-term system governance.",
+      "Strategic technical leadership to eliminate tech debt, secure your architecture, and make your mission investable.",
     fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/fCTO Product Sheet - Eng.pdf`,
     fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/fCTO Product Sheet - Indo.pdf`,
     symptoms: [
       {
-        text: "Decisions are reactive instead of strategic",
-        // Ikon Compass (kompas) merepresentasikan arah atau strategi yang hilang
+        text: "Engineering decisions are reactive, not strategic",
         icon: Compass
       },
       {
-        text: "No clear architecture ownership",
-        // Ikon Boxes (tumpukan kotak) merepresentasikan arsitektur atau struktur sistem yang tidak ada pemilik pastinya
+        text: "No clear ownership over system architecture",
         icon: Boxes
       },
       {
-        text: "Security and cost are not actively managed",
-        // Ikon ShieldAlert (perisai peringatan) sangat pas untuk risiko keamanan dan kebocoran biaya
+        text: "Security protocols and cloud costs are ignored",
         icon: ShieldAlert
       },
       {
-        text: "Teams lack alignment",
-        // Ikon Split (panah berpisah) merepresentasikan tim yang berjalan ke arah yang berbeda atau tidak sejalan
+        text: "Development teams lack alignment with business goals",
         icon: Split
       },
     ],
 
     futureState: [
-      "Clear technical direction",
-      "Aligned architecture strategy",
-      "Better governance and control",
-      "Scalable engineering organization",
+      "Establish a clear, long-term technical roadmap",
+      "Align architecture directly with mission milestones",
+      "Implement strict governance and cost controls",
+      "Build a scalable, highly-investable engineering org",
     ],
 
     imageProblem: "/illustrations/fcto-problem.png",
     imageSolution: "/illustrations/fcto-solution.png",
     href: "#fcto",
-    cta: "Read fCTO",
+    cta: "Explore Fractional Leadership",
     problemTitle: "Strategic Direction",
 
   },
@@ -207,7 +195,7 @@ export const portfolioItems: PortfolioItem[] = [
     badge: "Case Study 01",
     imageUrl: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&auto=format&fit=crop",
     tags: ["Telehealth", "WebRTC", "AI Translation", "React"],
-    linkText: "Read More"
+    linkText: "Read Case Study"
   },
   {
     id: "port-animax",
@@ -217,7 +205,7 @@ export const portfolioItems: PortfolioItem[] = [
     badge: "Case Study 02",
     imageUrl: "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=600&auto=format&fit=crop",
     tags: ["HL7 Standards", "Next.js", "Security Vault", "D3 Analytics"],
-    linkText: "Read More"
+    linkText: "Read Case Study"
   }
 ];
 
@@ -248,17 +236,17 @@ export const testimonials: TestimonialItem[] = [
   }
 ];
 
-export const workflowSteps: WorkflowStep[] = [
+/* export const workflowSteps: WorkflowStep[] = [
   {
-    number: "Discovery",
-    title: "Discovery",
+    number: "Roadmap",
+    title: "Roadmap Workshop",
     subtext: "We dissect first, map out exactly what happens behind your screens, identify logical bottlenecks, and plan architecture for your exact users.",
     bullet1: "Comprehensive System Mapping",
     bullet2: "Stakeholder & Operator Audits"
   },
   {
-    number: "Blueprint",
-    title: "Blueprint Design",
+    number: "Plan to Build",
+    title: "Plan First, Build Next",
     subtext: "We spec out high-fidelity prototypes, state charts, database entity models, and API boundaries. You see and approve exactly how data flows.",
     bullet1: "Scalable Schema Blueprints",
     bullet2: "Interactive Web Interfaces"
@@ -271,92 +259,67 @@ export const workflowSteps: WorkflowStep[] = [
     bullet2: "Hands-on Technical Handovers"
   }
 ];
-
+ */
+export const workflowSteps: WorkflowStep[] = [
+  {
+    number: "01",
+    title: "System Audit & AI Discovery",
+    subtext: "We analyze your current stack to uncover performance bottlenecks and identify high-impact areas where AI integration and data automation can 10x your operational efficiency.",
+    bullet1: "Deep-Dive Stack & Latency Analysis",
+    bullet2: "AI & Automation Viability Audits"
+  },
+  {
+    number: "02",
+    title: "The 1zero Blueprint",
+    subtext: "Before writing a line of code, we design scalable data schemas, strict API contracts, and high-fidelity prototypes. You approve the exact architectural flow upfront.",
+    bullet1: "Cloud-Native Architecture Schemas",
+    bullet2: "Interactive UX & API Mapping"
+  },
+  {
+    number: "03",
+    title: "Agile & AI-Assisted Build",
+    subtext: "We execute with pristine, type-safe code using AI-accelerated workflows. Continuous integration ensures you review testable, production-ready increments every sprint.",
+    bullet1: "Type-Safe, Modular Codebases",
+    bullet2: "Sprint-Based Transparent Deliveries"
+  },
+  {
+    number: "04",
+    title: "Deploy & Empower",
+    subtext: "We launch your platform on auto-scaling infrastructure and conduct rigorous technical handovers. Your team gains total system autonomy with zero vendor lock-in.",
+    bullet1: "Zero-Downtime CI/CD Pipelines",
+    bullet2: "Complete Technical Handovers"
+  }
+];
 export const whyUsPoints = [
   {
     title: "We don't bring one-size-fits-all answers.",
-    // descr: "We don't bring one-size-fits-all answers."
   },
   {
     title: "We listen, adapt, and co-design alongside your team to make sure what we build fits your reality.",
-    // descr: "A custom-fit system engineered for high concurrency, low latency, and zero licensing overhead lock-in."
   },
   {
     title: "When you work with 1zero, you collaborate directly with the people designing and building your system.",
-    // descr: "No account managers in the middle. You exchange ideas and review iterations directly with elite builders."
   },
   {
     title: "We care about what works in practice, not what looks good in a slide deck.",
-    // descr: "We care deeply about visual layout balance and actual practical metrics, never bloated vanity metrics."
-  }
-];
-
-export const teamMembers: TeamMemberCall[] = [
-  {
-    id: "tm-1",
-    name: "Andi Gunawan",
-    role: "Lead Systems Engineer",
-    avatarUrl: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop",
-    isMuted: false,
-    isLocal: false
-  },
-  {
-    id: "tm-2",
-    name: "Jane Cooper",
-    role: "Principal Product Designer",
-    avatarUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop",
-    isMuted: true,
-    isLocal: false
-  },
-  {
-    id: "tm-3",
-    name: "Arthur Pendelton",
-    role: "Senior Full-Stack Engineer",
-    avatarUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=150&auto=format&fit=crop",
-    isMuted: false,
-    isLocal: false
-  },
-  {
-    id: "tm-4",
-    name: "Sarah Lin",
-    role: "DevOps Architect",
-    avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop",
-    isMuted: false,
-    isLocal: true
-  }
-];
-
-export const casesList = [
-  {
-    id: "case-01",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop",
-    title: "30-Min Workout app",
-    desc: "Connecting community athletic activity with real-time active GPS groups."
-  },
-  {
-    id: "case-02",
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop",
-    title: "Fitness Center Portal",
-    desc: "Modernizing multi-branch attendance and biometric entry software."
   }
 ];
 
 export const customProjects = [
   {
     id: "impact",
-    title: "Impact Portal",
-    subtitle: "Enterprise Data Dashboard",
-    description: "A curated selection of modern art pieces from various contemporary artists.",
+    title: "4Ocean - Impact Portal",
+    subtitle: "Enterprise Digitization",
+    description: "Pulling almost 50mil pounds of plastic from the ocean MANAGED MANUALLY! 1zero built a new digital infrastructure for Truth and Traceability.",
     bgClass: "bg-[#112240] border-blue-500/10",
     mockupType: "impact",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/4Ocean.jpg`,
-    service: "Devpods",
-    url: `${import.meta.env.BASE_URL}Portfolio pdf/Impact Dashboard.pdf`
+    service: "DevPod"
   },
   {
     id: "baliteak",
-    title: "Baliteak Redesign Website",
-    description: "A portfolio showcasing stunning custom teakwood designs and artisanal furniture catalog.",
+    title: "BaliTeak - E-Commerce Replatform",
+    description: "Bali-to-Canada exporter of fine craftmanship, starting their digital journey. A modern, high-speed digital portfolio showcasing custom teakwood designs and artisanal furniture catalogs.",
     bgClass: "bg-[#45301F] border-amber-500/10",
     mockupType: "baliteak",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/Baliteak.jpg`,
@@ -365,41 +328,38 @@ export const customProjects = [
   },
   {
     id: "TDD",
-    title: "The Donor Dashboard Landing Page",
-    description: "Healthcare portal integrating real-time translating, audio diagnosis, and clinical records.",
-    bgClass: "bg-[#092218] border-brunswick-green-500/10",
+    title: "The Donor Dashboard",
+    description: "A highly secure healthcare portal integrating real-time translation, audio diagnostics, and clinical records.",
+    bgClass: "bg-[#092218] border-emerald-500/10",
     mockupType: "tdd",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/TDD.jpg`,
-    service: "Devpods",
-    url: "https://www.tirtamurninusantara.org/front?open=true"
+    service: "DevPod",
   },
   {
     id: "phoenix",
-    title: "PT Phoenix Website",
-    description: "Professional company website built for PT Phoenix, featuring a modern design system and seamless user experience.",
+    title: "PT Phoenix - Corporate Architecture",
+    description: "An experienced organization ramping up Import/Export support in global trade, 1zero established their world-class digital footprint. A robust platforming for PT Phoenix, featuring a modern headless design system and seamless user experience.",
     bgClass: "bg-[#16122d] border-purple-500/10",
     mockupType: "phoenix",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/PT Phoenix.jpg`,
-    service: "Devpods",
-    url: "https://www.phoenixjaya.com/"
+    service: "DevPod",
   },
   {
     id: "blackstump",
-    title: "Blackstump Technologies Website Replatform",
-    description: "Full website replatform for Blackstump Technologies — modernizing architecture, design system, and digital presence from the ground up.",
+    title: "BlackStump Technologies - Modernization",
+    description: "An amazing Australian company, providing container-based Solar and Coldchain solutions to replace Dirty Diesel. Full architectural replatforming—modernizing their backend infrastructure, design system, and global digital presence.",
     bgClass: "bg-[#0d1a0d] border-brunswick-green-500/10",
     mockupType: "blackstump",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/BST.jpg`,
-    service: "NextGen Platform",
-    url: `${import.meta.env.BASE_URL}Portfolio pdf/Black Stump.pdf`
+    service: "DevPod",
   }
 ];
 
 export const benefits = [
   {
-    title: "Meeting Summaries",
+    title: "Actionable Summaries",
     description:
-      "Clear documentation after every discussion, decision, and planning session.",
+      "Clear, actionable documentation after every technical discussion and planning session.",
     icon: FileText,
     style: {
       top: "10%",
@@ -409,7 +369,7 @@ export const benefits = [
   {
     title: "Transparent Proposals",
     description:
-      "Know exactly what we're building, why it matters, and what success looks like.",
+      "Know exactly what infrastructure we're building, why it matters, and what scalability looks like.",
     icon: FileSearch,
     style: {
       top: "18%",
@@ -419,7 +379,7 @@ export const benefits = [
   {
     title: "Strategic Direction",
     description:
-      "Recommendations backed by experience, not guesswork.",
+      "Architectural recommendations backed by four decades of real-world experience, not guesswork.",
     icon: Compass,
     style: {
       top: "5%",
@@ -427,9 +387,9 @@ export const benefits = [
     },
   },
   {
-    title: "Dedicated Experts",
+    title: "Direct Specialists",
     description:
-      "Work directly with people who understand both business and technology.",
+      "Collaborate directly with the engineers building your system, cutting out agency middle-men.",
     icon: Users,
     style: {
       top: "60%",
@@ -437,9 +397,9 @@ export const benefits = [
     },
   },
   {
-    title: "Project Visibility",
+    title: "Radical Visibility",
     description:
-      "Stay informed with clear progress and next-step communication.",
+      "Stay fully informed with open repositories, clear progress tracking, and direct communication channels.",
     icon: Eye,
     style: {
       top: "55%",
@@ -447,9 +407,9 @@ export const benefits = [
     },
   },
   {
-    title: "Documentation",
+    title: "Clean Handovers",
     description:
-      "Knowledge stays with your team, not locked inside a project.",
+      "Knowledge stays with your team, avoiding vendor lock-in through meticulous documentation.",
     icon: BookOpen,
     style: {
       bottom: "15%",
@@ -457,9 +417,9 @@ export const benefits = [
     },
   },
   {
-    title: "Scalable Foundations",
+    title: "Resilient Foundations",
     description:
-      "Built to support future growth without constant rebuilding.",
+      "Systems engineered to support massive future growth without the need for constant rebuilding.",
     icon: Blocks,
     style: {
       bottom: "5%",
@@ -467,5 +427,4 @@ export const benefits = [
       transform: "translateX(-50%)",
     },
   },
-
 ];
