@@ -257,7 +257,7 @@ export const testimonials: TestimonialItem[] = [
   }
 ];
 
-export const workflowSteps: WorkflowStep[] = [
+/* export const workflowSteps: WorkflowStep[] = [
   {
     number: "Roadmap",
     title: "Roadmap Workshop",
@@ -280,7 +280,37 @@ export const workflowSteps: WorkflowStep[] = [
     bullet2: "Hands-on Technical Handovers"
   }
 ];
-
+ */
+export const workflowSteps: WorkflowStep[] = [
+  {
+    number: "01",
+    title: "System Audit & AI Discovery",
+    subtext: "We analyze your current stack to uncover performance bottlenecks and identify high-impact areas where AI integration and data automation can 10x your operational efficiency.",
+    bullet1: "Deep-Dive Stack & Latency Analysis",
+    bullet2: "AI & Automation Viability Audits"
+  },
+  {
+    number: "02",
+    title: "The 1zero Blueprint",
+    subtext: "Before writing a line of code, we design scalable data schemas, strict API contracts, and high-fidelity prototypes. You approve the exact architectural flow upfront.",
+    bullet1: "Cloud-Native Architecture Schemas",
+    bullet2: "Interactive UX & API Mapping"
+  },
+  {
+    number: "03",
+    title: "Agile & AI-Assisted Build",
+    subtext: "We execute with pristine, type-safe code using AI-accelerated workflows. Continuous integration ensures you review testable, production-ready increments every sprint.",
+    bullet1: "Type-Safe, Modular Codebases",
+    bullet2: "Sprint-Based Transparent Deliveries"
+  },
+  {
+    number: "04",
+    title: "Deploy & Empower",
+    subtext: "We launch your platform on auto-scaling infrastructure and conduct rigorous technical handovers. Your team gains total system autonomy with zero vendor lock-in.",
+    bullet1: "Zero-Downtime CI/CD Pipelines",
+    bullet2: "Complete Technical Handovers"
+  }
+];
 export const whyUsPoints = [
   {
     title: "We don't bring one-size-fits-all answers.",
