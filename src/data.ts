@@ -60,11 +60,7 @@ export const products: ProductItem[] = [
     cta: "Explore GEO",
     problemTitle: "Growth & Visibility",
 
-    mood: {
-      bg: "from-blue-950 via-black to-black",
-      glow: "rgba(59,130,246,0.25)",
-      accent: "rgb(59,130,246)",
-    },
+ 
   },
 
   {
@@ -109,17 +105,11 @@ export const products: ProductItem[] = [
     href: "#nextgen",
     cta: "Explore NextGen",
     problemTitle: "System Performance",
-
-    mood: {
-      bg: "from-emerald-950 via-black to-black",
-      glow: "rgba(16,185,129,0.25)",
-      accent: "rgb(16,185,129)",
-    },
   },
 
   {
-    id: "devpod",
-    service: "DevPod",
+    id: "devpods",
+    service: "DevPods",
     description:
       "Instant, consistent development environments for teams that need speed and stability.",
     fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/DevPod Product Sheet - Eng.pdf`,
@@ -156,15 +146,9 @@ export const products: ProductItem[] = [
 
     imageProblem: "/illustrations/devpod-problem.png",
     imageSolution: "/illustrations/devpod-solution.png",
-    href: "#devpod",
-    cta: "Explore DevPod",
+    href: "#devpods",
+    cta: "Explore DevPods",
     problemTitle: "Developer Experience",
-
-    mood: {
-      bg: "from-purple-950 via-black to-black",
-      glow: "rgba(168,85,247,0.25)",
-      accent: "rgb(168,85,247)",
-    },
   },
 
   {
@@ -210,11 +194,6 @@ export const products: ProductItem[] = [
     cta: "Read fCTO",
     problemTitle: "Strategic Direction",
 
-    mood: {
-      bg: "from-red-950 via-black to-black",
-      glow: "rgba(239,68,68,0.25)",
-      accent: "rgb(239,68,68)",
-    },
   },
 ];
 
@@ -371,7 +350,8 @@ export const customProjects = [
     bgClass: "bg-[#112240] border-blue-500/10",
     mockupType: "impact",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/4Ocean.jpg`,
-    service: "Devpod"
+    service: "Devpods",
+    url: `${import.meta.env.BASE_URL}Portfolio pdf/Impact Dashboard.pdf`
   },
   {
     id: "baliteak",
@@ -380,16 +360,18 @@ export const customProjects = [
     bgClass: "bg-[#45301F] border-amber-500/10",
     mockupType: "baliteak",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/Baliteak.jpg`,
-    service: "NextGen Platform"
+    service: "NextGen Platform",
+    url: `${import.meta.env.BASE_URL}Portfolio pdf/Bali Teak Redesign Website.pdf`
   },
   {
     id: "TDD",
     title: "The Donor Dashboard Landing Page",
     description: "Healthcare portal integrating real-time translating, audio diagnosis, and clinical records.",
-    bgClass: "bg-[#092218] border-emerald-500/10",
+    bgClass: "bg-[#092218] border-brunswick-green-500/10",
     mockupType: "tdd",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/TDD.jpg`,
-    service: "Devpod",
+    service: "Devpods",
+    url: "https://www.tirtamurninusantara.org/front?open=true"
   },
   {
     id: "phoenix",
@@ -398,7 +380,8 @@ export const customProjects = [
     bgClass: "bg-[#16122d] border-purple-500/10",
     mockupType: "phoenix",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/PT Phoenix.jpg`,
-    service: "Devpod",
+    service: "Devpods",
+    url: "https://www.phoenixjaya.com/"
   },
   {
     id: "blackstump",
@@ -408,6 +391,7 @@ export const customProjects = [
     mockupType: "blackstump",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/BST.jpg`,
     service: "NextGen Platform",
+    url: `${import.meta.env.BASE_URL}Portfolio pdf/Black Stump.pdf`
   }
 ];
 

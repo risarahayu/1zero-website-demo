@@ -15,15 +15,15 @@ function ProgressDot({ index, scrollYProgress }: { index: number; scrollYProgres
   const hi = Math.min(1, mid + seg * 0.4);
   const dotOpacity = useTransform(scrollYProgress, [lo, mid, hi], [0.3, 1, 0.3]);
   const dotScale = useTransform(scrollYProgress, [lo, mid, hi], [0.7, 1.4, 0.7]);
-  return <motion.div style={{ opacity: dotOpacity, scale: dotScale }} className="h-1.5 w-1.5 rounded-full bg-white" />;
+  return <motion.div style={{ opacity: dotOpacity, scale: dotScale }} className="h-1.5 w-1.5 rounded-full bg-sea-salt" />;
 }
 
 function ScrollHint({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) {
   const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
   return (
-    <motion.div style={{ opacity }} className="absolute bottom-8 right-8 z-50 flex flex-col items-center gap-2 text-neutral-600">
-      <span className="font-sans text-lg uppercase tracking-widest text-neutral-600">{workflowCopy.scrollHint}</span>
-      <div className="h-8 w-[1px] bg-gradient-to-b from-neutral-600 to-transparent" />
+    <motion.div style={{ opacity }} className="absolute bottom-8 right-8 z-50 flex flex-col items-center gap-2 text-sea-salt">
+      <span className="font-sans text-lg uppercase tracking-widest text-sea-salt">{workflowCopy.scrollHint}</span>
+      <div className="h-8 w-[1px] bg-gradient-to-b from-sea-salt to-transparent" />
     </motion.div>
   );
 }
@@ -46,7 +46,7 @@ function SidebarIcons({ scrollYProgress, onIconClick }: { scrollYProgress: Motio
     <div className="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-4 space-y-4  z-[60]">
       <div className="relative flex flex-col items-center hidden md:block">
         {/* Vertical line behind icons */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-white/5 " />
+        <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-sea-salt/5 " />
         {workflowSteps.map((step, i) => {
           const cfg = PANEL_CONFIG[i % PANEL_CONFIG.length];
           const mid = (i + 0.5) * seg;
@@ -68,7 +68,7 @@ function SidebarIcons({ scrollYProgress, onIconClick }: { scrollYProgress: Motio
               }}
               className="flex items-center justify-center w-12 h-12 rounded-full border-2 cursor-pointer transition-transform hover:scale-110"
             >
-              <span className="text-white">{getIcon(step.number)}</span>
+              <span className="text-sea-salt">{getIcon(step.number)}</span>
             </motion.div>
           );
         })}
@@ -84,7 +84,7 @@ function TimelineFill({ scrollYProgress }: { scrollYProgress: MotionValue<number
   return (
     <div className="absolute left-10 lg:left-10 top-0 bottom-0 z-50 flex flex-col items-center " style={{ width: '2px' }}>
       {/* Track */}
-      <div className="absolute inset-0 bg-white/5 rounded-full" />
+      <div className="absolute inset-0 bg-sea-salt/5 rounded-full" />
       {/* Animated fill */}
       <motion.div
         className="absolute top-0 left-0 right-0 rounded-full origin-top"
@@ -100,8 +100,8 @@ function TimelineFill({ scrollYProgress }: { scrollYProgress: MotionValue<number
 }
 
 const PANEL_CONFIG = [
-  { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.19)", accent: "var(--green-700)", accentText: "text-brunswick-green-700", border: "border-brunswick-green-700" },
-  { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.29)", accent: "var(--green-800)", accentText: "text-brunswick-green-800", border: "border-brunswick-green-800" },
+  { bg: "bg-raisin-black-900", glow: "rgba(29, 87, 69, 0.19)", accent: "var(--green-700)", accentText: "text-brunswick-green-700", border: "border-brunswick-green-700" },
+  { bg: "bg-raisin-black-900", glow: "rgba(29, 87, 69, 0.29)", accent: "var(--green-800)", accentText: "text-brunswick-green-800", border: "border-brunswick-green-800" },
   { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.51)", accent: "var(--green-900)", accentText: "text-brunswick-green-900", border: "border-brunswick-green-900" },
 ];
 
@@ -180,7 +180,7 @@ function Panel({
 
       {/* Giant decorative step number */}
       <div className="absolute right-4 sm:right-12 top-1/2 -translate-y-1/2 select-none " aria-hidden>
-        <span className="font-sans font-black leading-none text-white/[0.025]" style={{ fontSize: "clamp(8rem,22vw,18rem)" }}>
+        <span className="font-sans font-black  text-sea-salt/[0.025]" style={{ fontSize: "clamp(8rem,22vw,18rem)" }}>
           0{index + 1}
         </span>
       </div>
@@ -194,7 +194,7 @@ function Panel({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 w-full">
 
           {/* LEFT: step info */}
-          <div className="flex flex-col justify-center space-y-8">
+          <div className="flex flex-col justify-center space-y-10">
             {/* Phase badge */}
             <div className="flex items-center gap-4">
               <div
@@ -204,40 +204,41 @@ function Panel({
                 <span className={cfg.accentText}>{getIcon(step.number)}</span>
               </div>
               <div>
-                <p className="font-sans text-lg uppercase tracking-[0.2em] text-sea-salt">{workflowCopy.phaseLabel}</p>
-                <p className={`font-sans text-lg font-bold tracking-wider uppercase ${cfg.accentText}`}>
+                <p className="font-sans text-base sm:text-lg uppercase tracking-[0.2em] text-sea-salt">{workflowCopy.phaseLabel}</p>
+                <p className={`font-sans text-base sm:text-lg font-bold tracking-wider uppercase ${cfg.accentText}`}>
                   {step.number}
                 </p>
               </div>
             </div>
 
+
             {/* Title */}
-            <div className="space-y-4">
-              <h3 className="font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.1]">
+            <div className="space-y-6">
+              <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt leading-[1.1]">
                 {step.title}
               </h3>
-              <p className="font-sans text-lg text-sea-salt leading-relaxed max-w-md">
+              <p className="font-sans text-base sm:text-lg text-sea-salt  max-w-md">
                 {step.subtext}
               </p>
-            </div>
 
-            {/* Checklist */}
-            <div className="space-y-3 pt-2">
-              {[step.bullet1, step.bullet2].map((b, bi) => (
-                <div key={bi} className="flex items-start gap-3">
-                  <div
-                    className="h-5 w-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
-                    style={{ background: `${cfg.accent}20` }}
-                  >
-                    <CheckCircle2 className={`h-3 w-3 ${cfg.accentText}`} />
+              {/* Checklist */}
+              <div className="space-y-4">
+                {[step.bullet1, step.bullet2].map((b, bi) => (
+                  <div key={bi} className="flex items-start gap-3">
+                    <div
+                      className="h-5 w-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                      style={{ background: `${cfg.accent}20` }}
+                    >
+                      <CheckCircle2 className={`h-3 w-3 ${cfg.accentText}`} />
+                    </div>
+                    <span className="font-sans text-lg text-sea-salt">{b}</span>
                   </div>
-                  <span className="font-sans text-lg text-neutral-300">{b}</span>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
             {/* Step counter */}
-            <p className="font-sans text-lg text-ivory tracking-widest uppercase">
+            <p className="font-sans text-base sm:text-lg text-ivory tracking-widest uppercase">
               {String(index + 1).padStart(2, "0")} {workflowCopy.ofText} {String(N).padStart(2, "0")} {workflowCopy.phasesText}
             </p>
           </div>
@@ -246,20 +247,20 @@ function Panel({
           <div className="hidden lg:flex flex-col justify-center items-start">
             <div className={`w-full max-w-sm p-7 rounded-2xl border ${cfg.border} backdrop-blur-sm`}
               style={{ background: `${cfg.accent}08` }}>
-              <p className={`font-sans text-lg uppercase tracking-widest font-bold mb-3 ${cfg.accentText}`}>
+              <p className={`font-sans text-base sm:text-lg uppercase tracking-widest font-bold mb-3 ${cfg.accentText}`}>
                 {workflowCopy.commitStatusLabel}
               </p>
-              <p className="font-sans text-lg text-neutral-400 leading-relaxed">
+              <p className="font-sans text-base sm:text-lg text-sea-salt ">
                 {workflowCopy.commitStatusDescStart}{" "}
-                <strong className="text-neutral-200 font-semibold">{step.number}</strong>{" "}
+                <strong className="text-sea-salt font-semibold">{step.number}</strong>{" "}
                 {workflowCopy.commitStatusDescEnd}
               </p>
-              <div className="flex items-center gap-2 mt-5 pt-4 border-t border-white/5">
+              <div className="flex items-center gap-2 mt-5 pt-4 border-t border-sea-salt/5">
                 <span
                   className="h-2 w-2 rounded-full animate-pulse"
                   style={{ backgroundColor: cfg.accent, boxShadow: `0 0 8px ${cfg.accent}` }}
                 />
-                <span className="font-sans text-lg text-neutral-500 uppercase tracking-widest">
+                <span className="font-sans text-lg text-sea-salt uppercase tracking-widest">
                   {workflowCopy.releaseReady}
                 </span>
               </div>
@@ -298,26 +299,28 @@ export default function Workflow() {
   };
 
   return (
-    <section className="bg-[#040404]">
+    <section className="bg-raisin-black">
 
       {/* Section header — normal flow above the sticky scroll */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pb-0 text-center space-y-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  pb-0 text-center py-16">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="space-y-4"
+          className="space-y-10"
         >
-          <span className="inline-block px-3.5 py-2 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
+          <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
             {workflowCopy.badge}
           </span>
-          <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-white max-w-3xl mx-auto leading-tight">
-            {workflowCopy.title}
-          </h2>
-          <p className="max-w-xl mx-auto font-sans text-lg sm:text-lg text-sea-salt">
-            {workflowCopy.description}
-          </p>
+          <div className="space-y-6">
+            <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
+              {workflowCopy.title}
+            </h2>
+            <p className="max-w-xl mx-auto font-sans text-base sm:text-lg text-sea-salt/90">
+              {workflowCopy.description}
+            </p>
+          </div>
         </motion.div>
       </div>
 
@@ -348,29 +351,9 @@ export default function Workflow() {
             </React.Fragment>
           ))}
 
-          {/* Dot progress indicators */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3 z-50">
-            {workflowSteps.map((step, i) => (
-              <ProgressDot key={step.number} index={i} scrollYProgress={scrollYProgress} />
-            ))}
-          </div>
-
-          {/* Scroll hint */}
-          <ScrollHint scrollYProgress={scrollYProgress} />
 
         </div>
       </div>
-
-      {/* Footer banner */}
-      <motion.div
-        className="max-w-3xl mx-auto px-4 py-16"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.8 }}
-        transition={{ duration: 0.6 }}
-      >
-
-      </motion.div>
 
     </section>
   );

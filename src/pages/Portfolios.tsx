@@ -6,12 +6,13 @@ import { portfoliosPageCopy } from "../copy";
 
 export default function PortfolioPage() {
     const [activeTab, setActiveTab] = useState("All");
-    const [isBookingOpen, setIsBookingOpen] = useState(false);
 
     const onOpenBooking = () => {
-        // Here you could open a modal or navigate to a booking page.
-        // For now we simply toggle a boolean to demonstrate functionality.
-        setIsBookingOpen(true);
+        window.open(
+            "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3gWtjZcsb5BZb78RjU3eDJJcflGsC7oDWdx__RBcaDFHzZ1ivl2IZrigY4R9-r63sLfDdRjvmQ",
+            "_blank",
+            "noopener,noreferrer"
+        );
     };
 
     // ambil semua service unik
@@ -29,29 +30,30 @@ export default function PortfolioPage() {
     }, [activeTab]);
 
     return (
-        <section className="relative min-h-screen bg-black text-white py-24 px-6">
+        <section className="relative min-h-screen bg-raisin-black text-sea-salt py-24 px-6">
             {/* glow background */}
             <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
-                <div className="w-[600px] h-[600px] bg-white/5 blur-[160px] rounded-full" />
+                <div className="w-[600px] h-[600px] bg-sea-salt/5 blur-[160px] rounded-full" />
             </div>
 
             {/* HEADER */}
-            <div className="relative z-10 text-center space-y-4">
-                <span className="inline-block px-3.5 py-2 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
+            <div className="relative z-10 text-center space-y-10">
+                <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
                     {portfoliosPageCopy.badge}
                 </span>
-                <br />
-                <h1 className="text-4xl md:text-6xl font-bold animate-gradient-text text-gradient">
-                    {portfoliosPageCopy.title}
-                </h1>
+                <div className="space-y-6">
+                    <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold text-sea-salt leading-[1.1]">
+                        {portfoliosPageCopy.title}
+                    </h1>
 
-                <p className="text-zinc-400 max-w-xl mx-auto">
-                    {portfoliosPageCopy.description}
-                </p>
+                    <p className="text-raisin-black-900-400 text-base sm:text-lg max-w-xl mx-auto">
+                        {portfoliosPageCopy.description}
+                    </p>
+                </div>
             </div>
 
             {/* TABS */}
-            <div className="relative z-10 flex flex-wrap justify-center gap-3 mt-10">
+            <div className="relative z-10 flex flex-wrap justify-center gap-4 mt-10">
                 {services.map((service) => (
                     <button
                         key={service}
@@ -59,8 +61,8 @@ export default function PortfolioPage() {
                         className={`
                             px-4 py-2 rounded-full text-lg border transition-all duration-300
                             ${activeTab === service
-                                ? "bg-brunswick-green-900 text-sea-salt border-white/10"
-                                : "bg-white/5 text-sea-salt border-white/10 hover:border-brunswick-green-500 hover:text-brunswick-green-500"
+                                ? "bg-brunswick-green-900 text-sea-salt border-sea-salt/10"
+                                : "bg-sea-salt/5 text-sea-salt border-sea-salt/20 hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt"
                             }
                         `}
                     >
@@ -85,11 +87,11 @@ export default function PortfolioPage() {
                 {/* Aurora / Glow effects */}
                 <div className="absolute inset-0 -z-10 pointer-events-none">
                     <div className="absolute top-1/2 left-1/3 w-72 h-72 bg-brunswick-green-500/30 rounded-full blur-[90px] -translate-y-1/2 -translate-x-1/2 mix-blend-screen animate-pulse" />
-                    <div className="absolute top-1/2 right-1/3 w-72 h-72 bg-[#a3e635]/20 rounded-full blur-[90px] -translate-y-1/2 translate-x-1/2 mix-blend-screen animate-pulse" style={{ animationDelay: '1s' }} />
+                    <div className="absolute top-1/2 right-1/3 w-72 h-72 bg-brunswick-green-500/20 rounded-full blur-[90px] -translate-y-1/2 translate-x-1/2 mix-blend-screen animate-pulse" style={{ animationDelay: '1s' }} />
                 </div>
                 <div className="space-y-10 justify-center items-center flex flex-col">
 
-                    <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-white tracking-tight z-10 drop-shadow-lg">
+                    <p className="text-base sm:text-lg text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-sea-salt  z-10 drop-shadow-lg">
                         {portfoliosPageCopy.ctaTitle}
                     </p>
                     <img
@@ -101,40 +103,25 @@ export default function PortfolioPage() {
                         id="cta-booking-btn"
                         onClick={onOpenBooking}
                         className="group relative flex items-center justify-center gap-2
-                px-10 py-5
-                bg-[linear-gradient(120deg,var(--color-sea-salt),var(--color-ivory),var(--color-dun),var(--color-green-500))]
-                bg-[length:300%_300%]
-                animate-gradient
-                text-neutral-950
-                font-sans font-extrabold
-                text-lg sm:text-lg
-                rounded-2xl
-                transition-all
-                shadow-[0_10px_35px_rgba(223,217,198,0.25)]
-                hover:shadow-[0_10px_45px_rgba(223,217,198,0.4)]
-                cursor-pointer
-                tracking-wide"
+                        px-10 py-5
+                        bg-[linear-gradient(120deg,var(--color-sea-salt),var(--color-ivory),var(--color-dun),var(--color-green-500))]
+                        bg-[length:300%_300%]
+                        animate-gradient
+                        text-raisin-black-800
+                        font-sans font-extrabold
+                        text-lg sm:text-lg
+                        rounded-2xl
+                        transition-all
+                        shadow-[0_10px_35px_rgba(223,217,198,0.25)]
+                        hover:shadow-[0_10px_45px_rgba(223,217,198,0.4)]
+                        cursor-pointer
+                        tracking-wide"
                     >
                         {portfoliosPageCopy.bookButton}
-                        <PhoneCall className="h-4 w-4 text-neutral-900 group-hover:scale-110 transition-transform" />
+                        <PhoneCall className="h-4 w-4 text-raisin-black-800 group-hover:scale-110 transition-transform" />
                     </button>
                 </div>
             </div>
-            {/* Booking Modal placeholder */}
-            {isBookingOpen && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">
-                    <div className="bg-white dark:bg-gray-800 rounded-xl p-8 max-w-md w-full shadow-lg">
-                        <h2 className="text-2xl md:text-4xl font-bold mb-4">{portfoliosPageCopy.modalTitle}</h2>
-                        <p className="mb-6">{portfoliosPageCopy.modalDescription}</p>
-                        <button
-                            className="px-4 py-2 bg-brunswick-green-500 text-white rounded hover:bg-brunswick-green-600"
-                            onClick={() => setIsBookingOpen(false)}
-                        >
-                            {portfoliosPageCopy.modalCloseBtn}
-                        </button>
-                    </div>
-                </div>
-            )}
         </section>
     );
 }

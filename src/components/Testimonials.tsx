@@ -15,56 +15,56 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="relative py-20 bg-neutral-950/20">
+    <section className="relative py-16 bg-raisin-black-800/20">
       {/* Soft auroral glow in corner */}
-      <div className="absolute top-1/2 right-10 -z-10 h-72 w-72 rounded-full bg-green-primary/[0.03] blur-[110px]" />
+      <div className="absolute top-1/2 right-10 -z-10 h-72 w-72 rounded-full bg-brunswick-green-900/[0.03] blur-[110px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
         {/* Title Area */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-          <div className="space-y-3 text-left">
-            <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500 bg-[#a3e635]/5">
+          <div className="space-y-10 text-left">
+            <span className="inline-block px-3.5 py-1 rounded-full border border-sea-salt/20 text-lg font-sans uppercase tracking-widest text-brunswick-green-500 bg-brunswick-green-500/5">
               {testimonialsCopy.badge}
             </span>
-            <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-white leading-none">
+            <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
               {testimonialsCopy.titleLine1} <br />{testimonialsCopy.titleLine2}
             </h2>
           </div>
-
           {/* Slider Controllers on desktop */}
           <div className="hidden md:flex items-center gap-2">
             <button
               id="testimonial-prev-btn"
               onClick={handlePrev}
-              className="p-3.5 rounded-xl border border-neutral-800 bg-[#0c0c0e] text-neutral-400 hover:text-white hover:border-brunswick-green-500 transition-colors"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
             >
               <ArrowLeft className="h-4 w-4" />
             </button>
             <button
               id="testimonial-next-btn"
               onClick={handleNext}
-              className="p-3.5 rounded-xl border border-neutral-800 bg-[#0c0c0e] text-neutral-400 hover:text-white hover:border-brunswick-green-500 transition-colors"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
             >
               <ArrowRight className="h-4 w-4" />
             </button>
           </div>
+
         </div>
 
         {/* Testimonials standard grid (responsive) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((t, index) => {
             const isActiveMobile = activeSlide === index;
             return (
               <div
                 key={t.id}
-                className={`group flex flex-col justify-between p-6 rounded-2xl border bg-neutral-950/40 p-6 transition-all duration-300 relative ${isActiveMobile
-                  ? "border-brunswick-green-500 shadow-emerald-500/5 shadow-2xl scale-[1.01] block"
-                  : "border-neutral-900 group-hover:border-neutral-800 md:block hidden"
+                className={`group flex flex-col justify-between p-6 rounded-2xl border  p-6 transition-all duration-300 relative ${isActiveMobile
+                  ? "border-brunswick-green-500 backdrop-blur bg-sea-salt/6  shadow-brunswick-green-500/5 shadow-2xl scale-[1.01] block"
+                  : "border-sea-salt/20 group-hover:border-brunswick-green-500/30 md:block hidden"
                   }`}
               >
                 {/* Quotation icon accent */}
-                <div className="absolute top-6 right-6 text-neutral-800/80 group-hover:text-emerald-500/10 transition-colors">
+                <div className="absolute top-6 right-6 text-sea-salt/80 group-hover:text-brunswick-green-500 transition-colors">
                   <Quote className="h-8 w-8 transform rotate-180" />
                 </div>
 
@@ -77,14 +77,14 @@ export default function Testimonials() {
                   </div>
 
                   {/* Absolute quote */}
-                  <p className="font-sans text-lg sm:text-lg text-neutral-300 italic leading-relaxed group-hover:text-white transition-colors">
+                  <p className="font-sans text-base sm:text-lg text-sea-salt/90 italic  group-hover:text-sea-salt transition-colors">
                     "{t.quote}"
                   </p>
                 </div>
 
                 {/* Writer Portrait Avatar details */}
-                <div className="flex items-center gap-3 pt-6 border-t border-neutral-900 mt-8">
-                  <div className="h-10 w-10 rounded-full overflow-hidden border border-neutral-800 shrink-0">
+                <div className="flex items-center gap-3 pt-6 border-t border-sea-salt/20 mt-8">
+                  <div className="h-10 w-10 rounded-full overflow-hidden border border-sea-salt/20 shrink-0">
                     <img
                       src={t.avatarUrl}
                       alt={t.name}
@@ -93,11 +93,17 @@ export default function Testimonials() {
                     />
                   </div>
                   <div className="leading-tight">
-                    <span className="block font-sans text-lg font-bold text-white group-hover:text-brunswick-green-500 transition-colors">
+                    <span
+                      className={`block font-sans text-lg font-bold transition-colors ${
+                        isActiveMobile
+                          ? "text-brunswick-green-500"
+                          : "text-sea-salt"
+                      }`}
+                    >
                       {t.name}
                     </span>
-                    <span className="block font-sans text-lg text-neutral-500">
-                      {t.role}, <strong className="text-neutral-400 font-normal">{t.company}</strong>
+                    <span className="block font-sans text-lg text-sea-salt/90">
+                      {t.role}, <strong className="text-sea-salt font-normal">{t.company}</strong>
                     </span>
                   </div>
                 </div>
@@ -111,7 +117,7 @@ export default function Testimonials() {
           <button
             id="testimonial-prev-mobile"
             onClick={handlePrev}
-            className="p-3 border border-neutral-800 bg-[#0c0c0e] rounded-xl text-neutral-400 hover:text-white"
+            className="p-3 border border-sea-salt/20 bg-raisin-black-900 rounded-xl text-sea-salt hover:text-dun"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
           </button>
@@ -119,14 +125,14 @@ export default function Testimonials() {
             {testimonials.map((_, idx) => (
               <div
                 key={idx}
-                className={`h-1.5 rounded-full transition-all duration-300 ${activeSlide === idx ? "w-6 bg-green-primary" : "w-1.5 bg-neutral-800"}`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${activeSlide === idx ? "w-6 bg-brunswick-green-500" : "w-1.5 bg-sea-salt"}`}
               />
             ))}
           </div>
           <button
             id="testimonial-next-mobile"
             onClick={handleNext}
-            className="p-3 border border-neutral-800 bg-[#0c0c0e] rounded-xl text-neutral-400 hover:text-white"
+            className="p-3 border border-sea-salt/20 bg-raisin-black-900 rounded-xl text-sea-salt hover:text-dun"
           >
             <ArrowRight className="h-3.5 w-3.5" />
           </button>

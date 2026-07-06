@@ -81,24 +81,22 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
             <style>{`
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .glass {
-          background: rgba(255, 255, 255, 0.03);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+        
       `}</style>
 
-            <header className="max-w-7xl mx-auto px-10 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <span className="text-sea-salt font-semibold tracking-widest text-lg uppercase mb-4 block">
+            <header className="max-w-7xl mx-auto px-10 py-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center" >
+                <div className="space-y-10 ">
+                    <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
                         {t.sub}
                     </span>
-                    <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6 animate-gradient-text text-gradient-impact">
-                        {t.title}
-                    </h1>
-                    <p className="text-gray-400 text-lg mb-8 max-w-md">
-                        {t.desc}
-                    </p>
+                    <div className="space-y-6">
+                        <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold text-sea-salt leading-[1.1]">
+                            {t.title}
+                        </h1>
+                        <p className="text-sea-salt/90 text-base sm:text-lg max-w-md">
+                            {t.desc}
+                        </p>
+                    </div>
                 </div>
 
                 <div className="relative group">
@@ -108,33 +106,33 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                         className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-6 pb-10 px-[20%]"
                     >
                         {/* Value Card 1 */}
-                        <div className="min-w-[300px] snap-center glass p-8 rounded-[2rem] relative overflow-hidden flex flex-col items-start">
+                        <div className="min-w-[300px] snap-center text-start space-y-6 group relative flex flex-col justify-between p-6 rounded-3xl border border-brunswick-green-500  hover:border-brunswick-green-900 transition-all duration-300 shadow-2xl overflow-hidden cursor-pointer backdrop-blur bg-sea-salt/6">
                             <div className="absolute top-0 right-0 p-6 opacity-10 text-6xl"><i className="fas fa-globe-asia"></i></div>
-                            <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-xl mb-6 shadow-lg shadow-indigo-500/10">
+                            <div className="w-12 h-12 rounded-xl bg-sea-salt/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-xl mb-6 shadow-lg shadow-indigo-500/10">
                                 <i className="fas fa-globe-asia"></i>
                             </div>
-                            <h3 className="text-2xl font-bold mb-4">{t.v1t}</h3>
-                            <p className="text-gray-400 text-lg leading-relaxed">{t.v1d}</p>
+                            <h3 className="font-sans text-2xl sm:text-3xl font-bold mb-4">{t.v1t}</h3>
+                            <p className="text-sea-salt/90 text-base sm:text-lg ">{t.v1d}</p>
                         </div>
 
                         {/* Value Card 2 */}
-                        <div className="min-w-[300px] snap-center glass p-8 rounded-[2rem] relative overflow-hidden flex flex-col items-start">
+                        <div className="min-w-[300px] snap-center text-start space-y-6 group relative flex flex-col justify-between p-6 rounded-3xl border border-brunswick-green-500  hover:border-brunswick-green-900 transition-all duration-300 shadow-2xl overflow-hidden cursor-pointer backdrop-blur bg-sea-salt/6">
                             <div className="absolute top-0 right-0 p-6 opacity-10 text-6xl"><i className="fas fa-wifi"></i></div>
-                            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl mb-6 shadow-lg shadow-emerald-500/10">
+                            <div className="w-12 h-12 rounded-xl bg-sea-salt/20 border border-brunswick-green-500/30 flex items-center justify-center text-brunswick-green-500 text-xl mb-6 shadow-lg shadow-brunswick-green-500/10">
                                 <i className="fas fa-wifi"></i>
                             </div>
-                            <h3 className="text-2xl font-bold mb-4">{t.v2t}</h3>
-                            <p className="text-gray-400 text-lg leading-relaxed">{t.v2d}</p>
+                            <h3 className="font-sans text-2xl sm:text-3xl font-bold mb-4">{t.v2t}</h3>
+                            <p className="text-sea-salt/90 text-base sm:text-lg ">{t.v2d}</p>
                         </div>
 
                         {/* Value Card 3 */}
-                        <div className="min-w-[300px] snap-center glass p-8 rounded-[2rem] relative overflow-hidden flex flex-col items-start">
+                        <div className="min-w-[300px] snap-center text-start space-y-6 group relative flex flex-col justify-between p-6 rounded-3xl border border-brunswick-green-500  hover:border-brunswick-green-900 transition-all duration-300 shadow-2xl overflow-hidden cursor-pointer backdrop-blur bg-sea-salt/6">
                             <div className="absolute top-0 right-0 p-6 opacity-10 text-6xl"><i className="fas fa-leaf"></i></div>
                             <div className="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-pink-400 text-xl mb-6 shadow-lg shadow-pink-500/10">
                                 <i className="fas fa-leaf"></i>
                             </div>
-                            <h3 className="text-2xl font-bold mb-4">{t.v3t}</h3>
-                            <p className="text-gray-400 text-lg leading-relaxed">{t.v3d}</p>
+                            <h3 className="font-sans text-2xl sm:text-3xl font-bold mb-4">{t.v3t}</h3>
+                            <p className="text-sea-salt/90 text-base sm:text-lg ">{t.v3d}</p>
                         </div>
                     </div>
 
@@ -144,7 +142,7 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                             <button
                                 key={idx}
                                 onClick={() => scrollToCard(idx)}
-                                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${activeIndex === idx ? 'bg-brunswick-green-500 w-6' : 'bg-white/20 hover:bg-white/40 w-2'
+                                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${activeIndex === idx ? 'bg-brunswick-green-500 w-6' : 'bg-sea-salt/20 hover:bg-sea-salt/40 w-2'
                                     }`}
                                 aria-label={`Go to slide ${idx + 1}`}
                             />

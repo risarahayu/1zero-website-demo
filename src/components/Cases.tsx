@@ -1,66 +1,35 @@
 import { useEffect, useState, useRef } from "react";
-import { ArrowUpRight, MessageSquare, Activity, Clock, ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { casesCopy } from "../copy";
 
-interface CasesProps {
-  onOpenBooking: () => void;
-}
-
-const caseItems = [
+const recentActivity = [
   {
-    id: "case-01",
-    label: "30 Minutes With",
-    title: "Sinar Agritech",
-    desc: "How a regional agritech firm cut their data pipeline latency by 42% and launched a new operator dashboard in under 8 weeks.",
-    tag: "System Architecture",
-    gradient: "from-emerald-900/80 via-neutral-950 to-neutral-950",
-    accentColor: "text-emerald-400",
-    borderColor: "border-emerald-500/20",
-    iconBg: "bg-green-primary/10",
+    id: "activity-01",
+    photo: `${import.meta.env.BASE_URL}Recent Activity/GSDC.jpg`,
+    title: "AusTrade Landing Pads & GSDC 22-25 June 2026",
+    desc: "A concise LinkedIn launch post spotlighting landing pad initiatives and global sustainability design challenge momentum.",
+    linkPost: "https://www.linkedin.com/posts/1zero-biz_gsdc2026-austrade-sustainability-activity-7477617222861975553-5JVk?utm_source=share&utm_medium=member_desktop&rcm=ACoAACaiIoYBEEy2963FCH3xa3bmKTp3gODlKeY",
   },
   {
-    id: "case-02",
-    label: "30 Minutes With",
-    title: "EduVibe Asia",
-    desc: "Rebuilding a legacy LMS into a cloud-native, multi-tenant platform serving 80,000 active learners with zero downtime migration.",
-    tag: "Cloud Migration",
-    gradient: "from-blue-900/80 via-neutral-950 to-neutral-950",
-    accentColor: "text-blue-400",
-    borderColor: "border-blue-500/20",
-    iconBg: "bg-blue-500/10",
+    id: "activity-02",
+    photo: `${import.meta.env.BASE_URL}Recent Activity/Wisdom Shaping Sustainable Futures.png`,
+    title: "EarthWise: Wisdom Shaping Sustainable Futures",
+    desc: "A simple visual story about stewardship and sustainable futures in a changing world.",
+    linkPost: "https://www.linkedin.com/posts/1zero-biz_pathtosustainablegrowth-ptsg2026-sustainability-activity-7477965017372475393-ikLe?utm_source=share&utm_medium=member_desktop&rcm=ACoAACaiIoYBEEy2963FCH3xa3bmKTp3gODlKeY",
   },
   {
-    id: "case-03",
-    label: "30 Minutes With",
-    title: "BWT Logistics",
-    desc: "Integrating real-time fleet telemetry and automated invoicing into a unified ops portal, reducing manual work by 70%.",
-    tag: "Enterprise Integration",
-    gradient: "from-amber-900/80 via-neutral-950 to-neutral-950",
-    accentColor: "text-amber-400",
-    borderColor: "border-amber-500/20",
-    iconBg: "bg-amber-500/10",
+    id: "activity-03",
+    photo: `${import.meta.env.BASE_URL}Recent Activity/Path to Sustainable Growth.jpg`,
+    title: "Path to Sustainable Growth at Apurva Kempinski 24 June 2026",
+    desc: "A short post highlighting sustainable hospitality strategy and the path to growth for a luxury resort brand.",
+    linkPost: "https://www.linkedin.com/posts/wisdomcircle_curiositytalks-sustainability-wisdomcircle-activity-7472185820150407168-tDEh?utm_source=share&utm_medium=member_desktop&rcm=ACoAACaiIoYBEEy2963FCH3xa3bmKTp3gODlKeY",
   },
   {
-    id: "case-04",
-    label: "30 Minutes With",
-    title: "MediCare Connect",
-    desc: "Designing a HIPAA-aligned patient engagement platform with real-time appointment scheduling and secure document sharing.",
-    tag: "Healthcare Tech",
-    gradient: "from-purple-900/80 via-neutral-950 to-neutral-950",
-    accentColor: "text-purple-400",
-    borderColor: "border-purple-500/20",
-    iconBg: "bg-purple-500/10",
-  },
-  {
-    id: "case-05",
-    label: "30 Minutes With",
-    title: "RetailCore ID",
-    desc: "End-to-end POS modernization for a 200-branch retail chain — from fragmented spreadsheets to a unified real-time inventory system.",
-    tag: "Retail Systems",
-    gradient: "from-rose-900/80 via-neutral-950 to-neutral-950",
-    accentColor: "text-rose-400",
-    borderColor: "border-rose-500/20",
-    iconBg: "bg-rose-500/10",
+    id: "activity-04",
+    photo: `${import.meta.env.BASE_URL}Recent Activity/Visit PLN.jpg`,
+    title: "Visit PLN",
+    desc: "A short post highlighting sustainable hospitality strategy and the path to growth for a luxury resort brand.",
+    linkPost: "LinkedIn post",
   },
 ];
 
@@ -68,88 +37,67 @@ const caseItems = [
 function CaseCard({
   item,
   isCenter,
-  onOpenBooking,
 }: {
-  item: (typeof caseItems)[0];
+  item: (typeof recentActivity)[0];
   isCenter: boolean;
-  onOpenBooking: () => void;
 }) {
   return (
     <div
-      onClick={onOpenBooking}
+      onClick={() => window.open(item.linkPost, "_blank", "noopener,noreferrer")}
       className={`
-        group relative rounded-3xl border bg-neutral-950/25 p-5
+        group relative h-full min-h-[420px] rounded-3xl bg-sea-salt/6 p-5
         flex flex-col justify-between cursor-pointer overflow-hidden
-        transition-all duration-500 hover:bg-neutral-950/80
-        ${item.borderColor}
-        ${isCenter ? "opacity-100 scale-100" : "opacity-55 scale-[0.97] hover:opacity-75"}
+        transition-all duration-500 hover:scale-[1.01]
+        ${isCenter ? "opacity-100 border border-brunswick-green-500" : "opacity-55 hover:opacity-75 border border-sea-salt/20"}
       `}
     >
       {/* Gradient image area */}
-      <div className="space-y-4">
-        <div
-          className={`relative h-[180px] w-full overflow-hidden rounded-2xl bg-gradient-to-br ${item.gradient} border border-neutral-800/60 flex items-end p-4`}
-        >
-          {/* Decorative grid */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:24px_24px]" />
-
-          {/* Animated pulse dot */}
-          <div className="absolute top-4 left-4 flex items-center gap-1.5">
-            <span
-              className={`h-1.5 w-1.5 rounded-full ${item.accentColor.replace("text-", "bg-")} animate-pulse`}
-            />
-            <span className="font-sans text-lg text-neutral-400 uppercase tracking-widest">
-              {casesCopy.liveCase}
-            </span>
+      <div className="flex h-full flex-col">
+        <div className="space-y-4 flex-1">
+          <div className="relative h-[180px] w-full overflow-hidden rounded-2xl bg-sea-salt/6 border border-sea-salt/60 flex items-end p-4">
+            {item.photo ? (
+              <img
+                src={item.photo}
+                alt={item.title}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            ) : (
+              <>
+                {/* Decorative grid */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:24px_24px]" />
+              </>
+            )}
           </div>
 
-          {/* Top-right icon */}
-          <div
-            className={`absolute top-4 right-4 h-8 w-8 rounded-full ${item.iconBg} border border-neutral-800/80 backdrop-blur-md flex items-center justify-center ${item.accentColor}`}
-          >
-            <Activity className="h-3.5 w-3.5 animate-pulse" />
+          <div className="space-y-2">
+            <p className={`font-sans text-base sm:text-lg font-bold line-clamp-2 ${isCenter ? "text-brunswick-green-500" : "text-sea-salt"}`}>
+              {item.title}
+            </p>
+            <p className="font-sans text-base sm:text-lg text-sea-salt line-clamp-2">
+              {item.desc}
+            </p>
           </div>
-
-          {/* Tag chip */}
-          <span
-            className={`relative z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-lg font-sans uppercase tracking-wider border border-neutral-700/60 bg-neutral-950/70 ${item.accentColor}`}
-          >
-            <Clock className="h-2.5 w-2.5" />
-            {item.tag}
-          </span>
         </div>
 
-        <div className="space-y-1 pb-2">
-          <p className="font-sans text-lg uppercase tracking-widest text-neutral-500">
-            {item.label}
-          </p>
-          <h3 className="font-sans text-lg font-bold text-white">{item.title}</h3>
-          <p className="font-sans text-lg text-neutral-400 leading-relaxed line-clamp-2">
-            {item.desc}
-          </p>
+        <div className="mt-auto pt-4">
+          <a
+            href={item.linkPost}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`inline-flex items-center justify-center font-sans font-semibold px-4 py-1.5 rounded-full text-lg cursor-pointer self-start transition-all border ${isCenter ? "text-sea-salt border-brunswick-green-500 bg-brunswick-900" : "text-sea-salt border-sea-salt/20 bg-raisin-black-800"} hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt`}
+          >
+            Read More
+          </a>
         </div>
       </div>
 
-      {/* Footer row */}
-      <div className="flex items-center justify-between pt-4 border-t border-neutral-900 text-lg font-sans">
-        <div className="flex items-center gap-1.5 text-neutral-500">
-          <MessageSquare className="h-3.5 w-3.5" />
-          <span>{casesCopy.discussionCompleted}</span>
-        </div>
-        <span
-          className={`font-sans text-lg ${item.accentColor} flex items-center gap-1 group-hover:opacity-80 transition-opacity`}
-        >
-          {casesCopy.discussStrategy}
-          <ArrowUpRight className="h-3.5 w-3.5" />
-        </span>
-      </div>
     </div>
   );
 }
 
 // ─── Main Component ──────────────────────────────────────────────────────────
-export default function Cases({ onOpenBooking }: CasesProps) {
-  const total = caseItems.length;
+export default function Cases() {
+  const total = recentActivity.length;
 
   // ── Shared index state ──────────────────────────────────────────
   const [activeIndex, setActiveIndex] = useState(0);
@@ -190,9 +138,9 @@ export default function Cases({ onOpenBooking }: CasesProps) {
 
   // Tripled array for infinite-loop mobile slider
   const tripled = [
-    ...caseItems.map((p, i) => ({ ...p, uniqueId: `${p.id}-set0-${i}` })),
-    ...caseItems.map((p, i) => ({ ...p, uniqueId: `${p.id}-set1-${i}` })),
-    ...caseItems.map((p, i) => ({ ...p, uniqueId: `${p.id}-set2-${i}` })),
+    ...recentActivity.map((p, i) => ({ ...p, uniqueId: `${p.id}-set0-${i}` })),
+    ...recentActivity.map((p, i) => ({ ...p, uniqueId: `${p.id}-set1-${i}` })),
+    ...recentActivity.map((p, i) => ({ ...p, uniqueId: `${p.id}-set2-${i}` })),
   ];
 
   const handleMobileNext = () => {
@@ -253,41 +201,42 @@ export default function Cases({ onOpenBooking }: CasesProps) {
   }, [isPaused, activeIndex, virtualIndex, isDesktop, isTransitionEnabled]);
 
   return (
-    <section className="relative py-20 bg-[#060606] overflow-hidden">
-      <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-green-primary/[0.03] blur-[110px]" />
+    <section className="relative py-16 bg-raisin-black-800/20 overflow-hidden">
+      <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-brunswick-green-900/[0.03] blur-[110px]" />
       <div className="absolute top-0 right-0 h-64 w-64 rounded-full bg-blue-500/[0.03] blur-[100px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
         {/* Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end pb-8 border-b border-neutral-900">
-          <div className="lg:col-span-8 space-y-3">
-            <span className="inline-block px-3.5 py-2 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end pb-10 border-b border-sea-salt/20">
+          <div className="lg:col-span-8 space-y-10">
+            <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
               {casesCopy.badge}
             </span>
-            <h2 className="font-sans text-2xl sm:text-4xl font-bold tracking-tight text-white leading-none">
+            <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
               {casesCopy.titleLine1} <br />{casesCopy.titleLine2}
             </h2>
           </div>
-          <div className="lg:col-span-4 flex flex-col gap-4 items-start lg:items-end">
-            <p className="font-sans text-lg sm:text-lg text-neutral-400 leading-relaxed max-w-sm lg:text-right">
+          <div className="lg:col-span-4 flex flex-col gap-6 items-start lg:items-end">
+            <p className="font-sans text-base sm:text-lg text-sea-salt/90  max-w-sm lg:text-right">
               {casesCopy.description}
             </p>
             {/* Navigation */}
             <div className="flex items-center gap-3">
               <button
                 onClick={isDesktop ? handleDesktopPrev : handleMobilePrev}
-                className="h-9 w-9 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-brunswick-green-500 hover:border-brunswick-green-500 flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
               >
                 <ArrowLeft className="h-3.5 w-3.5" />
               </button>
-              <span className="font-sans text-lg text-neutral-500 tracking-wider">
+              <span className="font-sans text-lg text-sea-salt tracking-wider">
                 {String((isDesktop ? activeIndex : mobileDisplayIndex) + 1).padStart(2, "0")} /{" "}
                 {String(total).padStart(2, "0")}
               </span>
               <button
                 onClick={isDesktop ? handleDesktopNext : handleMobileNext}
-                className="h-9 w-9 rounded-full border border-neutral-800 bg-neutral-950/60 text-neutral-400 hover:text-brunswick-green-500 hover:border-brunswick-green-500 flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
               >
                 <ArrowRight className="h-3.5 w-3.5" />
               </button>
@@ -304,28 +253,28 @@ export default function Cases({ onOpenBooking }: CasesProps) {
           >
             <div className="flex gap-5 transition-all duration-500">
               {getDesktopIndices().map((itemIndex, pos) => {
-                const item = caseItems[itemIndex];
+                const item = recentActivity[itemIndex];
                 const isCenter = pos === 1;
                 return (
                   <div
                     key={`${item.id}-${pos}`}
                     className={`${isCenter ? "flex-[1.4]" : "flex-1"}`}
                   >
-                    <CaseCard item={item} isCenter={isCenter} onOpenBooking={onOpenBooking} />
+                    <CaseCard item={item} isCenter={isCenter} />
                   </div>
                 );
               })}
             </div>
 
             {/* Dot indicators */}
-            <div className="flex items-center justify-center gap-2 mt-6">
-              {caseItems.map((_, i) => (
+            <div className="flex items-center justify-center gap-6 mt-10">
+              {recentActivity.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setActiveIndex(i)}
                   className={`transition-all duration-300 rounded-full ${i === activeIndex
                     ? "w-6 h-1.5 bg-brunswick-green-500"
-                    : "w-1.5 h-1.5 bg-neutral-700 hover:bg-neutral-500"
+                    : "w-1.5 h-1.5 bg-sea-salt hover:bg-sea-salt"
                     }`}
                 />
               ))}
@@ -353,7 +302,6 @@ export default function Cases({ onOpenBooking }: CasesProps) {
                   <CaseCard
                     item={item}
                     isCenter={index === virtualIndex}
-                    onOpenBooking={onOpenBooking}
                   />
                 </div>
               ))}
@@ -361,7 +309,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
 
             {/* Dot indicators */}
             <div className="flex items-center justify-center gap-2 mt-6">
-              {caseItems.map((_, i) => (
+              {recentActivity.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => {
@@ -370,7 +318,7 @@ export default function Cases({ onOpenBooking }: CasesProps) {
                   }}
                   className={`transition-all duration-300 rounded-full ${i === mobileDisplayIndex
                     ? "w-6 h-1.5 bg-brunswick-green-500"
-                    : "w-1.5 h-1.5 bg-neutral-700 hover:bg-neutral-500"
+                    : "w-1.5 h-1.5 bg-sea-salt hover:bg-sea-salt"
                     }`}
                 />
               ))}
@@ -379,13 +327,13 @@ export default function Cases({ onOpenBooking }: CasesProps) {
         )}
 
         {/* Call to action marquee */}
-        <div className="overflow-hidden rounded-3xl border border-neutral-900 bg-neutral-950/30 p-4">
-          <div className="animate-marquee-text flex whitespace-nowrap gap-16 text-3xl sm:text-4xl font-sans font-extrabold uppercase tracking-[0.18em] text-white">
+        {/* <div className="overflow-hidden rounded-3xl border border-sea-salt  p-4">
+          <div className="animate-marquee-text flex whitespace-nowrap gap-16 text-3xl sm:text-4xl font-sans font-extrabold uppercase tracking-[0.18em] text-sea-salt">
             <span>{casesCopy.marqueeText}</span>
             <span>{casesCopy.marqueeText}</span>
             <span>{casesCopy.marqueeText}</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

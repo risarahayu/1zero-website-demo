@@ -183,7 +183,7 @@ export const casesCopy = {
   liveCase: "Live Case",
   discussionCompleted: "DISCUSSION COMPLETED",
   discussStrategy: "Discuss Strategy",
-  badge: "Recent client",
+  badge: "Recent Activity",
   titleLine1: "Others Already",
   titleLine2: "Took the First Step",
   description: "Teams are already turning ideas into premium, resilient system software. What high-performance framework are we building next together?",

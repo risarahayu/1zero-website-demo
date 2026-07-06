@@ -19,7 +19,7 @@ export default function BookingButton({ onClick, className = "" }: BookingButton
         bg-[linear-gradient(120deg,var(--color-sea-salt),var(--color-ivory),var(--color-dun),var(--color-green-500))]
         bg-[length:300%_300%]
         animate-gradient
-        text-neutral-950
+        text-raisin-black-800  font-sans text-lg   max-w-sm00
         font-sans font-extrabold
         text-lg sm:text-lg
         rounded-2xl

@@ -19,7 +19,11 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState<string>("home");
 
   const handleOpenBooking = () => {
-    setIsBookingOpen(true);
+    window.open(
+      "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3gWtjZcsb5BZb78RjU3eDJJcflGsC7oDWdx__RBcaDFHzZ1ivl2IZrigY4R9-r63sLfDdRjvmQ",
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   const handleCloseBooking = () => {
@@ -38,7 +42,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen selection:bg-green-primary selection:text-neutral-950">
+    <div className="relative min-h-screen selection:bg-brunswick-green-900 selection:text-sea-salt">
       {/* Primary Header/Nav bar */}
       <Header onOpenBooking={handleOpenBooking} />
 
@@ -71,7 +75,7 @@ export default function App() {
             <Testimonials />
 
             {/* Case Studies grid */}
-            <Cases onOpenBooking={handleOpenBooking} />
+            <Cases />
 
             {/* Deep Green Curved CTA scheduling Section */}
             <CTA onOpenBooking={handleOpenBooking} />

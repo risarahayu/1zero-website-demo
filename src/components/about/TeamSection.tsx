@@ -48,7 +48,7 @@ export interface TeamMember {
 export const members: TeamMember[] = [
     {
         name: 'Molly Sanders',
-        role: 'Founder',
+        role: 'Founder and CEO',
         socialMediaAccounts: {
             linkedin: { name: "Molly Sanders", url: "" },
             github: { name: "", url: "" },
@@ -57,13 +57,13 @@ export const members: TeamMember[] = [
 
         images:
         {
-            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Molly.webp`,
-            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Molly.webp`,
-            ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Molly.webp`,
-            ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Molly.webp`,
+            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Molly.png`,
+            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Molly.png`,
+            ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Molly.png`,
+            ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Molly.png`,
         },
 
-        bio: "Passionate about crafting smooth and scalable UI experiences that feel human and intuitive.",
+        bio: "Visionary leader focused on building innovative digital products and driving sustainable business growth.",
 
         techStack: [
             { name: 'React', logo: '⚛️' },
@@ -350,22 +350,22 @@ const TeamSection: React.FC = () => {
     };
 
     return (
-        <section className="py-16 text-slate-50 relative">
-            <div className="w-[75%] mx-auto">
+        <section className="py-16 text-slate-50 relative" id="about">
+            <div className="w-[75%] mx-auto space-y-10 text-center">
 
-                <h2 className="text-2xl sm:text-4xl font-bold text-center mb-8">
+                <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
                     {/* Injecting the dynamic title here! */}
                     {aboutCopy.en.teamTitle}
                 </h2>
 
                 {/* DESKTOP GRID */}
-                <div className="hidden lg:grid grid-cols-4 gap-4 pb-4">
+                <div className="hidden lg:grid grid-cols-4 gap-6 pb-4">
                     {members.map((member, idx) => (
                         <div
                             key={idx}
-                            className={`min-w-[200px] p-4 rounded-lg cursor-pointer transition-all duration-300 ${idx === activeIdx
+                            className={`min-w-[200px] p-4 rounded-lg text-start cursor-pointer transition-all duration-300 ${idx === activeIdx
                                 ? "bg-brunswick-green-900"
-                                : "bg-white/10"
+                                : "bg-sea-salt/6  backdrop-blur border-sea-salt/20"
                                 }`}
                             onClick={() => {
                                 if (!isDesktop) return;
@@ -379,7 +379,7 @@ const TeamSection: React.FC = () => {
                                     className="w-full h-full object-cover transition-opacity duration-300"
                                 />
 
-                                {/* WHITE TOP IMAGE (hover/click) */}
+                                {/* White TOP IMAGE (hover/click) */}
                                 {member.images.imageDisplayHover && (
                                     <img
                                         src={member.images.imageDisplayHover}
@@ -387,10 +387,10 @@ const TeamSection: React.FC = () => {
                                     />
                                 )}
                             </div>
-                            <h3 className="text-lg font-semibold text-white">
+                            <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt">
                                 {member.name}
                             </h3>
-                            <p className="text-lg text-gray-300">
+                            <p className="text-base sm:text-lg text-sea-salt/80">
                                 {member.role}
                             </p>
                         </div>
@@ -413,7 +413,7 @@ const TeamSection: React.FC = () => {
                                 className={`shrink-0 w-36 p-3 rounded-lg transition-all duration-300 text-left
         ${idx % topRow.length === activeIdx
                                         ? "bg-brunswick-green-900"
-                                        : "bg-white/10"
+                                        : "bg-sea-salt/6  backdrop-blur border-sea-salt/20"
                                     }`}
                             >
                                 {/* Image */}
@@ -423,12 +423,12 @@ const TeamSection: React.FC = () => {
                                 />
 
                                 {/* Name */}
-                                <h3 className="text-lg font-semibold text-white leading-tight">
+                                <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt">
                                     {member.name}
                                 </h3>
 
                                 {/* Role */}
-                                <p className="text-sm text-gray-300">
+                                <p className="text-base sm:text-lg text-raisin-black-800">
                                     {member.role}
                                 </p>
                             </button>
@@ -448,7 +448,7 @@ const TeamSection: React.FC = () => {
                                 className={`shrink-0 w-36 p-3 rounded-lg transition-all duration-300 text-left
         ${((idx % bottomRow.length) + 4) === activeIdx
                                         ? "bg-brunswick-green-900"
-                                        : "bg-white/10"
+                                        : "bg-sea-salt/6  backdrop-blur border-sea-salt/20"
                                     }`}
                             >
                                 {/* Image */}
@@ -458,12 +458,12 @@ const TeamSection: React.FC = () => {
                                 />
 
                                 {/* Name */}
-                                <h3 className="text-lg font-semibold text-white leading-tight">
+                                <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt leading-tight">
                                     {member.name}
                                 </h3>
 
                                 {/* Role */}
-                                <p className="text-sm text-gray-300">
+                                <p className="text-base sm:text-lg text-raisin-black-800">
                                     {member.role}
                                 </p>
                             </button>
@@ -474,7 +474,7 @@ const TeamSection: React.FC = () => {
 
 
                 {/* DESKTOP PREVIEW */}
-                <div className="relative mt-5 overflow-hidden border border-white/10 rounded-2xl hidden lg:block">
+                <div className="relative mt-5 overflow-hidden border border-sea-salt/20 rounded-2xl hidden lg:block">
 
                     {/* AURORA BACKGROUND */}
                     <div className="aurora">
@@ -482,129 +482,128 @@ const TeamSection: React.FC = () => {
                     </div>
 
                     {/* CONTENT */}
-                    <div className="grid lg:grid-cols-[280px_1fr_320px] relative z-10 pt-4">
+                    <div className="grid lg:grid-cols-[280px_1fr_360px] relative z-10 pt-4">
 
-                        {/* LEFT */}
-                        <div className="flex flex-col justify-between">
-                            <div className="p-8 flex flex-col justify-center">
-                                <span className="text-sm uppercase tracking-[0.25em] text-brunswick-green-500">
-                                    Team Member
-                                </span>
-
-                                <h3 className="mt-3 text-3xl font-bold text-white">
+                    {/* LEFT */}
+                    <div className="p-8 flex flex-col justify-between">
+                        <div className="space-y-10">
+                            {/* <span className="text-base md:text-lg text-start uppercase tracking-[0.25em] text-brunswick-green-500">
+                                Team Member
+                            </span> */}
+                            <div className="space-y-6">
+                                <h3 className="text-2xl text-start font-bold text-sea-salt">
                                     {activeMember.name}
                                 </h3>
-
-                                <p className="mt-2 text-zinc-400">
+                                <p className="text-base sm:text-lg text-start text-sea-salt/90">
                                     {activeMember.role}
                                 </p>
                             </div>
-                            <div className="p-8 flex flex-col justify-center">
-                                <p className="text-zinc-300">{activeMember.bio}</p>
-                            </div>
-
                         </div>
 
-                        {/* CENTER IMAGE */}
-                        <div className="relative">
-                            {activeMember.images?.ImageDetail1 && (
-                                <img
-                                    src={activeMember.images.ImageDetail1}
-                                    alt={activeMember.name}
-                                    className="w-full h-[400px] object-contain object-bottom"
-                                />
+                        {/* SOCIAL */}
+                        <div className="space-y-6">
+                        <h4 className="font-sans text-xl sm:text-2xl font-bold text-sea-salt mb-4 text-start">
+                            Social Media
+                        </h4>
+
+                        <div className="space-y-3">
+
+                            {activeMember.socialMediaAccounts.linkedin.name && (
+                            <a
+                                href={activeMember.socialMediaAccounts.linkedin.url}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
+                            >
+                                <Icon icon="mdi:linkedin" width="20" />
+                                <span>LinkedIn</span>
+                            </a>
                             )}
-                        </div>
 
-                        {/* RIGHT */}
-                        <div className="p-8 flex flex-col justify-between">
+                            {activeMember.socialMediaAccounts.github?.name && (
+                            <a
+                                href={activeMember.socialMediaAccounts.github.url}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
+                            >
+                                <Icon icon="mdi:github" width="20" />
+                                <span>GitHub</span>
+                            </a>
+                            )}
 
-                            {/* Social */}
-                            <div>
-                                <h4 className="text-lg font-semibold text-white mb-4">
-                                    Social Media
-                                </h4>
-
-                                <div className="space-y-2">
-
-                                    {activeMember.socialMediaAccounts.linkedin.name && (
-                                        <a
-                                            href={activeMember.socialMediaAccounts.linkedin.url}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            className="block text-zinc-300 hover:text-white"
-                                        >
-                                            <div className="flex group">
-                                                <div className="flex items-center gap-2 group-hover:text-brunswick-green-500">
-                                                    <Icon icon="mdi:linkedin" width="20" />
-                                                    <p>LinkedIn</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    )}
-
-                                    {activeMember.socialMediaAccounts.github?.name && (
-                                        <a
-                                            href={activeMember.socialMediaAccounts.github.url}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            className="block text-zinc-300 hover:text-white"
-                                        >
-                                            <div className="flex group">
-                                                <div className="flex items-center gap-2 group-hover:text-brunswick-green-500">
-                                                    <Icon icon="mdi:github" width="20" />
-                                                    <p>GitHub</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    )}
-
-                                    {activeMember.socialMediaAccounts.dribble?.name && (
-                                        <a
-                                            href={activeMember.socialMediaAccounts.dribble.url}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            className="block text-zinc-300 hover:text-white"
-                                        >
-                                            <div className="flex group">
-                                                <div className="flex items-center gap-2 group-hover:text-brunswick-green-500">
-                                                    <Icon icon="mdi:dribbble" width="20" />
-                                                    <p>Dribbbe</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    )}
-                                </div>
-                            </div>
-
-                            {/* SDG */}
-                            <div>
-                                <h4 className="text-lg font-semibold text-white mb-4">
-                                    Sustainable Development Goals
-                                </h4>
-
-                                <div className="flex flex-wrap gap-2">
-                                    {activeMember.sdgs.map((sdg) => (
-                                        <span
-                                            key={sdg.id}
-                                            className="px-3 py-1 text-sm rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20"
-                                        >
-                                            SDG {sdg.id} • {sdg.title}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
+                            {activeMember.socialMediaAccounts.dribble?.name && (
+                            <a
+                                href={activeMember.socialMediaAccounts.dribble.url}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
+                            >
+                                <Icon icon="mdi:dribbble" width="20" />
+                                <span>Dribbble</span>
+                            </a>
+                            )}
 
                         </div>
+                        </div>
+
+                    </div>
+
+                    {/* CENTER IMAGE */}
+                    <div className="relative flex items-end justify-center">
+                        {activeMember.images?.ImageDetail1 && (
+                        <img
+                            src={activeMember.images.ImageDetail1}
+                            alt={activeMember.name}
+                            className="w-full h-[420px] object-contain object-bottom"
+                        />
+                        )}
+                    </div>
+
+                    {/* RIGHT */}
+                    <div className="p-8 flex flex-col justify-between space-y-10">
+
+                        {/* BIO */}
+                        <div className="space-y-6 text-start">
+                        <h4 className="font-sans text-xl sm:text-2xl font-bold text-sea-salt">
+                            About
+                        </h4>
+
+                        <p className="text-base sm:text-lg text-start text-sea-salt/90 ">
+                            {activeMember.bio}
+                        </p>
+                        </div>
+
+                        {/* SDGs */}
+                        <div className="space-y-6">
+
+                        <h4 className="font-sans text-xl sm:text-2xl font-bold text-sea-salt text-start">
+                            Sustainable Development Goals
+                        </h4>
+
+                        <div className="flex flex-wrap gap-2">
+                            {activeMember.sdgs.map((sdg) => (
+                                <img
+                                    key={sdg.id}
+                                    src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(sdg.id).padStart(2, "0")}.png`}
+                                    alt={`SDG ${sdg.id}`}
+                                    className="w-16 h-16 object-contain"
+                                />
+                            ))}
+                        </div>
+
+                        </div>
+
+                    </div>
 
                     </div>
                 </div>
 
                 {/* MODAL ONLY MOBILE + TABLET */}
                 {selectedMember && !isDesktop && (
-                    <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/80 backdrop-blur-sm p-6">
+                    <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-raisin-black-900/80 backdrop-blur-sm p-6">
 
-                        <div className="relative w-full max-w-2xl rounded-2xl overflow-hidden border border-brunswick-green-900 bg-zinc-950 shadow-2xl">
+                        <div className="relative w-full max-w-2xl rounded-2xl overflow-hidden border border-brunswick-green-900 bg-raisin-black-900-950 shadow-2xl">
 
                             {/* Close button */}
                             <button
@@ -612,7 +611,7 @@ const TeamSection: React.FC = () => {
                                     setSelectedMember(null);
                                     setIsPaused(false);
                                 }}
-                                className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 text-white flex items-center justify-center transition"
+                                className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-raisin-black-900/60 hover:bg-raisin-black-900/60 text-sea-salt flex items-center justify-center transition"
                             >
                                 ✕
                             </button>
@@ -635,50 +634,54 @@ const TeamSection: React.FC = () => {
                                 <div className="p-6 md:p-8 flex flex-col space-y-5">
 
                                     {/* Header */}
-                                    <div>
-                                        <span className="text-sm uppercase tracking-[0.25em] text-brunswick-green-500">
+                                    <div className="space-y-10 flex flex-col text-start">
+                                        {/* <span className="float-left text-base md:text-lg text-start uppercase tracking-[0.25em] text-brunswick-green-500">
                                             Team Member
-                                        </span>
+                                        </span> */}
+                                        <div className="space-y-2">
+                                            <h3 className="mt-3 font-sans text-xl sm:text-2xl font-bold text-sea-salt">
+                                                {selectedMember.name}
+                                            </h3>
 
-                                        <h3 className="mt-3 text-2xl md:text-3xl font-bold text-white">
-                                            {selectedMember.name}
-                                        </h3>
-
-                                        <p className="mt-1 text-lg text-zinc-400">
-                                            {selectedMember.role}
-                                        </p>
+                                            <p className="mt-1 text-base sm:text-lg text-start text-raisin-black-900-400">
+                                                {selectedMember.role}
+                                            </p>
+                                        </div>
                                     </div>
 
                                     {/* Bio */}
-                                    <div className="text-lg text-zinc-300 leading-relaxed">
-                                        <p>{selectedMember.bio}</p>
+                                    <div className="text-sea-salt/90 text-start">
+                                        <p className="text-base sm:text-lg">{selectedMember.bio}</p>
                                     </div>
 
                                     {/* Tech stack */}
-                                    <div className="flex flex-wrap items-center gap-2">
-                                        <span className="text-sm text-zinc-500 mr-1">Tech:</span>
+                                    {/* <div className="flex flex-wrap items-center gap-2">
+                                        <span className="text-base md:text-lg  text-raisin-black-900-500 mr-1">Tech:</span>
 
                                         {selectedMember.techStack?.map((tech) => (
                                             <div
                                                 key={tech.name}
-                                                className="flex items-center gap-1 px-2 py-1 rounded-md bg-white/5 border border-white/10 text-sm text-zinc-300"
+                                                className="flex items-center gap-1 px-2 py-1 rounded-md bg-sea-salt/5 border border-sea-salt/10 text-base md:text-lg  text-sea-salt/90"
                                             >
                                                 <span>{tech.logo}</span>
                                                 <span>{tech.name}</span>
                                             </div>
                                         ))}
-                                    </div>
+                                    </div> */}
 
                                     {/* SDGs */}
-                                    <div className="flex flex-wrap gap-2">
-                                        {selectedMember.sdgs?.map((sdg) => (
-                                            <span
-                                                key={sdg.id}
-                                                className="px-3 py-1 text-[11px] rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20"
-                                            >
-                                                SDG {sdg.id} • {sdg.title}
-                                            </span>
-                                        ))}
+                                    <div className="flex flex-wrap gap-2 flex-col text-start">
+                                        <p className="text-base md:text-lg  text-raisin-black-900-500 mr-1">SDG(s):</p>
+                                        <div className="flex gap-2">
+                                            {activeMember.sdgs.map((sdg) => (
+                                                <img
+                                                    key={sdg.id}
+                                                    src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(sdg.id).padStart(2, "0")}.png`}
+                                                    alt={`SDG ${sdg.id}`}
+                                                    className="w-16 h-16 object-contain"
+                                                />
+                                            ))}
+                                        </div>
                                     </div>
 
                                 </div>

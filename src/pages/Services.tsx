@@ -13,7 +13,7 @@ const Services: React.FC = () => {
   const handleCloseBooking = () => setIsBookingOpen(false);
 
   return (
-    <div className="text-slate-50 min-h-screen overflow-x-hidden font-sans relative">
+    <div className="text-raisin-black-800 min-h-screen overflow-x-hidden font-sans relative" id="services">
       {/* Aurora Background */}
       <div className="aurora">
         <div className="aurora-layer aurora-1"></div>

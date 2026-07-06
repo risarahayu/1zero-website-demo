@@ -6,9 +6,9 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="relative bg-[#050505] pt-20 pb-12 border-t border-neutral-900 overflow-hidden">
+    <footer id="footer" className="relative bg-raisin-black-800/20 py-16 pb-12 border-t border-sea-salt/20 overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-green-primary/[0.02] blur-[120px]" />
+      <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-brunswick-green-900/[0.02] blur-[120px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
 
@@ -17,13 +17,13 @@ export default function Footer() {
 
           {/* LEFT COLUMN: BIG GREETING */}
           <div className="lg:col-span-5 space-y-6">
-            <h2 className="font-sans text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-none">
+            <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
               {footerCopy.connectTitle} <br />
               <span className="animate-gradient-text text-gradient-impact text-transparent bg-clip-text bg-gradient-to-r from-[var(--ivory)] to-[var(--green-900)]">
                 {footerCopy.connectGradient}
               </span>
             </h2>
-            <p className="font-sans text-lg text-neutral-400 leading-relaxed max-w-sm">
+            <p className="font-sans text-base sm:text-lg text-sea-salt  max-w-sm">
               {footerCopy.description}
             </p>
 
@@ -43,7 +43,7 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="no-referrer"
-                    className="h-9 w-9 rounded-xl border border-neutral-900 bg-[#0a0a0c] hover:bg-neutral-950 hover:border-emerald-500/30 hover:text-emerald-400 flex items-center justify-center text-neutral-400 transition-colors"
+                    className="h-9 w-9 rounded-xl border border-brunswick-green-500 bg-raisin-black-800 hover:bg-brunswick-green-500/30 hover:border-brunswick-green-500/30 hover:text-brunswick-green-500 flex items-center justify-center text-brunswick-green-500 transition-colors"
                   >
                     <Icon className="h-4 w-4" />
                   </a>
@@ -56,11 +56,11 @@ export default function Footer() {
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8 font-sans">
 
             {/* Email & Contact */}
-            <div className="space-y-4">
-              <span className="block font-sans text-lg text-neutral-500 uppercase tracking-widest font-bold">
+            <div className="space-y-6">
+              <span className="block font-sans text-lg text-sea-salt/90 uppercase tracking-widest font-bold">
                 {footerCopy.directInquiries}
               </span>
-              <div className="space-y-3 text-lg  text-neutral-300">
+              <div className="space-y-3 text-lg  text-sea-salt">
                 <a
                   id="footer-email-link"
                   href="mailto:info@1zero.biz"
@@ -80,22 +80,22 @@ export default function Footer() {
               </div>
 
               {/* Quick links tag lines */}
-              <div className="pt-4 border-t border-neutral-900 space-y-1 text-[11px] text-neutral-500 ">
+              <div className="pt-4 border-t border-sea-salt/20 text-lg text-sea-salt/90 ">
                 <span className="block text-lg">{footerCopy.workingHours} </span>
                 {/* <span className="block">Engineers responsive via Slack/Teams logs.</span> */}
               </div>
             </div>
 
             {/* Address */}
-            <div className="space-y-4">
-              <span className="block font-sans text-lg text-neutral-500 uppercase tracking-widest font-bold">
+            <div className="space-y-6">
+              <span className="block font-sans text-lg text-sea-saltuppercase tracking-widest font-bold">
                 {footerCopy.primaryLaboratory}
               </span>
-              <div className="flex gap-2 text-lg text-neutral-300 leading-relaxed font-sans">
+              <div className="flex gap-2 text-lg text-sea-salt  font-sans">
                 <MapPin className="h-4 w-4 text-brunswick-green-500 shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-white block font-sans text-lg">{footerCopy.officeTitle}</strong>
-                  <span>{footerCopy.officeAddress}</span>
+                  <strong className="text-sea-salt block font-sans text-lg">{footerCopy.officeTitle}</strong>
+                  <span className="text-sea-salt/90">{footerCopy.officeAddress}</span>
                 </div>
               </div>
             </div>
@@ -105,14 +105,14 @@ export default function Footer() {
         </div>
 
         {/* Lower copyright bar */}
-        <div className="pt-8 border-t border-neutral-900 text-lg font-sans text-neutral-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="pt-8 border-t border-sea-salt/20 text-lg font-sans text-sea-salt flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3 flex-col items-start sm:flex-row">
-            <Logo1Zero className="h-4 text-neutral-400 opacity-60 hover:opacity-100 transition-opacity" glow={false} />
+            <Logo1Zero className="h-4 text-sea-salt opacity-60 hover:opacity-100 transition-opacity" glow={false} />
             <span>© {currentYear} {footerCopy.copyright}</span>
           </div>
 
           <div className="flex items-center gap-4 text-lg uppercase">
-            <a href="#home" className="hover:text-emerald-400 hover:underline transition-colors">{footerCopy.backToTop}</a>
+            <a href="#home" className="hover:text-brunswick-green-500 hover:underline transition-colors">{footerCopy.backToTop}</a>
             <span>•</span>
             <span className="text-brunswick-green-500">{footerCopy.madeForDoubleImpact}</span>
           </div>

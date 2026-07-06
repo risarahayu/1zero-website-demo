@@ -75,10 +75,10 @@ export default function ServicesHero() {
 
                 {/* LEFT */}
                 <div>
-                    <h1 className="text-4xl md:text-6xl font-semibold leading-tight text-white">
+                    <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold text-sea-salt leading-[1.1]">
                         {servicesCopy.heroTextPrefix}{" "}
                         <br />
-                        <span className={`font-bold ${active.color}`}>
+                        <span className={`font-extrabold ${active.color}`}>
                             {text}
                             <span className="animate-pulse">|</span>
                         </span>
@@ -86,7 +86,7 @@ export default function ServicesHero() {
                         {servicesCopy.heroTextSuffix}
                     </h1>
 
-                    <p className="mt-6 text-neutral-400 max-w-2xl mx-auto">
+                    <p className="mt-6 text-sea-salt text-base sm:text-lg max-w-2xl mx-auto">
                         {servicesCopy.heroTagline}
                     </p>
                 </div>
@@ -94,7 +94,7 @@ export default function ServicesHero() {
                 {/* RIGHT (SMOOTH IMAGE) */}
                 <div className="relative">
 
-                    <div className="relative rounded-2xl overflow-hidden border border-neutral-900 bg-neutral-950/30 h-[360px]">
+                    <div className="relative rounded-2xl overflow-hidden border border-sea-salt bg-sea-salt/30 h-[360px]">
 
                         {/* IMAGE */}
                         <img

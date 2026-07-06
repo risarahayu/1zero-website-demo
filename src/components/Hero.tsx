@@ -17,6 +17,21 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         <div className="aurora-layer aurora-2" />
         <div className="aurora-layer aurora-3" />
       </div>
+      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10 pt-10 pb-10"> */}
+      {/* Upper Micro Label */}
+      {/* <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-2 rounded-full border border-sea-salt/80 bg-sea-salt/60 p-1 px-4 text-lg backdrop-blur-sm shadow-md"
+        >
+          <span className="h-2 w-2 rounded-full bg-brunswick-green-900 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.9)]" />
+          <span className="font-sans text-lg font-medium uppercase tracking-widest text-sea-salt">
+            {heroCopy.performanceLabel}
+          </span>
+        </motion.div> */}
+      {/* </div> */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-10 border-b border-sea-salt/20">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12 pt-10 pb-10">
 
@@ -26,7 +41,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1]"
+            className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold text-sea-salt leading-[1.1]"
           >
             {heroCopy.simplifyTitle} <br />
             <span className="animate-gradient-text text-gradient ">
@@ -38,7 +53,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-2xl mx-auto font-sans text-sea-salt text-lg sm:text-lg leading-relaxed"
+            className="max-w-2xl mx-auto font-sans text-sea-salt text-base sm:text-lg"
           >
             {heroCopy.tagline}
           </motion.p>
@@ -49,7 +64,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="max-w-xl mx-auto grid grid-cols-1 md:grid-cols-5 items-stretch rounded-2xl border border-color-sea-salt bg-[#09090b]/80 p-1 backdrop-blur-md shadow-2xl"
+          className="max-w-xl mx-auto grid grid-cols-1 md:grid-cols-5 items-stretch rounded-2xl border border-color-sea-salt bg-raisin-black-800 p-1 backdrop-blur-md shadow-2xl"
         >
           {/* Text box (Col-span 3) */}
           <div className="md:col-span-3 flex flex-col justify-center items-start text-left p-5 md:pl-6 space-y-2 border-b md:border-b-0  border-neutral-800/80">
@@ -62,10 +77,10 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           <button
             id="hero-book-call-card"
             onClick={onOpenBooking}
-            className="md:col-span-2 group flex flex-col justify-center items-center gap-2 p-3 rounded-xl bg-brunswick-green-primary hover:bg-brunswick-green-700 hover:text-white text-sea-salt text-center transition-all cursor-pointer font-sans font-black text-lg relative overflow-hidden"
+            className="md:col-span-2 group flex flex-col justify-center items-center gap-2 p-3 rounded-xl bg-brunswick-green-900 hover:bg-brunswick-green-700 hover:text-sea-salt text-sea-salt text-center transition-all cursor-pointer font-sans font-black text-lg relative overflow-hidden"
           >
             {/* Soft inner glow */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:bg-brunswick-green-700 transition-opacity" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-sea-salt/10 to-transparent bg-brunswick-green-900 opacity-0 group-hover:bg-brunswick-green-700 transition-opacity" />
             <PhoneCall className="h-5 w-5 animate-bounce shrink-0" />
             <span className="tracking-wider uppercase">{heroCopy.ctaButtonText}</span>
             <span className="flex items-center gap-1 font-sans text-lg  font-medium">
@@ -82,7 +97,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           transition={{ duration: 1, delay: 0.4 }}
           className=""
         >
-          <span className="font-sans text-lg uppercase tracking-widest text-neutral-500 select-none">
+          <span className="font-sans text-lg uppercase tracking-widest text-sea-salt select-none">
             {heroCopy.deliveringLabel}
           </span>
         </motion.div>
@@ -105,7 +120,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               {clientLogos.map((client) => (
                 <div
                   key={`a-${client.name}`}
-                  className="flex items-center justify-center px-6 py-3 rounded-xl border border-neutral-900 bg-neutral-950/40 hover:border-emerald-500/30 transition-all group cursor-default shrink-0"
+                  className="flex items-center justify-center px-6 py-3 rounded-xl border border-sea-salt/20 hover:border-brunswick-green-500/30 transition-all group cursor-default shrink-0"
                 >
                   <img
                     src={client.logoImg}
@@ -118,7 +133,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               {clientLogos.map((client) => (
                 <div
                   key={`b-${client.name}`}
-                  className="flex items-center justify-center px-6 py-3 rounded-xl border border-neutral-900 bg-neutral-950/40 hover:border-emerald-500/30 transition-all group cursor-default shrink-0"
+                  className="flex items-center justify-center px-6 py-3 rounded-xl border border-sea-salt/20 hover:border-brunswick-green-500/30 transition-all group cursor-default shrink-0"
                   aria-hidden="true"
                 >
                   <img

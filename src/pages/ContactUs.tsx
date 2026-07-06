@@ -89,14 +89,14 @@ export default function ContactPage() {
     };
 
     return (
-        <section className="relative w-full min-h-screen bg-[#030303] text-white overflow-hidden py-24 px-6 flex items-center">
+        <section className="relative w-full min-h-screen bg-raisin-black-900 text-sea-salt overflow-hidden py-16 px-6 flex items-center" id="contact">
 
             {/* ==========================================
                BACKGROUND GLOWS (Efek Aurora Global)
                ========================================== */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                <div className="absolute top-[10%] left-[-10%] w-[500px] h-[500px] bg-[#1D5745] opacity-20 blur-[130px] rounded-full animate-slow-pan"></div>
-                <div className="absolute bottom-[15%] right-[-5%] w-[450px] h-[450px] bg-[#307962] opacity-15 blur-[120px] rounded-full animate-slow-pan" style={{ animationDelay: "-3s" }}></div>
+                <div className="absolute top-[10%] left-[-10%] w-[500px] h-[500px] bg-brunswick-green-900 opacity-20 blur-[130px] rounded-full animate-slow-pan"></div>
+                <div className="absolute bottom-[15%] right-[-5%] w-[450px] h-[450px] bg-raisin-black-900 opacity-15 blur-[120px] rounded-full animate-slow-pan" style={{ animationDelay: "-3s" }}></div>
             </div>
 
             {/* Container Layout Utama */}
@@ -105,48 +105,49 @@ export default function ContactPage() {
                 {/* ==========================================
                    LEFT SIDE: Title & Company Details
                    ========================================== */}
-                <div className="lg:col-span-5 flex flex-col justify-center space-y-8">
+                <div className="lg:col-span-5 flex flex-col justify-center space-y-10">
                     <div>
-                        <span className="inline-block px-3.5 py-2 rounded-full border border-neutral-800 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
+                        <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
                             {contactUsCopy.badge}
                         </span>
-                        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mt-3 text-gradient leading-tight">
+                    </div>
+                    <div className="space-y-6">
+                        <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold text-sea-salt leading-[1.1]">
                             {contactUsCopy.title}
                         </h1>
-                        <p className="text-white/60 mt-4 text-lg md:text-lg leading-relaxed">
+                        <p className="text-sea-salt/60 mt-4 text-base sm:text-lg ">
                             {contactUsCopy.description}
                         </p>
                     </div>
-
                     {/* Info Kontak Perusahaan */}
-                    <div className="space-y-4">
-                        <div className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:border-brunswick-green-500/20 hover:bg-white/[0.04] transition-all duration-300 group">
+                    <div className="space-y-6">
+                        <div className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/5 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group">
                             <div className="p-3 rounded-lg bg-brunswick-green-900/20 border border-brunswick-green-500/20 text-brunswick-green-900 group-hover:shadow-[0_0_12px_rgba(133,223,195,0.4)] transition-all duration-300">
                                 <Mail className="w-5 h-5" />
                             </div>
                             <div>
-                                <p className="text-sm text-white/40 font-medium uppercase tracking-wider">{contactUsCopy.emailUsLabel}</p>
-                                <p className="text-white/80 font-medium text-lg md:text-lg">{contactUsCopy.emailUsVal}</p>
+                                <p className="text-sm text-sea-salt/40 font-medium uppercase tracking-wider">{contactUsCopy.emailUsLabel}</p>
+                                <p className="text-sea-salt/80 font-medium text-base sm:text-lg">{contactUsCopy.emailUsVal}</p>
                             </div>
                         </div>
 
-                        <div className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:border-brunswick-green-500/20 hover:bg-white/[0.04] transition-all duration-300 group">
+                        <div className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/5 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group">
                             <div className="p-3 rounded-lg bg-brunswick-green-900/20 border border-brunswick-green-500/20 text-brunswick-green-900 group-hover:shadow-[0_0_12px_rgba(133,223,195,0.4)] transition-all duration-300">
                                 <Phone className="w-5 h-5" />
                             </div>
                             <div>
-                                <p className="text-sm text-white/40 font-medium uppercase tracking-wider">{contactUsCopy.callUsLabel}</p>
-                                <p className="text-white/80 font-medium text-lg md:text-lg">{contactUsCopy.callUsVal}</p>
+                                <p className="text-sm text-sea-salt/40 font-medium uppercase tracking-wider">{contactUsCopy.callUsLabel}</p>
+                                <p className="text-sea-salt/80 font-medium text-base sm:text-lg">{contactUsCopy.callUsVal}</p>
                             </div>
                         </div>
 
-                        <div className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:border-brunswick-green-500/20 hover:bg-white/[0.04] transition-all duration-300 group">
+                        <div className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/5 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group">
                             <div className="p-3 rounded-lg bg-brunswick-green-900/20 border border-brunswick-green-500/20 text-brunswick-green-900 group-hover:shadow-[0_0_12px_rgba(133,223,195,0.4)] transition-all duration-300">
                                 <MapPin className="w-5 h-5" />
                             </div>
                             <div>
-                                <p className="text-sm text-white/40 font-medium uppercase tracking-wider">{contactUsCopy.locationLabel}</p>
-                                <p className="text-white/80 font-medium text-lg md:text-lg">
+                                <p className="text-sm text-sea-salt/40 font-medium uppercase tracking-wider">{contactUsCopy.locationLabel}</p>
+                                <p className="text-sea-salt/80 font-medium text-base sm:text-lg">
                                     {contactUsCopy.locationVal}
                                 </p>
                             </div>
@@ -154,12 +155,12 @@ export default function ContactPage() {
                     </div>
 
                     {/* Placeholder Stylized Map Neon (Optional) */}
-                    <div className="relative h-32 w-full rounded-xl border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent overflow-hidden flex items-center justify-center group border-dashed">
+                    {/* <div className="relative h-32 w-full rounded-xl border border-sea-salt/5 bg-gradient-to-br from-sea-salt/[0.02] to-transparent overflow-hidden flex items-center justify-center group border-dashed">
                         <div className="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:16px_16px]"></div>
-                        <span className="text-sm text-white/30 tracking-widest font-mono uppercase group-hover:text-green-500/50 transition-colors">
+                        <span className="text-sm text-sea-salt/30 tracking-widest font-mono uppercase group-hover:text-green-500/50 transition-colors">
                             [ System Grid Coordinates Active ]
                         </span>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* ==========================================
@@ -167,18 +168,18 @@ export default function ContactPage() {
                    ========================================== */}
                 <div className="lg:col-span-7 relative">
                     {/* Aurora Glow khusus di belakang container kartu form */}
-                    <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-green-500/10 to-emerald-500/10 blur-2xl opacity-60 pointer-events-none"></div>
+                    <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-green-500/10 to-brunswick-green-500/10 blur-2xl opacity-60 pointer-events-none"></div>
 
                     {/* Form Container (Glassmorphic) */}
-                    <div className="relative p-8 md:p-10 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-xl shadow-[0_0_50px_rgba(0,0,0,0.8)]">
+                    <div className="relative p-8 md:p-10 rounded-2xl border border-sea-salt/10 bg-raisin-black-900/60 backdrop-blur-xl shadow-[0_0_50px_rgba(0,0,0,0.8)]">
 
                         {/* VALIDASI KONDISI: SUCCESS STATE BLOCK */}
                         {isSubmitted && (
                             <div className="mb-8 p-4 rounded-xl border border-green-500/30 bg-green-500/5 flex items-start gap-3 shadow-[0_0_15px_rgba(133,223,195,0.1)] transition-all duration-300">
                                 <CheckCircle className="w-5 h-5 text-brunswick-green-900 flex-shrink-0 mt-0.5" />
                                 <div>
-                                    <h4 className="text-brunswick-green-900 font-semibold text-lg">{contactUsCopy.successTitle}</h4>
-                                    <p className="text-white/60 text-sm mt-1">{contactUsCopy.successDesc}</p>
+                                    <h4 className="font-sans text-xl sm:text-2xl font-bold text-brunswick-green-900">{contactUsCopy.successTitle}</h4>
+                                    <p className="text-sea-salt/60 text-base sm:text-lg mt-1">{contactUsCopy.successDesc}</p>
                                 </div>
                             </div>
                         )}
@@ -188,8 +189,8 @@ export default function ContactPage() {
                             <div className="mb-8 p-4 rounded-xl border border-red-500/30 bg-red-500/5 flex items-start gap-3 shadow-[0_0_15px_rgba(239,68,68,0.1)] transition-all duration-300">
                                 <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                                 <div>
-                                    <h4 className="text-red-500 font-semibold text-lg">{contactUsCopy.failTitle}</h4>
-                                    <p className="text-white/60 text-sm mt-1">{formError}</p>
+                                    <h4 className="font-sans text-xl sm:text-2xl font-bold text-red-500">{contactUsCopy.failTitle}</h4>
+                                    <p className="text-sea-salt/60 text-base sm:text-lg mt-1">{formError}</p>
                                 </div>
                             </div>
                         )}
@@ -209,7 +210,7 @@ export default function ContactPage() {
 
                             {/* FIELD 1: NAME (Kondisi Default / Error) */}
                             <div className="space-y-2">
-                                <label className="text-sm font-semibold text-white/50 uppercase tracking-wider">
+                                <label className="text-sm font-semibold text-sea-salt/50 uppercase tracking-wider">
                                     {contactUsCopy.nameLabel}
                                 </label>
                                 <input
@@ -218,9 +219,9 @@ export default function ContactPage() {
                                     value={formData.name}
                                     onChange={handleChange}
                                     placeholder="John Doe"
-                                    className={`w-full px-4 py-3.5 bg-white/[0.03] text-white text-lg rounded-xl border outline-none transition-all duration-300 focus:bg-white/[0.05] ${errors.name
+                                    className={`w-full px-4 py-3.5 bg-sea-salt/[0.03] text-sea-salt text-lg rounded-xl border outline-none transition-all duration-300 focus:bg-sea-salt/[0.05] ${errors.name
                                         ? "border-red-500/40 focus:border-red-500 focus:shadow-[0_0_15px_rgba(239,68,68,0.25)]"
-                                        : "border-white/10 focus:border-brunswick-green-900/60 focus:shadow-[0_0_15px_rgba(133,223,195,0.2)]"
+                                        : "border-sea-salt/10 focus:border-brunswick-green-900/60 focus:shadow-[0_0_15px_rgba(133,223,195,0.2)]"
                                         }`}
                                 />
                                 {errors.name && (
@@ -232,7 +233,7 @@ export default function ContactPage() {
 
                             {/* FIELD 2: EMAIL (Kondisi Default / Error) */}
                             <div className="space-y-2">
-                                <label className="text-sm font-semibold text-white/50 uppercase tracking-wider">
+                                <label className="text-sm font-semibold text-sea-salt/50 uppercase tracking-wider">
                                     {contactUsCopy.emailLabel}
                                 </label>
                                 <input
@@ -241,9 +242,9 @@ export default function ContactPage() {
                                     value={formData.email}
                                     onChange={handleChange}
                                     placeholder="john@company.com"
-                                    className={`w-full px-4 py-3.5 bg-white/[0.03] text-white text-lg rounded-xl border outline-none transition-all duration-300 focus:bg-white/[0.05] ${errors.email
+                                    className={`w-full px-4 py-3.5 bg-sea-salt/[0.03] text-sea-salt text-lg rounded-xl border outline-none transition-all duration-300 focus:bg-sea-salt/[0.05] ${errors.email
                                         ? "border-red-500/40 focus:border-red-500 focus:shadow-[0_0_15px_rgba(239,68,68,0.25)]"
-                                        : "border-white/10 border-brunswick-green-900/60 focus:shadow-[0_0_15px_rgba(133,223,195,0.2)]"
+                                        : "border-sea-salt/10 border-brunswick-green-900/60 focus:shadow-[0_0_15px_rgba(133,223,195,0.2)]"
                                         }`}
                                 />
                                 {errors.email && (
@@ -255,7 +256,7 @@ export default function ContactPage() {
 
                             {/* FIELD 3: MESSAGE (Kondisi Default / Error) */}
                             <div className="space-y-2">
-                                <label className="text-sm font-semibold text-white/50 uppercase tracking-wider">
+                                <label className="text-sm font-semibold text-sea-salt/50 uppercase tracking-wider">
                                     {contactUsCopy.messageLabel}
                                 </label>
                                 <textarea
@@ -264,7 +265,7 @@ export default function ContactPage() {
                                     value={formData.message}
                                     onChange={handleChange}
                                     placeholder={contactUsCopy.messagePlaceholder}
-                                    className={`w-full px-4 py-3.5 bg-white/[0.03] text-white text-lg rounded-xl border outline-none transition-all duration-300 resize-none focus:bg-white/[0.05] ${errors.message
+                                    className={`w-full px-4 py-3.5 bg-sea-salt/[0.03] text-sea-salt text-lg rounded-xl border outline-none transition-all duration-300 resize-none focus:bg-sea-salt/[0.05] ${errors.message
                                         ? "border-red-500/40 focus:border-red-500 focus:shadow-[0_0_15px_rgba(239,68,68,0.25)]"
                                         : "border-brunswick-green-900/60 focus:shadow-[0_0_15px_rgba(133,223,195,0.2)]"
                                         }`}
