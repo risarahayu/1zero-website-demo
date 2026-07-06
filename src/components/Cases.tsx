@@ -208,9 +208,9 @@ export default function Cases() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
         {/* Header */}
-        
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end pb-10 border-b border-sea-salt/20">
-          <div className="lg:col-span-8 space-y-10">
+
+        <div className="flex flex-col gap-10 items-center  pb-10 border-b border-sea-salt/20">
+          <div className="lg:col-span-8 space-y-10 text-center [text-align-last:center]">
             <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
               {casesCopy.badge}
             </span>
@@ -219,28 +219,10 @@ export default function Cases() {
             </h2>
           </div>
           <div className="lg:col-span-4 flex flex-col gap-6 items-start lg:items-end">
-            <p className="font-sans text-base sm:text-lg text-sea-salt/90  max-w-sm lg:text-right">
+            {/* <p className="font-sans text-base sm:text-lg text-sea-salt/90  max-w-sm lg:text-right">
               {casesCopy.description}
-            </p>
-            {/* Navigation */}
-            <div className="flex items-center gap-3">
-              <button
-                onClick={isDesktop ? handleDesktopPrev : handleMobilePrev}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
-              >
-                <ArrowLeft className="h-3.5 w-3.5" />
-              </button>
-              <span className="font-sans text-lg text-sea-salt tracking-wider">
-                {String((isDesktop ? activeIndex : mobileDisplayIndex) + 1).padStart(2, "0")} /{" "}
-                {String(total).padStart(2, "0")}
-              </span>
-              <button
-                onClick={isDesktop ? handleDesktopNext : handleMobileNext}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
-              >
-                <ArrowRight className="h-3.5 w-3.5" />
-              </button>
-            </div>
+            </p> */}
+
           </div>
         </div>
 
@@ -267,7 +249,7 @@ export default function Cases() {
             </div>
 
             {/* Dot indicators */}
-            <div className="flex items-center justify-center gap-6 mt-10">
+            {/* <div className="flex items-center justify-center gap-6 mt-10">
               {recentActivity.map((_, i) => (
                 <button
                   key={i}
@@ -278,6 +260,25 @@ export default function Cases() {
                     }`}
                 />
               ))}
+            </div> */}
+            {/* Navigation */}
+            <div className="flex items-center gap-3 pt-10 justify-center">
+              <button
+                onClick={isDesktop ? handleDesktopPrev : handleMobilePrev}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
+              >
+                <ArrowLeft className="h-3.5 w-3.5" />
+              </button>
+              <span className="font-sans text-lg text-sea-salt tracking-wider">
+                {String((isDesktop ? activeIndex : mobileDisplayIndex) + 1).padStart(2, "0")} /{" "}
+                {String(total).padStart(2, "0")}
+              </span>
+              <button
+                onClick={isDesktop ? handleDesktopNext : handleMobileNext}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
+              >
+                <ArrowRight className="h-3.5 w-3.5" />
+              </button>
             </div>
           </div>
         )}
@@ -308,7 +309,7 @@ export default function Cases() {
             </div>
 
             {/* Dot indicators */}
-            <div className="flex items-center justify-center gap-2 mt-6">
+            {/* <div className="flex items-center justify-center gap-2 mt-6">
               {recentActivity.map((_, i) => (
                 <button
                   key={i}
@@ -322,6 +323,25 @@ export default function Cases() {
                     }`}
                 />
               ))}
+            </div> */}
+            {/* Navigation */}
+            <div className="flex items-center gap-3 pt-10 justify-content-center">
+              <button
+                onClick={isDesktop ? handleDesktopPrev : handleMobilePrev}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
+              >
+                <ArrowLeft className="h-3.5 w-3.5" />
+              </button>
+              <span className="font-sans text-lg text-sea-salt tracking-wider">
+                {String((isDesktop ? activeIndex : mobileDisplayIndex) + 1).padStart(2, "0")} /{" "}
+                {String(total).padStart(2, "0")}
+              </span>
+              <button
+                onClick={isDesktop ? handleDesktopNext : handleMobileNext}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
+              >
+                <ArrowRight className="h-3.5 w-3.5" />
+              </button>
             </div>
           </div>
         )}

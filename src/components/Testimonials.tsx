@@ -15,15 +15,15 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="relative py-16 bg-raisin-black-800/20">
+    <section className="relative py-16 ">
       {/* Soft auroral glow in corner */}
       <div className="absolute top-1/2 right-10 -z-10 h-72 w-72 rounded-full bg-brunswick-green-900/[0.03] blur-[110px]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <div className="max-w-7xl justify-items-center mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
         {/* Title Area */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-          <div className="space-y-10 text-left">
+        <div className="flex flex-col gap-10 items-center text-center">
+          <div className="space-y-10" text-center>
             <span className="inline-block px-3.5 py-1 rounded-full border border-sea-salt/20 text-lg font-sans uppercase tracking-widest text-brunswick-green-500 bg-brunswick-green-500/5">
               {testimonialsCopy.badge}
             </span>
@@ -31,23 +31,7 @@ export default function Testimonials() {
               {testimonialsCopy.titleLine1} <br />{testimonialsCopy.titleLine2}
             </h2>
           </div>
-          {/* Slider Controllers on desktop */}
-          <div className="hidden md:flex items-center gap-2">
-            <button
-              id="testimonial-prev-btn"
-              onClick={handlePrev}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
-            >
-              <ArrowLeft className="h-4 w-4" />
-            </button>
-            <button
-              id="testimonial-next-btn"
-              onClick={handleNext}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
-            >
-              <ArrowRight className="h-4 w-4" />
-            </button>
-          </div>
+
 
         </div>
 
@@ -94,11 +78,10 @@ export default function Testimonials() {
                   </div>
                   <div className="leading-tight">
                     <span
-                      className={`block font-sans text-lg font-bold transition-colors ${
-                        isActiveMobile
-                          ? "text-brunswick-green-500"
-                          : "text-sea-salt"
-                      }`}
+                      className={`block font-sans text-lg font-bold transition-colors ${isActiveMobile
+                        ? "text-brunswick-green-500"
+                        : "text-sea-salt"
+                        }`}
                     >
                       {t.name}
                     </span>
@@ -112,27 +95,21 @@ export default function Testimonials() {
           })}
         </div>
 
-        {/* Mobile controls */}
-        <div className="flex justify-center items-center gap-3 pt-4 md:hidden">
+        {/* Slider Controllers */}
+        <div className="flex items-center gap-3  justify-center">
           <button
-            id="testimonial-prev-mobile"
             onClick={handlePrev}
-            className="p-3 border border-sea-salt/20 bg-raisin-black-900 rounded-xl text-sea-salt hover:text-dun"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
           </button>
-          <div className="flex items-center gap-1.5">
-            {testimonials.map((_, idx) => (
-              <div
-                key={idx}
-                className={`h-1.5 rounded-full transition-all duration-300 ${activeSlide === idx ? "w-6 bg-brunswick-green-500" : "w-1.5 bg-sea-salt"}`}
-              />
-            ))}
-          </div>
+          <span className="font-sans text-lg text-sea-salt tracking-wider">
+            {String(activeSlide + 1).padStart(2, "0")} /{" "}
+            {String(testimonials.length).padStart(2, "0")}
+          </span>
           <button
-            id="testimonial-next-mobile"
             onClick={handleNext}
-            className="p-3 border border-sea-salt/20 bg-raisin-black-900 rounded-xl text-sea-salt hover:text-dun"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
           >
             <ArrowRight className="h-3.5 w-3.5" />
           </button>

@@ -33,17 +33,17 @@ export default function WhyUs(props: WhyUsProps) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Title Area */}
-        <div className="space-y-10">
-          <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
+        <div className="space-y-10 text-center">
+          <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black ">
             {whyUsCopy.sectionTag}
           </span>
-          <div className="space-y-6">
+          <div className="space-y-6 justify-self-center text-center">
             <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
-              {whyUsCopy.title}
+              {whyUsCopy.titleLine1} <br /> {whyUsCopy.titleLine2}
             </h2>
-            <p className="max-w-2xl font-sans text-base sm:text-lg text-sea-salt/90 ">
+            {/* <p className="max-w-2xl font-sans text-base sm:text-lg text-sea-salt/90 justify-self-center">
               {whyUsCopy.description}
-            </p>
+            </p> */}
           </div>
 
 
@@ -162,7 +162,7 @@ export default function WhyUs(props: WhyUsProps) {
                       {getPillarIcon(index)}
                     </div>
                     <div className="space-y-1">
-                      <p className="font-sans text-base sm:text-lg text-sea-salt group-hover:text-brunswick-green-600 transition-colors">
+                      <p className="font-sans text-base sm:text-lg text-sea-salt group-hover:text-brunswick-green-600 transition-colors text-start">
                         {point.title}
                       </p>
 

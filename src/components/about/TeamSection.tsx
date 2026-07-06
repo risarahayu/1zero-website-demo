@@ -57,7 +57,7 @@ export const members: TeamMember[] = [
 
         images:
         {
-            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Molly.webp`,
+            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Molly.png`,
             imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Molly.webp`,
             ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Molly.webp`,
             ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Molly.webp`,
@@ -350,7 +350,7 @@ const TeamSection: React.FC = () => {
         }, 4000); // highlight stay 4 detik
     };
 
-        const nextImage = () => {
+    const nextImage = () => {
         setSelectedIndex((prev) =>
             prev === activeMember.sdgs.length - 1 ? 0 : prev + 1
         );
@@ -388,10 +388,10 @@ const TeamSection: React.FC = () => {
         <section className="py-16 text-slate-50 relative" id="about">
             <div className="w-[75%] mx-auto space-y-10 text-center">
 
-                <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
+                <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
                     {/* Injecting the dynamic title here! */}
                     {aboutCopy.en.teamTitle}
-                </h2>
+                </span>
 
                 {/* DESKTOP GRID */}
                 <div className="hidden lg:grid grid-cols-4 gap-6 pb-4">
@@ -519,160 +519,160 @@ const TeamSection: React.FC = () => {
                     {/* CONTENT */}
                     <div className="grid lg:grid-cols-[280px_1fr_360px] relative z-10 pt-4">
 
-                    {/* LEFT */}
-                    <div className="p-8 flex flex-col justify-between">
-                        <div className="space-y-10">
-                            {/* <span className="text-base md:text-lg text-start uppercase tracking-[0.25em] text-brunswick-green-500">
+                        {/* LEFT */}
+                        <div className="p-8 flex flex-col justify-between">
+                            <div className="space-y-10">
+                                {/* <span className="text-base md:text-lg text-start uppercase tracking-[0.25em] text-brunswick-green-500">
                                 Team Member
                             </span> */}
+                                <div className="space-y-6">
+                                    <h3 className="text-2xl text-start font-bold text-sea-salt">
+                                        {activeMember.name}
+                                    </h3>
+                                    <p className="text-base sm:text-lg text-start text-sea-salt/90">
+                                        {activeMember.role}
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* SOCIAL */}
                             <div className="space-y-6">
-                                <h3 className="text-2xl text-start font-bold text-sea-salt">
-                                    {activeMember.name}
-                                </h3>
-                                <p className="text-base sm:text-lg text-start text-sea-salt/90">
-                                    {activeMember.role}
+                                <h4 className="font-sans text-xl sm:text-2xl font-bold text-sea-salt mb-4 text-start">
+                                    Social Media
+                                </h4>
+
+                                <div className="space-y-3">
+
+                                    {activeMember.socialMediaAccounts.linkedin.name && (
+                                        <a
+                                            href={activeMember.socialMediaAccounts.linkedin.url}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
+                                        >
+                                            <Icon icon="mdi:linkedin" width="20" />
+                                            <span>LinkedIn</span>
+                                        </a>
+                                    )}
+
+                                    {activeMember.socialMediaAccounts.github?.name && (
+                                        <a
+                                            href={activeMember.socialMediaAccounts.github.url}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
+                                        >
+                                            <Icon icon="mdi:github" width="20" />
+                                            <span>GitHub</span>
+                                        </a>
+                                    )}
+
+                                    {activeMember.socialMediaAccounts.dribble?.name && (
+                                        <a
+                                            href={activeMember.socialMediaAccounts.dribble.url}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
+                                        >
+                                            <Icon icon="mdi:dribbble" width="20" />
+                                            <span>Dribbble</span>
+                                        </a>
+                                    )}
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        {/* CENTER IMAGE */}
+                        <div className="relative flex items-end justify-center">
+                            {activeMember.images?.ImageDetail1 && (
+                                <img
+                                    src={activeMember.images.ImageDetail1}
+                                    alt={activeMember.name}
+                                    className="w-full h-[420px] object-contain object-bottom"
+                                />
+                            )}
+                        </div>
+
+                        {/* RIGHT */}
+                        <div className="p-8 flex flex-col justify-between space-y-10">
+
+                            {/* BIO */}
+                            <div className="space-y-6 text-start">
+                                <h4 className="font-sans text-xl sm:text-2xl font-bold text-sea-salt">
+                                    About
+                                </h4>
+
+                                <p className="text-base sm:text-lg text-start text-sea-salt/90 ">
+                                    {activeMember.bio}
                                 </p>
                             </div>
-                        </div>
 
-                        {/* SOCIAL */}
-                        <div className="space-y-6">
-                        <h4 className="font-sans text-xl sm:text-2xl font-bold text-sea-salt mb-4 text-start">
-                            Social Media
-                        </h4>
+                            {/* SDGs */}
+                            <div className="space-y-6">
 
-                        <div className="space-y-3">
+                                <h4 className="font-sans text-xl sm:text-2xl font-bold text-sea-salt text-start">
+                                    Sustainable Development Goals
+                                </h4>
 
-                            {activeMember.socialMediaAccounts.linkedin.name && (
-                            <a
-                                href={activeMember.socialMediaAccounts.linkedin.url}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
-                            >
-                                <Icon icon="mdi:linkedin" width="20" />
-                                <span>LinkedIn</span>
-                            </a>
-                            )}
+                                <div className="flex flex-wrap gap-2">
+                                    {activeMember.sdgs.map((sdg, index) => (
+                                        <img
+                                            key={sdg.id}
+                                            src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(sdg.id).padStart(2, "0")}.png`}
+                                            alt={`SDG ${sdg.id}`}
+                                            className="w-16 h-16 object-contain cursor-pointer hover:scale-110 transition rounded"
+                                            onClick={() => setSelectedIndex(index)}
+                                        />
+                                    ))}
+                                </div>
+                                {selectedIndex !== null && (
+                                    <div
+                                        className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center"
+                                        onClick={() => setSelectedIndex(null)}
+                                    >
+                                        {/* Close */}
+                                        <button
+                                            onClick={() => setSelectedIndex(null)}
+                                            className="absolute top-6 right-6 text-white text-5xl hover:text-gray-300 transition"
+                                        >
+                                            ×
+                                        </button>
 
-                            {activeMember.socialMediaAccounts.github?.name && (
-                            <a
-                                href={activeMember.socialMediaAccounts.github.url}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
-                            >
-                                <Icon icon="mdi:github" width="20" />
-                                <span>GitHub</span>
-                            </a>
-                            )}
+                                        {/* Previous */}
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                prevImage();
+                                            }}
+                                            className="absolute left-8 text-white text-6xl hover:scale-125 transition"
+                                        >
+                                            ‹
+                                        </button>
 
-                            {activeMember.socialMediaAccounts.dribble?.name && (
-                            <a
-                                href={activeMember.socialMediaAccounts.dribble.url}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
-                            >
-                                <Icon icon="mdi:dribbble" width="20" />
-                                <span>Dribbble</span>
-                            </a>
-                            )}
+                                        {/* Image */}
+                                        <img
+                                            onClick={(e) => e.stopPropagation()}
+                                            src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(activeMember.sdgs[selectedIndex].id).padStart(2, "0")}.png`}
+                                            alt=""
+                                            className="max-w-[80vw] max-h-[85vh] object-contain rounded-xl shadow-2xl transition-all duration-300"
+                                        />
 
-                        </div>
-                        </div>
-
-                    </div>
-
-                    {/* CENTER IMAGE */}
-                    <div className="relative flex items-end justify-center">
-                        {activeMember.images?.ImageDetail1 && (
-                        <img
-                            src={activeMember.images.ImageDetail1}
-                            alt={activeMember.name}
-                            className="w-full h-[420px] object-contain object-bottom"
-                        />
-                        )}
-                    </div>
-
-                    {/* RIGHT */}
-                    <div className="p-8 flex flex-col justify-between space-y-10">
-
-                        {/* BIO */}
-                        <div className="space-y-6 text-start">
-                        <h4 className="font-sans text-xl sm:text-2xl font-bold text-sea-salt">
-                            About
-                        </h4>
-
-                        <p className="text-base sm:text-lg text-start text-sea-salt/90 ">
-                            {activeMember.bio}
-                        </p>
-                        </div>
-
-                        {/* SDGs */}
-                        <div className="space-y-6">
-
-                        <h4 className="font-sans text-xl sm:text-2xl font-bold text-sea-salt text-start">
-                            Sustainable Development Goals
-                        </h4>
-
-                        <div className="flex flex-wrap gap-2">
-                            {activeMember.sdgs.map((sdg, index) => (
-                                <img
-                                    key={sdg.id}
-                                    src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(sdg.id).padStart(2, "0")}.png`}
-                                    alt={`SDG ${sdg.id}`}
-                                    className="w-16 h-16 object-contain cursor-pointer hover:scale-110 transition rounded"
-                                    onClick={() => setSelectedIndex(index)}
-                                />
-                            ))}
-                        </div>
-                        {selectedIndex !== null && (
-                            <div
-                                className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center"
-                                onClick={() => setSelectedIndex(null)}
-                            >
-                                {/* Close */}
-                                <button
-                                    onClick={() => setSelectedIndex(null)}
-                                    className="absolute top-6 right-6 text-white text-5xl hover:text-gray-300 transition"
-                                >
-                                    ×
-                                </button>
-
-                                {/* Previous */}
-                                <button
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        prevImage();
-                                    }}
-                                    className="absolute left-8 text-white text-6xl hover:scale-125 transition"
-                                >
-                                    ‹
-                                </button>
-
-                                {/* Image */}
-                                <img
-                                    onClick={(e) => e.stopPropagation()}
-                                    src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(activeMember.sdgs[selectedIndex].id).padStart(2, "0")}.png`}
-                                    alt=""
-                                    className="max-w-[80vw] max-h-[85vh] object-contain rounded-xl shadow-2xl transition-all duration-300"
-                                />
-
-                                {/* Next */}
-                                <button
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        nextImage();
-                                    }}
-                                    className="absolute right-8 text-white text-6xl hover:scale-125 transition"
-                                >
-                                    ›
-                                </button>
+                                        {/* Next */}
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                nextImage();
+                                            }}
+                                            className="absolute right-8 text-white text-6xl hover:scale-125 transition"
+                                        >
+                                            ›
+                                        </button>
+                                    </div>
+                                )}
                             </div>
-                        )}
                         </div>
-                    </div>
                     </div>
                 </div>
 

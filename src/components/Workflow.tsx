@@ -180,7 +180,7 @@ function Panel({
 
       {/* Giant decorative step number */}
       <div className="absolute right-4 sm:right-12 top-1/2 -translate-y-1/2 select-none " aria-hidden>
-        <span className="font-sans font-black  text-sea-salt/[0.025]" style={{ fontSize: "clamp(8rem,22vw,18rem)" }}>
+        <span className="font-sans font-black  text-sea-salt/[0.15]" style={{ fontSize: "clamp(8rem,22vw,18rem)" }}>
           0{index + 1}
         </span>
       </div>
@@ -189,7 +189,7 @@ function Panel({
       {/* Main content */}
       <motion.div
         style={{ y: contentY }}
-        className="relative h-full flex items-center max-w-7xl mx-auto px-20 lg:px-24"
+        className="relative min-h-[60vh] flex items-center max-w-7xl mx-auto px-20 lg:px-24"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 w-full">
 
@@ -327,11 +327,10 @@ export default function Workflow() {
       {/* Sticky scroll container: (N+1)*100vh tall so each step = 100vh scroll */}
       <div
         ref={containerRef}
-        style={{ height: `${(N + 1) * 100}vh` }}
         className="relative"
       >
         {/* Sticky viewport */}
-        <div className="sticky top-0 h-screen overflow-hidden">
+        <div className="sticky top-0 min-h-[60vh] overflow-hidden">
 
           {/* Global timeline fill line — renders above all panels */}
           <SidebarIcons
