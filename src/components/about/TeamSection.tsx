@@ -622,7 +622,7 @@ const TeamSection: React.FC = () => {
                                     key={sdg.id}
                                     src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(sdg.id).padStart(2, "0")}.png`}
                                     alt={`SDG ${sdg.id}`}
-                                    className="w-16 h-16 object-contain cursor-pointer hover:scale-110 transition"
+                                    className="w-16 h-16 object-contain cursor-pointer hover:scale-110 transition rounded"
                                     onClick={() => setSelectedIndex(index)}
                                 />
                             ))}
@@ -753,7 +753,7 @@ const TeamSection: React.FC = () => {
                                                 key={sdg.id}
                                                 src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(sdg.id).padStart(2, "0")}.png`}
                                                 alt={`SDG ${sdg.id}`}
-                                                className="w-16 h-16 object-contain cursor-pointer hover:scale-110 transition"
+                                                className="w-16 h-16 object-contain cursor-pointer hover:scale-110 transition rounded"
                                                 onClick={() => setSelectedIndex(index)}
                                             />
                                         ))}
