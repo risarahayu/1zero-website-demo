@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { testimonials } from "../data";
+import { testimonialsCopy } from "../copy";
 import { Quote, Star, ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function Testimonials() {
@@ -24,10 +25,10 @@ export default function Testimonials() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
           <div className="space-y-3 text-left">
             <span className="inline-block px-3.5 py-1 rounded-full border border-neutral-800 text-base font-sans uppercase tracking-widest text-brunswick-green-500 bg-[#a3e635]/5">
-              Testimonials
+              {testimonialsCopy.badge}
             </span>
             <h2 className="font-sans text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-none">
-              Our happy clients <br />say about us
+              {testimonialsCopy.titleLine1} <br />{testimonialsCopy.titleLine2}
             </h2>
           </div>
 

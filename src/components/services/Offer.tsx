@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import { products } from "../../data";
+import { offerCopy } from "../../copy";
 import "../../css/services.css";
 import { Download } from "lucide-react";
 
@@ -32,12 +33,12 @@ export default function DiagnosisPanel() {
                 {/* 3. KONTEN UTAMA */}
                 <div className="relative z-20 max-w-3xl mx-auto text-center px-6 py-20">
                     <h2 className="text-xl  md:text-4xl font-bold leading-snug text-white">
-                        We know you didn’t come here without a problem.
+                        {offerCopy.heroTitleLine1}
                         <br />
-                        Something in your system isn’t working — and you can feel it.
+                        {offerCopy.heroTitleLine2}
                     </h2>
                     <p className="text-white/50 mt-6">
-                        This isn’t a form. It’s a diagnosis of your growth system.
+                        {offerCopy.heroSubtitle}
                     </p>
                 </div>
             </div>
@@ -45,10 +46,10 @@ export default function DiagnosisPanel() {
             {/* ACCORDION HEADER */}
             <div className="mb-12 text-center max-w-3xl mx-auto">
                 <h3 className="text-3xl font-bold text-white">
-                    Which area of your business is facing bottlenecks?
+                    {offerCopy.accordionTitle}
                 </h3>
                 <p className="text-white/60 mt-2">
-                    Click to explore the diagnosis and solutions.
+                    {offerCopy.accordionSubtitle}
                 </p>
             </div>
 
@@ -111,7 +112,7 @@ export default function DiagnosisPanel() {
                                             {/* MAIN CARD INNER */}
                                             <div className="relative z-10 p-8 rounded-2xl ">
                                                 <div className="space-y-8">
-                                                    <p className="text-sea-salt text-base font-semibold">If you’re experiencing this, or if this is happening in your system:</p>
+                                                    <p className="text-sea-salt text-base font-semibold">{offerCopy.conditionText}</p>
                                                     {/* 1. PROBLEM FIRST */}
                                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                                                         {item.symptoms?.map((symptom, i) => {
@@ -143,7 +144,7 @@ export default function DiagnosisPanel() {
                                                     {/* 2. RECOMMENDED SERVICE */}
                                                     <div className="p-6 rounded-xl border border-white/10 bg-white/5 shadow-2xl">
                                                         <p className="text-white/40 text-sm font-medium uppercase tracking-wider mb-4">
-                                                            Our Service
+                                                            {offerCopy.ourServiceLabel}
                                                         </p>
                                                         <div className="flex flex-col gap-4">
                                                             <div className="text-2xl md:text-5xl font-bold uppercase animate-gradient-text text-gradient">
@@ -155,7 +156,7 @@ export default function DiagnosisPanel() {
 
                                                             <div className="mt-4">
                                                                 <a href={item.href} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brunswick-green-900 text-white hover:bg-brunswick-green-700 transition-colors">
-                                                                    Download PDF
+                                                                    {offerCopy.downloadBtn}
                                                                     <Download size={16} />
                                                                 </a>
                                                             </div>
@@ -171,7 +172,7 @@ export default function DiagnosisPanel() {
                                                     {/* 3. FUTURE STATE */}
                                                     <div className="p-6 rounded-xl border border-green-500/20 bg-green-500/5">
                                                         <p className="text-brunswick-green-500 text-sm font-semibold uppercase tracking-wider mb-4">
-                                                            After implementation
+                                                            {offerCopy.afterImplementationLabel}
                                                         </p>
                                                         <ul className="space-y-3">
                                                             {item.futureState?.map((f, i) => (
