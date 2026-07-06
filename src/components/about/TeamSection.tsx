@@ -50,7 +50,7 @@ export const members: TeamMember[] = [
         name: 'Molly Sanders',
         role: 'Founder and CEO',
         socialMediaAccounts: {
-            linkedin: { name: "Molly Sanders", url: "" },
+            linkedin: { name: "Molly Sanders", url: "https://www.linkedin.com/in/mollysanders/" },
             github: { name: "", url: "" },
             dribble: { name: "", url: "" },
         },
@@ -302,6 +302,7 @@ const TeamSection: React.FC = () => {
     const [isPaused, setIsPaused] = useState(false);
     const [activeIdx, setActiveIdx] = useState(0);
     const [activeSlide, setActiveSlide] = useState(0);
+    const [selectedIndex, setSelectedIndex] = useState(null);
 
     const isDesktop = typeof window !== "undefined" && window.innerWidth >= 1024;
 
@@ -348,6 +349,40 @@ const TeamSection: React.FC = () => {
             setIsPaused(false);
         }, 4000); // highlight stay 4 detik
     };
+
+        const nextImage = () => {
+        setSelectedIndex((prev) =>
+            prev === activeMember.sdgs.length - 1 ? 0 : prev + 1
+        );
+    };
+
+    const prevImage = () => {
+        setSelectedIndex((prev) =>
+            prev === 0 ? activeMember.sdgs.length - 1 : prev - 1
+        );
+    };
+
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (selectedIndex === null) return;
+
+            if (e.key === "Escape") {
+                setSelectedIndex(null);
+            }
+
+            if (e.key === "ArrowRight") {
+                nextImage();
+            }
+
+            if (e.key === "ArrowLeft") {
+                prevImage();
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [selectedIndex]);
 
     return (
         <section className="py-16 text-slate-50 relative" id="about">
@@ -582,20 +617,62 @@ const TeamSection: React.FC = () => {
                         </h4>
 
                         <div className="flex flex-wrap gap-2">
-                            {activeMember.sdgs.map((sdg) => (
+                            {activeMember.sdgs.map((sdg, index) => (
                                 <img
                                     key={sdg.id}
                                     src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(sdg.id).padStart(2, "0")}.png`}
                                     alt={`SDG ${sdg.id}`}
-                                    className="w-16 h-16 object-contain"
+                                    className="w-16 h-16 object-contain cursor-pointer hover:scale-110 transition"
+                                    onClick={() => setSelectedIndex(index)}
                                 />
                             ))}
                         </div>
+                        {selectedIndex !== null && (
+                            <div
+                                className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center"
+                                onClick={() => setSelectedIndex(null)}
+                            >
+                                {/* Close */}
+                                <button
+                                    onClick={() => setSelectedIndex(null)}
+                                    className="absolute top-6 right-6 text-white text-5xl hover:text-gray-300 transition"
+                                >
+                                    ×
+                                </button>
 
+                                {/* Previous */}
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        prevImage();
+                                    }}
+                                    className="absolute left-8 text-white text-6xl hover:scale-125 transition"
+                                >
+                                    ‹
+                                </button>
+
+                                {/* Image */}
+                                <img
+                                    onClick={(e) => e.stopPropagation()}
+                                    src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(activeMember.sdgs[selectedIndex].id).padStart(2, "0")}.png`}
+                                    alt=""
+                                    className="max-w-[80vw] max-h-[85vh] object-contain rounded-xl shadow-2xl transition-all duration-300"
+                                />
+
+                                {/* Next */}
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        nextImage();
+                                    }}
+                                    className="absolute right-8 text-white text-6xl hover:scale-125 transition"
+                                >
+                                    ›
+                                </button>
+                            </div>
+                        )}
                         </div>
-
                     </div>
-
                     </div>
                 </div>
 
@@ -670,20 +747,61 @@ const TeamSection: React.FC = () => {
                                     </div> */}
 
                                     {/* SDGs */}
-                                    <div className="flex flex-wrap gap-2 flex-col text-start">
-                                        <p className="text-base md:text-lg  text-raisin-black-900-500 mr-1">SDG(s):</p>
-                                        <div className="flex gap-2">
-                                            {activeMember.sdgs.map((sdg) => (
-                                                <img
-                                                    key={sdg.id}
-                                                    src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(sdg.id).padStart(2, "0")}.png`}
-                                                    alt={`SDG ${sdg.id}`}
-                                                    className="w-16 h-16 object-contain"
-                                                />
-                                            ))}
-                                        </div>
+                                    <div className="flex flex-wrap gap-2">
+                                        {activeMember.sdgs.map((sdg, index) => (
+                                            <img
+                                                key={sdg.id}
+                                                src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(sdg.id).padStart(2, "0")}.png`}
+                                                alt={`SDG ${sdg.id}`}
+                                                className="w-16 h-16 object-contain cursor-pointer hover:scale-110 transition"
+                                                onClick={() => setSelectedIndex(index)}
+                                            />
+                                        ))}
                                     </div>
+                                    {selectedIndex !== null && (
+                                        <div
+                                            className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center"
+                                            onClick={() => setSelectedIndex(null)}
+                                        >
+                                            {/* Close */}
+                                            <button
+                                                onClick={() => setSelectedIndex(null)}
+                                                className="absolute top-6 right-6 text-white text-5xl hover:text-gray-300 transition"
+                                            >
+                                                ×
+                                            </button>
 
+                                            {/* Previous */}
+                                            <button
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    prevImage();
+                                                }}
+                                                className="absolute left-8 text-white text-6xl hover:scale-125 transition"
+                                            >
+                                                ‹
+                                            </button>
+
+                                            {/* Image */}
+                                            <img
+                                                onClick={(e) => e.stopPropagation()}
+                                                src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(activeMember.sdgs[selectedIndex].id).padStart(2, "0")}.png`}
+                                                alt=""
+                                                className="max-w-[80vw] max-h-[85vh] object-contain rounded-xl shadow-2xl transition-all duration-300"
+                                            />
+
+                                            {/* Next */}
+                                            <button
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    nextImage();
+                                                }}
+                                                className="absolute right-8 text-white text-6xl hover:scale-125 transition"
+                                            >
+                                                ›
+                                            </button>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
