@@ -72,7 +72,7 @@ export default function App() {
             <Workflow />
 
             {/* User feedback Testimonials sliding Grid */}
-            <Testimonials />
+            {/* <Testimonials /> */}
 
             {/* Case Studies grid */}
             <Cases />

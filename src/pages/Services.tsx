@@ -29,7 +29,7 @@ const Services: React.FC = () => {
         <ServicesHero />
         <Offer />
         <WhatYouGet />
-        <Testimonials />
+        {/* <Testimonials /> */}
         {/* <Footer /> */}
         <BookingModal isOpen={isBookingOpen} onClose={handleCloseBooking} />
       </div>
