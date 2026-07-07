@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import ServicesHero from "../components/services/Hero";
-import Offer from "../components/services/offer"; // DiagnosisPanel component
+import Offer from "../components/services/Offer";
 import BookingModal from "../components/BookingModal";
 import Footer from "../components/Footer";
 import WhatYouGet from "../components/services/WhatYouGet";
