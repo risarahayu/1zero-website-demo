@@ -19,8 +19,8 @@ jobs:
     - name: 🟢 Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-on-version: 20 # Anda bisa sesuaikan versi Node jika perlu (misal: 18, 20, 22)
-        cache: 'npm' # Menghemat waktu build dengan cache node_modules jika tidak ada perubahan
+        node-version: 24
+        cache: 'npm'
 
     # Langkah 3: Install dependencies dan build project
     - name: 🛠️ Install and Build Project
