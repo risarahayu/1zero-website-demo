@@ -72,7 +72,7 @@ export const bookingModalCopy = {
 export const footerCopy = {
   connectTitle: "Let's",
   connectGradient: "Connect",
-  description: "We lower the technical barriers so you can focus on what actually matters—whether that's fighting plastic pollution, shifting to circular agriculture, or feeding communities. No agency BS, no overcharging—just honest, real business partnerships that exponentially expand your impact. Sustainability is defined as 'meeting the needs of the present without compromising the ability of future generations to meet their own needs.' We build the AI-first tech to help you prove it.",
+  description: "We lower technical barriers so you can focus on your mission. No agency BS—just AI-first infrastructure and honest partnerships designed to exponentially expand your real-world impact.",
   directInquiries: "Direct Inquiries",
   workingHours: "WITA working hours: 09:00 - 16:00",
   primaryLaboratory: "Bali HQ",
@@ -145,71 +145,71 @@ export const servicesCopy = {
 };
 
 export const productsCopy = {
-  badge: "Our Services",
-  title: "Core Services",
-  description: "Highly optimized, production-hardened models designed to deploy smoothly or integrate instantly with your organization's digital workflow."
+  badge: "Our Capabilities",
+  title: "Architectural Solutions.",
+  description: "Purpose-built infrastructure and fractional technical leadership designed to eliminate tech debt and scale your operations exponentially."
 };
 
 export const portfolioCopy = {
-  badge: "Our Portfolios",
-  titleLine1: "Where Ideas",
-  titleLine2: "Become Reality",
-  description: "This portfolio showcases work from concept to execution.",
-  seeAllText: "See All Projects",
-  ctaTopText: "Ready to review full modular system blueprints?",
+  badge: "Deployed Systems",
+  titleLine1: "Mission-Critical",
+  titleLine2: "Infrastructure.",
+  description: "Explore the AI-first platforms, DevPods, and resilient architectures we've built for organizations scaling their real-world impact.",
+  seeAllText: "View All Architecture",
+  ctaTopText: "Ready to map out a modular blueprint for your stack?",
   ctaButtonText: "Schedule Architecture Session"
 };
 
 export const workflowCopy = {
-  badge: "Our Timeline",
-  title: "A collaborative process that builds the right systems for your mission",
-  description: "Precision counts. We build customized software workflows step-by-step, ensuring structural safety and elite handoff readiness.",
+  badge: "Engineering Framework",
+  title: "A systematic approach to building resilient infrastructure.",
+  description: "We don't guess. We architect, build, and deploy custom systems through a rigorous, transparent pipeline designed for scale and complete team autonomy.",
   scrollHint: "Scroll",
   phaseLabel: "Phase",
   ofText: "of",
   phasesText: "phases",
   commitStatusLabel: "COMMIT STATUS",
-  commitStatusDescStart: "Our engineering outputs for the",
-  commitStatusDescEnd: "phase pass multiple lint audits and container optimization runs automatically.",
-  releaseReady: "Release Ready"
+  commitStatusDescStart: "Code increments for the",
+  commitStatusDescEnd: "phase pass automated CI/CD security audits and strict container optimization protocols.",
+  releaseReady: "Production Ready"
 };
 
 export const testimonialsCopy = {
-  badge: "Testimonials",
-  titleLine1: "Our happy clients",
-  titleLine2: "say about us"
+  badge: "Partnerships",
+  titleLine1: "Trusted by leaders",
+  titleLine2: "who demand results."
 };
 
 export const casesCopy = {
   liveCase: "Live Case",
   discussionCompleted: "DISCUSSION COMPLETED",
   discussStrategy: "Discuss Strategy",
-  badge: "Recent Activity",
-  titleLine1: "Others Already",
-  titleLine2: "Took the First Step",
-  description: "Teams are already turning ideas into premium, resilient system software. What high-performance framework are we building next together?",
-  marqueeText: "Now is your turn"
+  badge: "Track Record",
+  titleLine1: "Proven Impact",
+  titleLine2: "in Production.",
+  description: "See how we partner with mission-driven organizations to replace legacy bottlenecks with highly scalable, AI-first infrastructure.",
+  marqueeText: "SCALE YOUR IMPACT"
 };
 
 export const offerCopy = {
-  heroTitleLine1: "We know you didn’t come here without a problem.",
-  heroTitleLine2: "Something in your system isn’t working — and you can feel it.",
-  heroSubtitle: "This isn’t a form. It’s a diagnosis of your growth system.",
-  accordionTitle: "Which area of your business is facing bottlenecks?",
-  accordionSubtitle: "Click to explore the diagnosis and solutions.",
-  conditionText: "If you’re experiencing this, or if this is happening in your system:",
-  ourServiceLabel: "Our Service",
-  downloadBtn: "Download PDF",
-  afterImplementationLabel: "After implementation"
+  heroTitleLine1: "You can't scale a global mission",
+  heroTitleLine2: "on fracturing infrastructure.",
+  heroSubtitle: "Explore our diagnostic matrix below to match your operational bottlenecks with scalable architectural solutions.",
+  accordionTitle: "Identify Your Technical Constraints",
+  accordionSubtitle: "Expand a category to view symptom diagnostics and recommended engineering pathways.",
+  conditionText: "SYSTEM SYMPTOMS & DIAGNOSTICS:",
+  ourServiceLabel: "Recommended Architecture",
+  actionBtn: "Discuss This Pathway", // Pivoted away from the PDF download
+  afterImplementationLabel: "Target System Capabilities"
 };
 
 export const portfoliosPageCopy = {
-  badge: "Our Portfolios",
-  title: "Ideas Turned Into Products",
-  description: "Selected projects grouped by service category.",
-  ctaTitle: "Start Your Project With",
-  bookButton: "Book a Section",
-  modalTitle: "Book a Section",
-  modalDescription: "This is a placeholder for the booking modal. Implement your actual booking UI here.",
+  badge: "Deployed Architecture",
+  title: "Proven Impact in Production.",
+  description: "A curated look at the scalable systems and AI-first platforms we've built for mission-driven organizations.",
+  ctaTitle: "Ready to scale your impact?",
+  bookButton: "Book a Strategy Session", // Finally killed the "Book a Section" ghost!
+  modalTitle: "Schedule Architecture Review",
+  modalDescription: "Discuss your technical constraints and roadmap directly with our principal architects.",
   modalCloseBtn: "Close"
 };
