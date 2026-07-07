@@ -1,0 +1,43 @@
+name: Deploy Dist to Dewaweb Shared Hosting
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    name: 🏗️ Build & 🚀 Deploy
+    runs-on: ubuntu-latest
+    
+    steps:
+    # Langkah 1: Ambil code terbaru dari repository
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+
+    # Langkah 2: Setup Node.js di server GitHub Actions
+    - name: 🟢 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-on-version: 20 # Anda bisa sesuaikan versi Node jika perlu (misal: 18, 20, 22)
+        cache: 'npm' # Menghemat waktu build dengan cache node_modules jika tidak ada perubahan
+
+    # Langkah 3: Install dependencies dan build project
+    - name: 🛠️ Install and Build Project
+      run: |
+        npm ci
+        npm run build
+
+    # Langkah 4: Upload HANYA folder dist ke FTP Dewaweb
+    - name: 📂 Sync Dist Folder to Hosting
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        port: 21 
+        # PENTING: Arahkan ke folder dist hasil build Anda
+        local-dir: ./dist/
+        # Opsional: Jika di hosting Anda perlu masuk ke subfolder lagi, isi server-dir. 
+        # Jika akun FTP Anda sudah langsung diarahkan ke public_html, biarkan kosong atau './'
+        server-dir: ./
