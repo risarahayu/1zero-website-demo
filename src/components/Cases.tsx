@@ -214,7 +214,7 @@ export default function Cases() {
             <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
               {casesCopy.badge}
             </span>
-            <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
+            <h2 className="font-sans text-3xl leading-normal sm:text-5xl sm:leading-normal font-bold text-sea-salt">
               {casesCopy.titleLine1} <br />{casesCopy.titleLine2}
             </h2>
           </div>

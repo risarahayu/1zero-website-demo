@@ -17,7 +17,7 @@ export default function Footer() {
 
           {/* LEFT COLUMN: BIG GREETING */}
           <div className="lg:col-span-5 space-y-6">
-            <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
+            <h2 className="font-sans text-3xl leading-normal sm:text-5xl sm:leading-normal font-bold text-sea-salt">
               {footerCopy.connectTitle} <br />
               <span className="animate-gradient-text text-gradient-impact text-transparent bg-clip-text bg-gradient-to-r from-[var(--ivory)] to-[var(--green-900)]">
                 {footerCopy.connectGradient}

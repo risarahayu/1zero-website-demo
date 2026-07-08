@@ -38,7 +38,7 @@ export default function WhyUs(props: WhyUsProps) {
             <span className="uppercase">{whyUsCopy.sectionTag}</span><span className="text-brunswick-green-500">1zero</span>
           </span>
           <div className="space-y-6 justify-self-center text-center">
-            <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
+            <h2 className="font-sans text-3xl leading-normal sm:text-5xl sm:leading-normal font-bold text-sea-salt">
               {whyUsCopy.titleLine1} <br /> {whyUsCopy.titleLine2}
             </h2>
             {/* <p className="max-w-2xl font-sans text-base sm:text-lg text-sea-salt/90 justify-self-center">
