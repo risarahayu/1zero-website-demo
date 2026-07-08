@@ -189,7 +189,7 @@ function Panel({
       {/* Main content */}
       <motion.div
         style={{ y: contentY }}
-        className="relative min-h-[60vh] flex items-center max-w-7xl mx-auto px-20 lg:px-24"
+        className="relative h-screen flex items-center max-w-7xl mx-auto px-20 lg:px-24"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 w-full">
 
@@ -284,14 +284,12 @@ export default function Workflow() {
   const handleScrollToStep = (index: number) => {
     if (!containerRef.current) return;
 
-    // Cari tahu posisi container utamanya dari atas halaman
-    const containerTop = containerRef.current.offsetTop;
+    // Container total height = (N+1)*100vh, scrollable distance = N*100vh
+    // Each step occupies exactly 1 * window.innerHeight of scroll distance.
+    // We target the middle of each step's range so it lands cleanly on the panel.
+    const containerTop = containerRef.current.getBoundingClientRect().top + window.scrollY;
+    const targetY = containerTop + (index * window.innerHeight) + (window.innerHeight * 0.1);
 
-    // Hitung posisi target: Posisi Container + (Index * Tinggi Layar HP/Laptop)
-    // Ditambah sedikit offset (misal 10px) agar pergerakannya pas masuk ke area deteksi Framer Motion
-    const targetY = containerTop + (index * window.innerHeight) + 10;
-
-    // Perintahkan browser untuk meluncur ke posisi tersebut
     window.scrollTo({
       top: targetY,
       behavior: 'smooth'
@@ -324,13 +322,14 @@ export default function Workflow() {
         </motion.div>
       </div>
 
-      {/* Sticky scroll container: (N+1)*100vh tall so each step = 100vh scroll */}
+      {/* Sticky scroll container: (N+1)*100vh tall so each step gets exactly 100vh of scroll distance */}
       <div
         ref={containerRef}
         className="relative"
+        style={{ height: `${(N + 1) * 100}vh` }}
       >
         {/* Sticky viewport */}
-        <div className="sticky top-0 min-h-[60vh] overflow-hidden">
+        <div className="sticky top-0 h-screen overflow-hidden">
 
           {/* Global timeline fill line — renders above all panels */}
           <SidebarIcons
