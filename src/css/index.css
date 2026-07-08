@@ -136,6 +136,10 @@
   animation-play-state: paused;
 }
 
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
 /* hero bg */
 .aurora-layer {
   position: absolute;
