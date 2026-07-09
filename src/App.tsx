@@ -13,6 +13,7 @@ import BookingModal from "./components/BookingModal";
 import Header from "./components/Header";
 import ContactPage from "./pages/ContactUs";
 import Portfolios from "./pages/Portfolios";
+import WorkflowHorizontal from "./components/WorkflowHorizontal";
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -69,7 +70,7 @@ export default function App() {
             <WhyUs onOpenBooking={handleOpenBooking} />
 
             {/* Connective Collaborative Process Section */}
-            <Workflow />
+            <WorkflowHorizontal />
 
             {/* User feedback Testimonials sliding Grid */}
             {/* <Testimonials /> */}
