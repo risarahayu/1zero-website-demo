@@ -66,7 +66,7 @@ export interface WorkflowStep {
   subtext: string;
   bullet1: string;
   bullet2: string;
-  icon?: ElementType;
+  icon?: string;
 }
 
 export interface TeamMemberCall {
