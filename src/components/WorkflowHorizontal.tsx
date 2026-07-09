@@ -44,7 +44,7 @@ function TopNav({
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className="absolute top-[50%] -translate-y-1/2 left-6 h-[2px] z-0"
         style={{
-          background: "linear-gradient(to right, var(--brunswick-green-600), var(--brunswick-green-900))",
+          background: "linear-gradient(to right, var(--green-500), var(--green-900))",
           boxShadow: "0 0 10px rgba(29,87,69,0.8)",
           /* Kita gunakan transformOrigin agar animasi memanjang dari kiri ke kanan */
           transformOrigin: "left center",
