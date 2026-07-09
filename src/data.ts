@@ -13,14 +13,15 @@ export const navLinks: NavLink[] = [
 
 export const clientLogos = [
   { name: "BWT", logoImg: import.meta.env.BASE_URL + "Partner Logo Color/BWT.png" },
+  { name: "4Ocean", logoImg: import.meta.env.BASE_URL + "Partner Logo Color/4Ocean.png" },
   { name: "DARE", logoImg: import.meta.env.BASE_URL + "Partner Logo Color/DARE.png" },
   { name: "Ferrum", logoImg: import.meta.env.BASE_URL + "Partner Logo Color/Ferrum.png" },
-  { name: "PWC", logoImg: import.meta.env.BASE_URL + "Partner Logo Color/PWC.png" },
   { name: "UNHCR", logoImg: import.meta.env.BASE_URL + "Partner Logo Color/UNHCR.png" },
   { name: "Energaia", logoImg: import.meta.env.BASE_URL + "Partner Logo Color/energaia.png" },
-  { name: "PLC", logoImg: import.meta.env.BASE_URL + "Partner Logo Color/plc-logo-scaled.png" },
+  { name: "PWC", logoImg: import.meta.env.BASE_URL + "Partner Logo Color/PWC.png" },
+  { name: "IGCN", logoImg: import.meta.env.BASE_URL + "Partner Logo Color/igcn.png" },
+  { name: "PLC", logoImg: import.meta.env.BASE_URL + "Partner Logo Color/PLC.png" },
   { name: "TDD", logoImg: import.meta.env.BASE_URL + "Partner Logo Color/TDD.png" },
-  { name: "4Ocean", logoImg: import.meta.env.BASE_URL + "Partner Logo Color/4Ocean.png" },
   { name: "Adaluma", logoImg: import.meta.env.BASE_URL + "Partner Logo Color/Adaluma.png" },
 
 
