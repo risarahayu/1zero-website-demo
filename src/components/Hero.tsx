@@ -104,12 +104,12 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               {clientLogos.map((client) => (
                 <div
                   key={`a-${client.name}`}
-                  className="flex items-center justify-center px-6 py-3 rounded-xl border border-sea-salt/20 hover:border-brunswick-green-500/30 transition-all group cursor-default shrink-0"
+                  className="flex items-center justify-center  rounded-xl border border-sea-salt/20 hover:border-brunswick-green-500/30 transition-all group cursor-default shrink-0"
                 >
                   <img
                     src={client.logoImg}
                     alt={client.name}
-                    className="h-8 md:h-9 w-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-300"
+                    className="h-12 md:h-12 w-auto rounded-xl object-cover opacity-90 group-hover:opacity-100 transition-all duration-300"
                   />
                 </div>
               ))}
@@ -117,13 +117,13 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               {clientLogos.map((client) => (
                 <div
                   key={`b-${client.name}`}
-                  className="flex items-center justify-center px-6 py-3 rounded-xl border border-sea-salt/20 hover:border-brunswick-green-500/30 transition-all group cursor-default shrink-0"
+                  className="flex items-center justify-center  rounded-xl border border-sea-salt/20 hover:border-brunswick-green-500/30 transition-all group cursor-default shrink-0"
                   aria-hidden="true"
                 >
                   <img
                     src={client.logoImg}
                     alt=""
-                    className="h-8 md:h-9 w-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-300"
+                    className="h-12 md:h-12 w-auto rounded-xl object-cover opacity-90 group-hover:opacity-100 transition-all duration-300"
                   />
                 </div>
               ))}

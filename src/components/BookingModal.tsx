@@ -71,7 +71,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/mrosa@1zero.biz", {
+      const response = await fetch("https://formsubmit.co/ajax/info@1zero.biz", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',

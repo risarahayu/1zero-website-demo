@@ -34,7 +34,7 @@ export const whyUsCopy = {
   titleLine1: "Engineering force multipliers ",
   titleLine2: "for mission-driven teams.",
   description: "We partner directly with founders and operations executives to craft high-concurrency, AI-first systems. Skip the agency bureaucracy and messy middleware; we architect the resilient digital infrastructure your mission needs to scale rapidly.",
-  meetOurTeam: "Meet the Architects",
+  meetOurTeam: "Meet the Team",
   seeAllTeam: "See the Full Roster",
   reassuranceTitle: "We build resilient, production-ready systems.",
   reassuranceSub: "AI-First Architecture • Transparent Technical Leadership"
@@ -74,7 +74,7 @@ export const footerCopy = {
   connectGradient: "Connect",
   description: "We lower technical barriers so you can focus on your mission. No agency BS—just AI-first infrastructure and honest partnerships designed to exponentially expand your real-world impact.",
   directInquiries: "Direct Inquiries",
-  workingHours: "Working hours: 09:00–16:00 (UTC+8)",
+  workingHours: "Working hours: 09:00–17:00 (UTC+8)",
   primaryLaboratory: "Bali HQ",
   officeTitle: "Our Office Address",
   officeAddress: "Biliq Sunset Office Space, Jalan Sunset Road 819, Bali Ruko Sunset Indah II No. 10, Kuta, Bali, Indonesia, 80361",
@@ -83,15 +83,15 @@ export const footerCopy = {
   madeForDoubleImpact: "EXPONENTIALLY EXPANDING IMPACT POTENTIAL",
   developmentOfficeLabel: "Development Office",
   developmentOfficeTitle: "1zero Development Office",
-  developmentOfficeAddress: "Jl. Penyaringan No.12A, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80227",
+  developmentOfficeAddress: "Jl. Penyaringan No.12A, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali, Indonesia, 80227",
 };
 
 export const contactUsCopy = {
   badge: "GET IN TOUCH",
-  title: "Connect with Our Architects.",
+  title: "Connect with Our Tech Archs",
   description: "Skip the sales pipeline. Collaborate directly with engineers who will listen to your constraints, cut through the BS, and construct high-performance pathways for your mission.",
   emailUsLabel: "Email Us",
-  emailUsVal: "mrosa@1zero.biz",
+  emailUsVal: "info@1zero.biz",
   callUsLabel: "Direct Call",
   callUsVal: "(+62) 85339396030",
   locationLabel: "HQ Location",
@@ -158,9 +158,9 @@ export const portfolioCopy = {
   titleLine1: "Mission-Critical",
   titleLine2: "Infrastructure.",
   description: "Explore the AI-first platforms, DevPods, and resilient architectures we've built for organizations scaling their real-world impact.",
-  seeAllText: "View All Architecture",
+  seeAllText: "View All Portfolios",
   ctaTopText: "Ready to map out a modular blueprint for your stack?",
-  ctaButtonText: "Schedule Architecture Session"
+  ctaButtonText: "Book 30 Mins Free With Us"
 };
 
 export const workflowCopy = {
@@ -187,7 +187,7 @@ export const casesCopy = {
   liveCase: "Live Case",
   discussionCompleted: "DISCUSSION COMPLETED",
   discussStrategy: "Discuss Strategy",
-  badge: "Track Record",
+  badge: "Recent Activity",
   titleLine1: "Proven Impact",
   titleLine2: "in Production.",
   description: "See how we partner with mission-driven organizations to replace legacy bottlenecks with highly scalable, AI-first infrastructure.",

@@ -67,15 +67,16 @@ export default function Footer() {
               <div className="space-y-3 text-lg  text-sea-salt">
                 <a
                   id="footer-email-link"
-                  href="mailto:mrosa@1zero.biz"
+                  href="mailto:info@1zero.biz"
                   className="flex items-center gap-2 hover:text-brunswick-green-500 transition-colors font-sans"
                 >
                   <Mail className="h-4 w-4 text-brunswick-green-500 shrink-0" />
-                  <span>mrosa@1zero.biz</span>
+                  <span>info@1zero.biz</span>
                 </a>
                 <a
                   id="footer-phone-link"
-                  href="tel:+6285339396030"
+                  href="https://api.whatsapp.com/send/?phone=6285339396030&text&type=phone_number&app_absent=0"
+                  target="_blank"
                   className="flex items-center gap-2 hover:text-brunswick-green-500 transition-colors font-sans"
                 >
                   <Phone className="h-4 w-4 text-brunswick-green-500 shrink-0" />

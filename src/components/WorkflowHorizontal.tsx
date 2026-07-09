@@ -44,7 +44,7 @@ function TopNav({
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className="absolute top-[50%] -translate-y-1/2 left-6 h-[2px] z-0"
         style={{
-          background: "linear-gradient(to right, var(--green-600), var(--green-900))",
+          background: "linear-gradient(to right, var(--brunswick-green-600), var(--brunswick-green-900))",
           boxShadow: "0 0 10px rgba(29,87,69,0.8)",
           /* Kita gunakan transformOrigin agar animasi memanjang dari kiri ke kanan */
           transformOrigin: "left center",
@@ -68,21 +68,21 @@ function TopNav({
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
               style={{
                 // Jika sudah dilewati (isPassed), background terisi penuh
-                background: isPassed ? cfg.accent : "#0a0a0a",
-                borderColor: isPassed ? cfg.accent : "rgba(255,255,255,0.1)",
+                background: isPassed ? cfg.accent : "var(--raisin-black-800)",
+                borderColor: isPassed ? cfg.accent : "var(--green-500)",
               }}
               className={`relative z-10 flex items-center justify-center w-12 h-12 rounded-full border-2 cursor-pointer transition-colors duration-500`}
             >
               {/* Warna icon: Jika belum dilewati warna abu, jika sudah dilewati warna putih/kontras */}
-              <span className={`${isPassed ? "text-white" : "text-white/20"} transition-colors duration-500`}>
+              <span className={`${isPassed ? "text-sea-salt" : "text-brunswick-green-500"} transition-colors duration-500`}>
                 {step.icon ? <Icon icon={step.icon} width={22} height={22} /> : step.number}
               </span>
 
-              {/* Indicator Lingkaran Luar Putih (Ring) hanya untuk posisi saat ini */}
+              {/* Indicator Lingkaran Luar  (Ring) hanya untuk posisi saat ini */}
               {isCurrent && (
                 <motion.div
                   layoutId="activeRing"
-                  className="absolute -inset-1.5 border border-white/40 rounded-full z-0"
+                  className="absolute -inset-1.5 border border-brunswick-green-500 rounded-full z-0"
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
               )}
@@ -96,7 +96,7 @@ function TopNav({
               }}
               className="absolute top-12 whitespace-nowrap text-center"
             >
-              <span className={`font-sans text-[10px] font-black tracking-widest uppercase ${isCurrent ? cfg.accentText : "text-white/40"}`}>
+              <span className={`font-sans text-sm font-black tracking-widest uppercase ${isCurrent ? cfg.accentText : "text-sea-salt/90"}`}>
                 {step.number}
               </span>
             </motion.div>
@@ -276,9 +276,9 @@ export default function WorkflowHorizontal() {
             <h2 className="font-sans text-3xl leading-normal sm:text-5xl sm:leading-normal font-bold text-sea-salt">
               {workflowCopy.title}
             </h2>
-            <p className="max-w-xl mx-auto font-sans text-base sm:text-lg text-sea-salt/90">
+            {/* <p className="max-w-xl mx-auto font-sans text-base sm:text-lg text-sea-salt/90">
               {workflowCopy.description}
-            </p>
+            </p> */}
           </div>
         </motion.div>
       </div>
@@ -292,7 +292,7 @@ export default function WorkflowHorizontal() {
         </div>
 
         {/* Panel area: fixed height, panels switch in/out */}
-        <div className="relative rounded-2xl overflow-hidden border border-sea-salt/10" style={{ height: "70vh", minHeight: "520px" }}>
+        <div className="relative rounded-2xl overflow-hidden border border-sea-salt/10" style={{ minHeight: "520px" }}>
           <AnimatePresence mode="wait" custom={direction}>
             <Panel
               key={activeIdx}
@@ -323,7 +323,7 @@ export default function WorkflowHorizontal() {
         </div>
 
         {/* Bottom dot indicators */}
-        <div className="flex justify-center gap-2 mt-6">
+        {/* <div className="flex justify-center gap-2 mt-6">
           {workflowSteps.map((_, i) => {
             const cfg = PANEL_CONFIG[i % PANEL_CONFIG.length];
             return (
@@ -341,7 +341,7 @@ export default function WorkflowHorizontal() {
               />
             );
           })}
-        </div>
+        </div> */}
 
       </div>
 

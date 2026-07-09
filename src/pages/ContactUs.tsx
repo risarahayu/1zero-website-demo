@@ -125,37 +125,63 @@ export default function ContactPage() {
                     </div>
                     {/* Info Kontak Perusahaan */}
                     <div className="space-y-6">
-                        <div className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/5 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group">
-                            <div className="p-3 rounded-lg bg-brunswick-green-900/20 border border-brunswick-green-500/20 text-brunswick-green-900 group-hover:shadow-[0_0_12px_rgba(133,223,195,0.4)] transition-all duration-300">
+                        <a
+                            href={`mailto:${contactUsCopy.emailUsVal}`}
+                            className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/5 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group"
+                        >
+                            <div className="p-3 rounded-lg bg-brunswick-green-900/20 border border-brunswick-green-500 text-brunswick-green-500 group-hover:shadow-[0_0_12px_rgba(133,223,195,0.4)] transition-all duration-300">
                                 <Mail className="w-5 h-5" />
                             </div>
-                            <div>
-                                <p className="text-sm text-sea-salt/40 font-medium uppercase tracking-wider">{contactUsCopy.emailUsLabel}</p>
-                                <p className="text-sea-salt/80 font-medium text-base sm:text-lg">{contactUsCopy.emailUsVal}</p>
-                            </div>
-                        </div>
 
-                        <div className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/5 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group">
-                            <div className="p-3 rounded-lg bg-brunswick-green-900/20 border border-brunswick-green-500/20 text-brunswick-green-900 group-hover:shadow-[0_0_12px_rgba(133,223,195,0.4)] transition-all duration-300">
+                            <div>
+                                <p className="text-sm text-sea-salt/40 font-medium uppercase tracking-wider">
+                                    {contactUsCopy.emailUsLabel}
+                                </p>
+                                <p className="text-sea-salt/80 font-medium text-base sm:text-lg">
+                                    {contactUsCopy.emailUsVal}
+                                </p>
+                            </div>
+                        </a>
+
+                        <a
+                            href="https://api.whatsapp.com/send/?phone=6285339396030&text&type=phone_number&app_absent=0"
+                            target="_blank"
+                            className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/5 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group"
+                        >
+                            <div className="p-3 rounded-lg bg-brunswick-green-900/20 border border-brunswick-green-500 text-brunswick-green-500 group-hover:shadow-[0_0_12px_rgba(133,223,195,0.4)] transition-all duration-300">
                                 <Phone className="w-5 h-5" />
                             </div>
-                            <div>
-                                <p className="text-sm text-sea-salt/40 font-medium uppercase tracking-wider">{contactUsCopy.callUsLabel}</p>
-                                <p className="text-sea-salt/80 font-medium text-base sm:text-lg">{contactUsCopy.callUsVal}</p>
-                            </div>
-                        </div>
 
-                        <div className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/5 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group">
-                            <div className="p-3 rounded-lg bg-brunswick-green-900/20 border border-brunswick-green-500/20 text-brunswick-green-900 group-hover:shadow-[0_0_12px_rgba(133,223,195,0.4)] transition-all duration-300">
+                            <div>
+                                <p className="text-sm text-sea-salt/40 font-medium uppercase tracking-wider">
+                                    {contactUsCopy.callUsLabel}
+                                </p>
+                                <p className="text-sea-salt/80 font-medium text-base sm:text-lg">
+                                    {contactUsCopy.callUsVal}
+                                </p>
+                            </div>
+                        </a>
+
+                        <a
+                            href="https://share.google/lxMZhTfNl1M2vH5tt"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/5 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group"
+                        >
+                            <div className="p-3 rounded-lg bg-brunswick-green-900/20 border border-brunswick-green-500 text-brunswick-green-500 group-hover:shadow-[0_0_12px_rgba(133,223,195,0.4)] transition-all duration-300">
                                 <MapPin className="w-5 h-5" />
                             </div>
+
                             <div>
-                                <p className="text-sm text-sea-salt/40 font-medium uppercase tracking-wider">{contactUsCopy.locationLabel}</p>
+                                <p className="text-sm text-sea-salt/40 font-medium uppercase tracking-wider">
+                                    {contactUsCopy.locationLabel}
+                                </p>
+
                                 <p className="text-sea-salt/80 font-medium text-base sm:text-lg">
                                     {contactUsCopy.locationVal}
                                 </p>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     {/* Placeholder Stylized Map Neon (Optional) */}

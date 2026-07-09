@@ -218,12 +218,12 @@ export default function Cases() {
               {casesCopy.titleLine1} <br />{casesCopy.titleLine2}
             </h2>
           </div>
-          <div className="lg:col-span-4 flex flex-col gap-6 items-start lg:items-end">
-            {/* <p className="font-sans text-base sm:text-lg text-sea-salt/90  max-w-sm lg:text-right">
+          {/* <div className="lg:col-span-4 flex flex-col gap-6 items-start lg:items-end"> */}
+          {/* <p className="font-sans text-base sm:text-lg text-sea-salt/90  max-w-sm lg:text-right">
               {casesCopy.description}
             </p> */}
 
-          </div>
+          {/* </div> */}
         </div>
 
         {/* ── DESKTOP Carousel (4 cards side-by-side) ────────────── */}
