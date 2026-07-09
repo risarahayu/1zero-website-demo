@@ -21,10 +21,10 @@ export default function CTA({ onOpenBooking }: CTAProps) {
 
           {/* Glowing particle details */}
           <div className="absolute top-10 right-10 flex h-3 w-3 items-center justify-center text-brunswick-green-500">
-            <Sparkles className="h-4 w-4 animate-pulse" />
+            {/* <Sparkles className="h-4 w-4 animate-pulse" /> */}
           </div>
           <div className="absolute bottom-10 left-10 flex h-3 w-3 items-center justify-center text-brunswick-green-500">
-            <Sparkles className="h-4 w-4 animate-bounce" />
+            {/* <Sparkles className="h-4 w-4 animate-bounce" /> */}
           </div>
 
           <div className="max-w-3xl mx-auto space-y-10">

@@ -137,6 +137,9 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
               >
                 <ArrowLeft className="h-4 w-4" />
               </button>
+              <span className="font-sans text-lg text-sea-salt/80 tracking-widest uppercase font-semibold ml-2 select-none">
+                {String(currentDisplayIndex + 1).padStart(2, '0')} / {String(customProjects.length).padStart(2, '0')}
+              </span>
               <button
                 type="button"
                 onClick={handleNext}
@@ -145,15 +148,12 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
               >
                 <ArrowRight className="h-4 w-4" />
               </button>
-              <span className="font-sans text-lg text-sea-salt/80 tracking-widest uppercase font-semibold ml-2 select-none">
-                {String(currentDisplayIndex + 1).padStart(2, '0')} / {String(customProjects.length).padStart(2, '0')}
-              </span>
 
-
-              <a href={`${import.meta.env.BASE_URL}#portfolio`}>
-                <p className="font-sans text-base sm:text-lg text-sea-salt/80 tracking-widest  font-semibold ml-2 select-none cursor-pointer hover:text-brunswick-green-500 hover:underline transition-all duration-300 transform active:scale-95">{portfolioCopy.seeAllText}</p>
-              </a>
             </div>
+
+            <a href={`${import.meta.env.BASE_URL}#portfolio`}>
+              <p className="font-sans text-base sm:text-lg text-sea-salt/80 tracking-widest  font-semibold ml-2 select-none cursor-pointer hover:text-brunswick-green-500 hover:underline transition-all duration-300 transform active:scale-95">{portfolioCopy.seeAllText}</p>
+            </a>
           </div>
 
           {/* RIGHT PANEL: Horizontal Carousel Track */}

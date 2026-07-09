@@ -1,3 +1,5 @@
+import { ElementType } from "react";
+
 export interface NavLink {
   label: string;
   href: string;
@@ -64,6 +66,7 @@ export interface WorkflowStep {
   subtext: string;
   bullet1: string;
   bullet2: string;
+  icon?: ElementType;
 }
 
 export interface TeamMemberCall {

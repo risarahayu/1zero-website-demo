@@ -74,13 +74,16 @@ export const footerCopy = {
   connectGradient: "Connect",
   description: "We lower technical barriers so you can focus on your mission. No agency BS—just AI-first infrastructure and honest partnerships designed to exponentially expand your real-world impact.",
   directInquiries: "Direct Inquiries",
-  workingHours: "WITA working hours: 09:00 - 16:00",
+  workingHours: "Working hours: 09:00–16:00 (UTC+8)",
   primaryLaboratory: "Bali HQ",
   officeTitle: "Our Office Address",
   officeAddress: "Biliq Sunset Office Space, Jalan Sunset Road 819, Bali Ruko Sunset Indah II No. 10, Kuta, Bali, Indonesia, 80361",
   copyright: "1zero. ARCHITECTS OF IMPACT.",
   backToTop: "BACK TO TOP ↑",
-  madeForDoubleImpact: "EXPONENTIALLY EXPANDING IMPACT POTENTIAL"
+  madeForDoubleImpact: "EXPONENTIALLY EXPANDING IMPACT POTENTIAL",
+  developmentOfficeLabel: "Development Office",
+  developmentOfficeTitle: "1zero Development Office",
+  developmentOfficeAddress: "Jl. Penyaringan No.12A, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80227",
 };
 
 export const contactUsCopy = {
