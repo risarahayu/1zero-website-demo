@@ -336,7 +336,7 @@ export default function WorkflowHorizontal() {
                   width: i === activeIdx ? "2rem" : "0.5rem",
                   height: "0.5rem",
                   background: i === activeIdx ? cfg.accent : "rgba(255,255,255,0.2)",
-                  boxShadow: i === activeIdx ? `0 0 8px ${cfg.accent}` : "none",
+                  // boxShadow: i === activeIdx ? `0 0 8px ${cfg.accent}` : "none",
                 }}
               />
             );
