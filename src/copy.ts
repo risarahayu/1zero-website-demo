@@ -187,7 +187,7 @@ export const casesCopy = {
   liveCase: "Live Case",
   discussionCompleted: "DISCUSSION COMPLETED",
   discussStrategy: "Discuss Strategy",
-  badge: "Recent Activity",
+  badge: "Our Activity",
   titleLine1: "Proven Impact",
   titleLine2: "in Production.",
   description: "See how we partner with mission-driven organizations to replace legacy bottlenecks with highly scalable, AI-first infrastructure.",
