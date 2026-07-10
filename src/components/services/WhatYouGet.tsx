@@ -62,7 +62,7 @@ export default function WhatYouGet() {
                     {servicesCopy.workingWithBadge}
                 </span>
 
-                <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
+                <h2 className="font-sans text-3xl leading-normal sm:text-5xl sm:leading-normal font-bold text-sea-salt">
                     {servicesCopy.whatYouGain}
                 </h2>
 
@@ -105,7 +105,7 @@ export default function WhatYouGet() {
                                 </div>
                             )}
 
-<h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt mb-2">
+                            <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt mb-2">
                                 {item.title}
                             </h3>
 
@@ -122,11 +122,10 @@ export default function WhatYouGet() {
                         <button
                             key={i}
                             onClick={() => scrollToIndex(i)}
-                            className={`transition-all rounded-full ${
-                                i === activeIndex
+                            className={`transition-all rounded-full ${i === activeIndex
                                     ? "w-6 h-1.5 bg-sea-salt"
                                     : "w-2 h-2 bg-sea-salt/30"
-                            }`}
+                                }`}
                         />
                     ))}
                 </div>

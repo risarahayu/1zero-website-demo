@@ -3,7 +3,8 @@ import React from "react";
 import { motion, useScroll, useTransform, MotionValue } from "motion/react";
 import { workflowSteps } from "../data";
 import { workflowCopy } from "../copy";
-import { CheckCircle2, Search, Sliders, Rocket } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
+import { Icon } from "@iconify/react";
 
 const N = workflowSteps.length;
 
@@ -68,7 +69,7 @@ function SidebarIcons({ scrollYProgress, onIconClick }: { scrollYProgress: Motio
               }}
               className="flex items-center justify-center w-12 h-12 rounded-full border-2 cursor-pointer transition-transform hover:scale-110"
             >
-              <span className="text-sea-salt">{getIcon(step.number)}</span>
+              <span className="text-sea-salt"><Icon icon={step.icon} width={28} height={28} /></span>
             </motion.div>
           );
         })}
@@ -100,19 +101,13 @@ function TimelineFill({ scrollYProgress }: { scrollYProgress: MotionValue<number
 }
 
 const PANEL_CONFIG = [
-  { bg: "bg-raisin-black-900", glow: "rgba(29, 87, 69, 0.19)", accent: "var(--green-700)", accentText: "text-brunswick-green-700", border: "border-brunswick-green-700" },
-  { bg: "bg-raisin-black-900", glow: "rgba(29, 87, 69, 0.29)", accent: "var(--green-800)", accentText: "text-brunswick-green-800", border: "border-brunswick-green-800" },
-  { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.51)", accent: "var(--green-900)", accentText: "text-brunswick-green-900", border: "border-brunswick-green-900" },
+  { bg: "bg-raisin-black-900", glow: "rgba(29, 87, 69, 0.19)", accent: "var(--green-600)", accentText: "text-brunswick-green-700", border: "border-brunswick-green-700" },
+  { bg: "bg-raisin-black-900", glow: "rgba(29, 87, 69, 0.29)", accent: "var(--green-700)", accentText: "text-brunswick-green-800", border: "border-brunswick-green-800" },
+  { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.51)", accent: "var(--green-800)", accentText: "text-brunswick-green-900", border: "border-brunswick-green-900" },
+  { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.61)", accent: "var(--green-900)", accentText: "text-brunswick-green-900", border: "border-brunswick-green-900" },
+
 ];
 
-function getIcon(number: string) {
-  switch (number.toLowerCase()) {
-    case "discovery": return <Search className="h-6 w-6" />;
-    case "blueprint": return <Sliders className="h-6 w-6" />;
-    case "build and enable": return <Rocket className="h-6 w-6" />;
-    default: return <CheckCircle2 className="h-6 w-6" />;
-  }
-}
 
 function Panel({
   step,
@@ -189,7 +184,7 @@ function Panel({
       {/* Main content */}
       <motion.div
         style={{ y: contentY }}
-        className="relative min-h-[60vh] flex items-center max-w-7xl mx-auto px-20 lg:px-24"
+        className="relative h-screen flex items-center max-w-7xl mx-auto px-20 lg:px-24"
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 w-full">
 
@@ -201,7 +196,9 @@ function Panel({
                 className={`h-14 w-14 rounded-2xl flex items-center justify-center border ${cfg.border}`}
                 style={{ background: `${cfg.accent}12` }}
               >
-                <span className={cfg.accentText}>{getIcon(step.number)}</span>
+                <span className={cfg.accentText}>
+                  {step.icon ? <Icon icon={step.icon} width="24" /> : null}
+                </span>
               </div>
               <div>
                 <p className="font-sans text-base sm:text-lg uppercase tracking-[0.2em] text-sea-salt">{workflowCopy.phaseLabel}</p>
@@ -284,14 +281,12 @@ export default function Workflow() {
   const handleScrollToStep = (index: number) => {
     if (!containerRef.current) return;
 
-    // Cari tahu posisi container utamanya dari atas halaman
-    const containerTop = containerRef.current.offsetTop;
+    // Container total height = (N+1)*100vh, scrollable distance = N*100vh
+    // Each step occupies exactly 1 * window.innerHeight of scroll distance.
+    // We target the middle of each step's range so it lands cleanly on the panel.
+    const containerTop = containerRef.current.getBoundingClientRect().top + window.scrollY;
+    const targetY = containerTop + (index * window.innerHeight) + (window.innerHeight * 0.1);
 
-    // Hitung posisi target: Posisi Container + (Index * Tinggi Layar HP/Laptop)
-    // Ditambah sedikit offset (misal 10px) agar pergerakannya pas masuk ke area deteksi Framer Motion
-    const targetY = containerTop + (index * window.innerHeight) + 10;
-
-    // Perintahkan browser untuk meluncur ke posisi tersebut
     window.scrollTo({
       top: targetY,
       behavior: 'smooth'
@@ -314,7 +309,7 @@ export default function Workflow() {
             {workflowCopy.badge}
           </span>
           <div className="space-y-6">
-            <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
+            <h2 className="font-sans text-3xl leading-normal sm:text-5xl sm:leading-normal font-bold text-sea-salt">
               {workflowCopy.title}
             </h2>
             <p className="max-w-xl mx-auto font-sans text-base sm:text-lg text-sea-salt/90">
@@ -324,13 +319,14 @@ export default function Workflow() {
         </motion.div>
       </div>
 
-      {/* Sticky scroll container: (N+1)*100vh tall so each step = 100vh scroll */}
+      {/* Sticky scroll container: (N+1)*100vh tall so each step gets exactly 100vh of scroll distance */}
       <div
         ref={containerRef}
         className="relative"
+        style={{ height: `${(N + 1) * 100}vh` }}
       >
         {/* Sticky viewport */}
-        <div className="sticky top-0 min-h-[60vh] overflow-hidden">
+        <div className="sticky top-0 h-screen overflow-hidden">
 
           {/* Global timeline fill line — renders above all panels */}
           <SidebarIcons

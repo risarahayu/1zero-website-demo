@@ -362,6 +362,21 @@ const TeamSection: React.FC = () => {
         );
     };
 
+    // Modal carousel: navigate between members
+    const handleModalNext = () => {
+        const currentIdx = members.findIndex((m) => m.name === selectedMember?.name);
+        const nextIdx = (currentIdx + 1) % members.length;
+        setSelectedMember(members[nextIdx]);
+        setActiveIdx(nextIdx);
+    };
+
+    const handleModalPrev = () => {
+        const currentIdx = members.findIndex((m) => m.name === selectedMember?.name);
+        const prevIdx = (currentIdx - 1 + members.length) % members.length;
+        setSelectedMember(members[prevIdx]);
+        setActiveIdx(prevIdx);
+    };
+
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (selectedIndex === null) return;
@@ -383,6 +398,144 @@ const TeamSection: React.FC = () => {
 
         return () => window.removeEventListener("keydown", handleKeyDown);
     }, [selectedIndex]);
+
+    function handleSDGClick(id) {
+        if (id == 1) {
+            window.open(
+                "https://www.un.org/sustainabledevelopment/poverty/",
+                "_blank",
+                "noopener,noreferrer"
+            )
+        }
+
+        if (id == 2) {
+            window.open(
+                "https://www.un.org/sustainabledevelopment/hunger/",
+                "_blank",
+                "noopener,noreferrer"
+            )
+        }
+
+        if (id == 3) {
+            window.open(
+                "https://www.un.org/sustainabledevelopment/health/",
+                "_blank",
+                "noopener,noreferrer"
+            )
+        }
+
+        if (id == 4) {
+            window.open(
+                "https://www.un.org/sustainabledevelopment/education/",
+                "_blank",
+                "noopener,noreferrer"
+            )
+        }
+
+        if (id == 5) {
+            window.open(
+                "https://www.un.org/sustainabledevelopment/gender-equality/",
+                "_blank",
+                "noopener,noreferrer"
+            )
+        }
+
+        if (id == 6) {
+            window.open(
+                "https://www.un.org/sustainabledevelopment/water-and-sanitation/",
+                "_blank",
+                "noopener,noreferrer"
+            )
+        }
+
+        if (id == 7) {
+            window.open(
+                "https://www.un.org/sustainabledevelopment/energy/",
+                "_blank",
+                "noopener,noreferrer"
+            )
+        }
+
+        if (id == 8) {
+            window.open(
+                "https://www.un.org/sustainabledevelopment/economic-growth/",
+                "_blank",
+                "noopener,noreferrer"
+            )
+        }
+
+        if (id == 9) {
+            window.open(
+                "https://www.un.org/sustainabledevelopment/infrastructure-industrialization/",
+                "_blank",
+                "noopener,noreferrer"
+            )
+        }
+
+        if (id == 10) {
+            window.open(
+                "https://www.un.org/sustainabledevelopment/inequality/",
+                "_blank",
+                "noopener,noreferrer"
+            )
+        }
+
+        if (id == 11) {
+            window.open(
+                "https://www.un.org/sustainabledevelopment/cities/",
+                "_blank",
+                "noopener,noreferrer"
+            )
+        }
+
+        if (id == 12) {
+            window.open(
+                "https://www.un.org/sustainabledevelopment/sustainable-consumption-production/",
+                "_blank",
+                "noopener,noreferrer"
+            )
+        }
+
+        if (id == 13) {
+            window.open(
+                "https://www.un.org/sustainabledevelopment/climate-change/",
+                "_blank",
+                "noopener,noreferrer"
+            )
+        }
+
+        if (id == 14) {
+            window.open(
+                "https://www.un.org/sustainabledevelopment/oceans/",
+                "_blank",
+                "noopener,noreferrer"
+            )
+        }
+
+        if (id == 15) {
+            window.open(
+                "https://www.un.org/sustainabledevelopment/biodiversity/",
+                "_blank",
+                "noopener,noreferrer"
+            )
+        }
+
+        if (id == 16) {
+            window.open(
+                "https://www.un.org/sustainabledevelopment/peace-justice/",
+                "_blank",
+                "noopener,noreferrer"
+            )
+        }
+
+        if (id == 17) {
+            window.open(
+                "https://www.un.org/sustainabledevelopment/globalpartnerships/",
+                "_blank",
+                "noopener,noreferrer"
+            )
+        }
+    }
 
     return (
         <section className="py-16 text-slate-50 relative">
@@ -538,7 +691,7 @@ const TeamSection: React.FC = () => {
                             {/* SOCIAL */}
                             <div className="space-y-6">
                                 <h4 className="font-sans text-xl sm:text-2xl font-bold text-sea-salt mb-4 text-start">
-                                    Social Media
+                                    Where to Find Me
                                 </h4>
 
                                 <div className="space-y-3">
@@ -601,7 +754,7 @@ const TeamSection: React.FC = () => {
                             {/* BIO */}
                             <div className="space-y-6 text-start">
                                 <h4 className="font-sans text-xl sm:text-2xl font-bold text-sea-salt">
-                                    About
+                                    Get to Know Me
                                 </h4>
 
                                 <p className="text-base sm:text-lg text-start text-sea-salt/90 ">
@@ -613,7 +766,7 @@ const TeamSection: React.FC = () => {
                             <div className="space-y-6">
 
                                 <h4 className="font-sans text-xl sm:text-2xl font-bold text-sea-salt text-start">
-                                    Sustainable Development Goals
+                                    My Sustainability Focus
                                 </h4>
 
                                 <div className="flex flex-wrap gap-2">
@@ -623,25 +776,25 @@ const TeamSection: React.FC = () => {
                                             src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(sdg.id).padStart(2, "0")}.png`}
                                             alt={`SDG ${sdg.id}`}
                                             className="w-16 h-16 object-contain cursor-pointer hover:scale-110 transition rounded"
-                                            onClick={() => setSelectedIndex(index)}
+                                            onClick={() => handleSDGClick(sdg.id)}
                                         />
                                     ))}
                                 </div>
-                                {selectedIndex !== null && (
+                                {/* {selectedIndex !== null && (
                                     <div
                                         className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center"
                                         onClick={() => setSelectedIndex(null)}
-                                    >
-                                        {/* Close */}
-                                        <button
+                                    > */}
+                                {/* Close */}
+                                {/* <button
                                             onClick={() => setSelectedIndex(null)}
                                             className="absolute top-6 right-6 text-white text-5xl hover:text-gray-300 transition"
                                         >
                                             ×
-                                        </button>
+                                        </button> */}
 
-                                        {/* Previous */}
-                                        <button
+                                {/* Previous */}
+                                {/* <button
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 prevImage();
@@ -649,18 +802,18 @@ const TeamSection: React.FC = () => {
                                             className="absolute left-8 text-white text-6xl hover:scale-125 transition"
                                         >
                                             ‹
-                                        </button>
+                                        </button> */}
 
-                                        {/* Image */}
-                                        <img
+                                {/* Image */}
+                                {/* <img
                                             onClick={(e) => e.stopPropagation()}
                                             src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(activeMember.sdgs[selectedIndex].id).padStart(2, "0")}.png`}
                                             alt=""
                                             className="max-w-[80vw] max-h-[85vh] object-contain rounded-xl shadow-2xl transition-all duration-300"
-                                        />
+                                        /> */}
 
-                                        {/* Next */}
-                                        <button
+                                {/* Next */}
+                                {/* <button
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 nextImage();
@@ -670,7 +823,7 @@ const TeamSection: React.FC = () => {
                                             ›
                                         </button>
                                     </div>
-                                )}
+                                )} */}
                             </div>
                         </div>
                     </div>
@@ -679,6 +832,15 @@ const TeamSection: React.FC = () => {
                 {/* MODAL ONLY MOBILE + TABLET */}
                 {selectedMember && !isDesktop && (
                     <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-raisin-black-900/80 backdrop-blur-sm p-6">
+
+                        {/* Prev Arrow */}
+                        <button
+                            onClick={handleModalPrev}
+                            className="absolute left-2 z-20 w-10 h-10 rounded-full bg-brunswick-green-900/80 hover:bg-brunswick-green-500 text-sea-salt flex items-center justify-center text-2xl transition-all duration-200 shadow-lg"
+                            aria-label="Previous member"
+                        >
+                            <Icon icon="mdi:chevron-left" width="24" />
+                        </button>
 
                         <div className="relative w-full max-w-2xl rounded-2xl overflow-hidden border border-brunswick-green-900 bg-raisin-black-900-950 shadow-2xl">
 
@@ -692,6 +854,28 @@ const TeamSection: React.FC = () => {
                             >
                                 ✕
                             </button>
+
+                            {/* Member counter indicator */}
+                            {/* <div className="absolute top-4 left-1/2 -translate-x-1/2 z-20 flex gap-1.5">
+                                {members.map((_, idx) => {
+                                    const currentIdx = members.findIndex((m) => m.name === selectedMember?.name);
+                                    return (
+                                        <button
+                                            key={idx}
+                                            onClick={() => {
+                                                setSelectedMember(members[idx]);
+                                                setActiveIdx(idx);
+                                            }}
+                                            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                                                idx === currentIdx
+                                                    ? "bg-brunswick-green-500 w-4"
+                                                    : "bg-sea-salt/40 hover:bg-sea-salt/70"
+                                            }`}
+                                            aria-label={`Go to ${members[idx].name}`}
+                                        />
+                                    );
+                                })}
+                            </div> */}
 
                             {/* Layout */}
                             <div className="grid md:grid-cols-[240px_1fr]">
@@ -708,103 +892,112 @@ const TeamSection: React.FC = () => {
                                 </div>
 
                                 {/* Content */}
-                                <div className="p-6 md:p-8 flex flex-col space-y-5">
+                                {/* Content */}
+                                <div className="p-6 flex flex-col space-y-8">
 
                                     {/* Header */}
-                                    <div className="space-y-10 flex flex-col text-start">
-                                        {/* <span className="float-left text-base md:text-lg text-start uppercase tracking-[0.25em] text-brunswick-green-500">
-                                            Team Member
-                                        </span> */}
-                                        <div className="space-y-2">
-                                            <h3 className="mt-3 font-sans  text-2xl sm:text-3xl font-bold text-sea-salt">
-                                                {selectedMember.name}
-                                            </h3>
+                                    <div className="space-y-2 text-start">
+                                        <h3 className="font-sans text-2xl font-bold text-brunswick-green-500">
+                                            {selectedMember.name}
+                                        </h3>
 
-                                            <p className="mt-1 text-base sm:text-lg text-start text-raisin-black-900-400">
-                                                {selectedMember.role}
-                                            </p>
+                                        <p className="text-raisin-black-900-400">
+                                            {selectedMember.role}
+                                        </p>
+                                    </div>
+
+                                    {/* BIO */}
+                                    <div className="space-y-4 text-start">
+                                        <h4 className="font-sans text-xl font-bold text-sea-salt">
+                                            Get to Know Me
+                                        </h4>
+
+                                        <p className="text-sea-salt/90">
+                                            {selectedMember.bio}
+                                        </p>
+                                    </div>
+
+                                    {/* SOCIAL */}
+                                    <div className="space-y-4">
+
+                                        <h4 className="font-sans text-xl font-bold text-sea-salt text-start">
+                                            Where to Find Me
+                                        </h4>
+
+                                        <div className="space-y-3">
+
+                                            {selectedMember.socialMediaAccounts.linkedin.name && (
+                                                <a
+                                                    href={selectedMember.socialMediaAccounts.linkedin.url}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
+                                                >
+                                                    <Icon icon="mdi:linkedin" width="20" />
+                                                    <span>LinkedIn</span>
+                                                </a>
+                                            )}
+
+                                            {selectedMember.socialMediaAccounts.github?.name && (
+                                                <a
+                                                    href={selectedMember.socialMediaAccounts.github.url}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
+                                                >
+                                                    <Icon icon="mdi:github" width="20" />
+                                                    <span>GitHub</span>
+                                                </a>
+                                            )}
+
+                                            {selectedMember.socialMediaAccounts.dribble?.name && (
+                                                <a
+                                                    href={selectedMember.socialMediaAccounts.dribble.url}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
+                                                >
+                                                    <Icon icon="mdi:dribbble" width="20" />
+                                                    <span>Dribbble</span>
+                                                </a>
+                                            )}
+
                                         </div>
                                     </div>
-
-                                    {/* Bio */}
-                                    <div className="text-sea-salt/90 text-start">
-                                        <p className="text-base sm:text-lg">{selectedMember.bio}</p>
-                                    </div>
-
-                                    {/* Tech stack */}
-                                    {/* <div className="flex flex-wrap items-center gap-2">
-                                        <span className="text-base md:text-lg  text-raisin-black-900-500 mr-1">Tech:</span>
-
-                                        {selectedMember.techStack?.map((tech) => (
-                                            <div
-                                                key={tech.name}
-                                                className="flex items-center gap-1 px-2 py-1 rounded-md bg-sea-salt/5 border border-sea-salt/10 text-base md:text-lg  text-sea-salt/90"
-                                            >
-                                                <span>{tech.logo}</span>
-                                                <span>{tech.name}</span>
-                                            </div>
-                                        ))}
-                                    </div> */}
 
                                     {/* SDGs */}
-                                    <div className="flex flex-wrap gap-2">
-                                        {activeMember.sdgs.map((sdg, index) => (
-                                            <img
-                                                key={sdg.id}
-                                                src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(sdg.id).padStart(2, "0")}.png`}
-                                                alt={`SDG ${sdg.id}`}
-                                                className="w-16 h-16 object-contain cursor-pointer hover:scale-110 transition rounded"
-                                                onClick={() => setSelectedIndex(index)}
-                                            />
-                                        ))}
-                                    </div>
-                                    {selectedIndex !== null && (
-                                        <div
-                                            className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center"
-                                            onClick={() => setSelectedIndex(null)}
-                                        >
-                                            {/* Close */}
-                                            <button
-                                                onClick={() => setSelectedIndex(null)}
-                                                className="absolute top-6 right-6 text-white text-5xl hover:text-gray-300 transition"
-                                            >
-                                                ×
-                                            </button>
+                                    <div className="space-y-4">
 
-                                            {/* Previous */}
-                                            <button
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    prevImage();
-                                                }}
-                                                className="absolute left-8 text-white text-6xl hover:scale-125 transition"
-                                            >
-                                                ‹
-                                            </button>
+                                        <h4 className="font-sans text-xl font-bold text-sea-salt text-start">
+                                            My Sustainability Focus
+                                        </h4>
 
-                                            {/* Image */}
-                                            <img
-                                                onClick={(e) => e.stopPropagation()}
-                                                src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(activeMember.sdgs[selectedIndex].id).padStart(2, "0")}.png`}
-                                                alt=""
-                                                className="max-w-[80vw] max-h-[85vh] object-contain rounded-xl shadow-2xl transition-all duration-300"
-                                            />
-
-                                            {/* Next */}
-                                            <button
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    nextImage();
-                                                }}
-                                                className="absolute right-8 text-white text-6xl hover:scale-125 transition"
-                                            >
-                                                ›
-                                            </button>
+                                        <div className="flex flex-wrap gap-2">
+                                            {selectedMember.sdgs.map((sdg, index) => (
+                                                <img
+                                                    key={sdg.id}
+                                                    src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(sdg.id).padStart(2, "0")}.png`}
+                                                    alt={`SDG ${sdg.id}`}
+                                                    className="w-16 h-16 object-contain cursor-pointer hover:scale-110 transition rounded"
+                                                    onClick={() => setSelectedIndex(index)}
+                                                />
+                                            ))}
                                         </div>
-                                    )}
+
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
+
+                        {/* Next Arrow */}
+                        <button
+                            onClick={handleModalNext}
+                            className="absolute right-2 z-20 w-10 h-10 rounded-full bg-brunswick-green-900/80 hover:bg-brunswick-green-500 text-sea-salt flex items-center justify-center text-2xl transition-all duration-200 shadow-lg"
+                            aria-label="Next member"
+                        >
+                            <Icon icon="mdi:chevron-right" width="24" />
+                        </button>
 
                     </div>
                 )}

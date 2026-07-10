@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Linkedin, Github, MessageCircle, Twitter, Cpu, Instagram } from "lucide-react";
+import TwotoneWhatsappIcon from '@iconify-react/ic/twotone-whatsapp';
 import Logo1Zero from "./Logo1Zero";
 import { footerCopy } from "../copy";
 
@@ -17,7 +18,7 @@ export default function Footer() {
 
           {/* LEFT COLUMN: BIG GREETING */}
           <div className="lg:col-span-5 space-y-6">
-            <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
+            <h2 className="font-sans text-3xl leading-normal sm:text-5xl sm:leading-normal font-bold text-sea-salt">
               {footerCopy.connectTitle} <br />
               <span className="animate-gradient-text text-gradient-impact text-transparent bg-clip-text bg-gradient-to-r from-[var(--ivory)] to-[var(--green-900)]">
                 {footerCopy.connectGradient}
@@ -32,7 +33,7 @@ export default function Footer() {
               {[
                 { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/1zero.biz/", id: "Instagram-link" },
                 { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/company/1zero-biz/", id: "linkedin-link" },
-                { name: "WhatsApp", icon: MessageCircle, href: "https://api.whatsapp.com/send/?phone=6285339396030&text&type=phone_number&app_absent=0", id: "whatsapp-link" },
+                { name: "WhatsApp", icon: TwotoneWhatsappIcon, href: "https://api.whatsapp.com/send/?phone=6285339396030&text&type=phone_number&app_absent=0", id: "whatsapp-link" },
               ].map((social, i) => {
                 const Icon = social.icon;
                 return (
@@ -66,15 +67,16 @@ export default function Footer() {
               <div className="space-y-3 text-lg  text-sea-salt">
                 <a
                   id="footer-email-link"
-                  href="mailto:mrosa@1zero.biz"
+                  href="mailto:info@1zero.biz"
                   className="flex items-center gap-2 hover:text-brunswick-green-500 transition-colors font-sans"
                 >
                   <Mail className="h-4 w-4 text-brunswick-green-500 shrink-0" />
-                  <span>mrosa@1zero.biz</span>
+                  <span>info@1zero.biz</span>
                 </a>
                 <a
                   id="footer-phone-link"
-                  href="tel:+6285339396030"
+                  href="https://api.whatsapp.com/send/?phone=6285339396030&text&type=phone_number&app_absent=0"
+                  target="_blank"
                   className="flex items-center gap-2 hover:text-brunswick-green-500 transition-colors font-sans"
                 >
                   <Phone className="h-4 w-4 text-brunswick-green-500 shrink-0" />
@@ -90,20 +92,36 @@ export default function Footer() {
             </div>
 
             {/* Address */}
-            <div className="space-y-6">
-              <span className="block font-sans text-lg text-sea-saltuppercase tracking-widest font-bold">
-                {footerCopy.primaryLaboratory}
-              </span>
-              <div className="flex gap-2 text-lg text-sea-salt  font-sans">
-                <MapPin className="h-4 w-4 text-brunswick-green-500 shrink-0 mt-0.5" />
-                <div>
-                  <strong className="text-sea-salt block font-sans text-lg">{footerCopy.officeTitle}</strong>
-                  <span className="text-sea-salt/90">{footerCopy.officeAddress}</span>
+            <div className="flex flex-col gap-10">
+              <div className="space-y-6">
+                <span className="block font-sans text-lg text-sea-saltuppercase tracking-widest font-bold">
+                  {footerCopy.primaryLaboratory}
+                </span>
+                <div className="flex gap-2 text-lg text-sea-salt  font-sans">
+                  <MapPin className="h-4 w-4 text-brunswick-green-500 shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-sea-salt block font-sans text-lg">{footerCopy.officeTitle}</strong>
+                    <span className="text-sea-salt/90">{footerCopy.officeAddress}</span>
+                  </div>
                 </div>
               </div>
+              <div className="space-y-6">
+                <span className="block font-sans text-lg text-sea-saltuppercase tracking-widest font-bold">
+                  {footerCopy.developmentOfficeTitle}
+                </span>
+                <div className="flex gap-2 text-lg text-sea-salt  font-sans">
+                  <MapPin className="h-4 w-4 text-brunswick-green-500 shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-sea-salt block font-sans text-lg">{footerCopy.officeTitle}</strong>
+                    <span className="text-sea-salt/90">{footerCopy.developmentOfficeAddress}</span>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
           </div>
+
 
         </div>
 
@@ -117,7 +135,7 @@ export default function Footer() {
           <div className="flex items-center gap-4 text-lg uppercase">
             <a href="#home" className="hover:text-brunswick-green-500 hover:underline transition-colors">{footerCopy.backToTop}</a>
             <span>•</span>
-            <span className="text-brunswick-green-500">{footerCopy.madeForDoubleImpact}</span>
+            {/* <span className="text-brunswick-green-500">{footerCopy.madeForDoubleImpact}</span> */}
           </div>
         </div>
 

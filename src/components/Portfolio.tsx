@@ -116,7 +116,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
 
             <div className="space-y-6">
               {/* Elegant Main Title */}
-              <h2 className="font-sans text-3xl sm:text-5xl font-bold text-sea-salt">
+              <h2 className="font-sans text-3xl leading-normal sm:text-5xl sm:leading-normal font-bold text-sea-salt">
                 {portfolioCopy.titleLine1} <br />
                 {portfolioCopy.titleLine2}
               </h2>
@@ -137,6 +137,9 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
               >
                 <ArrowLeft className="h-4 w-4" />
               </button>
+              <span className="font-sans text-lg text-sea-salt/80 tracking-widest uppercase font-semibold ml-2 select-none">
+                {String(currentDisplayIndex + 1).padStart(2, '0')} / {String(customProjects.length).padStart(2, '0')}
+              </span>
               <button
                 type="button"
                 onClick={handleNext}
@@ -145,15 +148,12 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
               >
                 <ArrowRight className="h-4 w-4" />
               </button>
-              <span className="font-sans text-lg text-sea-salt/80 tracking-widest uppercase font-semibold ml-2 select-none">
-                {String(currentDisplayIndex + 1).padStart(2, '0')} / {String(customProjects.length).padStart(2, '0')}
-              </span>
 
-
-              <a href={`${import.meta.env.BASE_URL}#portfolio`}>
-                <p className="font-sans text-base sm:text-lg text-sea-salt/80 tracking-widest  font-semibold ml-2 select-none cursor-pointer hover:text-brunswick-green-500 hover:underline transition-all duration-300 transform active:scale-95">{portfolioCopy.seeAllText}</p>
-              </a>
             </div>
+
+            <a href={`${import.meta.env.BASE_URL}#portfolio`}>
+              <p className="font-sans text-base sm:text-lg text-sea-salt/80 tracking-widest  font-semibold ml-2 select-none cursor-pointer hover:text-brunswick-green-500 hover:underline transition-all duration-300 transform active:scale-95">{portfolioCopy.seeAllText}</p>
+            </a>
           </div>
 
           {/* RIGHT PANEL: Horizontal Carousel Track */}
@@ -191,7 +191,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
           <button
             id="portfolio-review-btn"
             onClick={onOpenBooking}
-            className="inline-flex items-center gap-2 p-3.5 px-8 rounded-full bg-brunswick-green-900 hover:bg-brunswick-green-700  text-sea-salt font-sans font-extrabold text-lg transition-all uppercase tracking-wider cursor-pointer shadow-[0_4px_20px_rgba(16,185,129,0.2)] hover:shadow-[0_4px_25px_rgba(16,185,129,0.3)] transform hover:scale-[1.01]"
+            className="inline-flex items-center gap-2 p-8 px-12 rounded-full bg-brunswick-green-900 hover:bg-brunswick-green-700  text-sea-salt font-sans font-extrabold text-lg sm:text-xl transition-all uppercase tracking-wider cursor-pointer shadow-[0_4px_20px_rgba(16,185,129,0.2)] hover:shadow-[0_4px_25px_rgba(16,185,129,0.3)] transform hover:scale-[1.01]"
           >
             {portfolioCopy.ctaButtonText}
           </button>
