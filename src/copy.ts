@@ -142,7 +142,7 @@ export const servicesCopy = {
   workingWithBadge: "Working with 1zero",
   whatYouGain: "What You Gain",
   description: "We don't just deliver code. We provide the AI roadmap, the DevPods, and the fractional CTO leadership to make you investable and unstoppable.",
-  heroTextPrefix: "We help you build",
+  heroTextPrefix: "We help you",
   heroTextSuffix: "AI-first digital systems.",
   heroTagline: "Mission-led teams don't need more messy middleware. They need agentic infrastructure to scale their impact."
 };
