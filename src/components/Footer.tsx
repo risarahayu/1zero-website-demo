@@ -100,7 +100,7 @@ export default function Footer() {
                 <div className="flex gap-2 text-lg text-sea-salt  font-sans">
                   <MapPin className="h-4 w-4 text-brunswick-green-500 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-sea-salt block font-sans text-lg">{footerCopy.officeTitle}</strong>
+                    {/* <strong className="text-sea-salt block font-sans text-lg">{footerCopy.officeTitle}</strong> */}
                     <span className="text-sea-salt/90">{footerCopy.officeAddress}</span>
                   </div>
                 </div>
@@ -112,7 +112,7 @@ export default function Footer() {
                 <div className="flex gap-2 text-lg text-sea-salt  font-sans">
                   <MapPin className="h-4 w-4 text-brunswick-green-500 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-sea-salt block font-sans text-lg">{footerCopy.officeTitle}</strong>
+                    {/* <strong className="text-sea-salt block font-sans text-lg">{footerCopy.officeTitle}</strong> */}
                     <span className="text-sea-salt/90">{footerCopy.developmentOfficeAddress}</span>
                   </div>
                 </div>
