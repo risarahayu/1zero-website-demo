@@ -94,7 +94,7 @@ export const members: TeamMember[] = [
             ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Mark.webp`,
         },
 
-        bio: "CTO with an eagle eye for detail, dedicated to flawless code, seamless architecture, and driving technical excellence.",
+        bio: "Mark helps sustainability founders with a live pilot, a real commercial path, and a technical gap they can’t close alone.",
 
         techStack: [
             { name: 'Figma', logo: '🎨' },
