@@ -82,7 +82,7 @@ export const footerCopy = {
   backToTop: "BACK TO TOP ↑",
   madeForDoubleImpact: "EXPONENTIALLY EXPANDING IMPACT POTENTIAL",
   developmentOfficeLabel: "Development Office",
-  developmentOfficeTitle: "1zero Development Office",
+  developmentOfficeTitle: "Development Office",
   developmentOfficeAddress: "Jl. Penyaringan No.12A, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali, Indonesia, 80227",
 };
 
