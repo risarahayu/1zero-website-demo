@@ -1,1014 +1,470 @@
-import React, { useState, useEffect } from 'react';
+import { NavLink, ProductItem, PortfolioItem, TestimonialItem, WorkflowStep, TeamMemberCall } from "types.ts"
+import React from "react";
+import { MousePointerClick, SearchX, EyeOff, Activity, Timer, Wrench, TrendingDown, Layout, Rocket, Network, ShieldCheck, Sparkles, Blocks, Cpu, UserPlus, Gauge, Compass, Boxes, ShieldAlert, Split, FileText, FileSearch, Users, Eye, BookOpen } from "lucide-react";
 
-import TeamBubble from './TeamBubble'; // optional, kept for potential reuse
-import { Icon } from "@iconify/react";
-import { section } from 'motion/react-client';
-import CtaBanner from './CTA Banner';
-import { aboutCopy } from '../../copy'; // Injecting our new copy file
-
-const basePath = import.meta.env.BASE_URL;
-
-export interface TeamMember {
-    name: string;
-    role: string;
-
-    // 🧠 STORY / PERSONAL BIO
-    bio: string;
-
-    // ⚙️ TECH / TOOLING PREFERENCE
-    techStack: {
-        name: string;
-        logo?: string; // bisa pakai URL icon atau emoji fallback
-    }[];
-
-    // IMAGE
-    images?: {
-        imageDisplay: string;
-        imageDisplayHover: string;
-        ImageDetail1: string;
-        ImageDetail2: string;
-    };
-
-    // Social Media
-
-    socialMediaAccounts: {
-        linkedin?: { name: string; url: string };
-        github?: { name: string; url: string };
-        dribble?: { name: string; url: string };
-    };
-
-    // 🌍 UN SDGs (SUSTAINABILITY ALIGNMENT)
-    sdgs: {
-        id: number;
-        title: string;
-    }[];
-
-}
-
-export const members: TeamMember[] = [
-    {
-        name: 'Molly Sanders',
-        role: 'Founder & CEO',
-        socialMediaAccounts: {
-            linkedin: { name: "Molly Sanders", url: "https://www.linkedin.com/in/mollysanders/" },
-            github: { name: "", url: "" },
-            dribble: { name: "", url: "" },
-        },
-
-        images:
-        {
-            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Molly.png`,
-            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Molly.webp`,
-            ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Molly.png`,
-            ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Molly.webp`,
-        },
-
-        bio: "Visionary leader focused on building innovative digital products and driving sustainable business growth.",
-
-        techStack: [
-            { name: 'React', logo: '⚛️' },
-            { name: 'Next.js', logo: '▲' },
-            { name: 'TailwindCSS', logo: '🎨' },
-        ],
-
-        sdgs: [
-            { id: 9, title: 'Industry, Innovation and Infrastructure' },
-            { id: 11, title: 'Sustainable Cities and Communities' },
-        ],
-    },
-
-    {
-        name: 'Mark Treleaven',
-        role: 'Founder & CTO',
-        socialMediaAccounts: {
-            linkedin: { name: "Mark Treleaven", url: "https://www.linkedin.com/in/mark-treleaven" },
-            github: { name: "", url: "" },
-            dribble: { name: "", url: "" },
-        },
-
-        images:
-        {
-            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Mark.webp`,
-            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Mark.webp`,
-            ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Mark.webp`,
-            ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Mark.webp`,
-        },
-
-        bio: "CTO with an eagle eye for detail, dedicated to flawless code, seamless architecture, and driving technical excellence.",
-
-        techStack: [
-            { name: 'Figma', logo: '🎨' },
-            { name: 'Adobe XD', logo: '🟥' },
-        ],
-
-        sdgs: [
-            { id: 5, title: 'Gender Equality' },
-            { id: 10, title: 'Reduced Inequalities' },
-        ],
-    },
-
-    {
-        name: 'Chandra Kusuma',
-        role: 'Operation Manager',
-        socialMediaAccounts: {
-            linkedin: { name: "Chandra Kusuma", url: "https://www.linkedin.com/in/chandra-kusuma83/" },
-            github: { name: "", url: "" },
-            dribble: { name: "", url: "" },
-        },
-
-        images:
-        {
-            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Chandra Kusuma.webp`,
-            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Chandra Kusuma.webp`,
-            ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Chandra Kusuma.webp`,
-            ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Chandra Kusuma.webp`,
-        },
-
-        bio: "Chandra is the operational backbone of 1zero, ensuring smooth project execution, efficient resources, and compliant, well-optimized daily operations so the team can focus on innovation.",
-
-        techStack: [
-            { name: 'AWS', logo: '☁️' },
-            { name: 'Docker', logo: '🐳' },
-            { name: 'Kubernetes', logo: '⚙️' },
-        ],
-
-        sdgs: [
-            { id: 13, title: 'Climate Action' },
-            { id: 14, title: 'Life Below Water' },
-        ],
-    },
-
-    {
-        name: 'Dharma Putra',
-        role: 'Solution Architect',
-
-        images:
-        {
-            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Dharma Putra.webp`,
-            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Dharma Putra.webp`,
-            ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Dharma Putra.webp`,
-            ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Dharma Putra.webp`,
-        },
-        socialMediaAccounts: {
-            linkedin: { name: "Dharma Putra", url: "" },
-            github: { name: "", url: "" },
-            dribble: { name: "", url: "" },
-        },
-
-        bio: "Building healthy team culture where people grow, not just work.",
-
-        techStack: [
-            { name: 'Notion', logo: '📝' },
-            { name: 'Slack', logo: '💬' },
-        ],
-
-        sdgs: [
-            { id: 4, title: 'Quality Education' },
-            { id: 13, title: 'Climate Action' },
-        ],
-    },
-
-    {
-        name: 'Mutia Rosa',
-        role: 'Executive Assistant',
-
-        images:
-        {
-            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Mutia Rosa.webp`,
-            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Mutia Rosa.webp`,
-            ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Mutia Rosa.webp`,
-            ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Mutia Rosa.webp`,
-        },
-
-        socialMediaAccounts: {
-            linkedin: { name: "Mutia Rosa", url: "https://www.linkedin.com/in/mutia-rosa-73552133" },
-            github: { name: "", url: "" },
-            dribble: { name: "", url: "" },
-        },
-
-        bio: "As an Executive Assistant to the CTO, I’m the go-to person for managing sales data and keeping client communication smooth",
-
-        techStack: [
-            { name: 'Node.js', logo: '🟢' },
-            { name: 'PostgreSQL', logo: '🐘' },
-            { name: 'Redis', logo: '🔴' },
-        ],
-
-        sdgs: [
-            { id: 4, title: 'Quality Education' },
-            { id: 12, title: 'Responsible Consumption and Production' },
-        ],
-    },
-
-    {
-        name: 'Risa Rahayu',
-        role: 'UI/UX Developer',
-        bio: 'UI/UX Developer who sees design as intention, not decoration',
-
-        images:
-        {
-            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Risa Rahayu.webp`,
-            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Risa Rahayu.webp`,
-            ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Risa Rahayu.webp`,
-            ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Risa Rahayu.webp`,
-        },
-
-        socialMediaAccounts: {
-            linkedin: { name: "Risa Rahayu", url: "https://www.linkedin.com/in/risarahayu" },
-            github: { name: "risarahayu", url: "https://github.com/risarahayu" },
-            dribble: { name: "Risa Rahayu", url: "https://dribbble.com/risa2000" },
-        },
-
-        techStack: [
-            { name: 'Jira', logo: '📊' },
-            { name: 'Figma', logo: '🎨' },
-        ],
-
-        sdgs: [
-            { id: 4, title: 'Quality Education' },
-            { id: 13, title: 'Climate Action' },
-        ],
-    },
-
-    {
-        name: 'Krisna Suarendra',
-        role: 'Junior Fullstack Developer',
-
-        images:
-        {
-            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Krisna.webp`,
-            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Krisna.webp`,
-            ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Krisna.webp`,
-            ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Krisna.webp`,
-        },
-
-        socialMediaAccounts: {
-            linkedin: { name: "Krisna Suarendra", url: "http://www.linkedin.com/in/i-putu-krisna-suarendra-putra-548306270" },
-            github: { name: "", url: "" },
-            dribble: { name: "", url: "" },
-        },
-
-        bio: "Automating infrastructure so teams can focus on building, not fixing.",
-
-        techStack: [
-            { name: 'Docker', logo: '🐳' },
-            { name: 'Terraform', logo: '🌐' },
-            { name: 'CI/CD', logo: '⚡' },
-        ],
-
-        sdgs: [
-            { id: 4, title: 'Quality Education' },
-            { id: 9, title: 'Industry, Innovation and Infrastructure' },
-        ],
-    },
-
-    {
-        name: 'Kadek Gunawan',
-        role: 'Operasional Officer',
-        bio: 'Managing daily cash flow and office maintenance to keep our operations running smoothly every day',
-
-        images:
-        {
-            imageDisplay: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Kadek Gunawan.webp`,
-            imageDisplayHover: `${import.meta.env.BASE_URL}Team Member Photo/White top/Kadek Gunawan.webp`,
-            ImageDetail1: `${import.meta.env.BASE_URL}Team Member Photo/Black top/png/Kadek Gunawan.webp`,
-            ImageDetail2: `${import.meta.env.BASE_URL}Team Member Photo/Black top/Detail Photo 2/Kadek Gunawan.webp`,
-        },
-
-        socialMediaAccounts: {
-            linkedin: {
-                name: 'Kadek Gunawan',
-                url: "https://www.linkedin.com/in/gunawan-kadek-635353318",
-            },
-            github: { name: "", url: "" },
-            dribble: { name: "", url: "" },
-        },
-
-
-        techStack: [
-            { name: 'Google Ads', logo: '🔵' },
-            { name: 'Meta Ads', logo: '📣' },
-        ],
-
-        sdgs: [
-            { id: 2, title: 'Zero Hunger' },
-            { id: 8, title: 'Decent Work and Economic Growth' },
-        ],
-    },
+export const navLinks: NavLink[] = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Contact", href: "#contact" }
 ];
 
-const TeamSection: React.FC = () => {
-    const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
-    const [isPaused, setIsPaused] = useState(false);
-    const [activeIdx, setActiveIdx] = useState(0);
-    const [activeSlide, setActiveSlide] = useState(0);
-    const [selectedIndex, setSelectedIndex] = useState(null);
-
-    const isDesktop = typeof window !== "undefined" && window.innerWidth >= 1024;
-
-    const topRow = members.slice(0, 4);
-    const bottomRow = members.slice(4, 8);
-    const activeMember = members[activeIdx];
-
-    const imageSlides = [
-        activeMember.images?.ImageDetail1,
-        activeMember.images?.ImageDetail2,
-    ].filter(Boolean);
-
-    // AUTO ROTATE (desktop only + no pause)
-    useEffect(() => {
-        if (selectedMember || isPaused) return;
-
-        const interval = setInterval(() => {
-            setActiveIdx((prev) => (prev + 1) % members.length);
-        }, 2500);
-
-        return () => clearInterval(interval);
-    }, [selectedMember, isPaused]);
-
-    // MOBILE PAUSE RESET
-    useEffect(() => {
-        if (!isPaused) return;
-
-        const timeout = setTimeout(() => {
-            setIsPaused(false);
-        }, 180000); // optional long pause
-
-        return () => clearTimeout(timeout);
-    }, [isPaused]);
-
-    // DESKTOP CLICK LOCK (highlight stay beberapa detik)
-    const handleDesktopClick = (idx: number, member: TeamMember) => {
-        setActiveIdx(idx);
-        setSelectedMember(member);
-
-        // pause auto rotate sementara
-        setIsPaused(true);
-
-        setTimeout(() => {
-            setIsPaused(false);
-        }, 4000); // highlight stay 4 detik
-    };
-
-    const nextImage = () => {
-        setSelectedIndex((prev) =>
-            prev === activeMember.sdgs.length - 1 ? 0 : prev + 1
-        );
-    };
-
-    const prevImage = () => {
-        setSelectedIndex((prev) =>
-            prev === 0 ? activeMember.sdgs.length - 1 : prev - 1
-        );
-    };
-
-    // Modal carousel: navigate between members
-    const handleModalNext = () => {
-        const currentIdx = members.findIndex((m) => m.name === selectedMember?.name);
-        const nextIdx = (currentIdx + 1) % members.length;
-        setSelectedMember(members[nextIdx]);
-        setActiveIdx(nextIdx);
-    };
-
-    const handleModalPrev = () => {
-        const currentIdx = members.findIndex((m) => m.name === selectedMember?.name);
-        const prevIdx = (currentIdx - 1 + members.length) % members.length;
-        setSelectedMember(members[prevIdx]);
-        setActiveIdx(prevIdx);
-    };
-
-    useEffect(() => {
-        const handleKeyDown = (e) => {
-            if (selectedIndex === null) return;
-
-            if (e.key === "Escape") {
-                setSelectedIndex(null);
-            }
-
-            if (e.key === "ArrowRight") {
-                nextImage();
-            }
-
-            if (e.key === "ArrowLeft") {
-                prevImage();
-            }
-        };
-
-        window.addEventListener("keydown", handleKeyDown);
-
-        return () => window.removeEventListener("keydown", handleKeyDown);
-    }, [selectedIndex]);
-
-    function handleSDGClick(id) {
-        if (id == 1) {
-            window.open(
-                "https://www.un.org/sustainabledevelopment/poverty/",
-                "_blank",
-                "noopener,noreferrer"
-            )
-        }
-
-        if (id == 2) {
-            window.open(
-                "https://www.un.org/sustainabledevelopment/hunger/",
-                "_blank",
-                "noopener,noreferrer"
-            )
-        }
-
-        if (id == 3) {
-            window.open(
-                "https://www.un.org/sustainabledevelopment/health/",
-                "_blank",
-                "noopener,noreferrer"
-            )
-        }
-
-        if (id == 4) {
-            window.open(
-                "https://www.un.org/sustainabledevelopment/education/",
-                "_blank",
-                "noopener,noreferrer"
-            )
-        }
-
-        if (id == 5) {
-            window.open(
-                "https://www.un.org/sustainabledevelopment/gender-equality/",
-                "_blank",
-                "noopener,noreferrer"
-            )
-        }
-
-        if (id == 6) {
-            window.open(
-                "https://www.un.org/sustainabledevelopment/water-and-sanitation/",
-                "_blank",
-                "noopener,noreferrer"
-            )
-        }
-
-        if (id == 7) {
-            window.open(
-                "https://www.un.org/sustainabledevelopment/energy/",
-                "_blank",
-                "noopener,noreferrer"
-            )
-        }
-
-        if (id == 8) {
-            window.open(
-                "https://www.un.org/sustainabledevelopment/economic-growth/",
-                "_blank",
-                "noopener,noreferrer"
-            )
-        }
-
-        if (id == 9) {
-            window.open(
-                "https://www.un.org/sustainabledevelopment/infrastructure-industrialization/",
-                "_blank",
-                "noopener,noreferrer"
-            )
-        }
-
-        if (id == 10) {
-            window.open(
-                "https://www.un.org/sustainabledevelopment/inequality/",
-                "_blank",
-                "noopener,noreferrer"
-            )
-        }
-
-        if (id == 11) {
-            window.open(
-                "https://www.un.org/sustainabledevelopment/cities/",
-                "_blank",
-                "noopener,noreferrer"
-            )
-        }
-
-        if (id == 12) {
-            window.open(
-                "https://www.un.org/sustainabledevelopment/sustainable-consumption-production/",
-                "_blank",
-                "noopener,noreferrer"
-            )
-        }
-
-        if (id == 13) {
-            window.open(
-                "https://www.un.org/sustainabledevelopment/climate-change/",
-                "_blank",
-                "noopener,noreferrer"
-            )
-        }
-
-        if (id == 14) {
-            window.open(
-                "https://www.un.org/sustainabledevelopment/oceans/",
-                "_blank",
-                "noopener,noreferrer"
-            )
-        }
-
-        if (id == 15) {
-            window.open(
-                "https://www.un.org/sustainabledevelopment/biodiversity/",
-                "_blank",
-                "noopener,noreferrer"
-            )
-        }
-
-        if (id == 16) {
-            window.open(
-                "https://www.un.org/sustainabledevelopment/peace-justice/",
-                "_blank",
-                "noopener,noreferrer"
-            )
-        }
-
-        if (id == 17) {
-            window.open(
-                "https://www.un.org/sustainabledevelopment/globalpartnerships/",
-                "_blank",
-                "noopener,noreferrer"
-            )
-        }
-    }
-
-    return (
-        <section className="py-16 text-slate-50 relative">
-            <div className="w-[75%] mx-auto space-y-10 text-center">
-
-                <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
-                    {/* Injecting the dynamic title here! */}
-                    {aboutCopy.en.teamTitle}
-                </span>
-
-                {/* DESKTOP GRID */}
-                <div className="hidden lg:grid grid-cols-4 gap-6 pb-4">
-                    {members.map((member, idx) => (
-                        <div
-                            key={idx}
-                            className={`min-w-[200px] p-4 rounded-lg text-start cursor-pointer transition-all duration-300 ${idx === activeIdx
-                                ? "bg-brunswick-green-900"
-                                : "bg-sea-salt/6  backdrop-blur border-sea-salt/20"
-                                }`}
-                            onClick={() => {
-                                if (!isDesktop) return;
-                                handleDesktopClick(idx, member);
-                            }}
-                        >
-                            <div className="relative w-full h-60 overflow-hidden rounded-md mb-3">
-                                {/* BLACK TOP IMAGE (default) */}
-                                <img
-                                    src={member.images.imageDisplay}
-                                    className="w-full h-full object-cover transition-opacity duration-300"
-                                />
-
-                                {/* White TOP IMAGE (hover/click) */}
-                                {member.images.imageDisplayHover && (
-                                    <img
-                                        src={member.images.imageDisplayHover}
-                                        className="absolute inset-0 w-full h-full object-cover bg-sea-salt transition-opacity duration-300 opacity-0 hover:opacity-100"
-                                    />
-                                )}
-                            </div>
-                            <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt">
-                                {member.name}
-                            </h3>
-                            <p className="text-base sm:text-lg text-sea-salt/80">
-                                {member.role}
-                            </p>
-                        </div>
-                    ))}
-                </div>
-
-                {/* MOBILE MARQUEE */}
-                <div className="lg:hidden overflow-hidden space-y-4">
-
-                    {/* ROW 1 */}
-                    <div className={`flex gap-4 ${isPaused ? "" : "animate-marquee"}`}>
-                        {[...topRow, ...topRow].map((member, idx) => (
-                            <button
-                                key={idx}
-                                onClick={() => {
-                                    setActiveIdx(idx % topRow.length);
-                                    setSelectedMember(member);
-                                    setIsPaused(true);
-                                }}
-                                className={`shrink-0 w-36 p-3 rounded-lg transition-all duration-300 text-left
-        ${idx % topRow.length === activeIdx
-                                        ? "bg-brunswick-green-900"
-                                        : "bg-sea-salt/6  backdrop-blur border-sea-salt/20"
-                                    }`}
-                            >
-                                {/* Image */}
-                                <img
-                                    src={member.images?.imageDisplay}
-                                    className="w-full h-32 object-cover rounded-md mb-2"
-                                />
-
-                                {/* Name */}
-                                <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt">
-                                    {member.name}
-                                </h3>
-
-                                {/* Role */}
-                                <p className="text-base sm:text-lg text-sea-salt/90">
-                                    {member.role}
-                                </p>
-                            </button>
-                        ))}
-                    </div>
-
-                    {/* ROW 2 */}
-                    <div className={`flex gap-4 ${isPaused ? "" : "animate-marquee-reverse"}`}>
-                        {[...bottomRow, ...bottomRow].map((member, idx) => (
-                            <button
-                                key={idx}
-                                onClick={() => {
-                                    setActiveIdx((idx % bottomRow.length) + 4);
-                                    setSelectedMember(member);
-                                    setIsPaused(true);
-                                }}
-                                className={`shrink-0 w-36 p-3 rounded-lg transition-all duration-300 text-left
-        ${((idx % bottomRow.length) + 4) === activeIdx
-                                        ? "bg-brunswick-green-900"
-                                        : "bg-sea-salt/6  backdrop-blur border-sea-salt/20"
-                                    }`}
-                            >
-                                {/* Image */}
-                                <img
-                                    src={member.images?.imageDisplay}
-                                    className="w-full h-32 object-cover rounded-md mb-2"
-                                />
-
-                                {/* Name */}
-                                <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt leading-tight">
-                                    {member.name}
-                                </h3>
-
-                                {/* Role */}
-                                <p className="text-base sm:text-lg text-sea-salt/90">
-                                    {member.role}
-                                </p>
-                            </button>
-                        ))}
-                    </div>
-                </div>
-
-
-
-                {/* DESKTOP PREVIEW */}
-                <div className="relative mt-5 overflow-hidden border border-sea-salt/20 rounded-2xl hidden lg:block">
-
-                    {/* AURORA BACKGROUND */}
-                    <div className="aurora">
-                        <div className="aurora-core" />
-                    </div>
-
-                    {/* CONTENT */}
-                    <div className="grid lg:grid-cols-[280px_1fr_360px] relative z-10 pt-4">
-
-                        {/* LEFT */}
-                        <div className="p-8 flex flex-col justify-between">
-                            <div className="space-y-10">
-                                {/* <span className="text-base md:text-lg text-start uppercase tracking-[0.25em] text-brunswick-green-500">
-                                Team Member
-                            </span> */}
-                                <div className="space-y-6">
-                                    <h3 className="font-sans text-2xl sm:text-3xl text-start font-bold text-brunswick-green-500">
-                                        {activeMember.name}
-                                    </h3>
-                                    <p className="text-base sm:text-lg text-start text-sea-salt/90">
-                                        {activeMember.role}
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* SOCIAL */}
-                            <div className="space-y-6">
-                                <h4 className="font-sans text-xl sm:text-2xl font-bold text-sea-salt mb-4 text-start">
-                                    Where to Find Me
-                                </h4>
-
-                                <div className="space-y-3">
-
-                                    {activeMember.socialMediaAccounts.linkedin.name && (
-                                        <a
-                                            href={activeMember.socialMediaAccounts.linkedin.url}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
-                                        >
-                                            <Icon icon="mdi:linkedin" width="20" />
-                                            <span>LinkedIn</span>
-                                        </a>
-                                    )}
-
-                                    {activeMember.socialMediaAccounts.github?.name && (
-                                        <a
-                                            href={activeMember.socialMediaAccounts.github.url}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
-                                        >
-                                            <Icon icon="mdi:github" width="20" />
-                                            <span>GitHub</span>
-                                        </a>
-                                    )}
-
-                                    {activeMember.socialMediaAccounts.dribble?.name && (
-                                        <a
-                                            href={activeMember.socialMediaAccounts.dribble.url}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
-                                        >
-                                            <Icon icon="mdi:dribbble" width="20" />
-                                            <span>Dribbble</span>
-                                        </a>
-                                    )}
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                        {/* CENTER IMAGE */}
-                        <div className="relative flex items-end justify-center">
-                            {activeMember.images?.ImageDetail1 && (
-                                <img
-                                    src={activeMember.images.ImageDetail1}
-                                    alt={activeMember.name}
-                                    className="w-full h-[420px] object-contain object-bottom"
-                                />
-                            )}
-                        </div>
-
-                        {/* RIGHT */}
-                        <div className="p-8 flex flex-col justify-between space-y-10">
-
-                            {/* BIO */}
-                            <div className="space-y-6 text-start">
-                                <h4 className="font-sans text-xl sm:text-2xl font-bold text-sea-salt">
-                                    Get to Know Me
-                                </h4>
-
-                                <p className="text-base sm:text-lg text-start text-sea-salt/90 ">
-                                    {activeMember.bio}
-                                </p>
-                            </div>
-
-                            {/* SDGs */}
-                            <div className="space-y-6">
-
-                                <h4 className="font-sans text-xl sm:text-2xl font-bold text-sea-salt text-start">
-                                    My Sustainability Focus
-                                </h4>
-
-                                <div className="flex flex-wrap gap-2">
-                                    {activeMember.sdgs.map((sdg, index) => (
-                                        <img
-                                            key={sdg.id}
-                                            src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(sdg.id).padStart(2, "0")}.png`}
-                                            alt={`SDG ${sdg.id}`}
-                                            className="w-16 h-16 object-contain cursor-pointer hover:scale-110 transition rounded"
-                                            onClick={() => handleSDGClick(sdg.id)}
-                                        />
-                                    ))}
-                                </div>
-                                {/* {selectedIndex !== null && (
-                                    <div
-                                        className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center"
-                                        onClick={() => setSelectedIndex(null)}
-                                    > */}
-                                {/* Close */}
-                                {/* <button
-                                            onClick={() => setSelectedIndex(null)}
-                                            className="absolute top-6 right-6 text-white text-5xl hover:text-gray-300 transition"
-                                        >
-                                            ×
-                                        </button> */}
-
-                                {/* Previous */}
-                                {/* <button
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                prevImage();
-                                            }}
-                                            className="absolute left-8 text-white text-6xl hover:scale-125 transition"
-                                        >
-                                            ‹
-                                        </button> */}
-
-                                {/* Image */}
-                                {/* <img
-                                            onClick={(e) => e.stopPropagation()}
-                                            src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(activeMember.sdgs[selectedIndex].id).padStart(2, "0")}.png`}
-                                            alt=""
-                                            className="max-w-[80vw] max-h-[85vh] object-contain rounded-xl shadow-2xl transition-all duration-300"
-                                        /> */}
-
-                                {/* Next */}
-                                {/* <button
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                nextImage();
-                                            }}
-                                            className="absolute right-8 text-white text-6xl hover:scale-125 transition"
-                                        >
-                                            ›
-                                        </button>
-                                    </div>
-                                )} */}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* MODAL ONLY MOBILE + TABLET */}
-                {selectedMember && !isDesktop && (
-                    <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-raisin-black-900/80 backdrop-blur-sm p-6">
-
-                        {/* Prev Arrow */}
-                        <button
-                            onClick={handleModalPrev}
-                            className="absolute left-2 z-20 w-10 h-10 rounded-full bg-brunswick-green-900/80 hover:bg-brunswick-green-500 text-sea-salt flex items-center justify-center text-2xl transition-all duration-200 shadow-lg"
-                            aria-label="Previous member"
-                        >
-                            <Icon icon="mdi:chevron-left" width="24" />
-                        </button>
-
-                        <div className="relative w-full max-w-2xl rounded-2xl overflow-hidden border border-brunswick-green-900 bg-raisin-black-900-950 shadow-2xl">
-
-                            {/* Close button */}
-                            <button
-                                onClick={() => {
-                                    setSelectedMember(null);
-                                    setIsPaused(false);
-                                }}
-                                className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-raisin-black-900/60 hover:bg-raisin-black-900/60 text-sea-salt flex items-center justify-center transition"
-                            >
-                                ✕
-                            </button>
-
-                            {/* Member counter indicator */}
-                            {/* <div className="absolute top-4 left-1/2 -translate-x-1/2 z-20 flex gap-1.5">
-                                {members.map((_, idx) => {
-                                    const currentIdx = members.findIndex((m) => m.name === selectedMember?.name);
-                                    return (
-                                        <button
-                                            key={idx}
-                                            onClick={() => {
-                                                setSelectedMember(members[idx]);
-                                                setActiveIdx(idx);
-                                            }}
-                                            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                                                idx === currentIdx
-                                                    ? "bg-brunswick-green-500 w-4"
-                                                    : "bg-sea-salt/40 hover:bg-sea-salt/70"
-                                            }`}
-                                            aria-label={`Go to ${members[idx].name}`}
-                                        />
-                                    );
-                                })}
-                            </div> */}
-
-                            {/* Layout */}
-                            <div className="grid md:grid-cols-[240px_1fr]">
-
-                                {/* Image */}
-                                <div className="relative h-64 md:h-full">
-                                    <img
-                                        src={selectedMember.images?.imageDisplay}
-                                        className="w-full h-full object-cover"
-                                    />
-
-                                    {/* gradient overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-transparent to-transparent" />
-                                </div>
-
-                                {/* Content */}
-                                {/* Content */}
-                                <div className="p-6 flex flex-col space-y-8">
-
-                                    {/* Header */}
-                                    <div className="space-y-2 text-start">
-                                        <h3 className="font-sans text-2xl font-bold text-brunswick-green-500">
-                                            {selectedMember.name}
-                                        </h3>
-
-                                        <p className="text-raisin-black-900-400">
-                                            {selectedMember.role}
-                                        </p>
-                                    </div>
-
-                                    {/* BIO */}
-                                    <div className="space-y-4 text-start">
-                                        <h4 className="font-sans text-xl font-bold text-sea-salt">
-                                            Get to Know Me
-                                        </h4>
-
-                                        <p className="text-sea-salt/90">
-                                            {selectedMember.bio}
-                                        </p>
-                                    </div>
-
-                                    {/* SOCIAL */}
-                                    <div className="space-y-4">
-
-                                        <h4 className="font-sans text-xl font-bold text-sea-salt text-start">
-                                            Where to Find Me
-                                        </h4>
-
-                                        <div className="space-y-3">
-
-                                            {selectedMember.socialMediaAccounts.linkedin.name && (
-                                                <a
-                                                    href={selectedMember.socialMediaAccounts.linkedin.url}
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                    className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
-                                                >
-                                                    <Icon icon="mdi:linkedin" width="20" />
-                                                    <span>LinkedIn</span>
-                                                </a>
-                                            )}
-
-                                            {selectedMember.socialMediaAccounts.github?.name && (
-                                                <a
-                                                    href={selectedMember.socialMediaAccounts.github.url}
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                    className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
-                                                >
-                                                    <Icon icon="mdi:github" width="20" />
-                                                    <span>GitHub</span>
-                                                </a>
-                                            )}
-
-                                            {selectedMember.socialMediaAccounts.dribble?.name && (
-                                                <a
-                                                    href={selectedMember.socialMediaAccounts.dribble.url}
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                    className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
-                                                >
-                                                    <Icon icon="mdi:dribbble" width="20" />
-                                                    <span>Dribbble</span>
-                                                </a>
-                                            )}
-
-                                        </div>
-                                    </div>
-
-                                    {/* SDGs */}
-                                    <div className="space-y-4">
-
-                                        <h4 className="font-sans text-xl font-bold text-sea-salt text-start">
-                                            My Sustainability Focus
-                                        </h4>
-
-                                        <div className="flex flex-wrap gap-2">
-                                            {selectedMember.sdgs.map((sdg, index) => (
-                                                <img
-                                                    key={sdg.id}
-                                                    src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(sdg.id).padStart(2, "0")}.png`}
-                                                    alt={`SDG ${sdg.id}`}
-                                                    className="w-16 h-16 object-contain cursor-pointer hover:scale-110 transition rounded"
-                                                    onClick={() => setSelectedIndex(index)}
-                                                />
-                                            ))}
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Next Arrow */}
-                        <button
-                            onClick={handleModalNext}
-                            className="absolute right-2 z-20 w-10 h-10 rounded-full bg-brunswick-green-900/80 hover:bg-brunswick-green-500 text-sea-salt flex items-center justify-center text-2xl transition-all duration-200 shadow-lg"
-                            aria-label="Next member"
-                        >
-                            <Icon icon="mdi:chevron-right" width="24" />
-                        </button>
-
-                    </div>
-                )}
-
-                <CtaBanner />
-
-
-            </div>
-        </section>
-    );
-};
-
-export default TeamSection;
-
+export const clientLogos = [
+  { name: "BWT", logoImg: import.meta.env.BASE_URL + "Partner logo white/BWT.png" },
+  { name: "DARE", logoImg: import.meta.env.BASE_URL + "Partner logo white/DARE.png" },
+  { name: "Ferrum", logoImg: import.meta.env.BASE_URL + "Partner logo white/Ferrum.png" },
+  { name: "PWC", logoImg: import.meta.env.BASE_URL + "Partner logo white/PWC.png" },
+  { name: "UNHCR", logoImg: import.meta.env.BASE_URL + "Partner logo white/UNHCR.png" },
+  { name: "Energaia", logoImg: import.meta.env.BASE_URL + "Partner logo white/energaia.png" },
+  { name: "PLC", logoImg: import.meta.env.BASE_URL + "Partner logo white/plc-logo-scaled.png" },
+];
+
+export const products: ProductItem[] = [
+  {
+    id: "geo",
+    service: "Generative Engine Optimization",
+    description:
+      "Your visibility layer in the AI-search era. We ensure your platform gets discovered, understood, and recommended by modern AI engines.",
+    fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/GEO Product Sheet - Eng.pdf`,
+    fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/GEO Product Sheet - Indo.pdf`,
+    symptoms: [
+      {
+        text: "You get traffic, but it doesn't convert to real impact",
+        icon: MousePointerClick
+      },
+      {
+        text: "AI systems and LLMs completely ignore your content",
+        icon: SearchX
+      },
+      {
+        text: "Users don’t immediately grasp your core value",
+        icon: EyeOff
+      },
+      {
+        text: "Search visibility is volatile and unpredictable",
+        icon: Activity
+      },
+    ],
+
+    futureState: [
+      "Consistently surface in AI-generated answers",
+      "Attract high-intent, mission-aligned visitors",
+      "Make your value proposition instantly clear",
+      "Build resilient visibility that survives algorithm updates",
+    ],
+
+    imageProblem: "./illustration/undraw_website_27ju 1.svg",
+    imageSolution: "./illustration/geo-solution.png",
+    href: "#geo",
+    cta: "See GEO in Action",
+    problemTitle: "Growth & Visibility",
+
+    mood: {
+      bg: "from-blue-950 via-black to-black",
+      glow: "rgba(59,130,246,0.25)",
+      accent: "rgb(59,130,246)",
+    },
+  },
+
+  {
+    id: "nextgen",
+    service: "NextGen Platforms",
+    description:
+      "A resilient, cloud-native foundation built to scale your operations without fighting legacy codebase constraints.",
+    fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/NextGen Platforms Product Sheet - Eng.pdf`,
+    fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/NextGen Platforms Product Sheet - Indo.pdf`,
+    symptoms: [
+      {
+        text: "Core features are slowing down under load",
+        icon: Timer
+      },
+      {
+        text: "The system is becoming a nightmare to maintain",
+        icon: Wrench
+      },
+      {
+        text: "Performance crashes during user traffic spikes",
+        icon: TrendingDown
+      },
+      {
+        text: "UI and UX consistency breaks with every update",
+        icon: Layout
+      },
+    ],
+
+    futureState: [
+      "Ship new features without breaking existing ones",
+      "Maintain a clean, scalable architectural baseline",
+      "Keep performance lightning-fast at any scale",
+      "Ensure a flawless, consistent product experience",
+    ],
+
+    imageProblem: "/illustrations/nextgen-problem.png",
+    imageSolution: "/illustrations/nextgen-solution.png",
+    href: "#nextgen",
+    cta: "Review NextGen Architecture",
+    problemTitle: "System Performance",
+
+    mood: {
+      bg: "from-emerald-950 via-black to-black",
+      glow: "rgba(16,185,129,0.25)",
+      accent: "rgb(16,185,129)",
+    },
+  },
+
+  {
+    id: "devpod",
+    service: "DevPod",
+    description:
+      "Instant, identical development environments so your team can focus on shipping code, not fixing local setups.",
+    fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/DevPod Product Sheet - Eng.pdf`,
+    fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/DevPod Product Sheet - Indo.pdf`,
+    symptoms: [
+      {
+        text: "Local environment setups block developer momentum",
+        icon: Blocks
+      },
+      {
+        text: "The classic 'it works on my machine' paradox",
+        icon: Cpu
+      },
+      {
+        text: "Onboarding new engineers takes weeks, not days",
+        icon: UserPlus
+      },
+      {
+        text: "Team velocity and sprint deliveries are unpredictable",
+        icon: Gauge
+      },
+    ],
+
+    futureState: [
+      "Onboard developers instantly with one click",
+      "Guarantee identical environments across the team",
+      "Eliminate local setup friction and dependencies",
+      "Maintain a rapid, consistent engineering velocity",
+    ],
+
+    imageProblem: "/illustrations/devpod-problem.png",
+    imageSolution: "/illustrations/devpod-solution.png",
+    href: "#devpod",
+    cta: "Deploy with DevPod",
+    problemTitle: "Developer Experience",
+
+    mood: {
+      bg: "from-purple-950 via-black to-black",
+      glow: "rgba(168,85,247,0.25)",
+      accent: "rgb(168,85,247)",
+    },
+  },
+
+  {
+    id: "fcto",
+    service: "fCTO",
+    description:
+      "Strategic technical leadership to eliminate tech debt, secure your architecture, and make your mission investable.",
+    fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/fCTO Product Sheet - Eng.pdf`,
+    fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/fCTO Product Sheet - Indo.pdf`,
+    symptoms: [
+      {
+        text: "Engineering decisions are reactive, not strategic",
+        icon: Compass
+      },
+      {
+        text: "No clear ownership over system architecture",
+        icon: Boxes
+      },
+      {
+        text: "Security protocols and cloud costs are ignored",
+        icon: ShieldAlert
+      },
+      {
+        text: "Development teams lack alignment with business goals",
+        icon: Split
+      },
+    ],
+
+    futureState: [
+      "Establish a clear, long-term technical roadmap",
+      "Align architecture directly with mission milestones",
+      "Implement strict governance and cost controls",
+      "Build a scalable, highly-investable engineering org",
+    ],
+
+    imageProblem: "/illustrations/fcto-problem.png",
+    imageSolution: "/illustrations/fcto-solution.png",
+    href: "#fcto",
+    cta: "Explore Fractional Leadership",
+    problemTitle: "Strategic Direction",
+
+    mood: {
+      bg: "from-red-950 via-black to-black",
+      glow: "rgba(239,68,68,0.25)",
+      accent: "rgb(239,68,68)",
+    },
+  },
+];
+
+
+export const portfolioItems: PortfolioItem[] = [
+  {
+    id: "port-lingua",
+    title: "LinguaMinds Portal",
+    subtitle: "Healthcare Telemedicine & Translation Platform",
+    description: "A secure patient portal with dynamic real-time medical translation, high-concurrency video consultations, and integrated health documentation sharing.",
+    badge: "Case Study 01",
+    imageUrl: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&auto=format&fit=crop",
+    tags: ["Telehealth", "WebRTC", "AI Translation", "React"],
+    linkText: "Read Case Study"
+  },
+  {
+    id: "port-animax",
+    title: "Animax Pathology Portal",
+    subtitle: "Enterprise Diagnostics Lab Network",
+    description: "Custom portal integrating automated laboratory apparatus diagnostics with secure patient report deliveries, reducing turnaround delays by 65%.",
+    badge: "Case Study 02",
+    imageUrl: "https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=600&auto=format&fit=crop",
+    tags: ["HL7 Standards", "Next.js", "Security Vault", "D3 Analytics"],
+    linkText: "Read Case Study"
+  }
+];
+
+export const testimonials: TestimonialItem[] = [
+  {
+    id: "test-01",
+    name: "Herman Yudantara",
+    role: "CEO & Co-Founder",
+    company: "BWT Logistics",
+    avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop",
+    quote: "Since partnering with 1zero, our active pipeline latency plummeted by 42%. The structural integrity of their systems is world-class, matched only by their incredible attention to design details."
+  },
+  {
+    id: "test-02",
+    name: "Hermawan Susilo",
+    role: "VP of Engineering",
+    company: "Sinar Agritech",
+    avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop",
+    quote: "Their team did not just build what we asked for—they challenged our flawed assumptions, re-architectured our query scaling, and delivered an elegant dashboard that our operators love."
+  },
+  {
+    id: "test-03",
+    name: "Hermina Purwanti",
+    role: "Director of Product",
+    company: "EduVibe Asia",
+    avatarUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop",
+    quote: "What set 1zero apart was direct communication. We worked side-by-side with principal developers with zero agency overhead. The result was a highly scalable, gorgeous, responsive system."
+  }
+];
+
+export const workflowSteps: WorkflowStep[] = [
+  {
+    number: "Discovery",
+    title: "Discovery",
+    subtext: "We dissect first, map out exactly what happens behind your screens, identify logical bottlenecks, and plan architecture for your exact users.",
+    bullet1: "Comprehensive System Mapping",
+    bullet2: "Stakeholder & Operator Audits"
+  },
+  {
+    number: "Blueprint",
+    title: "Blueprint Design",
+    subtext: "We spec out high-fidelity prototypes, state charts, database entity models, and API boundaries. You see and approve exactly how data flows.",
+    bullet1: "Scalable Schema Blueprints",
+    bullet2: "Interactive Web Interfaces"
+  },
+  {
+    number: "Build and Enable",
+    title: "Build and Enable",
+    subtext: "We build your platform with optimized pipelines, write strict type-safe code, deploy inside redundant clouds, and train your staff for full autonomy.",
+    bullet1: "Production-Grade Engineering",
+    bullet2: "Hands-on Technical Handovers"
+  }
+];
+
+export const whyUsPoints = [
+  {
+    title: "We don't bring one-size-fits-all answers.",
+  },
+  {
+    title: "We listen, adapt, and co-design alongside your team to make sure what we build fits your reality.",
+  },
+  {
+    title: "When you work with 1zero, you collaborate directly with the people designing and building your system.",
+  },
+  {
+    title: "We care about what works in practice, not what looks good in a slide deck.",
+  }
+];
+
+export const teamMembers: TeamMemberCall[] = [
+  {
+    id: "tm-1",
+    name: "Andi Gunawan",
+    role: "Lead Systems Engineer",
+    avatarUrl: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop",
+    isMuted: false,
+    isLocal: false
+  },
+  {
+    id: "tm-2",
+    name: "Jane Cooper",
+    role: "Principal Product Designer",
+    avatarUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop",
+    isMuted: true,
+    isLocal: false
+  },
+  {
+    id: "tm-3",
+    name: "Arthur Pendelton",
+    role: "Senior Full-Stack Engineer",
+    avatarUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=150&auto=format&fit=crop",
+    isMuted: false,
+    isLocal: false
+  },
+  {
+    id: "tm-4",
+    name: "Sarah Lin",
+    role: "DevOps Architect",
+    avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop",
+    isMuted: false,
+    isLocal: true
+  }
+];
+
+export const casesList = [
+  {
+    id: "case-01",
+    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop",
+    title: "Community Fitness App",
+    desc: "Built a high-concurrency infrastructure to connect athletes with real-time active GPS groups."
+  },
+  {
+    id: "case-02",
+    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop",
+    title: "Fitness Center Portal",
+    desc: "Modernized multi-branch attendance schemas and biometric entry software to eliminate data latency."
+  }
+];
+
+export const customProjects = [
+  {
+    id: "impact",
+    title: "Impact Portal",
+    subtitle: "Enterprise Data Dashboard",
+    description: "A high-performance enterprise dashboard tracking real-world impact metrics and complex data visualizations.",
+    bgClass: "bg-[#112240] border-blue-500/10",
+    mockupType: "impact",
+    imageUrl: `${import.meta.env.BASE_URL}portofolio image/4Ocean.jpg`,
+    service: "Devpod"
+  },
+  {
+    id: "baliteak",
+    title: "Baliteak E-Commerce Replatform",
+    description: "A modern, high-speed digital portfolio showcasing custom teakwood designs and artisanal furniture catalogs.",
+    bgClass: "bg-[#45301F] border-amber-500/10",
+    mockupType: "baliteak",
+    imageUrl: `${import.meta.env.BASE_URL}portofolio image/Baliteak.jpg`,
+    service: "NextGen Platform"
+  },
+  {
+    id: "TDD",
+    title: "The Donor Dashboard",
+    description: "A highly secure healthcare portal integrating real-time translation, audio diagnostics, and clinical records.",
+    bgClass: "bg-[#092218] border-emerald-500/10",
+    mockupType: "tdd",
+    imageUrl: `${import.meta.env.BASE_URL}portofolio image/TDD.jpg`,
+    service: "Devpod",
+  },
+  {
+    id: "phoenix",
+    title: "PT Phoenix Corporate Architecture",
+    description: "A robust digital replatforming for PT Phoenix, featuring a modern headless design system and seamless user experience.",
+    bgClass: "bg-[#16122d] border-purple-500/10",
+    mockupType: "phoenix",
+    imageUrl: `${import.meta.env.BASE_URL}portofolio image/PT Phoenix.jpg`,
+    service: "Devpod",
+  },
+  {
+    id: "blackstump",
+    title: "Blackstump Technologies",
+    description: "Full architectural replatforming—modernizing their backend infrastructure, design system, and global digital presence.",
+    bgClass: "bg-[#0d1a0d] border-brunswick-green-500/10",
+    mockupType: "blackstump",
+    imageUrl: `${import.meta.env.BASE_URL}portofolio image/BST.jpg`,
+    service: "NextGen Platform",
+  }
+];
+
+export const benefits = [
+  {
+    title: "Actionable Summaries",
+    description:
+      "Clear, actionable documentation after every technical discussion and planning session.",
+    icon: FileText,
+    style: {
+      top: "10%",
+      left: "12%",
+    },
+  },
+  {
+    title: "Transparent Proposals",
+    description:
+      "Know exactly what infrastructure we're building, why it matters, and what scalability looks like.",
+    icon: FileSearch,
+    style: {
+      top: "18%",
+      right: "10%",
+    },
+  },
+  {
+    title: "Strategic Direction",
+    description:
+      "Architectural recommendations backed by four decades of real-world experience, not guesswork.",
+    icon: Compass,
+    style: {
+      top: "5%",
+      left: "55%",
+    },
+  },
+  {
+    title: "Direct Specialists",
+    description:
+      "Collaborate directly with the engineers building your system, cutting out agency middle-men.",
+    icon: Users,
+    style: {
+      top: "60%",
+      left: "8%",
+    },
+  },
+  {
+    title: "Radical Visibility",
+    description:
+      "Stay fully informed with open repositories, clear progress tracking, and direct communication channels.",
+    icon: Eye,
+    style: {
+      top: "55%",
+      right: "5%",
+    },
+  },
+  {
+    title: "Clean Handovers",
+    description:
+      "Knowledge stays with your team, avoiding vendor lock-in through meticulous documentation.",
+    icon: BookOpen,
+    style: {
+      bottom: "15%",
+      left: "20%",
+    },
+  },
+  {
+    title: "Resilient Foundations",
+    description:
+      "Systems engineered to support massive future growth without the need for constant rebuilding.",
+    icon: Blocks,
+    style: {
+      bottom: "5%",
+      left: "50%",
+      transform: "translateX(-50%)",
+    },
+  },
+];

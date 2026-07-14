@@ -1,6 +1,11 @@
 import { NavLink, ProductItem, PortfolioItem, TestimonialItem, WorkflowStep, TeamMemberCall } from "./types";
 import React from "react";
-import { MousePointerClick, SearchX, EyeOff, Activity, Timer, Wrench, TrendingDown, Layout, Rocket, Network, ShieldCheck, Sparkles, Blocks, Cpu, UserPlus, Gauge, Compass, Boxes, ShieldAlert, Split, FileText, FileSearch, Users, Eye, BookOpen, Search, Layers, RefreshCw, Server } from "lucide-react";
+import {
+  MousePointerClick, SearchX, EyeOff, Activity, Timer, Wrench, TrendingDown, Layout,
+  Rocket, Network, ShieldCheck, Sparkles, Blocks, Cpu, UserPlus, Gauge, Compass,
+  Boxes, ShieldAlert, Split, FileText, FileSearch, Users, Eye, BookOpen, Search,
+  Layers, RefreshCw, Server, BrainCircuit
+} from "lucide-react";
 import { Icon } from "@iconify/react";
 
 export const navLinks: NavLink[] = [
@@ -28,54 +33,222 @@ export const clientLogos = [
 
 ];
 
+/*
+export const products: ProductItem[] = [
+     {
+      id: "geo",
+      service: "Generative Engine Optimization",
+      description:
+        "Your visibility layer in the AI-search era. We ensure your platform gets discovered, understood, and recommended by modern AI engines.",
+      fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/GEO Product Sheet - Eng.pdf`,
+      fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/GEO Product Sheet - Indo.pdf`,
+      symptoms: [
+        {
+          text: "You get traffic, but it doesn't convert to real impact",
+          icon: MousePointerClick
+        },
+        {
+          text: "AI systems and LLMs completely ignore your content",
+          icon: SearchX
+        },
+        {
+          text: "Users don’t immediately grasp your core value",
+          icon: EyeOff
+        },
+        {
+          text: "Search visibility is volatile and unpredictable",
+          icon: Activity
+        },
+      ],
+  
+      futureState: [
+        "Consistently surface in AI-generated answers",
+        "Attract high-intent, mission-aligned visitors",
+        "Make your value proposition instantly clear",
+        "Build resilient visibility that survives algorithm updates",
+      ],
+  
+      imageProblem: "./illustration/undraw_website_27ju 1.svg",
+      imageSolution: "./illustration/geo-solution.png",
+      href: "#geo",
+      cta: "See GEO in Action",
+      problemTitle: "Growth & Visibility",
+  
+  
+    },
+  
+    {
+      id: "nextgen",
+      service: "NextGen Platforms",
+      description:
+        "A resilient, cloud-native foundation built to scale your operations without fighting legacy codebase constraints.",
+      fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/NextGen Platforms Product Sheet - Eng.pdf`,
+      fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/NextGen Platforms Product Sheet - Indo.pdf`,
+      symptoms: [
+        {
+          text: "Core features are slowing down under load",
+          icon: Timer
+        },
+        {
+          text: "The system is becoming a nightmare to maintain",
+          icon: Wrench
+        },
+        {
+          text: "Performance crashes during user traffic spikes",
+          icon: TrendingDown
+        },
+        {
+          text: "UI and UX consistency breaks with every update",
+          icon: Layout
+        },
+      ],
+  
+      futureState: [
+        "Ship new features without breaking existing ones",
+        "Maintain a clean, scalable architectural baseline",
+        "Keep performance lightning-fast at any scale",
+        "Ensure a flawless, consistent product experience",
+      ],
+  
+      imageProblem: "/illustrations/nextgen-problem.png",
+      imageSolution: "/illustrations/nextgen-solution.png",
+      href: "#nextgen",
+      cta: "Review NextGen Architecture",
+      problemTitle: "System Performance",
+    },
+  
+    {
+      id: "devpods",
+      service: "DevPods",
+      description:
+        "Instant, identical development environments so your team can focus on shipping code, not fixing local setups.",
+      fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/DevPod Product Sheet - Eng.pdf`,
+      fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/DevPod Product Sheet - Indo.pdf`,
+      symptoms: [
+        {
+          text: "Local environment setups block developer momentum",
+          icon: Blocks
+        },
+        {
+          text: "The classic 'it works on my machine' paradox",
+          icon: Cpu
+        },
+        {
+          text: "Onboarding new engineers takes weeks, not days",
+          icon: UserPlus
+        },
+        {
+          text: "Team velocity and sprint deliveries are unpredictable",
+          icon: Gauge
+        },
+      ],
+  
+      futureState: [
+        "Onboard developers instantly with one click",
+        "Guarantee identical environments across the team",
+        "Eliminate local setup friction and dependencies",
+        "Maintain a rapid, consistent engineering velocity",
+      ],
+  
+      imageProblem: "/illustrations/devpod-problem.png",
+      imageSolution: "/illustrations/devpod-solution.png",
+      href: "#devpod",
+      cta: "Deploy with DevPod",
+      problemTitle: "Developer Experience",
+    },
+  
+    {
+      id: "fcto",
+      service: "fCTO",
+      description:
+        "Strategic technical leadership to eliminate tech debt, secure your architecture, and make your mission investable.",
+      fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/fCTO Product Sheet - Eng.pdf`,
+      fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/fCTO Product Sheet - Indo.pdf`,
+      symptoms: [
+        {
+          text: "Engineering decisions are reactive, not strategic",
+          icon: Compass
+        },
+        {
+          text: "No clear ownership over system architecture",
+          icon: Boxes
+        },
+        {
+          text: "Security protocols and cloud costs are ignored",
+          icon: ShieldAlert
+        },
+        {
+          text: "Development teams lack alignment with business goals",
+          icon: Split
+        },
+      ],
+  
+      futureState: [
+        "Establish a clear, long-term technical roadmap",
+        "Align architecture directly with mission milestones",
+        "Implement strict governance and cost controls",
+        "Build a scalable, highly-investable engineering org",
+      ],
+  
+      imageProblem: "/illustrations/fcto-problem.png",
+      imageSolution: "/illustrations/fcto-solution.png",
+      href: "#fcto",
+      cta: "Explore Fractional Leadership",
+      problemTitle: "Strategic Direction",
+  
+    },
+  */
+
+
 export const products: ProductItem[] = [
   {
-    id: "geo",
-    service: "Generative Engine Optimization",
+    id: "roadmap",
+    service: "Roadmap Workshop",
     description:
-      "Your visibility layer in the AI-search era. We ensure your platform gets discovered, understood, and recommended by modern AI engines.",
-    fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/GEO Product Sheet - Eng.pdf`,
-    fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/GEO Product Sheet - Indo.pdf`,
+      "A high-intensity strategic sprint. We apply algorithmic feature prioritization to eliminate 'Franken-stack' risks and define your AI-first blueprint before you write a line of code.",
+    fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/Roadmap Product Sheet - Eng.pdf`,
+    fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/Roadmap Product Sheet - Indo.pdf`,
     symptoms: [
       {
-        text: "You get traffic, but it doesn't convert to real impact",
-        icon: MousePointerClick
+        text: "Bleeding capital on undefined architecture and overdue projects",
+        icon: TrendingDown
       },
       {
-        text: "AI systems and LLMs completely ignore your content",
-        icon: SearchX
+        text: "Engineering efforts are misaligned with strategic business goals",
+        icon: Split
       },
       {
-        text: "Users don’t immediately grasp your core value",
-        icon: EyeOff
+        text: "Lacking the technical believability to defend roadmaps to VCs",
+        icon: ShieldAlert
       },
       {
-        text: "Search visibility is volatile and unpredictable",
-        icon: Activity
+        text: "Building complex features based on bias instead of data",
+        icon: BrainCircuit
       },
     ],
-
     futureState: [
-      "Consistently surface in AI-generated answers",
-      "Attract high-intent, mission-aligned visitors",
-      "Make your value proposition instantly clear",
-      "Build resilient visibility that survives algorithm updates",
+      "Algorithmic SCORE prioritization matrix",
+      "Investor-ready technical pitch architecture",
+      "Visual mapping of critical MVP user journeys",
+      "Comprehensive scalability and risk blueprint",
     ],
-
-    imageProblem: "./illustration/undraw_website_27ju 1.svg",
-    imageSolution: "./illustration/geo-solution.png",
-    href: "#geo",
-    cta: "See GEO in Action",
-    problemTitle: "Growth & Visibility",
-
-
+    imageProblem: "./illustration/roadmap-problem.png",
+    imageSolution: "./illustration/roadmap-solution.png",
+    href: "#roadmap",
+    cta: "Book a Discovery Audit",
+    problemTitle: "Strategic Alignment",
+    mood: {
+      bg: "from-amber-950 via-black to-black",
+      glow: "rgba(245,158,11,0.25)",
+      accent: "rgb(245,158,11)",
+    },
   },
 
   {
     id: "nextgen",
     service: "NextGen Platforms",
     description:
-      "A resilient, cloud-native foundation built to scale your operations without fighting legacy codebase constraints.",
+      "Custom, cloud-native architectural replatforming. We replace fragile legacy systems with highly scalable, AI-integrated infrastructure built for enterprise growth.",
     fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/NextGen Platforms Product Sheet - Eng.pdf`,
     fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/NextGen Platforms Product Sheet - Indo.pdf`,
     symptoms: [
@@ -89,73 +262,79 @@ export const products: ProductItem[] = [
       },
       {
         text: "Performance crashes during user traffic spikes",
-        icon: TrendingDown
+        icon: Activity
       },
       {
         text: "UI and UX consistency breaks with every update",
         icon: Layout
       },
     ],
-
     futureState: [
       "Ship new features without breaking existing ones",
       "Maintain a clean, scalable architectural baseline",
       "Keep performance lightning-fast at any scale",
       "Ensure a flawless, consistent product experience",
     ],
-
     imageProblem: "/illustrations/nextgen-problem.png",
     imageSolution: "/illustrations/nextgen-solution.png",
     href: "#nextgen",
-    cta: "Review NextGen Architecture",
+    cta: "Review Architecture",
     problemTitle: "System Performance",
+    mood: {
+      bg: "from-emerald-950 via-black to-black",
+      glow: "rgba(16,185,129,0.25)",
+      accent: "rgb(16,185,129)",
+    },
   },
 
   {
-    id: "devpods",
-    service: "DevPods",
+    id: "devpod",
+    service: "The DevPod™",
     description:
-      "Instant, identical development environments so your team can focus on shipping code, not fixing local setups.",
+      "A fully integrated, high-velocity engineering squad. Get the output of an elite development team—complete with architecture and UI/UX—without the overhead of in-house hiring.",
     fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/DevPod Product Sheet - Eng.pdf`,
     fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/DevPod Product Sheet - Indo.pdf`,
     symptoms: [
       {
-        text: "Local environment setups block developer momentum",
-        icon: Blocks
+        text: "Development velocity is too slow for your growth targets",
+        icon: Gauge
       },
       {
-        text: "The classic 'it works on my machine' paradox",
-        icon: Cpu
-      },
-      {
-        text: "Onboarding new engineers takes weeks, not days",
+        text: "Recruiting, onboarding, and retaining senior talent is draining",
         icon: UserPlus
       },
       {
-        text: "Team velocity and sprint deliveries are unpredictable",
-        icon: Gauge
+        text: "Freelancers and cheap agencies output fragmented, messy code",
+        icon: Blocks
+      },
+      {
+        text: "Team lacks cohesive design and architectural oversight",
+        icon: EyeOff
       },
     ],
-
     futureState: [
-      "Onboard developers instantly with one click",
-      "Guarantee identical environments across the team",
-      "Eliminate local setup friction and dependencies",
-      "Maintain a rapid, consistent engineering velocity",
+      "4.0x equivalent output of standard full-time developers",
+      "100% asset autonomy and IP ownership from Day 1",
+      "Integrated UI/UX and Fractional CTO oversight",
+      "Zero recruitment lag—start shipping immediately",
     ],
-
     imageProblem: "/illustrations/devpod-problem.png",
     imageSolution: "/illustrations/devpod-solution.png",
     href: "#devpod",
-    cta: "Deploy with DevPod",
-    problemTitle: "Developer Experience",
+    cta: "Deploy a DevPod",
+    problemTitle: "Engineering Velocity",
+    mood: {
+      bg: "from-purple-950 via-black to-black",
+      glow: "rgba(168,85,247,0.25)",
+      accent: "rgb(168,85,247)",
+    },
   },
 
   {
     id: "fcto",
-    service: "fCTO",
+    service: "Fractional CTO (fCTO)",
     description:
-      "Strategic technical leadership to eliminate tech debt, secure your architecture, and make your mission investable.",
+      "Executive-level technical strategy. We provide the architectural governance needed to secure your infrastructure, eliminate tech debt, and confidently defend your roadmap to VCs.",
     fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/fCTO Product Sheet - Eng.pdf`,
     fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/fCTO Product Sheet - Indo.pdf`,
     symptoms: [
@@ -172,27 +351,28 @@ export const products: ProductItem[] = [
         icon: ShieldAlert
       },
       {
-        text: "Development teams lack alignment with business goals",
-        icon: Split
+        text: "You lack the technical authority to close enterprise deals",
+        icon: ShieldCheck
       },
     ],
-
     futureState: [
       "Establish a clear, long-term technical roadmap",
       "Align architecture directly with mission milestones",
       "Implement strict governance and cost controls",
       "Build a scalable, highly-investable engineering org",
     ],
-
     imageProblem: "/illustrations/fcto-problem.png",
     imageSolution: "/illustrations/fcto-solution.png",
     href: "#fcto",
-    cta: "Explore Fractional Leadership",
+    cta: "Explore Leadership",
     problemTitle: "Strategic Direction",
-
+    mood: {
+      bg: "from-blue-950 via-black to-black",
+      glow: "rgba(59,130,246,0.25)",
+      accent: "rgb(59,130,246)",
+    },
   },
 ];
-
 
 export const portfolioItems: PortfolioItem[] = [
   {
@@ -220,27 +400,27 @@ export const portfolioItems: PortfolioItem[] = [
 export const testimonials: TestimonialItem[] = [
   {
     id: "test-01",
-    name: "Herman Yudantara",
-    role: "CEO & Co-Founder",
-    company: "BWT Logistics",
-    avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop",
-    quote: "Since partnering with 1zero, our active pipeline latency plummeted by 42%. The structural integrity of their systems is world-class, matched only by their incredible attention to design details."
+    name: "Bill Toomey",
+    role: "Head of Sustainability Partnerships",
+    company: "4ocean",
+    avatarUrl: `${import.meta.env.BASE_URL}Testimonials/Bill Toomey.jpg`,
+    quote: "You guys are a dream to work with. I've never had a project, an IT project go this smooth. We're on time. We're on budget. And we're doing so much more than we originally asked for. ... I so appreciate the work that you, Molly and your team are doing. This is going to be awesome."
   },
   {
     id: "test-02",
-    name: "Hermawan Susilo",
-    role: "VP of Engineering",
-    company: "Sinar Agritech",
-    avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop",
-    quote: "Their team did not just build what we asked for—they challenged our flawed assumptions, re-architectured our query scaling, and delivered an elegant dashboard that our operators love."
+    name: "Martin Oakley",
+    role: "Project Stakeholder",
+    company: "Black Stump Technologies",
+    avatarUrl: "${import.meta.env.BASE_URL}Testimonials/Martin Oakley.jpg",
+    quote: "The experience has been excellent from end to end. What stood out most was how proactive your team was. They didn't just implement a brief—they made practical suggestions that improved the user experience, while ensuring strong performance and a solid technical foundation."
   },
   {
     id: "test-03",
-    name: "Hermina Purwanti",
-    role: "Director of Product",
-    company: "EduVibe Asia",
-    avatarUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop",
-    quote: "What set 1zero apart was direct communication. We worked side-by-side with principal developers with zero agency overhead. The result was a highly scalable, gorgeous, responsive system."
+    name: "William (Bill) Buddle",
+    role: "Manager of Application Development",
+    company: "Paralucent",
+    avatarUrl: `${import.meta.env.BASE_URL}Testimonials/William Buddle.jpg`,
+    quote: "Mark brings an intensity and integrity to work that inspires those around him. He has great vision of both what stakeholders are faced with in their practices and how technology can provide a framework to optimize processes and create new business opportunities. We are willing to follow him into the frontiers of innovation."
   }
 ];
 
