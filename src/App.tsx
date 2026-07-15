@@ -73,7 +73,7 @@ export default function App() {
             <WorkflowHorizontal />
 
             {/* User feedback Testimonials sliding Grid */}
-            {/* <Testimonials /> */}
+            <Testimonials />
 
             {/* Case Studies grid */}
             <Cases />
