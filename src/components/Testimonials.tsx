@@ -47,7 +47,7 @@ export default function Testimonials() {
         <Swiper
           className="w-full py-10"
           modules={[Autoplay]}
-
+          loop={true}
           centeredSlides
           grabCursor
           speed={700}
@@ -67,12 +67,12 @@ export default function Testimonials() {
           }}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           onSlideChange={(swiper) => {
-            setActiveSlide(swiper.realIndex);
+            setActiveSlide(swiper.realIndex % testimonials.length);
           }}
         >
-          {testimonials.map((t) => {
+          {[...testimonials, ...testimonials, ...testimonials].map((t, index) => {
             return (
-              <SwiperSlide key={t.id} className="h-auto">
+              <SwiperSlide key={`${t.id}-${index}`} className="h-auto">
                 {({ isActive }) => (
                   <div
                     className={`group
