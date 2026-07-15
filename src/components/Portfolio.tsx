@@ -3,6 +3,12 @@ import { ArrowLeft, ArrowRight, CheckCircle2, Monitor, Smile, Phone, Calendar, S
 import { customProjects } from "../data";
 import PortfolioCard from "./PortfolioCard";
 import { portfolioCopy } from "../copy";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import type { Swiper as SwiperType } from "swiper";
 
 
 interface PortfolioProps {
@@ -10,22 +16,15 @@ interface PortfolioProps {
 }
 
 export default function Portfolio({ onOpenBooking }: PortfolioProps) {
-  const [virtualIndex, setVirtualIndex] = useState(5); // Start at original item 0 in Set B (5 items per set)
-  const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
-  const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 1200);
-  const [isPaused, setIsPaused] = useState(false);
-  const startX = useRef(0);
-  const currentX = useRef(0);
+  const swiperRef = useRef<SwiperType | null>(null);
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
 
 
 
-  // Resize listener for fluid carousel offsets
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+
 
 
 
@@ -36,69 +35,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
     ...customProjects.map((p) => ({ ...p, uniqueId: `${p.id}-set2` }))
   ];
 
-  const handleNext = () => {
-    if (!isTransitionEnabled) return;
-    setVirtualIndex((prev) => prev + 1);
-  };
 
-  const handlePrev = () => {
-    if (!isTransitionEnabled) return;
-    setVirtualIndex((prev) => prev - 1);
-  };
-
-  // Autoplay Effect
-  useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(() => {
-      handleNext();
-    }, 4500);
-
-    return () => clearInterval(interval);
-  }, [virtualIndex, isPaused, isTransitionEnabled]);
-
-  // Handle seamless position reset snaps on translation completion
-  useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
-
-    if (virtualIndex >= 10) {
-      // Reached Set C — snap back to Set B start (index 5)
-      timeoutId = setTimeout(() => {
-        setIsTransitionEnabled(false);
-        setVirtualIndex(5);
-        setTimeout(() => {
-          setIsTransitionEnabled(true);
-        }, 50);
-      }, 500);
-    } else if (virtualIndex <= 4) {
-      // Reached Set A — snap forward to Set B end (index 9)
-      timeoutId = setTimeout(() => {
-        setIsTransitionEnabled(false);
-        setVirtualIndex(9);
-        setTimeout(() => {
-          setIsTransitionEnabled(true);
-        }, 50);
-      }, 500);
-    }
-
-    return () => {
-      if (timeoutId) clearTimeout(timeoutId);
-    };
-  }, [virtualIndex]);
-
-  // Calculate dynamic card translation values based on responsive breakpoints
-  const getTranslateX = (index: number) => {
-    const gap = 24; // gap-6
-    let cardWidth = 380; // Default md/lg
-    if (windowWidth < 640) {
-      cardWidth = 280; // Mobile
-    } else if (windowWidth < 768) {
-      cardWidth = 320; // Small tablets
-    }
-    return index * (cardWidth + gap);
-  };
-
-  // Safety compute current human-readable index (0 to 3)
-  const currentDisplayIndex = (virtualIndex % customProjects.length + customProjects.length) % customProjects.length;
 
 
 
@@ -139,18 +76,18 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
             <div className="flex items-center gap-4">
               <button
                 type="button"
-                onClick={handlePrev}
+                onClick={() => swiperRef.current?.slidePrev()}
                 aria-label="Previous portfolio"
                 className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
               >
                 <ArrowLeft className="h-4 w-4" />
               </button>
               <span className="font-sans text-lg text-sea-salt/80 tracking-widest uppercase font-semibold ml-2 select-none">
-                {String(currentDisplayIndex + 1).padStart(2, '0')} / {String(customProjects.length).padStart(2, '0')}
+                {String(currentSlide + 1).padStart(2, "0")} / 05
               </span>
               <button
                 type="button"
-                onClick={handleNext}
+                onClick={() => swiperRef.current?.slideNext()}
                 aria-label="Next portfolio"
                 className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
               >
@@ -165,48 +102,75 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
           </div>
 
           {/* RIGHT PANEL: Horizontal Carousel Track */}
-          <div
-            className="lg:col-span-8 overflow-hidden -mx-4 px-4 sm:mx-0 sm:px-0 touch-pan-y"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-            onPointerDown={(e) => {
-              setIsPaused(true);
-              startX.current = e.clientX;
-              currentX.current = e.clientX;
-            }}
-            onPointerMove={(e) => {
-              currentX.current = e.clientX;
-            }}
-            onPointerUp={() => {
-              setIsPaused(false);
+          <div className="lg:col-span-8">
 
-              const delta = currentX.current - startX.current;
-
-              if (delta < -80) {
-                handleNext();
-              } else if (delta > 80) {
-                handlePrev();
-              }
-            }}
-          >
-            <div
-              className={`flex gap-6 ${isTransitionEnabled
-                  ? "transition-transform duration-500 ease-out"
-                  : ""
-                }`}
-              style={{
-                transform: `translateX(-${getTranslateX(virtualIndex)}px)`,
+            <Swiper
+              modules={[Navigation, Autoplay]}
+              loop={true}
+              speed={500}
+              spaceBetween={24}
+              autoplay={{
+                delay: 4500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
               }}
+
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+              }}
+
+              onSlideChange={(swiper) => {
+                setCurrentSlide(swiper.realIndex);
+                setActiveIndex(swiper.realIndex);
+              }}
+
+              breakpoints={{
+
+                0: {
+                  slidesPerView: 1.05
+                },
+
+                640: {
+                  slidesPerView: 1.15
+                },
+
+                768: {
+                  slidesPerView: 1.3
+                },
+
+                1024: {
+                  slidesPerView: 1.05
+                },
+
+                1280: {
+                  slidesPerView: 1.15
+                }
+
+              }}
+
             >
-              {carouselItems.map((project) => (
-                <PortfolioCard
-                  key={project.uniqueId}
-                  project={project}
-                  onReadMore={onOpenBooking}
-                  className="w-[280px] sm:w-[320px] md:w-[380px] shrink-0"
-                />
+
+              {customProjects.map((project, index) => (
+
+                <SwiperSlide key={project.id}>
+
+                  <PortfolioCard
+
+                    project={project}
+
+                    onReadMore={onOpenBooking}
+                    isHighlighted={index === activeIndex}
+
+                    className="w-full"
+
+                  />
+
+                </SwiperSlide>
+
               ))}
-            </div>
+
+            </Swiper>
+
           </div>
 
         </div>

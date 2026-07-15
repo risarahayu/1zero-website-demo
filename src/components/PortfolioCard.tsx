@@ -21,7 +21,9 @@ const getServiceColorClass = (service: string) => {
   return "border-sea-salt/10 bg-sea-salt/5 text-raisin-black-900-400";
 };
 
-export default function PortfolioCard({ project, onReadMore, className = "", showService = false }: PortfolioCardProps) {
+
+
+export default function PortfolioCard({ project, onReadMore, className = "", showService = true, isHighlighted = false }: PortfolioCardProps) {
   const handleReadMore = () => {
     if (project.url) {
       window.open(project.url, "_blank", "noopener,noreferrer");
@@ -34,9 +36,27 @@ export default function PortfolioCard({ project, onReadMore, className = "", sho
   };
 
   return (
-    <div className={`group flex flex-col  space-y-4 ${className} bg-sea-salt/6 backdrop-blur border  border-sea-salt/6 hover:border-brunswick-green-500 rounded-3xl p-4`}>
+    <div className={`
+    group flex flex-col space-y-4
+    ${className}
+    bg-sea-salt/6 backdrop-blur
+    rounded-3xl p-4 border
+    transition-all duration-500
+
+    ${isHighlighted
+        ? `
+          border-brunswick-green-500
+        `
+        : `
+          border-sea-salt/6
+          opacity-70
+        `
+      }
+
+    hover:border-brunswick-green-500`}
+    >
       {/* Visual Mockup Stage Box */}
-      <div className={`relative h-[200px] w-full rounded-[24px] border  ${project.bgClass} flex items-center justify-center overflow-hidden shadow-2xl transition-all duration-500 group-hover:scale-[1.01] group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)]`}>
+      <div className={`relative h-[250px] sm:h-[350px] w-full rounded-[24px] border  ${project.bgClass} flex items-center justify-center overflow-hidden shadow-2xl transition-all duration-500 group-hover:scale-[1.01] group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)]`}>
 
         {/* Subtly animated ambient grid lines */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:20px_20px]" />
@@ -60,13 +80,14 @@ export default function PortfolioCard({ project, onReadMore, className = "", sho
           {project.title}
         </p>
 
-        <p className="font-sans text-base sm:text-lg text-sea-salt/90 font-normal max-w-sm overflow-hidden [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
+        <p className="font-sans text-base sm:text-lg text-sea-salt/90 font-normal w-full overflow-hidden [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
           {project.description}
         </p>
       </div>
       {showService && (
         <div className="flex flex-col space-y-2">
-          <div className="flex">
+          <div className="flex gap-2">
+            <span>Service: </span>
             <span className={`inline-block px-2 py-1 rounded-full border text-sm tracking-widest font-medium ${getServiceColorClass(project.service)}`}>
               {project.service}
             </span>

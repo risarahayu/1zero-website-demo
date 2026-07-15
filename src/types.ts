@@ -97,4 +97,5 @@ export interface PortfolioCardProps {
   onReadMore?: () => void;
   className?: string;
   showService?: boolean;
+  isHighlighted?: boolean;
 } 
