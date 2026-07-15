@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import React from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import { workflowSteps } from "../data";
 import { workflowCopy } from "../copy";
 import { CheckCircle2 } from "lucide-react";
 import { Icon } from "@iconify/react";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper";
+
+import "swiper/css";
+
 
 const N = workflowSteps.length;
 
@@ -111,24 +118,14 @@ function TopNav({
 function Panel({
   step,
   index,
-  direction,
 }: {
   step: (typeof workflowSteps)[0];
   index: number;
-  direction: number; // +1 = going right, -1 = going left
 }) {
   const cfg = PANEL_CONFIG[index % PANEL_CONFIG.length];
 
   return (
-    <motion.div
-      key={index}
-      custom={direction}
-      initial={{ opacity: 0, x: direction > 0 ? 80 : -80 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: direction > 0 ? -80 : 80 }}
-      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-      className={`absolute inset-0 ${cfg.bg} overflow-hidden`}
-    >
+    <div className={`${cfg.bg} overflow-hidden rounded-2xl h-full`}>
       {/* Radial ambient glow */}
       <div
         className="absolute inset-0"
@@ -138,7 +135,7 @@ function Panel({
       />
 
       {/* Subtle grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:36px_36px]" />
+      <div className="absolute  inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:36px_36px]" />
 
       {/* Giant decorative step number */}
       <div className="absolute right-4 sm:right-12 top-1/2 -translate-y-1/2 select-none" aria-hidden>
@@ -151,7 +148,7 @@ function Panel({
       </div>
 
       {/* Main content */}
-      <div className="relative h-full flex items-center max-w-7xl mx-auto px-8 sm:px-16 lg:px-24">
+      <div className="relative  h-full flex items-center max-w-7xl mx-auto px-8 sm:px-16 lg:px-24 border border-brunswick-green-500 rounded-2xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 w-full">
 
           {/* LEFT: step info */}
@@ -235,27 +232,28 @@ function Panel({
 
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
 // ── Main export ─────────────────────────────────────────────────────────────
 export default function WorkflowHorizontal() {
   const [activeIdx, setActiveIdx] = useState(0);
-  const [direction, setDirection] = useState(1);
+
+  const swiperRef = useRef<SwiperType | null>(null);
+
 
   const handleSelect = (i: number) => {
-    setDirection(i > activeIdx ? 1 : -1);
-    setActiveIdx(i);
-  };
+    swiperRef.current?.slideToLoop(i);
+  }
 
   const handlePrev = () => {
-    if (activeIdx > 0) handleSelect(activeIdx - 1);
-  };
+    swiperRef.current?.slidePrev();
+  }
 
   const handleNext = () => {
-    if (activeIdx < N - 1) handleSelect(activeIdx + 1);
-  };
+    swiperRef.current?.slideNext();
+  }
 
   return (
     <section className="bg-raisin-black">
@@ -284,7 +282,7 @@ export default function WorkflowHorizontal() {
       </div>
 
       {/* Horizontal workflow container */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+      <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 pb-16">
 
         {/* Top navigation */}
         <div className="mb-4">
@@ -292,34 +290,57 @@ export default function WorkflowHorizontal() {
         </div>
 
         {/* Panel area: fixed height, panels switch in/out */}
-        <div className="relative rounded-2xl overflow-hidden border border-sea-salt/10" style={{ minHeight: "520px" }}>
-          <AnimatePresence mode="wait" custom={direction}>
-            <Panel
-              key={activeIdx}
-              step={workflowSteps[activeIdx]}
-              index={activeIdx}
-              direction={direction}
-            />
-          </AnimatePresence>
+        <div className="relative  rounded-2xl overflow-hidden border border-sea-salt/10"
+          style={{ height: 520 }}>
 
-          {/* Prev / Next arrows */}
+          <Swiper className="h-full"
+
+            modules={[Autoplay]}
+            loop
+            spaceBetween={8}
+            speed={500}
+            autoplay={{
+              delay: 4500,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+
+            onSlideChange={(swiper) => {
+              setActiveIdx(swiper.realIndex);
+            }}
+
+          >
+
+            {workflowSteps.map((step, index) => (
+              <SwiperSlide className="h-full" key={step.number}>
+                <Panel
+                  step={step}
+                  index={index}
+
+                />
+              </SwiperSlide>
+            ))}
+
+          </Swiper>
+
           <button
             onClick={handlePrev}
-            disabled={activeIdx === 0}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-sea-salt/10 hover:bg-sea-salt/20 text-sea-salt flex items-center justify-center transition-all disabled:opacity-20 disabled:cursor-not-allowed"
-            aria-label="Previous step"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-sea-salt/10 hover:bg-sea-salt/20 text-sea-salt flex items-center justify-center transition-all"
           >
-            <Icon icon="mdi:chevron-left" width="22" />
+            <Icon icon="mdi:chevron-left" width={22} />
           </button>
 
           <button
             onClick={handleNext}
-            disabled={activeIdx === N - 1}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-sea-salt/10 hover:bg-sea-salt/20 text-sea-salt flex items-center justify-center transition-all disabled:opacity-20 disabled:cursor-not-allowed"
-            aria-label="Next step"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-sea-salt/10 hover:bg-sea-salt/20 text-sea-salt flex items-center justify-center transition-all"
           >
-            <Icon icon="mdi:chevron-right" width="22" />
+            <Icon icon="mdi:chevron-right" width={22} />
           </button>
+
         </div>
 
         {/* Bottom dot indicators */}
