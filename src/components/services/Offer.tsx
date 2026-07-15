@@ -156,7 +156,7 @@ export default function DiagnosisPanel() {
                                                             </p>
 
                                                             <div className="mt-4">
-                                                                <a href={item.href} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brunswick-green-900 text-sea-salt hover:bg-brunswick-green-700 transition-colors">
+                                                                <a href={item.href} download className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brunswick-green-900 text-sea-salt hover:bg-brunswick-green-700 transition-colors">
                                                                     {offerCopy.downloadBtn}
                                                                     <Download size={16} />
                                                                 </a>

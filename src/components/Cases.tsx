@@ -14,6 +14,7 @@ const activity07 = "activity-07";
 const activity08 = "activity-08";
 const activity09 = "activity-09";
 const activity10 = "activity-10";
+const activity11 = "activity-11";
 
 
 
@@ -133,6 +134,17 @@ const ourActivity = [
     linkPost: "",
     CTA: "",
   },
+  {
+    id: activity11,
+    photos: [
+      `${import.meta.env.BASE_URL}Our Activity/${activity11}/Coinfest.webp`,
+    ],
+    title: "Coinfest",
+    desc: "A great day at Coinfest! Always inspiring to meet passionate people, exchange ideas, and learn from the latest developments in the Web3 and blockchain ecosystem. Thank you to everyone we had the chance to connect with—we're excited to see what comes next.",
+    linkPost: "",
+    CTA: "",
+  },
+
 ];
 
 // ─── Shared card renderer ────────────────────────────────────────────────────
