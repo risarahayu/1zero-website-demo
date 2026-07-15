@@ -1,17 +1,25 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { testimonials } from "../data";
 import { testimonialsCopy } from "../copy";
 import { Quote, Star, ArrowLeft, ArrowRight } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper";
+
+import "swiper/css";
 
 export default function Testimonials() {
+
+  const swiperRef = useRef<SwiperType | null>(null);
   const [activeSlide, setActiveSlide] = useState(0);
 
+
   const handleNext = () => {
-    setActiveSlide((prev) => (prev + 1) % testimonials.length);
+    swiperRef.current?.slideNext();
   };
 
   const handlePrev = () => {
-    setActiveSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    swiperRef.current?.slidePrev();
   };
 
   return (
@@ -22,7 +30,7 @@ export default function Testimonials() {
       <div className="max-w-7xl justify-items-center mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
         {/* Title Area */}
-        <div className="flex flex-col gap-10 items-center text-center">
+        <div className="flex flex-col gap-10 items-center " text-center>
           <div className="space-y-10" text-center>
             <span className="inline-block px-3.5 py-1 rounded-full border border-sea-salt/20 text-lg font-sans uppercase tracking-widest text-brunswick-green-500 bg-brunswick-green-500/5">
               {testimonialsCopy.badge}
@@ -36,64 +44,104 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonials standard grid (responsive) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((t, index) => {
-            const isActiveMobile = activeSlide === index;
+        <Swiper
+          className="w-full py-10"
+          modules={[Autoplay]}
+
+          centeredSlides
+          grabCursor
+          speed={700}
+          spaceBetween={24}
+          slidesPerView={1.15}
+          breakpoints={{
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
+          autoplay={{
+            delay: 4500,
+            disableOnInteraction: false,
+          }}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          onSlideChange={(swiper) => {
+            setActiveSlide(swiper.realIndex);
+          }}
+        >
+          {testimonials.map((t) => {
             return (
-              <div
-                key={t.id}
-                className={`group flex flex-col justify-between p-6 rounded-2xl border  p-6 transition-all duration-300 relative ${isActiveMobile
-                  ? "border-brunswick-green-500 backdrop-blur bg-sea-salt/6  shadow-brunswick-green-500/5 shadow-2xl scale-[1.01] block"
-                  : "border-sea-salt/20 group-hover:border-brunswick-green-500/30 md:block hidden"
-                  }`}
-              >
-                {/* Quotation icon accent */}
-                <div className="absolute top-6 right-6 text-sea-salt/80 group-hover:text-brunswick-green-500 transition-colors">
-                  <Quote className="h-8 w-8 transform rotate-180" />
-                </div>
+              <SwiperSlide key={t.id} className="h-auto">
+                {({ isActive }) => (
+                  <div
+                    className={`group
+            relative
+            h-full
+            flex
+            flex-col
+            justify-between
+            rounded-2xl
+            border
+            p-6
+            transition-all
+            duration-500
 
-                <div className="space-y-4">
-                  {/* Rating indicator */}
-                  <div className="flex items-center gap-0.5">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-3 w-3 fill-dun text-dun" />
-                    ))}
-                  </div>
+            ${isActive
+                        ? "border-brunswick-green-500 bg-sea-salt/6 shadow-2xl shadow-brunswick-green-500/5 scale-100 opacity-100"
+                        : "border-sea-salt/20 opacity-60 scale-[0.96] hover:opacity-80"
+                      }
+        `}
+                  >
+                    {/* Quotation icon accent */}
+                    <div className="absolute top-6 right-6 text-sea-salt/80 group-hover:text-brunswick-green-500 transition-colors">
+                      <Quote className="h-8 w-8 transform rotate-180" />
+                    </div>
 
-                  {/* Absolute quote */}
-                  <p className="font-sans text-base sm:text-lg text-sea-salt/90 italic  group-hover:text-sea-salt transition-colors">
-                    "{t.quote}"
-                  </p>
-                </div>
+                    <div className="space-y-4">
+                      {/* Rating indicator */}
+                      <div className="flex items-center gap-0.5">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="h-3 w-3 fill-dun text-dun" />
+                        ))}
+                      </div>
 
-                {/* Writer Portrait Avatar details */}
-                <div className="flex items-center gap-3 pt-6 border-t border-sea-salt/20 mt-8">
-                  <div className="h-10 w-10 rounded-full overflow-hidden border border-sea-salt/20 shrink-0">
-                    <img
-                      src={t.avatarUrl}
-                      alt={t.name}
-                      referrerPolicy="no-referrer"
-                      className="h-full w-full object-cover"
-                    />
+                      {/* Absolute quote */}
+                      <p className="font-sans text-base sm:text-lg text-sea-salt/90 italic  group-hover:text-sea-salt transition-colors">
+                        "{t.quote}"
+                      </p>
+                    </div>
+
+                    {/* Writer Portrait Avatar details */}
+                    <div className="flex items-center gap-3 pt-6 border-t border-sea-salt/20 mt-8">
+                      <div className="h-10 w-10 rounded-full overflow-hidden border border-sea-salt/20 shrink-0">
+                        <img
+                          src={t.avatarUrl}
+                          alt={t.name}
+                          referrerPolicy="no-referrer"
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                      <div className="leading-tight">
+                        <span
+                          className={`block font-sans text-lg font-bold transition-colors ${isActive
+                            ? "text-brunswick-green-500"
+                            : "text-sea-salt"
+                            }`}
+                        >
+                          {t.name}
+                        </span>
+                        <span className="block font-sans text-lg text-sea-salt/90">
+                          {t.role}, <strong className="text-sea-salt font-normal">{t.company}</strong>
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="leading-tight">
-                    <span
-                      className={`block font-sans text-lg font-bold transition-colors ${isActiveMobile
-                        ? "text-brunswick-green-500"
-                        : "text-sea-salt"
-                        }`}
-                    >
-                      {t.name}
-                    </span>
-                    <span className="block font-sans text-lg text-sea-salt/90">
-                      {t.role}, <strong className="text-sea-salt font-normal">{t.company}</strong>
-                    </span>
-                  </div>
-                </div>
-              </div>
+                )}
+              </SwiperSlide>
             );
           })}
-        </div>
+        </Swiper>
 
         {/* Slider Controllers */}
         <div className="flex items-center gap-3  justify-center">
@@ -116,6 +164,6 @@ export default function Testimonials() {
         </div>
 
       </div>
-    </section>
+    </section >
   );
 }
