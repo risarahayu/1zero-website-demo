@@ -38,7 +38,7 @@ export default function Products({ onOpenBooking }: ProductsProps) {
 
   return (
     <section ref={sectionRef} className="relative  bg-transparent overflow-hidden pb-16">
-      <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 rounded-[2.5rem] border border-sea-salt/10 py-16 ">
+      <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 rounded-[2.5rem] border border-sea-salt/20 py-16 ">
 
 
         {/* <div className="relative space-y-10 px-6 py-16 sm:px-10 sm:py-16"> */}

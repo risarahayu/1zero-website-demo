@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ArrowLeft, ArrowRight, CheckCircle2, Monitor, Smile, Phone, Calendar, Star } from "lucide-react";
 import { customProjects } from "../data";
 import PortfolioCard from "./PortfolioCard";
 import { portfolioCopy } from "../copy";
+
 
 interface PortfolioProps {
   onOpenBooking: () => void;
@@ -13,6 +14,11 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
   const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
   const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 1200);
   const [isPaused, setIsPaused] = useState(false);
+  const startX = useRef(0);
+  const currentX = useRef(0);
+
+
+
 
   // Resize listener for fluid carousel offsets
   useEffect(() => {
@@ -94,6 +100,8 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
   // Safety compute current human-readable index (0 to 3)
   const currentDisplayIndex = (virtualIndex % customProjects.length + customProjects.length) % customProjects.length;
 
+
+
   return (
     <section className="relative  bg-raisin-black-800/20 overflow-hidden py-16">
       {/* Background radial soft light blur */}
@@ -158,26 +166,46 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
 
           {/* RIGHT PANEL: Horizontal Carousel Track */}
           <div
-            className="lg:col-span-8 overflow-hidden  -mx-4 px-4 sm:mx-0 sm:px-0"
+            className="lg:col-span-8 overflow-hidden -mx-4 px-4 sm:mx-0 sm:px-0 touch-pan-y"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
+            onPointerDown={(e) => {
+              setIsPaused(true);
+              startX.current = e.clientX;
+              currentX.current = e.clientX;
+            }}
+            onPointerMove={(e) => {
+              currentX.current = e.clientX;
+            }}
+            onPointerUp={() => {
+              setIsPaused(false);
+
+              const delta = currentX.current - startX.current;
+
+              if (delta < -80) {
+                handleNext();
+              } else if (delta > 80) {
+                handlePrev();
+              }
+            }}
           >
             <div
-              className={`flex gap-6 ${isTransitionEnabled ? "transition-transform duration-500 ease-out" : ""}`}
-              style={{ transform: `translateX(-${getTranslateX(virtualIndex)}px)` }}
+              className={`flex gap-6 ${isTransitionEnabled
+                  ? "transition-transform duration-500 ease-out"
+                  : ""
+                }`}
+              style={{
+                transform: `translateX(-${getTranslateX(virtualIndex)}px)`,
+              }}
             >
-              {carouselItems.map((project, index) => {
-                const isActive = virtualIndex === index;
-
-                return (
-                  <PortfolioCard
-                    key={project.uniqueId}
-                    project={project}
-                    onReadMore={onOpenBooking}
-                    className="w-[280px] sm:w-[320px] md:w-[380px] shrink-0"
-                  />
-                );
-              })}
+              {carouselItems.map((project) => (
+                <PortfolioCard
+                  key={project.uniqueId}
+                  project={project}
+                  onReadMore={onOpenBooking}
+                  className="w-[280px] sm:w-[320px] md:w-[380px] shrink-0"
+                />
+              ))}
             </div>
           </div>
 
@@ -198,7 +226,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
         </div>
 
       </div>
-    </section>
+    </section >
   );
 }
 
