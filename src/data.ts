@@ -34,8 +34,8 @@ export const products: ProductItem[] = [
     service: "Generative Engine Optimization",
     description:
       "Your visibility layer in the AI-search era. We ensure your platform gets discovered, understood, and recommended by modern AI engines.",
-    fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/GEO Product Sheet - Eng.pdf`,
-    fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/GEO Product Sheet - Indo.pdf`,
+    fileEng: `/Products Sheet/Eng/GEO Product Sheet - Eng.pdf`,
+    fileIndo: `/Products Sheet/Indo/GEO Product Sheet - Indo.pdf`,
     symptoms: [
       {
         text: "You get traffic, but it doesn't convert to real impact",
@@ -76,8 +76,8 @@ export const products: ProductItem[] = [
     service: "NextGen Platforms",
     description:
       "A resilient, cloud-native foundation built to scale your operations without fighting legacy codebase constraints.",
-    fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/NextGen Platforms Product Sheet - Eng.pdf`,
-    fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/NextGen Platforms Product Sheet - Indo.pdf`,
+    fileEng: `/Products Sheet/Eng/NextGen Platforms Product Sheet - Eng.pdf`,
+    fileIndo: `/Products Sheet/Indo/NextGen Platforms Product Sheet - Indo.pdf`,
     symptoms: [
       {
         text: "Core features are slowing down under load",
@@ -116,8 +116,8 @@ export const products: ProductItem[] = [
     service: "DevPods",
     description:
       "Instant, identical development environments so your team can focus on shipping code, not fixing local setups.",
-    fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/DevPod Product Sheet - Eng.pdf`,
-    fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/DevPod Product Sheet - Indo.pdf`,
+    fileEng: `/Products Sheet/Eng/DevPod Product Sheet - Eng.pdf`,
+    fileIndo: `/Products Sheet/Indo/DevPod Product Sheet - Indo.pdf`,
     symptoms: [
       {
         text: "Local environment setups block developer momentum",
@@ -156,8 +156,8 @@ export const products: ProductItem[] = [
     service: "fCTO",
     description:
       "Strategic technical leadership to eliminate tech debt, secure your architecture, and make your mission investable.",
-    fileEng: `${import.meta.env.BASE_URL}/Products Sheet/Eng/fCTO Product Sheet - Eng.pdf`,
-    fileIndo: `${import.meta.env.BASE_URL}/Products Sheet/Indo/fCTO Product Sheet - Indo.pdf`,
+    fileEng: `/Products Sheet/Eng/fCTO Product Sheet - Eng.pdf`,
+    fileIndo: `/Products Sheet/Indo/fCTO Product Sheet - Indo.pdf`,
     symptoms: [
       {
         text: "Engineering decisions are reactive, not strategic",
