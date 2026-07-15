@@ -4,6 +4,12 @@ import { ArrowLeft, ArrowRight, X } from "lucide-react";
 import { casesCopy } from "../copy";
 import CTA from "./CTA";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperType } from "swiper";
+import { Autoplay } from "swiper/modules";
+
+import "swiper/css";
+
 const activity01 = "activity-01";
 const activity02 = "activity-02";
 const activity03 = "activity-03";
@@ -157,14 +163,15 @@ function CaseCard({
   isCenter: boolean;
   onOpenModal: (item: (typeof ourActivity)[0]) => void;
 }) {
+
   return (
     <div
       onClick={() => onOpenModal(item)} // <-- Pop up modal instead of window.open
       className={`
-        group relative h-full min-h-[350px] rounded-3xl bg-sea-salt/6 p-5
+        group relative h-full min-h-[350px] rounded-3xl p-5 border
         flex flex-col justify-between cursor-pointer overflow-hidden
-        transition-all duration-500 hover:scale-[1.01]
-        ${isCenter ? "opacity-100 border border-brunswick-green-500" : "opacity-55 hover:opacity-75 border border-sea-salt/20"}
+        transition-all duration-500 
+        ${isCenter ? "opacity-100 border-brunswick-green-500  bg-sea-salt/10 shadow-2xl shadow-brunswick-green-500/5" : "opacity-60 hover:opacity-80 border-sea-salt/20 scale-[0.96] bg-sea-salt/6"}
       `}
     >
       {/* Gradient image area */}
@@ -215,6 +222,7 @@ function CaseCard({
 
 // ─── Main Component ──────────────────────────────────────────────────────────
 export default function Cases() {
+  const swiperRef = useRef<SwiperType | null>(null);
   const total = ourActivity.length;
 
   // ── State  Pop up Modal ────────────────────────────────────
@@ -225,102 +233,16 @@ export default function Cases() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // ── Mobile/tablet slider (like Portfolio) ───────────────────────
-  const [windowWidth, setWindowWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 1200
-  );
-  const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
-  // Virtual index for infinite-loop mobile slider (tripled array, start at middle set)
-  const [virtualIndex, setVirtualIndex] = useState(total); // index 'total' = first item in Set B
-  const [containerWidth, setContainerWidth] = useState(0);
-  const sliderContainerRef = useRef<HTMLDivElement>(null);
-
+  // ── Autoplay Control ─────────────────────────
   useEffect(() => {
-    const onResize = () => {
-      setWindowWidth(window.innerWidth);
-      if (sliderContainerRef.current) {
-        setContainerWidth(sliderContainerRef.current.clientWidth);
+    if (swiperRef.current && swiperRef.current.autoplay) {
+      if (isPaused || selectedItem !== null) {
+        swiperRef.current.autoplay.stop();
+      } else {
+        swiperRef.current.autoplay.start();
       }
-    };
-    window.addEventListener("resize", onResize);
-    // Measure on mount
-    if (sliderContainerRef.current) {
-      setContainerWidth(sliderContainerRef.current.clientWidth);
     }
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
-
-  const isDesktop = windowWidth >= 1024;
-
-  // Mobile card width = full container width (1 card per view)
-  const mobileCardWidth = containerWidth > 0 ? containerWidth : windowWidth - 32;
-  const mobileGap = 0;
-
-  const mobileTranslateX = (idx: number) => idx * (mobileCardWidth + mobileGap);
-
-  // Tripled array for infinite-loop mobile slider
-  const tripled = [
-    ...ourActivity.map((p, i) => ({ ...p, uniqueId: `${p.id}-set0-${i}` })),
-    ...ourActivity.map((p, i) => ({ ...p, uniqueId: `${p.id}-set1-${i}` })),
-    ...ourActivity.map((p, i) => ({ ...p, uniqueId: `${p.id}-set2-${i}` })),
-  ];
-
-  const handleMobileNext = () => {
-    if (!isTransitionEnabled) return;
-    setVirtualIndex((prev) => prev + 1);
-  };
-
-  const handleMobilePrev = () => {
-    if (!isTransitionEnabled) return;
-    setVirtualIndex((prev) => prev - 1);
-  };
-
-  // Reset snap for infinite loop on mobile
-  useEffect(() => {
-    if (isDesktop) return;
-    let id: ReturnType<typeof setTimeout>;
-    if (virtualIndex >= total * 2) {
-      id = setTimeout(() => {
-        setIsTransitionEnabled(false);
-        setVirtualIndex(total);
-        setTimeout(() => setIsTransitionEnabled(true), 50);
-      }, 500);
-    } else if (virtualIndex < total) {
-      id = setTimeout(() => {
-        setIsTransitionEnabled(false);
-        setVirtualIndex(total * 2 - 1);
-        setTimeout(() => setIsTransitionEnabled(true), 50);
-      }, 500);
-    }
-    return () => clearTimeout(id);
-  }, [virtualIndex, isDesktop]);
-
-  // Display index for dots / counter
-  const mobileDisplayIndex = ((virtualIndex % total) + total) % total;
-
-  // ── Desktop visible indices (4 at once) ────────────────────────
-  const getDesktopIndices = () => [
-    (activeIndex - 1 + total) % total,
-    activeIndex,
-    (activeIndex + 1) % total,
-    (activeIndex + 2) % total,
-  ];
-
-  const handleDesktopNext = () => setActiveIndex((prev) => (prev + 1) % total);
-  const handleDesktopPrev = () => setActiveIndex((prev) => (prev - 1 + total) % total);
-
-  // ── Autoplay (Hentikan saat modal aktif) ─────────────────────────
-  useEffect(() => {
-    if (isPaused || selectedItem !== null) return; // <-- Tambah kondisi agar slider berhenti jika popup terbuka
-    if (isDesktop) {
-      const id = setInterval(handleDesktopNext, 4000);
-      return () => clearInterval(id);
-    } else {
-      if (!isTransitionEnabled) return;
-      const id = setInterval(handleMobileNext, 4000);
-      return () => clearInterval(id);
-    }
-  }, [isPaused, activeIndex, virtualIndex, isDesktop, isTransitionEnabled, selectedItem]);
+  }, [isPaused, selectedItem]);
 
   return (
     <section className="relative py-16 bg-raisin-black-800/20 overflow-hidden">
@@ -341,98 +263,69 @@ export default function Cases() {
           </div>
         </div>
 
-        {/* ── DESKTOP Carousel (4 cards side-by-side) ────────────── */}
-        {isDesktop && (
-          <div
-            className="relative"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
+        {/* ── UNIFIED SWIPER CAROUSEL ────────────── */}
+        <div
+          className="relative w-full"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <Swiper
+            className="w-full py-10"
+            modules={[Autoplay]}
+            loop
+            centeredSlides
+            grabCursor
+            speed={700}
+            spaceBetween={24}
+            breakpoints={{
+              0: { slidesPerView: 1.15 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            onSlideChange={(swiper) => {
+              setActiveIndex(swiper.realIndex);
+            }}
           >
-            <div className="flex gap-5 transition-all duration-500">
-              {getDesktopIndices().map((itemIndex, pos) => {
-                const item = ourActivity[itemIndex];
-                const isCenter = pos === 1;
-                return (
-                  <div
-                    key={`${item.id}-${pos}`}
-                    className={`${isCenter ? "flex-[1.4]" : "flex-1"}`}
-                  >
-                    {/* Kirim setSelctedItem ke Card */}
-                    <CaseCard item={item} isCenter={isCenter} onOpenModal={setSelectedItem} />
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Navigation */}
-            <div className="flex items-center gap-3 pt-10 justify-center">
-              <button
-                onClick={isDesktop ? handleDesktopPrev : handleMobilePrev}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
-              >
-                <ArrowLeft className="h-3.5 w-3.5" />
-              </button>
-              <span className="font-sans text-lg text-sea-salt tracking-wider">
-                {String((isDesktop ? activeIndex : mobileDisplayIndex) + 1).padStart(2, "0")} /{" "}
-                {String(total).padStart(2, "0")}
-              </span>
-              <button
-                onClick={isDesktop ? handleDesktopNext : handleMobileNext}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
-              >
-                <ArrowRight className="h-3.5 w-3.5" />
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* ── MOBILE / TABLET Slider ─────────── */}
-        {!isDesktop && (
-          <div
-            ref={sliderContainerRef}
-            className="overflow-hidden"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            <div
-              className={`flex ${isTransitionEnabled ? "transition-transform duration-500 ease-out" : ""}`}
-              style={{ transform: `translateX(-${mobileTranslateX(virtualIndex)}px)` }}
-            >
-              {tripled.map((item, index) => (
-                <div
-                  key={item.uniqueId}
-                  style={{ width: mobileCardWidth, flexShrink: 0 }}
-                >
+            {ourActivity.map((item) => (
+              <SwiperSlide key={item.id} className="h-auto">
+                {({ isActive }) => (
                   <CaseCard
                     item={item}
-                    isCenter={index === virtualIndex}
-                    onOpenModal={setSelectedItem} // <-- Kirim handler
+                    isCenter={isActive}
+                    onOpenModal={setSelectedItem}
                   />
-                </div>
-              ))}
-            </div>
+                )}
+              </SwiperSlide>
+            ))}
+          </Swiper>
 
-            {/* Navigation */}
-            <div className="flex items-center gap-3 pt-10 justify-center">
-              <button
-                onClick={isDesktop ? handleDesktopPrev : handleMobilePrev}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
-              >
-                <ArrowLeft className="h-3.5 w-3.5" />
-              </button>
-              <span className="font-sans text-lg text-sea-salt tracking-wider">
-                {String((isDesktop ? activeIndex : mobileDisplayIndex) + 1).padStart(2, "0")} /{" "}
-                {String(total).padStart(2, "0")}
-              </span>
-              <button
-                onClick={isDesktop ? handleDesktopNext : handleMobileNext}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
-              >
-                <ArrowRight className="h-3.5 w-3.5" />
-              </button>
-            </div>
+          {/* Navigation */}
+          <div className="flex items-center gap-3 pt-2 justify-center">
+            <button
+              onClick={() => swiperRef.current?.slidePrev()}
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
+            >
+              <ArrowLeft className="h-3.5 w-3.5" />
+            </button>
+            <span className="font-sans text-lg text-sea-salt tracking-wider">
+              {String(activeIndex + 1).padStart(2, "0")} /{" "}
+              {String(total).padStart(2, "0")}
+            </span>
+            <button
+              onClick={() => swiperRef.current?.slideNext()}
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
+            >
+              <ArrowRight className="h-3.5 w-3.5" />
+            </button>
           </div>
-        )}
+        </div>
       </div>
 
       {/* ── POP UP MODAL ───────────────────────────────────────── */}
