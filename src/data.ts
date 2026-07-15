@@ -64,7 +64,7 @@ export const products: ProductItem[] = [
 
     imageProblem: "./illustration/undraw_website_27ju 1.svg",
     imageSolution: "./illustration/geo-solution.png",
-    href: "#geo",
+    href: "/Products Sheet/Eng/GEO Product Sheet - Eng.pdf",
     cta: "See GEO in Action",
     problemTitle: "Growth & Visibility",
 
@@ -106,7 +106,7 @@ export const products: ProductItem[] = [
 
     imageProblem: "/illustrations/nextgen-problem.png",
     imageSolution: "/illustrations/nextgen-solution.png",
-    href: "#nextgen",
+    href: "/Products Sheet/Eng/NextGen Platforms Product Sheet - Eng.pdf",
     cta: "Review NextGen Architecture",
     problemTitle: "System Performance",
   },
@@ -146,7 +146,7 @@ export const products: ProductItem[] = [
 
     imageProblem: "/illustrations/devpod-problem.png",
     imageSolution: "/illustrations/devpod-solution.png",
-    href: "#devpod",
+    href: "/Products Sheet/Eng/DevPod Product Sheet - Eng.pdf",
     cta: "Deploy with DevPod",
     problemTitle: "Developer Experience",
   },
@@ -186,7 +186,7 @@ export const products: ProductItem[] = [
 
     imageProblem: "/illustrations/fcto-problem.png",
     imageSolution: "/illustrations/fcto-solution.png",
-    href: "#fcto",
+    href: "/Products Sheet/Eng/fCTO Product Sheet - Eng.pdf",
     cta: "Explore Fractional Leadership",
     problemTitle: "Strategic Direction",
 
