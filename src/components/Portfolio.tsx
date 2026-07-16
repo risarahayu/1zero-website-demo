@@ -21,10 +21,18 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const [isPaused, setIsPaused] = useState(false);
 
 
+  useEffect(() => {
+    if (!swiperRef.current?.autoplay) return;
 
-
+    if (isPaused) {
+      swiperRef.current.autoplay.stop();
+    } else {
+      swiperRef.current.autoplay.start();
+    }
+  }, [isPaused]);
 
 
 
@@ -108,7 +116,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
               modules={[Navigation, Autoplay]}
               loop={true}
               speed={500}
-              spaceBetween={24}
+              spaceBetween={12}
               autoplay={{
                 delay: 4500,
                 disableOnInteraction: false,
@@ -162,6 +170,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
                     isHighlighted={index === activeIndex}
 
                     className="w-full"
+                    setIsPaused={setIsPaused}
 
                   />
 

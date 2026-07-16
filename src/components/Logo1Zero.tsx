@@ -5,7 +5,7 @@ interface LogoProps {
   glow?: boolean;
 }
 
-export default function Logo1Zero({ className = "h-5", glow = true }: LogoProps) {
+export default function Logo1zero({ className = "h-5", glow = true }: LogoProps) {
   return (
     <div className="relative inline-flex items-center group">
       {/* Decorative neon green glow behind the logo */}

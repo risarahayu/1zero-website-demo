@@ -78,7 +78,7 @@ export const footerCopy = {
   primaryLaboratory: "Bali HQ",
   officeTitle: "Our Office Address",
   officeAddress: "Biliq Sunset Office Space, Jalan Sunset Road 819, Bali Ruko Sunset Indah II No. 10, Kuta, Bali, Indonesia, 80361",
-  copyright: "1zero. ARCHITECTS OF IMPACT.",
+  copyright: "All rights reserved.",
   backToTop: "BACK TO TOP ↑",
   madeForDoubleImpact: "EXPONENTIALLY EXPANDING IMPACT POTENTIAL",
   developmentOfficeLabel: "Development Office",

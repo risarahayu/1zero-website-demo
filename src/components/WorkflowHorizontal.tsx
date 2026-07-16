@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import React from "react";
 import { motion } from "motion/react";
 import { workflowSteps } from "../data";
@@ -118,14 +118,19 @@ function TopNav({
 function Panel({
   step,
   index,
+  setIsPaused,
 }: {
   step: (typeof workflowSteps)[0];
   index: number;
+  setIsPaused: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const cfg = PANEL_CONFIG[index % PANEL_CONFIG.length];
 
   return (
-    <div className={`${cfg.bg} overflow-hidden rounded-2xl h-full`}>
+    <div
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      className={`${cfg.bg} overflow-hidden rounded-2xl h-full`}>
       {/* Radial ambient glow */}
       <div
         className="absolute inset-0"
@@ -238,6 +243,8 @@ function Panel({
 
 // ── Main export ─────────────────────────────────────────────────────────────
 export default function WorkflowHorizontal() {
+  const [isPaused, setIsPaused] = useState(false);
+
   const [activeIdx, setActiveIdx] = useState(0);
 
   const swiperRef = useRef<SwiperType | null>(null);
@@ -254,6 +261,16 @@ export default function WorkflowHorizontal() {
   const handleNext = () => {
     swiperRef.current?.slideNext();
   }
+
+  useEffect(() => {
+    if (!swiperRef.current?.autoplay) return;
+
+    if (isPaused) {
+      swiperRef.current.autoplay.stop();
+    } else {
+      swiperRef.current.autoplay.start();
+    }
+  }, [isPaused]);
 
   return (
     <section className="bg-raisin-black">
@@ -293,11 +310,13 @@ export default function WorkflowHorizontal() {
         <div className="relative  rounded-2xl overflow-hidden border border-sea-salt/10"
           style={{ height: 520 }}>
 
-          <Swiper className="h-full"
+          <Swiper className="h-full "
 
             modules={[Autoplay]}
             loop
-            spaceBetween={8}
+            spaceBetween={12}
+            centeredSlides={false}
+            slidesPerView={1.05}
             speed={500}
             autoplay={{
               delay: 4500,
@@ -320,6 +339,7 @@ export default function WorkflowHorizontal() {
                 <Panel
                   step={step}
                   index={index}
+                  setIsPaused={setIsPaused}
 
                 />
               </SwiperSlide>

@@ -23,7 +23,7 @@ const getServiceColorClass = (service: string) => {
 
 
 
-export default function PortfolioCard({ project, onReadMore, className = "", showService = true, isHighlighted = false }: PortfolioCardProps) {
+export default function PortfolioCard({ setIsPaused, project, onReadMore, className = "", showService = true, isHighlighted = false }: PortfolioCardProps) {
   const handleReadMore = () => {
     if (project.url) {
       window.open(project.url, "_blank", "noopener,noreferrer");

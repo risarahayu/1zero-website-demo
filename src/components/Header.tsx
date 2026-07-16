@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { navLinks } from "../data";
 import { Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
-import Logo1Zero from "./Logo1Zero";
+import Logo1zero from "./Logo1zero";
 import { headerCopy } from "../copy";
 
 interface HeaderProps {
@@ -79,7 +79,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                   : "opacity-100 scale-100"
                   }`}
               >
-                <Logo1Zero />
+                <Logo1zero />
               </div>
 
               {/* Navigation Items */}
@@ -90,11 +90,10 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                     <a
                       key={link.href}
                       href={link.href}
-                      className={`font-sans text-lg font-semibold transition-all tracking-wide hover:underline ${
-                        isActive
+                      className={`font-sans text-lg font-semibold transition-all tracking-wide hover:underline ${isActive
                           ? "text-brunswick-green-500 drop-shadow-sm"
                           : "text-sea-salt hover:text-sea-salt"
-                      }`}
+                        }`}
                     >
                       {link.label}
                     </a>
@@ -144,11 +143,10 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`font-sans text-lg font-semibold tracking-wide transition-colors py-2 border-b border-sea-salt/60 ${
-                      isActive
+                    className={`font-sans text-lg font-semibold tracking-wide transition-colors py-2 border-b border-sea-salt/60 ${isActive
                         ? "text-brunswick-green-500"
                         : "text-sea-salt hover:text-brunswick-green-500"
-                    }`}
+                      }`}
                   >
                     {link.label}
                   </a>

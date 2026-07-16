@@ -8,6 +8,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import { Autoplay } from "swiper/modules";
 
+import { Icon } from "@iconify/react";
+
 import "swiper/css";
 
 const activity01 = "activity-01";
@@ -23,6 +25,16 @@ const activity10 = "activity-10";
 const activity11 = "activity-11";
 
 
+const socialIcons = {
+  Instagram: "mdi:instagram",
+  Linkedin: "mdi:linkedin",
+  Facebook: "mdi:facebook",
+  Youtube: "mdi:youtube",
+  X: "ri:twitter-x-fill",
+  Tiktok: "ic:baseline-tiktok",
+  Website: "mdi:web",
+};
+
 
 const ourActivity = [
   {
@@ -32,10 +44,11 @@ const ourActivity = [
       `${import.meta.env.BASE_URL}Our Activity/${activity01}/IMG_2760.jpg`,
       `${import.meta.env.BASE_URL}Our Activity/${activity01}/IMG_1215.jpg`,
     ],
-    title: "AusTrade Landing Pads & GSDC 22-25 June 2026",
+    title: "Global Sustainable Development Congress (GSDC) 2026",
+    date: "24 June 2026",
     desc: "A concise LinkedIn launch post spotlighting landing pad initiatives and global sustainability design challenge momentum.",
     linkPost: "https://www.linkedin.com/feed/update/urn:li:activity:7477617222861975553",
-    CTA: "See full in Linkedin",
+    CTA: "Linkedin",
   },
   {
     id: activity02,
@@ -43,9 +56,10 @@ const ourActivity = [
       `${import.meta.env.BASE_URL}Our Activity/${activity02}/Wisdom Shaping Sustainable Futures.png`,
     ],
     title: "EarthWise: Wisdom Shaping Sustainable Futures",
+    date: "16 May 2025",
     desc: "A simple visual story about stewardship and sustainable futures in a changing world.",
     linkPost: "https://www.youtube.com/watch?v=peZPBfHptoo",
-    CTA: "Watch on Youtube",
+    CTA: "Youtube",
   },
   {
     id: activity03,
@@ -54,10 +68,11 @@ const ourActivity = [
       `${import.meta.env.BASE_URL}Our Activity/${activity03}/20260624_165753.jpg`,
       `${import.meta.env.BASE_URL}Our Activity/${activity03}/PTSG 2026 - Press Release-21.jpg`,
     ],
-    title: "Path to Sustainable Growth at Apurva Kempinski 24 June 2026",
+    title: "Path to Sustainable Growth at Apurva Kempinski",
+    date: "24 June 2026",
     desc: "A short post highlighting sustainable hospitality strategy and the path to growth for a luxury resort brand.",
     linkPost: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7477951114466856962/?actorCompanyId=103705943",
-    CTA: "See full in Linkedin",
+    CTA: "Linkedin",
   },
   {
     id: activity04,
@@ -66,10 +81,11 @@ const ourActivity = [
       `${import.meta.env.BASE_URL}Our Activity/${activity04}/IMG_2566.jpg`,
       `${import.meta.env.BASE_URL}Our Activity/${activity04}/IMG_2616.webp`,
     ],
-    title: "Visit PLN",
+    title: "Visit PLTGU Muara Karang",
+    date: "21 May 2026",
     desc: "A short post highlighting sustainable hospitality strategy and the path to growth for a luxury resort brand.",
     linkPost: "https://www.linkedin.com/posts/1zero-biz_pln-energytransition-jakarta-activity-7482249126974476289-kfFh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC3NxVkBzab9RTwcZ8BHJt_XzKZdIfZYLds",
-    CTA: "See full in Linkedin",
+    CTA: "Linkedin",
   },
   {
     id: activity05,
@@ -78,10 +94,11 @@ const ourActivity = [
       `${import.meta.env.BASE_URL}Our Activity/${activity05}/Bali_Tech_Summit_Detail1.webp`,
 
     ],
-    title: "BALI TECH SUMMIT",
-    desc: "𝗙𝗨𝗧𝗨𝗥𝗘 𝗢𝗙 𝗪𝗢𝗥𝗞 𝟮.𝟬: 𝗔𝗗𝗔𝗣𝗧𝗜𝗡𝗚 𝗧𝗢 𝗡𝗘𝗪 𝗥𝗘𝗔𝗟𝗜𝗧𝗜𝗘𝗦 𝘌𝘷𝘦𝘯𝘵 𝘣𝘺 𝘓𝘢 𝘍𝘳𝘦𝘯𝘤𝘩 𝘛𝘦𝘤𝘩 𝘐𝘯𝘥𝘰𝘯𝘦𝘴𝘪𝘢 🌟 Big News from 𝟭𝘇𝗲𝗿𝗼! 🌏🚀 We’re proud to announce that our solution architect @gungdp3 representing 𝟭𝘇𝗲𝗿𝗼 at the Bali Tech Summit today! 🎉 This year’s theme is “The Future of Work 2.0: Adapting to New Realities,” where industry leaders will discuss crucial topics like employee wellness, artificial intelligence, and climate change. 🌱🤖 Stay tuned for insights and highlights as we explore innovative solutions and collaborate on shaping the future of work! ",
+    title: "Bali Tech Summit",
+    date: "11 October 2024",
+    desc: "Proud to have our Solution Architect representing 1zero at the Bali Tech Summit by La French Tech Indonesia. Together with industry leaders, we explored The Future of Work 2.0—covering AI, employee wellbeing, climate action, and the innovations shaping tomorrow's workplace.",
     linkPost: "https://www.instagram.com/p/DA--yvKTt6o/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-    CTA: "See full in Instagram",
+    CTA: "Instagram",
   },
   {
     id: activity06,
@@ -90,9 +107,10 @@ const ourActivity = [
 
     ],
     title: "AI + Social Media Event",
-    desc: "On January 31, our two Wonder Women attended an awesome workshop at @nebulabali , Canggu! Led by a top influencer from the US, the session dived into how AI is changing the game in social media strategy.",
+    date: "31 January 2025",
+    desc: "Our two Wonder Women attended an awesome workshop at Nebulabali , Canggu! Led by a top influencer from the US, the session dived into how AI is changing the game in social media strategy.",
     linkPost: "https://www.instagram.com/p/DFpBylOSQ4d/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-    CTA: "See full in Instagram",
+    CTA: "Instagram",
   },
   {
     id: activity07,
@@ -102,9 +120,10 @@ const ourActivity = [
       `${import.meta.env.BASE_URL}Our Activity/${activity07}/𝗖𝘆𝗯𝗲𝗿 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗠𝗲𝗲𝘁𝘂𝗽 Detail 2.webp`,
     ],
     title: "𝗖𝘆𝗯𝗲𝗿 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗠𝗲𝗲𝘁𝘂𝗽",
+    date: "5 February 2025",
     desc: "1zero’s Solution Architect attended the 𝗖𝘆𝗯𝗲𝗿 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗠𝗲𝗲𝘁𝘂𝗽.  to dive deep into today’s biggest cybersecurity challenges. 🔥 Experts shared insights on how hackers execute attacks, the role of AI as both a threat and a defense, and why cybersecurity awareness is more important than ever.",
     linkPost: "https://www.instagram.com/p/DFtzqySShUS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-    CTA: "See full in Instagram",
+    CTA: "Instagram",
   },
   {
     id: activity08,
@@ -112,9 +131,10 @@ const ourActivity = [
       `${import.meta.env.BASE_URL}Our Activity/${activity08}/Empowering Women Entrepreneurs.webp`,
     ],
     title: "Empowering Women Entrepreneurs",
-    desc: "One of our team member Mutia Rosa attended the LiftWomen Bali-Chapter Launch at Livit, Sanur, on Thursday, January 16th, 2025. The event focused on inspiring, supporting, and elevating female entrepreneurs in Bali and beyond. It was an incredible space where women founders, creators, innovators, mentors, and funders came together to connect, learn, and thrive.",
+    date: "16 January 2025",
+    desc: "Our team member, Mutia Rosa, attended the LiftWomen Bali Chapter Launch at Livit, Sanur, joining an inspiring community of women entrepreneurs, founders, creators, mentors, and innovators committed to empowering one another.",
     linkPost: "https://www.linkedin.com/posts/liftwomen-femaleentrepreneurs-femalefounders-share-7287365666251186176-4Yml/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACaiIoYBEEy2963FCH3xa3bmKTp3gODlKeY",
-    CTA: "See full in Linkedin",
+    CTA: "Linkedin",
   },
   {
     id: activity09,
@@ -124,9 +144,11 @@ const ourActivity = [
 
     ],
     title: "International Day Against Breast Cancer",
-    desc: "October 2025, 1ZERO proudly joined the Steps of Hope Fun Walk, organised by Sudamala Resorts, Yayasan Sudamala Bumi Insani, and Bali Pink Ribbon Foundation at Sudamala Resort, Sanur. Bringing together more than 200 participants, the 3.5-kilometre walk was a meaningful reminder that every step can make a difference. Alongside the event, free breast cancer screenings were also provided for women in the Sanur area, encouraging early detection and greater awareness. At 1zero, we believe that creating positive impact starts with showing up, supporting one another, and taking action for the communities around us. Thank you to everyone who walked, contributed, and helped turn every step into a step of hope. 💗",
-    linkPost: "https://www.instagram.com/reel/DQYoA8NEx9m/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-    CTA: "See full in Instagram",
+    date: "October 2025",
+    desc: " 1zero proudly joined the Steps of Hope Fun Walk in Sanur, supporting breast cancer awareness alongside more than 200 participants. The event also provided free health screenings, reinforcing the importance of early detection and community support.",
+    // linkPost: "https://www.instagram.com/reel/DQYoA8NEx9m/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    linkPost: "",
+    CTA: "Instagram",
   },
   {
     id: activity10,
@@ -135,8 +157,9 @@ const ourActivity = [
       `${import.meta.env.BASE_URL}Our Activity/${activity10}/Hackathon Detail 1.webp`,
 
     ],
-    title: "Brunei Hackathon",
-    desc: "At Brunei Hackathon 2023, Mark represented 1zero as a speaker, sharing insights on innovation, entrepreneurship, and the role of technology in solving real-world challenges.  Bringing together developers, entrepreneurs, students, and technology enthusiasts, the hackathon provided a platform for collaboration, creativity, and knowledge exchange. Through Mark's session, 1zero contributed to inspiring the next generation of innovators by encouraging bold thinking, practical problem-solving, and the development of impactful digital solutions that drive meaningful change across the region.",
+    title: "Brunei Hackathon 2023",
+    date: "April 2023",
+    desc: "At Brunei Hackathon 2023, Mark represented 1zero as a speaker, sharing insights on innovation, entrepreneurship, and how technology can solve real-world challenges while inspiring the next generation of innovators.",
     linkPost: "",
     CTA: "",
   },
@@ -145,7 +168,8 @@ const ourActivity = [
     photos: [
       `${import.meta.env.BASE_URL}Our Activity/${activity11}/Coinfest.webp`,
     ],
-    title: "Coinfest",
+    title: "Coinfest 2025",
+    date: "21-22 August 2025",
     desc: "A great day at Coinfest! Always inspiring to meet passionate people, exchange ideas, and learn from the latest developments in the Web3 and blockchain ecosystem. Thank you to everyone we had the chance to connect with—we're excited to see what comes next.",
     linkPost: "",
     CTA: "",
@@ -158,17 +182,21 @@ function CaseCard({
   item,
   isCenter,
   onOpenModal, // <-- add pop up modal handler
+  setIsPaused,
 }: {
   item: (typeof ourActivity)[0];
   isCenter: boolean;
   onOpenModal: (item: (typeof ourActivity)[0]) => void;
+  setIsPaused: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
 
   return (
     <div
       onClick={() => onOpenModal(item)} // <-- Pop up modal instead of window.open
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
       className={`
-        group relative h-full min-h-[350px] rounded-3xl p-5 border
+        group relative h-full h-[400px] rounded-3xl p-5 border
         flex flex-col justify-between cursor-pointer overflow-hidden
         transition-all duration-500 
         ${isCenter ? "opacity-100 border-brunswick-green-500  bg-sea-salt/10 shadow-2xl shadow-brunswick-green-500/5" : "opacity-60 hover:opacity-80 border-sea-salt/20 scale-[0.96] bg-sea-salt/6"}
@@ -193,8 +221,11 @@ function CaseCard({
           </div>
 
           <div className="space-y-2">
-            <p className={`font-sans text-base sm:text-lg font-bold line-clamp-2 ${isCenter ? "text-brunswick-green-500" : "text-sea-salt"}`}>
+            <p className={`font-sans text-base sm:text-lg font-bold min-h-[3.5rem] content-center line-clamp-2 ${isCenter ? "text-brunswick-green-500" : "text-sea-salt"}`}>
               {item.title}
+            </p>
+            <p className="font-sans text-base sm:text-lg text-ivory/50 line-clamp-2">
+              {item.date}
             </p>
             <p className="font-sans text-base sm:text-lg text-sea-salt line-clamp-2">
               {item.desc}
@@ -266,8 +297,6 @@ export default function Cases() {
         {/* ── UNIFIED SWIPER CAROUSEL ────────────── */}
         <div
           className="relative w-full"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
         >
           <Swiper
             className="w-full py-10"
@@ -276,7 +305,7 @@ export default function Cases() {
             centeredSlides
             grabCursor
             speed={700}
-            spaceBetween={24}
+            spaceBetween={12}
             breakpoints={{
               0: { slidesPerView: 1.15 },
               768: { slidesPerView: 2 },
@@ -292,6 +321,7 @@ export default function Cases() {
             onSlideChange={(swiper) => {
               setActiveIndex(swiper.realIndex);
             }}
+
           >
             {ourActivity.map((item) => (
               <SwiperSlide key={item.id} className="h-auto">
@@ -300,6 +330,8 @@ export default function Cases() {
                     item={item}
                     isCenter={isActive}
                     onOpenModal={setSelectedItem}
+                    setIsPaused={setIsPaused}
+
                   />
                 )}
               </SwiperSlide>
@@ -307,7 +339,7 @@ export default function Cases() {
           </Swiper>
 
           {/* Navigation */}
-          <div className="flex items-center gap-3 pt-2 justify-center">
+          <div className="flex items-center gap-3 pt-10 justify-center">
             <button
               onClick={() => swiperRef.current?.slidePrev()}
               className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
@@ -424,20 +456,25 @@ export default function Cases() {
                 <h3 className="font-sans text-2xl sm:text-3xl font-bold text-brunswick-green-500">
                   {selectedItem.title}
                 </h3>
+                <p className="font-sans text-base sm:text-lg text-sea-salt/50">
+                  {selectedItem.date}
+                </p>
                 <p className="font-sans text-base sm:text-lg text-sea-salt/90">
                   {selectedItem.desc}
                 </p>
               </div>
 
               {selectedItem.linkPost && (
-                <div className="pt-4 border-t border-sea-salt/10">
+                <div className="pt-4 border-t border-sea-salt/10 flex items-center gap-2">
+                  Discovery more :
                   <a
                     href={selectedItem.linkPost}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center font-sans font-semibold px-6 py-3 rounded-full text-lg cursor-pointer bg-brunswick-green-900 text-sea-salt hover:bg-brunswick-green-600 transition-all w-full sm:w-auto"
+                    className="inline-flex items-center justify-center font-sans font-semibold px-2 py-2 rounded-full text-lg cursor-pointer bg-brunswick-green-900 text-sea-salt hover:bg-brunswick-green-600 transition-all w-full sm:w-auto"
                   >
-                    {selectedItem.CTA}
+
+                    <Icon icon={socialIcons[selectedItem.CTA]} className="h-8 w-8" />
                   </a>
                 </div>
               )}

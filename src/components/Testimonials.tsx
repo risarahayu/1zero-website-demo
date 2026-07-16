@@ -51,7 +51,7 @@ export default function Testimonials() {
           centeredSlides
           grabCursor
           speed={700}
-          spaceBetween={24}
+          spaceBetween={12}
           slidesPerView={1.15}
           breakpoints={{
             768: {
@@ -72,7 +72,10 @@ export default function Testimonials() {
         >
           {[...testimonials, ...testimonials, ...testimonials].map((t, index) => {
             return (
-              <SwiperSlide key={`${t.id}-${index}`} className="h-auto">
+              <SwiperSlide
+                onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
+                onMouseLeave={() => swiperRef.current?.autoplay?.start()}
+                key={`${t.id}-${index}`} className="h-auto">
                 {({ isActive }) => (
                   <div
                     className={`group
@@ -94,17 +97,18 @@ export default function Testimonials() {
         `}
                   >
                     {/* Quotation icon accent */}
-                    <div className="absolute top-6 right-6 text-sea-salt/80 group-hover:text-brunswick-green-500 transition-colors">
+                    <div className="relative top-0 right-0 text-sea-salt/80 group-hover:text-brunswick-green-500 transition-colors">
                       <Quote className="h-8 w-8 transform rotate-180" />
                     </div>
 
                     <div className="space-y-4">
                       {/* Rating indicator */}
-                      <div className="flex items-center gap-0.5">
+                      {/* <div className="flex items-center gap-0.5">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="h-3 w-3 fill-dun text-dun" />
                         ))}
-                      </div>
+                      </div> */}
+
 
                       {/* Absolute quote */}
                       <p className="font-sans text-base sm:text-lg text-sea-salt/90 italic  group-hover:text-sea-salt transition-colors">

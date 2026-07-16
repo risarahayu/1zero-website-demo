@@ -98,4 +98,5 @@ export interface PortfolioCardProps {
   className?: string;
   showService?: boolean;
   isHighlighted?: boolean;
+  setIsPaused: React.Dispatch<React.SetStateAction<boolean>>;
 } 

@@ -1,6 +1,6 @@
 import { Mail, Phone, MapPin, Linkedin, Github, MessageCircle, Twitter, Cpu, Instagram } from "lucide-react";
 import TwotoneWhatsappIcon from '@iconify-react/ic/twotone-whatsapp';
-import Logo1Zero from "./Logo1Zero";
+import Logo1zero from "./Logo1zero";
 import { footerCopy } from "../copy";
 
 export default function Footer() {
@@ -127,12 +127,14 @@ export default function Footer() {
 
         {/* Lower copyright bar */}
         <div className="pt-8 border-t border-sea-salt/20 text-lg font-sans text-sea-salt flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3 flex-col items-start sm:flex-row">
-            <Logo1Zero className="h-4 text-sea-salt opacity-60 hover:opacity-100 transition-opacity" glow={false} />
-            <span>© {currentYear} {footerCopy.copyright}</span>
+          <div className="flex items-center gap-3 flex-col items-center sm:items-start sm:flex-row">
+            <div className="flex gap-2">© {currentYear}
+              <Logo1zero className="h-4 text-sea-salt opacity-60 hover:opacity-100 transition-opacity" glow={false} />
+              {footerCopy.copyright}
+            </div>
           </div>
 
-          <div className="flex items-center gap-4 text-lg uppercase">
+          <div className="relative flex items-center gap-4 text-lg uppercase">
             <a href="#home" className="hover:text-brunswick-green-500 hover:underline transition-colors">{footerCopy.backToTop}</a>
             <span>•</span>
             {/* <span className="text-brunswick-green-500">{footerCopy.madeForDoubleImpact}</span> */}
