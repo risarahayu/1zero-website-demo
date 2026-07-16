@@ -30,8 +30,8 @@ export default function Testimonials() {
       <div className="max-w-7xl justify-items-center mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
         {/* Title Area */}
-        <div className="flex flex-col gap-10 items-center " text-center>
-          <div className="space-y-10" text-center>
+        <div className="flex flex-col gap-10 items-center text-center" >
+          <div className="space-y-10 text-center" >
             <span className="inline-block px-3.5 py-1 rounded-full border border-sea-salt/20 text-lg font-sans uppercase tracking-widest text-brunswick-green-500 bg-brunswick-green-500/5">
               {testimonialsCopy.badge}
             </span>
