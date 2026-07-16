@@ -48,7 +48,7 @@ export default function PortfolioCard({ setIsPaused, project, onReadMore, classN
           border-brunswick-green-500
         `
         : `
-          border-sea-salt/6
+          border-sea-salt
           opacity-70
         `
       }
