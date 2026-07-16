@@ -119,10 +119,12 @@ function Panel({
   step,
   index,
   setIsPaused,
+  isHighlighted,
 }: {
   step: (typeof workflowSteps)[0];
   index: number;
   setIsPaused: React.Dispatch<React.SetStateAction<boolean>>;
+  isHighlighted: boolean;
 }) {
   const cfg = PANEL_CONFIG[index % PANEL_CONFIG.length];
 
@@ -130,7 +132,11 @@ function Panel({
     <div
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      className={`${cfg.bg} overflow-hidden rounded-2xl h-full`}>
+      className={`${cfg.bg} border overflow-hidden rounded-2xl h-full ${isHighlighted
+        ? "opacity-100 scale-100  border-brunswick-green-500"
+        : "opacity-55 scale-[0.97] saturate-50"
+        }`}
+    >
       {/* Radial ambient glow */}
       <div
         className="absolute inset-0"
@@ -153,7 +159,8 @@ function Panel({
       </div>
 
       {/* Main content */}
-      <div className="relative  h-full flex items-center max-w-7xl mx-auto px-8 sm:px-16 lg:px-24 border border-brunswick-green-500 rounded-2xl">
+      <div className={`relative  h-full flex border items-center max-w-7xl mx-auto px-8 sm:px-16 lg:px-24 rounded-2xl transition-colors duration-500
+      ${isHighlighted ? "border-brunswick-green-500" : "border-sea-salt"}`}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 w-full">
 
           {/* LEFT: step info */}
@@ -307,7 +314,7 @@ export default function WorkflowHorizontal() {
         </div>
 
         {/* Panel area: fixed height, panels switch in/out */}
-        <div className="relative  rounded-2xl overflow-hidden border border-sea-salt/10"
+        <div className="relative  rounded-2xl overflow-hidden "
           style={{ height: 520 }}>
 
           <Swiper className="h-full "
@@ -340,6 +347,7 @@ export default function WorkflowHorizontal() {
                   step={step}
                   index={index}
                   setIsPaused={setIsPaused}
+                  isHighlighted={index === activeIdx}
 
                 />
               </SwiperSlide>
@@ -349,14 +357,14 @@ export default function WorkflowHorizontal() {
 
           <button
             onClick={handlePrev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-sea-salt/10 hover:bg-sea-salt/20 text-sea-salt flex items-center justify-center transition-all"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-sea-salt/10 hover:bg-sea-salt/20 text-sea-salt flex items-center justify-center transition-all hidden sm:flex"
           >
             <Icon icon="mdi:chevron-left" width={22} />
           </button>
 
           <button
             onClick={handleNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-sea-salt/10 hover:bg-sea-salt/20 text-sea-salt flex items-center justify-center transition-all"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-sea-salt/10 hover:bg-sea-salt/20 text-sea-salt flex items-center justify-center transition-all hidden sm:flex"
           >
             <Icon icon="mdi:chevron-right" width={22} />
           </button>
