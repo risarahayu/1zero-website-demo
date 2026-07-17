@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { navLinks } from "../data";
 import { Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
-import Logo1zero from "./Logo1zero";
+import Logo1zero from "./Logo1Zero";
 import { headerCopy } from "../copy";
 
 interface HeaderProps {

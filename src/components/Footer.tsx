@@ -1,6 +1,6 @@
 import { Mail, Phone, MapPin, Linkedin, Github, MessageCircle, Twitter, Cpu, Instagram } from "lucide-react";
 import TwotoneWhatsappIcon from '@iconify-react/ic/twotone-whatsapp';
-import Logo1zero from "./Logo1zero";
+import Logo1zero from "./Logo1Zero";
 import { footerCopy } from "../copy";
 
 export default function Footer() {
