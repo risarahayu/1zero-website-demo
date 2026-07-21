@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { testimonials } from "../data";
 import { testimonialsCopy } from "../copy";
 import { Quote, Star, ArrowLeft, ArrowRight } from "lucide-react";
@@ -12,6 +12,35 @@ export default function Testimonials() {
 
   const swiperRef = useRef<SwiperType | null>(null);
   const [activeSlide, setActiveSlide] = useState(0);
+
+
+  // quote
+  const quoteRefs = useRef<(HTMLParagraphElement | null)[]>([]);
+  const [hasOverflow, setHasOverflow] = useState<boolean[]>([]);
+  useEffect(() => {
+    const checkOverflow = () => {
+      setHasOverflow(
+        quoteRefs.current.map((el) =>
+          el ? el.scrollHeight > el.clientHeight : false
+        )
+      );
+    };
+
+    // Check initially and after a short delay for font loading
+    checkOverflow();
+    const timeout = setTimeout(checkOverflow, 500);
+
+    // Observe size changes
+    const observer = new ResizeObserver(() => checkOverflow());
+    quoteRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      clearTimeout(timeout);
+      observer.disconnect();
+    };
+  }, []);
 
 
   const handleNext = () => {
@@ -80,45 +109,47 @@ export default function Testimonials() {
                 {({ isActive }) => (
                   <div
                     className={`group
-            relative
-            h-full
-            flex
-            flex-col
-            justify-between
-            rounded-2xl
-            border
-            p-6
-            transition-all
-            duration-500
+                      relative
+                      h-full
+                      flex
+                      flex-col
+                      justify-between
+                      rounded-2xl
+                      border
+                      p-6
+                      transition-all
+                      duration-500
 
-            ${isActive
+                      ${isActive
                         ? "border-brunswick-green-500 bg-sea-salt/6 shadow-2xl shadow-brunswick-green-500/5 scale-100 opacity-100"
-                        : "border-sea-salt opacity-60 scale-[0.96] hover:opacity-80"
+                        : "border-sea-salt  scale-[0.96] hover:opacity-80"
                       }
-        `}
+                    `}
                   >
                     {/* Quotation icon accent */}
                     <div className="relative top-0 right-0 text-sea-salt/80 group-hover:text-brunswick-green-500 transition-colors">
                       <Quote className="h-8 w-8 transform rotate-180" />
                     </div>
 
-                    <div className="space-y-4">
-                      {/* Rating indicator */}
-                      {/* <div className="flex items-center gap-0.5">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-3 w-3 fill-dun text-dun" />
-                        ))}
-                      </div> */}
+                    <div className="relative h-[15rem]">
+                      <div
+                        className="custom-scrollbar content-center h-full overflow-y-auto pr-2"
+                        ref={(el) => {
+                          quoteRefs.current[index] = el;
+                        }}
+                      >
+                        <p className="font-sans text-base sm:text-lg italic text-sea-salt/90 group-hover:text-sea-salt ">
+                          "{t.quote}"
+                        </p>
+                      </div>
 
-
-                      {/* Absolute quote */}
-                      <p className="font-sans text-base sm:text-lg text-sea-salt/90 italic  group-hover:text-sea-salt transition-colors">
-                        "{t.quote}"
-                      </p>
+                      {hasOverflow[index] && (
+                        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-raisin-black-800/80 via-raisin-black-800/70 to-transparent" />
+                      )}
                     </div>
 
                     {/* Writer Portrait Avatar details */}
-                    <div className="flex items-center gap-3 pt-6 border-t border-sea-salt/20 mt-8">
+                    <div className="flex items-start gap-3 pt-6 border-t border-sea-salt/20  h-[7rem]">
                       <div className="h-10 w-10 rounded-full overflow-hidden border border-sea-salt/20 shrink-0">
                         <img
                           src={t.avatarUrl}
@@ -137,7 +168,7 @@ export default function Testimonials() {
                           {t.name}
                         </span>
                         <span className="block font-sans text-lg text-sea-salt/90">
-                          {t.role}, <strong className="text-sea-salt font-normal">{t.company}</strong>
+                          {t.role},<strong className="text-sea-salt/80 font-normal">{t.company}</strong>
                         </span>
                       </div>
                     </div>

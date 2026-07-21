@@ -69,6 +69,33 @@
   }
 }
 
+/* scroll in testimony card */
+/* Chrome, Edge, Safari */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(250, 250, 250, 0.25);
+  border-radius: 9999px;
+  transition: background 0.2s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(133, 223, 195, 0.7);
+  /* Brunswick Green 500 */
+}
+
+/* Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(250, 250, 250, 0.25) transparent;
+}
+
 .glow-card {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }

@@ -5,22 +5,22 @@ export default function ServicesHero() {
     const data = [
         {
             word: "accelerate",
-            image: "./illustration/devpod.png",
+            image: "./illustration/devpod.webp",
             color: "text-brunswick-green-800",
         },
         {
             word: "optimize",
-            image: "./illustration/geo.jpeg",
+            image: "./illustration/geo.webp",
             color: "text-dun",
         },
         {
             word: "scale",
-            image: "./illustration/nextGenReplatforming.jpeg",
+            image: "./illustration/nextGenReplatforming.webp",
             color: "text-brunswick-green-900",
         },
         {
             word: "ship",
-            image: "./illustration/fCTO.jpeg",
+            image: "./illustration/fCTO.webp",
             color: "text-brunswick-green-500",
         },
     ];

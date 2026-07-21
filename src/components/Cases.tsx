@@ -40,9 +40,9 @@ const ourActivity = [
   {
     id: activity01,
     photos: [
-      `${import.meta.env.BASE_URL}Our Activity/${activity01}/GSDC.jpg`,
-      `${import.meta.env.BASE_URL}Our Activity/${activity01}/IMG_2760.jpg`,
-      `${import.meta.env.BASE_URL}Our Activity/${activity01}/IMG_1215.jpg`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity01}/GSDC.webp`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity01}/IMG_2760.webp`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity01}/IMG_1215.webp`,
     ],
     title: "Global Sustainable Development Congress (GSDC) 2026",
     date: "24 June 2026",
@@ -53,7 +53,7 @@ const ourActivity = [
   {
     id: activity02,
     photos: [
-      `${import.meta.env.BASE_URL}Our Activity/${activity02}/Wisdom Shaping Sustainable Futures.png`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity02}/Wisdom Shaping Sustainable Futures.webp`,
     ],
     title: "EarthWise: Wisdom Shaping Sustainable Futures",
     date: "16 May 2025",
@@ -64,9 +64,9 @@ const ourActivity = [
   {
     id: activity03,
     photos: [
-      `${import.meta.env.BASE_URL}Our Activity/${activity03}/Path to Sustainable Growth.jpg`,
-      `${import.meta.env.BASE_URL}Our Activity/${activity03}/20260624_165753.jpg`,
-      `${import.meta.env.BASE_URL}Our Activity/${activity03}/PTSG 2026 - Press Release-21.jpg`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity03}/Path to Sustainable Growth.webp`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity03}/20260624_165753.webp`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity03}/PTSG 2026 - Press Release-21.webp`,
     ],
     title: "Path to Sustainable Growth at Apurva Kempinski",
     date: "24 June 2026",
@@ -77,8 +77,8 @@ const ourActivity = [
   {
     id: activity04,
     photos: [
-      `${import.meta.env.BASE_URL}Our Activity/${activity04}/Visit PLN.jpg`,
-      `${import.meta.env.BASE_URL}Our Activity/${activity04}/IMG_2566.jpg`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity04}/Visit PLN.webp`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity04}/IMG_2566.webp`,
       `${import.meta.env.BASE_URL}Our Activity/${activity04}/IMG_2616.webp`,
     ],
     title: "Visit PLTGU Muara Karang",
@@ -190,6 +190,8 @@ function CaseCard({
   setIsPaused: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
 
+
+
   return (
     <div
       onClick={() => onOpenModal(item)} // <-- Pop up modal instead of window.open
@@ -263,6 +265,12 @@ export default function Cases() {
   // ── Shared index state ──────────────────────────────────────────
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+
+  // loading image
+  const [imageLoading, setImageLoading] = useState(true);
+  useEffect(() => {
+    setImageLoading(true);
+  }, [galleryIndex, selectedItem]);
 
   // ── Autoplay Control ─────────────────────────
   useEffect(() => {
@@ -397,10 +405,14 @@ export default function Cases() {
 
                   {/* Image Slider */}
                   <div className="relative w-full h-[250px] sm:h-[350px] overflow-hidden rounded-2xl border border-sea-salt/10">
+                    {imageLoading && (
+                      <div className="absolute inset-0 animate-pulse bg-sea-salt/10" />
+                    )}
                     <img
                       src={selectedItem.photos[galleryIndex]}
                       alt={`${selectedItem.title} - ${galleryIndex + 1}`}
-                      className="absolute inset-0 h-full w-full object-cover animate-in fade-in"
+                      onLoad={() => setImageLoading(false)}
+                      className={`absolute inset-0 h-full w-full object-cover animate-in fade-in ${imageLoading ? "opacity-0" : "opacity-100"}`}
                     />
                   </div>
                   {/* Navigation Arrows */}
@@ -442,10 +454,14 @@ export default function Cases() {
               ) : (
                 <div className="w-full space-y-4">
                   <div className="relative w-full h-[250px] sm:h-[350px] overflow-hidden rounded-2xl border border-sea-salt/10">
+                    {imageLoading && (
+                      <div className="absolute inset-0 animate-pulse bg-sea-salt/10" />
+                    )}
                     <img
                       src={selectedItem.photos[0]}
                       alt={selectedItem.title}
-                      className="absolute inset-0 h-full w-full object-cover animate-in fade-in"
+                      onLoad={() => setImageLoading(false)}
+                      className={`absolute inset-0 h-full w-full object-cover animate-in fade-in  ${imageLoading ? "opacity-0" : "opacity-100"}`}
                     />
                   </div>
                 </div>
