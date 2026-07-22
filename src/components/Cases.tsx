@@ -11,6 +11,7 @@ import { Autoplay } from "swiper/modules";
 import { Icon } from "@iconify/react";
 
 import "swiper/css";
+import { button } from "motion/react-client";
 
 const activity01 = "activity-01";
 const activity02 = "activity-02";
@@ -180,13 +181,15 @@ const ourActivity = [
 // ─── Shared card renderer ────────────────────────────────────────────────────
 function CaseCard({
   item,
+  index,
   isCenter,
   onOpenModal, // <-- add pop up modal handler
   setIsPaused,
 }: {
   item: (typeof ourActivity)[0];
+  index: number;
   isCenter: boolean;
-  onOpenModal: (item: (typeof ourActivity)[0]) => void;
+  onOpenModal: (item: any, index: number) => void;
   setIsPaused: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
 
@@ -194,7 +197,7 @@ function CaseCard({
 
   return (
     <div
-      onClick={() => onOpenModal(item)} // <-- Pop up modal instead of window.open
+      onClick={() => onOpenModal(item, index)} // <-- Pop up modal instead of window.open
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       className={`
@@ -260,6 +263,7 @@ export default function Cases() {
 
   // ── State  Pop up Modal ────────────────────────────────────
   const [selectedItem, setSelectedItem] = useState<(typeof ourActivity)[0] | null>(null);
+  const [selectedItemIndex, setSelectedItemIndex] = useState(0);
   const [galleryIndex, setGalleryIndex] = useState(0);
 
   // ── Shared index state ──────────────────────────────────────────
@@ -271,6 +275,30 @@ export default function Cases() {
   useEffect(() => {
     setImageLoading(true);
   }, [galleryIndex, selectedItem]);
+
+  const handleOpenModal = (item: any, index: number) => {
+    setSelectedItemIndex(index);
+    setSelectedItem(item);
+  }
+
+  function previousItem(selectedItemIndex: number) {
+    if (selectedItemIndex !== null && selectedItemIndex > 0) {
+      const newIndex = selectedItemIndex - 1;
+
+      setSelectedItemIndex(newIndex);
+      setSelectedItem(ourActivity[newIndex]);
+    }
+  }
+
+
+  function nextItem(selectedItemIndex: number) {
+    if (selectedItemIndex < ourActivity.length - 1) {
+      const newIndex = selectedItemIndex + 1;
+
+      setSelectedItemIndex(newIndex);
+      setSelectedItem(ourActivity[newIndex]);
+    }
+  }
 
   // ── Autoplay Control ─────────────────────────
   useEffect(() => {
@@ -331,13 +359,14 @@ export default function Cases() {
             }}
 
           >
-            {ourActivity.map((item) => (
+            {ourActivity.map((item, index) => (
               <SwiperSlide key={item.id} className="h-auto">
                 {({ isActive }) => (
                   <CaseCard
                     item={item}
+                    index={index}
                     isCenter={isActive}
-                    onOpenModal={setSelectedItem}
+                    onOpenModal={handleOpenModal}
                     setIsPaused={setIsPaused}
 
                   />
@@ -378,16 +407,17 @@ export default function Cases() {
             className="relative w-full max-w-2xl overflow-hidden rounded-3xl bg-raisin-black-800 border border-sea-salt/20 p-6 sm:p-8"
             onClick={(e) => e.stopPropagation()} //prevent close modal when click modal background
           >
+
             {/* Close Button */}
             <button
               onClick={() => setSelectedItem(null)}
-              className="absolute top-4 right-4 text-sea-salt/60 hover:text-sea-salt transition-colors bg-black/20 rounded-full p-2"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-sea-salt/20 bg-black/40 text-sea-salt/80 transition-all hover:bg-red-500/80 hover:text-sea-salt hover:border-red-500"
             >
-              <X className="h-6 w-6" />
+              <X className="h-4 w-4" />
             </button>
 
             {/* Pop Up Content */}
-            <div className="flex flex-col gap-6 mt-4">
+            <div className="flex flex-col gap-6 mt-12 sm:mt-8">
               {/* {selectedItem.photo && (
                 <div className="relative h-[250px] sm:h-[350px] w-full overflow-hidden rounded-2xl bg-sea-salt/6 border border-sea-salt/10">
                   <img
@@ -397,6 +427,23 @@ export default function Cases() {
                   />
                 </div>
               )} */}
+              {/* Modal Navigation */}
+              <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full px-2 sm:px-4 z-10 flex justify-between items-center pointer-events-none">
+                <button
+                  onClick={() => previousItem(selectedItemIndex)}
+                  disabled={selectedItemIndex === 0}
+                  className="pointer-events-auto flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-sea-salt/20 bg-black/40 text-sea-salt/80 transition-all hover:bg-brunswick-green-900 hover:text-sea-salt disabled:opacity-30 disabled:hover:bg-black/40 disabled:cursor-not-allowed backdrop-blur-sm shadow-lg"
+                >
+                  <ArrowLeft className="h-5 w-5" />
+                </button>
+                <button
+                  onClick={() => nextItem(selectedItemIndex)}
+                  disabled={selectedItemIndex === total - 1}
+                  className="pointer-events-auto flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-sea-salt/20 bg-black/40 text-sea-salt/80 transition-all hover:bg-brunswick-green-900 hover:text-sea-salt disabled:opacity-30 disabled:hover:bg-black/40 disabled:cursor-not-allowed backdrop-blur-sm shadow-lg"
+                >
+                  <ArrowRight className="h-5 w-5" />
+                </button>
+              </div>
 
               {/* Photo Slider Gallery */}
 
@@ -417,16 +464,7 @@ export default function Cases() {
                   </div>
                   {/* Navigation Arrows */}
                   <div className="flex items-center justify-between">
-                    <button
-                      onClick={() => {
-                        setGalleryIndex((prevIndex) =>
-                          prevIndex === 0 ? selectedItem.photos!.length - 1 : prevIndex - 1
-                        );
-                      }}
-                      className="text-sea-salt/60 hover:text-sea-salt transition-colors bg-black/20 rounded-full p-2"
-                    >
-                      <ArrowLeft className="h-5 w-5" />
-                    </button>
+
                     <div className="flex items-center gap-2">
                       {selectedItem.photos!.map((_, index) => (
                         <button
@@ -439,16 +477,7 @@ export default function Cases() {
                         />
                       ))}
                     </div>
-                    <button
-                      onClick={() => {
-                        setGalleryIndex((prevIndex) =>
-                          prevIndex === selectedItem.photos!.length - 1 ? 0 : prevIndex + 1
-                        );
-                      }}
-                      className="text-sea-salt/60 hover:text-sea-salt transition-colors bg-black/20 rounded-full p-2"
-                    >
-                      <ArrowRight className="h-5 w-5" />
-                    </button>
+
                   </div>
                 </div>
               ) : (
