@@ -100,3 +100,14 @@ export interface PortfolioCardProps {
   isHighlighted?: boolean;
   setIsPaused: React.Dispatch<React.SetStateAction<boolean>>;
 } 
+
+export interface Activity  {
+  id: string;
+  photos: string[];
+  title: string;
+  startDate: Date;
+  endDate: Date;
+  desc: string;
+  linkPost: string;
+  CTA: string;
+}
