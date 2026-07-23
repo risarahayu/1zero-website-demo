@@ -321,9 +321,13 @@ export default function Cases() {
         {/* Header */}
         <div className="flex flex-col gap-10 items-center  pb-10 border-b border-sea-salt/20">
           <div className="lg:col-span-8 space-y-10 text-center [text-align-last:center]">
-            <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500 bg-raisin-black">
-              {casesCopy.badge}
-            </span>
+            <div className="flex inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans  tracking-widest text-brunswick-green-500 bg-raisin-black">
+              <span>1zero </span>
+              <span className="uppercase">
+                {casesCopy.badge}
+              </span>
+
+            </div>
             <h2 className="font-sans text-3xl leading-normal sm:text-5xl sm:leading-normal font-bold text-sea-salt">
               {casesCopy.titleLine1} <br />{casesCopy.titleLine2}
             </h2>
@@ -411,7 +415,7 @@ export default function Cases() {
             {/* Close Button */}
             <button
               onClick={() => setSelectedItem(null)}
-              className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-sea-salt/20 bg-black/40 text-sea-salt/80 transition-all hover:bg-red-500/80 hover:text-sea-salt hover:border-red-500"
+              className="absolute top-4 right-4 sm:top-4 sm:right-4 z-10 flex h-10 w-10 items-center justify-center  text-sea-salt/80 transition-all hover:bg-red-500/80 hover:text-sea-salt hover:border-red-500"
             >
               <X className="h-4 w-4" />
             </button>
@@ -463,7 +467,7 @@ export default function Cases() {
                     />
                   </div>
                   {/* Navigation Arrows */}
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between place-self-center ">
 
                     <div className="flex items-center gap-2">
                       {selectedItem.photos!.map((_, index) => (
