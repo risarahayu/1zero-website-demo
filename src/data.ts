@@ -2,6 +2,8 @@ import { NavLink, ProductItem, PortfolioItem, TestimonialItem, WorkflowStep, Tea
 import React from "react";
 import { MousePointerClick, SearchX, EyeOff, Activity, Timer, Wrench, TrendingDown, Layout, Rocket, Network, ShieldCheck, Sparkles, Blocks, Cpu, UserPlus, Gauge, Compass, Boxes, ShieldAlert, Split, FileText, FileSearch, Users, Eye, BookOpen, Search, Layers, RefreshCw, Server, BrainCircuit } from "lucide-react";
 import { Icon } from "@iconify/react";
+import type { Activity as ActivityType } from "./types";
+
 
 export const navLinks: NavLink[] = [
   { label: "Home", href: "#home" },
@@ -25,6 +27,170 @@ export const clientLogos = [
   { name: "Adaluma", logoImg: import.meta.env.BASE_URL + "Partner Logo Color/Adaluma.webp" },
 
 
+
+];
+
+const activity01 = "activity-01";
+const activity02 = "activity-02";
+const activity03 = "activity-03";
+const activity04 = "activity-04";
+const activity05 = "activity-05";
+const activity06 = "activity-06";
+const activity07 = "activity-07";
+const activity08 = "activity-08";
+const activity09 = "activity-09";
+const activity10 = "activity-10";
+const activity11 = "activity-11";
+
+export const ourActivity: ActivityType[] = [
+  {
+    id: activity01,
+    photos: [
+      `${import.meta.env.BASE_URL}Our Activity/${activity01}/GSDC.webp`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity01}/IMG_2760.webp`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity01}/IMG_1215.webp`,
+    ],
+    title: "Global Sustainable Development Congress (GSDC) 2026",
+    startDate: new Date("2026-06-24"),
+    endDate: new Date("2026-06-26"),
+    desc: "A concise LinkedIn launch post spotlighting landing pad initiatives and global sustainability design challenge momentum.",
+    linkPost: "https://www.linkedin.com/feed/update/urn:li:activity:7477617222861975553",
+    CTA: "Linkedin",
+  },
+  {
+    id: activity02,
+    photos: [
+      `${import.meta.env.BASE_URL}Our Activity/${activity02}/Wisdom Shaping Sustainable Futures.webp`,
+    ],
+    title: "EarthWise: Wisdom Shaping Sustainable Futures",
+    startDate: new Date("2025-05-16"),
+    endDate: new Date("2025-05-16"),
+    desc: "A simple visual story about stewardship and sustainable futures in a changing world.",
+    linkPost: "https://www.youtube.com/watch?v=peZPBfHptoo",
+    CTA: "Youtube",
+  },
+  {
+    id: activity03,
+    photos: [
+      `${import.meta.env.BASE_URL}Our Activity/${activity03}/Path to Sustainable Growth.webp`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity03}/20260624_165753.webp`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity03}/PTSG 2026 - Press Release-21.webp`,
+    ],
+    title: "Path to Sustainable Growth at Apurva Kempinski",
+    startDate: new Date("2026-06-24"),
+    endDate: new Date("2026-06-24"),
+    desc: "A short post highlighting sustainable hospitality strategy and the path to growth for a luxury resort brand.",
+    linkPost: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7477951114466856962/?actorCompanyId=103705943",
+    CTA: "Linkedin",
+  },
+  {
+    id: activity04,
+    photos: [
+      `${import.meta.env.BASE_URL}Our Activity/${activity04}/Visit PLN.webp`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity04}/IMG_2566.webp`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity04}/IMG_2616.webp`,
+    ],
+    title: "Visit PLTGU Muara Karang",
+    startDate: new Date("2026-05-21"),
+    endDate: new Date("2026-05-21"),
+    desc: "A short post highlighting sustainable hospitality strategy and the path to growth for a luxury resort brand.",
+    linkPost: "https://www.linkedin.com/posts/1zero-biz_pln-energytransition-jakarta-activity-7482249126974476289-kfFh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC3NxVkBzab9RTwcZ8BHJt_XzKZdIfZYLds",
+    CTA: "Linkedin",
+  },
+  {
+    id: activity05,
+    photos: [
+      `${import.meta.env.BASE_URL}Our Activity/${activity05}/Bali_Tech_Summit.webp`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity05}/Bali_Tech_Summit_Detail1.webp`,
+
+    ],
+    title: "Bali Tech Summit",
+    startDate: new Date("2024-10-11"),
+    endDate: new Date("2024-10-11"),
+    desc: "Proud to have our Solution Architect representing 1zero at the Bali Tech Summit by La French Tech Indonesia. Together with industry leaders, we explored The Future of Work 2.0—covering AI, employee wellbeing, climate action, and the innovations shaping tomorrow's workplace.",
+    linkPost: "https://www.instagram.com/p/DA--yvKTt6o/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    CTA: "Instagram",
+  },
+  {
+    id: activity06,
+    photos: [
+      `${import.meta.env.BASE_URL}Our Activity/${activity06}/AI Social Media Event.webp`,
+
+    ],
+    title: "AI + Social Media Event",
+    startDate: new Date("2025-01-31"),
+    endDate: new Date("2025-01-31"),
+    desc: "Our two Wonder Women attended an awesome workshop at Nebulabali , Canggu! Led by a top influencer from the US, the session dived into how AI is changing the game in social media strategy.",
+    linkPost: "https://www.instagram.com/p/DFpBylOSQ4d/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    CTA: "Instagram",
+  },
+  {
+    id: activity07,
+    photos: [
+      `${import.meta.env.BASE_URL}Our Activity/${activity07}/𝗖𝘆𝗯𝗲𝗿 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗠𝗲𝗲𝘁𝘂𝗽.webp`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity07}/𝗖𝘆𝗯𝗲𝗿 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗠𝗲𝗲𝘁𝘂𝗽 Detail 1.webp`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity07}/𝗖𝘆𝗯𝗲𝗿 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗠𝗲𝗲𝘁𝘂𝗽 Detail 2.webp`,
+    ],
+    title: "𝗖𝘆𝗯𝗲𝗿 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗠𝗲𝗲𝘁𝘂𝗽",
+    startDate: new Date("2025-02-05"),
+    endDate: new Date("2025-02-05"),
+    desc: "1zero’s Solution Architect attended the 𝗖𝘆𝗯𝗲𝗿 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗠𝗲𝗲𝘁𝘂𝗽.  to dive deep into today’s biggest cybersecurity challenges. 🔥 Experts shared insights on how hackers execute attacks, the role of AI as both a threat and a defense, and why cybersecurity awareness is more important than ever.",
+    linkPost: "https://www.instagram.com/p/DFtzqySShUS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    CTA: "Instagram",
+  },
+  {
+    id: activity08,
+    photos: [
+      `${import.meta.env.BASE_URL}Our Activity/${activity08}/Empowering Women Entrepreneurs.webp`,
+    ],
+    title: "Empowering Women Entrepreneurs",
+    startDate: new Date("2025-01-16"),
+    endDate: new Date("2025-01-16"),
+    desc: "Our team member, Mutia Rosa, attended the LiftWomen Bali Chapter Launch at Livit, Sanur, joining an inspiring community of women entrepreneurs, founders, creators, mentors, and innovators committed to empowering one another.",
+    linkPost: "https://www.linkedin.com/posts/liftwomen-femaleentrepreneurs-femalefounders-share-7287365666251186176-4Yml/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACaiIoYBEEy2963FCH3xa3bmKTp3gODlKeY",
+    CTA: "Linkedin",
+  },
+  {
+    id: activity09,
+    photos: [
+      `${import.meta.env.BASE_URL}Our Activity/${activity09}/Together for Breast Cancer Awareness.webp`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity09}/Together for Breast Cancer Awareness Detail 1.webp`,
+
+    ],
+    title: "International Day Against Breast Cancer",
+    startDate: new Date("2025-10-01"),
+    endDate: new Date("2025-10-01"),
+    desc: " 1zero proudly joined the Steps of Hope Fun Walk in Sanur, supporting breast cancer awareness alongside more than 200 participants. The event also provided free health screenings, reinforcing the importance of early detection and community support.",
+    // linkPost: "https://www.instagram.com/reel/DQYoA8NEx9m/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    linkPost: "",
+    CTA: "Instagram",
+  },
+  {
+    id: activity10,
+    photos: [
+      `${import.meta.env.BASE_URL}Our Activity/${activity10}/Hackathon.webp`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity10}/Hackathon Detail 1.webp`,
+
+    ],
+    title: "Brunei Hackathon 2023",
+    startDate: new Date("2023-04-01"),
+    endDate: new Date("2023-04-01"),
+    desc: "At Brunei Hackathon 2023, Mark represented 1zero as a speaker, sharing insights on innovation, entrepreneurship, and how technology can solve real-world challenges while inspiring the next generation of innovators.",
+    linkPost: "",
+    CTA: "",
+  },
+  {
+    id: activity11,
+    photos: [
+      `${import.meta.env.BASE_URL}Our Activity/${activity11}/Coinfest.webp`,
+    ],
+    title: "Coinfest 2025",
+    startDate: new Date("2025-08-21"),
+    endDate: new Date("2025-08-22"),
+    desc: "A great day at Coinfest! Always inspiring to meet passionate people, exchange ideas, and learn from the latest developments in the Web3 and blockchain ecosystem. Thank you to everyone we had the chance to connect with—we're excited to see what comes next.",
+    linkPost: "",
+    CTA: "",
+  },
 
 ];
 

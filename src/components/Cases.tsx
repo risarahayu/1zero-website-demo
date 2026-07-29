@@ -2,7 +2,12 @@ import { useEffect, useState, useRef } from "react";
 // Tambahkan icon X untuk tombol tutup pop-up
 import { ArrowLeft, ArrowRight, X } from "lucide-react";
 import { casesCopy } from "../copy";
+import { SeeAllCard } from "./activity/SeeAllCard";
+import { CaseCard } from "./activity/CaseCard";
 import CTA from "./CTA";
+import { ourActivity } from "../data.ts"
+import { formatDateRange, handleOpenModal, previousItem, nextItem, getSortedActivities } from "../ulitity/activityUtils";
+import { Activity } from "../types";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
@@ -12,20 +17,6 @@ import { Icon } from "@iconify/react";
 
 import "swiper/css";
 import { button } from "motion/react-client";
-import { Activity  } from "../types";
-
-
-const activity01 = "activity-01";
-const activity02 = "activity-02";
-const activity03 = "activity-03";
-const activity04 = "activity-04";
-const activity05 = "activity-05";
-const activity06 = "activity-06";
-const activity07 = "activity-07";
-const activity08 = "activity-08";
-const activity09 = "activity-09";
-const activity10 = "activity-10";
-const activity11 = "activity-11";
 
 
 const socialIcons = {
@@ -39,290 +30,29 @@ const socialIcons = {
 };
 
 
-const ourActivity : Activity[] = [
-  {
-    id: activity01,
-    photos: [
-      `${import.meta.env.BASE_URL}Our Activity/${activity01}/GSDC.webp`,
-      `${import.meta.env.BASE_URL}Our Activity/${activity01}/IMG_2760.webp`,
-      `${import.meta.env.BASE_URL}Our Activity/${activity01}/IMG_1215.webp`,
-    ],
-    title: "Global Sustainable Development Congress (GSDC) 2026",
-    startDate: new Date("2026-06-24"),
-    endDate: new Date("2026-06-26"),
-    desc: "A concise LinkedIn launch post spotlighting landing pad initiatives and global sustainability design challenge momentum.",
-    linkPost: "https://www.linkedin.com/feed/update/urn:li:activity:7477617222861975553",
-    CTA: "Linkedin",
-  },
-  {
-    id: activity02,
-    photos: [
-      `${import.meta.env.BASE_URL}Our Activity/${activity02}/Wisdom Shaping Sustainable Futures.webp`,
-    ],
-    title: "EarthWise: Wisdom Shaping Sustainable Futures",
-    startDate: new Date("2025-05-16"),
-    endDate: new Date("2025-05-16"),
-    desc: "A simple visual story about stewardship and sustainable futures in a changing world.",
-    linkPost: "https://www.youtube.com/watch?v=peZPBfHptoo",
-    CTA: "Youtube",
-  },
-  {
-    id: activity03,
-    photos: [
-      `${import.meta.env.BASE_URL}Our Activity/${activity03}/Path to Sustainable Growth.webp`,
-      `${import.meta.env.BASE_URL}Our Activity/${activity03}/20260624_165753.webp`,
-      `${import.meta.env.BASE_URL}Our Activity/${activity03}/PTSG 2026 - Press Release-21.webp`,
-    ],
-    title: "Path to Sustainable Growth at Apurva Kempinski",
-    startDate: new Date("2026-06-24"),
-    endDate: new Date("2026-06-24"),
-    desc: "A short post highlighting sustainable hospitality strategy and the path to growth for a luxury resort brand.",
-    linkPost: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7477951114466856962/?actorCompanyId=103705943",
-    CTA: "Linkedin",
-  },
-  {
-    id: activity04,
-    photos: [
-      `${import.meta.env.BASE_URL}Our Activity/${activity04}/Visit PLN.webp`,
-      `${import.meta.env.BASE_URL}Our Activity/${activity04}/IMG_2566.webp`,
-      `${import.meta.env.BASE_URL}Our Activity/${activity04}/IMG_2616.webp`,
-    ],
-    title: "Visit PLTGU Muara Karang",
-    startDate: new Date("2026-05-21"),
-    endDate: new Date("2026-05-21"),
-    desc: "A short post highlighting sustainable hospitality strategy and the path to growth for a luxury resort brand.",
-    linkPost: "https://www.linkedin.com/posts/1zero-biz_pln-energytransition-jakarta-activity-7482249126974476289-kfFh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC3NxVkBzab9RTwcZ8BHJt_XzKZdIfZYLds",
-    CTA: "Linkedin",
-  },
-  {
-    id: activity05,
-    photos: [
-      `${import.meta.env.BASE_URL}Our Activity/${activity05}/Bali_Tech_Summit.webp`,
-      `${import.meta.env.BASE_URL}Our Activity/${activity05}/Bali_Tech_Summit_Detail1.webp`,
 
-    ],
-    title: "Bali Tech Summit",
-    startDate: new Date("2024-10-11"),
-    endDate: new Date("2024-10-11"),
-    desc: "Proud to have our Solution Architect representing 1zero at the Bali Tech Summit by La French Tech Indonesia. Together with industry leaders, we explored The Future of Work 2.0—covering AI, employee wellbeing, climate action, and the innovations shaping tomorrow's workplace.",
-    linkPost: "https://www.instagram.com/p/DA--yvKTt6o/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-    CTA: "Instagram",
-  },
-  {
-    id: activity06,
-    photos: [
-      `${import.meta.env.BASE_URL}Our Activity/${activity06}/AI Social Media Event.webp`,
-
-    ],
-    title: "AI + Social Media Event",
-    startDate: new Date("2025-01-31"),
-    endDate: new Date("2025-01-31"),
-    desc: "Our two Wonder Women attended an awesome workshop at Nebulabali , Canggu! Led by a top influencer from the US, the session dived into how AI is changing the game in social media strategy.",
-    linkPost: "https://www.instagram.com/p/DFpBylOSQ4d/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-    CTA: "Instagram",
-  },
-  {
-    id: activity07,
-    photos: [
-      `${import.meta.env.BASE_URL}Our Activity/${activity07}/𝗖𝘆𝗯𝗲𝗿 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗠𝗲𝗲𝘁𝘂𝗽.webp`,
-      `${import.meta.env.BASE_URL}Our Activity/${activity07}/𝗖𝘆𝗯𝗲𝗿 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗠𝗲𝗲𝘁𝘂𝗽 Detail 1.webp`,
-      `${import.meta.env.BASE_URL}Our Activity/${activity07}/𝗖𝘆𝗯𝗲𝗿 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗠𝗲𝗲𝘁𝘂𝗽 Detail 2.webp`,
-    ],
-    title: "𝗖𝘆𝗯𝗲𝗿 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗠𝗲𝗲𝘁𝘂𝗽",
-    startDate: new Date("2025-02-05"),
-    endDate: new Date("2025-02-05"),
-    desc: "1zero’s Solution Architect attended the 𝗖𝘆𝗯𝗲𝗿 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗠𝗲𝗲𝘁𝘂𝗽.  to dive deep into today’s biggest cybersecurity challenges. 🔥 Experts shared insights on how hackers execute attacks, the role of AI as both a threat and a defense, and why cybersecurity awareness is more important than ever.",
-    linkPost: "https://www.instagram.com/p/DFtzqySShUS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-    CTA: "Instagram",
-  },
-  {
-    id: activity08,
-    photos: [
-      `${import.meta.env.BASE_URL}Our Activity/${activity08}/Empowering Women Entrepreneurs.webp`,
-    ],
-    title: "Empowering Women Entrepreneurs",
-    startDate: new Date("2025-01-16"),
-    endDate: new Date("2025-01-16"),
-    desc: "Our team member, Mutia Rosa, attended the LiftWomen Bali Chapter Launch at Livit, Sanur, joining an inspiring community of women entrepreneurs, founders, creators, mentors, and innovators committed to empowering one another.",
-    linkPost: "https://www.linkedin.com/posts/liftwomen-femaleentrepreneurs-femalefounders-share-7287365666251186176-4Yml/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACaiIoYBEEy2963FCH3xa3bmKTp3gODlKeY",
-    CTA: "Linkedin",
-  },
-  {
-    id: activity09,
-    photos: [
-      `${import.meta.env.BASE_URL}Our Activity/${activity09}/Together for Breast Cancer Awareness.webp`,
-      `${import.meta.env.BASE_URL}Our Activity/${activity09}/Together for Breast Cancer Awareness Detail 1.webp`,
-
-    ],
-    title: "International Day Against Breast Cancer",
-    startDate: new Date("2025-10-01"),
-    endDate: new Date("2025-10-01"),
-    desc: " 1zero proudly joined the Steps of Hope Fun Walk in Sanur, supporting breast cancer awareness alongside more than 200 participants. The event also provided free health screenings, reinforcing the importance of early detection and community support.",
-    // linkPost: "https://www.instagram.com/reel/DQYoA8NEx9m/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-    linkPost: "",
-    CTA: "Instagram",
-  },
-  {
-    id: activity10,
-    photos: [
-      `${import.meta.env.BASE_URL}Our Activity/${activity10}/Hackathon.webp`,
-      `${import.meta.env.BASE_URL}Our Activity/${activity10}/Hackathon Detail 1.webp`,
-
-    ],
-    title: "Brunei Hackathon 2023",
-    startDate: new Date("2023-04-01"),
-    endDate: new Date("2023-04-01"),
-    desc: "At Brunei Hackathon 2023, Mark represented 1zero as a speaker, sharing insights on innovation, entrepreneurship, and how technology can solve real-world challenges while inspiring the next generation of innovators.",
-    linkPost: "",
-    CTA: "",
-  },
-  {
-    id: activity11,
-    photos: [
-      `${import.meta.env.BASE_URL}Our Activity/${activity11}/Coinfest.webp`,
-    ],
-    title: "Coinfest 2025",
-    startDate: new Date("2025-08-21"),
-    endDate: new Date("2025-08-22"),
-    desc: "A great day at Coinfest! Always inspiring to meet passionate people, exchange ideas, and learn from the latest developments in the Web3 and blockchain ecosystem. Thank you to everyone we had the chance to connect with—we're excited to see what comes next.",
-    linkPost: "",
-    CTA: "",
-  },
-
-];
-
-function formatDateRange(startDate: Date, endDate: Date){
-  
-  const sameDay = startDate.getTime() === endDate.getTime();
-  const sameYear = startDate.getFullYear() === endDate.getFullYear();
-  const sameMonth = sameYear && startDate.getMonth() === endDate.getMonth();
-  if (sameDay) {
-      return startDate.toLocaleDateString("en-US", {
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-      });
-    }
-
-  if (sameMonth) {
-    return `${startDate.getDate()}–${endDate.getDate()} ${startDate.toLocaleString(
-      "en-US",
-      { month: "long" }
-    )} ${startDate.getFullYear()}`;
-  }
-
-  if (sameYear) {
-    return `${startDate.getDate()} ${startDate.toLocaleString("en-US", {
-      month: "long",
-    })} – ${endDate.getDate()} ${endDate.toLocaleString("en-US", {
-      month: "long",
-    })} ${startDate.getFullYear()}`;
-  }
-
-  return `${startDate.toLocaleDateString("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  })} – ${endDate.toLocaleDateString("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  })}`;
-}
-
-// ─── Shared card renderer ────────────────────────────────────────────────────
-function CaseCard({
-  item,
-  index,
-  isCenter,
-  onOpenModal, // <-- add pop up modal handler
-  setIsPaused,
-}: {
-  item: Activity;
-  index: number;
-  isCenter: boolean;
-  onOpenModal: (item: any, index: number) => void;
-  setIsPaused: React.Dispatch<React.SetStateAction<boolean>>;
-}) 
-
-{
-  
-
-
-  return (
-    <div
-      onClick={() => onOpenModal(item, index)} // <-- Pop up modal instead of window.open
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      className={`
-        group relative h-full h-[400px] rounded-3xl p-5 border
-        flex flex-col justify-between cursor-pointer overflow-hidden
-        transition-all duration-500 
-        ${isCenter ? "opacity-100 border-brunswick-green-500  bg-sea-salt/10 shadow-2xl shadow-brunswick-green-500/5" : "opacity-60 hover:opacity-80 border-sea-salt scale-[0.96] bg-sea-salt/6"}
-      `}
-    >
-      {/* Gradient image area */}
-      <div className="flex h-full flex-col">
-        <div className="space-y-4 flex-1 pointer-events-none">
-          <div className="relative h-[180px] w-full overflow-hidden rounded-2xl bg-sea-salt/6 border border-sea-salt/60 flex items-end p-4">
-            {item.photos ? (
-              <img
-                src={item.photos[0]}
-                alt={item.title}
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-            ) : (
-              <>
-                {/* Decorative grid */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:24px_24px]" />
-              </>
-            )}
-          </div>
-
-          <div className="space-y-2">
-            <p className={`font-sans text-base sm:text-lg font-bold min-h-[3.5rem] content-center line-clamp-2 ${isCenter ? "text-brunswick-green-500" : "text-sea-salt"}`}>
-              {item.title}
-            </p>
-            <p className="font-sans text-base sm:text-lg text-ivory/50 line-clamp-2">
-              {formatDateRange(item.startDate, item.endDate)}
-            </p>
-            <p className="font-sans text-base sm:text-lg text-sea-salt line-clamp-2">
-              {item.desc}
-            </p>
-            <span className="text-brunswick-green-500">read more</span>
-          </div>
-        </div>
-
-        {/* <div className="mt-auto pt-4">
-          <button // <-- Ubah tag <a> menjadi <button> agar card tidak lompat ke web lain saat di-klik
-            onClick={(e) => {
-              e.stopPropagation();
-              onOpenModal(item);
-            }}
-            className={`inline-flex items-center justify-center font-sans font-semibold px-4 py-1.5 rounded-full text-lg cursor-pointer self-start transition-all border ${isCenter ? "text-sea-salt border-brunswick-green-500 bg-brunswick-900" : "text-sea-salt border-sea-salt/20 bg-raisin-black-800"} hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt`}
-          >
-            Read More
-          </button>
-        </div> */}
-      </div>
-
-    </div>
-  );
-}
 
 // ─── Main Component ──────────────────────────────────────────────────────────
 export default function Cases() {
   const swiperRef = useRef<SwiperType | null>(null);
-  const total = ourActivity.length;
+  // const total = ourActivity.length;
+
 
   // ── State  Pop up Modal ────────────────────────────────────
   const [selectedItem, setSelectedItem] = useState<Activity | null>(null);
   const [selectedItemIndex, setSelectedItemIndex] = useState(0);
   const [galleryIndex, setGalleryIndex] = useState(0);
 
+
   // ── Shared index state ──────────────────────────────────────────
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+
+  // sorted activity by date
+  const sortedActivity = getSortedActivities(ourActivity);
+
+  const displayedActivities = sortedActivity.slice(0, 3);
+  const total = displayedActivities.length;
 
   // loading image
   const [imageLoading, setImageLoading] = useState(true);
@@ -330,45 +60,27 @@ export default function Cases() {
     setImageLoading(true);
   }, [galleryIndex, selectedItem]);
 
-  const handleOpenModal = (item: any, index: number) => {
-    setSelectedItemIndex(index);
-    setSelectedItem(item);
-  }
-
-  function previousItem(selectedItemIndex: number) {
-    if (selectedItemIndex !== null && selectedItemIndex > 0) {
-      const newIndex = selectedItemIndex - 1;
-
-      setSelectedItemIndex(newIndex);
-      setSelectedItem(ourActivity[newIndex]);
-    }
-  }
-
-
-  function nextItem(selectedItemIndex: number) {
-    if (selectedItemIndex < ourActivity.length - 1) {
-      const newIndex = selectedItemIndex + 1;
-
-      setSelectedItemIndex(newIndex);
-      setSelectedItem(ourActivity[newIndex]);
-    }
-  }
 
   // ── Autoplay Control ─────────────────────────
-  useEffect(() => {
-    if (swiperRef.current && swiperRef.current.autoplay) {
-      if (isPaused || selectedItem !== null) {
-        swiperRef.current.autoplay.stop();
-      } else {
-        swiperRef.current.autoplay.start();
-      }
-    }
-  }, [isPaused, selectedItem]);
+  // useEffect(() => {
+  //   if (swiperRef.current && swiperRef.current.autoplay) {
+  //     if (isPaused || selectedItem !== null) {
+  //       swiperRef.current.autoplay.stop();
+  //     } else {
+  //       swiperRef.current.autoplay.start();
+  //     }
+  //   }
+  // }, [isPaused, selectedItem]);
 
-  // sorted activity by date
-  const sortedActivity = [...ourActivity].sort(
-    (a, b) => b.startDate.getTime() - a.startDate.getTime()
-  );
+  //---------slider hilight from index 1 -> 2 -> 3
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % 3);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
 
   return (
     <section className="relative py-16 bg-raisin-black-800/20 overflow-hidden">
@@ -400,8 +112,9 @@ export default function Cases() {
           <Swiper
             className="w-full py-10"
             modules={[Autoplay]}
-            loop
-            centeredSlides
+            loop={false}
+            // centeredSlides
+            slidesPerView={3}
             grabCursor
             speed={700}
             spaceBetween={12}
@@ -422,40 +135,52 @@ export default function Cases() {
             }}
 
           >
-            {sortedActivity.map((item, index) => (
+            {displayedActivities.map((item, index) => (
               <SwiperSlide key={item.id} className="h-auto">
                 {({ isActive }) => (
                   <CaseCard
+                    key={item.id}
                     item={item}
                     index={index}
-                    isCenter={isActive}
-                    onOpenModal={handleOpenModal}
+                    isCenter={index === activeIndex}
+                    onOpenModal={(item, idx) => handleOpenModal(item, idx, setSelectedItemIndex, setSelectedItem)}
                     setIsPaused={setIsPaused}
-
                   />
                 )}
               </SwiperSlide>
             ))}
+
+            {/* CTA Slide */}
+            <SwiperSlide>
+              {({ isActive }) => (
+                <SeeAllCard isCenter={isActive} />
+              )}
+            </SwiperSlide>
           </Swiper>
 
           {/* Navigation */}
-          <div className="flex items-center gap-3 pt-10 justify-center">
-            <button
-              onClick={() => swiperRef.current?.slidePrev()}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
-            >
-              <ArrowLeft className="h-3.5 w-3.5" />
-            </button>
-            <span className="font-sans text-lg text-sea-salt tracking-wider">
-              {String(activeIndex + 1).padStart(2, "0")} /{" "}
-              {String(total).padStart(2, "0")}
-            </span>
-            <button
-              onClick={() => swiperRef.current?.slideNext()}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
-            >
-              <ArrowRight className="h-3.5 w-3.5" />
-            </button>
+          <div className="flex flex-column justify-between items-center">
+            <div className="flex items-center gap-3 pt-10 justify-center">
+              {/* <button
+                onClick={() => swiperRef.current?.slidePrev()}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
+              >
+                <ArrowLeft className="h-3.5 w-3.5" />
+              </button>
+              <span className="font-sans text-lg text-sea-salt tracking-wider">
+                {String(activeIndex + 1).padStart(2, "0")} /{" "}
+                {String(total).padStart(2, "0")}
+              </span>
+              <button
+                onClick={() => swiperRef.current?.slideNext()}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
+              >
+                <ArrowRight className="h-3.5 w-3.5" />
+              </button> */}
+            </div>
+            {/* <a href="" className="justify-self-center">
+              <p className="font-sans text-base sm:text-lg text-sea-salt/80 tracking-widest  font-semibold ml-2 select-none cursor-pointer hover:text-brunswick-green-500 hover:underline transition-all duration-300 transform active:scale-95">View All Activity</p>
+            </a> */}
           </div>
         </div>
       </div>
@@ -493,14 +218,14 @@ export default function Cases() {
               {/* Modal Navigation */}
               <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full px-2 sm:px-4 z-10 flex justify-between items-center pointer-events-none">
                 <button
-                  onClick={() => previousItem(selectedItemIndex)}
+                  onClick={() => previousItem(selectedItemIndex, displayedActivities, setSelectedItemIndex, setSelectedItem)}
                   disabled={selectedItemIndex === 0}
                   className="pointer-events-auto flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-sea-salt/20 bg-black/40 text-sea-salt/80 transition-all hover:bg-brunswick-green-900 hover:text-sea-salt disabled:opacity-30 disabled:hover:bg-black/40 disabled:cursor-not-allowed backdrop-blur-sm shadow-lg"
                 >
                   <ArrowLeft className="h-5 w-5" />
                 </button>
                 <button
-                  onClick={() => nextItem(selectedItemIndex)}
+                  onClick={() => nextItem(selectedItemIndex, displayedActivities, setSelectedItemIndex, setSelectedItem)}
                   disabled={selectedItemIndex === total - 1}
                   className="pointer-events-auto flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-sea-salt/20 bg-black/40 text-sea-salt/80 transition-all hover:bg-brunswick-green-900 hover:text-sea-salt disabled:opacity-30 disabled:hover:bg-black/40 disabled:cursor-not-allowed backdrop-blur-sm shadow-lg"
                 >
@@ -565,7 +290,7 @@ export default function Cases() {
                   {selectedItem.title}
                 </h3>
                 <p className="font-sans text-base sm:text-lg text-sea-salt/50">
-                   {formatDateRange(selectedItem.startDate, selectedItem.endDate)}
+                  {formatDateRange(selectedItem.startDate, selectedItem.endDate)}
                 </p>
                 <p className="font-sans text-base sm:text-lg text-sea-salt/90">
                   {selectedItem.desc}

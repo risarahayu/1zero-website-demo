@@ -539,7 +539,7 @@ const TeamSection: React.FC = () => {
 
     return (
         <section className="py-16 text-slate-50 relative">
-            <div className="w-[75%] mx-auto space-y-10 text-center">
+            <div className=" space-y-10 text-center">
 
                 <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
                     {/* Injecting the dynamic title here! */}
@@ -1001,10 +1001,6 @@ const TeamSection: React.FC = () => {
 
                     </div>
                 )}
-
-                <CtaBanner />
-
-
             </div>
         </section>
     );

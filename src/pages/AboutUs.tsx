@@ -5,6 +5,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import BookingModal from '../components/BookingModal';
 import '../css/about.css';
+import { ActivitySection } from '../components/activity/ActivitySection';
+import CtaBanner from '../components/about/CTA Banner';
 
 const AboutUs: React.FC = () => {
     useEffect(() => {
@@ -22,7 +24,7 @@ const AboutUs: React.FC = () => {
     };
 
     return (
-        <div className="text-slate-50 min-h-screen overflow-x-hidden font-sans relative">
+        <div className="text-slate-50 min-h-screen overflow-x-hidden font-sans relative w-[75%] mx-auto">
 
             {/* Aurora Background */}
             <div className="aurora">
@@ -41,6 +43,9 @@ const AboutUs: React.FC = () => {
 
                 {/* Team Section */}
                 <TeamSection lang={lang} />
+
+                <ActivitySection />
+                <CtaBanner />
 
                 <Footer />
             </div>

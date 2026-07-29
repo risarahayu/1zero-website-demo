@@ -81,32 +81,33 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
             </div>
 
             {/* Navigation slider buttons */}
-            <div className="flex items-center gap-4">
-              <button
-                type="button"
-                onClick={() => swiperRef.current?.slidePrev()}
-                aria-label="Previous portfolio"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
-              >
-                <ArrowLeft className="h-4 w-4" />
-              </button>
-              <span className="font-sans text-lg text-sea-salt/80 tracking-widest uppercase font-semibold ml-2 select-none">
-                {String(currentSlide + 1).padStart(2, "0")} / 05
-              </span>
-              <button
-                type="button"
-                onClick={() => swiperRef.current?.slideNext()}
-                aria-label="Next portfolio"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
-              >
-                <ArrowRight className="h-4 w-4" />
-              </button>
-
+            <div className="flex-row space-y-4">
+              <div className="flex items-center gap-4">
+                <button
+                  type="button"
+                  onClick={() => swiperRef.current?.slidePrev()}
+                  aria-label="Previous portfolio"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                </button>
+                <span className="font-sans text-lg text-sea-salt/80 tracking-widest uppercase font-semibold ml-2 select-none">
+                  {String(currentSlide + 1).padStart(2, "0")} / 05
+                </span>
+                <button
+                  type="button"
+                  onClick={() => swiperRef.current?.slideNext()}
+                  aria-label="Next portfolio"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
+                >
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
+              <a href={`${import.meta.env.BASE_URL}#portfolio`}>
+                <p className="font-sans text-base sm:text-lg text-sea-salt/80 tracking-widest  font-semibold ml-2 select-none cursor-pointer hover:text-brunswick-green-500 hover:underline transition-all duration-300 transform active:scale-95">{portfolioCopy.seeAllText}</p>
+              </a>
             </div>
 
-            <a href={`${import.meta.env.BASE_URL}#portfolio`}>
-              <p className="font-sans text-base sm:text-lg text-sea-salt/80 tracking-widest  font-semibold ml-2 select-none cursor-pointer hover:text-brunswick-green-500 hover:underline transition-all duration-300 transform active:scale-95">{portfolioCopy.seeAllText}</p>
-            </a>
           </div>
 
           {/* RIGHT PANEL: Horizontal Carousel Track */}
