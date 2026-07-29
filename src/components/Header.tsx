@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { navLinks } from "../data";
+import { useLocation } from "react-router-dom";
 import { Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
 import Logo1zero from "./Logo1Zero";
 import { headerCopy } from "../copy";
+import { NavLink } from "react-router-dom";
 
 interface HeaderProps {
   onOpenBooking: () => void;
 }
 
 export default function Header({ onOpenBooking }: HeaderProps) {
+  const location = useLocation();
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -18,10 +22,10 @@ export default function Header({ onOpenBooking }: HeaderProps) {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const currentHash = window.location.hash.replace("#", "");
-      // If we are on a dedicated route page, lock the highlight to that page
-      if (["about", "services", "portfolio", "contact"].includes(currentHash)) {
-        setActiveSection(currentHash);
+      const currentPath = location.pathname.replace("/", "");
+
+      if (["about", "services", "portfolio", "contact"].includes(currentPath)) {
+        setActiveSection(currentPath);
         return;
       }
 
@@ -55,7 +59,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("hashchange", handleScroll);
     };
-  }, []);
+  }, [location.pathname]);
 
   return (
     <header className="relative w-full z-40">
@@ -87,16 +91,17 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                 {navLinks.map((link) => {
                   const isActive = activeSection === link.href.substring(1);
                   return (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      className={`font-sans text-lg font-semibold transition-all tracking-wide hover:underline ${isActive
+                    <NavLink
+                      to={link.href}
+                      className={({ isActive }) =>
+                        `font-sans text-lg font-semibold transition-all tracking-wide hover:underline ${isActive
                           ? "text-brunswick-green-500 drop-shadow-sm"
-                          : "text-sea-salt hover:text-sea-salt"
-                        }`}
+                          : "text-sea-salt"
+                        }`
+                      }
                     >
                       {link.label}
-                    </a>
+                    </NavLink>
                   );
                 })}
               </nav>
@@ -144,8 +149,8 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`font-sans text-lg font-semibold tracking-wide transition-colors py-2 border-b border-sea-salt/60 ${isActive
-                        ? "text-brunswick-green-500"
-                        : "text-sea-salt hover:text-brunswick-green-500"
+                      ? "text-brunswick-green-500"
+                      : "text-sea-salt hover:text-brunswick-green-500"
                       }`}
                   >
                     {link.label}

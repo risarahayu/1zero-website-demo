@@ -35,7 +35,6 @@ const AboutUs: React.FC = () => {
             <div className="relative z-10">
 
                 {/* Navigation */}
-                <Header onOpenBooking={handleOpenBooking} />
 
 
                 {/* Hero Section */}

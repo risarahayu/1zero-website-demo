@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+
 import Services from "./pages/Services";
 import Hero from "./components/Hero";
 import Products from "./components/Products";
@@ -14,10 +16,10 @@ import Header from "./components/Header";
 import ContactPage from "./pages/ContactUs";
 import Portfolios from "./pages/Portfolios";
 import WorkflowHorizontal from "./components/WorkflowHorizontal";
+import AboutUs from "./pages/AboutUs";
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState<string>("home");
 
   const handleOpenBooking = () => {
     window.open(
@@ -31,57 +33,59 @@ export default function App() {
     setIsBookingOpen(false);
   };
 
-  // Listen to hash changes for navigation
-  useEffect(() => {
-    const updatePage = () => {
-      const hash = window.location.hash.replace("#", "");
-      setCurrentPage(hash || "home");
-    };
-    updatePage();
-    window.addEventListener("hashchange", updatePage);
-    return () => window.removeEventListener("hashchange", updatePage);
-  }, []);
 
   return (
     <div className="relative min-h-screen selection:bg-brunswick-green-900 selection:text-sea-salt">
       {/* Primary Header/Nav bar */}
       <Header onOpenBooking={handleOpenBooking} />
-
       <main>
-        {/* Route handling based on hash */}
-        {currentPage === "services" ? (
-          <Services onOpenBooking={handleOpenBooking} />
-        ) : currentPage === "contact" ? (
-          <ContactPage />
-        ) : currentPage === "portfolio" || currentPage === "portfolios" ? (
-          <Portfolios />
-        ) : (
-          <>
-            {/* Hero Section */}
-            <Hero onOpenBooking={handleOpenBooking} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero onOpenBooking={handleOpenBooking} />
 
-            {/* Core Solutions Bento Grid */}
-            <Products onOpenBooking={handleOpenBooking} />
+                <Products onOpenBooking={handleOpenBooking} />
 
-            {/* Portfolio Showcase Section */}
-            <Portfolio onOpenBooking={handleOpenBooking} />
+                <Portfolio onOpenBooking={handleOpenBooking} />
 
-            {/* Team and values split Section */}
-            <WhyUs onOpenBooking={handleOpenBooking} />
+                <WhyUs onOpenBooking={handleOpenBooking} />
 
-            {/* Connective Collaborative Process Section */}
-            <WorkflowHorizontal />
+                <WorkflowHorizontal />
 
-            {/* User feedback Testimonials sliding Grid */}
-            <Testimonials />
+                <Testimonials />
 
-            {/* Case Studies grid */}
-            <Cases />
+                <Cases />
 
-            {/* Deep Green Curved CTA scheduling Section */}
-            <CTA onOpenBooking={handleOpenBooking} />
-          </>
-        )}
+                <CTA onOpenBooking={handleOpenBooking} />
+              </>
+            }
+          />
+
+          <Route
+            path="/about"
+            element={<AboutUs />}
+          />
+
+          <Route
+            path="/services"
+            element={
+              <Services />
+            }
+          />
+
+          <Route
+            path="/contact"
+            element={<ContactPage />}
+          />
+
+          <Route
+            path="/portfolio"
+            element={<Portfolios />}
+          />
+
+        </Routes>
       </main>
 
       {/* Corporate footer details */}

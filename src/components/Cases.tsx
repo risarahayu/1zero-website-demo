@@ -16,7 +16,7 @@ import { Autoplay } from "swiper/modules";
 import { Icon } from "@iconify/react";
 
 import "swiper/css";
-import { button } from "motion/react-client";
+import { button, div } from "motion/react-client";
 
 
 const socialIcons = {
@@ -42,7 +42,7 @@ export default function Cases() {
   const [selectedItem, setSelectedItem] = useState<Activity | null>(null);
   const [selectedItemIndex, setSelectedItemIndex] = useState(0);
   const [galleryIndex, setGalleryIndex] = useState(0);
-
+  const [showSeeAllSlide, setShowSeeAllSlide] = useState(false);
 
   // ── Shared index state ──────────────────────────────────────────
   const [activeIndex, setActiveIndex] = useState(0);
@@ -196,17 +196,51 @@ export default function Cases() {
             onClick={(e) => e.stopPropagation()} //prevent close modal when click modal background
           >
 
-            {/* Close Button */}
-            <button
-              onClick={() => setSelectedItem(null)}
-              className="absolute top-4 right-4 sm:top-4 sm:right-4 z-10 flex h-10 w-10 items-center justify-center  text-sea-salt/80 transition-all hover:bg-red-500/80 hover:text-sea-salt hover:border-red-500"
-            >
-              <X className="h-4 w-4" />
-            </button>
+            {/* Modal Navigation */}
+            <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full px-2 sm:px-4 z-10 flex justify-between items-center pointer-events-none">
+              <button
+                onClick={() => {
+                  if (showSeeAllSlide) {
+                    setShowSeeAllSlide(false);
+                    return;
+                  }
 
-            {/* Pop Up Content */}
-            <div className="flex flex-col gap-6 mt-12 sm:mt-8">
-              {/* {selectedItem.photo && (
+                  previousItem(
+                    selectedItemIndex,
+                    displayedActivities,
+                    setSelectedItemIndex,
+                    setSelectedItem
+                  );
+                }}
+                disabled={selectedItemIndex === 0}
+                className="pointer-events-auto flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-sea-salt/20 bg-black/40 text-sea-salt/80 transition-all hover:bg-brunswick-green-900 hover:text-sea-salt disabled:opacity-30 disabled:hover:bg-black/40 disabled:cursor-not-allowed backdrop-blur-sm shadow-lg"
+              >
+                <ArrowLeft className="h-5 w-5" />
+              </button>
+              <button
+                onClick={() => {
+                  if (selectedItemIndex === total - 1) {
+                    setShowSeeAllSlide(true);
+                    return;
+                  }
+                  nextItem(selectedItemIndex, displayedActivities, setSelectedItemIndex, setSelectedItem)
+                }}
+                disabled={showSeeAllSlide}
+                className="pointer-events-auto flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-sea-salt/20 bg-black/40 text-sea-salt/80 transition-all hover:bg-brunswick-green-900 hover:text-sea-salt disabled:opacity-30 disabled:hover:bg-black/40 disabled:cursor-not-allowed backdrop-blur-sm shadow-lg"
+              >
+                <ArrowRight className="h-5 w-5" />
+              </button>
+            </div>
+
+            {/* Close Button */}
+            {showSeeAllSlide ? (
+              // =========================
+              // CTA PAGE
+              // =========================
+              <SeeAllCard isCenter={false} />
+            ) : (
+              <div className="flex flex-col gap-6 mt-12 sm:mt-8">
+                {/* {selectedItem.photo && (
                 <div className="relative h-[250px] sm:h-[350px] w-full overflow-hidden rounded-2xl bg-sea-salt/6 border border-sea-salt/10">
                   <img
                     src={selectedItem.photo}
@@ -215,106 +249,91 @@ export default function Cases() {
                   />
                 </div>
               )} */}
-              {/* Modal Navigation */}
-              <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full px-2 sm:px-4 z-10 flex justify-between items-center pointer-events-none">
-                <button
-                  onClick={() => previousItem(selectedItemIndex, displayedActivities, setSelectedItemIndex, setSelectedItem)}
-                  disabled={selectedItemIndex === 0}
-                  className="pointer-events-auto flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-sea-salt/20 bg-black/40 text-sea-salt/80 transition-all hover:bg-brunswick-green-900 hover:text-sea-salt disabled:opacity-30 disabled:hover:bg-black/40 disabled:cursor-not-allowed backdrop-blur-sm shadow-lg"
-                >
-                  <ArrowLeft className="h-5 w-5" />
-                </button>
-                <button
-                  onClick={() => nextItem(selectedItemIndex, displayedActivities, setSelectedItemIndex, setSelectedItem)}
-                  disabled={selectedItemIndex === total - 1}
-                  className="pointer-events-auto flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-sea-salt/20 bg-black/40 text-sea-salt/80 transition-all hover:bg-brunswick-green-900 hover:text-sea-salt disabled:opacity-30 disabled:hover:bg-black/40 disabled:cursor-not-allowed backdrop-blur-sm shadow-lg"
-                >
-                  <ArrowRight className="h-5 w-5" />
-                </button>
-              </div>
 
-              {/* Photo Slider Gallery */}
+                {/* Photo Slider Gallery */}
 
-              {selectedItem.photos && selectedItem.photos.length > 1 ? (
-                <div className="w-full space-y-4">
+                {selectedItem.photos && selectedItem.photos.length > 1 ? (
+                  <div className="w-full space-y-4">
 
-                  {/* Image Slider */}
-                  <div className="relative w-full h-[250px] sm:h-[350px] overflow-hidden rounded-2xl border border-sea-salt/10">
-                    {imageLoading && (
-                      <div className="absolute inset-0 animate-pulse bg-sea-salt/10" />
-                    )}
-                    <img
-                      src={selectedItem.photos[galleryIndex]}
-                      alt={`${selectedItem.title} - ${galleryIndex + 1}`}
-                      onLoad={() => setImageLoading(false)}
-                      className={`absolute inset-0 h-full w-full object-cover animate-in fade-in ${imageLoading ? "opacity-0" : "opacity-100"}`}
-                    />
-                  </div>
-                  {/* Navigation Arrows */}
-                  <div className="flex items-center justify-between place-self-center ">
-
-                    <div className="flex items-center gap-2">
-                      {selectedItem.photos!.map((_, index) => (
-                        <button
-                          key={index}
-                          onClick={() => setGalleryIndex(index)}
-                          className={`h-2 rounded-full transition-all duration-200 ${index === galleryIndex
-                            ? "w-6 bg-brunswick-green-500"
-                            : "w-2 bg-sea-salt/30 hover:bg-sea-salt/60"
-                            }`}
-                        />
-                      ))}
+                    {/* Image Slider */}
+                    <div className="relative w-full h-[250px] sm:h-[350px] overflow-hidden rounded-2xl border border-sea-salt/10">
+                      {imageLoading && (
+                        <div className="absolute inset-0 animate-pulse bg-sea-salt/10" />
+                      )}
+                      <img
+                        src={selectedItem.photos[galleryIndex]}
+                        alt={`${selectedItem.title} - ${galleryIndex + 1}`}
+                        onLoad={() => setImageLoading(false)}
+                        className={`absolute inset-0 h-full w-full object-cover animate-in fade-in ${imageLoading ? "opacity-0" : "opacity-100"}`}
+                      />
                     </div>
+                    {/* Navigation Arrows */}
+                    <div className="flex items-center justify-between place-self-center ">
 
-                  </div>
-                </div>
-              ) : (
-                <div className="w-full space-y-4">
-                  <div className="relative w-full h-[250px] sm:h-[350px] overflow-hidden rounded-2xl border border-sea-salt/10">
-                    {imageLoading && (
-                      <div className="absolute inset-0 animate-pulse bg-sea-salt/10" />
-                    )}
-                    <img
-                      src={selectedItem.photos[0]}
-                      alt={selectedItem.title}
-                      onLoad={() => setImageLoading(false)}
-                      className={`absolute inset-0 h-full w-full object-cover animate-in fade-in  ${imageLoading ? "opacity-0" : "opacity-100"}`}
-                    />
-                  </div>
-                </div>
-              )
-              }
+                      <div className="flex items-center gap-2">
+                        {selectedItem.photos!.map((_, index) => (
+                          <button
+                            key={index}
+                            onClick={() => setGalleryIndex(index)}
+                            className={`h-2 rounded-full transition-all duration-200 ${index === galleryIndex
+                              ? "w-6 bg-brunswick-green-500"
+                              : "w-2 bg-sea-salt/30 hover:bg-sea-salt/60"
+                              }`}
+                          />
+                        ))}
+                      </div>
 
-              <div className="space-y-4">
-                <h3 className="font-sans text-2xl sm:text-3xl font-bold text-brunswick-green-500">
-                  {selectedItem.title}
-                </h3>
-                <p className="font-sans text-base sm:text-lg text-sea-salt/50">
-                  {formatDateRange(selectedItem.startDate, selectedItem.endDate)}
-                </p>
-                <p className="font-sans text-base sm:text-lg text-sea-salt/90">
-                  {selectedItem.desc}
-                </p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="w-full space-y-4">
+                    <div className="relative w-full h-[250px] sm:h-[350px] overflow-hidden rounded-2xl border border-sea-salt/10">
+                      {imageLoading && (
+                        <div className="absolute inset-0 animate-pulse bg-sea-salt/10" />
+                      )}
+                      <img
+                        src={selectedItem.photos[0]}
+                        alt={selectedItem.title}
+                        onLoad={() => setImageLoading(false)}
+                        className={`absolute inset-0 h-full w-full object-cover animate-in fade-in  ${imageLoading ? "opacity-0" : "opacity-100"}`}
+                      />
+                    </div>
+                  </div>
+                )
+                }
+
+                <div className="space-y-4">
+                  <h3 className="font-sans text-2xl sm:text-3xl font-bold text-brunswick-green-500">
+                    {selectedItem.title}
+                  </h3>
+                  <p className="font-sans text-base sm:text-lg text-sea-salt/50">
+                    {formatDateRange(selectedItem.startDate, selectedItem.endDate)}
+                  </p>
+                  <p className="font-sans text-base sm:text-lg text-sea-salt/90">
+                    {selectedItem.desc}
+                  </p>
+                </div>
+
+                {selectedItem.linkPost && (
+                  <div className="pt-4 border-t border-sea-salt/10 flex items-center gap-2">
+                    Discovery more :
+                    <a
+                      href={selectedItem.linkPost}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center font-sans font-semibold px-2 py-2 rounded-full text-lg cursor-pointer bg-brunswick-green-900 text-sea-salt hover:bg-brunswick-green-600 transition-all w-full sm:w-auto"
+                    >
+
+                      <Icon icon={socialIcons[selectedItem.CTA]} className="h-8 w-8" />
+                    </a>
+                  </div>
+                )}
               </div>
-
-              {selectedItem.linkPost && (
-                <div className="pt-4 border-t border-sea-salt/10 flex items-center gap-2">
-                  Discovery more :
-                  <a
-                    href={selectedItem.linkPost}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center font-sans font-semibold px-2 py-2 rounded-full text-lg cursor-pointer bg-brunswick-green-900 text-sea-salt hover:bg-brunswick-green-600 transition-all w-full sm:w-auto"
-                  >
-
-                    <Icon icon={socialIcons[selectedItem.CTA]} className="h-8 w-8" />
-                  </a>
-                </div>
-              )}
-            </div>
+            )}
           </div>
         </div>
-      )}
-    </section>
+      )
+      }
+    </section >
   );
 }
