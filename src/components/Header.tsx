@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { navLinks } from "../data";
-import { useLocation } from "react-router-dom";
+import { useLocation, NavLink } from "react-router";
 import { Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
 import Logo1zero from "./Logo1Zero";
 import { headerCopy } from "../copy";
-import { NavLink } from "react-router-dom";
 
 interface HeaderProps {
   onOpenBooking: () => void;
