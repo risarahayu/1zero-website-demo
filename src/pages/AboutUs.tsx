@@ -24,7 +24,7 @@ const AboutUs: React.FC = () => {
     };
 
     return (
-        <div className="text-slate-50 min-h-screen overflow-x-hidden font-sans relative w-[75%] mx-auto">
+        <div className="text-slate-50 min-h-screen overflow-x-hidden font-sans relative w-[75%] mx-auto py-16">
 
             {/* Aurora Background */}
             <div className="aurora">
@@ -46,7 +46,6 @@ const AboutUs: React.FC = () => {
                 <ActivitySection />
                 <CtaBanner />
 
-                <Footer />
             </div>
 
         </div>
