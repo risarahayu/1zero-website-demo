@@ -30,7 +30,7 @@ export function ActivitySection(total?: number) {
     const [showSeeAllSlide, setShowSeeAllSlide] = useState(false);
 
     return (
-        <section className="py-16 text-slate-50 relative space-y-10">
+        <section className="py-16 text-slate-50 relative space-y-10" id="activity">
             <div className="flex justify-center">
                 <div className="flex inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans  tracking-widest text-brunswick-green-500 bg-raisin-black">
                     <span>1zero </span>

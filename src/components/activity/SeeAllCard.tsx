@@ -1,10 +1,11 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 export function SeeAllCard({ isCenter }: { isCenter: boolean }) {
   return (
-    <a
-      href="/about#activity"
+    <Link
+      to={`${import.meta.env.BASE_URL}about#activity`}
       className={`
         group flex h-[400px] items-center justify-center rounded-3xl border
         transition-all duration-500
@@ -21,6 +22,6 @@ export function SeeAllCard({ isCenter }: { isCenter: boolean }) {
 
         <ArrowRight className="mx-auto h-8 w-8 text-brunswick-green-500 transition-transform group-hover:translate-x-2" />
       </div>
-    </a>
+    </Link>
   );
 }

@@ -517,7 +517,8 @@ export const customProjects = [
     bgClass: "bg-[#112240] border-blue-500/10",
     mockupType: "impact",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/4Ocean - Impact Portal.webp`,
-    service: "DevPod"
+    service: "DevPod",
+    url: `${import.meta.env.BASE_URL}Portfolios/Impact_Dashboard.pdf`
   },
   {
     id: "baliteak",
@@ -527,7 +528,7 @@ export const customProjects = [
     mockupType: "baliteak",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/BaliTeak - E-Commerce Replatform.webp`,
     service: "NextGen Platform",
-    url: `${import.meta.env.BASE_URL}Portfolio pdf/Bali Teak Redesign Website.pdf`
+    url: `${import.meta.env.BASE_URL}Portfolios/Bali_Teak_Redesig_Website.pdf`
   },
   {
     id: "TDD",
@@ -537,6 +538,7 @@ export const customProjects = [
     mockupType: "tdd",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/The Donor Dashboard.webp`,
     service: "DevPod",
+    url: `https://tirtamurninusantara.org/`
   },
   {
     id: "phoenix",
@@ -546,6 +548,7 @@ export const customProjects = [
     mockupType: "phoenix",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/PT Phoenix - Corporate Architecture.webp`,
     service: "DevPod",
+    url: "https://phoenixjaya.com/"
   },
   {
     id: "blackstump",
@@ -555,6 +558,7 @@ export const customProjects = [
     mockupType: "blackstump",
     imageUrl: `${import.meta.env.BASE_URL}portofolio image/BlackStump Technologies - Modernization.webp`,
     service: "DevPod",
+    url: `${import.meta.env.BASE_URL}Portfolios/Black_Stump.pdf`
   }
 ];
 
