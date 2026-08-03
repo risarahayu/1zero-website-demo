@@ -41,6 +41,7 @@ const activity08 = "activity-08";
 const activity09 = "activity-09";
 const activity10 = "activity-10";
 const activity11 = "activity-11";
+const activity12 = "activity-12";
 
 export const ourActivity: ActivityType[] = [
   {
@@ -53,7 +54,7 @@ export const ourActivity: ActivityType[] = [
     title: "Global Sustainable Development Congress (GSDC) 2026",
     startDate: new Date("2026-06-24"),
     endDate: new Date("2026-06-26"),
-    desc: "A concise LinkedIn launch post spotlighting landing pad initiatives and global sustainability design challenge momentum.",
+    desc: "Proud to have represented Adaluma Tech at the AusTrade Landing Pad during the Global Sustainable Development Congress 2026 in Jakarta. We were delighted to showcase our ESG Verified Financial Infrastructure layer and connect with industry leaders to drive sustainable business transformation.",
     linkPost: "https://www.linkedin.com/feed/update/urn:li:activity:7477617222861975553",
     CTA: "Linkedin",
   },
@@ -62,10 +63,10 @@ export const ourActivity: ActivityType[] = [
     photos: [
       `${import.meta.env.BASE_URL}Our Activity/${activity02}/Wisdom Shaping Sustainable Futures.webp`,
     ],
-    title: "EarthWise: Wisdom Shaping Sustainable Futures",
+    title: "Curiosity Talks: Wisdom Transfer from the Wise to the Curious by and for Seasoned Professionals | WisdomCircle",
     startDate: new Date("2025-05-16"),
     endDate: new Date("2025-05-16"),
-    desc: "A simple visual story about stewardship and sustainable futures in a changing world.",
+    desc: "Part of Wisdom Circle's CuriosityTalks series, Mark joined a powerful confluence of leaders in the Sustainability space.  It was the 50th episode, and was an inspiring conversation on Legacy and Leadership.",
     linkPost: "https://www.youtube.com/watch?v=peZPBfHptoo",
     CTA: "Youtube",
   },
@@ -79,7 +80,7 @@ export const ourActivity: ActivityType[] = [
     title: "Path to Sustainable Growth at Apurva Kempinski",
     startDate: new Date("2026-06-24"),
     endDate: new Date("2026-06-24"),
-    desc: "A short post highlighting sustainable hospitality strategy and the path to growth for a luxury resort brand.",
+    desc: "Proud to represent 1zero at the Path to Sustainable Growth 2026! Connecting with leaders to empower organizations with AI-driven sustainability solutions.",
     linkPost: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7477951114466856962/?actorCompanyId=103705943",
     CTA: "Linkedin",
   },
@@ -93,7 +94,7 @@ export const ourActivity: ActivityType[] = [
     title: "Visit PLTGU Muara Karang",
     startDate: new Date("2026-05-21"),
     endDate: new Date("2026-05-21"),
-    desc: "A short post highlighting sustainable hospitality strategy and the path to growth for a luxury resort brand.",
+    desc: "Our CTO, Mark Treleaven, visited PT PLN PLTGU Muara Karang to witness their energy transition efforts! Exploring hydrogen, carbon capture, and the power of innovation for a sustainable future.",
     linkPost: "https://www.linkedin.com/posts/1zero-biz_pln-energytransition-jakarta-activity-7482249126974476289-kfFh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC3NxVkBzab9RTwcZ8BHJt_XzKZdIfZYLds",
     CTA: "Linkedin",
   },
@@ -104,7 +105,7 @@ export const ourActivity: ActivityType[] = [
       `${import.meta.env.BASE_URL}Our Activity/${activity05}/Bali_Tech_Summit_Detail1.webp`,
 
     ],
-    title: "Bali Tech Summit",
+    title: "Bali Tech Summit hosted by La French Tech Indonesia",
     startDate: new Date("2024-10-11"),
     endDate: new Date("2024-10-11"),
     desc: "Proud to have our Solution Architect representing 1zero at the Bali Tech Summit by La French Tech Indonesia. Together with industry leaders, we explored The Future of Work 2.0—covering AI, employee wellbeing, climate action, and the innovations shaping tomorrow's workplace.",
@@ -117,10 +118,10 @@ export const ourActivity: ActivityType[] = [
       `${import.meta.env.BASE_URL}Our Activity/${activity06}/AI Social Media Event.webp`,
 
     ],
-    title: "AI + Social Media Event",
+    title: "AI + Social Media Event hosted by nebulabali",
     startDate: new Date("2025-01-31"),
     endDate: new Date("2025-01-31"),
-    desc: "Our two Wonder Women attended an awesome workshop at Nebulabali , Canggu! Led by a top influencer from the US, the session dived into how AI is changing the game in social media strategy.",
+    desc: "Two of our Wonder Women attended an awesome workshop at Nebulabali , Canggu! Led by a top influencer from the US, the session dived into how AI is changing the game in social media strategy.",
     linkPost: "https://www.instagram.com/p/DFpBylOSQ4d/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     CTA: "Instagram",
   },
@@ -131,7 +132,7 @@ export const ourActivity: ActivityType[] = [
       `${import.meta.env.BASE_URL}Our Activity/${activity07}/𝗖𝘆𝗯𝗲𝗿 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗠𝗲𝗲𝘁𝘂𝗽 Detail 1.webp`,
       `${import.meta.env.BASE_URL}Our Activity/${activity07}/𝗖𝘆𝗯𝗲𝗿 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗠𝗲𝗲𝘁𝘂𝗽 Detail 2.webp`,
     ],
-    title: "𝗖𝘆𝗯𝗲𝗿 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗠𝗲𝗲𝘁𝘂𝗽",
+    title: "Cyber Secure Indonesia hosted by Sawah Cyber Security",
     startDate: new Date("2025-02-05"),
     endDate: new Date("2025-02-05"),
     desc: "1zero’s Solution Architect attended the 𝗖𝘆𝗯𝗲𝗿 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗠𝗲𝗲𝘁𝘂𝗽.  to dive deep into today’s biggest cybersecurity challenges. 🔥 Experts shared insights on how hackers execute attacks, the role of AI as both a threat and a defense, and why cybersecurity awareness is more important than ever.",
@@ -143,10 +144,10 @@ export const ourActivity: ActivityType[] = [
     photos: [
       `${import.meta.env.BASE_URL}Our Activity/${activity08}/Empowering Women Entrepreneurs.webp`,
     ],
-    title: "Empowering Women Entrepreneurs",
+    title: "LIFTWOMEN Bali Chapter Launch Event",
     startDate: new Date("2025-01-16"),
     endDate: new Date("2025-01-16"),
-    desc: "Our team member, Mutia Rosa, attended the LiftWomen Bali Chapter Launch at Livit, Sanur, joining an inspiring community of women entrepreneurs, founders, creators, mentors, and innovators committed to empowering one another.",
+    desc: "Empowering Women Entrepreneurs! Mutia Rosa joined the LiftWomen Bali Chapter Launch, connecting with an inspiring community of female founders and innovators.",
     linkPost: "https://www.linkedin.com/posts/liftwomen-femaleentrepreneurs-femalefounders-share-7287365666251186176-4Yml/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACaiIoYBEEy2963FCH3xa3bmKTp3gODlKeY",
     CTA: "Linkedin",
   },
@@ -157,7 +158,7 @@ export const ourActivity: ActivityType[] = [
       `${import.meta.env.BASE_URL}Our Activity/${activity09}/Together for Breast Cancer Awareness Detail 1.webp`,
 
     ],
-    title: "International Day Against Breast Cancer",
+    title: "Breast Cancer Awareness Month: Steps Of Hope organised by Bali Pink Ribbon ",
     startDate: new Date("2025-10-01"),
     endDate: new Date("2025-10-01"),
     desc: " 1zero proudly joined the Steps of Hope Fun Walk in Sanur, supporting breast cancer awareness alongside more than 200 participants. The event also provided free health screenings, reinforcing the importance of early detection and community support.",
@@ -172,10 +173,10 @@ export const ourActivity: ActivityType[] = [
       `${import.meta.env.BASE_URL}Our Activity/${activity10}/Hackathon Detail 1.webp`,
 
     ],
-    title: "Brunei Hackathon 2023",
+    title: "Brunei Hackathon organised by Brunei Innovation Lab",
     startDate: new Date("2023-04-01"),
     endDate: new Date("2023-04-01"),
-    desc: "At Brunei Hackathon 2023, Mark represented 1zero as a speaker, sharing insights on innovation, entrepreneurship, and how technology can solve real-world challenges while inspiring the next generation of innovators.",
+    desc: "Mark and Molly represented 1zero as a speaker at the The Coding.bn Hackathon organised by Brunei Innovation Lab! Sharing insights on innovation, entrepreneurship, and tech for real-world challenges.",
     linkPost: "",
     CTA: "",
   },
@@ -184,10 +185,23 @@ export const ourActivity: ActivityType[] = [
     photos: [
       `${import.meta.env.BASE_URL}Our Activity/${activity11}/Coinfest.webp`,
     ],
-    title: "Coinfest 2025",
+    title: "Coinfest Asia 2025",
     startDate: new Date("2025-08-21"),
     endDate: new Date("2025-08-22"),
-    desc: "A great day at Coinfest! Always inspiring to meet passionate people, exchange ideas, and learn from the latest developments in the Web3 and blockchain ecosystem. Thank you to everyone we had the chance to connect with—we're excited to see what comes next.",
+    desc: "A great day at Coinfest 2025! 🚀 Inspiring to connect with passionate people and explore the latest in Web3 and blockchain.",
+    linkPost: "",
+    CTA: "",
+  },
+  {
+    id: activity12,
+    photos: [
+      `${import.meta.env.BASE_URL}Our Activity/${activity12}/Mark Speaking.webp`,
+      `${import.meta.env.BASE_URL}Our Activity/${activity12}/1653449576595 (1).webp`,
+    ],
+    title: "7th annual Private Sector Leaders Forum,  hosted by Asia Pacific Alliance for Disaster Management Indonesia and IGCN",
+    startDate: new Date("2022-05-24"),
+    endDate: new Date("2022-05-24"),
+    desc: "Mark Treleaven was invited to participate in the 7th annual Private Sector Leaders Forum, a pre-GPDRR 2022 event in Nusa Dua, Bali. This event is hosted by Asia Pacific Alliance for Disaster Management Indonesia and the United Nations Indonesia Global Compact Network, and is all about sharing lessons from actions and collaborations for companies focused on working toward solving sustainability, SDGs and disaster management related challenges.",
     linkPost: "",
     CTA: "",
   },
@@ -200,8 +214,8 @@ export const products: ProductItem[] = [
     service: "Roadmap Workshop",
     description:
       "A high-intensity strategic sprint. We apply algorithmic feature prioritization to eliminate 'Franken-stack' risks and define your AI-first blueprint before you write a line of code.",
-    fileEng: `/Products Sheet/Eng/Roadmap Product Sheet - Eng.pdf`,
-    fileIndo: `/Products Sheet/Indo/Roadmap Product Sheet - Indo.pdf`,
+    fileEng: `/ Products Sheet / Eng / Roadmap Product Sheet - Eng.pdf`,
+    fileIndo: `/ Products Sheet / Indo / Roadmap Product Sheet - Indo.pdf`,
     symptoms: [
       {
         text: "Bleeding capital on undefined architecture and overdue projects",
@@ -243,8 +257,8 @@ export const products: ProductItem[] = [
     service: "NextGen Platforms",
     description:
       "Custom, cloud-native architectural replatforming. We replace fragile legacy systems with highly scalable, AI-integrated infrastructure built for enterprise growth.",
-    fileEng: `/Products Sheet/Eng/NextGen Platforms Product Sheet - Eng.pdf`,
-    fileIndo: `/Products Sheet/Indo/NextGen Platforms Product Sheet - Indo.pdf`,
+    fileEng: `/ Products Sheet / Eng / NextGen Platforms Product Sheet - Eng.pdf`,
+    fileIndo: `/ Products Sheet / Indo / NextGen Platforms Product Sheet - Indo.pdf`,
     symptoms: [
       {
         text: "Core features are slowing down under load",
@@ -286,8 +300,8 @@ export const products: ProductItem[] = [
     service: "The DevPod™",
     description:
       "A fully integrated, high-velocity engineering squad. Get the output of an elite development team—complete with architecture and UI/UX—without the overhead of in-house hiring.",
-    fileEng: `/Products Sheet/Eng/DevPod Product Sheet - Eng.pdf`,
-    fileIndo: `/Products Sheet/Indo/DevPod Product Sheet - Indo.pdf`,
+    fileEng: `/ Products Sheet / Eng / DevPod Product Sheet - Eng.pdf`,
+    fileIndo: `/ Products Sheet / Indo / DevPod Product Sheet - Indo.pdf`,
     symptoms: [
       {
         text: "Development velocity is too slow for your growth targets",
@@ -329,8 +343,8 @@ export const products: ProductItem[] = [
     service: "Fractional CTO (fCTO)",
     description:
       "Executive-level technical strategy. We provide the architectural governance needed to secure your infrastructure, eliminate tech debt, and confidently defend your roadmap to VCs.",
-    fileEng: `/Products Sheet/Eng/fCTO Product Sheet - Eng.pdf`,
-    fileIndo: `/Products Sheet/Indo/fCTO Product Sheet - Indo.pdf`,
+    fileEng: `/ Products Sheet / Eng / fCTO Product Sheet - Eng.pdf`,
+    fileIndo: `/ Products Sheet / Indo / fCTO Product Sheet - Indo.pdf`,
     symptoms: [
       {
         text: "Engineering decisions are reactive, not strategic",
@@ -398,7 +412,7 @@ export const testimonials: TestimonialItem[] = [
     name: "Bill Toomey",
     role: "Head of Sustainability Partnerships",
     company: "4ocean",
-    avatarUrl: `${import.meta.env.BASE_URL}Testimonials/Bill Toomey.webp`,
+    avatarUrl: `${import.meta.env.BASE_URL}Testimonials / Bill Toomey.webp`,
     quote: "You guys are a dream to work with. I've never had a project, an IT project go this smooth. We're on time. We're on budget. And we're doing so much more than we originally asked for. ... I so appreciate the work that you, Molly and your team are doing. This is going to be awesome."
   },
   {
@@ -406,7 +420,7 @@ export const testimonials: TestimonialItem[] = [
     name: "Martin Oakley",
     role: "Project Stakeholder",
     company: "Black Stump Technologies",
-    avatarUrl: `${import.meta.env.BASE_URL}Testimonials/Martin Oakley.webp`,
+    avatarUrl: `${import.meta.env.BASE_URL}Testimonials / Martin Oakley.webp`,
     quote: "The experience has been excellent from end to end. What stood out most was how proactive your team was. They didn't just implement a brief—they made practical suggestions that improved the user experience, while ensuring strong performance and a solid technical foundation."
   },
   {
@@ -414,7 +428,7 @@ export const testimonials: TestimonialItem[] = [
     name: "William (Bill) Buddle",
     role: "Manager of Application Development",
     company: "Paralucent",
-    avatarUrl: `${import.meta.env.BASE_URL}Testimonials/Bill Buddle.webp`,
+    avatarUrl: `${import.meta.env.BASE_URL}Testimonials / Bill Buddle.webp`,
     quote: "Mark brings an intensity and integrity to work that inspires those around him. He has great vision of both what stakeholders are faced with in their practices and how technology can provide a framework to optimize processes and create new business opportunities. We are willing to follow him into the frontiers of innovation."
   },
   {
@@ -422,7 +436,7 @@ export const testimonials: TestimonialItem[] = [
     name: "Viktoria Stridh",
     role: "Founder and CEO",
     company: "Freeflow",
-    avatarUrl: `${import.meta.env.BASE_URL}Testimonials/Victoria.webp`,
+    avatarUrl: `${import.meta.env.BASE_URL}Testimonials / Victoria.webp`,
     quote: "When I first approached 1zero with the vision for FreeFlow, I had a complex idea that needed structure, strategy, and the right technology partner to bring it to life. From the very beginning, Mark Treleaven and the entire 1zero team took the time to truly understand my vision and the challenges we are aiming to solve within the real estate industry. Their strategic workshops helped transform a broad concept into a clear roadmap with practical, actionable steps. They challenged my thinking in all the right ways, refined the business model, and helped shape a compelling pitch deck that clearly communicates the vision of FreeFlow. What impressed me most was not only their technical expertise, but their genuine commitment to the success of the project. They became trusted advisors, providing honest feedback, innovative solutions, and strategic guidance throughout the process. Their professionalism, creativity, and ability to simplify complex digital challenges gave me the confidence to move forward with the next stage of building FreeFlow. I highly recommend Mark Treleaven and the 1zero team to any founder or business looking for a strategic digital partner. They don't simply deliver digital solutions—they invest in understanding your vision and help turn ambitious ideas into achievable realities. I'm looking forward to future creative collaboration!"
   },
   {
@@ -430,7 +444,7 @@ export const testimonials: TestimonialItem[] = [
     name: "Francisco Gali",
     role: "President Director",
     company: "PT Phoenix IndoPacific Jaya",
-    avatarUrl: `${import.meta.env.BASE_URL}Testimonials/Francisco.webp`,
+    avatarUrl: `${import.meta.env.BASE_URL}Testimonials / Francisco.webp`,
     quote: "1zero has been instrumental in laying the foundation for our digital growth. Their expertise in developing a modern, user-friendly platform, combined with their strategic approach to SEO/GEO, technical performance, and transparent reporting, has made them a trusted digital partner. We look forward to continuing our partnership with Mark and the 1zero team as we grow our online presence and embrace new opportunities in e-commerce and agentic automation."
   }
 ];
@@ -516,9 +530,9 @@ export const customProjects = [
     description: "Pulling almost 50mil pounds of plastic from the ocean MANAGED MANUALLY! 1zero built a new digital infrastructure for Truth and Traceability.",
     bgClass: "bg-[#112240] border-blue-500/10",
     mockupType: "impact",
-    imageUrl: `${import.meta.env.BASE_URL}portofolio image/4Ocean - Impact Portal.webp`,
+    imageUrl: `${import.meta.env.BASE_URL}portofolio image / 4Ocean - Impact Portal.webp`,
     service: "DevPod",
-    url: `${import.meta.env.BASE_URL}Portfolios/Impact_Dashboard.pdf`
+    url: `${import.meta.env.BASE_URL}Portfolios / Impact_Dashboard.pdf`
   },
   {
     id: "baliteak",
@@ -526,9 +540,9 @@ export const customProjects = [
     description: "Bali-to-Canada exporter of fine craftmanship, starting their digital journey. A modern, high-speed digital portfolio showcasing custom teakwood designs and artisanal furniture catalogs.",
     bgClass: "bg-[#45301F] border-amber-500/10",
     mockupType: "baliteak",
-    imageUrl: `${import.meta.env.BASE_URL}portofolio image/BaliTeak - E-Commerce Replatform.webp`,
+    imageUrl: `${import.meta.env.BASE_URL}portofolio image / BaliTeak - E - Commerce Replatform.webp`,
     service: "NextGen Platform",
-    url: `${import.meta.env.BASE_URL}Portfolios/Bali_Teak_Redesig_Website.pdf`
+    url: `${import.meta.env.BASE_URL}Portfolios / Bali_Teak_Redesig_Website.pdf`
   },
   {
     id: "TDD",
@@ -536,7 +550,7 @@ export const customProjects = [
     description: "A highly secure healthcare portal integrating real-time translation, audio diagnostics, and clinical records.",
     bgClass: "bg-[#092218] border-emerald-500/10",
     mockupType: "tdd",
-    imageUrl: `${import.meta.env.BASE_URL}portofolio image/The Donor Dashboard.webp`,
+    imageUrl: `${import.meta.env.BASE_URL}portofolio image / The Donor Dashboard.webp`,
     service: "DevPod",
     url: `https://tirtamurninusantara.org/`
   },
