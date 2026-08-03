@@ -3,6 +3,7 @@ import { whyUsPoints } from "../data";
 import { members as teamMembers } from "./about/TeamSection";
 import { Users, CheckCircle, Flame, Target, Infinity, Video } from "lucide-react";
 import { whyUsCopy } from "../copy";
+import { Link } from "react-router-dom";
 
 // We keep onOpenBooking in the interface so App.tsx doesn't break, 
 // but we don't need to destructure it if we aren't using it here.
@@ -145,9 +146,9 @@ export default function WhyUs(props: WhyUsProps) {
                 </div>
               </div>
 
-              <a href={`${import.meta.env.BASE_URL}#about`}>
+              <Link to={`${import.meta.env.BASE_URL}about`}>
                 <p className="font-sans text-base sm:text-lg text-sea-salt/90 tracking-wider font-semibold ml-2 select-none  font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">{whyUsCopy.seeAllTeam}</p>
-              </a>
+              </Link>
             </div>
 
             {/* RIGHT: THE BENEFITS LIST */}

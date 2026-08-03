@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Routes, Route } from "react-router";
+import { Routes, Route } from "react-router-dom";
 
 import Services from "./pages/Services";
 import Hero from "./components/Hero";

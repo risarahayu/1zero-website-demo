@@ -10,7 +10,17 @@ import CtaBanner from '../components/about/CTA Banner';
 
 const AboutUs: React.FC = () => {
     useEffect(() => {
-        window.scrollTo(0, 0);
+        if (window.location.hash) {
+            const id = window.location.hash.substring(1);
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+        } else {
+            window.scrollTo(0, 0);
+        }
     }, []);
 
     // State untuk bahasa (default 'id')
@@ -24,7 +34,7 @@ const AboutUs: React.FC = () => {
     };
 
     return (
-        <div className="text-slate-50 min-h-screen overflow-x-hidden font-sans relative w-[75%] mx-auto">
+        <div className="text-slate-50 min-h-screen overflow-x-hidden font-sans relative w-[75%] mx-auto py-16">
 
             {/* Aurora Background */}
             <div className="aurora">
@@ -46,7 +56,6 @@ const AboutUs: React.FC = () => {
                 <ActivitySection />
                 <CtaBanner />
 
-                <Footer />
             </div>
 
         </div>

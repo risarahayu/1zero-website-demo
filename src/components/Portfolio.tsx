@@ -5,6 +5,7 @@ import PortfolioCard from "./PortfolioCard";
 import { portfolioCopy } from "../copy";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -103,9 +104,9 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
                   <ArrowRight className="h-4 w-4" />
                 </button>
               </div>
-              <a href={`${import.meta.env.BASE_URL}#portfolio`}>
+              <Link to={`${import.meta.env.BASE_URL}portfolio`}>
                 <p className="font-sans text-base sm:text-lg text-sea-salt/80 tracking-widest  font-semibold ml-2 select-none cursor-pointer hover:text-brunswick-green-500 hover:underline transition-all duration-300 transform active:scale-95">{portfolioCopy.seeAllText}</p>
-              </a>
+              </Link>
             </div>
 
           </div>
