@@ -172,16 +172,18 @@
   position: absolute;
   border-radius: 9999px;
   filter: blur(110px);
-  opacity: .15;
+  opacity: .1;
   mix-blend-mode: screen;
   animation: auroraFloat 5s ease-in-out infinite alternate;
 }
 
 .aurora-1 {
-  width: 520px;
-  height: 520px;
-  top: 10%;
-  left: 15%;
+  width: 700px;
+  height: 700px;
+  filter: blur(150px);
+  opacity: .1;
+  top: 6%;
+  left: 29%;
   background: var(--green-500);
 }
 
@@ -195,8 +197,10 @@
 }
 
 .aurora-3 {
-  width: 480px;
-  height: 480px;
+  width: 700px;
+  height: 700px;
+  filter: blur(150px);
+  opacity: .1;
   top: 6%;
   right: 29%;
   background: var(--green-500);
