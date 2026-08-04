@@ -9,16 +9,28 @@ export default function ContactPage() {
         window.scrollTo(0, 0);
     }, []);
 
-    // 1. State Management untuk form dan interaksinya
-    const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-    const [errors, setErrors] = useState({});
-    const [isSubmitted, setIsSubmitted] = useState(false);
+    interface FormErrors {
+        name?: string;
+        email?: string;
+        message?: string;
+    }
+    interface FormData {
+        name: string;
+        email: string;
+        message: string;
+    }
+
+    const [formData, setFormData] = useState<FormData>({
+        name: "",
+        email: "",
+        message: "",
+    }); const [errors, setErrors] = useState<FormErrors>({}); const [isSubmitted, setIsSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [formError, setFormError] = useState(""); // State for global form error
     const [honeypot, setHoneypot] = useState(""); // State for honeypot
     const [turnstileToken, setTurnstileToken] = useState(""); // State for Turnstile token
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
         // Hapus error saat user mengetik kembali
         if (errors[e.target.name]) {
@@ -26,9 +38,9 @@ export default function ContactPage() {
         }
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        let newErrors = {};
+        let newErrors: FormErrors = {};
         setFormError("");
 
         // Validasi Sederhana
@@ -73,6 +85,12 @@ export default function ContactPage() {
                     templateParams,
                     import.meta.env.VITE_EMAILJS_PUBLIC_KEY
                 );
+
+                // console.log(import.meta.env);
+
+                // console.log("SERVICE:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
+                // console.log("TEMPLATE:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+                // console.log("PUBLIC:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
                 if (response.status === 200) {
                     setIsSubmitted(true);
