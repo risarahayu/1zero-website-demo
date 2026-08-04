@@ -530,9 +530,9 @@ export const customProjects = [
     description: "Pulling almost 50mil pounds of plastic from the ocean MANAGED MANUALLY! 1zero built a new digital infrastructure for Truth and Traceability.",
     bgClass: "bg-[#112240] border-blue-500/10",
     mockupType: "impact",
-    imageUrl: `${import.meta.env.BASE_URL}portofolio image / 4Ocean - Impact Portal.webp`,
+    imageUrl: `${import.meta.env.BASE_URL}portofolio image/4Ocean - Impact Portal.webp`,
     service: "DevPod",
-    url: `${import.meta.env.BASE_URL}Portfolios / Impact_Dashboard.pdf`
+    url: `${import.meta.env.BASE_URL}Portfolios/Impact_Dashboard.pdf`
   },
   {
     id: "baliteak",
@@ -540,9 +540,9 @@ export const customProjects = [
     description: "Bali-to-Canada exporter of fine craftmanship, starting their digital journey. A modern, high-speed digital portfolio showcasing custom teakwood designs and artisanal furniture catalogs.",
     bgClass: "bg-[#45301F] border-amber-500/10",
     mockupType: "baliteak",
-    imageUrl: `${import.meta.env.BASE_URL}portofolio image / BaliTeak - E - Commerce Replatform.webp`,
+    imageUrl: `${import.meta.env.BASE_URL}portofolio image/BaliTeak - E-Commerce Replatform.webp`,
     service: "NextGen Platform",
-    url: `${import.meta.env.BASE_URL}Portfolios / Bali_Teak_Redesig_Website.pdf`
+    url: `${import.meta.env.BASE_URL}Portfolios/Bali_Teak_Redesig_Website.pdf`
   },
   {
     id: "TDD",
@@ -550,7 +550,7 @@ export const customProjects = [
     description: "A highly secure healthcare portal integrating real-time translation, audio diagnostics, and clinical records.",
     bgClass: "bg-[#092218] border-emerald-500/10",
     mockupType: "tdd",
-    imageUrl: `${import.meta.env.BASE_URL}portofolio image / The Donor Dashboard.webp`,
+    imageUrl: `${import.meta.env.BASE_URL}portofolio image/The Donor Dashboard.webp`,
     service: "DevPod",
     url: `https://tirtamurninusantara.org/`
   },
