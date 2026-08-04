@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { PortfolioCardProps, Project } from "../types";
+import { ImageIcon } from "lucide-react";
 
 const getServiceColorClass = (service: string) => {
   const s = service.toLowerCase();
@@ -24,6 +25,9 @@ const getServiceColorClass = (service: string) => {
 
 
 export default function PortfolioCard({ setIsPaused, project, onReadMore, className = "", showService = true, isHighlighted = false }: PortfolioCardProps) {
+  // loading image
+  const [imageLoading, setImageLoading] = useState(true);
+
   const handleReadMore = () => {
     if (project.url) {
       window.open(project.url, "_blank", "noopener,noreferrer");
@@ -62,10 +66,20 @@ export default function PortfolioCard({ setIsPaused, project, onReadMore, classN
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:20px_20px]" />
 
         {/* Real project screenshot */}
+        {imageLoading && (
+          <div className="absolute inset-0 overflow-hidden rounded-2xl bg-brunswick-green-900/10">
+            <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-brunswick-green-800/20 via-brunswick-green-500/35 to-brunswick-green-800/20" />
+
+            <div className="absolute inset-0 flex items-center justify-center">
+              <ImageIcon className="h-10 w-10 text-sea-salt/30" />
+            </div>
+          </div>
+        )}
         <img
           src={project.imageUrl}
           alt={project.title}
-          className="absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
+          onLoad={() => setImageLoading(false)}
+          className={`absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-105 group-hover:brightness-110 ${imageLoading ? "opacity-0" : "opacity-100"}`}
         />
         {/* Gradient overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

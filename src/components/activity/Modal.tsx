@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Activity } from "../../types";
 import { previousItem, nextItem, formatDateRange } from "../../ulitity/activityUtils";
-import { ArrowLeft, ArrowRight, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, ImageIcon, X } from "lucide-react";
 import { SeeAllCard } from "./SeeAllCard";
 import { Icon } from "@iconify/react";
 
@@ -121,13 +121,19 @@ export function ActivityModal({
                                         {/* Image Slider */}
                                         <div className="relative w-full h-[250px] sm:h-[350px] overflow-hidden rounded-2xl border border-sea-salt/10">
                                             {imageLoading && (
-                                                <div className="absolute inset-0 animate-pulse bg-sea-salt/10" />
+                                                <div className="absolute inset-0 overflow-hidden rounded-2xl bg-brunswick-green-900/10">
+                                                    <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-brunswick-green-800/20 via-brunswick-green-500/35 to-brunswick-green-800/20" />
+
+                                                    <div className="absolute inset-0 flex items-center justify-center">
+                                                        <ImageIcon className="h-10 w-10 text-sea-salt/30" />
+                                                    </div>
+                                                </div>
                                             )}
                                             <img
                                                 src={selectedItem.photos[galleryIndex]}
                                                 alt={`${selectedItem.title} - ${galleryIndex + 1}`}
                                                 onLoad={() => setImageLoading(false)}
-                                                className={`absolute inset-0 h-full w-full object-cover animate-in fade-in ${imageLoading ? "opacity-0" : "opacity-100"}`}
+                                                className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${imageLoading ? "opacity-0" : "opacity-100"}`}
                                             />
                                         </div>
                                         {/* Navigation Arrows */}
@@ -152,7 +158,13 @@ export function ActivityModal({
                                     <div className="w-full space-y-4">
                                         <div className="relative w-full h-[250px] sm:h-[350px] overflow-hidden rounded-2xl border border-sea-salt/10">
                                             {imageLoading && (
-                                                <div className="absolute inset-0 animate-pulse bg-sea-salt/10" />
+                                                <div className="absolute inset-0 overflow-hidden rounded-2xl bg-brunswick-green-900/10">
+                                                    <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-brunswick-green-800/20 via-brunswick-green-500/35 to-brunswick-green-800/20" />
+
+                                                    <div className="absolute inset-0 flex items-center justify-center">
+                                                        <ImageIcon className="h-10 w-10 text-sea-salt/30" />
+                                                    </div>
+                                                </div>
                                             )}
                                             <img
                                                 src={selectedItem.photos[0]}
