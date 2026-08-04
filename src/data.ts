@@ -412,7 +412,7 @@ export const testimonials: TestimonialItem[] = [
     name: "Bill Toomey",
     role: "Head of Sustainability Partnerships",
     company: "4ocean",
-    avatarUrl: `${import.meta.env.BASE_URL}Testimonials / Bill Toomey.webp`,
+    avatarUrl: `${import.meta.env.BASE_URL}Testimonials/Bill Toomey.webp`,
     quote: "You guys are a dream to work with. I've never had a project, an IT project go this smooth. We're on time. We're on budget. And we're doing so much more than we originally asked for. ... I so appreciate the work that you, Molly and your team are doing. This is going to be awesome."
   },
   {
@@ -420,7 +420,7 @@ export const testimonials: TestimonialItem[] = [
     name: "Martin Oakley",
     role: "Project Stakeholder",
     company: "Black Stump Technologies",
-    avatarUrl: `${import.meta.env.BASE_URL}Testimonials / Martin Oakley.webp`,
+    avatarUrl: `${import.meta.env.BASE_URL}Testimonials/Martin Oakley.webp`,
     quote: "The experience has been excellent from end to end. What stood out most was how proactive your team was. They didn't just implement a brief—they made practical suggestions that improved the user experience, while ensuring strong performance and a solid technical foundation."
   },
   {
@@ -428,7 +428,7 @@ export const testimonials: TestimonialItem[] = [
     name: "William (Bill) Buddle",
     role: "Manager of Application Development",
     company: "Paralucent",
-    avatarUrl: `${import.meta.env.BASE_URL}Testimonials / Bill Buddle.webp`,
+    avatarUrl: `${import.meta.env.BASE_URL}Testimonials/Bill Buddle.webp`,
     quote: "Mark brings an intensity and integrity to work that inspires those around him. He has great vision of both what stakeholders are faced with in their practices and how technology can provide a framework to optimize processes and create new business opportunities. We are willing to follow him into the frontiers of innovation."
   },
   {
@@ -436,7 +436,7 @@ export const testimonials: TestimonialItem[] = [
     name: "Viktoria Stridh",
     role: "Founder and CEO",
     company: "Freeflow",
-    avatarUrl: `${import.meta.env.BASE_URL}Testimonials / Victoria.webp`,
+    avatarUrl: `${import.meta.env.BASE_URL}Testimonials/Victoria.webp`,
     quote: "When I first approached 1zero with the vision for FreeFlow, I had a complex idea that needed structure, strategy, and the right technology partner to bring it to life. From the very beginning, Mark Treleaven and the entire 1zero team took the time to truly understand my vision and the challenges we are aiming to solve within the real estate industry. Their strategic workshops helped transform a broad concept into a clear roadmap with practical, actionable steps. They challenged my thinking in all the right ways, refined the business model, and helped shape a compelling pitch deck that clearly communicates the vision of FreeFlow. What impressed me most was not only their technical expertise, but their genuine commitment to the success of the project. They became trusted advisors, providing honest feedback, innovative solutions, and strategic guidance throughout the process. Their professionalism, creativity, and ability to simplify complex digital challenges gave me the confidence to move forward with the next stage of building FreeFlow. I highly recommend Mark Treleaven and the 1zero team to any founder or business looking for a strategic digital partner. They don't simply deliver digital solutions—they invest in understanding your vision and help turn ambitious ideas into achievable realities. I'm looking forward to future creative collaboration!"
   },
   {
@@ -444,7 +444,7 @@ export const testimonials: TestimonialItem[] = [
     name: "Francisco Gali",
     role: "President Director",
     company: "PT Phoenix IndoPacific Jaya",
-    avatarUrl: `${import.meta.env.BASE_URL}Testimonials / Francisco.webp`,
+    avatarUrl: `${import.meta.env.BASE_URL}Testimonials/Francisco.webp`,
     quote: "1zero has been instrumental in laying the foundation for our digital growth. Their expertise in developing a modern, user-friendly platform, combined with their strategic approach to SEO/GEO, technical performance, and transparent reporting, has made them a trusted digital partner. We look forward to continuing our partnership with Mark and the 1zero team as we grow our online presence and embrace new opportunities in e-commerce and agentic automation."
   }
 ];
@@ -540,7 +540,7 @@ export const customProjects = [
     description: "Bali-to-Canada exporter of fine craftmanship, starting their digital journey. A modern, high-speed digital portfolio showcasing custom teakwood designs and artisanal furniture catalogs.",
     bgClass: "bg-[#45301F] border-amber-500/10",
     mockupType: "baliteak",
-    imageUrl: `${import.meta.env.BASE_URL}portofolio image/BaliTeak - E-Commerce Replatform.webp`,
+    imageUrl: `${import.meta.env.BASE_URL}portofolio image/BaliTeak-E-Commerce Replatform.webp`,
     service: "NextGen Platform",
     url: `${import.meta.env.BASE_URL}Portfolios/Bali_Teak_Redesig_Website.pdf`
   },

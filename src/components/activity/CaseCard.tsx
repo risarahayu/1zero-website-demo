@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Activity } from "../../types";
 import { formatDateRange } from "../../ulitity/activityUtils";
+import { ImageIcon } from "lucide-react";
 
 export function CaseCard({
   item,
@@ -17,6 +18,8 @@ export function CaseCard({
   setIsPaused: React.Dispatch<React.SetStateAction<boolean>>;
   className?: string;
 }) {
+  // loading image
+  const [imageLoading, setImageLoading] = useState(true);
 
   return (
     <div
@@ -36,11 +39,25 @@ export function CaseCard({
         <div className="space-y-4 flex-1 pointer-events-none">
           <div className="relative h-[180px] w-full overflow-hidden rounded-2xl bg-sea-salt/6 border border-sea-salt/60 flex items-end p-4">
             {item.photos ? (
-              <img
-                src={item.photos[0]}
-                alt={item.title}
-                className="absolute inset-0 h-full w-full object-cover"
-              />
+              <>
+                {imageLoading && (
+                  <div className="absolute inset-0 overflow-hidden rounded-2xl bg-brunswick-green-900/10">
+                    <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-brunswick-green-800/20 via-brunswick-green-500/35 to-brunswick-green-800/20" />
+
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <ImageIcon className="h-10 w-10 text-sea-salt/30" />
+                    </div>
+                  </div>
+                )}
+
+                <img
+                  src={item.photos[0]}
+                  alt={item.title}
+                  onLoad={() => setImageLoading(false)}
+                  className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${imageLoading ? "opacity-0" : "opacity-100"
+                    }`}
+                />
+              </>
             ) : (
               <>
                 {/* Decorative grid */}
