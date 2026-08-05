@@ -127,3 +127,26 @@
     width: max-content;
     animation: marqueeReverse 20s linear infinite;
 }
+
+/* Pagination carouse header */
+.hero-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    justify-self: center;
+}
+
+.hero-pagination .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, .3);
+    opacity: 1;
+    transition: all .3s ease;
+}
+
+.hero-pagination .swiper-pagination-bullet-active {
+    width: 24px;
+    border-radius: 999px;
+    background: var(--color-brunswick-green-500);
+}

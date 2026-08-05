@@ -1,5 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperType } from "swiper";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 import { aboutCopy } from '../../copy';
 
 interface HeroAboutProps {
@@ -76,14 +80,11 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
         return () => clearInterval(interval);
     }, []);
 
+    const swiperRef = useRef<SwiperType | null>(null);
+
+
     return (
         <>
-            <style>{`
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-      `}</style>
-
             <header className="max-w-7xl mx-auto px-10 py-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center" >
                 <div className="space-y-10 ">
                     <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
@@ -98,58 +99,76 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                         </p>
                     </div>
                 </div>
-
+                <style>{`
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        `}</style>
                 <div className="relative group">
-                    <div
-                        ref={carouselRef}
-                        onScroll={handleScroll}
-                        className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-6 pb-10 px-[20%]"
+                    <Swiper
+                        className="w-full py-10 h-auto"
+                        modules={[Autoplay, Pagination]}
+                        pagination={{
+                            clickable: true,
+                            el: ".hero-pagination",
+                        }}
+                        loop={false}
+                        // centeredSlides
+                        grabCursor
+                        speed={700}
+                        spaceBetween={12}
+                        slidesPerView="auto"
+                        autoplay={{
+                            delay: 4000,
+                            disableOnInteraction: false,
+                        }}
+                        onSwiper={(swiper) => {
+                            swiperRef.current = swiper;
+                        }}
+
+                        onSlideChange={(swiper) => {
+                            setActiveIndex(swiper.realIndex);
+                        }}
+
+
                     >
-                        {/* Value Card 1 */}
-                        <div className="min-w-[300px] snap-center text-start space-y-6 group relative flex flex-col justify-between p-6 rounded-3xl border border-brunswick-green-500  hover:border-brunswick-green-900 transition-all duration-300 shadow-2xl overflow-hidden cursor-pointer backdrop-blur bg-sea-salt/6">
-                            <div className="absolute top-0 right-0 p-6 opacity-10 text-6xl"><i className="fas fa-globe-asia"></i></div>
-                            <div className="w-12 h-12 rounded-xl bg-sea-salt/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-xl mb-6 shadow-lg shadow-indigo-500/10">
-                                <i className="fas fa-globe-asia"></i>
+                        <SwiperSlide className="!w-[200px] md:!w-[350px] !h-auto">
+                            {/* Value Card 1 */}
+                            <div className="flex-shrink-0 h-full   snap-center text-start space-y-6 group relative flex flex-col  p-6 rounded-3xl border border-brunswick-green-500  hover:border-brunswick-green-900 transition-all duration-300 shadow-2xl overflow-hidden cursor-pointer backdrop-blur bg-sea-salt/6">
+                                <div className="absolute top-0 right-0 p-6 opacity-10 text-6xl"><i className="fas fa-globe-asia"></i></div>
+                                <div className="w-12 h-12 rounded-xl bg-sea-salt/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-xl  shadow-lg shadow-indigo-500/10">
+                                    <i className="fas fa-globe-asia"></i>
+                                </div>
+                                <h3 className="font-sans text-2xl sm:text-3xl font-bold mb-4">{t.v1t}</h3>
+                                <p className="text-sea-salt/90 text-base sm:text-lg ">{t.v1d}</p>
                             </div>
-                            <h3 className="font-sans text-2xl sm:text-3xl font-bold mb-4">{t.v1t}</h3>
-                            <p className="text-sea-salt/90 text-base sm:text-lg ">{t.v1d}</p>
-                        </div>
-
-                        {/* Value Card 2 */}
-                        <div className="min-w-[300px] snap-center text-start space-y-6 group relative flex flex-col justify-between p-6 rounded-3xl border border-brunswick-green-500  hover:border-brunswick-green-900 transition-all duration-300 shadow-2xl overflow-hidden cursor-pointer backdrop-blur bg-sea-salt/6">
-                            <div className="absolute top-0 right-0 p-6 opacity-10 text-6xl"><i className="fas fa-wifi"></i></div>
-                            <div className="w-12 h-12 rounded-xl bg-sea-salt/20 border border-brunswick-green-500/30 flex items-center justify-center text-brunswick-green-500 text-xl mb-6 shadow-lg shadow-brunswick-green-500/10">
-                                <i className="fas fa-wifi"></i>
+                        </SwiperSlide>
+                        <SwiperSlide className="!w-[200px] md:!w-[350px] !h-auto">
+                            {/* Value Card 2 */}
+                            <div className="flex-shrink-0 h-full   snap-center text-start space-y-6 group relative flex flex-col  p-6 rounded-3xl border border-brunswick-green-500  hover:border-brunswick-green-900 transition-all duration-300 shadow-2xl overflow-hidden cursor-pointer backdrop-blur bg-sea-salt/6">
+                                <div className="absolute top-0 right-0 p-6 opacity-10 text-6xl"><i className="fas fa-wifi"></i></div>
+                                <div className="w-12 h-12 rounded-xl bg-sea-salt/20 border border-brunswick-green-500/30 flex items-center justify-center text-brunswick-green-500 text-xl  shadow-lg shadow-brunswick-green-500/10">
+                                    <i className="fas fa-wifi"></i>
+                                </div>
+                                <h3 className="font-sans text-2xl sm:text-3xl font-bold mb-4">{t.v2t}</h3>
+                                <p className="text-sea-salt/90 text-base sm:text-lg ">{t.v2d}</p>
                             </div>
-                            <h3 className="font-sans text-2xl sm:text-3xl font-bold mb-4">{t.v2t}</h3>
-                            <p className="text-sea-salt/90 text-base sm:text-lg ">{t.v2d}</p>
-                        </div>
-
-                        {/* Value Card 3 */}
-                        <div className="min-w-[300px] snap-center text-start space-y-6 group relative flex flex-col justify-between p-6 rounded-3xl border border-brunswick-green-500  hover:border-brunswick-green-900 transition-all duration-300 shadow-2xl overflow-hidden cursor-pointer backdrop-blur bg-sea-salt/6">
-                            <div className="absolute top-0 right-0 p-6 opacity-10 text-6xl"><i className="fas fa-leaf"></i></div>
-                            <div className="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-pink-400 text-xl mb-6 shadow-lg shadow-pink-500/10">
-                                <i className="fas fa-leaf"></i>
+                        </SwiperSlide>
+                        <SwiperSlide className="!w-[200px] md:!w-[350px] !h-auto">
+                            {/* Value Card 3 */}
+                            <div className="flex-shrink-0 h-full   snap-center text-start space-y-6 group relative flex flex-col  p-6 rounded-3xl border border-brunswick-green-500  hover:border-brunswick-green-900 transition-all duration-300 shadow-2xl overflow-hidden cursor-pointer backdrop-blur bg-sea-salt/6">
+                                <div className="absolute top-0 right-0 p-6 opacity-10 text-6xl"><i className="fas fa-leaf"></i></div>
+                                <div className="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-pink-400 text-xl  shadow-lg shadow-pink-500/10">
+                                    <i className="fas fa-leaf"></i>
+                                </div>
+                                <h3 className="font-sans text-2xl sm:text-3xl font-bold mb-4">{t.v3t}</h3>
+                                <p className="text-sea-salt/90 text-base sm:text-lg ">{t.v3d}</p>
                             </div>
-                            <h3 className="font-sans text-2xl sm:text-3xl font-bold mb-4">{t.v3t}</h3>
-                            <p className="text-sea-salt/90 text-base sm:text-lg ">{t.v3d}</p>
-                        </div>
-                    </div>
-
-                    {/* Dynamic Clickable Dots */}
-                    <div className="flex gap-2 mt-4 justify-center">
-                        {[0, 1, 2].map((idx) => (
-                            <button
-                                key={idx}
-                                onClick={() => scrollToCard(idx)}
-                                className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${activeIndex === idx ? 'bg-brunswick-green-500 w-6' : 'bg-sea-salt/20 hover:bg-sea-salt/40 w-2'
-                                    }`}
-                                aria-label={`Go to slide ${idx + 1}`}
-                            />
-                        ))}
-                    </div>
+                        </SwiperSlide>
+                    </Swiper>
+                    <div className="hero-pagination"></div>
                 </div>
-            </header>
+            </header >
         </>
     );
 };
