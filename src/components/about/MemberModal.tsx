@@ -26,7 +26,7 @@ export default function MemberModal(
         <>
             {/* MODAL ONLY MOBILE + TABLET */}
             {selectedMember && !isDesktop && (
-                <div className="fixed inset-0 z-[1000] flex items-center justify-center  p-6">
+                <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-raisin-black-900/80 backdrop-blur-sm p-6">
                     {handleModalPrev && (
                         <>
                             {/* Prev Arrow */}
