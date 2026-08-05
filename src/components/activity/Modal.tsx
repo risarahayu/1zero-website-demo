@@ -53,7 +53,7 @@ export function ActivityModal({
                     onClick={() => setSelectedItem(null)} // close modal when click overlay background
                 >
                     <div
-                        className="relative w-full max-w-2xl overflow-hidden rounded-3xl bg-raisin-black-800 border border-sea-salt/20 p-6 sm:p-8"
+                        className="relative w-full max-w-2xl max-h-[80vh] mt-[20px] custom-scrollbar overflow-y-auto rounded-3xl bg-raisin-black-800 border border-sea-salt/20 p-6 sm:p-8"
                         onClick={(e) => e.stopPropagation()} //prevent close modal when click modal background
                     >
 

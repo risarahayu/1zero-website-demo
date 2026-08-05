@@ -7,6 +7,8 @@ import { whyUsCopy } from "../copy";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import MemberModal from "./about/MemberModal";
+import { handleSDGClick } from '../ulitity/sdgUtils';
+
 
 // We keep onOpenBooking in the interface so App.tsx doesn't break, 
 // but we don't need to destructure it if we aren't using it here.
@@ -197,6 +199,7 @@ export default function WhyUs(props: WhyUsProps) {
         selectedMember={selectedMember}
         setSelectedMember={setSelectedMember}
         Icon={Icon}
+        handleSDGClick={handleSDGClick}
       />
     </section>
   );

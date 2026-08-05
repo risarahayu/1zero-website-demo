@@ -9,6 +9,7 @@ export default function MemberModal(
         setIsPaused,
         setSelectedIndex,
         handleModalNext,
+        handleSDGClick,
     }: {
         selectedMember: TeamMember | null;
         setSelectedMember: (member: TeamMember | null) => void;
@@ -18,13 +19,14 @@ export default function MemberModal(
         setIsPaused?: (paused: boolean) => void;
         setSelectedIndex?: (index: number) => void;
         handleModalNext?: () => void;
+        handleSDGClick: (id: number) => void;
     }
 ) {
     return (
         <>
             {/* MODAL ONLY MOBILE + TABLET */}
             {selectedMember && !isDesktop && (
-                <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-raisin-black-900/80 backdrop-blur-sm p-6">
+                <div className="fixed inset-0 z-[1000] flex items-center justify-center  p-6">
                     {handleModalPrev && (
                         <>
                             {/* Prev Arrow */}
@@ -54,7 +56,7 @@ export default function MemberModal(
 
 
                         {/* Layout */}
-                        <div className="grid md:grid-cols-[240px_1fr]">
+                        <div className="grid md:grid-cols-[240px_1fr] bg-raisin-black-900/80 backdrop-blur-sm bg-gradient-to-t md:bg-gradient-to-r from-raisin-black-900/60 via-transparent to-transparent">
 
                             {/* Image */}
                             <div className="relative h-64 md:h-full">
@@ -64,7 +66,7 @@ export default function MemberModal(
                                 />
 
                                 {/* gradient overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-transparent to-transparent" />
+                                <div className="absolute inset-0 " />
                             </div>
 
                             {/* Content */}
@@ -76,7 +78,7 @@ export default function MemberModal(
                                         {selectedMember.name}
                                     </h3>
 
-                                    <p className="text-raisin-black-900-400">
+                                    <p className="">
                                         {selectedMember.role}
                                     </p>
                                 </div>
@@ -154,7 +156,7 @@ export default function MemberModal(
                                                 src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(sdg.id).padStart(2, "0")}.png`}
                                                 alt={`SDG ${sdg.id}`}
                                                 className="w-16 h-16 object-contain cursor-pointer hover:scale-110 transition rounded"
-                                                onClick={() => setSelectedIndex(index)}
+                                                onClick={() => handleSDGClick(sdg.id)}
                                             />
                                         ))}
                                     </div>
