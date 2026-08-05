@@ -1,3 +1,4 @@
+import { TeamMember } from "./TeamSection";
 export default function MemberModal(
     {
         selectedMember,
@@ -7,7 +8,16 @@ export default function MemberModal(
         Icon,
         setIsPaused,
         setSelectedIndex,
-        handleModalNext
+        handleModalNext,
+    }: {
+        selectedMember: TeamMember | null;
+        setSelectedMember: (member: TeamMember | null) => void;
+        handleModalPrev?: () => void;
+        isDesktop?: boolean;
+        Icon: any;
+        setIsPaused?: (paused: boolean) => void;
+        setSelectedIndex?: (index: number) => void;
+        handleModalNext?: () => void;
     }
 ) {
     return (
@@ -15,15 +25,18 @@ export default function MemberModal(
             {/* MODAL ONLY MOBILE + TABLET */}
             {selectedMember && !isDesktop && (
                 <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-raisin-black-900/80 backdrop-blur-sm p-6">
-
-                    {/* Prev Arrow */}
-                    <button
-                        onClick={handleModalPrev}
-                        className="absolute left-2 z-20 w-10 h-10 rounded-full bg-brunswick-green-900/80 hover:bg-brunswick-green-500 text-sea-salt flex items-center justify-center text-2xl transition-all duration-200 shadow-lg"
-                        aria-label="Previous member"
-                    >
-                        <Icon icon="mdi:chevron-left" width="24" />
-                    </button>
+                    {handleModalPrev && (
+                        <>
+                            {/* Prev Arrow */}
+                            < button
+                                onClick={handleModalPrev}
+                                className="absolute left-2 z-20 w-10 h-10 rounded-full bg-brunswick-green-900/80 hover:bg-brunswick-green-500 text-sea-salt flex items-center justify-center text-2xl transition-all duration-200 shadow-lg"
+                                aria-label="Previous member"
+                            >
+                                <Icon icon="mdi:chevron-left" width="24" />
+                            </button>
+                        </>
+                    )}
 
                     <div className="relative w-full max-w-2xl rounded-2xl overflow-hidden border border-brunswick-green-900 bg-raisin-black-900-950 shadow-2xl mt-[138px]">
 
@@ -33,7 +46,7 @@ export default function MemberModal(
                                 setSelectedMember(null);
                                 setIsPaused(false);
                             }}
-                            className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-raisin-black-900/60 hover:bg-raisin-black-900/60 text-sea-salt flex items-center justify-center transition"
+                            className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-raisin-black-900/60 hover:bg-raisin-black-900/60 text-sea-salt flex items-center justify-center transition cursor-pointer"
                         >
                             ✕
                         </button>
@@ -93,7 +106,7 @@ export default function MemberModal(
                                                 href={selectedMember.socialMediaAccounts.linkedin.url}
                                                 target="_blank"
                                                 rel="noreferrer"
-                                                className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
+                                                className="flex items-center gap-1 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
                                             >
                                                 <Icon icon="mdi:linkedin" width="20" />
                                                 <span>LinkedIn</span>
@@ -105,7 +118,7 @@ export default function MemberModal(
                                                 href={selectedMember.socialMediaAccounts.github.url}
                                                 target="_blank"
                                                 rel="noreferrer"
-                                                className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
+                                                className="flex items-center gap-1 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
                                             >
                                                 <Icon icon="mdi:github" width="20" />
                                                 <span>GitHub</span>
@@ -117,7 +130,7 @@ export default function MemberModal(
                                                 href={selectedMember.socialMediaAccounts.dribble.url}
                                                 target="_blank"
                                                 rel="noreferrer"
-                                                className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
+                                                className="flex items-center gap-1 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
                                             >
                                                 <Icon icon="mdi:dribbble" width="20" />
                                                 <span>Dribbble</span>
@@ -161,7 +174,7 @@ export default function MemberModal(
                         <Icon icon="mdi:chevron-right" width="24" />
                     </button>
 
-                </div>
+                </div >
             )
             }
         </>

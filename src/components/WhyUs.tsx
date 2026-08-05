@@ -1,9 +1,12 @@
-import React from "react";
+import { useState } from "react";
 import { whyUsPoints } from "../data";
 import { members as teamMembers } from "./about/TeamSection";
+import { TeamMember } from "./about/TeamSection";
 import { Users, CheckCircle, Flame, Target, Infinity, Video } from "lucide-react";
 import { whyUsCopy } from "../copy";
 import { Link } from "react-router-dom";
+import { Icon } from "@iconify/react";
+import MemberModal from "./about/MemberModal";
 
 // We keep onOpenBooking in the interface so App.tsx doesn't break, 
 // but we don't need to destructure it if we aren't using it here.
@@ -27,6 +30,14 @@ export default function WhyUs(props: WhyUsProps) {
         return <CheckCircle className="h-5 w-5 text-brunswick-green-500" />;
     }
   };
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+  const handleModalPrev = () => {
+    const currentIdx = teamMembers.findIndex((m) => m.name === selectedMember?.name);
+    const prevIdx = (currentIdx - 1 + teamMembers.length) % teamMembers.length;
+    setSelectedMember(teamMembers[prevIdx]);
+    setActiveIdx(prevIdx);
+  };
+
 
   return (
     <section id="why-us" className="relative py-16 bg-raisin-black-900">
@@ -42,9 +53,7 @@ export default function WhyUs(props: WhyUsProps) {
             <h2 className="font-sans text-3xl leading-normal sm:text-5xl sm:leading-normal font-bold text-sea-salt">
               {whyUsCopy.titleLine1} <br /> {whyUsCopy.titleLine2}
             </h2>
-            {/* <p className="max-w-2xl font-sans text-base sm:text-lg text-sea-salt/90 justify-self-center">
-              {whyUsCopy.description}
-            </p> */}
+
           </div>
 
 
@@ -52,25 +61,26 @@ export default function WhyUs(props: WhyUsProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
 
             {/* LEFT: THE INTERACTIVE VIDEO CALL MOCKUP */}
-            <div className="lg:col-span-5 flex flex-col justify-between rounded-3xl border border-sea-salt/20 bg-raisin-black-900/60 p-5 shadow-2xl relative space-y-4">
+            <div className="lg:col-span-5 flex flex-col justify-between rounded-3xl border border-sea-salt/20 bg-raisin-black-900/60 p-5 shadow-2xl relative space-y-4 h-auto">
               {/* Header bar */}
               <div className="flex items-center justify-between pb-3 border-b border-sea-salt/20 text-lg font-sans text-sea-salt">
                 <div className="flex items-center gap-2">
                   <span className="text-sea-salt font-medium">{whyUsCopy.meetOurTeam}</span>
                 </div>
-                <div className="flex items-center gap-1.5  px-2 py-0.5 rounded text-lg">
-                  <Video className="h-3 w-3 text-brunswick-green-500" />
-                </div>
+                <Link to={`${import.meta.env.BASE_URL}about`} >
+                  <p className="font-sans text-base sm:text-lg text-sea-salt/90 tracking-wider font-semibold ml-2 select-none  font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">{whyUsCopy.seeAllTeam}</p>
+                </Link>
               </div>
 
               {/* Video participants marquee */}
-              <div className="flex flex-col gap-3 flex-1 overflow-hidden relative w-full pb-2">
+              <div className="flex flex-col gap-3 flex-1 overflow-hidden relative w-full justify-center">
                 {/* Row 1: Right to Left */}
-                <div className="flex gap-3 animate-marquee w-max">
+                <div className="flex gap-3 animate-marquee w-max h-full ">
                   {[...teamMembers.slice(0, 4), ...teamMembers.slice(0, 4)].map((member, idx) => (
-                    <div
+                    <button
                       key={`row1-${idx}`}
-                      className="relative w-40 h-40 shrink-0 rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 "
+                      onClick={() => setSelectedMember(member)}
+                      className="group relative w-40 h-40 h-full shrink-0 cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 hover:border-brunswick-green-500"
                     >
                       <div className="relative h-1/2 w-1/2 rounded-xl overflow-hidden border border-sea-salt self-center">
                         <img
@@ -84,7 +94,7 @@ export default function WhyUs(props: WhyUsProps) {
                       {/* Indicators */}
                       <div className="space-y-1.5 mt-auto z-10 pt-2 bg-gradient-to-t from-black via-black/80 to-transparent">
                         <div className="flex items-center justify-between">
-                          <span className="block font-sans text-base font-bold text-sea-salt/90 tracking-wide truncate">
+                          <span className="block font-sans text-base font-bold text-sea-salt/90 tracking-wide truncate group-hover:text-brunswick-green-500 transition-colors duration-300">
                             {member.name}
                           </span>
 
@@ -101,16 +111,17 @@ export default function WhyUs(props: WhyUsProps) {
                           <span>{member.role}</span>
                         </div>
                       </div>
-                    </div>
+                    </button>
                   ))}
                 </div>
 
                 {/* Row 2: Left to Right */}
-                <div className="flex gap-3 animate-marquee-reverse w-max">
+                <div className="flex gap-3 animate-marquee-reverse w-max h-full ">
                   {[...teamMembers.slice(4, 8), ...teamMembers.slice(4, 8)].map((member, idx) => (
-                    <div
+                    <button
                       key={`row2-${idx}`}
-                      className="relative w-40 h-40 shrink-0 rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 "
+                      onClick={() => setSelectedMember(member)}
+                      className="group relative w-40 h-40 h-full shrink-0 cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 hover:border-brunswick-green-500 "
                     >
                       <div className="relative h-1/2 w-1/2 rounded-xl overflow-hidden border border-sea-salt self-center">
                         <img
@@ -122,9 +133,9 @@ export default function WhyUs(props: WhyUsProps) {
                       </div>
 
                       {/* Indicators */}
-                      <div className="space-y-1.5 mt-auto z-10 pt-2 bg-gradient-to-t from-black via-black/80 to-transparent">
+                      <div className="group space-y-1.5 mt-auto z-10 pt-2 bg-gradient-to-t from-black via-black/80 to-transparent">
                         <div className="flex items-center justify-between">
-                          <span className="block font-sans text-base font-bold text-sea-salt/90 tracking-wide truncate">
+                          <span className="block font-sans text-base font-bold text-sea-salt/90 tracking-wide truncate group-hover:text-brunswick-green-500 transition-colors duration-300">
                             {member.name}
                           </span>
 
@@ -141,14 +152,12 @@ export default function WhyUs(props: WhyUsProps) {
                           <span>{member.role}</span>
                         </div>
                       </div>
-                    </div>
+                    </button>
                   ))}
                 </div>
               </div>
 
-              <Link to={`${import.meta.env.BASE_URL}about`}>
-                <p className="font-sans text-base sm:text-lg text-sea-salt/90 tracking-wider font-semibold ml-2 select-none  font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">{whyUsCopy.seeAllTeam}</p>
-              </Link>
+
             </div>
 
             {/* RIGHT: THE BENEFITS LIST */}
@@ -178,19 +187,17 @@ export default function WhyUs(props: WhyUsProps) {
                   <span className="block text-lg font-semibold text-sea-salt/90">{whyUsCopy.reassuranceTitle}</span>
                   <span className="block text-lg text-sea-salt/80 uppercase tracking-widest font-sans">{whyUsCopy.reassuranceSub}</span>
                 </div>
-                {/* <button
-                id="why-us-booking-btn"
-                onClick={onOpenBooking}
-                className="p-3 px-6 rounded-xl bg-brunswick-green-900 hover:bg-brunswick-green-600 text-black font-sans font-medium text-lg transition-colors cursor-pointer block text-center shadow-lg"
-              >
-                Hire Our Unit &rarr;
-              </button> */}
               </div>
             </div>
 
           </div>
         </div>
       </div>
+      <MemberModal
+        selectedMember={selectedMember}
+        setSelectedMember={setSelectedMember}
+        Icon={Icon}
+      />
     </section>
   );
 }

@@ -550,7 +550,7 @@ const TeamSection: React.FC = () => {
                 {/* DESKTOP GRID */}
                 <div className="hidden lg:grid grid-cols-4 gap-6 pb-4">
                     {members.map((member, idx) => (
-                        <div
+                        <a
                             key={idx}
                             className={`min-w-[200px] p-4 rounded-lg text-start cursor-pointer transition-all duration-300 ${idx === activeIdx
                                 ? "bg-brunswick-green-900"
@@ -560,6 +560,7 @@ const TeamSection: React.FC = () => {
                                 if (!isDesktop) return;
                                 handleDesktopClick(idx, member);
                             }}
+                            href={`#memberPreview`}
                         >
                             <div className="relative w-full h-60 overflow-hidden rounded-md mb-3">
                                 {/* BLACK TOP IMAGE (default) */}
@@ -582,7 +583,7 @@ const TeamSection: React.FC = () => {
                             <p className="text-base sm:text-lg text-sea-salt/80">
                                 {member.role}
                             </p>
-                        </div>
+                        </a>
                     ))}
                 </div>
 
@@ -672,7 +673,7 @@ const TeamSection: React.FC = () => {
                 />
 
                 {/* DESKTOP PREVIEW */}
-                <div className="relative mt-5 overflow-hidden border border-sea-salt/20 rounded-2xl hidden lg:block">
+                <div className="relative mt-5 overflow-hidden border border-sea-salt/20 rounded-2xl hidden lg:block scroll-mt-20" id='memberPreview'>
 
                     {/* AURORA BACKGROUND */}
                     <div className="aurora">
@@ -711,7 +712,7 @@ const TeamSection: React.FC = () => {
                                             href={activeMember.socialMediaAccounts.linkedin.url}
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
+                                            className="flex items-center gap-1 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
                                         >
                                             <Icon icon="mdi:linkedin" width="20" />
                                             <span>LinkedIn</span>
@@ -723,7 +724,7 @@ const TeamSection: React.FC = () => {
                                             href={activeMember.socialMediaAccounts.github.url}
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
+                                            className="flex items-center gap-1 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
                                         >
                                             <Icon icon="mdi:github" width="20" />
                                             <span>GitHub</span>
@@ -735,7 +736,7 @@ const TeamSection: React.FC = () => {
                                             href={activeMember.socialMediaAccounts.dribble.url}
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="flex items-center gap-3 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
+                                            className="flex items-center gap-1 text-sea-salt/80 hover:text-brunswick-green-500 transition-colors"
                                         >
                                             <Icon icon="mdi:dribbble" width="20" />
                                             <span>Dribbble</span>
