@@ -5,7 +5,7 @@ import { aboutCopy, headerCopy } from '../../copy'; // Adjust path if needed
 
 const CtaBanner = () => {
     return (
-        <section className="relative mt-5 rounded-2xl border border-brunswick-green-500/20 h-[200px] sm:h-[700px]">
+        <section className="relative max-w-7xl mt-16  mx-auto py-16 rounded-2xl border border-brunswick-green-500/20 h-[200px] sm:h-[700px]">
             {/* Background container with overflow-hidden for rounded corners */}
             <div className="absolute inset-0 overflow-hidden rounded-2xl">
                 {/* Background Image */}

@@ -12,7 +12,7 @@ export default function CTA({ onOpenBooking }: CTAProps) {
     <section className="relative overflow-hidden bg-raisin-black-800/20 py-16 ">
 
       {/* Curved Emerald Backdrop container */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6">
 
         <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-b from-[#062114] to-[#010a05] border border-brunswick-green-500/20 py-16 px-6 sm:px-12 text-center shadow-2xl">
 

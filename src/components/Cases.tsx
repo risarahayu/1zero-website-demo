@@ -51,7 +51,7 @@ export default function Cases() {
       <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-brunswick-green-900/[0.03] blur-[110px]" />
       <div className="absolute top-0 right-0 h-64 w-64 rounded-full bg-blue-500/[0.03] blur-[100px]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <div className="max-w-7xl mx-auto px-6 space-y-10">
 
         {/* Header */}
         <div className="flex flex-col gap-10 items-center  pb-10 border-b border-sea-salt/20">

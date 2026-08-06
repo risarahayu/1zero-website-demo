@@ -40,7 +40,7 @@ export default function MemberModal(
                         </>
                     )}
 
-                    <div className="relative w-full max-w-2xl rounded-2xl overflow-hidden border border-brunswick-green-900 bg-raisin-black-900-950 shadow-2xl mt-[138px]">
+                    <div className="relative w-full max-w-2xl max-h-[80vh] overflow-y-auto rounded-2xl overflow-hidden border border-brunswick-green-900 bg-raisin-black-900-950 shadow-2xl mt-[138px]">
 
                         {/* Close button */}
                         <button
@@ -56,7 +56,7 @@ export default function MemberModal(
 
 
                         {/* Layout */}
-                        <div className="grid md:grid-cols-[240px_1fr] bg-raisin-black-900/80 backdrop-blur-sm bg-gradient-to-t md:bg-gradient-to-r from-raisin-black-900/60 via-transparent to-transparent">
+                        <div className="grid md:grid-cols-[240px_1fr] min-height-[30rem] overflow-y-auto bg-raisin-black-900/80 backdrop-blur-sm bg-gradient-to-t md:bg-gradient-to-r from-raisin-black-900/60 via-transparent to-transparent">
 
                             {/* Image */}
                             <div className="relative h-64 md:h-full">

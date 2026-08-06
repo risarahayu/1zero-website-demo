@@ -283,7 +283,7 @@ export default function WorkflowHorizontal() {
     <section className="bg-raisin-black">
 
       {/* Section header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-0 text-center py-16">
+      <div className="max-w-7xl mx-auto px-6  pb-0 text-center py-16">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -306,7 +306,7 @@ export default function WorkflowHorizontal() {
       </div>
 
       {/* Horizontal workflow container */}
-      <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+      <div className="max-w-7xl  mx-auto px-6 pb-16">
 
         {/* Top navigation */}
         <div className="mb-4">
@@ -315,7 +315,7 @@ export default function WorkflowHorizontal() {
 
         {/* Panel area: fixed height, panels switch in/out */}
         <div className="relative  rounded-2xl overflow-hidden "
-          style={{ height: 520 }}>
+          style={{ height: 600 }}>
 
           <Swiper className="h-full "
 
@@ -323,7 +323,7 @@ export default function WorkflowHorizontal() {
             loop
             spaceBetween={12}
             centeredSlides={false}
-            slidesPerView={1.05}
+            slidesPerView={1.09}
             speed={500}
             autoplay={{
               delay: 4500,

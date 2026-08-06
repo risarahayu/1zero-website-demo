@@ -297,7 +297,7 @@ export default function Workflow() {
     <section className="bg-raisin-black">
 
       {/* Section header — normal flow above the sticky scroll */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  pb-0 text-center py-16">
+      <div className="max-w-7xl mx-auto px-6  pb-0 text-center py-16">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

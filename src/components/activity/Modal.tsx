@@ -50,12 +50,20 @@ export function ActivityModal({
             {selectedItem && (
                 <div
                     className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-in fade-in duration-200"
-                    onClick={() => setSelectedItem(null)} // close modal when click overlay background
                 >
                     <div
-                        className="relative w-full max-w-2xl max-h-[80vh] mt-[20px] custom-scrollbar overflow-y-auto rounded-3xl bg-raisin-black-800 border border-sea-salt/20 p-6 sm:p-8"
+                        className="relative w-full max-w-2xl max-h-[80vh]  custom-scrollbar overflow-y-auto rounded-3xl bg-raisin-black-800 border border-sea-salt/20 p-6 sm:p-8"
                         onClick={(e) => e.stopPropagation()} //prevent close modal when click modal background
                     >
+                        {/* Close button */}
+                        <button
+                            onClick={() => {
+                                setSelectedItem(null);
+                            }}
+                            className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-raisin-black-900/60 hover:bg-raisin-black-900/60 text-sea-salt flex items-center justify-center transition cursor-pointer"
+                        >
+                            ✕
+                        </button>
 
                         {/* Modal Navigation */}
                         {showArrowButton &&

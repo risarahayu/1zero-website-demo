@@ -11,7 +11,7 @@ export default function Footer() {
       {/* Background ambient lighting */}
       <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-brunswick-green-900/[0.02] blur-[120px]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <div className="max-w-7xl mx-auto px-6 space-y-16">
 
         {/* Main interactive row */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">

@@ -62,7 +62,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
 
   return (
     <header className="relative w-full z-40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+      <div className="max-w-7xl mx-auto px-6 pt-6">
         <div className="flex flex-col items-center">
 
 

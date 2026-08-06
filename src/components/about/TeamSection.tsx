@@ -404,8 +404,8 @@ const TeamSection: React.FC = () => {
 
 
     return (
-        <section className="py-16 text-slate-50 relative">
-            <div className=" space-y-10 text-center">
+        <section className="py-16 text-slate-50 relative max-w-7xl mx-auto">
+            <div className="space-y-10 text-center">
 
                 <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
                     {/* Injecting the dynamic title here! */}
@@ -453,7 +453,7 @@ const TeamSection: React.FC = () => {
                 </div>
 
                 {/* MOBILE MARQUEE */}
-                <div className="lg:hidden overflow-hidden space-y-4">
+                <div className="lg:hidden overflow-hidden space-y-4mb-0">
 
                     {/* ROW 1 */}
                     <div className={`flex gap-4 ${isPaused ? "" : "animate-marquee"}`}>
@@ -465,9 +465,9 @@ const TeamSection: React.FC = () => {
                                     setSelectedMember(member);
                                     setIsPaused(true);
                                 }}
-                                className={`shrink-0 w-36 p-3 rounded-lg transition-all duration-300 text-left
+                                className={`shrink-0  w-36 p-3 rounded-lg transition-all duration-300 text-left
         ${idx % topRow.length === activeIdx
-                                        ? "bg-brunswick-green-900"
+                                        ? "bg-brunswick-green-900 "
                                         : "bg-sea-salt/6  backdrop-blur border-sea-salt/20"
                                     }`}
                             >

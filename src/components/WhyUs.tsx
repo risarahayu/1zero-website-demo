@@ -45,7 +45,7 @@ export default function WhyUs(props: WhyUsProps) {
     <section id="why-us" className="relative py-16 bg-raisin-black-900">
       <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-brunswick-green-900/5 blur-[120px]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <div className="max-w-7xl mx-auto px-6 space-y-16">
         {/* Title Area */}
         <div className="space-y-10 text-center">
           <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans  tracking-widest text-brunswick-green-500  bg-raisin-black ">
@@ -75,14 +75,14 @@ export default function WhyUs(props: WhyUsProps) {
               </div>
 
               {/* Video participants marquee */}
-              <div className="flex flex-col gap-3 flex-1 overflow-hidden relative w-full justify-center">
+              <div className="flex flex-col gap-3 flex-1 overflow-hidden relative w-full justify-center ">
                 {/* Row 1: Right to Left */}
                 <div className="flex gap-3 animate-marquee w-max h-full ">
                   {[...teamMembers.slice(0, 4), ...teamMembers.slice(0, 4)].map((member, idx) => (
                     <button
                       key={`row1-${idx}`}
                       onClick={() => setSelectedMember(member)}
-                      className="group relative w-40 h-40 h-full shrink-0 cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 hover:border-brunswick-green-500"
+                      className="group relative w-40  h-full shrink-0 cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 hover:border-brunswick-green-500"
                     >
                       <div className="relative h-1/2 w-1/2 rounded-xl overflow-hidden border border-sea-salt self-center">
                         <img
@@ -95,8 +95,17 @@ export default function WhyUs(props: WhyUsProps) {
 
                       {/* Indicators */}
                       <div className="space-y-1.5 mt-auto z-10 pt-2 bg-gradient-to-t from-black via-black/80 to-transparent">
-                        <div className="flex items-center justify-between">
-                          <span className="block font-sans text-base font-bold text-sea-salt/90 tracking-wide truncate group-hover:text-brunswick-green-500 transition-colors duration-300">
+                        <div className="flex items-center ">
+                          <span className="flex-1
+                            truncate
+                            font-sans
+                            text-base
+                            font-bold
+                            text-sea-salt/90
+                            tracking-wide
+                            group-hover:text-brunswick-green-500
+                            transition-colors
+                            duration-300">
                             {member.name}
                           </span>
 
@@ -109,8 +118,8 @@ export default function WhyUs(props: WhyUsProps) {
                           </button>
                         </div>
 
-                        <div className="flex items-center justify-between font-sans text-sm text-sea-salt truncate">
-                          <span>{member.role}</span>
+                        <div className="flex items-center justify-between font-sans text-sm text-sea-salt ">
+                          <span className="line-clamp-1">{member.role}</span>
                         </div>
                       </div>
                     </button>
@@ -123,7 +132,7 @@ export default function WhyUs(props: WhyUsProps) {
                     <button
                       key={`row2-${idx}`}
                       onClick={() => setSelectedMember(member)}
-                      className="group relative w-40 h-40 h-full shrink-0 cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 hover:border-brunswick-green-500 "
+                      className="group relative w-40  h-full shrink-0 cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 hover:border-brunswick-green-500 "
                     >
                       <div className="relative h-1/2 w-1/2 rounded-xl overflow-hidden border border-sea-salt self-center">
                         <img
@@ -136,8 +145,17 @@ export default function WhyUs(props: WhyUsProps) {
 
                       {/* Indicators */}
                       <div className="group space-y-1.5 mt-auto z-10 pt-2 bg-gradient-to-t from-black via-black/80 to-transparent">
-                        <div className="flex items-center justify-between">
-                          <span className="block font-sans text-base font-bold text-sea-salt/90 tracking-wide truncate group-hover:text-brunswick-green-500 transition-colors duration-300">
+                        <div className="flex items-center">
+                          <span className="flex-1
+                            truncate
+                            font-sans
+                            text-base
+                            font-bold
+                            text-sea-salt/90
+                            tracking-wide
+                            group-hover:text-brunswick-green-500
+                            transition-colors
+                            duration-300">
                             {member.name}
                           </span>
 
@@ -150,8 +168,8 @@ export default function WhyUs(props: WhyUsProps) {
                           </button>
                         </div>
 
-                        <div className="flex items-center justify-between font-sans text-sm text-sea-salt truncate">
-                          <span>{member.role}</span>
+                        <div className="flex items-center justify-between font-sans text-sm text-sea-salt ">
+                          <span className="line-clamp-1">{member.role}</span>
                         </div>
                       </div>
                     </button>

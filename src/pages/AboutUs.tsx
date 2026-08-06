@@ -34,7 +34,7 @@ const AboutUs: React.FC = () => {
     };
 
     return (
-        <div className="text-slate-50 min-h-screen overflow-x-hidden font-sans relative w-[75%] mx-auto py-16">
+        <div className="text-slate-50 min-h-screen overflow-x-hidden font-sans relative mx-auto px-6 py-16">
 
             {/* Aurora Background */}
             <div className="aurora">

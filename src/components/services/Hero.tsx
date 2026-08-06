@@ -69,7 +69,7 @@ export default function ServicesHero() {
     }, [active.image]);
 
     return (
-        <section className="max-w-6xl mx-auto px-6 pt-28 pb-20">
+        <section className="max-w-7xl mx-auto px-6 pt-28 pb-20">
 
             <div className="grid md:grid-cols-2 gap-12 items-center">
 

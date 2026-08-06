@@ -56,7 +56,7 @@ export default function Testimonials() {
       {/* Soft auroral glow in corner */}
       <div className="absolute top-1/2 right-10 -z-10 h-72 w-72 rounded-full bg-brunswick-green-900/[0.03] blur-[110px]" />
 
-      <div className="max-w-7xl justify-items-center mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <div className="max-w-7xl justify-items-center mx-auto px-6 space-y-10">
 
         {/* Title Area */}
         <div className="flex flex-col gap-10 items-center text-center" >
@@ -110,7 +110,6 @@ export default function Testimonials() {
                   <div
                     className={`group
                       relative
-                      h-full
                       flex
                       flex-col
                       justify-between
@@ -131,14 +130,14 @@ export default function Testimonials() {
                       <Quote className="h-8 w-8 transform rotate-180" />
                     </div>
 
-                    <div className="relative h-[15rem]">
+                    <div className="relative h-[16rem]">
                       <div
                         className="custom-scrollbar content-center h-full overflow-y-auto pr-2"
                         ref={(el) => {
                           quoteRefs.current[index] = el;
                         }}
                       >
-                        <p className="font-sans text-base sm:text-lg italic text-sea-salt/90 group-hover:text-sea-salt ">
+                        <p className="font-sans text-base h-auto sm:text-lg italic text-sea-salt/90 group-hover:text-sea-salt ">
                           "{t.quote}"
                         </p>
                       </div>
@@ -149,7 +148,7 @@ export default function Testimonials() {
                     </div>
 
                     {/* Writer Portrait Avatar details */}
-                    <div className="flex items-start gap-3 pt-6 border-t border-sea-salt/20  h-[7rem]">
+                    <div className="flex items-start gap-3 pt-6 border-t border-sea-salt/20 h-auto">
                       <div className="h-10 w-10 rounded-full overflow-hidden border border-sea-salt/20 shrink-0">
                         <img
                           src={t.avatarUrl}
@@ -168,7 +167,7 @@ export default function Testimonials() {
                           {t.name}
                         </span>
                         <span className="block font-sans text-lg text-sea-salt/90">
-                          {t.role},<strong className="text-sea-salt/80 font-normal">{t.company}</strong>
+                          {t.role},{" "}<strong className="text-sea-salt/80 font-normal">{t.company}</strong>
                         </span>
                       </div>
                     </div>

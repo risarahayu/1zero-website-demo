@@ -53,7 +53,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
       {/* Background radial soft light blur */}
       <div className="absolute top-1/2 left-0 -translate-x-1/4 md:-translate-x-0 md:left-1/4 -translate-y-1/2 -z-10 h-[250px] w-[250px] md:h-[450px] md:w-[450px] rounded-full bg-brunswick-green-900/[0.05] md:bg-brunswick-green-900/[0.03] blur-[80px] md:blur-[150px]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6">
 
         {/* Split Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
