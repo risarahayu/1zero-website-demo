@@ -74,7 +74,7 @@ export default function Testimonials() {
 
         {/* Testimonials standard grid (responsive) */}
         <Swiper
-          className="w-full py-10"
+          className="w-full py-6 h-full"
           modules={[Autoplay]}
           loop={true}
           centeredSlides
@@ -148,7 +148,7 @@ export default function Testimonials() {
                     </div>
 
                     {/* Writer Portrait Avatar details */}
-                    <div className="flex items-start gap-3 pt-6 border-t border-sea-salt/20 h-auto">
+                    <div className="flex items-start gap-3 pt-6 border-t border-sea-salt/20 h-[150px] md:h-[100px]">
                       <div className="h-10 w-10 rounded-full overflow-hidden border border-sea-salt/20 shrink-0">
                         <img
                           src={t.avatarUrl}
