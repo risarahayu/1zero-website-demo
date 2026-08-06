@@ -15,7 +15,7 @@ export default function DiagnosisPanel() {
     };
 
     return (
-        <section className="w-full max-w-6xl mx-auto px-6 py-20">
+        <section className="w-full max-w-6xl mx-auto px-6 py-16">
 
             {/* TITLE & HERO SECTION */}
             <div className="relative w-full h-[70vh] flex items-center justify-center overflow-hidden">
@@ -44,7 +44,7 @@ export default function DiagnosisPanel() {
             </div>
 
             {/* ACCORDION HEADER */}
-            <div className="mb-12 text-center max-w-3xl mx-auto">
+            <div className="mb-12 text-center max-w-3xl mx-auto pt-16">
                 <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt">
                     {offerCopy.accordionTitle}
                 </h3>

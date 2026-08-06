@@ -34,7 +34,7 @@ export default function PortfolioPage() {
     }, [activeTab]);
 
     return (
-        <section className="relative min-h-screen bg-raisin-black text-sea-salt py-24 px-6">
+        <section className="max-w-7xl mx-auto relative min-h-screen bg-raisin-black text-sea-salt py-16 px-6">
             {/* glow background */}
             <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
                 <div className="w-[600px] h-[600px] bg-sea-salt/5 blur-[160px] rounded-full" />
@@ -42,9 +42,9 @@ export default function PortfolioPage() {
 
             {/* HEADER */}
             <div className="relative z-10 text-center space-y-10">
-                <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
+                {/* <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
                     {portfoliosPageCopy.badge}
-                </span>
+                </span> */}
                 <div className="space-y-6">
                     <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold text-sea-salt leading-[1.1]">
                         {portfoliosPageCopy.title}
@@ -76,7 +76,7 @@ export default function PortfolioPage() {
             </div>
 
             {/* PROJECT GRID */}
-            <div className="relative z-10 mt-14 grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="relative z-10 mt-14 grid md:grid-cols-3 gap-6 max-w-7xl mx-auto">
                 {filteredProjects.map((project) => (
                     <PortfolioCard
                         key={project.id}
@@ -86,7 +86,7 @@ export default function PortfolioPage() {
                 ))}
             </div>
 
-            <div className="mt-32 mb-12 relative w-full max-w-7xl mx-auto rounded-[2.5rem] border border-brunswick-green-500/40 bg-brunswick-green-900/20 shadow-[0_0_50px_rgba(29,87,69,0.4)] backdrop-blur-xl overflow-hidden py-20 px-6 flex flex-col items-center justify-center group transition-all duration-700 hover:border-brunswick-green-500/60 hover:shadow-[0_0_80px_rgba(29,87,69,0.6)]">
+            <div className="py-16 mt-16 relative w-full max-w-7xl mx-auto rounded-[2.5rem] border border-brunswick-green-500/40 bg-brunswick-green-900/20 shadow-[0_0_50px_rgba(29,87,69,0.4)] backdrop-blur-xl overflow-hidden py-20 px-6 flex flex-col items-center justify-center group transition-all duration-700 hover:border-brunswick-green-500/60 hover:shadow-[0_0_80px_rgba(29,87,69,0.6)]">
 
                 {/* Aurora / Glow effects */}
                 <div className="absolute inset-0 -z-10 pointer-events-none">

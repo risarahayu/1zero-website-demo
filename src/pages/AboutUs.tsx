@@ -42,7 +42,7 @@ const AboutUs: React.FC = () => {
                 <div className="aurora-layeraurora-2"></div>
             </div>
 
-            <div className="relative z-10">
+            <div className="relative">
 
                 {/* Navigation */}
 

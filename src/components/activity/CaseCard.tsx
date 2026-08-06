@@ -30,7 +30,7 @@ export function CaseCard({
         group relative h-full h-[400px] rounded-3xl p-5 border
         flex flex-col justify-between cursor-pointer overflow-hidden
         transition-all duration-500 
-        ${isCenter ? "opacity-100 border-brunswick-green-500  bg-sea-salt/10 shadow-2xl shadow-brunswick-green-500/5" : "opacity-60 hover:opacity-80 border-sea-salt scale-[0.96] bg-sea-salt/6"}
+        ${isCenter ? "opacity-100 border-brunswick-green-500  bg-sea-salt/10 shadow-2xl shadow-brunswick-green-500/5" : "opacity-60 hover:opacity-80 border-sea-salt bg-sea-salt/6"}
         ${className}
       `}
     >

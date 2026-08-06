@@ -111,7 +111,7 @@ export default function ContactPage() {
     };
 
     return (
-        <section className="relative w-full min-h-screen bg-raisin-black-900 text-sea-salt overflow-hidden py-16 px-6 flex items-center" id="contact">
+        <section className="relative w-full  bg-raisin-black-900 text-sea-salt overflow-hidden py-16 px-6 flex items-center" id="contact">
 
             {/* ==========================================
                BACKGROUND GLOWS (Efek Aurora Global)
@@ -122,16 +122,16 @@ export default function ContactPage() {
             </div>
 
             {/* Container Layout Utama */}
-            <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 relative z-10">
+            <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 relative z-10">
 
                 {/* ==========================================
                    LEFT SIDE: Title & Company Details
                    ========================================== */}
                 <div className="lg:col-span-5 flex flex-col justify-center space-y-10">
                     <div>
-                        <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
+                        {/* <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
                             {contactUsCopy.badge}
-                        </span>
+                        </span> */}
                     </div>
                     <div className="space-y-6">
                         <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold text-sea-salt leading-[1.1]">

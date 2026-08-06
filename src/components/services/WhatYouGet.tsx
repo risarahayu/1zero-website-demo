@@ -49,7 +49,7 @@ export default function WhatYouGet() {
     };
 
     return (
-        <section className="relative bg-raisin-black py-24 overflow-hidden">
+        <section className="relative bg-raisin-black py-16 overflow-hidden">
 
             {/* glow background */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -123,8 +123,8 @@ export default function WhatYouGet() {
                             key={i}
                             onClick={() => scrollToIndex(i)}
                             className={`transition-all rounded-full ${i === activeIndex
-                                    ? "w-6 h-1.5 bg-sea-salt"
-                                    : "w-2 h-2 bg-sea-salt/30"
+                                ? "w-6 h-1.5 bg-sea-salt"
+                                : "w-2 h-2 bg-sea-salt/30"
                                 }`}
                         />
                     ))}
@@ -132,12 +132,12 @@ export default function WhatYouGet() {
             </div>
 
             {/* ================= DESKTOP GRID ================= */}
-            <div className="hidden md:grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] justify-center gap-8 mt-20 px-10 max-w-6xl mx-auto relative z-10 justify-items-center auto-rows-fr">
+            <div className="hidden md:flex flex-wrap justify-center gap-8 mt-20 px-10 max-w-6xl mx-auto relative z-10">
 
                 {benefits.map((item) => (
                     <div
                         key={item.title}
-                        className="w-full p-8 rounded-2xl bg-sea-salt/5 border border-white/10 backdrop-blur hover:bg-sea-salt/10 transition-all duration-300"
+                        className="flex-shrink-0 w-[300px] p-8 rounded-2xl bg-sea-salt/5 border border-white/10 backdrop-blur hover:bg-sea-salt/10 transition-all duration-300"
                     >
                         {item.icon && (
                             <div className="mb-6 text-brunswick-green-500">

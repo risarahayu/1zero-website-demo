@@ -49,7 +49,8 @@ export function ActivityModal({
         <>
             {selectedItem && (
                 <div
-                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-in fade-in duration-200"
+                    className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-in fade-in duration-200"
+                    style={{ zIndex: 999999 }}
                 >
                     <div
                         className="relative w-full max-w-2xl max-h-[80vh]  custom-scrollbar overflow-y-auto rounded-3xl bg-raisin-black-800 border border-sea-salt/20 p-6 sm:p-8"

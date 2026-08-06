@@ -62,11 +62,11 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
           <div className="lg:col-span-4 space-y-10 sm:space-y-8">
 
             {/* Custom rounded capsule badge */}
-            <div className="inline-flex">
+            {/* <div className="inline-flex">
               <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
                 {portfolioCopy.badge}
               </span>
-            </div>
+            </div> */}
 
             <div className="space-y-6">
               {/* Elegant Main Title */}

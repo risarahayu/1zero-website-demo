@@ -44,9 +44,9 @@ export default function Products({ onOpenBooking }: ProductsProps) {
         {/* <div className="relative space-y-10 px-6 py-16 sm:px-10 sm:py-16"> */}
         {/* Head Area */}
         <div className="text-center space-y-10">
-          <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
+          {/* <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
             {productsCopy.badge}
-          </span>
+          </span> */}
           <div className="space-y-6">
             <h2 className="font-sans text-3xl leading-normal sm:text-5xl sm:leading-normal font-bold text-sea-salt">
               {productsCopy.title}

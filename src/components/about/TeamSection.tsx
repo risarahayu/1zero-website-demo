@@ -453,7 +453,7 @@ const TeamSection: React.FC = () => {
                 </div>
 
                 {/* MOBILE MARQUEE */}
-                <div className="lg:hidden overflow-hidden space-y-4mb-0">
+                <div className="lg:hidden overflow-hidden space-y-4 mb-0">
 
                     {/* ROW 1 */}
                     <div className={`flex gap-4 ${isPaused ? "" : "animate-marquee"}`}>

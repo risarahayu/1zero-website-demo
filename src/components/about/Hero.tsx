@@ -87,9 +87,9 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
         <>
             <header className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center" >
                 <div className="space-y-10 ">
-                    <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
+                    {/* <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
                         {t.sub}
-                    </span>
+                    </span> */}
                     <div className="space-y-6">
                         <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl font-extrabold text-sea-salt leading-[1.1]">
                             {t.title}
@@ -116,7 +116,7 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                         // centeredSlides
                         grabCursor
                         speed={700}
-                        spaceBetween={12}
+                        spaceBetween={22}
                         slidesPerView="auto"
                         autoplay={{
                             delay: 4000,
