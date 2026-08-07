@@ -65,12 +65,12 @@ export default function WhyUs(props: WhyUsProps) {
             {/* LEFT: THE INTERACTIVE VIDEO CALL MOCKUP */}
             <div className="lg:col-span-5 flex flex-col justify-between rounded-3xl border border-sea-salt/20 bg-raisin-black-900/60 p-5 shadow-2xl relative space-y-4 h-auto">
               {/* Header bar */}
-              <div className="flex items-center justify-between pb-3 border-b border-sea-salt/20 text-lg font-sans text-sea-salt">
+              <div className="flex items-center justify-center md:justify-between pb-3 border-b border-sea-salt/20 text-lg font-sans text-sea-salt">
                 <div className="flex items-center gap-2">
-                  <span className="text-sea-salt font-medium">{whyUsCopy.meetOurTeam}</span>
+                  <span className="text-sea-salt  font-medium text-center md:text-left">{whyUsCopy.meetOurTeam}</span>
                 </div>
                 <Link to={`${import.meta.env.BASE_URL}about`} >
-                  <p className="font-sans text-base sm:text-lg text-sea-salt/90 tracking-wider font-semibold ml-2 select-none  font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">{whyUsCopy.seeAllTeam}</p>
+                  <p className="font-sans hidden md:block text-base text-center  sm:text-lg text-sea-salt/90 tracking-wider font-semibold ml-2 select-none  font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">{whyUsCopy.seeAllTeam}</p>
                 </Link>
               </div>
 
@@ -84,7 +84,7 @@ export default function WhyUs(props: WhyUsProps) {
                       onClick={() => setSelectedMember(member)}
                       className="group relative w-40  h-full shrink-0 cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 hover:border-brunswick-green-500"
                     >
-                      <div className="relative h-1/2 w-1/2 rounded-xl overflow-hidden border border-sea-salt self-center">
+                      <div className="relative h-24 w-24 md:h-1/2 md:w-1/2 rounded-xl overflow-hidden border border-sea-salt self-center">
                         <img
                           src={member.images?.imageDisplay}
                           alt={member.name}
@@ -134,7 +134,7 @@ export default function WhyUs(props: WhyUsProps) {
                       onClick={() => setSelectedMember(member)}
                       className="group relative w-40  h-full shrink-0 cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 hover:border-brunswick-green-500 "
                     >
-                      <div className="relative h-1/2 w-1/2 rounded-xl overflow-hidden border border-sea-salt self-center">
+                      <div className="relative h-24 w-24 md:h-1/2 md:w-1/2 rounded-xl overflow-hidden border border-sea-salt self-center">
                         <img
                           src={member.images?.imageDisplay}
                           alt={member.name}
@@ -176,7 +176,9 @@ export default function WhyUs(props: WhyUsProps) {
                   ))}
                 </div>
               </div>
-
+              <Link to={`${import.meta.env.BASE_URL}about`} >
+                <p className="font-sans block md:hidden text-base text-center  sm:text-lg text-sea-salt/90 tracking-wider font-semibold ml-2 select-none  font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">{whyUsCopy.seeAllTeam}</p>
+              </Link>
 
             </div>
 

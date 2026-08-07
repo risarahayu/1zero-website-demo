@@ -137,7 +137,7 @@ export default function Testimonials() {
                           quoteRefs.current[index] = el;
                         }}
                       >
-                        <p className="font-sans text-base h-auto sm:text-lg italic text-sea-salt/90 group-hover:text-sea-salt ">
+                        <p className="font-sans  text-base pt-2 h-full sm:text-lg italic text-sea-salt/90 group-hover:text-sea-salt ">
                           "{t.quote}"
                         </p>
                       </div>
