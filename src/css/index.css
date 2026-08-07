@@ -335,3 +335,27 @@
 .animate-gradient {
   animation: gradientFlow 8s ease infinite;
 }
+
+.modal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--green-500) var(--raisin-black-800);
+  scrollbar-gutter: stable;
+}
+
+.modal-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.modal-scroll::-webkit-scrollbar-track {
+  background: var(--raisin-black-800);
+  border-radius: 999px;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb {
+  background: var(--green-500);
+  border-radius: 999px;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--green-500);
+}
