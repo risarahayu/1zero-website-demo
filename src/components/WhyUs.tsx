@@ -82,9 +82,9 @@ export default function WhyUs(props: WhyUsProps) {
                     <button
                       key={`row1-${idx}`}
                       onClick={() => setSelectedMember(member)}
-                      className="group relative w-40  h-full shrink-0 cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 hover:border-brunswick-green-500"
+                      className="group relative w-40  h-40 shrink-0 cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 hover:border-brunswick-green-500"
                     >
-                      <div className="relative h-24 w-24 md:h-1/2 md:w-1/2 rounded-xl overflow-hidden border border-sea-salt self-center">
+                      <div className="relative h-24 w-24   rounded-xl overflow-hidden border border-sea-salt self-center">
                         <img
                           src={member.images?.imageDisplay}
                           alt={member.name}
@@ -132,9 +132,9 @@ export default function WhyUs(props: WhyUsProps) {
                     <button
                       key={`row2-${idx}`}
                       onClick={() => setSelectedMember(member)}
-                      className="group relative w-40  h-full shrink-0 cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 hover:border-brunswick-green-500 "
+                      className="group relative w-40  h-40 shrink-0 cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 hover:border-brunswick-green-500 "
                     >
-                      <div className="relative h-24 w-24 md:h-1/2 md:w-1/2 rounded-xl overflow-hidden border border-sea-salt self-center">
+                      <div className="relative h-24 w-24   rounded-xl overflow-hidden border border-sea-salt self-center">
                         <img
                           src={member.images?.imageDisplay}
                           alt={member.name}
