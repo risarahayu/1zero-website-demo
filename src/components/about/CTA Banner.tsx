@@ -25,7 +25,7 @@ const CtaBanner = () => {
                     Let's Work Together
                 </h2> */}
 
-                <div className="w-full max-w-2xl absolute bottom-0 translate-y-1/2 sm:static sm:translate-y-0">
+                <div className="w-full max-w-2xl absolute bottom-0 translate-y-1/2  sm:translate-y-4">
                     <div className="mx-auto inline-block">
                         <BookingButton className="" />
                     </div>
