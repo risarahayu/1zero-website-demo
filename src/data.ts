@@ -214,8 +214,8 @@ export const products: ProductItem[] = [
     service: "Roadmap Workshop",
     description:
       "A high-intensity strategic sprint. We apply algorithmic feature prioritization to eliminate 'Franken-stack' risks and define your AI-first blueprint before you write a line of code.",
-    fileEng: `/ Products Sheet / Eng / Roadmap Product Sheet - Eng.pdf`,
-    fileIndo: `/ Products Sheet / Indo / Roadmap Product Sheet - Indo.pdf`,
+    // fileEng: "/Products Sheet/Eng/Roadmap Product Sheet-Eng.pdf",
+    fileIndo: `/Products Sheet/Indo/Roadmap Product Sheet-Indo.pdf`,
     symptoms: [
       {
         text: "Bleeding capital on undefined architecture and overdue projects",
@@ -257,8 +257,8 @@ export const products: ProductItem[] = [
     service: "NextGen Platforms",
     description:
       "Custom, cloud-native architectural replatforming. We replace fragile legacy systems with highly scalable, AI-integrated infrastructure built for enterprise growth.",
-    fileEng: `/ Products Sheet / Eng / NextGen Platforms Product Sheet - Eng.pdf`,
-    fileIndo: `/ Products Sheet / Indo / NextGen Platforms Product Sheet - Indo.pdf`,
+    fileEng: "/Products Sheet/Eng/NextGen_Platforms_Product Sheet-Eng.pdf",
+    fileIndo: "/Products Sheet/Indo/NextGen_Platforms_Product Sheet-Indo.pdf",
     symptoms: [
       {
         text: "Core features are slowing down under load",
@@ -285,7 +285,7 @@ export const products: ProductItem[] = [
     ],
     imageProblem: "/illustrations/nextgen-problem.png",
     imageSolution: "/illustrations/nextgen-solution.png",
-    href: "/Products Sheet/Eng/NextGen Platforms Product Sheet - Eng.pdf",
+    href: "/Products Sheet/Eng/NextGen_Platforms_Product Sheet-Eng.pdf",
     cta: "Review Architecture",
     problemTitle: "System Performance",
     mood: {
@@ -300,8 +300,8 @@ export const products: ProductItem[] = [
     service: "The DevPod™",
     description:
       "A fully integrated, high-velocity engineering squad. Get the output of an elite development team—complete with architecture and UI/UX—without the overhead of in-house hiring.",
-    fileEng: `/ Products Sheet / Eng / DevPod Product Sheet - Eng.pdf`,
-    fileIndo: `/ Products Sheet / Indo / DevPod Product Sheet - Indo.pdf`,
+    fileEng: "/Products Sheet/Eng/DevPod_Product_Sheet-Eng.pdf",
+    fileIndo: "/Products Sheet/Indo/DevPod_Product_Sheet-Indo.pdf",
     symptoms: [
       {
         text: "Development velocity is too slow for your growth targets",
@@ -328,7 +328,7 @@ export const products: ProductItem[] = [
     ],
     imageProblem: "/illustrations/devpod-problem.png",
     imageSolution: "/illustrations/devpod-solution.png",
-    href: "/Products Sheet/Eng/DevPod Product Sheet - Eng.pdf",
+    href: "/Products Sheet/Eng/DevPod_Product_Sheet-Eng.pdf",
     cta: "Deploy a DevPod",
     problemTitle: "Engineering Velocity",
     mood: {
@@ -343,8 +343,8 @@ export const products: ProductItem[] = [
     service: "Fractional CTO (fCTO)",
     description:
       "Executive-level technical strategy. We provide the architectural governance needed to secure your infrastructure, eliminate tech debt, and confidently defend your roadmap to VCs.",
-    fileEng: `/ Products Sheet / Eng / fCTO Product Sheet - Eng.pdf`,
-    fileIndo: `/ Products Sheet / Indo / fCTO Product Sheet - Indo.pdf`,
+    fileEng: "/Products Sheet/Eng/fCTO_Product_Sheet-Eng.pdf",
+    fileIndo: "/Products Sheet/Indo/fCTO_Product_Sheet-Indo.pdf",
     symptoms: [
       {
         text: "Engineering decisions are reactive, not strategic",
@@ -371,7 +371,7 @@ export const products: ProductItem[] = [
     ],
     imageProblem: "/illustrations/fcto-problem.png",
     imageSolution: "/illustrations/fcto-solution.png",
-    href: "/Products Sheet/Eng/fCTO Product Sheet - Eng.pdf",
+    href: "/Products Sheet/Eng/fCTO_Product_Sheet-Eng.pdf",
     cta: "Explore Leadership",
     problemTitle: "Strategic Direction",
     mood: {
