@@ -214,8 +214,8 @@ export const products: ProductItem[] = [
     service: "Roadmap Workshop",
     description:
       "A high-intensity strategic sprint. We apply algorithmic feature prioritization to eliminate 'Franken-stack' risks and define your AI-first blueprint before you write a line of code.",
-    // fileEng: "/Products Sheet/Eng/Roadmap Product Sheet-Eng.pdf",
-    fileIndo: `/Products Sheet/Indo/Roadmap Product Sheet-Indo.pdf`,
+    fileEng: "/Products Sheet/Eng/Roadmap_Workshop_Product_Sheet-Eng.pdf",
+    fileIndo: `/Products Sheet/Indo/Roadmap_Workshop_Product_Sheet-Indo.pdf`,
     symptoms: [
       {
         text: "Bleeding capital on undefined architecture and overdue projects",
@@ -257,7 +257,7 @@ export const products: ProductItem[] = [
     service: "NextGen Platforms",
     description:
       "Custom, cloud-native architectural replatforming. We replace fragile legacy systems with highly scalable, AI-integrated infrastructure built for enterprise growth.",
-    fileEng: "/Products Sheet/Eng/NextGen_Platforms_Product Sheet-Eng.pdf",
+    fileEng: "/Products Sheet/Eng/NextGen_Platforms_Product_Sheet-Eng.pdf",
     fileIndo: "/Products Sheet/Indo/NextGen_Platforms_Product Sheet-Indo.pdf",
     symptoms: [
       {
@@ -285,7 +285,7 @@ export const products: ProductItem[] = [
     ],
     imageProblem: "/illustrations/nextgen-problem.png",
     imageSolution: "/illustrations/nextgen-solution.png",
-    href: "/Products Sheet/Eng/NextGen_Platforms_Product Sheet-Eng.pdf",
+    href: "/Products Sheet/Eng/NextGen_Platforms_Product_Sheet-Eng.pdf",
     cta: "Review Architecture",
     problemTitle: "System Performance",
     mood: {
