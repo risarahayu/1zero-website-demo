@@ -29,15 +29,15 @@ export function CaseCard({
       className={`
         group relative h-full h-[400px] rounded-3xl p-5 border
         flex flex-col justify-between cursor-pointer overflow-hidden
-        transition-all duration-500 
-        ${isCenter ? "opacity-100 border-brunswick-green-500  bg-sea-salt/10 shadow-2xl shadow-brunswick-green-500/5" : "opacity-60 hover:opacity-80 border-sea-salt bg-sea-salt/6"}
+        transition-all duration-500 hover:border-brunswick-green-500
+        ${isCenter ? "opacity-100 border-brunswick-green-500  bg-sea-salt/10 shadow-2xl shadow-brunswick-green-500/5" : " border-sea-salt bg-sea-salt/6"}
         ${className}
       `}
     >
       {/* Gradient image area */}
       <div className="flex h-full flex-col">
-        <div className="space-y-4 flex-1 pointer-events-none">
-          <div className="relative h-[180px] w-full overflow-hidden rounded-2xl bg-sea-salt/6 border border-sea-salt/60 flex items-end p-4">
+        <div className="space-y-4 flex-1 ">
+          <div className="relative h-[180px] w-full overflow-hidden rounded-2xl bg-sea-salt/6 border border-sea-salt/20/60 flex items-end p-4">
             {item.photos ? (
               <>
                 {imageLoading && (
@@ -54,7 +54,7 @@ export function CaseCard({
                   src={item.photos[0]}
                   alt={item.title}
                   onLoad={() => setImageLoading(false)}
-                  className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${imageLoading ? "opacity-0" : "opacity-100"
+                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110 opacity-100 ${imageLoading ? "opacity-0" : "opacity-100"
                     }`}
                 />
               </>
@@ -67,7 +67,7 @@ export function CaseCard({
           </div>
 
           <div className="space-y-2">
-            <p className={`font-sans text-base sm:text-lg font-bold min-h-[3.5rem] content-center line-clamp-2 ${isCenter ? "text-brunswick-green-500" : "text-sea-salt"}`}>
+            <p className={`font-sans text-base sm:text-lg font-bold min-h-[3.5rem] content-center group-hover:text-brunswick-green-500 line-clamp-2 ${isCenter ? "text-brunswick-green-500" : "text-sea-salt"}`}>
               {item.title}
             </p>
             <p className="font-sans text-base sm:text-lg text-ivory/50 line-clamp-2">
@@ -76,7 +76,7 @@ export function CaseCard({
             <p className="font-sans text-base sm:text-lg text-sea-salt line-clamp-2">
               {item.desc}
             </p>
-            <span className="text-brunswick-green-500">read more</span>
+            <button type="button" className="inline-flex items-center justify-center font-sans font-semibold text-sea-salt  bg-raisin-black-800 hover:bg-brunswick-green-900  border border-sea-salt/20 hover:bg-brunswick-green-900 hover:text-sea-salt transition-all px-4 py-1.5 rounded-full text-lg transition-colors cursor-pointer self-start">Read More</button>
           </div>
         </div>
 

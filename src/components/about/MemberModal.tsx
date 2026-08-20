@@ -75,9 +75,9 @@ export default function MemberModal(
 
                                     {/* Header */}
                                     <div className="space-y-2 text-start">
-                                        <h3 className="font-sans text-2xl font-bold text-brunswick-green-500">
+                                        <h2 className="font-sans text-3xl leading-tight sm:text-5xl font-bold text-brunswick-green-500">
                                             {selectedMember.name}
-                                        </h3>
+                                        </h2>
 
                                         <p className="">
                                             {selectedMember.role}

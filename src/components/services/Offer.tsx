@@ -45,9 +45,9 @@ export default function DiagnosisPanel() {
 
             {/* ACCORDION HEADER */}
             <div className="mb-12 text-center max-w-3xl mx-auto pt-16">
-                <h3 className="font-sans text-2xl sm:text-3xl font-bold text-sea-salt">
+                <h2 className="font-sans text-3xl leading-tight sm:text-5xl font-bold text-sea-salt">
                     {offerCopy.accordionTitle}
-                </h3>
+                </h2>
                 <p className="text-sea-salt/60 mt-2 text-base sm:text-lg">
                     {offerCopy.accordionSubtitle}
                 </p>
@@ -142,7 +142,7 @@ export default function DiagnosisPanel() {
                                                     </div>
 
                                                     {/* 2. RECOMMENDED SERVICE */}
-                                                    <div className="p-6 rounded-xl border border-sea-salt/10 bg-sea-salt/5 shadow-2xl">
+                                                    <div className="p-6 rounded-xl border border-sea-salt/20 bg-sea-salt/5 shadow-2xl">
 
                                                         <p className="text-sea-salt/40 text-base sm:text-lg font-medium uppercase tracking-wider mb-4">
                                                             {offerCopy.ourServiceLabel}

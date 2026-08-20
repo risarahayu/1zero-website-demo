@@ -78,7 +78,7 @@ function TopNav({
                 background: isPassed ? cfg.accent : "var(--raisin-black-800)",
                 borderColor: isPassed ? cfg.accent : "var(--green-500)",
               }}
-              className={`relative z-10 flex items-center justify-center w-12 h-12 rounded-full border-2 cursor-pointer transition-colors duration-500`}
+              className={`relative z-10 flex items-center justify-center w-12 h-12 rounded-full border-2 cursor-pointer transition-colors duration-500 transition-transform duration-300 hover:scale-105`}
             >
               {/* Warna icon: Jika belum dilewati warna abu, jika sudah dilewati warna putih/kontras */}
               <span className={`${isPassed ? "text-sea-salt" : "text-brunswick-green-500"} transition-colors duration-500`}>
@@ -295,7 +295,7 @@ export default function WorkflowHorizontal() {
             {workflowCopy.badge}
           </span>
           <div className="space-y-6">
-            <h2 className="font-sans text-3xl leading-normal sm:text-5xl sm:leading-normal font-bold text-sea-salt">
+            <h2 className="font-sans text-3xl leading-tight sm:text-5xl font-bold text-sea-salt">
               {workflowCopy.title}
             </h2>
             {/* <p className="max-w-xl mx-auto font-sans text-base sm:text-lg text-sea-salt/90">
@@ -357,14 +357,14 @@ export default function WorkflowHorizontal() {
 
           <button
             onClick={handlePrev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-sea-salt/10 hover:bg-sea-salt/20 text-sea-salt flex items-center justify-center transition-all hidden sm:flex"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-sea-salt/10  text-sea-salt flex items-center justify-center transition-all hover:bg-brunswick-green-900 border border-sea-salt/20 hidden sm:flex"
           >
             <Icon icon="mdi:chevron-left" width={22} />
           </button>
 
           <button
             onClick={handleNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-sea-salt/10 hover:bg-sea-salt/20 text-sea-salt flex items-center justify-center transition-all hidden sm:flex"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-sea-salt/10  text-sea-salt flex items-center justify-center transition-all hover:bg-brunswick-green-900 border border-sea-salt/20 hidden sm:flex"
           >
             <Icon icon="mdi:chevron-right" width={22} />
           </button>

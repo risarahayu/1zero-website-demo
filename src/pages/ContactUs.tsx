@@ -145,7 +145,7 @@ export default function ContactPage() {
                     <div className="space-y-6">
                         <a
                             href={`mailto:${contactUsCopy.emailUsVal}`}
-                            className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/5 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group"
+                            className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/20/5 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group"
                         >
                             <div className="p-3 rounded-lg bg-brunswick-green-900/20 border border-brunswick-green-500 text-brunswick-green-500 group-hover:shadow-[0_0_12px_rgba(133,223,195,0.4)] transition-all duration-300">
                                 <Mail className="w-5 h-5" />
@@ -164,7 +164,7 @@ export default function ContactPage() {
                         <a
                             href="https://api.whatsapp.com/send/?phone=6285339396030&text&type=phone_number&app_absent=0"
                             target="_blank"
-                            className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/5 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group"
+                            className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/20/5 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group"
                         >
                             <div className="p-3 rounded-lg bg-brunswick-green-900/20 border border-brunswick-green-500 text-brunswick-green-500 group-hover:shadow-[0_0_12px_rgba(133,223,195,0.4)] transition-all duration-300">
                                 <Phone className="w-5 h-5" />
@@ -184,7 +184,7 @@ export default function ContactPage() {
                             href="https://share.google/lxMZhTfNl1M2vH5tt"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/5 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group"
+                            className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/20/5 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group"
                         >
                             <div className="p-3 rounded-lg bg-brunswick-green-900/20 border border-brunswick-green-500 text-brunswick-green-500 group-hover:shadow-[0_0_12px_rgba(133,223,195,0.4)] transition-all duration-300">
                                 <MapPin className="w-5 h-5" />
@@ -203,7 +203,7 @@ export default function ContactPage() {
                     </div>
 
                     {/* Placeholder Stylized Map Neon (Optional) */}
-                    {/* <div className="relative h-32 w-full rounded-xl border border-sea-salt/5 bg-gradient-to-br from-sea-salt/[0.02] to-transparent overflow-hidden flex items-center justify-center group border-dashed">
+                    {/* <div className="relative h-32 w-full rounded-xl border border-sea-salt/20/5 bg-gradient-to-br from-sea-salt/[0.02] to-transparent overflow-hidden flex items-center justify-center group border-dashed">
                         <div className="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:16px_16px]"></div>
                         <span className="text-sm text-sea-salt/30 tracking-widest font-mono uppercase group-hover:text-green-500/50 transition-colors">
                             [ System Grid Coordinates Active ]
@@ -219,14 +219,14 @@ export default function ContactPage() {
                     <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-green-500/10 to-brunswick-green-500/10 blur-2xl opacity-60 pointer-events-none"></div>
 
                     {/* Form Container (Glassmorphic) */}
-                    <div className="relative p-8 md:p-10 rounded-2xl border border-sea-salt/10 bg-raisin-black-900/60 backdrop-blur-xl shadow-[0_0_50px_rgba(0,0,0,0.8)]">
+                    <div className="relative p-8 md:p-10 rounded-2xl border border-sea-salt/20 bg-raisin-black-900/60 backdrop-blur-xl shadow-[0_0_50px_rgba(0,0,0,0.8)]">
 
                         {/* VALIDASI KONDISI: SUCCESS STATE BLOCK */}
                         {isSubmitted && (
-                            <div className="mb-8 p-4 rounded-xl border border-green-500/30 bg-green-500/5 flex items-start gap-3 shadow-[0_0_15px_rgba(133,223,195,0.1)] transition-all duration-300">
-                                <CheckCircle className="w-5 h-5 text-brunswick-green-900 flex-shrink-0 mt-0.5" />
+                            <div className="mb-8 p-4 rounded-xl border border-green-500/30 bg-green-500 flex items-start gap-3 shadow-[0_0_15px_rgba(133,223,195,0.1)] transition-all duration-300">
+                                <CheckCircle className="w-5 h-5 text-brunswick-green-500 flex-shrink-0 mt-0.5" />
                                 <div>
-                                    <h4 className="font-sans text-xl sm:text-2xl font-bold text-brunswick-green-900">{contactUsCopy.successTitle}</h4>
+                                    <h4 className="font-sans text-xl sm:text-2xl font-bold text-brunswick-green-500">{contactUsCopy.successTitle}</h4>
                                     <p className="text-sea-salt/60 text-base sm:text-lg mt-1">{contactUsCopy.successDesc}</p>
                                 </div>
                             </div>

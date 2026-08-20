@@ -18,7 +18,7 @@ export default function Footer() {
 
           {/* LEFT COLUMN: BIG GREETING */}
           <div className="lg:col-span-5 space-y-6">
-            <h2 className="font-sans text-3xl leading-normal sm:text-5xl sm:leading-normal font-bold text-sea-salt">
+            <h2 className="font-sans text-3xl leading-tight sm:text-5xl font-bold text-sea-salt">
               {footerCopy.connectTitle} <br />
               <span className="animate-gradient-text text-gradient-impact text-transparent bg-clip-text bg-gradient-to-r from-[var(--ivory)] to-[var(--green-900)]">
                 {footerCopy.connectGradient}
@@ -113,7 +113,7 @@ export default function Footer() {
                   <MapPin className="h-4 w-4 text-brunswick-green-500 shrink-0 mt-0.5" />
                   <div>
                     {/* <strong className="text-sea-salt block font-sans text-lg">{footerCopy.officeTitle}</strong> */}
-                    <span className="text-sea-salt/90">{footerCopy.developmentOfficeAddress}</span>
+                    <a href="https://share.google/rVpuiJ5HMThhEfPkQ" target="_blank" className=""><span className="text-sea-salt/90 hover:text-brunswick-green-500">{footerCopy.developmentOfficeAddress}</span></a>
                   </div>
                 </div>
               </div>
@@ -135,7 +135,7 @@ export default function Footer() {
           </div>
 
           <div className="relative flex items-center gap-4 text-lg uppercase">
-            <a href="#home" className="hover:text-brunswick-green-500 hover:underline transition-colors">{footerCopy.backToTop}</a>
+            <a href="#home" className="hover:text-brunswick-green-500  transition-colors">{footerCopy.backToTop}</a>
             <span>•</span>
             {/* <span className="text-brunswick-green-500">{footerCopy.madeForDoubleImpact}</span> */}
           </div>

@@ -9,7 +9,7 @@ interface HeroProps {
 
 export default function Hero({ onOpenBooking }: HeroProps) {
   return (
-    <section id="home" className="relative  overflow-hidden py-16 ">
+    <section id="home" className="scroll-mt-[50px] relative  overflow-hidden py-16 ">
       {/* Aurora glow effect right behind hero heading */}
       {/* Animated Aurora Background */}
       <div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none">

@@ -94,7 +94,7 @@ export default function ServicesHero() {
                 {/* RIGHT (SMOOTH IMAGE) */}
                 <div className="relative">
 
-                    <div className="relative rounded-2xl overflow-hidden border border-sea-salt bg-sea-salt/30 h-[360px]">
+                    <div className="relative rounded-2xl overflow-hidden border border-sea-salt/20 bg-sea-salt/30 h-[360px]">
 
                         {/* IMAGE */}
                         <img

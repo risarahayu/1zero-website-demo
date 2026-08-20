@@ -138,7 +138,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ type: "spring", damping: 25, stiffness: 350 }}
-          className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-sea-salt bg-[#0c0c0c] p-6 shadow-2xl md:p-8"
+          className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-sea-salt/20 bg-[#0c0c0c] p-6 shadow-2xl md:p-8"
         >
           {/* Subtle green aurora inside modal */}
           <div className="absolute -top-32 -left-32 -z-10 h-64 w-64 rounded-full bg-brunswick-green-900/10 blur-3xl" />
@@ -240,7 +240,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               </div>
 
               {/* Timezone */}
-              <div className="flex items-center gap-2 rounded-xl bg-sea-salt/60 p-3 border border-sea-salt/80">
+              <div className="flex items-center gap-2 rounded-xl bg-sea-salt/60 p-3 border border-sea-salt/20/80">
                 <Globe className="h-4 w-4 text-sea-salt" />
                 <div className="flex-1">
                   <span className="block text-lg text-sea-salt font-sans">{bookingModalCopy.timezoneLabel}</span>
@@ -275,7 +275,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
           {/* STEP 2: USER DETAILS FORM */}
           {step === 2 && (
             <form onSubmit={handleBookSubmit} className="space-y-4 py-2">
-              <div className="text-sea-salt bg-sea-salt/60 p-3 rounded-xl border border-sea-salt border-sea-salt/80 text-lg mb-2">
+              <div className="text-sea-salt bg-sea-salt/60 p-3 rounded-xl border border-sea-salt/20 border-sea-salt/80 text-lg mb-2">
                 <p className="text-base sm:text-lg flex items-center gap-1.5">
                   <Calendar className="h-3.5 w-3.5 text-brunswick-green-500" />
                   <span>{bookingModalCopy.selectedDateLabel}</span>
@@ -299,7 +299,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                     placeholder={bookingModalCopy.fullNamePlaceholder}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full pl-10 pr-4 p-3.5 rounded-xl bg-sea-salt/60 border border-sea-salt text-lg focus:outline-none focus:border-brunswick-green-500/80 focus:ring-1 focus:ring-brunswick-green-500/40 text-sea-salt font-sans transition-all"
+                    className="w-full pl-10 pr-4 p-3.5 rounded-xl bg-sea-salt/60 border border-sea-salt/20 text-lg focus:outline-none focus:border-brunswick-green-500/80 focus:ring-1 focus:ring-brunswick-green-500/40 text-sea-salt font-sans transition-all"
                   />
                 </div>
               </div>
@@ -315,7 +315,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                     placeholder={bookingModalCopy.emailPlaceholder}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full pl-10 pr-4 p-3.5 rounded-xl bg-sea-salt/60 border border-sea-salt text-lg focus:outline-none focus:border-brunswick-green-500/80 focus:ring-1 focus:ring-brunswick-green-500/40 text-sea-salt font-sans transition-all"
+                    className="w-full pl-10 pr-4 p-3.5 rounded-xl bg-sea-salt/60 border border-sea-salt/20 text-lg focus:outline-none focus:border-brunswick-green-500/80 focus:ring-1 focus:ring-brunswick-green-500/40 text-sea-salt font-sans transition-all"
                   />
                 </div>
               </div>
@@ -330,7 +330,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                     placeholder={bookingModalCopy.companyPlaceholder}
                     value={company}
                     onChange={(e) => setCompany(e.target.value)}
-                    className="w-full pl-10 pr-4 p-3.5 rounded-xl bg-sea-salt/60 border border-sea-salt text-lg focus:outline-none focus:border-brunswick-green-500/80 focus:ring-1 focus:ring-brunswick-green-500/40 text-sea-salt font-sans transition-all"
+                    className="w-full pl-10 pr-4 p-3.5 rounded-xl bg-sea-salt/60 border border-sea-salt/20 text-lg focus:outline-none focus:border-brunswick-green-500/80 focus:ring-1 focus:ring-brunswick-green-500/40 text-sea-salt font-sans transition-all"
                   />
                 </div>
               </div>
@@ -343,7 +343,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   placeholder={bookingModalCopy.notesPlaceholder}
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  className="w-full p-3.5 rounded-xl bg-sea-salt/60 border border-sea-salt text-lg focus:outline-none focus:border-brunswick-green-500/80 focus:ring-1 focus:ring-brunswick-green-500/40 text-sea-salt font-sans transition-all resize-none"
+                  className="w-full p-3.5 rounded-xl bg-sea-salt/60 border border-sea-salt/20 text-lg focus:outline-none focus:border-brunswick-green-500/80 focus:ring-1 focus:ring-brunswick-green-500/40 text-sea-salt font-sans transition-all resize-none"
                 />
               </div>
 
@@ -352,7 +352,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   id="modal-back-btn"
                   type="button"
                   onClick={() => setStep(1)}
-                  className="w-1/3 p-3 rounded-xl border border-sea-salt bg-[#111] hover:bg-sea-salt text-sea-salt font-sans text-lg tracking-wide transition-colors cursor-pointer"
+                  className="w-1/3 p-3 rounded-xl border border-sea-salt/20 bg-[#111] hover:bg-sea-salt text-sea-salt font-sans text-lg tracking-wide transition-colors cursor-pointer"
                 >
                   {bookingModalCopy.backBtn}
                 </button>
@@ -407,7 +407,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   id="modal-finish-btn"
                   type="button"
                   onClick={cleanClose}
-                  className="px-8 p-3 rounded-xl bg-sea-salt hover:bg-sea-salt text-sea-salt font-sans text-lg tracking-wide transition-colors cursor-pointer border border-sea-salt"
+                  className="px-8 p-3 rounded-xl bg-sea-salt hover:bg-sea-salt text-sea-salt font-sans text-lg tracking-wide transition-colors cursor-pointer border border-sea-salt/20"
                 >
                   {bookingModalCopy.backToWebsiteBtn}
                 </button>

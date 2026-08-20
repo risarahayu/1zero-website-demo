@@ -73,7 +73,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               : "relative"
               }`}
           >
-            <div className={`flex items-center justify-between mx-auto bg-raisin-black-800/40 border border-sea-salt/80 backdrop-blur-md rounded-full px-5 py-2.5 shadow-xl transition-all ${isScrolled ? "scale-95 shadow-brunswick-green-500/5 shadow-2xl" : ""
+            <div className={`flex items-center justify-between mx-auto bg-raisin-black-800/40 border border-sea-salt/20/80 backdrop-blur-md rounded-full px-5 py-2.5 shadow-xl transition-all ${isScrolled ? "scale-95 shadow-brunswick-green-500/5 shadow-2xl" : ""
               }`}>
               {/* Left empty block or indicator */}
               <div

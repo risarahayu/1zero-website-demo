@@ -63,7 +63,7 @@ export default function Cases() {
               </span>
 
             </div>
-            <h2 className="font-sans text-3xl leading-normal sm:text-5xl sm:leading-normal font-bold text-sea-salt">
+            <h2 className="font-sans text-3xl leading-tight sm:text-5xl font-bold text-sea-salt">
               {casesCopy.titleLine1} <br />{casesCopy.titleLine2}
             </h2>
           </div>

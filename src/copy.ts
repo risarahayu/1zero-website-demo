@@ -148,7 +148,7 @@ export const servicesCopy = {
 };
 
 export const productsCopy = {
-  badge: "Our Capabilities",
+  badge: "Our Services",
   title: "Architectural Solutions.",
   description: "Purpose-built infrastructure and fractional technical leadership designed to eliminate tech debt and scale your operations exponentially."
 };

@@ -52,7 +52,7 @@ export default function WhyUs(props: WhyUsProps) {
             <span className="uppercase">{whyUsCopy.sectionTag}</span><span className="text-brunswick-green-500">1zero</span>
           </span>
           <div className="space-y-6 justify-self-center text-center">
-            <h2 className="font-sans text-3xl leading-normal sm:text-5xl sm:leading-normal font-bold text-sea-salt">
+            <h2 className="font-sans text-3xl leading-tight sm:text-5xl font-bold text-sea-salt">
               {whyUsCopy.titleLine1} <br /> {whyUsCopy.titleLine2}
             </h2>
 
@@ -69,8 +69,8 @@ export default function WhyUs(props: WhyUsProps) {
                 <div className="flex items-center gap-2">
                   <span className="text-sea-salt  font-medium text-center md:text-left">{whyUsCopy.meetOurTeam}</span>
                 </div>
-                <Link to={`${import.meta.env.BASE_URL}about`} >
-                  <p className="font-sans hidden md:block text-base text-center  sm:text-lg text-sea-salt/90 tracking-wider font-semibold ml-2 select-none  font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">{whyUsCopy.seeAllTeam}</p>
+                <Link to={`${import.meta.env.BASE_URL}about`} target="_blank">
+                  <p className="font-sans hidden md:block text-base text-center  sm:text-lg text-sea-salt/90 tracking-wider font-semibold ml-2 select-none  font-bold text-brunswick-green-500 cursor-pointer hover:text-brunswick-green-500 transition-all duration-300 transform active:scale-95">{whyUsCopy.seeAllTeam}</p>
                 </Link>
               </div>
 
@@ -84,7 +84,7 @@ export default function WhyUs(props: WhyUsProps) {
                       onClick={() => setSelectedMember(member)}
                       className="group relative w-40  h-40 shrink-0 cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 hover:border-brunswick-green-500"
                     >
-                      <div className="relative h-24 w-24   rounded-xl overflow-hidden border border-sea-salt self-center">
+                      <div className="relative h-24 w-24   rounded-xl overflow-hidden border border-sea-salt/20 self-center">
                         <img
                           src={member.images?.imageDisplay}
                           alt={member.name}
@@ -134,7 +134,7 @@ export default function WhyUs(props: WhyUsProps) {
                       onClick={() => setSelectedMember(member)}
                       className="group relative w-40  h-40 shrink-0 cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 hover:border-brunswick-green-500 "
                     >
-                      <div className="relative h-24 w-24   rounded-xl overflow-hidden border border-sea-salt self-center">
+                      <div className="relative h-24 w-24   rounded-xl overflow-hidden border border-sea-salt/20 self-center">
                         <img
                           src={member.images?.imageDisplay}
                           alt={member.name}

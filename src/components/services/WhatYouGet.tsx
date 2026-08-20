@@ -62,7 +62,7 @@ export default function WhatYouGet() {
                     {servicesCopy.workingWithBadge}
                 </span>
 
-                <h2 className="font-sans text-3xl leading-normal sm:text-5xl sm:leading-normal font-bold text-sea-salt">
+                <h2 className="font-sans text-3xl leading-tight sm:text-5xl font-bold text-sea-salt">
                     {servicesCopy.whatYouGain}
                 </h2>
 

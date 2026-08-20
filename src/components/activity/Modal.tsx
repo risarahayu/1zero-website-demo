@@ -58,7 +58,7 @@ export function ActivityModal({
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Scroll Area */}
-                        <div className="modal-scroll h-full max-h-[80vh] overflow-y-auto">
+                        <div className="modal-scroll h-full max-h-[80vh] overflow-y-auto rounded">
 
                             {/* Close button */}
                             <button
@@ -117,7 +117,7 @@ export function ActivityModal({
                             ) : (
                                 <div className="flex flex-col gap-6 p-6 mt-12 sm:mt-8">
                                     {/* {selectedItem.photo && (
-                                    <div className="relative h-[250px] sm:h-[350px] w-full overflow-hidden rounded-2xl bg-sea-salt/6 border border-sea-salt/10">
+                                    <div className="relative h-[250px] sm:h-[350px] w-full overflow-hidden rounded-2xl bg-sea-salt/6 border border-sea-salt/20">
                                     <img
                                         src={selectedItem.photo}
                                         alt={selectedItem.title}
@@ -132,7 +132,7 @@ export function ActivityModal({
                                         <div className="w-full space-y-4">
 
                                             {/* Image Slider */}
-                                            <div className="relative w-full h-[250px] sm:h-[350px] overflow-hidden rounded-2xl border border-sea-salt/10">
+                                            <div className="relative w-full h-[250px] sm:h-[350px] overflow-hidden rounded-2xl border border-sea-salt/20">
                                                 {imageLoading && (
                                                     <div className="absolute inset-0 overflow-hidden rounded-2xl bg-brunswick-green-900/10">
                                                         <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-brunswick-green-800/20 via-brunswick-green-500/35 to-brunswick-green-800/20" />
@@ -157,9 +157,9 @@ export function ActivityModal({
                                                         <button
                                                             key={index}
                                                             onClick={() => setGalleryIndex(index)}
-                                                            className={`h-2 rounded-full transition-all duration-200 ${index === galleryIndex
-                                                                ? "w-6 bg-brunswick-green-500"
-                                                                : "w-2 bg-sea-salt/30 hover:bg-sea-salt/60"
+                                                            className={`h-3 rounded-full transition-all duration-200 ${index === galleryIndex
+                                                                ? "w-8 bg-brunswick-green-500"
+                                                                : "w-3 bg-sea-salt/30 hover:bg-sea-salt/60"
                                                                 }`}
                                                         />
                                                     ))}
@@ -169,7 +169,7 @@ export function ActivityModal({
                                         </div>
                                     ) : (
                                         <div className="w-full space-y-4">
-                                            <div className="relative w-full h-[250px] sm:h-[350px] overflow-hidden rounded-2xl border border-sea-salt/10">
+                                            <div className="relative w-full h-[250px] sm:h-[350px] overflow-hidden rounded-2xl border border-sea-salt/20">
                                                 {imageLoading && (
                                                     <div className="absolute inset-0 overflow-hidden rounded-2xl bg-brunswick-green-900/10">
                                                         <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-brunswick-green-800/20 via-brunswick-green-500/35 to-brunswick-green-800/20" />

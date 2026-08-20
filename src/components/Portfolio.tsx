@@ -62,15 +62,15 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
           <div className="lg:col-span-4 space-y-10 sm:space-y-8">
 
             {/* Custom rounded capsule badge */}
-            {/* <div className="inline-flex">
+            <div className="inline-flex">
               <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
                 {portfolioCopy.badge}
               </span>
-            </div> */}
+            </div>
 
             <div className="space-y-6">
               {/* Elegant Main Title */}
-              <h2 className="font-sans text-3xl leading-normal sm:text-5xl sm:leading-normal font-bold text-sea-salt">
+              <h2 className="font-sans text-3xl leading-tight sm:text-5xl font-bold text-sea-salt">
                 {portfolioCopy.titleLine1} <br />
                 {portfolioCopy.titleLine2}
               </h2>
@@ -105,7 +105,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
                 </button>
               </div>
               <Link to={`${import.meta.env.BASE_URL}portfolio`} target="_blank">
-                <p className="font-sans text-base sm:text-lg text-sea-salt/80 tracking-widest  font-semibold ml-2 select-none cursor-pointer hover:text-brunswick-green-500 hover:underline transition-all duration-300 transform active:scale-95">{portfolioCopy.seeAllText}</p>
+                <p className="font-sans text-base sm:text-lg text-sea-salt/80 tracking-widest  font-semibold ml-2 select-none cursor-pointer hover:text-brunswick-green-500 transition-all duration-300 transform active:scale-95">{portfolioCopy.seeAllText}</p>
               </Link>
             </div>
 

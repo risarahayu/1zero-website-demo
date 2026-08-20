@@ -56,7 +56,7 @@ export function ActivitySection(total?: number) {
                 <button
                     onClick={() => setCurrentPage((prev) => prev - 1)}
                     disabled={currentPage === 1}
-                    className={`px-4 py-2 rounded-full border border-sea-salt/20 disabled:opacity-40 ${currentPage === 1 ? "cursor-not-allowed" : "hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt"}`}
+                    className={`px-4 py-2 rounded-full border border-sea-salt/20 bg-sea-salt/20 disabled:opacity-40 ${currentPage === 1 ? "cursor-not-allowed" : "hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt"}`}
                 >
                     Previous
                 </button>
@@ -68,7 +68,7 @@ export function ActivitySection(total?: number) {
                         className={`px-4 py-2 rounded-full border
                             ${currentPage === index + 1
                                 ? "bg-brunswick-green-900 text-brunswick-green-500"
-                                : "border-sea-salt/20 hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt"
+                                : "border-sea-salt bg-sea-salt/20 hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt"
                             }`}
                     >
                         {index + 1}
@@ -78,7 +78,7 @@ export function ActivitySection(total?: number) {
                 <button
                     onClick={() => setCurrentPage((prev) => prev + 1)}
                     disabled={currentPage === totalPages}
-                    className={`px-4 py-2 rounded-full border border-sea-salt/20 disabled:opacity-40 ${currentPage === totalPages ? "cursor-not-allowed" : "hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt"}`}
+                    className={`px-4 py-2 rounded-full border border-sea-salt/20 bg-sea-salt/20 disabled:opacity-40 ${currentPage === totalPages ? "cursor-not-allowed" : "hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt"}`}
                 >
                     Next
                 </button>

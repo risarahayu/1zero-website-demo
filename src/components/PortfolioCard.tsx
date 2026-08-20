@@ -46,6 +46,7 @@ export default function PortfolioCard({ setIsPaused, project, onReadMore, classN
     bg-sea-salt/6 backdrop-blur
     rounded-3xl p-4 border
     transition-all duration-500
+    cursor-pointer
 
     ${isHighlighted
         ? `
@@ -53,11 +54,12 @@ export default function PortfolioCard({ setIsPaused, project, onReadMore, classN
         `
         : `
           border-sea-salt
-          opacity-70
+          
         `
       }
 
     hover:border-brunswick-green-500`}
+      onClick={handleReadMore}
     >
       {/* Visual Mockup Stage Box */}
       <div className={`relative h-[250px] sm:h-[350px] w-full rounded-[24px] border  ${project.bgClass} flex items-center justify-center overflow-hidden shadow-2xl transition-all duration-500 group-hover:scale-[1.01] group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.6)]`}>

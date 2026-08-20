@@ -556,9 +556,9 @@ const TeamSection: React.FC = () => {
                                 Team Member
                             </span> */}
                                 <div className="space-y-6">
-                                    <h3 className="font-sans text-2xl sm:text-3xl text-start font-bold text-brunswick-green-500">
+                                    <h2 className=" font-sans text-3xl sm:text-5xl leading-tight text-start font-bold text-brunswick-green-500">
                                         {activeMember.name}
-                                    </h3>
+                                    </h2>
                                     <p className="text-base sm:text-lg text-start text-sea-salt/90">
                                         {activeMember.role}
                                     </p>

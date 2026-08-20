@@ -38,17 +38,17 @@ export default function Products({ onOpenBooking }: ProductsProps) {
 
   return (
     <section ref={sectionRef} className="relative  bg-transparent overflow-hidden pb-16 px-6">
-      <div className="relative z-20 mx-auto max-w-7xl px-6 rounded-[2.5rem] border border-sea-salt/20 py-6">
+      <div className="relative z-20 mx-auto max-w-7xl px-6 rounded-[2.5rem] border border-sea-salt/20 py-16">
 
 
         {/* <div className="relative space-y-10 px-6 py-16 sm:px-10 sm:py-16"> */}
         {/* Head Area */}
         <div className="text-center space-y-10">
-          {/* <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
+          <span className="inline-block px-3.5 py-2 rounded-full border border-brunswick-500 text-lg font-sans uppercase tracking-widest text-brunswick-green-500  bg-raisin-black">
             {productsCopy.badge}
-          </span> */}
+          </span>
           <div className="space-y-6">
-            <h2 className="font-sans text-3xl leading-normal sm:text-5xl sm:leading-normal font-bold text-sea-salt">
+            <h2 className="font-sans text-3xl leading-tight sm:text-5xl font-bold text-sea-salt">
               {productsCopy.title}
             </h2>
             <p className="max-w-xl mx-auto font-sans text-base sm:text-lg text-sea-salt/90">
@@ -85,12 +85,12 @@ export default function Products({ onOpenBooking }: ProductsProps) {
 
                 <div className="border-t border-sea-salt/20 flex items-center justify-end gap-4 pt-6">
                   {p.fileEng && (
-                    <a href={p.fileEng} download className="flex h-7 w-7 items-center justify-center rounded-full border border-transparent  bg-sea-salt/20 text-sea-salt hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt transition-all">
+                    <a href={p.fileEng} download className="flex h-7 w-7 items-center justify-center rounded-full border border-sea-salt/20  bg-sea-salt/20 text-sea-salt hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt transition-all">
                       <Download className="h-4 w-4 transform transition-transform" />
                     </a>
                   )}
                   <a href={`${import.meta.env.BASE_URL}services`} className="flex h-7 w-7 items-center justify-center rounded-full 
-                    border border-sea-salt/10 
+                    border border-sea-salt/20 
                     bg-sea-salt/20 text-sea-salt 
                     hover:bg-brunswick-green-900 
                     hover:border-brunswick-green-500 
