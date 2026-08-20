@@ -95,7 +95,7 @@ export default function Products({ onOpenBooking }: ProductsProps) {
                     hover:bg-brunswick-green-900 
                     hover:border-brunswick-green-500 
                     hover:text-sea-salt 
-                    transition-al">
+                    transition-al" target="_blank">
                     <ArrowUpRight className="h-4 w-4 transform hover:rotate-45 transition-transform" />
                   </a>
                 </div>
