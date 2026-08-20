@@ -104,7 +104,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
                   <ArrowRight className="h-4 w-4" />
                 </button>
               </div>
-              <Link to={`${import.meta.env.BASE_URL}portfolio`}>
+              <Link to={`${import.meta.env.BASE_URL}portfolio`} target="_blank">
                 <p className="font-sans text-base sm:text-lg text-sea-salt/80 tracking-widest  font-semibold ml-2 select-none cursor-pointer hover:text-brunswick-green-500 hover:underline transition-all duration-300 transform active:scale-95">{portfolioCopy.seeAllText}</p>
               </Link>
             </div>
