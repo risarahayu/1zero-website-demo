@@ -121,7 +121,7 @@ export default function Testimonials() {
 
                       ${isActive
                         ? "border-brunswick-green-500 bg-sea-salt/6 shadow-2xl shadow-brunswick-green-500/5 scale-100 opacity-100"
-                        : "border-sea-salt  scale-[0.96] hover:opacity-80"
+                        : "border-sea-salt/20  scale-[0.96] hover:opacity-80"
                       }
                     `}
                   >

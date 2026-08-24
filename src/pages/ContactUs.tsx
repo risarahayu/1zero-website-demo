@@ -145,7 +145,7 @@ export default function ContactPage() {
                     <div className="space-y-6">
                         <a
                             href={`mailto:${contactUsCopy.emailUsVal}`}
-                            className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/20/5 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group"
+                            className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/20 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group"
                         >
                             <div className="p-3 rounded-lg bg-brunswick-green-900/20 border border-brunswick-green-500 text-brunswick-green-500 group-hover:shadow-[0_0_12px_rgba(133,223,195,0.4)] transition-all duration-300">
                                 <Mail className="w-5 h-5" />
@@ -164,7 +164,7 @@ export default function ContactPage() {
                         <a
                             href="https://api.whatsapp.com/send/?phone=6285339396030&text&type=phone_number&app_absent=0"
                             target="_blank"
-                            className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/20/5 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group"
+                            className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/20 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group"
                         >
                             <div className="p-3 rounded-lg bg-brunswick-green-900/20 border border-brunswick-green-500 text-brunswick-green-500 group-hover:shadow-[0_0_12px_rgba(133,223,195,0.4)] transition-all duration-300">
                                 <Phone className="w-5 h-5" />
@@ -184,7 +184,7 @@ export default function ContactPage() {
                             href="https://share.google/lxMZhTfNl1M2vH5tt"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/20/5 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group"
+                            className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/20 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group"
                         >
                             <div className="p-3 rounded-lg bg-brunswick-green-900/20 border border-brunswick-green-500 text-brunswick-green-500 group-hover:shadow-[0_0_12px_rgba(133,223,195,0.4)] transition-all duration-300">
                                 <MapPin className="w-5 h-5" />
@@ -203,7 +203,7 @@ export default function ContactPage() {
                     </div>
 
                     {/* Placeholder Stylized Map Neon (Optional) */}
-                    {/* <div className="relative h-32 w-full rounded-xl border border-sea-salt/20/5 bg-gradient-to-br from-sea-salt/[0.02] to-transparent overflow-hidden flex items-center justify-center group border-dashed">
+                    {/* <div className="relative h-32 w-full rounded-xl border border-sea-salt/20 bg-gradient-to-br from-sea-salt/[0.02] to-transparent overflow-hidden flex items-center justify-center group border-dashed">
                         <div className="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:16px_16px]"></div>
                         <span className="text-sm text-sea-salt/30 tracking-widest font-mono uppercase group-hover:text-green-500/50 transition-colors">
                             [ System Grid Coordinates Active ]

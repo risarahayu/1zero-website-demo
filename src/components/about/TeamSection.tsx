@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import TeamBubble from './TeamBubble'; // optional, kept for potential reuse
 import { Icon } from "@iconify/react";
-import { section } from 'motion/react-client';
+import { button, section } from 'motion/react-client';
 import CtaBanner from './CTA Banner';
 import MemberModal from './MemberModal';
 import { aboutCopy } from '../../copy'; // Injecting our new copy file
@@ -648,13 +648,16 @@ const TeamSection: React.FC = () => {
 
                                 <div className="flex flex-wrap gap-2">
                                     {activeMember.sdgs.map((sdg, index) => (
-                                        <img
-                                            key={sdg.id}
-                                            src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(sdg.id).padStart(2, "0")}.png`}
-                                            alt={`SDG ${sdg.id}`}
-                                            className="w-16 h-16 object-contain cursor-pointer hover:scale-110 transition rounded"
+                                        <button key={sdg.id}
                                             onClick={() => handleSDGClick(sdg.id)}
-                                        />
+                                        >
+                                            <img
+                                                src={`${import.meta.env.BASE_URL}E SDG Icons WEB/E-WEB-Goal-${String(sdg.id).padStart(2, "0")}.png`}
+                                                alt={`SDG ${sdg.id}`}
+                                                className="w-16 h-16 object-contain cursor-pointer hover:scale-110 transition rounded"
+
+                                            />
+                                        </button>
                                     ))}
                                 </div>
 

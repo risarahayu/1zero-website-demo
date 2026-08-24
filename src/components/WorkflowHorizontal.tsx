@@ -160,7 +160,7 @@ function Panel({
 
       {/* Main content */}
       <div className={`relative  h-full flex border items-center max-w-7xl mx-auto px-8 sm:px-16 lg:px-24 rounded-2xl transition-colors duration-500
-      ${isHighlighted ? "border-brunswick-green-500" : "border-sea-salt"}`}>
+      ${isHighlighted ? "border-brunswick-green-500" : "border-sea-salt/20"}`}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 w-full">
 
           {/* LEFT: step info */}
