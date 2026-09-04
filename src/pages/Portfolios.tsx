@@ -3,20 +3,18 @@ import { customProjects } from "../data";
 import PortfolioCard from "../components/PortfolioCard";
 import { PhoneCall } from "lucide-react";
 import { portfoliosPageCopy } from "../copy";
+import { useNavigate } from "react-router-dom";
 
 export default function PortfolioPage() {
     const [activeTab, setActiveTab] = useState("All");
+    const navigate = useNavigate();
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
     const onOpenBooking = () => {
-        window.open(
-            "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3gWtjZcsb5BZb78RjU3eDJJcflGsC7oDWdx__RBcaDFHzZ1ivl2IZrigY4R9-r63sLfDdRjvmQ",
-            "_blank",
-            "noopener,noreferrer"
-        );
+        navigate("/book");
     };
 
     // ambil semua service unik

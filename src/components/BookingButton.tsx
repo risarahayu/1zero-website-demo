@@ -1,6 +1,7 @@
 import React from "react";
 import { PhoneCall } from "lucide-react";
-import { aboutCopy, headerCopy } from '../copy'; // Adjust path if needed
+import { Link } from "react-router-dom";
+import { aboutCopy } from "../copy";
 
 interface BookingButtonProps {
   onClick?: () => void;
@@ -9,11 +10,10 @@ interface BookingButtonProps {
 
 export default function BookingButton({ onClick, className = "" }: BookingButtonProps) {
   return (
-    <a
+    <Link
       id="cta-booking-btn"
-      href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3gWtjZcsb5BZb78RjU3eDJJcflGsC7oDWdx__RBcaDFHzZ1ivl2IZrigY4R9-r63sLfDdRjvmQ"
-      target="_blank"
-      rel="noopener noreferrer"
+      to="/book"
+      onClick={onClick}
       className={`group relative flex items-center justify-center gap-2
         px-10 py-5
         bg-[linear-gradient(120deg,var(--color-sea-salt),var(--color-ivory),var(--color-dun),var(--color-green-500))]
@@ -32,6 +32,6 @@ export default function BookingButton({ onClick, className = "" }: BookingButton
       {aboutCopy.en.ctaTitle}
 
       <PhoneCall className="h-4 w-4 text-neutral-900 group-hover:scale-110 transition-transform" />
-    </a>
+    </Link>
   );
 }

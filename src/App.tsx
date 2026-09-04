@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import Services from "./pages/Services";
 import Hero from "./components/Hero";
@@ -11,26 +12,18 @@ import Testimonials from "./components/Testimonials";
 import Cases from "./components/Cases";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
-import BookingModal from "./components/BookingModal";
 import Header from "./components/Header";
 import ContactPage from "./pages/ContactUs";
 import Portfolios from "./pages/Portfolios";
 import WorkflowHorizontal from "./components/WorkflowHorizontal";
 import AboutUs from "./pages/AboutUs";
+import BookingPage from "./pages/BookingPage";
 
 export default function App() {
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleOpenBooking = () => {
-    window.open(
-      "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3gWtjZcsb5BZb78RjU3eDJJcflGsC7oDWdx__RBcaDFHzZ1ivl2IZrigY4R9-r63sLfDdRjvmQ",
-      "_blank",
-      "noopener,noreferrer"
-    );
-  };
-
-  const handleCloseBooking = () => {
-    setIsBookingOpen(false);
+    navigate("/book");
   };
 
 
@@ -85,14 +78,17 @@ export default function App() {
             element={<Portfolios />}
           />
 
+          <Route
+            path="/book"
+            element={<BookingPage />}
+          />
+
         </Routes>
       </main>
 
       {/* Corporate footer details */}
       <Footer />
 
-      {/* Interactive schedules callback drawer overlay */}
-      <BookingModal isOpen={isBookingOpen} onClose={handleCloseBooking} />
     </div>
   );
 }
