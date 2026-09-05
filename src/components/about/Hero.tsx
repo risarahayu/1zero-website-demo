@@ -147,7 +147,7 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                             {/* Value Card 2 */}
                             <div className="flex-shrink-0 h-full   snap-center text-start space-y-6 group relative flex flex-col  p-6 rounded-3xl border border-brunswick-green-500  hover:border-brunswick-green-900 transition-all duration-300 shadow-2xl overflow-hidden cursor-pointer backdrop-blur bg-sea-salt/6">
                                 <div className="absolute top-0 right-0 p-6 opacity-10 text-6xl"><i className="fas fa-wifi"></i></div>
-                                <div className="w-12 h-12 rounded-xl bg-sea-salt/20 border border-brunswick-green-500/30 flex items-center justify-center text-brunswick-green-500 text-xl  shadow-lg shadow-brunswick-green-500/10">
+                                <div className="w-12 h-12 rounded-xl bg-sea-salt/20 border border-brunswick-green-500/30 flex items-center justify-center text-brunswick-green-500 text-xl  shadow-lg shadow-md/10">
                                     <i className="fas fa-wifi"></i>
                                 </div>
                                 <h3 className="font-sans text-2xl sm:text-3xl font-bold mb-4">{t.v2t}</h3>

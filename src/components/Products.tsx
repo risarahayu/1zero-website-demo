@@ -67,7 +67,7 @@ export default function Products({ onOpenBooking }: ProductsProps) {
 
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="h-12 w-12 rounded-xl border border-brunswick-green-500 flex items-center justify-center group-hover:bg-brunswick-green-500/10 group-hover:border-brunswick-green-500 transition-colors">
+                    <div className="h-12 w-12 rounded-xl border border-brunswick-green-500 flex items-center justify-center group-hover:bg-brunswick-green-900/50 group-hover:border-brunswick-green-500 transition-colors">
                       {getIcon(p.id)}
                     </div>
 

@@ -120,7 +120,7 @@ export default function Testimonials() {
                       duration-500
 
                       ${isActive
-                        ? "border-brunswick-green-500 bg-sea-salt/6 shadow-2xl shadow-brunswick-green-500/5 scale-100 opacity-100"
+                        ? "border-brunswick-green-500 bg-sea-salt/6 shadow-2xl shadow-md/5 scale-100 opacity-100"
                         : "border-sea-salt/20  scale-[0.96] hover:opacity-80"
                       }
                     `}

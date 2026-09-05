@@ -6,16 +6,16 @@ const getServiceColorClass = (service: string) => {
   const s = service.toLowerCase();
 
   if (s.includes("devpod")) {
-    return "border-dun/20 bg-dun/10 text-dun";
+    return "border-dun/20 text-dun";
   }
   if (s.includes("nextgen") || s.includes("next gen")) {
-    return "border-dun/20 bg-dun/10 text-dun";
+    return "border-dun/20 text-dun";
   }
   if (s.includes("geo") || s.includes("generative")) {
-    return "border-dun/20 bg-dun/10 text-dun";
+    return "border-dun/20 text-dun";
   }
   if (s.includes("fcto")) {
-    return "border-dun/20 bg-dun/10 text-dun";
+    return "border-dun/20 text-dun";
   }
 
   // Default fallback
@@ -89,12 +89,12 @@ export default function PortfolioCard({ setIsPaused, project, onReadMore, classN
 
       {/* Content Container - Configured with flex-1 and flex-col to push the button down */}
       <div className="space-y-2 flex flex-col">
-        <p
+        <h3
           className="font-sans  text-base sm:text-lg  font-bold text-sea-salt transition-colors cursor-pointer hover:text-brunswick-green-500 group-hover:text-brunswick-green-600 line-clamp-1"
           onClick={onReadMore}
         >
           {project.title}
-        </p>
+        </h3>
 
         <p className="font-sans text-base sm:text-lg text-sea-salt/90 font-normal w-full overflow-hidden [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical]">
           {project.description}
@@ -102,9 +102,9 @@ export default function PortfolioCard({ setIsPaused, project, onReadMore, classN
       </div>
       {showService && (
         <div className="flex flex-col space-y-2">
-          <div className="flex gap-2">
-            <span>Service: </span>
-            <span className={`inline-block px-2 py-1 rounded-full border text-sm tracking-widest font-medium ${getServiceColorClass(project.service)}`}>
+          <div className="flex items-center gap-2">
+            <span className="text-base">Service: </span>
+            <span className={`inline-block  rounded-full text-base tracking-widest font-medium ${getServiceColorClass(project.service)}`}>
               {project.service}
             </span>
           </div>
@@ -114,7 +114,7 @@ export default function PortfolioCard({ setIsPaused, project, onReadMore, classN
       <button
         type="button"
         onClick={handleReadMore}
-        className="inline-flex items-center justify-center font-sans font-semibold text-sea-salt  bg-raisin-black-800 hover:bg-brunswick-green-900  border border-sea-salt/20 hover:bg-brunswick-green-900 hover:text-sea-salt transition-all px-4 py-1.5 rounded-full text-lg transition-colors cursor-pointer self-start"
+        className="inline-flex items-center justify-center font-sans font-semibold text-sea-salt  bg-raisin-black-800 hover:bg-brunswick-green-900  border border-sea-salt/20 group-hover:bg-brunswick-green-900 hover:text-sea-salt transition-all px-4 py-1.5 rounded-full text-lg transition-colors cursor-pointer self-start"
       >
         Read More
       </button>

@@ -147,8 +147,8 @@ export default function ContactPage() {
                             href={`mailto:${contactUsCopy.emailUsVal}`}
                             className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/20 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group"
                         >
-                            <div className="p-3 rounded-lg bg-brunswick-green-900/20 border border-brunswick-green-500 text-brunswick-green-500 group-hover:shadow-[0_0_12px_rgba(133,223,195,0.4)] transition-all duration-300">
-                                <Mail className="w-5 h-5" />
+                            <div className="h-9 w-9 rounded-xl border border-brunswick-green-500 bg-raisin-black-800 hover:bg-brunswick-green-900/50 hover:border-brunswick-green-500 hover:text-brunswick-green-500 flex items-center justify-center text-brunswick-green-500 transition-colors">
+                                <Mail className="w-6 h-6" />
                             </div>
 
                             <div>
@@ -166,8 +166,8 @@ export default function ContactPage() {
                             target="_blank"
                             className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/20 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group"
                         >
-                            <div className="p-3 rounded-lg bg-brunswick-green-900/20 border border-brunswick-green-500 text-brunswick-green-500 group-hover:shadow-[0_0_12px_rgba(133,223,195,0.4)] transition-all duration-300">
-                                <Phone className="w-5 h-5" />
+                            <div className="h-9 w-9 rounded-xl border border-brunswick-green-500 bg-raisin-black-800 hover:bg-brunswick-green-900/50 hover:border-brunswick-green-500 hover:text-brunswick-green-500 flex items-center justify-center text-brunswick-green-500 transition-colors">
+                                <Phone className="w-6 h-6" />
                             </div>
 
                             <div>
@@ -186,8 +186,8 @@ export default function ContactPage() {
                             rel="noopener noreferrer"
                             className="flex items-center gap-4 p-4 rounded-xl border border-sea-salt/20 bg-sea-salt/[0.02] hover:border-brunswick-green-500/20 hover:bg-sea-salt/[0.04] transition-all duration-300 group"
                         >
-                            <div className="p-3 rounded-lg bg-brunswick-green-900/20 border border-brunswick-green-500 text-brunswick-green-500 group-hover:shadow-[0_0_12px_rgba(133,223,195,0.4)] transition-all duration-300">
-                                <MapPin className="w-5 h-5" />
+                            <div className="h-9 w-9 rounded-xl border border-brunswick-green-500 bg-raisin-black-800 hover:bg-brunswick-green-900/50 hover:border-brunswick-green-500 hover:text-brunswick-green-500 flex items-center justify-center text-brunswick-green-500 transition-colors">
+                                <MapPin className="w-6 h-6" />
                             </div>
 
                             <div>
@@ -340,11 +340,11 @@ export default function ContactPage() {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className={`w-full mt-2 relative overflow-hidden group rounded-xl bg-brunswick-green-900 px-5 py-4 text-lg font-semibold tracking-wide text-sea-salt transition-all duration-300  hover:bg-brunswick-green-700 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
+                                className={`w-full mt-2 relative overflow-hidden group rounded-full bg-brunswick-green-900 px-5 py-4 text-lg font-semibold tracking-wide text-sea-salt transition-all duration-300  hover:bg-brunswick-green-700 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
                             >
 
                                 <span className="flex items-center justify-center gap-2 font-bold text-sea-salt uppercase tracking-wider">
-                                    {isSubmitting ? contactUsCopy.submittingText : contactUsCopy.submitBtnText} {!isSubmitting && <Send className="w-4 h-4" />}
+                                    {isSubmitting ? contactUsCopy.submittingText : contactUsCopy.submitBtnText} {!isSubmitting}
                                 </span>
                             </button>
 

@@ -30,7 +30,7 @@ export function CaseCard({
         group relative h-full h-[400px] rounded-3xl p-5 border
         flex flex-col justify-between cursor-pointer overflow-hidden
         transition-all duration-500 hover:border-brunswick-green-500
-        ${isCenter ? "opacity-100 border-brunswick-green-500  bg-sea-salt/10 shadow-2xl shadow-brunswick-green-500/5" : " border-sea-salt/20 bg-sea-salt/6"}
+        ${isCenter ? "opacity-100 border-brunswick-green-500  bg-sea-salt/10 shadow-2xl shadow-md/5" : " border-sea-salt/20 bg-sea-salt/6"}
         ${className}
       `}
     >
@@ -76,7 +76,7 @@ export function CaseCard({
             <p className="font-sans text-base sm:text-lg text-sea-salt line-clamp-2">
               {item.desc}
             </p>
-            <button type="button" className="inline-flex items-center justify-center font-sans font-semibold text-sea-salt  bg-raisin-black-800 hover:bg-brunswick-green-900  border border-sea-salt/20 hover:bg-brunswick-green-900 hover:text-sea-salt transition-all px-4 py-1.5 rounded-full text-lg transition-colors cursor-pointer self-start">Read More</button>
+            <button type="button" className="inline-flex items-center justify-center font-sans font-semibold text-sea-salt  bg-raisin-black-800 grouphover:bg-brunswick-green-900  border border-sea-salt/20 hover:bg-brunswick-green-900 hover:text-sea-salt transition-all px-4 py-1.5 rounded-full text-lg transition-colors cursor-pointer self-start">Read More</button>
           </div>
         </div>
 

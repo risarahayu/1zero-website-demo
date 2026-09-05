@@ -43,7 +43,7 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="no-referrer"
-                    className="group relative h-9 w-9 rounded-xl border border-brunswick-green-500 bg-raisin-black-800 hover:bg-brunswick-green-500/30 hover:border-brunswick-green-500/30 hover:text-brunswick-green-500 flex items-center justify-center text-brunswick-green-500 transition-colors"
+                    className="group relative h-9 w-9 rounded-xl border border-brunswick-green-500 bg-raisin-black-800 hover:bg-brunswick-green-900/50 hover:border-brunswick-green-500 hover:text-brunswick-green-500 flex items-center justify-center text-brunswick-green-500 transition-colors"
                   >
                     <Icon className="h-6 w-6" />
                     {/* Tooltip */}

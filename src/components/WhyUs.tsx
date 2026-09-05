@@ -84,7 +84,7 @@ export default function WhyUs(props: WhyUsProps) {
                       onClick={() => setSelectedMember(member)}
                       className="group relative w-40  h-40 shrink-0 cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 hover:border-brunswick-green-500"
                     >
-                      <div className="relative h-24 w-24   rounded-xl overflow-hidden border border-sea-salt/20 self-center">
+                      <div className="relative rounded-xl overflow-hidden border border-sea-salt/20 self-center">
                         <img
                           src={member.images?.imageDisplay}
                           alt={member.name}
@@ -118,7 +118,7 @@ export default function WhyUs(props: WhyUsProps) {
                           </button>
                         </div>
 
-                        <div className="flex items-center justify-between font-sans text-sm text-sea-salt ">
+                        <div className="flex items-center justify-between font-sans text-center text-sm text-sea-salt ">
                           <span className="line-clamp-1">{member.role}</span>
                         </div>
                       </div>
@@ -134,7 +134,7 @@ export default function WhyUs(props: WhyUsProps) {
                       onClick={() => setSelectedMember(member)}
                       className="group relative w-40  h-40 shrink-0 cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 hover:border-brunswick-green-500 "
                     >
-                      <div className="relative h-24 w-24   rounded-xl overflow-hidden border border-sea-salt/20 self-center">
+                      <div className="relative rounded-xl overflow-hidden border border-sea-salt/20 self-center">
                         <img
                           src={member.images?.imageDisplay}
                           alt={member.name}
@@ -144,7 +144,7 @@ export default function WhyUs(props: WhyUsProps) {
                       </div>
 
                       {/* Indicators */}
-                      <div className="group space-y-1.5 mt-auto z-10 pt-2 bg-gradient-to-t from-black via-black/80 to-transparent">
+                      <div className="group space-y-1.5 mt-auto z-10 pt-2 bg-gradient-to-t from-black via-black/80 to-transparent self-center">
                         <div className="flex items-center">
                           <span className="flex-1
                             truncate
@@ -168,7 +168,7 @@ export default function WhyUs(props: WhyUsProps) {
                           </button>
                         </div>
 
-                        <div className="flex items-center justify-between font-sans text-sm text-sea-salt ">
+                        <div className="flex items-center justify-between font-sans text-center text-sm text-sea-salt ">
                           <span className="line-clamp-1">{member.role}</span>
                         </div>
                       </div>
@@ -190,7 +190,7 @@ export default function WhyUs(props: WhyUsProps) {
                     key={index}
                     className="group p-5 rounded-2xl border border-brunswick-green-700 hover:border-brunswick-green-900 transition-all duration-300 space-y-3 cursor-default"
                   >
-                    <div className="h-10 w-10 rounded-xl  border border-brunswick-green-500 flex items-center justify-center group-hover:bg-brunswick-green-900 group-hover:border-brunswick-green-900 transition-all shadow-md">
+                    <div className="h-10 w-10 rounded-xl  border border-brunswick-green-500 flex items-center justify-center group-hover:bg-brunswick-green-900/50 group-hover:border-brunswick-green-900 transition-all shadow-md">
                       {getPillarIcon(index)}
                     </div>
                     <div className="space-y-1">

@@ -5,6 +5,7 @@ import { casesCopy } from "../../copy.ts";
 import { useState } from "react";
 import { ActivityModal } from "./Modal";
 import { Activity } from "../../types";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export function ActivitySection(total?: number) {
 
@@ -56,16 +57,16 @@ export function ActivitySection(total?: number) {
                 <button
                     onClick={() => setCurrentPage((prev) => prev - 1)}
                     disabled={currentPage === 1}
-                    className={`px-4 py-2 rounded-full border border-sea-salt/20 bg-sea-salt/20 disabled:opacity-40 ${currentPage === 1 ? "cursor-not-allowed" : "hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt"}`}
+                    className={`w-11 h-11 flex items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 disabled:opacity-40 ${currentPage === 1 ? "cursor-not-allowed" : "hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt"}`}
                 >
-                    Previous
+                    <ArrowLeft className="h-4 w-4" />
                 </button>
 
                 {[...Array(totalPages)].map((_, index) => (
                     <button
                         key={index}
                         onClick={() => setCurrentPage(index + 1)}
-                        className={`px-4 py-2 rounded-full border
+                        className={`w-11 h-11 flex items-center justify-center rounded-full border
                             ${currentPage === index + 1
                                 ? "bg-brunswick-green-900 text-brunswick-green-500"
                                 : "border-sea-salt bg-sea-salt/20 hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt"
@@ -78,9 +79,9 @@ export function ActivitySection(total?: number) {
                 <button
                     onClick={() => setCurrentPage((prev) => prev + 1)}
                     disabled={currentPage === totalPages}
-                    className={`px-4 py-2 rounded-full border border-sea-salt/20 bg-sea-salt/20 disabled:opacity-40 ${currentPage === totalPages ? "cursor-not-allowed" : "hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt"}`}
+                    className={`w-11 h-11 flex items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 disabled:opacity-40 ${currentPage === totalPages ? "cursor-not-allowed" : "hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt"}`}
                 >
-                    Next
+                    <ArrowRight className="h-4 w-4" />
                 </button>
             </div>
 

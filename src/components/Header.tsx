@@ -73,7 +73,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               : "relative"
               }`}
           >
-            <div className={`flex items-center justify-between mx-auto bg-raisin-black-800/40 border border-sea-salt/20/80 backdrop-blur-md rounded-full px-5 py-2.5 shadow-xl transition-all ${isScrolled ? "scale-95 shadow-brunswick-green-500/5 shadow-2xl" : ""
+            <div className={`flex items-center justify-between mx-auto bg-raisin-black-800/40 border border-sea-salt/20/80 backdrop-blur-md rounded-full px-5 py-2.5 shadow-xl transition-all ${isScrolled ? "scale-95 shadow-md/5 shadow-2xl" : ""
               }`}>
               {/* Left empty block or indicator */}
               <div
@@ -118,7 +118,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               <button
                 id="header-booking-btn"
                 onClick={onOpenBooking}
-                className="flex items-center gap-1 p-1 px-3.5 bg-brunswick-green-900/10 hover:bg-brunswick-green-900 hover:text-sea-salt border border-brunswick-green-500 text-brunswick-green-500  hover:text-brunswick-green-800 font-sans font-semibold text-lg rounded-full transition-all cursor-pointer shadow-sm hover:shadow-md hover:shadow-brunswick-green-500/10"
+                className="flex items-center gap-1 p-1 px-3.5 bg-brunswick-green-900/10 hover:bg-brunswick-green-900 hover:text-sea-salt border border-brunswick-green-500 text-brunswick-green-500  font-sans font-semibold text-lg rounded-full transition-all cursor-pointer shadow-sm hover:shadow-md/10"
               >
                 {headerCopy.bookUsBtn}
                 <ArrowUpRight className="h-3 w-3 shrink-0" />
