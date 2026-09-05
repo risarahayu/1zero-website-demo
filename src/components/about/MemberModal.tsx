@@ -44,7 +44,7 @@ export default function MemberModal(
                         <div className="modal-scroll relative w-full max-w-2xl max-h-[80vh] overflow-y-scroll">
 
                             {/* Close button */}
-                            <button
+                            <button aria-label="Button"
                                 onClick={() => {
                                     setSelectedMember(null);
                                     setIsPaused(false);

@@ -79,7 +79,7 @@ export default function WhyUs(props: WhyUsProps) {
                 {/* Row 1: Right to Left */}
                 <div className="flex gap-3 animate-marquee w-max h-full ">
                   {[...teamMembers.slice(0, 4), ...teamMembers.slice(0, 4)].map((member, idx) => (
-                    <button
+                    <button aria-label="Button"
                       key={`row1-${idx}`}
                       onClick={() => setSelectedMember(member)}
                       className="group relative w-40  h-40 shrink-0 cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 hover:border-brunswick-green-500"
@@ -110,7 +110,7 @@ export default function WhyUs(props: WhyUsProps) {
                           </span>
 
                           {/* Audio Mute controller */}
-                          <button
+                          <button aria-label="Button"
                             id={`toggle-mute-r1-${idx}`}
                             onClick={(e) => toggleMute(member.name, e)}
                             className="p-1 rounded-md transition-colors"
@@ -129,7 +129,7 @@ export default function WhyUs(props: WhyUsProps) {
                 {/* Row 2: Left to Right */}
                 <div className="flex gap-3 animate-marquee-reverse w-max h-full ">
                   {[...teamMembers.slice(4, 8), ...teamMembers.slice(4, 8)].map((member, idx) => (
-                    <button
+                    <button aria-label="Button"
                       key={`row2-${idx}`}
                       onClick={() => setSelectedMember(member)}
                       className="group relative w-40  h-40 shrink-0 cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 hover:border-brunswick-green-500 "
@@ -160,7 +160,7 @@ export default function WhyUs(props: WhyUsProps) {
                           </span>
 
                           {/* Audio Mute controller */}
-                          <button
+                          <button aria-label="Button"
                             id={`toggle-mute-r2-${idx}`}
                             onClick={(e) => toggleMute(member.name, e)}
                             className="p-1 rounded-md transition-colors"

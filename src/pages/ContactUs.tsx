@@ -337,7 +337,7 @@ export default function ContactPage() {
                             </div>
 
                             {/* PRIMARY CTA: SUBMIT BUTTON (Glow Animation) */}
-                            <button
+                            <button aria-label="Button"
                                 type="submit"
                                 disabled={isSubmitting || !formData.name.trim() || !formData.email.trim() || !formData.message.trim()}
                                 className={`w-full mt-2 relative overflow-hidden group rounded-full bg-brunswick-green-900 px-5 py-4 text-lg font-semibold tracking-wide text-sea-salt transition-all duration-300 ${(isSubmitting || !formData.name.trim() || !formData.email.trim() || !formData.message.trim()) ? 'opacity-50 cursor-not-allowed' : 'hover:bg-brunswick-green-700 cursor-pointer'}`}

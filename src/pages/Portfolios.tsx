@@ -57,7 +57,7 @@ export default function PortfolioPage() {
             {/* TABS */}
             <div className="relative z-10 flex flex-wrap justify-center gap-4 mt-10">
                 {services.map((service) => (
-                    <button
+                    <button aria-label="Button"
                         key={service}
                         onClick={() => setActiveTab(service)}
                         className={`
@@ -101,7 +101,7 @@ export default function PortfolioPage() {
                         className="h-[4rem] sm:h-[5rem] md:h-[6rem] z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-transform duration-500 group-hover:scale-105"
                         alt="1zero"
                     />
-                    <button
+                    <button aria-label="Cta Booking Btn"
                         id="cta-booking-btn"
                         onClick={onOpenBooking}
                         className="group relative flex items-center justify-center gap-2

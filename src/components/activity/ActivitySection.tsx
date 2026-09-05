@@ -54,7 +54,7 @@ export function ActivitySection(total?: number) {
             </div>
 
             <div className="flex justify-center gap-3 mt-12">
-                <button
+                <button aria-label="Button"
                     onClick={() => setCurrentPage((prev) => prev - 1)}
                     disabled={currentPage === 1}
                     className={`w-11 h-11 flex items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 disabled:opacity-40 ${currentPage === 1 ? "cursor-not-allowed" : "hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt"}`}
@@ -63,7 +63,7 @@ export function ActivitySection(total?: number) {
                 </button>
 
                 {[...Array(totalPages)].map((_, index) => (
-                    <button
+                    <button aria-label="Button"
                         key={index}
                         onClick={() => setCurrentPage(index + 1)}
                         className={`w-11 h-11 flex items-center justify-center rounded-full border
@@ -76,7 +76,7 @@ export function ActivitySection(total?: number) {
                     </button>
                 ))}
 
-                <button
+                <button aria-label="Button"
                     onClick={() => setCurrentPage((prev) => prev + 1)}
                     disabled={currentPage === totalPages}
                     className={`w-11 h-11 flex items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 disabled:opacity-40 ${currentPage === totalPages ? "cursor-not-allowed" : "hover:bg-brunswick-green-900 hover:border-brunswick-green-500 hover:text-sea-salt"}`}

@@ -31,7 +31,7 @@ const TeamBubble: React.FC<TeamBubbleProps> = ({
             <div className={`absolute ${overlayPositionClass} w-48 glass p-4 rounded-2xl rounded-bl-none shadow-2xl border border-sea-salt/20 z-20`}>
                 <p className="font-bold text-sm mb-1">{name}</p>
                 <p className="text-base sm:text-lg text-raisin-black-800 mb-2">{quote || role}</p>
-                <button className="text-base bg-sea-salt text-black px-3 py-1 rounded-full font-bold hover:bg-indigo-400 hover:text-sea-salt transition">See Detail</button>
+                <button aria-label="Button" className="text-base bg-sea-salt text-black px-3 py-1 rounded-full font-bold hover:bg-indigo-400 hover:text-sea-salt transition">See Detail</button>
             </div>
         </div>
     );

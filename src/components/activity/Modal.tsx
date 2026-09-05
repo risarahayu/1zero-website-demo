@@ -61,7 +61,7 @@ export function ActivityModal({
                         <div className="modal-scroll h-full max-h-[80vh] overflow-y-auto rounded">
 
                             {/* Close button */}
-                            <button
+                            <button aria-label="Close Modal"
                                 onClick={() => {
                                     setSelectedItem(null);
                                 }}
@@ -73,7 +73,7 @@ export function ActivityModal({
                             {/* Modal Navigation */}
                             {showArrowButton &&
                                 <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full px-2 sm:px-4 z-10 flex justify-between items-center pointer-events-none">
-                                    <button
+                                    <button aria-label="Previous Item"
                                         onClick={() => {
                                             if (showSeeAllSlide) {
                                                 setShowSeeAllSlide(false);
@@ -92,7 +92,7 @@ export function ActivityModal({
                                     >
                                         <ArrowLeft className="h-5 w-5" />
                                     </button>
-                                    <button
+                                    <button aria-label="Next Item"
                                         onClick={() => {
                                             if (selectedItemIndex === total - 1) {
                                                 setShowSeeAllSlide(true);
@@ -154,7 +154,7 @@ export function ActivityModal({
 
                                                 <div className="flex items-center gap-2">
                                                     {selectedItem.photos!.map((_, index) => (
-                                                        <button
+                                                        <button aria-label={`View image ${index + 1}`}
                                                             key={index}
                                                             onClick={() => setGalleryIndex(index)}
                                                             className={`h-3 rounded-full transition-all duration-200 ${index === galleryIndex

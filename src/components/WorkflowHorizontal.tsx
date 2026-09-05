@@ -355,14 +355,14 @@ export default function WorkflowHorizontal() {
 
           </Swiper>
 
-          <button
+          <button aria-label="Button"
             onClick={handlePrev}
             className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-sea-salt/10  text-sea-salt flex items-center justify-center transition-all hover:bg-brunswick-green-900 border border-sea-salt/20 hidden sm:flex"
           >
             <Icon icon="mdi:chevron-left" width={22} />
           </button>
 
-          <button
+          <button aria-label="Button"
             onClick={handleNext}
             className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-sea-salt/10  text-sea-salt flex items-center justify-center transition-all hover:bg-brunswick-green-900 border border-sea-salt/20 hidden sm:flex"
           >
@@ -376,7 +376,7 @@ export default function WorkflowHorizontal() {
           {workflowSteps.map((_, i) => {
             const cfg = PANEL_CONFIG[i % PANEL_CONFIG.length];
             return (
-              <button
+              <button aria-label="Button"
                 key={i}
                 onClick={() => handleSelect(i)}
                 aria-label={`Go to step ${i + 1}`}

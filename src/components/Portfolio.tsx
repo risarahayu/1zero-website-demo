@@ -84,7 +84,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
             {/* Navigation slider buttons */}
             <div className="flex-row space-y-4">
               <div className="flex items-center gap-4">
-                <button
+                <button aria-label="Button"
                   type="button"
                   onClick={() => swiperRef.current?.slidePrev()}
                   aria-label="Previous portfolio"
@@ -95,7 +95,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
                 <span className="font-sans text-lg text-sea-salt/80 tracking-widest uppercase font-semibold ml-2 select-none">
                   {String(currentSlide + 1).padStart(2, "0")} / 05
                 </span>
-                <button
+                <button aria-label="Button"
                   type="button"
                   onClick={() => swiperRef.current?.slideNext()}
                   aria-label="Next portfolio"
@@ -191,7 +191,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
           <p className="font-sans text-base sm:text-lg text-sea-salt uppercase tracking-widest">
             {portfolioCopy.ctaTopText}
           </p>
-          <button
+          <button aria-label="Portfolio Review Btn"
             id="portfolio-review-btn"
             onClick={onOpenBooking}
             className="inline-flex items-center gap-2 p-8 px-12 rounded-full bg-brunswick-green-900 hover:bg-brunswick-green-700  text-sea-salt font-sans font-extrabold text-lg sm:text-xl transition-all uppercase tracking-wider cursor-pointer shadow-[0_4px_20px_rgba(16,185,129,0.2)] hover:shadow-[0_4px_25px_rgba(16,185,129,0.3)] transform hover:scale-[1.01]"

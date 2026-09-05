@@ -155,7 +155,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 <p className="font-sans text-base sm:text-lg uppercase tracking-wider text-sea-salt">{bookingModalCopy.modalSub}</p>
               </div>
             </div>
-            <button
+            <button aria-label="Close Modal Btn"
               id="close-modal-btn"
               onClick={cleanClose}
               className="p-1 px-2 text-sea-salt hover:text-sea-salt hover:bg-sea-salt rounded-lg transition-colors"
@@ -190,7 +190,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   {getUpcomingDays().map((day) => {
                     const isSelected = selectedDate === day.rawDate;
                     return (
-                      <button
+                      <button aria-label={`Select date ${day.dayName}, ${day.dateNumber} ${day.monthName}`}
                         id={`date-slot-${day.rawDate}`}
                         key={day.rawDate}
                         type="button"
@@ -218,7 +218,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   {timeSlots.map((time) => {
                     const isSelected = selectedTime === time;
                     return (
-                      <button
+                      <button aria-label={`Select time ${time}`}
                         id={`time-slot-${time.replace(/\s+/g, '')}`}
                         key={time}
                         type="button"
@@ -260,7 +260,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               </div>
 
               {/* Continue button */}
-              <button
+              <button aria-label="Modal Next Step Btn"
                 id="modal-next-step-btn"
                 type="button"
                 onClick={handleNextStep}
@@ -348,7 +348,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               </div>
 
               <div className="flex gap-3 pt-2">
-                <button
+                <button aria-label="Modal Back Btn"
                   id="modal-back-btn"
                   type="button"
                   onClick={() => setStep(1)}
@@ -356,7 +356,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 >
                   {bookingModalCopy.backBtn}
                 </button>
-                <button
+                <button aria-label="Modal Submit Btn"
                   id="modal-submit-btn"
                   type="submit"
                   disabled={isSubmitting}
@@ -403,7 +403,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               </div>
 
               <div className="pt-2">
-                <button
+                <button aria-label="Modal Finish Btn"
                   id="modal-finish-btn"
                   type="button"
                   onClick={cleanClose}

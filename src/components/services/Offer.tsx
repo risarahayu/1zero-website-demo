@@ -65,7 +65,7 @@ export default function DiagnosisPanel() {
                                 }`}
                         >
                             {/* DROPDOWN HEADER (Tombol Klik) */}
-                            <button
+                            <button aria-label="Button"
                                 onClick={() => toggleAccordion(index)}
                                 className="w-full flex items-center justify-between p-6 text-left focus:outline-none group"
                             >

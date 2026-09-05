@@ -106,7 +106,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               </nav>
 
               {/* Mobile trigger */}
-              <button
+              <button aria-label="Mobile Menu Trigger"
                 id="mobile-menu-trigger"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className={`p-1 px-2 text-sea-salt hover:text-sea-salt hover:bg-sea-salt rounded-full sm:hidden transition-all text-lg ${isScrolled ? "mr-auto" : ""}`}
@@ -115,7 +115,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               </button>
 
               {/* CTA Booking Button inside Header Container */}
-              <button
+              <button aria-label="Header Booking Btn"
                 id="header-booking-btn"
                 onClick={onOpenBooking}
                 className="flex items-center gap-1 p-1 px-3.5 bg-brunswick-green-900/10 hover:bg-brunswick-green-900 hover:text-sea-salt border border-brunswick-green-500 text-brunswick-green-500  font-sans font-semibold text-lg rounded-full transition-all cursor-pointer shadow-sm hover:shadow-md/10"
@@ -157,7 +157,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                 );
               })}
               {/* <div className="pt-3 flex flex-col gap-2">
-                <button
+                <button aria-label="Mobile Drawer Book Btn"
                   id="mobile-drawer-book-btn"
                   onClick={() => {
                     setIsMobileMenuOpen(false);

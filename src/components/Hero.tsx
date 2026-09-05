@@ -58,7 +58,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           </div>
 
           {/* Direct CTA button card (Col-span 2) */}
-          <button
+          <button aria-label="Hero Book Call Card"
             id="hero-book-call-card"
             onClick={onOpenBooking}
             className="md:col-span-2 group flex flex-col justify-center items-center gap-2 p-3 rounded-xl bg-brunswick-green-900 hover:bg-brunswick-green-700 hover:text-sea-salt text-sea-salt text-center transition-all cursor-pointer font-sans font-black text-lg relative overflow-hidden"
