@@ -16,10 +16,10 @@ import "swiper/css";
 const N = workflowSteps.length;
 
 const PANEL_CONFIG = [
-  { bg: "bg-raisin-black-900", glow: "rgba(29, 87, 69, 0.19)", accent: "var(--green-600)", accentText: "text-brunswick-green-700", border: "border-brunswick-green-700" },
-  { bg: "bg-raisin-black-900", glow: "rgba(29, 87, 69, 0.29)", accent: "var(--green-700)", accentText: "text-brunswick-green-800", border: "border-brunswick-green-800" },
-  { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.51)", accent: "var(--green-800)", accentText: "text-brunswick-green-900", border: "border-brunswick-green-900" },
-  { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.61)", accent: "var(--green-900)", accentText: "text-brunswick-green-900", border: "border-brunswick-green-900" },
+  { bg: "bg-raisin-black-900", glow: "rgba(29, 87, 69, 0.19)", accent: "var(--green-600)", accentText: "text-brunswick-green-500", border: "border-brunswick-green-700" },
+  { bg: "bg-raisin-black-900", glow: "rgba(29, 87, 69, 0.29)", accent: "var(--green-700)", accentText: "text-brunswick-green-500", border: "border-brunswick-green-800" },
+  { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.51)", accent: "var(--green-800)", accentText: "text-brunswick-green-500", border: "border-brunswick-green-900" },
+  { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.61)", accent: "var(--green-900)", accentText: "text-brunswick-green-500", border: "border-brunswick-green-900" },
 ];
 
 // ── Top navigation bar (replaces the left sidebar) ─────────────────────────
@@ -98,12 +98,12 @@ function TopNav({
             {/* Label Step di Bawah Lingkaran */}
             <motion.div
               animate={{
-                opacity: isCurrent ? 1 : 0.4,
+                opacity: isCurrent ? 1 : 1,
                 y: isCurrent ? 10 : 8
               }}
               className="absolute top-12 whitespace-nowrap text-center"
             >
-              <span className={`font-sans text-sm font-black tracking-widest uppercase ${isCurrent ? cfg.accentText : "text-sea-salt/90"}`}>
+              <span className={`font-sans text-sm font-black tracking-widest uppercase ${isCurrent ? cfg.accentText : "text-sea-salt"}`}>
                 {step.number}
               </span>
             </motion.div>

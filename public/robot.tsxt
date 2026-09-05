@@ -1,0 +1,5 @@
+# start of file
+user-agent: *
+disallow: /downloads/
+
+Sitemap: https://www.1zero.biz/sitemap.xml

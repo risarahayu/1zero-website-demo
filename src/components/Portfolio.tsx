@@ -84,10 +84,10 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
             {/* Navigation slider buttons */}
             <div className="flex-row space-y-4">
               <div className="flex items-center gap-4">
-                <button aria-label="Button"
+                <button aria-label="Previous portfolio"
                   type="button"
                   onClick={() => swiperRef.current?.slidePrev()}
-                  aria-label="Previous portfolio"
+
                   className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
                 >
                   <ArrowLeft className="h-4 w-4" />
@@ -95,10 +95,10 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
                 <span className="font-sans text-lg text-sea-salt/80 tracking-widest uppercase font-semibold ml-2 select-none">
                   {String(currentSlide + 1).padStart(2, "0")} / 05
                 </span>
-                <button aria-label="Button"
+                <button aria-label="Next portfolio"
                   type="button"
                   onClick={() => swiperRef.current?.slideNext()}
-                  aria-label="Next portfolio"
+
                   className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
                 >
                   <ArrowRight className="h-4 w-4" />
