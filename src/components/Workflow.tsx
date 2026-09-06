@@ -101,9 +101,9 @@ function TimelineFill({ scrollYProgress }: { scrollYProgress: MotionValue<number
 }
 
 const PANEL_CONFIG = [
-  { bg: "bg-raisin-black-900", glow: "rgba(29, 87, 69, 0.19)", accent: "var(--green-600)", accentText: "text-brunswick-green-700", border: "border-brunswick-green-700" },
-  { bg: "bg-raisin-black-900", glow: "rgba(29, 87, 69, 0.29)", accent: "var(--green-700)", accentText: "text-brunswick-green-800", border: "border-brunswick-green-800" },
-  { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.51)", accent: "var(--green-800)", accentText: "text-brunswick-green-900", border: "border-brunswick-green-900" },
+  { bg: "bg-raisin-black-900", glow: "rgba(29, 87, 69, 0.19)", accent: "var(--green-600)", accentText: "text-brunswick-green-600", border: "border-brunswick-green-600" },
+  { bg: "bg-raisin-black-900", glow: "rgba(29, 87, 69, 0.29)", accent: "var(--green-700)", accentText: "text-brunswick-green-700", border: "border-brunswick-green-700" },
+  { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.51)", accent: "var(--green-800)", accentText: "text-brunswick-green-800", border: "border-brunswick-green-800" },
   { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.61)", accent: "var(--green-900)", accentText: "text-brunswick-green-900", border: "border-brunswick-green-900" },
 
 ];
@@ -201,7 +201,7 @@ function Panel({
                 </span>
               </div>
               <div>
-                <p className="font-sans text-base sm:text-lg uppercase tracking-[0.2em] text-sea-salt">{workflowCopy.phaseLabel}</p>
+                <p className="font-sans text-base sm:text-lg uppercase  text-sea-salt">{workflowCopy.phaseLabel}</p>
                 <p className={`font-sans text-base sm:text-lg font-bold tracking-wider uppercase ${cfg.accentText}`}>
                   {step.number}
                 </p>
