@@ -16,9 +16,9 @@ import "swiper/css";
 const N = workflowSteps.length;
 
 const PANEL_CONFIG = [
-  { bg: "bg-raisin-black-900", glow: "rgba(29, 87, 69, 0.19)", accent: "var(--green-500)", accentText: "text-brunswick-green-500", border: "border-brunswick-green-500" },
-  { bg: "bg-raisin-black-900", glow: "rgba(29, 87, 69, 0.29)", accent: "var(--green-600)", accentText: "text-brunswick-green-500", border: "border-brunswick-green-500" },
-  { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.51)", accent: "var(--green-700)", accentText: "text-brunswick-green-500", border: "border-brunswick-green-500" },
+  { bg: "bg-raisin-black-900", glow: "rgba(29, 87, 69, 0.19)", accent: "var(--green-900)", accentText: "text-brunswick-green-500", border: "border-brunswick-green-500" },
+  { bg: "bg-raisin-black-900", glow: "rgba(29, 87, 69, 0.29)", accent: "var(--green-900)", accentText: "text-brunswick-green-500", border: "border-brunswick-green-500" },
+  { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.51)", accent: "var(--green-900)", accentText: "text-brunswick-green-500", border: "border-brunswick-green-500" },
   { bg: "bg-[#040404]", glow: "rgba(29, 87, 69, 0.61)", accent: "var(--green-900)", accentText: "text-brunswick-green-500", border: "border-brunswick-green-500" },
 ];
 
