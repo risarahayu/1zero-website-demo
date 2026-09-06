@@ -112,7 +112,7 @@ export default function PortfolioPage() {
                         text-raisin-black-800
                         font-sans font-extrabold
                         text-lg sm:text-lg
-                        rounded-2xl
+                        rounded-full
                         transition-all
                         shadow-[0_10px_35px_rgba(223,217,198,0.25)]
                         hover:shadow-[0_10px_45px_rgba(223,217,198,0.4)]
