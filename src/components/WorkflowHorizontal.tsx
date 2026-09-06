@@ -69,16 +69,32 @@ function TopNav({
               onClick={() => onSelect(i)}
               animate={{
                 scale: isCurrent ? 1.15 : 1,
-                // Tambahkan sedikit efek glow saat aktif
-                boxShadow: isCurrent ? `0 0 20px ${cfg.accent}80` : "none"
+
+                boxShadow: isCurrent
+                  ? `0 0 20px ${cfg.accent}80`
+                  : "none",
+
+                backgroundColor: isPassed
+                  ? cfg.accent
+                  : "var(--raisin-black-800)",
+
+                borderColor: isPassed
+                  ? cfg.accent
+                  : "var(--green-500)",
               }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              style={{
-                // Jika sudah dilewati (isPassed), background terisi penuh
-                background: isPassed ? cfg.accent : "var(--raisin-black-800)",
-                borderColor: isPassed ? cfg.accent : "var(--green-500)",
+              whileHover={
+                !isPassed
+                  ? {
+                    backgroundColor: cfg.accent,
+                  }
+                  : {}
+              }
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
               }}
-              className={`relative z-10 flex items-center justify-center w-11 h-11 rounded-full border-2 cursor-pointer transition-colors duration-500 transition-transform duration-300 hover:scale-105`}
+              className="relative z-10 flex items-center justify-center w-11 h-11 rounded-full border-2 cursor-pointer"
             >
               {/* Warna icon: Jika belum dilewati warna abu, jika sudah dilewati warna putih/kontras */}
               <span className={`${isPassed ? "text-sea-salt" : "text-brunswick-green-500"} transition-colors duration-500`}>
@@ -172,7 +188,7 @@ function Panel({
                 style={{ background: `${cfg.accent}12` }}
               >
                 <span className={cfg.accentText}>
-                  {step.icon ? <Icon icon={step.icon} width="24" /> : null}
+                  {step.icon ? <Icon icon={step.icon} className="icon-size-medium" /> : null}
                 </span>
               </div>
               <div>
@@ -202,7 +218,7 @@ function Panel({
                       className="h-5 w-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
                       style={{ background: `${cfg.accent}20` }}
                     >
-                      <CheckCircle2 className={`h-3 w-3 ${cfg.accentText}`} />
+                      <CheckCircle2 className={`icon-size-medium ${cfg.accentText}`} />
                     </div>
                     <span className="font-sans text-lg text-sea-salt">{b}</span>
                   </div>

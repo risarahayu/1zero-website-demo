@@ -69,7 +69,7 @@ function SidebarIcons({ scrollYProgress, onIconClick }: { scrollYProgress: Motio
               }}
               className="flex items-center justify-center w-12 h-12 rounded-full border-2 cursor-pointer transition-transform hover:scale-110"
             >
-              <span className="text-sea-salt"><Icon icon={step.icon} width={28} height={28} /></span>
+              <span className="text-sea-salt"><Icon icon={step.icon} className="icon-size-large" /></span>
             </motion.div>
           );
         })}

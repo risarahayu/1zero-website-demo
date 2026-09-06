@@ -21,15 +21,15 @@ export default function Products({ onOpenBooking }: ProductsProps) {
   const getIcon = (id: string) => {
     switch (id) {
       case "devpod":
-        return <Users className="h-6 w-6 text-brunswick-green-500" />;
+        return <Users className="icon-size-big text-brunswick-green-500" />;
       case "geo":
-        return <BrainCircuit className="h-6 w-6 text-brunswick-green-500" />;
+        return <BrainCircuit className="icon-size-big text-brunswick-green-500" />;
       case "nextgen":
-        return <PanelsTopLeft className="h-6 w-6 text-brunswick-green-500 animate-spin-slow" />;
+        return <PanelsTopLeft className="icon-size-big text-brunswick-green-500 animate-spin-slow" />;
       case "fcto":
-        return <UserStar className="h-6 w-6 text-brunswick-green-500" />;
+        return <UserStar className="icon-size-big text-brunswick-green-500" />;
       default:
-        return <Code className="h-6 w-6 text-brunswick-green-500" />;
+        return <Code className="icon-size-big text-brunswick-green-500" />;
     }
   };
 
