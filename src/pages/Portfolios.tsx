@@ -120,7 +120,7 @@ export default function PortfolioPage() {
                         tracking-wide"
                     >
                         {portfoliosPageCopy.bookButton}
-                        <PhoneCall className="icon-size-big text-raisin-black-800 group-hover:scale-110 transition-transform" />
+                        <PhoneCall className="icon-size-large  text-raisin-black-800 group-hover:scale-110 transition-transform" />
                     </button>
                 </div>
             </div>

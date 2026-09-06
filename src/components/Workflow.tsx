@@ -194,10 +194,10 @@ function Panel({
             <div className="flex items-center gap-4">
               <div
                 className={`h-14 w-14 rounded-2xl flex items-center justify-center border ${cfg.border}`}
-                style={{ background: `${cfg.accent}12` }}
+
               >
                 <span className={cfg.accentText}>
-                  {step.icon ? <Icon icon={step.icon} width="24" /> : null}
+                  {step.icon ? <Icon icon={step.icon} className="icon-size-large" /> : null}
                 </span>
               </div>
               <div>

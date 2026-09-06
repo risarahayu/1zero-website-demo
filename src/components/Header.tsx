@@ -121,7 +121,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                 className="flex items-center gap-1 p-1 px-3.5 bg-brunswick-green-900/10 hover:bg-brunswick-green-900 hover:text-sea-salt border border-brunswick-green-500 text-brunswick-green-500  font-sans font-semibold text-lg rounded-full transition-all cursor-pointer shadow-sm hover:shadow-md/10"
               >
                 {headerCopy.bookUsBtn}
-                <ArrowUpRight className="icon-size-big shrink-0" />
+                <ArrowUpRight className="icon-size-large  shrink-0" />
               </button>
             </div>
           </div>

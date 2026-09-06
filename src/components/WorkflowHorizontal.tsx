@@ -94,7 +94,7 @@ function TopNav({
                 stiffness: 300,
                 damping: 20,
               }}
-              className="relative z-10 flex items-center justify-center w-11 h-11 rounded-full border-2 cursor-pointer"
+              className="relative z-10 flex items-center justify-center w-11 h-11 rounded-full border-2 cursor-pointer "
             >
               {/* Warna icon: Jika belum dilewati warna abu, jika sudah dilewati warna putih/kontras */}
               <span className={`${isPassed ? "text-sea-salt" : "text-brunswick-green-500"} transition-colors duration-500`}>
@@ -188,7 +188,7 @@ function Panel({
                 style={{ background: `${cfg.accent}12` }}
               >
                 <span className={cfg.accentText}>
-                  {step.icon ? <Icon icon={step.icon} className="icon-size-medium" /> : null}
+                  {step.icon ? <Icon icon={step.icon} className="icon-size-large" /> : null}
                 </span>
               </div>
               <div>

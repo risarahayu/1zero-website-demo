@@ -65,7 +65,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           >
             {/* Soft inner glow */}
             <div className="absolute inset-0 bg-gradient-to-tr from-sea-salt/10 to-transparent bg-brunswick-green-900 opacity-0 group-hover:bg-brunswick-green-700 transition-opacity" />
-            <PhoneCall className="icon-size-big animate-bounce shrink-0" />
+            <PhoneCall className="icon-size-large  animate-bounce shrink-0" />
             <span className="tracking-wider uppercase">{heroCopy.ctaButtonText}</span>
             <span className="flex items-center gap-1 font-sans text-lg  font-medium">
               {heroCopy.ctaButtonSubtext}
