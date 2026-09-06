@@ -21,7 +21,7 @@ export function SeeAllCard({ isCenter }: { isCenter: boolean }) {
           Explore Our Journey
         </p>
 
-        <ArrowRight className="mx-auto h-8 w-8 text-brunswick-green-500 transition-transform group-hover:translate-x-2" />
+        <ArrowRight className="mx-auto icon-size-big text-brunswick-green-500 transition-transform group-hover:translate-x-2" />
       </div>
     </Link>
   );

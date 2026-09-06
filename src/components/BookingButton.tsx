@@ -31,7 +31,7 @@ export default function BookingButton({ onClick, className = "" }: BookingButton
     >
       {aboutCopy.en.ctaTitle}
 
-      <PhoneCall className="h-4 w-4 text-neutral-900 group-hover:scale-110 transition-transform" />
+      <PhoneCall className="icon-size-big text-neutral-900 group-hover:scale-110 transition-transform" />
     </Link>
   );
 }

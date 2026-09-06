@@ -359,3 +359,15 @@
 .modal-scroll::-webkit-scrollbar-thumb:hover {
   background: var(--green-500);
 }
+
+.icon-size-big {
+  height: 1.5rem;
+}
+
+.icon-size-medium {
+  height: 1.25;
+}
+
+.icon-size-small {
+  height: 1rem;
+}

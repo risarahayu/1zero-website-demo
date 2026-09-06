@@ -184,7 +184,7 @@ export default function Testimonials() {
             onClick={handlePrev}
             className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
           >
-            <ArrowLeft className="h-3.5 w-3.5" />
+            <ArrowLeft className="icon-size-small" />
           </button>
           <span className="font-sans text-lg text-sea-salt tracking-wider">
             {String(activeSlide + 1).padStart(2, "0")} /{" "}
@@ -194,7 +194,7 @@ export default function Testimonials() {
             onClick={handleNext}
             className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
           >
-            <ArrowRight className="h-3.5 w-3.5" />
+            <ArrowRight className="icon-size-small" />
           </button>
         </div>
 

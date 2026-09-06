@@ -78,11 +78,11 @@ function TopNav({
                 background: isPassed ? cfg.accent : "var(--raisin-black-800)",
                 borderColor: isPassed ? cfg.accent : "var(--green-500)",
               }}
-              className={`relative z-10 flex items-center justify-center w-12 h-12 rounded-full border-2 cursor-pointer transition-colors duration-500 transition-transform duration-300 hover:scale-105`}
+              className={`relative z-10 flex items-center justify-center w-11 h-11 rounded-full border-2 cursor-pointer transition-colors duration-500 transition-transform duration-300 hover:scale-105`}
             >
               {/* Warna icon: Jika belum dilewati warna abu, jika sudah dilewati warna putih/kontras */}
               <span className={`${isPassed ? "text-sea-salt" : "text-brunswick-green-500"} transition-colors duration-500`}>
-                {step.icon ? <Icon icon={step.icon} width={22} height={22} /> : step.number}
+                {step.icon ? <Icon icon={step.icon} className="icon-size-medium" /> : step.number}
               </span>
 
               {/* Indicator Lingkaran Luar  (Ring) hanya untuk posisi saat ini */}
@@ -359,14 +359,14 @@ export default function WorkflowHorizontal() {
             onClick={handlePrev}
             className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-sea-salt/10  text-sea-salt flex items-center justify-center transition-all hover:bg-brunswick-green-900 border border-sea-salt/20 hidden sm:flex"
           >
-            <Icon icon="mdi:chevron-left" width={22} />
+            <Icon icon="mdi:chevron-left" className="icon-size-small" />
           </button>
 
           <button aria-label="Button"
             onClick={handleNext}
             className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-sea-salt/10  text-sea-salt flex items-center justify-center transition-all hover:bg-brunswick-green-900 border border-sea-salt/20 hidden sm:flex"
           >
-            <Icon icon="mdi:chevron-right" width={22} />
+            <Icon icon="mdi:chevron-right" className="icon-size-small" />
           </button>
 
         </div>

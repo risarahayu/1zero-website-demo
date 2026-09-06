@@ -90,7 +90,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
 
                   className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
                 >
-                  <ArrowLeft className="h-4 w-4" />
+                  <ArrowLeft className="icon-size-small" />
                 </button>
                 <span className="font-sans text-lg text-sea-salt/80 tracking-widest uppercase font-semibold ml-2 select-none">
                   {String(currentSlide + 1).padStart(2, "0")} / 05
@@ -101,7 +101,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
 
                   className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
                 >
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="icon-size-small" />
                 </button>
               </div>
               <Link to={`${import.meta.env.BASE_URL}portfolio`} target="_blank">
