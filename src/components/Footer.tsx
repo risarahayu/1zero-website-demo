@@ -2,6 +2,7 @@ import { Mail, Phone, MapPin, Linkedin, Github, MessageCircle, Twitter, Cpu, Ins
 import TwotoneWhatsappIcon from '@iconify-react/ic/twotone-whatsapp';
 import Logo1zero from "./Logo1Zero";
 import { footerCopy } from "../copy";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -135,7 +136,7 @@ export default function Footer() {
           </div>
 
           <div className="relative flex items-center gap-4 text-lg uppercase">
-            <a href="#home" className="hover:text-brunswick-green-500  transition-colors">{footerCopy.backToTop}</a>
+            <Link to="/" className="hover:text-brunswick-green-500  transition-colors">{footerCopy.backToTop}</Link>
             <span>•</span>
             {/* <span className="text-brunswick-green-500">{footerCopy.madeForDoubleImpact}</span> */}
           </div>

@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { products } from "../data";
 import { productsCopy } from "../copy";
 import { Terminal, BrainCircuit, RefreshCw, Cpu, ArrowUpRight, Code, ShieldCheck, Download, PanelsTopLeft, Users, UserStar } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface ProductsProps {
   onOpenBooking: () => void;
@@ -89,15 +90,15 @@ export default function Products({ onOpenBooking }: ProductsProps) {
                       <Download className="icon-size-small transform transition-transform" />
                     </a>
                   )}
-                  <a href={`${import.meta.env.BASE_URL}services`} className="flex h-7 w-7 items-center justify-center rounded-full 
+                  <Link to="/services" className="flex h-7 w-7 items-center justify-center rounded-full
                     border border-sea-salt/20 
                     bg-sea-salt/20 text-sea-salt 
                     hover:bg-brunswick-green-900 
                     hover:border-brunswick-green-500 
                     hover:text-sea-salt 
-                    transition-al" target="_blank">
+                    transition-al">
                     <ArrowUpRight className="icon-size-small transform hover:rotate-45 transition-transform" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}

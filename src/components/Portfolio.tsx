@@ -104,7 +104,7 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
                   <ArrowRight className="icon-size-small" />
                 </button>
               </div>
-              <Link to={`${import.meta.env.BASE_URL}portfolio`} target="_blank">
+              <Link to="/portfolio">
                 <p className="font-sans text-base sm:text-lg text-sea-salt/80 tracking-widest  font-semibold ml-2 select-none cursor-pointer hover:text-brunswick-green-500 transition-all duration-300 transform active:scale-95">{portfolioCopy.seeAllText}</p>
               </Link>
             </div>
@@ -191,13 +191,13 @@ export default function Portfolio({ onOpenBooking }: PortfolioProps) {
           <p className="font-sans text-base sm:text-lg text-sea-salt uppercase tracking-widest">
             {portfolioCopy.ctaTopText}
           </p>
-          <button aria-label="Portfolio Review Btn"
+          <Link
             id="portfolio-review-btn"
-            onClick={onOpenBooking}
+            to="/book"
             className="inline-flex items-center gap-2 p-8 px-12 rounded-full bg-brunswick-green-900 hover:bg-brunswick-green-700  text-sea-salt font-sans font-extrabold text-lg sm:text-xl transition-all uppercase tracking-wider cursor-pointer shadow-[0_4px_20px_rgba(16,185,129,0.2)] hover:shadow-[0_4px_25px_rgba(16,185,129,0.3)] transform hover:scale-[1.01]"
           >
             {portfolioCopy.ctaButtonText}
-          </button>
+          </Link>
         </div>
 
       </div>

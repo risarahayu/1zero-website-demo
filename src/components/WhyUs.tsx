@@ -69,7 +69,7 @@ export default function WhyUs(props: WhyUsProps) {
                 <div className="flex items-center gap-2">
                   <span className="text-sea-salt  font-medium text-center md:text-left">{whyUsCopy.meetOurTeam}</span>
                 </div>
-                <Link to={`${import.meta.env.BASE_URL}about`} target="_blank">
+                <Link to="/about">
                   <p className="font-sans hidden md:block text-base text-center  sm:text-lg text-sea-salt/90 tracking-wider font-semibold ml-2 select-none  font-bold text-brunswick-green-500 cursor-pointer hover:text-brunswick-green-500 transition-all duration-300 transform active:scale-95">{whyUsCopy.seeAllTeam}</p>
                 </Link>
               </div>
@@ -176,7 +176,7 @@ export default function WhyUs(props: WhyUsProps) {
                   ))}
                 </div>
               </div>
-              <Link to={`${import.meta.env.BASE_URL}about`} >
+              <Link to="/about" >
                 <p className="font-sans block md:hidden text-base text-center  sm:text-lg text-sea-salt/90 tracking-wider font-semibold ml-2 select-none  font-bold text-brunswick-green-500 cursor-pointer hover:underline transition-all duration-300 transform active:scale-95">{whyUsCopy.seeAllTeam}</p>
               </Link>
 

@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { Sparkles, Star, Users, PhoneCall, ArrowRight, Server, Shield, Database, Cpu } from "lucide-react";
 import { clientLogos } from "../data";
 import { heroCopy } from "../copy";
+import { Link } from "react-router-dom";
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -58,9 +59,9 @@ export default function Hero({ onOpenBooking }: HeroProps) {
           </div>
 
           {/* Direct CTA button card (Col-span 2) */}
-          <button aria-label="Hero Book Call Card"
+          <Link
             id="hero-book-call-card"
-            onClick={onOpenBooking}
+            to="/book"
             className="md:col-span-2 group flex flex-col justify-center items-center gap-2 p-3 rounded-xl bg-brunswick-green-900 hover:bg-brunswick-green-700 hover:text-sea-salt text-sea-salt text-center transition-all cursor-pointer font-sans font-black text-lg relative overflow-hidden"
           >
             {/* Soft inner glow */}
@@ -71,7 +72,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
               {heroCopy.ctaButtonSubtext}
               <ArrowRight className="icon-size-small transition-transform group-hover:translate-x-1" />
             </span>
-          </button>
+          </Link>
         </motion.div>
 
         {/* Tagline separator */}

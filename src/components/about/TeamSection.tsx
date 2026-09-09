@@ -415,7 +415,8 @@ const TeamSection: React.FC = () => {
                 {/* DESKTOP GRID */}
                 <div className="hidden lg:grid grid-cols-4 gap-6 pb-4">
                     {members.map((member, idx) => (
-                        <a
+                        <button
+                            type="button"
                             key={idx}
                             className={`min-w-[200px] p-4 rounded-lg text-start cursor-pointer transition-all duration-300 ${idx === activeIdx
                                 ? "bg-brunswick-green-900"
@@ -425,7 +426,6 @@ const TeamSection: React.FC = () => {
                                 if (!isDesktop) return;
                                 handleDesktopClick(idx, member);
                             }}
-                            href={`#memberPreview`}
                         >
                             <div className="relative w-full h-60 overflow-hidden rounded-md mb-3">
                                 {/* BLACK TOP IMAGE (default) */}
@@ -448,7 +448,7 @@ const TeamSection: React.FC = () => {
                             <p className="text-base sm:text-lg text-sea-salt/80">
                                 {member.role}
                             </p>
-                        </a>
+                        </button>
                     ))}
                 </div>
 

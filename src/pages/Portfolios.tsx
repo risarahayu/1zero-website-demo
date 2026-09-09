@@ -3,19 +3,14 @@ import { customProjects } from "../data";
 import PortfolioCard from "../components/PortfolioCard";
 import { PhoneCall } from "lucide-react";
 import { portfoliosPageCopy } from "../copy";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function PortfolioPage() {
     const [activeTab, setActiveTab] = useState("All");
-    const navigate = useNavigate();
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
-    const onOpenBooking = () => {
-        navigate("/book");
-    };
 
     // ambil semua service unik
     const services = useMemo(() => {
@@ -101,9 +96,9 @@ export default function PortfolioPage() {
                         className="h-[4rem] sm:h-[5rem] md:h-[6rem] z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-transform duration-500 group-hover:scale-105"
                         alt="1zero"
                     />
-                    <button aria-label="Cta Booking Btn"
+                    <Link
                         id="cta-booking-btn"
-                        onClick={onOpenBooking}
+                        to="/book"
                         className="group relative flex items-center justify-center gap-2
                         px-10 py-5
                         bg-[linear-gradient(120deg,var(--color-sea-salt),var(--color-ivory),var(--color-dun),var(--color-green-500))]
@@ -121,7 +116,7 @@ export default function PortfolioPage() {
                     >
                         {portfoliosPageCopy.bookButton}
                         <PhoneCall className="icon-size-large  text-raisin-black-800 group-hover:scale-110 transition-transform" />
-                    </button>
+                    </Link>
                 </div>
             </div>
         </section>

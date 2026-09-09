@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { navLinks } from "../data";
-import { useLocation, NavLink } from "react-router-dom";
+import { useLocation, Link, NavLink } from "react-router-dom";
 import { Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
 import Logo1zero from "./Logo1Zero";
 import { headerCopy } from "../copy";
@@ -115,14 +115,14 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               </button>
 
               {/* CTA Booking Button inside Header Container */}
-              <button aria-label="Header Booking Btn"
+              <Link
                 id="header-booking-btn"
-                onClick={onOpenBooking}
+                to="/book"
                 className="flex items-center gap-1 p-1 px-3.5 bg-brunswick-green-900/10 hover:bg-brunswick-green-900 hover:text-sea-salt border border-brunswick-green-500 text-brunswick-green-500  font-sans font-semibold text-lg rounded-full transition-all cursor-pointer shadow-sm hover:shadow-md/10"
               >
                 {headerCopy.bookUsBtn}
                 <ArrowUpRight className="icon-size-large  shrink-0" />
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -143,9 +143,9 @@ export default function Header({ onOpenBooking }: HeaderProps) {
               {navLinks.map((link) => {
                 const isActive = activeSection === link.href.substring(1);
                 return (
-                  <a
+                  <NavLink
                     key={link.href}
-                    href={link.href}
+                    to={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`font-sans text-lg font-semibold tracking-wide transition-colors py-2 border-b border-sea-salt/60 ${isActive
                       ? "text-brunswick-green-500"
@@ -153,7 +153,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                       }`}
                   >
                     {link.label}
-                  </a>
+                  </NavLink>
                 );
               })}
               {/* <div className="pt-3 flex flex-col gap-2">

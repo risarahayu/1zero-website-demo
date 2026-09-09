@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 export function SeeAllCard({ isCenter }: { isCenter: boolean }) {
   return (
     <Link
-      to={`${import.meta.env.BASE_URL}about#activity`}
-      target="_blank"
+      to="/about"
       className={`
         group flex h-[400px] items-center justify-center rounded-3xl border
         transition-all duration-500
