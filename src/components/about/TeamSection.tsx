@@ -431,6 +431,7 @@ const TeamSection: React.FC = () => {
                                 {/* BLACK TOP IMAGE (default) */}
                                 <img
                                     src={member.images.imageDisplay}
+                                    alt={member.name}
                                     className="w-full h-full object-cover transition-opacity duration-300"
                                 />
 
@@ -438,6 +439,7 @@ const TeamSection: React.FC = () => {
                                 {member.images.imageDisplayHover && (
                                     <img
                                         src={member.images.imageDisplayHover}
+                                        alt=""
                                         className="absolute inset-0 w-full h-full object-cover bg-sea-salt transition-opacity duration-300 opacity-0 hover:opacity-100"
                                     />
                                 )}
@@ -474,6 +476,7 @@ const TeamSection: React.FC = () => {
                                 {/* Image */}
                                 <img
                                     src={member.images?.imageDisplay}
+                                    alt={member.name}
                                     className="w-full h-32 object-cover rounded-md mb-2"
                                 />
 
@@ -509,6 +512,7 @@ const TeamSection: React.FC = () => {
                                 {/* Image */}
                                 <img
                                     src={member.images?.imageDisplay}
+                                    alt={member.name}
                                     className="w-full h-32 object-cover rounded-md mb-2"
                                 />
 

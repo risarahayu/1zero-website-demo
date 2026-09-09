@@ -93,8 +93,8 @@ export default function PortfolioPage() {
                     </p>
                     <img
                         src="Logo 1zero white.svg"
-                        className="h-[4rem] sm:h-[5rem] md:h-[6rem] z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-transform duration-500 group-hover:scale-105"
                         alt="1zero"
+                        className="h-[4rem] sm:h-[5rem] md:h-[6rem] z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-transform duration-500 group-hover:scale-105"
                     />
                     <Link
                         id="cta-booking-btn"

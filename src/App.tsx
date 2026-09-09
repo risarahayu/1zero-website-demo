@@ -18,6 +18,7 @@ import Portfolios from "./pages/Portfolios";
 import WorkflowHorizontal from "./components/WorkflowHorizontal";
 import AboutUs from "./pages/AboutUs";
 import BookingPage from "./pages/BookingPage";
+import SEO from "./components/SEO";
 
 export default function App() {
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ export default function App() {
   return (
     <div className="relative min-h-screen selection:bg-brunswick-green-900 selection:text-sea-salt">
       {/* Primary Header/Nav bar */}
+      <SEO />
       <Header onOpenBooking={handleOpenBooking} />
       <main>
         <Routes>

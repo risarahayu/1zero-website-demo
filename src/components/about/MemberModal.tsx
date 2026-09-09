@@ -63,6 +63,7 @@ export default function MemberModal(
                                 <div className="relative h-64 md:h-full">
                                     <img
                                         src={selectedMember.images?.imageDisplay}
+                                        alt={selectedMember.name}
                                         className="w-full h-full object-cover"
                                     />
 
