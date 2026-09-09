@@ -5,6 +5,8 @@ interface NavBarProps {
   setLang: React.Dispatch<React.SetStateAction<'id' | 'en'>>;
 }
 
+import { Link } from "react-router-dom";
+
 const NavBar: React.FC<NavBarProps> = ({ lang, setLang }) => {
   return (
     <nav className="flex flex-col md:flex-row justify-between items-center px-10 py-6 max-w-7xl mx-auto gap-4">
@@ -14,11 +16,42 @@ const NavBar: React.FC<NavBarProps> = ({ lang, setLang }) => {
 
       {/* Navigation Menu Items */}
       <div className="flex items-center gap-8 glass px-6 py-2.5 rounded-full text-lg font-semibold border border-sea-salt/20 shadow-lg">
-        <a href="#home" className="text-raisin-black-800 hover:text-sea-salt transition tracking-wide">Home</a>
-        <a href="#about" className="text-indigo-400 font-bold transition tracking-wide">About</a>
-        <a href="#products" className="text-raisin-black-800 hover:text-sea-salt transition tracking-wide">Products</a>
-        <a href="#portfolio" className="text-raisin-black-800 hover:text-sea-salt transition tracking-wide">Portfolio</a>
-        <a href="#contact" className="text-raisin-black-800 hover:text-sea-salt transition tracking-wide">Contact</a>
+
+        <Link
+          to="/"
+          className="text-raisin-black-800 hover:text-sea-salt transition tracking-wide"
+        >
+          Home
+        </Link>
+
+        <Link
+          to="/about"
+          className="text-indigo-400 font-bold transition tracking-wide"
+        >
+          About
+        </Link>
+
+        <Link
+          to="/products"
+          className="text-raisin-black-800 hover:text-sea-salt transition tracking-wide"
+        >
+          Products
+        </Link>
+
+        <Link
+          to="/portfolio"
+          className="text-raisin-black-800 hover:text-sea-salt transition tracking-wide"
+        >
+          Portfolio
+        </Link>
+
+        <Link
+          to="/contact"
+          className="text-raisin-black-800 hover:text-sea-salt transition tracking-wide"
+        >
+          Contact
+        </Link>
+
       </div>
 
       <div className="flex items-center gap-4 glass p-1 rounded-full px-4 border border-sea-salt/20 shadow-lg">
