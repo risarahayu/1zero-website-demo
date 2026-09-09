@@ -80,6 +80,7 @@ export default function PortfolioCard({ setIsPaused, project, onReadMore, classN
         <img
           src={project.imageUrl}
           alt={project.title}
+          loading="lazy"
           onLoad={() => setImageLoading(false)}
           className={`absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-105 group-hover:brightness-110 ${imageLoading ? "opacity-0" : "opacity-100"}`}
         />

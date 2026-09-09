@@ -12,6 +12,7 @@ const CtaBanner = () => {
                 <img
                     src={`${import.meta.env.BASE_URL}Team Member Photo/1zero Teams.webp`}
                     alt="1zero Team"
+                    loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover"
                 />
 

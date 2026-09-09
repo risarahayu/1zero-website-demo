@@ -432,6 +432,7 @@ const TeamSection: React.FC = () => {
                                 <img
                                     src={member.images.imageDisplay}
                                     alt={member.name}
+                                    loading="lazy"
                                     className="w-full h-full object-cover transition-opacity duration-300"
                                 />
 
@@ -440,6 +441,7 @@ const TeamSection: React.FC = () => {
                                     <img
                                         src={member.images.imageDisplayHover}
                                         alt=""
+                                        loading="lazy"
                                         className="absolute inset-0 w-full h-full object-cover bg-sea-salt transition-opacity duration-300 opacity-0 hover:opacity-100"
                                     />
                                 )}
@@ -477,6 +479,7 @@ const TeamSection: React.FC = () => {
                                 <img
                                     src={member.images?.imageDisplay}
                                     alt={member.name}
+                                    loading="lazy"
                                     className="w-full h-32 object-cover rounded-md mb-2"
                                 />
 
@@ -513,6 +516,7 @@ const TeamSection: React.FC = () => {
                                 <img
                                     src={member.images?.imageDisplay}
                                     alt={member.name}
+                                    loading="lazy"
                                     className="w-full h-32 object-cover rounded-md mb-2"
                                 />
 
@@ -624,6 +628,7 @@ const TeamSection: React.FC = () => {
                                 <img
                                     src={activeMember.images.ImageDetail1}
                                     alt={activeMember.name}
+                                    loading="lazy"
                                     className="w-full h-[420px] object-contain object-bottom"
                                 />
                             )}

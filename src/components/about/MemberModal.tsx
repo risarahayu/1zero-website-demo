@@ -64,6 +64,7 @@ export default function MemberModal(
                                     <img
                                         src={selectedMember.images?.imageDisplay}
                                         alt={selectedMember.name}
+                                        loading="lazy"
                                         className="w-full h-full object-cover"
                                     />
 

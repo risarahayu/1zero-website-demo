@@ -26,7 +26,7 @@ const TeamBubble: React.FC<TeamBubbleProps> = ({
         <div className={`bubble-member absolute group ${positionClass}`} style={delayClass ? { animationDelay: delayClass } : {}}>
             {/*photo circle*/}
             <div className={`w-24 h-24 lg:w-32 lg:h-32 rounded-full border-4 ${borderColorClass} overflow-hidden shadow-2xl`}>
-                <img src={image} className="w-full h-full object-cover" alt={name} />
+                <img src={image} className="w-full h-full object-cover" alt={name} loading="lazy" />
             </div>
             <div className={`absolute ${overlayPositionClass} w-48 glass p-4 rounded-2xl rounded-bl-none shadow-2xl border border-sea-salt/20 z-20`}>
                 <p className="font-bold text-sm mb-1">{name}</p>

@@ -37,7 +37,6 @@ export default function WhyUs(props: WhyUsProps) {
     const currentIdx = teamMembers.findIndex((m) => m.name === selectedMember?.name);
     const prevIdx = (currentIdx - 1 + teamMembers.length) % teamMembers.length;
     setSelectedMember(teamMembers[prevIdx]);
-    setActiveIdx(prevIdx);
   };
 
 
@@ -88,6 +87,7 @@ export default function WhyUs(props: WhyUsProps) {
                         <img
                           src={member.images?.imageDisplay}
                           alt={member.name}
+                          loading="lazy"
                           referrerPolicy="no-referrer"
                           className="h-full w-full object-cover"
                         />
@@ -109,13 +109,6 @@ export default function WhyUs(props: WhyUsProps) {
                             {member.name}
                           </span>
 
-                          {/* Audio Mute controller */}
-                          <button aria-label="Button"
-                            id={`toggle-mute-r1-${idx}`}
-                            onClick={(e) => toggleMute(member.name, e)}
-                            className="p-1 rounded-md transition-colors"
-                          >
-                          </button>
                         </div>
 
                         <div className="flex items-center justify-between font-sans text-center text-sm text-sea-salt ">
@@ -138,6 +131,7 @@ export default function WhyUs(props: WhyUsProps) {
                         <img
                           src={member.images?.imageDisplay}
                           alt={member.name}
+                          loading="lazy"
                           referrerPolicy="no-referrer"
                           className="h-full w-full object-cover"
                         />
@@ -159,13 +153,6 @@ export default function WhyUs(props: WhyUsProps) {
                             {member.name}
                           </span>
 
-                          {/* Audio Mute controller */}
-                          <button aria-label="Button"
-                            id={`toggle-mute-r2-${idx}`}
-                            onClick={(e) => toggleMute(member.name, e)}
-                            className="p-1 rounded-md transition-colors"
-                          >
-                          </button>
                         </div>
 
                         <div className="flex items-center justify-between font-sans text-center text-sm text-sea-salt ">

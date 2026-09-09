@@ -91,6 +91,7 @@ export default function Header({ onOpenBooking }: HeaderProps) {
                   const isActive = activeSection === link.href.substring(1);
                   return (
                     <NavLink
+                      key={link.href}
                       to={link.href}
                       className={({ isActive }) =>
                         `font-sans text-lg font-semibold transition-all tracking-wide hover:underline ${isActive
