@@ -462,7 +462,7 @@ const TeamSection: React.FC = () => {
                     {/* ROW 1 */}
                     <div className={`flex gap-4 ${isPaused ? "" : "animate-marquee"}`}>
                         {[...topRow, ...topRow].map((member, idx) => (
-                            <button aria-label="Button"
+                            <button aria-label="Button Team Member"
                                 key={idx}
                                 onClick={() => {
                                     setActiveIdx(idx % topRow.length);
@@ -499,7 +499,7 @@ const TeamSection: React.FC = () => {
                     {/* ROW 2 */}
                     <div className={`flex gap-4 ${isPaused ? "" : "animate-marquee-reverse"}`}>
                         {[...bottomRow, ...bottomRow].map((member, idx) => (
-                            <button aria-label="Button"
+                            <button aria-label="Button Team Member"
                                 key={idx}
                                 onClick={() => {
                                     setActiveIdx((idx % bottomRow.length) + 4);
@@ -657,7 +657,7 @@ const TeamSection: React.FC = () => {
 
                                 <div className="flex flex-wrap gap-2">
                                     {activeMember.sdgs.map((sdg, index) => (
-                                        <button aria-label="Button" key={sdg.id}
+                                        <button aria-label="Button SDG" key={sdg.id}
                                             onClick={() => handleSDGClick(sdg.id)}
                                         >
                                             <img

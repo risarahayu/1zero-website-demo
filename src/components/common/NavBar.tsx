@@ -58,14 +58,14 @@ const NavBar: React.FC<NavBarProps> = ({ lang, setLang }) => {
       </div>
 
       <div className="flex items-center gap-4 glass p-1 rounded-full px-4 border border-sea-salt/20 shadow-lg">
-        <button aria-label="Button"
+        <button aria-label="Button Language ID"
           onClick={() => setLang('id')}
           className={`text-sm font-bold transition-opacity cursor-pointer ${lang === 'id' ? 'opacity-100' : 'opacity-50'}`}
         >
           ID
         </button>
         <div className="w-[1px] h-3 bg-sea-salt/20"></div>
-        <button aria-label="Button"
+        <button aria-label="Button Language EN"
           onClick={() => setLang('en')}
           className={`text-sm font-bold transition-opacity cursor-pointer ${lang === 'en' ? 'opacity-100' : 'opacity-50'}`}
         >

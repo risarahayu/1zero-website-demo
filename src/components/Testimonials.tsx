@@ -180,7 +180,7 @@ export default function Testimonials() {
 
         {/* Slider Controllers */}
         <div className="flex items-center gap-3  justify-center">
-          <button aria-label="Button"
+          <button aria-label="Button Previous Testimonial"
             onClick={handlePrev}
             className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
           >
@@ -190,7 +190,7 @@ export default function Testimonials() {
             {String(activeSlide + 1).padStart(2, "0")} /{" "}
             {String(testimonials.length).padStart(2, "0")}
           </span>
-          <button aria-label="Button"
+          <button aria-label="Button Next Testimonial"
             onClick={handleNext}
             className="flex h-11 w-11 items-center justify-center rounded-full border border-sea-salt/20 bg-sea-salt/20 text-sea-salt transition-all hover:bg-brunswick-green-900 hover:text-sea-salt"
           >

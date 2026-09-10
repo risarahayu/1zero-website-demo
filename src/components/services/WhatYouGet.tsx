@@ -75,14 +75,14 @@ export default function WhatYouGet() {
             <div className="relative mt-16 md:hidden">
 
                 {/* arrows */}
-                <button aria-label="Button"
+                <button aria-label="Button Previous Card"
                     onClick={() => scrollToIndex(activeIndex - 1)}
                     className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-sea-salt/10 backdrop-blur border border-white/10 text-sea-salt"
                 >
                     ‹
                 </button>
 
-                <button aria-label="Button"
+                <button aria-label="Button Next Card"
                     onClick={() => scrollToIndex(activeIndex + 1)}
                     className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-sea-salt/10 backdrop-blur border border-white/10 text-sea-salt"
                 >
@@ -119,7 +119,7 @@ export default function WhatYouGet() {
                 {/* dots */}
                 <div className="flex justify-center gap-2 mt-5">
                     {benefits.map((_, i) => (
-                        <button aria-label="Button"
+                        <button aria-label="Button Page Number"
                             key={i}
                             onClick={() => scrollToIndex(i)}
                             className={`transition-all rounded-full ${i === activeIndex

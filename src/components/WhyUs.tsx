@@ -78,7 +78,7 @@ export default function WhyUs(props: WhyUsProps) {
                 {/* Row 1: Right to Left */}
                 <div className="flex gap-3 animate-marquee w-max h-full ">
                   {[...teamMembers.slice(0, 4), ...teamMembers.slice(0, 4)].map((member, idx) => (
-                    <button aria-label="Button"
+                    <button aria-label="Button Team Member"
                       key={`row1-${idx}`}
                       onClick={() => setSelectedMember(member)}
                       className="group relative w-40  h-40 shrink-0 cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 hover:border-brunswick-green-500"
@@ -122,7 +122,7 @@ export default function WhyUs(props: WhyUsProps) {
                 {/* Row 2: Left to Right */}
                 <div className="flex gap-3 animate-marquee-reverse w-max h-full ">
                   {[...teamMembers.slice(4, 8), ...teamMembers.slice(4, 8)].map((member, idx) => (
-                    <button aria-label="Button"
+                    <button aria-label="Button Team Member"
                       key={`row2-${idx}`}
                       onClick={() => setSelectedMember(member)}
                       className="group relative w-40  h-40 shrink-0 cursor-pointer rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col justify-between p-3 border-sea-salt/20 hover:border-brunswick-green-500 "

@@ -52,7 +52,7 @@ export default function PortfolioPage() {
             {/* TABS */}
             <div className="relative z-10 flex flex-wrap justify-center gap-4 mt-10">
                 {services.map((service) => (
-                    <button aria-label="Button"
+                    <button aria-label="Button Service Tab"
                         key={service}
                         onClick={() => setActiveTab(service)}
                         className={`

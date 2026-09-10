@@ -371,14 +371,14 @@ export default function WorkflowHorizontal() {
 
           </Swiper>
 
-          <button aria-label="Button"
+          <button aria-label="Button Previous Step"
             onClick={handlePrev}
             className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-sea-salt/10  text-sea-salt flex items-center justify-center transition-all hover:bg-brunswick-green-900 border border-sea-salt/20 hidden sm:flex"
           >
             <Icon icon="mdi:chevron-left" className="icon-size-small" />
           </button>
 
-          <button aria-label="Button"
+          <button aria-label="Button Next Step"
             onClick={handleNext}
             className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-sea-salt/10  text-sea-salt flex items-center justify-center transition-all hover:bg-brunswick-green-900 border border-sea-salt/20 hidden sm:flex"
           >

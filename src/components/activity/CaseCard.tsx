@@ -76,7 +76,7 @@ export function CaseCard({
             <p className="font-sans text-base sm:text-lg text-sea-salt line-clamp-2">
               {item.desc}
             </p>
-            <button aria-label="Button" type="button" className="inline-flex items-center justify-center font-sans font-semibold text-sea-salt  bg-raisin-black-800 grouphover:bg-brunswick-green-900  border border-sea-salt/20 hover:bg-brunswick-green-900 hover:text-sea-salt transition-all px-4 py-1.5 rounded-full text-lg transition-colors cursor-pointer self-start">Read More</button>
+            <button aria-label="Button Read More" type="button" className="inline-flex items-center justify-center font-sans font-semibold text-sea-salt  bg-raisin-black-800 grouphover:bg-brunswick-green-900  border border-sea-salt/20 hover:bg-brunswick-green-900 hover:text-sea-salt transition-all px-4 py-1.5 rounded-full text-lg transition-colors cursor-pointer self-start">Read More</button>
           </div>
         </div>
 
