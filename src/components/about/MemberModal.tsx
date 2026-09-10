@@ -40,11 +40,17 @@ export default function MemberModal(
                         </>
                     )}
 
-                    <div className="relative w-full max-w-2xl rounded-2xl border border-brunswick-green-900 overflow-hidden shadow-2xl">
+                    <div
+                        className="relative w-full max-w-2xl rounded-2xl border border-brunswick-green-900 overflow-hidden shadow-2xl"
+                        role="dialog"
+                        aria-modal="true"
+                        aria-labelledby="member-modal-title"
+                        aria-describedby="member-modal-description"
+                    >
                         <div className="modal-scroll relative w-full max-w-2xl max-h-[80vh] overflow-y-scroll">
 
                             {/* Close button */}
-                            <button aria-label="Button Close Modal"
+                            <button aria-label="Close modal"
                                 onClick={() => {
                                     setSelectedMember(null);
                                     setIsPaused(false);
@@ -77,7 +83,10 @@ export default function MemberModal(
 
                                     {/* Header */}
                                     <div className="space-y-2 text-start">
-                                        <h2 className="font-sans text-3xl leading-tight sm:text-5xl font-bold text-brunswick-green-500">
+                                        <h2
+                                            id="member-modal-title"
+                                            className="font-sans text-3xl leading-tight sm:text-5xl font-bold text-brunswick-green-500"
+                                        >
                                             {selectedMember.name}
                                         </h2>
 
@@ -92,7 +101,7 @@ export default function MemberModal(
                                             Get to Know Me
                                         </h4>
 
-                                        <p className="text-sea-salt/90">
+                                        <p id="member-modal-description" className="text-sea-salt/90">
                                             {selectedMember.bio}
                                         </p>
                                     </div>
