@@ -40,7 +40,7 @@ export default function PortfolioCard({ setIsPaused, project, onReadMore, classN
   };
 
   return (
-    <div className={`
+    <article className={`
     group flex flex-col space-y-4
     ${className}
     bg-sea-salt/6 backdrop-blur
@@ -119,6 +119,6 @@ export default function PortfolioCard({ setIsPaused, project, onReadMore, classN
       >
         Read More
       </button>
-    </div>
+    </article>
   );
 }

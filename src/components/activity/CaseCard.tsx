@@ -22,7 +22,7 @@ export function CaseCard({
   const [imageLoading, setImageLoading] = useState(true);
 
   return (
-    <div
+    <article
       onClick={() => onOpenModal(item, index)} // <-- Pop up modal instead of window.open
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -67,9 +67,9 @@ export function CaseCard({
           </div>
 
           <div className="space-y-2">
-            <p className={`font-sans text-base sm:text-lg font-bold min-h-[3.5rem] content-center group-hover:text-brunswick-green-500 line-clamp-2 ${isCenter ? "text-brunswick-green-500" : "text-sea-salt"}`}>
+            <h3 className={`font-sans text-base sm:text-lg font-bold min-h-[3.5rem] content-center group-hover:text-brunswick-green-500 line-clamp-2 ${isCenter ? "text-brunswick-green-500" : "text-sea-salt"}`}>
               {item.title}
-            </p>
+            </h3>
             <p className="font-sans text-base sm:text-lg text-ivory/50 line-clamp-2">
               {formatDateRange(item.startDate, item.endDate)}
             </p>
@@ -93,6 +93,6 @@ export function CaseCard({
         </div> */}
       </div>
 
-    </div>
+    </article>
   );
 }

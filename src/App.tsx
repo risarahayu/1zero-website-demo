@@ -19,6 +19,7 @@ import WorkflowHorizontal from "./components/WorkflowHorizontal";
 import AboutUs from "./pages/AboutUs";
 import BookingPage from "./pages/BookingPage";
 import SEO from "./components/SEO";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   const navigate = useNavigate();
@@ -84,6 +85,8 @@ export default function App() {
             path="/book"
             element={<BookingPage />}
           />
+          <Route path="*" element={<NotFound />} />
+
 
         </Routes>
       </main>
