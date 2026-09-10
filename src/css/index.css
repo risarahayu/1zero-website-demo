@@ -62,7 +62,7 @@
 
   body {
     background-color: var(--raisin-black-900);
-    color: #e5e5e5;
+    color: var(--sea-salt);
     font-family: var(--font-sans);
     overflow-x: hidden;
     max-width: 100vw;
