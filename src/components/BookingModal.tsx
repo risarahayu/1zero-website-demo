@@ -248,7 +248,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                     id="timezone-select"
                     value={timezone}
                     onChange={(e) => setTimezone(e.target.value)}
-                    className="w-full bg-transparent text-lg font-sans text-sea-salt focus:outline-none focus-visible:ring-2 focus-visible:ring-brunswick-green-500 cursor-pointer"
+                    className="w-full bg-transparent text-lg font-sans text-sea-salt focus:outline-none focus-visible:ring-2 focus-visible:ring-sea-salt cursor-pointer"
                   >
                     <option value="UTC+7 (Jakarta / Western Indonesia)" className="bg-[#111]">WIB - Jakarta (UTC+7)</option>
                     <option value="UTC+8 (Singapore / Bali)" className="bg-[#111]">WITA - Singapore, Bali (UTC+8)</option>

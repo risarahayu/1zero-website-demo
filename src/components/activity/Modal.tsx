@@ -65,7 +65,7 @@ export function ActivityModal({
                                 onClick={() => {
                                     setSelectedItem(null);
                                 }}
-                                className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-raisin-black-900/60 hover:bg-raisin-black-900/60 text-sea-salt flex items-center justify-center transition cursor-pointer"
+                                className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-raisin-black-900/60 hover:bg-raisin-black-900/60 text-sea-salt flex items-center justify-center transition cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sea-salt"
                             >
                                 ✕
                             </button>

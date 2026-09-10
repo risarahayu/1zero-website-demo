@@ -32,7 +32,7 @@ export default function MemberModal(
                             {/* Prev Arrow */}
                             < button
                                 onClick={handleModalPrev}
-                                className="absolute left-2 z-20 w-10 h-10 rounded-full bg-brunswick-green-900/80 hover:bg-brunswick-green-500 text-sea-salt flex items-center justify-center text-2xl transition-all duration-200 shadow-lg"
+                                className="absolute left-2 z-20 w-10 h-10 rounded-full bg-brunswick-green-900/80 hover:bg-brunswick-green-500 text-sea-salt flex items-center justify-center text-2xl transition-all duration-200 shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brunswick-green-500"
                                 aria-label="Previous member"
                             >
                                 <Icon icon="mdi:chevron-left" width="24" />
@@ -55,7 +55,7 @@ export default function MemberModal(
                                     setSelectedMember(null);
                                     setIsPaused(false);
                                 }}
-                                className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-raisin-black-900/60 hover:bg-raisin-black-900/60 text-sea-salt flex items-center justify-center transition cursor-pointer"
+                                className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-raisin-black-900/60 hover:bg-raisin-black-900/60 text-sea-salt flex items-center justify-center transition cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sea-salt"
                             >
                                 ✕
                             </button>
@@ -183,7 +183,7 @@ export default function MemberModal(
                     {/* Next Arrow */}
                     <button
                         onClick={handleModalNext}
-                        className="absolute right-2 z-20 w-10 h-10 rounded-full bg-brunswick-green-900/80 hover:bg-brunswick-green-500 text-sea-salt flex items-center justify-center text-2xl transition-all duration-200 shadow-lg"
+                        className="absolute right-2 z-20 w-10 h-10 rounded-full bg-brunswick-green-900/80 hover:bg-brunswick-green-500 text-sea-salt flex items-center justify-center text-2xl transition-all duration-200 shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brunswick-green-500"
                         aria-label="Next member"
                     >
                         <Icon icon="mdi:chevron-right" width="24" />

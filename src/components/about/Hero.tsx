@@ -111,6 +111,8 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ lang }) => {
                         pagination={{
                             clickable: true,
                             el: ".hero-pagination",
+                            renderBullet: (index, className) =>
+                                `<button type="button" class="${className} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brunswick-green-500" aria-label="Go to slide ${index + 1}"></button>`,
                         }}
                         loop={false}
                         // centeredSlides

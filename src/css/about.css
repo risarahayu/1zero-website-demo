@@ -140,9 +140,17 @@
 .hero-pagination .swiper-pagination-bullet {
     width: 8px;
     height: 8px;
+    padding: 0;
+    border: 0;
     background: rgba(255, 255, 255, .3);
     opacity: 1;
     transition: all .3s ease;
+    cursor: pointer;
+}
+
+.hero-pagination .swiper-pagination-bullet:focus-visible {
+    outline: 2px solid var(--sea-salt);
+    outline-offset: 2px;
 }
 
 .hero-pagination .swiper-pagination-bullet-active {
