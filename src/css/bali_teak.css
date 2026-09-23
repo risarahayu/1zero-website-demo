@@ -1,0 +1,54 @@
+/* ==========================================================================
+   BaliTeak — page-specific tokens + the one widget with no 4ocean analog
+   (the sitemap image's loading-spinner overlay). Everything else this page
+   uses lives in css/project.css, shared with 4ocean.html.
+   ========================================================================== */
+
+:root {
+    --project-primary: #7F4B33;
+    --project-surface-muted: #F4EEE1;
+    --project-surface-dark: #222222;
+    --project-text: #272727;
+    --project-text-muted: #272727;
+    --project-hero-image: url('../Portfolios/bali_teak/Hero.png');
+
+    --color-red: #FF5A79;
+    --color-green: #1D5745;
+}
+
+/* Page-specific accent-color utility (used on the Implementation
+   Challenges card icons/captions — not part of the shared card-grid
+   component since 4ocean's cards have no equivalent accent treatment). */
+.color-baliteak {
+    color: var(--project-primary);
+}
+
+/* ==========================================================================
+   Sitemap loading spinner — BaliTeak-only: 4ocean has no equivalent
+   "wait for a huge image to decode" widget.
+   ========================================================================== */
+
+.sitemap-image-container {
+    overflow: hidden;
+}
+
+#sitemapLoader {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    background-color: #ffffff;
+}
+
+.sitemap-image {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sitemap-image.loaded {
+    opacity: 1;
+}
+
+#sitemapLoader.hidden {
+    display: none !important;
+}

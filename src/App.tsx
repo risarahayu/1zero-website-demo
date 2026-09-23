@@ -20,6 +20,8 @@ import AboutUs from "./pages/AboutUs";
 import BookingPage from "./pages/BookingPage";
 import SEO from "./components/SEO";
 import NotFound from "./pages/NotFound";
+import PlasticRecoveryPage from "./pages/PlasticRecovery";
+import BaliTeakPage from "./pages/BaliTeak";
 
 export default function App() {
   const navigate = useNavigate();
@@ -84,6 +86,17 @@ export default function App() {
           <Route
             path="/book"
             element={<BookingPage />}
+          />
+
+          <Route
+            path="/plastic-recovery"
+            element={<PlasticRecoveryPage />}
+          />
+          <Route path="*" element={<NotFound />} />
+
+          <Route
+            path="/bali-teak"
+            element={<BaliTeakPage />}
           />
           <Route path="*" element={<NotFound />} />
 
