@@ -1,0 +1,742 @@
+:root {
+    --text-14: clamp(0.8rem, 0.75rem + 0.2vw, 0.875rem);
+    --text-16: clamp(0.9rem, 0.85rem + 0.2vw, 1rem);
+    --text-18: clamp(0.95rem, 0.9rem + 0.2vw, 1.125rem);
+    --text-20: clamp(1.05rem, 0.95rem + 0.3vw, 1.25rem);
+    --text-32: clamp(1.4rem, 1rem + 1.6vw, 2rem);
+    --text-40: clamp(1.75rem, 1.2rem + 2.2vw, 2.5rem);
+    --text-96: clamp(2rem, 1rem + 6vw, 6rem);
+
+    /* Minimum kept >= 1.5rem: a Bootstrap .row with the largest gutter used
+     on these pages (.g-5) pulls back 1.5rem via negative margin, and a
+     .row sitting directly in .project-section (no extra padded wrapper)
+     needs at least that much section padding to not bleed past the edge
+     at narrow widths. */
+    --section-padding-inline: clamp(1.5rem, 4vw, 4rem);
+    --section-padding-block-start: clamp(2rem, 5vw, 4rem);
+    --section-max-width: 1317px;
+}
+
+.text-14 {
+    font-size: var(--text-14);
+}
+
+.text-16 {
+    font-size: var(--text-16);
+}
+
+.text-18 {
+    font-size: var(--text-18);
+}
+
+.text-20 {
+    font-size: var(--text-20);
+}
+
+.text-32 {
+    font-size: var(--text-32);
+}
+
+.text-40 {
+    font-size: var(--text-40);
+}
+
+.text-96 {
+    font-size: var(--text-96);
+}
+
+/* ==========================================================================
+   Section — the container + spacing wrapper every section on both pages
+   uses. Fluid inline padding replaces Bootstrap's fixed `.p-5` so mobile
+   isn't forced into the same padding as a wide desktop.
+   ========================================================================== */
+
+.project-section {
+    width: 100%;
+    max-width: var(--section-max-width);
+    margin-inline: auto;
+    padding-inline: var(--section-padding-inline);
+    padding-block-start: var(--section-padding-block-start);
+}
+
+.project-section__title {
+    font-size: var(--text-20);
+}
+
+.capsule-border-project {
+    border: 2px solid var(--project-primary);
+    color: var(--project-primary);
+}
+
+/* Generic accent-color utility (e.g. for an SVG icon using currentColor) —
+   the page-agnostic equivalent of BaliTeak's .color-baliteak / 1zero's
+   .color-1zero, for anything that doesn't need its own page-specific name. */
+.color-project {
+    color: var(--project-primary);
+}
+
+.project-surface-muted {
+    background-color: var(--project-surface-muted);
+}
+
+/* ==========================================================================
+   Hero — banner image + colored intro panel (title, highlight bullets,
+   role/tools meta), identical shape on both pages.
+   ========================================================================== */
+
+.project-hero {
+    width: 100%;
+}
+
+.project-hero__inner {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    max-width: var(--section-max-width);
+    margin-inline: auto;
+    padding-inline: var(--section-padding-inline);
+    padding-block-start: clamp(1.5rem, 4vw, 3rem);
+}
+
+.project-hero__banner {
+    height: 50vh;
+    background-image: var(--project-hero-image);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+}
+
+.project-hero__panel {
+    display: flex;
+    /* Below this, intro/meta stack (tablet-portrait and mobile); above it
+     they stay side by side. A deliberate breakpoint instead of letting
+     each page wrap at a different width depending on how much copy it
+     happens to have. */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    background-color: var(--project-primary);
+    color: var(--white);
+    border-radius: 1rem;
+    padding: clamp(1.25rem, 4vw, 3rem);
+}
+
+@media (min-width: 992px) {
+    .project-hero__panel {
+        flex-wrap: nowrap;
+    }
+}
+
+.project-hero__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    min-width: 0;
+}
+
+.project-hero__title {
+    margin: 0;
+    font-size: var(--text-40);
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.project-hero__highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.project-hero__highlight {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-hero__highlight img {
+    flex: 0 0 auto;
+    width: 24px;
+    height: 24px;
+}
+
+.project-hero__highlight p {
+    margin: 0;
+    font-size: var(--text-16);
+}
+
+.project-hero__meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.75rem;
+    min-width: 0;
+}
+
+.project-hero__meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.project-hero__meta-label {
+    margin: 0;
+    font-size: var(--text-14);
+    opacity: 0.85;
+}
+
+.project-hero__meta-value {
+    margin: 0;
+    font-size: var(--text-16);
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   Info block — "Project Scope" style layout: prose on one side, a
+   duration/timeline summary on the other.
+   ========================================================================== */
+
+.info-block {
+    --info-block-row-gap: clamp(1.5rem, 4vw, 2.5rem);
+    --info-block-group-gap: clamp(1rem, 3vw, 1.75rem);
+}
+
+.info-block__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--info-block-row-gap);
+}
+
+.info-block__prose {
+    flex: 1 1 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    min-width: 0;
+}
+
+/* When a section has no .info-block__summary sidebar to balance against,
+   the prose would otherwise stretch edge-to-edge on wide viewports —
+   cap it to a comfortable reading width instead. */
+.info-block__prose:only-child {
+    max-width: 720px;
+}
+
+.info-block__prose p {
+    margin: 0;
+    font-size: var(--text-16);
+}
+
+.info-block__summary {
+    flex: 1 1 260px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--info-block-group-gap);
+    min-width: 0;
+}
+
+.info-block__group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.info-block__label {
+    margin: 0;
+    font-size: var(--text-14);
+    color: var(--project-text-muted);
+}
+
+.info-block__value {
+    margin: 0;
+    font-size: var(--text-16);
+    font-weight: 700;
+}
+
+.info-block__timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 0.2rem;
+}
+
+/* Inline flow (not flex) so a long phase description wraps word-by-word
+   like normal text, with the label staying attached to its first line,
+   instead of the whole description jumping to its own line as one block. */
+.info-block__phase {
+    margin: 0;
+    font-size: var(--text-16);
+}
+
+.info-block__phase-label,
+.info-block__phase>p {
+    display: inline;
+}
+
+.info-block__phase-label {
+    font-weight: 700;
+}
+
+.info-block__phase-label::after {
+    content: " ";
+}
+
+/* ==========================================================================
+   Card grid — N-column card layout shared by Problem / Solution /
+   Key Learnings (4ocean) and Implementation Challenges (BaliTeak).
+   Column count set per-instance via --card-grid-columns.
+   ========================================================================== */
+
+.card-grid {
+    --card-grid-columns: 3;
+    display: grid;
+    grid-template-columns: repeat(var(--card-grid-columns), 1fr);
+    gap: 1rem;
+}
+
+.card-grid--cols-2 {
+    --card-grid-columns: 2;
+}
+
+.card-grid--cols-3 {
+    --card-grid-columns: 3;
+}
+
+.card-grid--cols-4 {
+    --card-grid-columns: 4;
+}
+
+@media (max-width: 991.98px) {
+    .card-grid--cols-4 {
+        --card-grid-columns: 2;
+    }
+}
+
+@media (max-width: 767.98px) {
+
+    .card-grid--cols-2,
+    .card-grid--cols-3,
+    .card-grid--cols-4 {
+        --card-grid-columns: 1;
+    }
+}
+
+.card-grid__card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1rem;
+}
+
+.card-grid__card--background {
+    background-color: var(--project-surface-muted);
+    /* border: 1px solid var(--project-text); */
+    border-radius: 12px;
+}
+
+.card-grid__title {
+    margin: 0;
+    font-size: var(--text-16);
+    font-weight: 700;
+    /* No color here on purpose: it inherits by default (matching every page's
+     body text color), but a page can still layer its own accent-color
+     utility class on top (e.g. BaliTeak's .color-baliteak) without a
+     specificity fight. */
+}
+
+.card-grid__text {
+    margin: 0;
+    font-size: var(--text-16);
+    line-height: 1.6;
+    color: var(--project-text-muted);
+}
+
+/* ==========================================================================
+   Compare table — "before / after" comparison rows (Workflow
+   Transformation on 4ocean, Quick UX Audit on BaliTeak). Both pages
+   already share the cross-container / check-container / cross / check
+   class names verbatim; this is the one place giving them a single,
+   consistent icon size instead of two diverging ones.
+   ========================================================================== */
+
+.compare-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border: 2px solid;
+    border-radius: 0.5rem;
+}
+
+/* For a compare-row that needs a title row (icon + bold text) followed by
+   a separate description paragraph, instead of a single icon + paragraph. */
+.compare-row--stacked {
+    flex-direction: column;
+}
+
+.cross-container {
+    border-color: var(--color-red) !important;
+}
+
+.check-container {
+    border-color: var(--color-green) !important;
+}
+
+.compare-row p {
+    margin: 0;
+}
+
+.cross,
+.check {
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    margin-top: 0.15rem;
+}
+
+/* ==========================================================================
+   Media block — a caption followed by a zoomable image, used for every
+   flow-diagram / wireframe / iteration screenshot on both pages. The
+   image itself is handled by the shared zoom-modal + lazy-img system in
+   app.css (`.zoom-image`, `.lazy-img`); this only sizes the box.
+   ========================================================================== */
+
+.media-block__image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Some source images are small (icons, reference screenshots) and
+   shouldn't be upscaled past their native size just because the
+   container is wide. */
+.media-block__image--capped {
+    max-width: max-content;
+}
+
+/* ==========================================================================
+   Media marquee — an auto-scrolling horizontal strip of mixed-width
+   screenshots/mockups (e.g. a "Selected UI" showcase). Each image keeps
+   its own intrinsic aspect ratio at a fixed height, so a portrait phone
+   mockup and a landscape desktop mockup sit side by side naturally. The
+   track's markup must repeat its images twice (identical order) for the
+   translateX(-50%) loop to read as seamless; this only styles the strip,
+   it doesn't duplicate anything itself. Click-to-preview is handled by the
+   shared no-zoom lightbox in app.css/app.js (`.preview-image`).
+   ========================================================================== */
+
+.media-marquee {
+    width: 100%;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+}
+
+.media-marquee__track {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    gap: 1.5rem;
+    animation: media-marquee-scroll 32s linear infinite;
+}
+
+.media-marquee:hover .media-marquee__track {
+    animation-play-state: paused;
+}
+
+/* Specificity note: these images carry width/height HTML attributes (for
+   aspect-ratio reservation before load), which app.css's global
+   `img[width][height] { height: auto }` rule (element + 2 attribute
+   selectors) would otherwise beat a plain `.media-marquee__image` class
+   selector on — matching those same two attributes here keeps this rule
+   winning regardless of stylesheet load order. */
+.media-marquee__image[width][height] {
+    display: block;
+    flex: 0 0 auto;
+    height: 40vh;
+    width: auto;
+    max-width: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.media-marquee__image:hover {
+    transform: translateY(-4px);
+}
+
+@media (max-width: 991.98px) {
+    .media-marquee__image[width][height] {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .media-marquee__image[width][height] {
+        height: 25vh;
+    }
+}
+
+@keyframes media-marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* ==========================================================================
+   Check list — reused bullet-as-checkmark list (already shared via
+   app.css's .check-list / .check-list__icon; nothing page-specific here).
+   ========================================================================== */
+
+/* ==========================================================================
+   Pill tag — small uppercase pill, used standalone as a label/tag and as
+   the active/inactive state for pill-style tab navigation (nav-link +
+   ds-badge). Colored from each page's own --project-primary, so it reads
+   correctly regardless of brand color.
+   ========================================================================== */
+
+.ds-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--project-primary) 8%, transparent);
+    color: var(--project-primary);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.ds-badge.active {
+    color: #fff !important;
+    background-color: var(--project-primary) !important;
+}
+
+/* ==========================================================================
+   Scroll frame — a bordered, rounded box that scrolls its own content
+   vertically instead of dumping a tall screenshot into the page flow.
+   Used for full-page mockup previews and before/after design comparisons.
+   Add .scroll-frame--tall for a full-height variant.
+   ========================================================================== */
+
+.scroll-frame {
+    position: relative;
+    border: 1px solid rgba(39, 39, 39, 0.1);
+    border-radius: 1rem;
+    overflow: hidden;
+    background: var(--project-surface-muted);
+    --scroll-frame-max-h: 520px;
+}
+
+.scroll-frame--tall {
+    --scroll-frame-max-h: 100vh;
+}
+
+.scroll-frame__body {
+    max-height: var(--scroll-frame-max-h);
+    height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--project-primary) 40%, transparent) transparent;
+}
+
+.scroll-frame__body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scroll-frame__body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scroll-frame__body::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--project-primary) 35%, transparent);
+    border-radius: 999px;
+}
+
+.scroll-frame__body::-webkit-scrollbar-thumb:hover {
+    background: var(--project-primary);
+}
+
+.scroll-frame__body img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Persistent "there's more below" cue — fades out once the user has
+   scrolled the frame close to its bottom edge (see initScrollFrames in
+   app.js). */
+.scroll-frame__hint {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 76px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 0.85rem;
+
+    background: linear-gradient(to bottom,
+            color-mix(in srgb, var(--project-surface-muted) 0%, transparent),
+            color-mix(in srgb, var(--project-surface-muted) 90%, transparent) 55%,
+            var(--project-surface-muted) 100%);
+
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-frame__hint.is-hidden {
+    opacity: 0;
+}
+
+.scroll-frame__hint span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+
+    background: var(--project-primary);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 767.98px) {
+    .scroll-frame__body {
+        max-height: min(var(--scroll-frame-max-h), 70vh);
+    }
+}
+
+/* ==========================================================================
+   Themed accordion — borderless, rounded panels (closed: neutral off-white;
+   open: a light tint of the page's own --project-primary) instead of
+   Bootstrap's default bordered/square accordion. Each .accordion-item also
+   needs `border-0 rounded-4 overflow-hidden` (plus `mt-2` after the first)
+   in the markup for the rounded-panel shape.
+   ========================================================================== */
+
+.ds-variables-accordion {
+    margin-top: 0.75rem;
+}
+
+.ds-variables-accordion .accordion-item {
+    background: #fafafa;
+    border: 0;
+}
+
+.ds-variables-accordion .accordion-button {
+    background: #fafafa;
+    color: var(--project-text);
+    padding: 1rem 1.25rem;
+    box-shadow: none;
+    border-radius: 1rem !important;
+}
+
+.ds-variables-accordion .accordion-button:not(.collapsed) {
+    background: color-mix(in srgb, var(--project-primary) 6%, white);
+    color: var(--project-primary);
+    box-shadow: none;
+}
+
+.ds-variables-accordion .accordion-button:focus {
+    box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--project-primary) 12%, transparent);
+}
+
+.ds-variables-accordion .accordion-body {
+    background: color-mix(in srgb, var(--project-primary) 6%, white);
+}
+
+/* ==========================================================================
+   UX audit list — an Area / Issue / New Direction comparison as a card
+   list, replacing a bordered <table>. Each item stacks to one column
+   below 992px.
+   ========================================================================== */
+
+.ux-audit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.ux-audit-item {
+    display: grid;
+    grid-template-columns: 160px 1fr 1fr;
+    gap: 1rem;
+    align-items: start;
+    padding: 1.25rem 1.5rem;
+    background: #fff;
+    border: 1px solid rgba(39, 39, 39, 0.08);
+    border-radius: 1rem;
+}
+
+.ux-audit-item__area {
+    padding-top: 0.15rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--project-text);
+}
+
+.ux-audit-item__before,
+.ux-audit-item__after {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+}
+
+.ux-audit-item__icon {
+    width: 1.1rem;
+    height: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.ux-audit-item__before p {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: rgba(39, 39, 39, 0.65);
+}
+
+.ux-audit-item__after p:first-child {
+    margin: 0 0 0.35rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--project-primary);
+}
+
+.ux-audit-item__after p:last-child {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: rgba(39, 39, 39, 0.65);
+}
+
+@media (max-width: 991.98px) {
+    .ux-audit-item {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+
+    .ux-audit-item__area {
+        padding-top: 0;
+    }
+}
