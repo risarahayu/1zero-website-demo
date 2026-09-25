@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 const bookingUrl =
-  "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3gWtjZcsb5BZb78RjU3eDJJcflGsC7oDWdx__RBcaDFHzZ1ivl2IZrigY4R9-r63sLfDdRjvmQ";
+  "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1h-u-8PK7F3APnrT61drIpGAZgIis7jMnUiR70s864Iafew2D6y0N_zP55-3253SudblOoQbmn";
 
 export default function BookingPage() {
   useEffect(() => {
